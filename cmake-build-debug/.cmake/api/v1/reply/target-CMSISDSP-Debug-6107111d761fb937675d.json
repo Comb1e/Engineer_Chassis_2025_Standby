@@ -67,19 +67,19 @@
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 29,
+				"line" : 31,
 				"parent" : 2
 			},
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 30,
+				"line" : 32,
 				"parent" : 2
 			},
 			{
 				"command" : 1,
 				"file" : 1,
-				"line" : 49,
+				"line" : 51,
 				"parent" : 2
 			},
 			{
@@ -103,19 +103,19 @@
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 59,
+				"line" : 61,
 				"parent" : 2
 			},
 			{
 				"command" : 6,
 				"file" : 1,
-				"line" : 52,
+				"line" : 54,
 				"parent" : 2
 			},
 			{
 				"command" : 6,
 				"file" : 1,
-				"line" : 73,
+				"line" : 75,
 				"parent" : 2
 			},
 			{
@@ -2941,6 +2941,22 @@
 				{
 					"backtrace" : 11,
 					"path" : "E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "E:/RM/CubeMx/Engineer_Chassis_2025/USB_DEVICE/App"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "E:/RM/CubeMx/Engineer_Chassis_2025/USB_DEVICE/Target"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Core/Inc"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"
 				},
 				{
 					"backtrace" : 11,

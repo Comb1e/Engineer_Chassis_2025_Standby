@@ -68,10 +68,38 @@ include CMakeFiles/Engineer_Chassis_2025.elf.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Src/BSP_Buzzer.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\BSP\Src\BSP_Buzzer.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\BSP\Src\BSP_Buzzer.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Src\BSP_Buzzer.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Src\BSP_Buzzer.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\BSP\Src\BSP_Buzzer.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Src\BSP_Buzzer.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\BSP\Src\BSP_Buzzer.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Src/BSP_Usart.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\BSP\Src\BSP_Usart.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\BSP\Src\BSP_Usart.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Src\BSP_Usart.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Src\BSP_Usart.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\BSP\Src\BSP_Usart.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Src\BSP_Usart.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\BSP\Src\BSP_Usart.c.s
+
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_RemoteCtrl.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_RemoteCtrl.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_RemoteCtrl.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.i: cmake_force
@@ -85,7 +113,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_R
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Tasks\Peripherals\Src\RemoteCtrl_Task.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Tasks\Peripherals\Src\RemoteCtrl_Task.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Peripherals\Src\RemoteCtrl_Task.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.i: cmake_force
@@ -99,7 +127,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteC
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/dma.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\dma.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\dma.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\dma.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.i: cmake_force
@@ -113,7 +141,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.s: cmake_force
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/freertos.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\freertos.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\freertos.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\freertos.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.i: cmake_force
@@ -127,7 +155,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.s: cmake_force
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/gpio.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\gpio.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\gpio.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\gpio.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.i: cmake_force
@@ -141,7 +169,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.s: cmake_force
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/main.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\main.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\main.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\main.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.i: cmake_force
@@ -155,7 +183,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.s: cmake_force
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/stm32f4xx_hal_msp.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\stm32f4xx_hal_msp.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\stm32f4xx_hal_msp.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\stm32f4xx_hal_msp.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.i: cmake_force
@@ -169,7 +197,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.s: cmake_f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/stm32f4xx_hal_timebase_tim.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\stm32f4xx_hal_timebase_tim.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\stm32f4xx_hal_timebase_tim.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\stm32f4xx_hal_timebase_tim.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.i: cmake_force
@@ -183,7 +211,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.s
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/stm32f4xx_it.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\stm32f4xx_it.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\stm32f4xx_it.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\stm32f4xx_it.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.i: cmake_force
@@ -197,7 +225,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.s: cmake_force
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/syscalls.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\syscalls.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\syscalls.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\syscalls.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.i: cmake_force
@@ -211,7 +239,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.s: cmake_force
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/sysmem.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\sysmem.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\sysmem.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\sysmem.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.i: cmake_force
@@ -225,7 +253,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.s: cmake_force
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/system_stm32f4xx.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\system_stm32f4xx.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\system_stm32f4xx.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\system_stm32f4xx.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.i: cmake_force
@@ -236,10 +264,24 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.s: cmake_fo
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.s"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\system_stm32f4xx.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\system_stm32f4xx.c.s
 
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/tim.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\tim.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\tim.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\tim.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\tim.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\tim.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\tim.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\tim.c.s
+
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/usart.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\usart.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Src\usart.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Src\usart.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.i: cmake_force
@@ -252,7 +294,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.s: cmake_force
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Startup/startup_stm32f427iihx.s
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building ASM object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building ASM object CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(ASM_DEFINES) $(ASM_INCLUDES) $(ASM_FLAGS) -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Core\Startup\startup_stm32f427iihx.s.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Core\Startup\startup_stm32f427iihx.s
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.i: cmake_force
@@ -266,7 +308,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.s:
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.i: cmake_force
@@ -280,7 +322,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.i: cmake_force
@@ -294,7 +336,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.i: cmake_force
@@ -308,7 +350,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.i: cmake_force
@@ -322,7 +364,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_exti.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.i: cmake_force
@@ -336,7 +378,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.i: cmake_force
@@ -350,7 +392,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.i: cmake_force
@@ -364,7 +406,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ramfunc.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.i: cmake_force
@@ -378,7 +420,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.i: cmake_force
@@ -389,10 +431,38 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.s"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c.s
 
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pcd_ex.c.s
+
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.i: cmake_force
@@ -406,7 +476,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.i: cmake_force
@@ -420,7 +490,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.i: cmake_force
@@ -434,7 +504,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.i: cmake_force
@@ -448,7 +518,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.i: cmake_force
@@ -462,7 +532,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.i: cmake_force
@@ -476,7 +546,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.i: cmake_force
@@ -487,10 +557,80 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.s"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c.s
 
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usb.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Src\usbd_cdc.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_core.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ctlreq.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\ST\STM32_USB_Device_Library\Core\Src\usbd_ioreq.c.s
+
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2\cmsis_os2.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.i: cmake_force
@@ -504,7 +644,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/croutine.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\croutine.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\croutine.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\croutine.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.i: cmake_force
@@ -518,7 +658,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\event_groups.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.i: cmake_force
@@ -532,7 +672,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/list.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\list.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\list.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\list.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.i: cmake_force
@@ -546,7 +686,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F\port.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.i: cmake_force
@@ -560,7 +700,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\portable\MemMang\heap_4.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.i: cmake_force
@@ -574,7 +714,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/queue.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\queue.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\queue.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\queue.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.i: cmake_force
@@ -588,7 +728,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\stream_buffer.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.i: cmake_force
@@ -602,7 +742,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/tasks.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\tasks.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\tasks.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\tasks.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.i: cmake_force
@@ -616,7 +756,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/timers.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\timers.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\timers.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\timers.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.i: cmake_force
@@ -627,10 +767,66 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.s"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\timers.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Middlewares\Third_Party\FreeRTOS\Source\timers.c.s
 
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/USB_DEVICE/App/usb_device.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usb_device.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usb_device.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usb_device.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usb_device.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usb_device.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usb_device.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usb_device.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/USB_DEVICE/App/usbd_cdc_if.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usbd_cdc_if.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usbd_cdc_if.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usbd_cdc_if.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usbd_cdc_if.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usbd_cdc_if.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usbd_cdc_if.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usbd_cdc_if.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/USB_DEVICE/App/usbd_desc.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usbd_desc.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usbd_desc.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usbd_desc.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usbd_desc.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usbd_desc.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App\usbd_desc.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\App\usbd_desc.c.s
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/USB_DEVICE/Target/usbd_conf.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\Target\usbd_conf.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\Target\usbd_conf.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\Target\usbd_conf.c
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\Target\usbd_conf.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\Target\usbd_conf.c.i
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\Target\usbd_conf.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\USB_DEVICE\Target\usbd_conf.c.s
+
 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/User/Src/RTOS.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\User\Src\RTOS.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\User\Src\RTOS.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\User\Src\RTOS.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.i: cmake_force
@@ -644,7 +840,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.s: cmake_force
 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/User/Src/User_Lib.c
 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\User\Src\User_Lib.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\User\Src\User_Lib.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\User\Src\User_Lib.c
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.i: cmake_force
@@ -657,6 +853,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.s: cmake_force
 
 # Object files for target Engineer_Chassis_2025.elf
 Engineer_Chassis_2025_elf_OBJECTS = \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj" \
@@ -669,6 +867,7 @@ Engineer_Chassis_2025_elf_OBJECTS = \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj" \
@@ -680,6 +879,8 @@ Engineer_Chassis_2025_elf_OBJECTS = \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj" \
@@ -687,6 +888,11 @@ Engineer_Chassis_2025_elf_OBJECTS = \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj" \
@@ -697,12 +903,18 @@ Engineer_Chassis_2025_elf_OBJECTS = \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj"
 
 # External object files for target Engineer_Chassis_2025.elf
 Engineer_Chassis_2025_elf_EXTERNAL_OBJECTS =
 
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj
@@ -715,6 +927,7 @@ Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
@@ -726,6 +939,8 @@ Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM3
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
@@ -733,6 +948,11 @@ Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM3
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
@@ -743,12 +963,17 @@ Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/build.make
 Engineer_Chassis_2025.elf: bin_dsp/libCMSISDSP.a
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/objects1.rsp
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking C executable Engineer_Chassis_2025.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Linking C executable Engineer_Chassis_2025.elf"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Engineer_Chassis_2025.elf.dir\link.txt --verbose=$(VERBOSE)
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building E:/RM/CubeMx/Engineer_Chassis_2025/cmake-build-debug/Engineer_Chassis_2025.hex"
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold "Building E:/RM/CubeMx/Engineer_Chassis_2025/cmake-build-debug/Engineer_Chassis_2025.bin"

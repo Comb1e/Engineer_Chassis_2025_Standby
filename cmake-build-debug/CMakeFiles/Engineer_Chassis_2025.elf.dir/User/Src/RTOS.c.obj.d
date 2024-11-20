@@ -37,6 +37,9 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj: \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usb.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd_ex.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/FreeRTOSConfig.h \
@@ -45,6 +48,16 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj: \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/deprecated_definitions.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F/portmacro.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/mpu_wrappers.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h

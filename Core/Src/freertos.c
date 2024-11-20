@@ -58,7 +58,7 @@ const osThreadAttr_t defaultTask_attributes = {
 osThreadId_t remotectrl_TaskHandle;
 const osThreadAttr_t remotectrl_Task_attributes = {
   .name = "remotectrl_Task",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for RCUpdateBinarySem */
@@ -75,6 +75,7 @@ const osSemaphoreAttr_t RCUpdateBinarySem_attributes = {
 void StartDefaultTask(void *argument);
 void RemoteCtrl_Task(void *argument);
 
+extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /**
@@ -133,6 +134,8 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void *argument)
 {
+  /* init code for USB_DEVICE */
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for(;;)

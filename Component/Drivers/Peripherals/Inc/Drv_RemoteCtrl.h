@@ -145,28 +145,25 @@ typedef struct
     uint16_t V: 1;
     uint16_t B: 1;
 } rc_key_bit_t;
-
-typedef union
-{
-    struct
-    {
-        uint16_t ch0: 11;
-        uint16_t ch1: 11;
-        uint16_t ch2: 11;
-        uint16_t ch3: 11;
-        uint16_t s1: 2;
-        uint16_t s2: 2;
-        int16_t mouse_x: 16;
-        int16_t mouse_y: 16;
-        int16_t mouse_z: 16;
-        uint8_t left_click: 8;
-        uint8_t right_click: 8;
-        uint16_t keys: 16;
-        uint16_t wheel: 16;
-    };
-    uint8_t buff[DR16_BUFF_SIZE];
-} rc_raw_data_t;
 #pragma pack()
+
+typedef struct
+{
+    uint16_t ch0;
+    uint16_t ch1;
+    uint16_t ch2;
+    uint16_t ch3;
+    uint16_t s1;
+    uint16_t s2;
+    int16_t mouse_x;
+    int16_t mouse_y;
+    int16_t mouse_z;
+    uint8_t left_click;
+    uint8_t right_click;
+    uint16_t keys;
+    uint16_t wheel;
+}raw_data_t;
+
 
 typedef struct
 {
@@ -204,9 +201,16 @@ typedef struct
 
 typedef struct
 {
+    uint8_t rx_buff[DR16_BUFF_SIZE];
+    uint8_t solving_buff[DR16_BUFF_SIZE];
+    raw_data_t raw_data;
+} rc_rx_data_t;
+
+typedef struct
+{
     UART_HandleTypeDef * huart;
     ctrl_protection_t ctrl_protection;
-    rc_raw_data_t raw_data;
+    rc_rx_data_t rx_data;
     rc_data_t data;
     rc_data_t last_data;
     rc_event_t event;
@@ -217,6 +221,7 @@ extern rc_t rc;
 void RC_Set_Connect();
 void RC_Lost_CntDown();
 void RC_CheckConnection();
+void RemoteDataProcess(uint8_t *pData);
 void RC_UpdateData();
 void RC_UpdateEvent();
 

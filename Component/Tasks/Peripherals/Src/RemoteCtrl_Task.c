@@ -8,6 +8,7 @@
 #include "stm32f4xx_hal_uart.h"
 #include "usart.h"
 #include "RTOS.h"
+#include "BSP_Usart.h"
 
 void RemoteCtrl_Task(void *argument)
 {
@@ -15,9 +16,11 @@ void RemoteCtrl_Task(void *argument)
     RemoteCtrl_Task_Init();
     for(;;)
     {
+        Usart_Start_Receive_Dma(rc.huart,rc.rx_data.rx_buff,DR16_BUFF_SIZE);
         status = osSemaphoreAcquire(RCUpdateBinarySemHandle, 20);
         if(status == osOK)
         {
+            i++;
             RC_Set_Connect();
             RC_UpdateData();
             RC_UpdateEvent();
@@ -34,7 +37,8 @@ void RemoteCtrl_Task(void *argument)
 void RemoteCtrl_Task_Init()
 {
     rc.huart = &huart1;
-    HAL_UART_RegisterRxEventCallback(rc.huart, RC_RxCallBack);
+    HAL_UART_RegisterRxEventCallback(rc.huart,RC_RxCallBack);
+    Usart_Start_Receive_Dma(rc.huart,rc.rx_data.rx_buff,DR16_BUFF_SIZE);
 
     rc.ctrl_protection.connect_flag = false;
 
@@ -44,4 +48,6 @@ void RemoteCtrl_Task_Init()
 void RC_RxCallBack(UART_HandleTypeDef *huart, uint16_t Size)
 {
     osSemaphoreRelease(RCUpdateBinarySemHandle);
+    RemoteDataProcess(rc.rx_data.rx_buff);
 }
+

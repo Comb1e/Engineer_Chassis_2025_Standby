@@ -20,7 +20,9 @@
 #include "main.h"
 #include "cmsis_os.h"
 #include "dma.h"
+#include "tim.h"
 #include "usart.h"
+#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -46,7 +48,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+int i;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -92,8 +94,9 @@ int main(void)
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_USART1_UART_Init();
+  MX_TIM12_Init();
   /* USER CODE BEGIN 2 */
-
+  i=0;
   /* USER CODE END 2 */
 
   /* Init scheduler */
