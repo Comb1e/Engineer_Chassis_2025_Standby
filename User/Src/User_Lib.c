@@ -4,14 +4,15 @@
 
 #include "User_Lib.h"
 
-void ABS_Limit(float *target,float val)
+float ABS_Limit(float target,float val)
 {
-    if(*target > val)
+    if(target > val)
     {
-        *target = val;
+        return val;
     }
-    else if(*target < -val)
+    if(target < -val)
     {
-        *target = -val;
+        return -val;
     }
+    return target;
 }

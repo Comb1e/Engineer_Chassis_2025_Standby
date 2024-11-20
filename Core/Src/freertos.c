@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "BSP_Can.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -61,10 +61,51 @@ const osThreadAttr_t remotectrl_Task_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for can1_Task */
+osThreadId_t can1_TaskHandle;
+const osThreadAttr_t can1_Task_attributes = {
+  .name = "can1_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for can2_Task */
+osThreadId_t can2_TaskHandle;
+const osThreadAttr_t can2_Task_attributes = {
+  .name = "can2_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for chassis_Task */
+osThreadId_t chassis_TaskHandle;
+const osThreadAttr_t chassis_Task_attributes = {
+  .name = "chassis_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for CAN1SendQueue */
+osMessageQueueId_t CAN1SendQueueHandle;
+const osMessageQueueAttr_t CAN1SendQueue_attributes = {
+  .name = "CAN1SendQueue"
+};
+/* Definitions for CAN2SendQueue */
+osMessageQueueId_t CAN2SendQueueHandle;
+const osMessageQueueAttr_t CAN2SendQueue_attributes = {
+  .name = "CAN2SendQueue"
+};
 /* Definitions for RCUpdateBinarySem */
 osSemaphoreId_t RCUpdateBinarySemHandle;
 const osSemaphoreAttr_t RCUpdateBinarySem_attributes = {
   .name = "RCUpdateBinarySem"
+};
+/* Definitions for CAN1CountingSem */
+osSemaphoreId_t CAN1CountingSemHandle;
+const osSemaphoreAttr_t CAN1CountingSem_attributes = {
+  .name = "CAN1CountingSem"
+};
+/* Definitions for CAN2CountingSem */
+osSemaphoreId_t CAN2CountingSemHandle;
+const osSemaphoreAttr_t CAN2CountingSem_attributes = {
+  .name = "CAN2CountingSem"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -74,6 +115,9 @@ const osSemaphoreAttr_t RCUpdateBinarySem_attributes = {
 
 void StartDefaultTask(void *argument);
 void RemoteCtrl_Task(void *argument);
+void CAN1_Task(void *argument);
+void CAN2_Task(void *argument);
+void Chassis_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -96,6 +140,12 @@ void MX_FREERTOS_Init(void) {
   /* creation of RCUpdateBinarySem */
   RCUpdateBinarySemHandle = osSemaphoreNew(1, 1, &RCUpdateBinarySem_attributes);
 
+  /* creation of CAN1CountingSem */
+  CAN1CountingSemHandle = osSemaphoreNew(3, 0, &CAN1CountingSem_attributes);
+
+  /* creation of CAN2CountingSem */
+  CAN2CountingSemHandle = osSemaphoreNew(3, 0, &CAN2CountingSem_attributes);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -103,6 +153,13 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
   /* USER CODE END RTOS_TIMERS */
+
+  /* Create the queue(s) */
+  /* creation of CAN1SendQueue */
+  CAN1SendQueueHandle = osMessageQueueNew (32, sizeof(DJI_motor_can_tx_t), &CAN1SendQueue_attributes);
+
+  /* creation of CAN2SendQueue */
+  CAN2SendQueueHandle = osMessageQueueNew (32, sizeof(DJI_motor_can_tx_t), &CAN2SendQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -114,6 +171,15 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of remotectrl_Task */
   remotectrl_TaskHandle = osThreadNew(RemoteCtrl_Task, NULL, &remotectrl_Task_attributes);
+
+  /* creation of can1_Task */
+  can1_TaskHandle = osThreadNew(CAN1_Task, NULL, &can1_Task_attributes);
+
+  /* creation of can2_Task */
+  can2_TaskHandle = osThreadNew(CAN2_Task, NULL, &can2_Task_attributes);
+
+  /* creation of chassis_Task */
+  chassis_TaskHandle = osThreadNew(Chassis_Task, NULL, &chassis_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -161,6 +227,60 @@ __weak void RemoteCtrl_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END RemoteCtrl_Task */
+}
+
+/* USER CODE BEGIN Header_CAN1_Task */
+/**
+* @brief Function implementing the can1_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_CAN1_Task */
+__weak void CAN1_Task(void *argument)
+{
+  /* USER CODE BEGIN CAN1_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END CAN1_Task */
+}
+
+/* USER CODE BEGIN Header_CAN2_Task */
+/**
+* @brief Function implementing the can2_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_CAN2_Task */
+__weak void CAN2_Task(void *argument)
+{
+  /* USER CODE BEGIN CAN2_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END CAN2_Task */
+}
+
+/* USER CODE BEGIN Header_Chassis_Task */
+/**
+* @brief Function implementing the chassis_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Chassis_Task */
+__weak void Chassis_Task(void *argument)
+{
+  /* USER CODE BEGIN Chassis_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Chassis_Task */
 }
 
 /* Private application code --------------------------------------------------*/

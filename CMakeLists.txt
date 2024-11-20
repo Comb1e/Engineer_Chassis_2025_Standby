@@ -23,8 +23,6 @@ add_compile_definitions(ARM_MATH_CM4;ARM_MATH_MATRIX_CHECK;ARM_MATH_ROUNDING)
 add_compile_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 add_link_options(-mfloat-abi=hard -mfpu=fpv4-sp-d16)
 
-#add_compile_definitions(USE_HAL_USART_REGISTER_CALLBACKS=1u)
-
 #Uncomment for software floating point
 #add_compile_options(-mfloat-abi=soft)
 
@@ -55,7 +53,9 @@ include_directories(Core/Inc Drivers/STM32F4xx_HAL_Driver/Inc Drivers/STM32F4xx_
     BSP/Inc
     User/Inc
     Component/Tasks/Peripherals/Inc
+    Component/Tasks/Function/Inc
     Component/Drivers/Peripherals/Inc
+    Component/Drivers/Function/Inc
 )
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32F427xx)

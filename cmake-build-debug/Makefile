@@ -165,6 +165,30 @@ BSP/Src/BSP_Buzzer.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.s
 .PHONY : BSP/Src/BSP_Buzzer.c.s
 
+BSP/Src/BSP_Can.obj: BSP/Src/BSP_Can.c.obj
+.PHONY : BSP/Src/BSP_Can.obj
+
+# target to build an object file
+BSP/Src/BSP_Can.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Can.c.obj
+.PHONY : BSP/Src/BSP_Can.c.obj
+
+BSP/Src/BSP_Can.i: BSP/Src/BSP_Can.c.i
+.PHONY : BSP/Src/BSP_Can.i
+
+# target to preprocess a source file
+BSP/Src/BSP_Can.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Can.c.i
+.PHONY : BSP/Src/BSP_Can.c.i
+
+BSP/Src/BSP_Can.s: BSP/Src/BSP_Can.c.s
+.PHONY : BSP/Src/BSP_Can.s
+
+# target to generate assembly for a file
+BSP/Src/BSP_Can.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Can.c.s
+.PHONY : BSP/Src/BSP_Can.c.s
+
 BSP/Src/BSP_Usart.obj: BSP/Src/BSP_Usart.c.obj
 .PHONY : BSP/Src/BSP_Usart.obj
 
@@ -188,6 +212,54 @@ BSP/Src/BSP_Usart.s: BSP/Src/BSP_Usart.c.s
 BSP/Src/BSP_Usart.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.s
 .PHONY : BSP/Src/BSP_Usart.c.s
+
+Component/Drivers/Function/Src/Drv_Chassis.obj: Component/Drivers/Function/Src/Drv_Chassis.c.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Chassis.obj
+
+# target to build an object file
+Component/Drivers/Function/Src/Drv_Chassis.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.c.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Chassis.c.obj
+
+Component/Drivers/Function/Src/Drv_Chassis.i: Component/Drivers/Function/Src/Drv_Chassis.c.i
+.PHONY : Component/Drivers/Function/Src/Drv_Chassis.i
+
+# target to preprocess a source file
+Component/Drivers/Function/Src/Drv_Chassis.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.c.i
+.PHONY : Component/Drivers/Function/Src/Drv_Chassis.c.i
+
+Component/Drivers/Function/Src/Drv_Chassis.s: Component/Drivers/Function/Src/Drv_Chassis.c.s
+.PHONY : Component/Drivers/Function/Src/Drv_Chassis.s
+
+# target to generate assembly for a file
+Component/Drivers/Function/Src/Drv_Chassis.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.c.s
+.PHONY : Component/Drivers/Function/Src/Drv_Chassis.c.s
+
+Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj: Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.obj
+
+Component/Drivers/Peripherals/Src/Drv_DJI_Motor.i: Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.i
+
+Component/Drivers/Peripherals/Src/Drv_DJI_Motor.s: Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.s
 
 Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj: Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj
@@ -213,6 +285,78 @@ Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s
 
+Component/Tasks/Function/Src/Chassis_Task.obj: Component/Tasks/Function/Src/Chassis_Task.c.obj
+.PHONY : Component/Tasks/Function/Src/Chassis_Task.obj
+
+# target to build an object file
+Component/Tasks/Function/Src/Chassis_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.c.obj
+.PHONY : Component/Tasks/Function/Src/Chassis_Task.c.obj
+
+Component/Tasks/Function/Src/Chassis_Task.i: Component/Tasks/Function/Src/Chassis_Task.c.i
+.PHONY : Component/Tasks/Function/Src/Chassis_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Function/Src/Chassis_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.c.i
+.PHONY : Component/Tasks/Function/Src/Chassis_Task.c.i
+
+Component/Tasks/Function/Src/Chassis_Task.s: Component/Tasks/Function/Src/Chassis_Task.c.s
+.PHONY : Component/Tasks/Function/Src/Chassis_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Function/Src/Chassis_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.c.s
+.PHONY : Component/Tasks/Function/Src/Chassis_Task.c.s
+
+Component/Tasks/Peripherals/Src/CAN1_Task.obj: Component/Tasks/Peripherals/Src/CAN1_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/CAN1_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.c.obj
+
+Component/Tasks/Peripherals/Src/CAN1_Task.i: Component/Tasks/Peripherals/Src/CAN1_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/CAN1_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.c.i
+
+Component/Tasks/Peripherals/Src/CAN1_Task.s: Component/Tasks/Peripherals/Src/CAN1_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/CAN1_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.c.s
+
+Component/Tasks/Peripherals/Src/CAN2_Task.obj: Component/Tasks/Peripherals/Src/CAN2_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/CAN2_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.c.obj
+
+Component/Tasks/Peripherals/Src/CAN2_Task.i: Component/Tasks/Peripherals/Src/CAN2_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/CAN2_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.c.i
+
+Component/Tasks/Peripherals/Src/CAN2_Task.s: Component/Tasks/Peripherals/Src/CAN2_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/CAN2_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.c.s
+
 Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj: Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj
 .PHONY : Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj
 
@@ -236,6 +380,30 @@ Component/Tasks/Peripherals/Src/RemoteCtrl_Task.s: Component/Tasks/Peripherals/S
 Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s
 .PHONY : Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s
+
+Core/Src/can.obj: Core/Src/can.c.obj
+.PHONY : Core/Src/can.obj
+
+# target to build an object file
+Core/Src/can.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.obj
+.PHONY : Core/Src/can.c.obj
+
+Core/Src/can.i: Core/Src/can.c.i
+.PHONY : Core/Src/can.i
+
+# target to preprocess a source file
+Core/Src/can.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.i
+.PHONY : Core/Src/can.c.i
+
+Core/Src/can.s: Core/Src/can.c.s
+.PHONY : Core/Src/can.s
+
+# target to generate assembly for a file
+Core/Src/can.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.s
+.PHONY : Core/Src/can.c.s
 
 Core/Src/dma.obj: Core/Src/dma.c.obj
 .PHONY : Core/Src/dma.obj
@@ -556,6 +724,30 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.s: Drivers/STM32F4xx_HAL_Driver/S
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
 .PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.s
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.obj
+
+# target to build an object file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.i: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.i
+
+# target to preprocess a source file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.i
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.i
+
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.s: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.s
+
+# target to generate assembly for a file
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.s
+.PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.s
 
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj: Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
 .PHONY : Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj
@@ -1482,15 +1674,36 @@ help:
 	@echo ... BSP/Src/BSP_Buzzer.obj
 	@echo ... BSP/Src/BSP_Buzzer.i
 	@echo ... BSP/Src/BSP_Buzzer.s
+	@echo ... BSP/Src/BSP_Can.obj
+	@echo ... BSP/Src/BSP_Can.i
+	@echo ... BSP/Src/BSP_Can.s
 	@echo ... BSP/Src/BSP_Usart.obj
 	@echo ... BSP/Src/BSP_Usart.i
 	@echo ... BSP/Src/BSP_Usart.s
+	@echo ... Component/Drivers/Function/Src/Drv_Chassis.obj
+	@echo ... Component/Drivers/Function/Src/Drv_Chassis.i
+	@echo ... Component/Drivers/Function/Src/Drv_Chassis.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.s
+	@echo ... Component/Tasks/Function/Src/Chassis_Task.obj
+	@echo ... Component/Tasks/Function/Src/Chassis_Task.i
+	@echo ... Component/Tasks/Function/Src/Chassis_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.s
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.s
+	@echo ... Core/Src/can.obj
+	@echo ... Core/Src/can.i
+	@echo ... Core/Src/can.s
 	@echo ... Core/Src/dma.obj
 	@echo ... Core/Src/dma.i
 	@echo ... Core/Src/dma.s
@@ -1531,6 +1744,9 @@ help:
 	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.obj
 	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.i
 	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.s
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.obj
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.i
+	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.s
 	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.obj
 	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.i
 	@echo ... Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.s

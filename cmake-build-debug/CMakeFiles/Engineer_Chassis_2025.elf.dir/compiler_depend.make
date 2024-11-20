@@ -24,6 +24,52 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj: E:/RM/CubeMx/
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Can.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Src/BSP_Can.c \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/main.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -66,6 +112,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj: E:/RM/CubeMx/E
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -86,6 +133,121 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj: E:/RM/CubeMx/E
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Src/Drv_Chassis.c \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/limits.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/math.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/syslimits.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/float.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/limits.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/arm_math_memory.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/arm_math_types.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/basic_math_functions.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/none.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/utils.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c \
@@ -126,6 +288,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_R
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -155,6 +318,164 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_R
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/User_Lib.h
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Function/Src/Chassis_Task.c \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Function/Inc/Chassis_Task.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/CAN1_Task.c \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Inc/CAN1_Task.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/FreeRTOSConfig.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/RTOS.h
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/CAN2_Task.c \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Inc/CAN2_Task.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c \
   E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
@@ -193,6 +514,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteC
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -225,6 +547,50 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteC
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/RTOS.h
 
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/can.c \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/main.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/dma.c \
   E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
   E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
@@ -247,6 +613,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj: E:/RM/CubeMx/Engine
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -287,6 +654,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj: E:/RM/CubeMx/E
   E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \
   E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/FreeRTOSConfig.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/main.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
@@ -300,6 +668,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj: E:/RM/CubeMx/E
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -353,6 +722,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj: E:/RM/CubeMx/Engin
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -404,6 +774,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj: E:/RM/CubeMx/Engin
   E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/FreeRTOSConfig.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/dma.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/gpio.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/main.h \
@@ -420,6 +791,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj: E:/RM/CubeMx/Engin
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -475,6 +847,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj: E:/RM
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -516,6 +889,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.o
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -559,6 +933,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj: E:/RM/Cube
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -668,6 +1043,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj: E:/RM/
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -711,6 +1087,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj: E:/RM/CubeMx/Engine
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -754,6 +1131,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj: E:/RM/CubeMx/Engi
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -795,6 +1173,49 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h
+
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
+  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -836,6 +1257,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -877,6 +1299,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -918,6 +1341,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -959,6 +1383,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1000,6 +1425,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1041,6 +1467,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1082,6 +1509,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1123,6 +1551,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1164,6 +1593,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1205,6 +1635,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1246,6 +1677,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1287,6 +1719,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1328,6 +1761,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1369,6 +1803,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1410,6 +1845,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1451,6 +1887,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1492,6 +1929,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1533,6 +1971,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1594,6 +2033,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1661,6 +2101,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1727,6 +2168,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1793,6 +2235,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/ST/STM32_USB_Device_Library
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -1854,6 +2297,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -2229,6 +2673,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usb_device.c.obj: E:/RM/
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -2299,6 +2744,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_cdc_if.c.obj: E:/RM
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -2367,6 +2813,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/App/usbd_desc.c.obj: E:/RM/C
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -2434,6 +2881,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/USB_DEVICE/Target/usbd_conf.c.obj: E:/R
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -2492,6 +2940,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj: E:/RM/CubeMx/Engin
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -2544,6 +2993,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj: E:/RM/CubeMx/E
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
@@ -2567,10 +3017,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj: E:/RM/CubeMx/E
   E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/User_Lib.h
 
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h:
-
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h:
-
 E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Src/BSP_Buzzer.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/gpio.h:
@@ -2582,8 +3028,6 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h:
 E:/RM/CubeMx/Engineer_Chassis_2025/USB_DEVICE/App/usbd_desc.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h:
-
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h:
 
@@ -2605,8 +3049,6 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ha
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h:
 
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h:
-
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/time.h:
@@ -2625,6 +3067,10 @@ E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Buzzer.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/main.h:
 
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/CAN2_Task.c:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/can.h:
+
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h:
@@ -2639,15 +3085,17 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Core/
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_endian.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c:
-
-E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_RemoteCtrl.h:
+E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/limits.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h:
 
@@ -2655,9 +3103,9 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h:
 
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h:
-
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/dma.c:
 
@@ -2687,9 +3135,9 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
-
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/stdio.h:
 
@@ -2697,23 +3145,27 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ha
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h:
 
+E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Src/BSP_Can.c:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Can.h:
+
 E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Src/BSP_Usart.c:
 
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h:
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Src/Drv_Chassis.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Usart.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/gpio.c:
-
-E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
-
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h:
-
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h:
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/math.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h:
 
@@ -2723,6 +3175,56 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h:
 
+E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/gpio.c:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/syslimits.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/float.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/limits.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/arm_math_memory.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/arm_math_types.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_timeval.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/basic_math_functions.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_sigset.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/none.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/utils.h:
+
+E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_RemoteCtrl.h:
+
 E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/FreeRTOSConfig.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
@@ -2730,6 +3232,8 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/inclu
 E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Inc/CAN2_Task.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 
@@ -2741,15 +3245,25 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/inclu
 
 E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/User_Lib.h:
 
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Function/Src/Chassis_Task.c:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Function/Inc/Chassis_Task.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/CAN1_Task.c:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Inc/CAN1_Task.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/RTOS.h:
+
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Inc/RemoteCtrl_Task.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/usart.h:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
-
-E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/RTOS.h:
+E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/can.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
 
@@ -2762,8 +3276,6 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/main.c:
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/alloca.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/stdlib.h:
-
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdio.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdlib.h:
 
@@ -2785,8 +3297,6 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/syscalls.c:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/errno.h:
 
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_endian.h:
-
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_time.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/endian.h:
@@ -2797,13 +3307,7 @@ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/signal.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_pthreadtypes.h:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
-
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_sigset.h:
-
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_timespec.h:
-
-E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_timeval.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/errno.h:
 
@@ -2837,6 +3341,8 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/usart.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c:
 
+E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c:
+
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c:
@@ -2860,8 +3366,6 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/strea
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c:
-
-E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c:
 

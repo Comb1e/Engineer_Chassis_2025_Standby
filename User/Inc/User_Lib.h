@@ -9,6 +9,6 @@
 
 #define NORMALIZATION_MAX 1
 
-void ABS_Limit(float *target,float val);
+float ABS_Limit(float target,float val);
 
 #endif //USER_LIB_H

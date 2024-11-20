@@ -108,13 +108,13 @@ void RC_UpdateData()
     }
 
     rc.data.right_rocker.x = ((float)rc.rx_data.raw_data.ch0 - (float)CH_ORIGINE) / (float)CH_ERROR_MAX;
-    ABS_Limit(&rc.data.right_rocker.x,NORMALIZATION_MAX);
+    rc.data.right_rocker.x = ABS_Limit(rc.data.right_rocker.x,NORMALIZATION_MAX);
     rc.data.right_rocker.y = ((float)rc.rx_data.raw_data.ch1 - (float)CH_ORIGINE) / (float)CH_ERROR_MAX;
-    ABS_Limit(&rc.data.right_rocker.y,NORMALIZATION_MAX);
+    rc.data.right_rocker.y = ABS_Limit(rc.data.right_rocker.y,NORMALIZATION_MAX);
     rc.data.left_rocker.x = ((float)rc.rx_data.raw_data.ch2 - (float)CH_ORIGINE) / (float)CH_ERROR_MAX;
-    ABS_Limit(&rc.data.left_rocker.x,NORMALIZATION_MAX);
+    rc.data.left_rocker.x = ABS_Limit(rc.data.left_rocker.x,NORMALIZATION_MAX);
     rc.data.left_rocker.y = ((float)rc.rx_data.raw_data.ch3 - (float)CH_ORIGINE) / (float)CH_ERROR_MAX;
-    ABS_Limit(&rc.data.left_rocker.y,NORMALIZATION_MAX);
+    rc.data.left_rocker.y = ABS_Limit(rc.data.left_rocker.y,NORMALIZATION_MAX);
 
     rc.data.left_sw = (enum RC_SW)rc.rx_data.raw_data.s2;
     rc.data.right_sw = (enum RC_SW)rc.rx_data.raw_data.s1;
@@ -138,7 +138,7 @@ void RC_UpdateData()
     }
 
     rc.data.wheel = (-(float)rc.rx_data.raw_data.wheel - WHEEL_ORIGIN) / (float)WHEEL_ERROR_MAX;
-    ABS_Limit(&rc.data.wheel,NORMALIZATION_MAX);
+    rc.data.wheel = ABS_Limit(rc.data.wheel,NORMALIZATION_MAX);
 
     taskEXIT_CRITICAL();
 }

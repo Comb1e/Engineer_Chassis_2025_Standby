@@ -10,5 +10,7 @@
 
 /*信号量*/
 extern osSemaphoreId_t RCUpdateBinarySemHandle;
+extern osSemaphoreId_t CAN1CountingSemHandle;
+extern osSemaphoreId_t CAN2CountingSemHandle;
 
 #endif //RTOS_H
