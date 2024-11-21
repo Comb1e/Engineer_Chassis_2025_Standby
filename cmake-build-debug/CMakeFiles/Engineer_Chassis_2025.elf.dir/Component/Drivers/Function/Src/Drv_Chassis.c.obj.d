@@ -46,5 +46,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chas
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Can.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h

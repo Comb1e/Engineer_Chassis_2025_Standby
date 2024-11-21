@@ -285,6 +285,78 @@ BSP/Src/BSP_Usart.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.s
 .PHONY : BSP/Src/BSP_Usart.c.s
 
+Component/Algorithm/Src/CRC.obj: Component/Algorithm/Src/CRC.c.obj
+.PHONY : Component/Algorithm/Src/CRC.obj
+
+# target to build an object file
+Component/Algorithm/Src/CRC.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.obj
+.PHONY : Component/Algorithm/Src/CRC.c.obj
+
+Component/Algorithm/Src/CRC.i: Component/Algorithm/Src/CRC.c.i
+.PHONY : Component/Algorithm/Src/CRC.i
+
+# target to preprocess a source file
+Component/Algorithm/Src/CRC.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.i
+.PHONY : Component/Algorithm/Src/CRC.c.i
+
+Component/Algorithm/Src/CRC.s: Component/Algorithm/Src/CRC.c.s
+.PHONY : Component/Algorithm/Src/CRC.s
+
+# target to generate assembly for a file
+Component/Algorithm/Src/CRC.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.s
+.PHONY : Component/Algorithm/Src/CRC.c.s
+
+Component/Algorithm/Src/PID.obj: Component/Algorithm/Src/PID.c.obj
+.PHONY : Component/Algorithm/Src/PID.obj
+
+# target to build an object file
+Component/Algorithm/Src/PID.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.c.obj
+.PHONY : Component/Algorithm/Src/PID.c.obj
+
+Component/Algorithm/Src/PID.i: Component/Algorithm/Src/PID.c.i
+.PHONY : Component/Algorithm/Src/PID.i
+
+# target to preprocess a source file
+Component/Algorithm/Src/PID.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.c.i
+.PHONY : Component/Algorithm/Src/PID.c.i
+
+Component/Algorithm/Src/PID.s: Component/Algorithm/Src/PID.c.s
+.PHONY : Component/Algorithm/Src/PID.s
+
+# target to generate assembly for a file
+Component/Algorithm/Src/PID.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.c.s
+.PHONY : Component/Algorithm/Src/PID.c.s
+
+Component/Algorithm/Src/SPD_Plan.obj: Component/Algorithm/Src/SPD_Plan.c.obj
+.PHONY : Component/Algorithm/Src/SPD_Plan.obj
+
+# target to build an object file
+Component/Algorithm/Src/SPD_Plan.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
+.PHONY : Component/Algorithm/Src/SPD_Plan.c.obj
+
+Component/Algorithm/Src/SPD_Plan.i: Component/Algorithm/Src/SPD_Plan.c.i
+.PHONY : Component/Algorithm/Src/SPD_Plan.i
+
+# target to preprocess a source file
+Component/Algorithm/Src/SPD_Plan.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.i
+.PHONY : Component/Algorithm/Src/SPD_Plan.c.i
+
+Component/Algorithm/Src/SPD_Plan.s: Component/Algorithm/Src/SPD_Plan.c.s
+.PHONY : Component/Algorithm/Src/SPD_Plan.s
+
+# target to generate assembly for a file
+Component/Algorithm/Src/SPD_Plan.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.s
+.PHONY : Component/Algorithm/Src/SPD_Plan.c.s
+
 Component/Drivers/Function/Src/Drv_Chassis.obj: Component/Drivers/Function/Src/Drv_Chassis.c.obj
 .PHONY : Component/Drivers/Function/Src/Drv_Chassis.obj
 
@@ -1857,6 +1929,15 @@ help:
 	@echo ... BSP/Src/BSP_Usart.obj
 	@echo ... BSP/Src/BSP_Usart.i
 	@echo ... BSP/Src/BSP_Usart.s
+	@echo ... Component/Algorithm/Src/CRC.obj
+	@echo ... Component/Algorithm/Src/CRC.i
+	@echo ... Component/Algorithm/Src/CRC.s
+	@echo ... Component/Algorithm/Src/PID.obj
+	@echo ... Component/Algorithm/Src/PID.i
+	@echo ... Component/Algorithm/Src/PID.s
+	@echo ... Component/Algorithm/Src/SPD_Plan.obj
+	@echo ... Component/Algorithm/Src/SPD_Plan.i
+	@echo ... Component/Algorithm/Src/SPD_Plan.s
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.i
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.s

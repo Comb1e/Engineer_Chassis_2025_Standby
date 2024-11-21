@@ -55,6 +55,7 @@ include_directories(${includes}
     Component/Tasks/Function/Inc
     Component/Drivers/Peripherals/Inc
     Component/Drivers/Function/Inc
+    Component/Algorithm/Inc
 )
 
 add_definitions(${defines})

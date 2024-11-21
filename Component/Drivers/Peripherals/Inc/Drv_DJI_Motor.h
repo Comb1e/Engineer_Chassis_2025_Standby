@@ -7,6 +7,7 @@
 
 #include "stm32f4xx_hal.h"
 #include "BSP_Can.h"
+#include "PID.h"
 #include "stdbool.h"
 
 #define STALL_TIME 20
@@ -37,12 +38,6 @@ typedef struct
 
 typedef struct
 {
-    int32_t set_current;
-    int32_t set_velocity;
-}DJI_motor_set_data_t;
-
-typedef struct
-{
     float current_max;//未归一化
     float speed_min;//归一化
     uint8_t stall_cnt;
@@ -54,7 +49,9 @@ typedef struct
     DJI_motor_raw_data_t raw_data;
     DJI_motor_data_t current_data;
     DJI_motor_data_t last_data;
-    DJI_motor_set_data_t set_data;
+    variable_structure_pid_t pid_loc;
+    variable_structure_pid_t pid_vel;
+    variable_structure_pid_t pid_tor;
     stall_standard_t stall;
     enum DJI_MOTOR_TYPE type;
     bool reverse_flag;
