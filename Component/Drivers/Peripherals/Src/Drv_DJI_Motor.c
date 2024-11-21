@@ -4,17 +4,55 @@
 
 #include "Drv_DJI_Motor.h"
 #include <dsp/basic_math_functions.h>
+#include "can.h"
 
-void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t tx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type)
+void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type,CAN_HandleTypeDef *hcan)
 {
+    DJI_motor->can_device.tx.can_type = DJI_MOTOR;
+    DJI_motor->can_device.hcan = hcan;
+    if(DJI_motor->can_device.hcan == &hcan1)
+    {
+        DJI_motor->can_device.tx.can_buff_num == DJI_CAN1_TX_BUFF_NUM;
+    }
+    else
+    {
+        DJI_motor->can_device.tx.can_buff_num = DJI_CAN2_TX_BUFF_NUM;
+    }
+
     DJI_motor->reverse_flag = reverse_flag;
 
-    DJI_motor->can_tx.tx_id = tx_id;
+    DJI_motor->type = type;
+
+    DJI_motor->can_device.rx.rx_id = rx_id;
+    if(DJI_motor->type == DJI_M3508 || DJI_motor->type == DJI_M2006)
+    {
+        if(rx_id <= 0x204)
+        {
+            DJI_motor->can_device.tx.tx_buff_begin_serial_num = (rx_id - 0x201) * 2;
+            DJI_motor->can_device.tx.tx_buff_num = DJI_CAN_TX_BUFF_0X200_NUM;
+        }
+        else
+        {
+            DJI_motor->can_device.tx.tx_buff_begin_serial_num = (rx_id - 0x205) * 2;
+            DJI_motor->can_device.tx.tx_buff_num = DJI_CAN_TX_BUFF_0X1FF_NUM;
+        }
+    }
+    else if(DJI_motor->type == DJI_GM6020)
+    {
+        if(rx_id <= 0x208)
+        {
+            DJI_motor->can_device.tx.tx_buff_begin_serial_num = (rx_id - 0x205) * 2;
+            DJI_motor->can_device.tx.tx_buff_num = DJI_CAN_TX_BUFF_0X1FF_NUM;
+        }
+        else
+        {
+            DJI_motor->can_device.tx.tx_buff_begin_serial_num = (rx_id - 0x209) * 2;
+            DJI_motor->can_device.tx.tx_buff_num = DJI_CAN_TX_BUFF_0X2FF_NUM;
+        }
+    }
 
     DJI_motor->stall.current_max = stall_current_max;
     DJI_motor->stall.speed_min = stall_speed_min;
-
-    DJI_motor->type = type;
 
     DJI_motor->stall_flag = false;
 }

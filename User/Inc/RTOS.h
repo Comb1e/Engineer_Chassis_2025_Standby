@@ -8,6 +8,9 @@
 #include "stm32f4xx_hal.h"
 #include "cmsis_os.h"
 
+/*队列*/
+extern osMessageQueueId_t CAN1SendQueueHandle;
+extern osMessageQueueId_t CAN2SendQueueHandle;
 /*信号量*/
 extern osSemaphoreId_t RCUpdateBinarySemHandle;
 extern osSemaphoreId_t CAN1CountingSemHandle;

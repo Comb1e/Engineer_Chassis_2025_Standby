@@ -69,4 +69,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_D
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/arm_math_memory.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/arm_math_types.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/none.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/utils.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/utils.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h

@@ -64,4 +64,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Ta
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h

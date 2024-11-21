@@ -13,6 +13,8 @@
 #define CHASSIS_RB_NUM 2
 #define CHASSIS_RF_NUM 3
 
+#define CHASSIS_HCAN hcan1
+
 void Chassis_Init();
 
 extern DJI_motor_t wheel[4];

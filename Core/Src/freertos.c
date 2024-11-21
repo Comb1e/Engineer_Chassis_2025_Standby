@@ -156,10 +156,10 @@ void MX_FREERTOS_Init(void) {
 
   /* Create the queue(s) */
   /* creation of CAN1SendQueue */
-  CAN1SendQueueHandle = osMessageQueueNew (32, sizeof(DJI_motor_can_tx_t), &CAN1SendQueue_attributes);
+  CAN1SendQueueHandle = osMessageQueueNew (32, sizeof(can_tx_member_t), &CAN1SendQueue_attributes);
 
   /* creation of CAN2SendQueue */
-  CAN2SendQueueHandle = osMessageQueueNew (32, sizeof(DJI_motor_can_tx_t), &CAN2SendQueue_attributes);
+  CAN2SendQueueHandle = osMessageQueueNew (32, sizeof(can_tx_member_t), &CAN2SendQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */

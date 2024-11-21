@@ -50,7 +50,7 @@ typedef struct
 
 typedef struct
 {
-    DJI_motor_can_tx_t can_tx;
+    DJI_motor_can_device_t can_device;
     DJI_motor_raw_data_t raw_data;
     DJI_motor_data_t current_data;
     DJI_motor_data_t last_data;
@@ -61,7 +61,7 @@ typedef struct
     bool stall_flag;
 }DJI_motor_t;;
 
-void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t tx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type);
+void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type,CAN_HandleTypeDef *hcan);
 void Get_DJI_Motor_Raw_Data(DJI_motor_t *DJI_motor,uint8_t *rx_data);
 void Check_DJI_Motor_Stall(DJI_motor_t *DJI_motor);
 

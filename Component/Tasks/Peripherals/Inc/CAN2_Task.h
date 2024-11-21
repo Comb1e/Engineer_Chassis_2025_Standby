@@ -7,6 +7,7 @@
 
 #include "stm32f4xx_hal.h"
 
+void CAN2_Task_Init();
 void CAN2_Task(void *argument);
 
 #endif //CAN2_TASK_H
