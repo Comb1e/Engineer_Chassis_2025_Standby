@@ -15,5 +15,9 @@ extern osMessageQueueId_t CAN2SendQueueHandle;
 extern osSemaphoreId_t RCUpdateBinarySemHandle;
 extern osSemaphoreId_t CAN1CountingSemHandle;
 extern osSemaphoreId_t CAN2CountingSemHandle;
+extern osSemaphoreId_t ChassisLFUpdateBinarySemHandle;
+extern osSemaphoreId_t ChassisLBUpdateBinarySemHandle;
+extern osSemaphoreId_t ChassisRBUpdateBinarySemHandle;
+extern osSemaphoreId_t ChassisRFUpdateBinarySemHandle;
 
 #endif //RTOS_H

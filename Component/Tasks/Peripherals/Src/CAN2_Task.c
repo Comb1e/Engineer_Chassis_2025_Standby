@@ -27,4 +27,5 @@ void CAN2_Task_Init()
 {
     CAN2_Init();
     CAN2_Tx_Init();
+    CAN2_Filter_Init();
 }

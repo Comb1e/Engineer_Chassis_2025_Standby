@@ -27,4 +27,5 @@ void CAN1_Task_Init()
 {
     CAN1_Init();
     CAN1_Tx_Init();
+    CAN1_Filter_Init();
 }

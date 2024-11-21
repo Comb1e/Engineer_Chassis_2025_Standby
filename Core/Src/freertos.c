@@ -82,6 +82,13 @@ const osThreadAttr_t chassis_Task_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for iic_Task */
+osThreadId_t iic_TaskHandle;
+const osThreadAttr_t iic_Task_attributes = {
+  .name = "iic_Task",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -96,6 +103,26 @@ const osMessageQueueAttr_t CAN2SendQueue_attributes = {
 osSemaphoreId_t RCUpdateBinarySemHandle;
 const osSemaphoreAttr_t RCUpdateBinarySem_attributes = {
   .name = "RCUpdateBinarySem"
+};
+/* Definitions for ChassisLFUpdateBinarySem */
+osSemaphoreId_t ChassisLFUpdateBinarySemHandle;
+const osSemaphoreAttr_t ChassisLFUpdateBinarySem_attributes = {
+  .name = "ChassisLFUpdateBinarySem"
+};
+/* Definitions for ChassisLBUpdateBinarySem */
+osSemaphoreId_t ChassisLBUpdateBinarySemHandle;
+const osSemaphoreAttr_t ChassisLBUpdateBinarySem_attributes = {
+  .name = "ChassisLBUpdateBinarySem"
+};
+/* Definitions for ChassisRBUpdateBinarySem */
+osSemaphoreId_t ChassisRBUpdateBinarySemHandle;
+const osSemaphoreAttr_t ChassisRBUpdateBinarySem_attributes = {
+  .name = "ChassisRBUpdateBinarySem"
+};
+/* Definitions for ChassisRFUpdateBinarySem */
+osSemaphoreId_t ChassisRFUpdateBinarySemHandle;
+const osSemaphoreAttr_t ChassisRFUpdateBinarySem_attributes = {
+  .name = "ChassisRFUpdateBinarySem"
 };
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
@@ -118,6 +145,7 @@ void RemoteCtrl_Task(void *argument);
 void CAN1_Task(void *argument);
 void CAN2_Task(void *argument);
 void Chassis_Task(void *argument);
+void IIC_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -139,6 +167,18 @@ void MX_FREERTOS_Init(void) {
   /* Create the semaphores(s) */
   /* creation of RCUpdateBinarySem */
   RCUpdateBinarySemHandle = osSemaphoreNew(1, 1, &RCUpdateBinarySem_attributes);
+
+  /* creation of ChassisLFUpdateBinarySem */
+  ChassisLFUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ChassisLFUpdateBinarySem_attributes);
+
+  /* creation of ChassisLBUpdateBinarySem */
+  ChassisLBUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ChassisLBUpdateBinarySem_attributes);
+
+  /* creation of ChassisRBUpdateBinarySem */
+  ChassisRBUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ChassisRBUpdateBinarySem_attributes);
+
+  /* creation of ChassisRFUpdateBinarySem */
+  ChassisRFUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ChassisRFUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 0, &CAN1CountingSem_attributes);
@@ -180,6 +220,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of chassis_Task */
   chassis_TaskHandle = osThreadNew(Chassis_Task, NULL, &chassis_Task_attributes);
+
+  /* creation of iic_Task */
+  iic_TaskHandle = osThreadNew(IIC_Task, NULL, &iic_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -281,6 +324,24 @@ __weak void Chassis_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END Chassis_Task */
+}
+
+/* USER CODE BEGIN Header_IIC_Task */
+/**
+* @brief Function implementing the iic_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_IIC_Task */
+__weak void IIC_Task(void *argument)
+{
+  /* USER CODE BEGIN IIC_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END IIC_Task */
 }
 
 /* Private application code --------------------------------------------------*/
