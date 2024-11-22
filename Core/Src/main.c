@@ -21,7 +21,6 @@
 #include "cmsis_os.h"
 #include "can.h"
 #include "dma.h"
-#include "iwdg.h"
 #include "spi.h"
 #include "tim.h"
 #include "usart.h"
@@ -30,7 +29,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "Drv_IMU.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -74,7 +73,7 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-
+  __HAL_RCC_SYSCLK_CONFIG(RCC_SYSCLKSOURCE_HSI);
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -100,7 +99,6 @@ int main(void)
   MX_TIM12_Init();
   MX_CAN1_Init();
   MX_CAN2_Init();
-  MX_IWDG_Init();
   MX_SPI5_Init();
   MX_TIM3_Init();
   MX_UART7_Init();
@@ -109,6 +107,8 @@ int main(void)
   MX_USART6_UART_Init();
   /* USER CODE BEGIN 2 */
   i=0;
+  DWT_Init(168);
+  IMU_Init(&hspi5,0);
   /* USER CODE END 2 */
 
   /* Init scheduler */
@@ -150,9 +150,8 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_LSI|RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
   RCC_OscInitStruct.PLL.PLLM = 6;

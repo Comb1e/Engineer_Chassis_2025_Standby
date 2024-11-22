@@ -326,6 +326,7 @@
 				44,
 				45,
 				46,
+				57,
 				58,
 				59,
 				60,
@@ -339,8 +340,10 @@
 				68,
 				69,
 				70,
-				71,
-				72,
+				144,
+				145,
+				146,
+				147,
 				148,
 				149,
 				150,
@@ -358,31 +361,26 @@
 				162,
 				163,
 				164,
-				165,
 				166,
-				167,
-				168,
-				169,
 				171,
+				172,
+				173,
 				176,
-				177,
-				178,
+				180,
 				181,
-				185,
-				186,
+				200,
+				201,
+				203,
+				204,
 				205,
 				206,
+				207,
 				208,
-				209,
 				210,
-				211,
 				212,
-				213,
-				215,
-				217,
-				219,
-				223,
-				224
+				214,
+				218,
+				219
 			]
 		},
 		{
@@ -569,7 +567,7 @@
 			"language" : "ASM",
 			"sourceIndexes" : 
 			[
-				73
+				71
 			]
 		}
 	],
@@ -689,10 +687,11 @@
 				54,
 				55,
 				56,
-				57,
+				72,
+				73,
 				74,
-				75,
 				76,
+				77,
 				78,
 				79,
 				80,
@@ -721,8 +720,8 @@
 				103,
 				104,
 				105,
-				106,
 				107,
+				108,
 				109,
 				110,
 				111,
@@ -757,19 +756,20 @@
 				140,
 				141,
 				142,
-				143,
-				144,
-				145,
-				146,
+				165,
+				167,
+				168,
+				169,
 				170,
-				172,
-				173,
-				174,
 				175,
-				180,
+				177,
+				178,
+				179,
 				182,
 				183,
 				184,
+				185,
+				186,
 				187,
 				188,
 				189,
@@ -783,18 +783,13 @@
 				197,
 				198,
 				199,
-				200,
-				201,
 				202,
-				203,
-				204,
-				207,
-				214,
+				209,
+				211,
+				213,
+				215,
 				216,
-				218,
-				220,
-				221,
-				222
+				217
 			]
 		},
 		{
@@ -823,6 +818,7 @@
 				44,
 				45,
 				46,
+				57,
 				58,
 				59,
 				60,
@@ -836,8 +832,10 @@
 				68,
 				69,
 				70,
-				71,
-				72,
+				144,
+				145,
+				146,
+				147,
 				148,
 				149,
 				150,
@@ -855,43 +853,38 @@
 				162,
 				163,
 				164,
-				165,
 				166,
-				167,
-				168,
-				169,
 				171,
+				172,
+				173,
 				176,
-				177,
-				178,
+				180,
 				181,
-				185,
-				186,
+				200,
+				201,
+				203,
+				204,
 				205,
 				206,
+				207,
 				208,
-				209,
 				210,
-				211,
 				212,
-				213,
-				215,
-				217,
-				219,
-				223,
-				224
+				214,
+				218,
+				219
 			]
 		},
 		{
 			"name" : "",
 			"sourceIndexes" : 
 			[
-				73,
-				77,
-				108,
-				147,
-				179,
-				225
+				71,
+				75,
+				106,
+				143,
+				174,
+				220
 			]
 		}
 	],
@@ -1176,11 +1169,6 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Core/Inc/iwdg.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "Core/Inc/main.h",
 			"sourceGroupIndex" : 0
 		},
@@ -1231,12 +1219,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Core/Src/gpio.c",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Core/Src/iwdg.c",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -1547,11 +1529,6 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
 			"path" : "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h",
 			"sourceGroupIndex" : 0
 		},
@@ -1623,11 +1600,6 @@
 		{
 			"backtrace" : 1,
 			"path" : "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_iwdg.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1733,12 +1705,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c",
 			"sourceGroupIndex" : 1
 		},
 		{

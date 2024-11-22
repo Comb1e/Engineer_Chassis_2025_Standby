@@ -33,7 +33,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/IMU_Tas
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ex.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ramfunc.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_iwdg.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr_ex.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_spi.h \
@@ -121,4 +120,5 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/IMU_Tas
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/quaternion_math_functions.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/window_functions.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/fast_math_functions.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_DWT.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_DWT.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h

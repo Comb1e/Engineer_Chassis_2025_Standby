@@ -123,8 +123,6 @@ void IMU_Set_Current_As_Offset();
 void IMU_Get_Euler_Whx();
 void IMU_Set_Enable();
 void IMU_Set_Disable();
-void Do_IMU_Ahrs_Update();
-void Do_IMU_Attitude_Update();
 void IMU_Get_Data();
 void IMU_Set_Lost();
 void IMU_Set_Connected();

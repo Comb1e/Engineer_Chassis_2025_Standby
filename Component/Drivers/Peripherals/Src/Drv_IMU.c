@@ -695,16 +695,9 @@ void IMU_Ahrs_Update(imu_data_t *data)
     ay = ay * norm;
     az = az * norm;
 
-#ifdef IST8310
-    norm = Inv_Sqrt(mx * mx + my * my + mz * mz);
-    mx = mx * norm;
-    my = my * norm;
-    mz = mz * norm;
-#else
     mx = 0;
     my = 0;
     mz = 0;
-#endif
     /* compute reference direction of flux */
     hx = 2.0f * mx * (0.5f - q2q2 - q3q3) + 2.0f * my * (q1q2 - q0q3) + 2.0f * mz * (q1q3 + q0q2);
     hy = 2.0f * mx * (q1q2 + q0q3) + 2.0f * my * (0.5f - q1q1 - q3q3) + 2.0f * mz * (q2q3 - q0q1);
@@ -794,10 +787,8 @@ uint8_t IMU_Init(SPI_HandleTypeDef *hspi, uint8_t calibrate)
     IMU.data.TempWhenCali = 40;
     return 0;
 }
-#if MAHONY
 
 uint32_t mahony_offset = false;
-#endif
 void IMU_Update_Data()
 {
     taskENTER_CRITICAL();
@@ -806,13 +797,14 @@ void IMU_Update_Data()
         IMU.state.zero_offset_flag = false;
         IMU.offset_cnt = 0;
     }
-#if MAHONY
-    if (mahony_offset < 1000) {
+
+    if (mahony_offset < 1000)
+    {
         mahony_offset++;
         taskEXIT_CRITICAL();
         return;
     }
-#endif
+
     if (IMU.offset_cnt < 50 && (!IMU.state.zero_offset_flag))
     {
         IMU.euler.Yaw.last_deg = IMU.euler.Yaw.current_deg;
@@ -921,16 +913,6 @@ void IMU_Set_Enable()
 void IMU_Set_Disable()
 {
     IMU.state.enable_flag = false;
-}
-
-void Do_IMU_Ahrs_Update()
-{
-    IMU_Ahrs_Update(&IMU.data);
-}
-
-void Do_IMU_Attitude_Update()
-{
-    IMU_Attitude_Update(&IMU.data);
 }
 
 void IMU_Get_Data()

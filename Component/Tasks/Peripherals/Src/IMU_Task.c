@@ -5,10 +5,11 @@
 #include "IMU_Task.h"
 #include "cmsis_os2.h"
 #include "Drv_IMU.h"
+#include "main.h"
 #include "stm32f4xx_hal_spi.h"
 #include "RTOS.h"
 
-void imu_task(void *argument)
+void IMU_Task(void *argument)
 {
     static osStatus_t s_stat;
     HAL_SPI_RegisterCallback(IMU.hspi, HAL_SPI_TX_RX_COMPLETE_CB_ID, IMURxCallBack);
@@ -34,13 +35,10 @@ void imu_task(void *argument)
         {
             IMU_Set_Connected();
             IMU_Get_Data();
-#if MAHONY
-            g_imu.ahrs_update();
-            g_imu.attitude_update();
-#else
-            IMU_Get_Euler_Whx();
-#endif
+            IMU_Ahrs_Update(&IMU.data);
+            IMU_Attitude_Update(&IMU.data);
             IMU_Update_Data();
+
         }
         else
         {
