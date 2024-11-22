@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "BSP_Can.h"
+#include "Drv_SerialServo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -112,6 +113,11 @@ const osMessageQueueAttr_t CAN1SendQueue_attributes = {
 osMessageQueueId_t CAN2SendQueueHandle;
 const osMessageQueueAttr_t CAN2SendQueue_attributes = {
   .name = "CAN2SendQueue"
+};
+/* Definitions for ServoCtrlQueue */
+osMessageQueueId_t ServoCtrlQueueHandle;
+const osMessageQueueAttr_t ServoCtrlQueue_attributes = {
+  .name = "ServoCtrlQueue"
 };
 /* Definitions for RCUpdateBinarySem */
 osSemaphoreId_t RCUpdateBinarySemHandle;
@@ -232,6 +238,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of CAN2SendQueue */
   CAN2SendQueueHandle = osMessageQueueNew (32, sizeof(can_tx_member_t), &CAN2SendQueue_attributes);
+
+  /* creation of ServoCtrlQueue */
+  ServoCtrlQueueHandle = osMessageQueueNew (16, sizeof(servo_ctrl_data_t), &ServoCtrlQueue_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */

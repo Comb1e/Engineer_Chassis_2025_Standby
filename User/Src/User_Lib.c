@@ -3,6 +3,7 @@
 //
 
 #include "User_Lib.h"
+#include <string.h>
 
 float ABS_Limit(float target,float val)
 {
@@ -30,4 +31,11 @@ uint32_t Get_Time_ms()
 float Get_Time_ms_us()
 {
     return ((float)Get_Time_ms() + (float)Get_Time_us()/1000.0f);
+}
+
+uint16_t unsigned_16(uint8_t *p)
+{
+    uint16_t u;
+    memcpy(&u, p, 2);
+    return u;
 }

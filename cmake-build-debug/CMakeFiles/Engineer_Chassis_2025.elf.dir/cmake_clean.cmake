@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_IMU.c.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj.d"
+  "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj"
+  "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.c.obj"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.c.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.c.obj"

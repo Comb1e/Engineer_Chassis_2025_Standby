@@ -525,6 +525,30 @@ Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s
 
+Component/Drivers/Peripherals/Src/Drv_SerialServo.obj: Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj
+
+Component/Drivers/Peripherals/Src/Drv_SerialServo.i: Component/Drivers/Peripherals/Src/Drv_SerialServo.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/Src/Drv_SerialServo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.c.i
+
+Component/Drivers/Peripherals/Src/Drv_SerialServo.s: Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
+
 Component/Tasks/Function/Src/Chassis_Task.obj: Component/Tasks/Function/Src/Chassis_Task.c.obj
 .PHONY : Component/Tasks/Function/Src/Chassis_Task.obj
 
@@ -2055,6 +2079,9 @@ help:
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.s
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.obj
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.i
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.s
