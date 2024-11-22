@@ -9,6 +9,12 @@
 
 #define NORMALIZATION_MAX 1
 
+#define PI 3.14159265358979f
+#define DEC_CON (float) PI/180
+
+uint32_t Get_Time_us();
+uint32_t Get_Time_ms();
+float Get_Time_ms_us();
 float ABS_Limit(float target,float val);
 
 /**
@@ -17,7 +23,7 @@ float ABS_Limit(float target,float val);
  * @param 结构体的名称
  * @param 子变量在结构体的名称
  */
-#define container_of(ptr, type, member) ({ \
+#define Container_Of(ptr, type, member) ({ \
 const typeof(((type *)0)->member) *__mptr = (ptr) ; \
 (type *)((char *)__mptr - offsetof(type,member)) ;})
 

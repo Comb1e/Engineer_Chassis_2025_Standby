@@ -15,8 +15,13 @@
 
 #define CHASSIS_HCAN hcan1
 
+typedef struct
+{
+    DJI_motor_t M3508[4];//轮子
+}chassis_t;
+
 void Chassis_Init();
 
-extern DJI_motor_t wheel[4];
+extern chassis_t chassis;
 
 #endif //DRV_CHASSIS_H

@@ -381,6 +381,54 @@ Component/Drivers/Function/Src/Drv_Chassis.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.c.s
 .PHONY : Component/Drivers/Function/Src/Drv_Chassis.c.s
 
+Component/Drivers/Peripherals/IMU/QuaternionEKF.obj: Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
+.PHONY : Component/Drivers/Peripherals/IMU/QuaternionEKF.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
+.PHONY : Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
+
+Component/Drivers/Peripherals/IMU/QuaternionEKF.i: Component/Drivers/Peripherals/IMU/QuaternionEKF.c.i
+.PHONY : Component/Drivers/Peripherals/IMU/QuaternionEKF.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/IMU/QuaternionEKF.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.i
+.PHONY : Component/Drivers/Peripherals/IMU/QuaternionEKF.c.i
+
+Component/Drivers/Peripherals/IMU/QuaternionEKF.s: Component/Drivers/Peripherals/IMU/QuaternionEKF.c.s
+.PHONY : Component/Drivers/Peripherals/IMU/QuaternionEKF.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/IMU/QuaternionEKF.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.s
+.PHONY : Component/Drivers/Peripherals/IMU/QuaternionEKF.c.s
+
+Component/Drivers/Peripherals/IMU/kalman_filter_whx.obj: Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
+.PHONY : Component/Drivers/Peripherals/IMU/kalman_filter_whx.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
+.PHONY : Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
+
+Component/Drivers/Peripherals/IMU/kalman_filter_whx.i: Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.i
+.PHONY : Component/Drivers/Peripherals/IMU/kalman_filter_whx.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.i
+.PHONY : Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.i
+
+Component/Drivers/Peripherals/IMU/kalman_filter_whx.s: Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.s
+.PHONY : Component/Drivers/Peripherals/IMU/kalman_filter_whx.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.s
+.PHONY : Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.s
+
 Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj: Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj
 
@@ -404,6 +452,54 @@ Component/Drivers/Peripherals/Src/Drv_DJI_Motor.s: Component/Drivers/Peripherals
 Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.c.s
+
+Component/Drivers/Peripherals/Src/Drv_HI229UM.obj: Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj
+
+Component/Drivers/Peripherals/Src/Drv_HI229UM.i: Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i
+
+Component/Drivers/Peripherals/Src/Drv_HI229UM.s: Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s
+
+Component/Drivers/Peripherals/Src/Drv_IMU.obj: Component/Drivers/Peripherals/Src/Drv_IMU.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_IMU.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/Src/Drv_IMU.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_IMU.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_IMU.c.obj
+
+Component/Drivers/Peripherals/Src/Drv_IMU.i: Component/Drivers/Peripherals/Src/Drv_IMU.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_IMU.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/Src/Drv_IMU.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_IMU.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_IMU.c.i
+
+Component/Drivers/Peripherals/Src/Drv_IMU.s: Component/Drivers/Peripherals/Src/Drv_IMU.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_IMU.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/Src/Drv_IMU.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_IMU.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_IMU.c.s
 
 Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj: Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj
@@ -500,6 +596,54 @@ Component/Tasks/Peripherals/Src/CAN2_Task.s: Component/Tasks/Peripherals/Src/CAN
 Component/Tasks/Peripherals/Src/CAN2_Task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.c.s
 .PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.c.s
+
+Component/Tasks/Peripherals/Src/HI299UM_Task.obj: Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/HI299UM_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
+
+Component/Tasks/Peripherals/Src/HI299UM_Task.i: Component/Tasks/Peripherals/Src/HI299UM_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/HI299UM_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/HI299UM_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/HI299UM_Task.c.i
+
+Component/Tasks/Peripherals/Src/HI299UM_Task.s: Component/Tasks/Peripherals/Src/HI299UM_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/HI299UM_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/HI299UM_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/HI299UM_Task.c.s
+
+Component/Tasks/Peripherals/Src/IMU_Task.obj: Component/Tasks/Peripherals/Src/IMU_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/IMU_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/IMU_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/IMU_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/IMU_Task.c.obj
+
+Component/Tasks/Peripherals/Src/IMU_Task.i: Component/Tasks/Peripherals/Src/IMU_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/IMU_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/IMU_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/IMU_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/IMU_Task.c.i
+
+Component/Tasks/Peripherals/Src/IMU_Task.s: Component/Tasks/Peripherals/Src/IMU_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/IMU_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/IMU_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/IMU_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/IMU_Task.c.s
 
 Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj: Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj
 .PHONY : Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj
@@ -1941,9 +2085,21 @@ help:
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.i
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.s
+	@echo ... Component/Drivers/Peripherals/IMU/QuaternionEKF.obj
+	@echo ... Component/Drivers/Peripherals/IMU/QuaternionEKF.i
+	@echo ... Component/Drivers/Peripherals/IMU/QuaternionEKF.s
+	@echo ... Component/Drivers/Peripherals/IMU/kalman_filter_whx.obj
+	@echo ... Component/Drivers/Peripherals/IMU/kalman_filter_whx.i
+	@echo ... Component/Drivers/Peripherals/IMU/kalman_filter_whx.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_HI229UM.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_HI229UM.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_HI229UM.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_IMU.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_IMU.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_IMU.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.s
@@ -1956,6 +2112,12 @@ help:
 	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/IMU_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/IMU_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/IMU_Task.s
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.s

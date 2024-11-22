@@ -103,7 +103,7 @@
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 62,
+				"line" : 63,
 				"parent" : 2
 			},
 			{
@@ -115,7 +115,7 @@
 			{
 				"command" : 6,
 				"file" : 1,
-				"line" : 76,
+				"line" : 77,
 				"parent" : 2
 			},
 			{
@@ -2985,6 +2985,10 @@
 				{
 					"backtrace" : 11,
 					"path" : "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/IMU"
 				},
 				{
 					"backtrace" : 12,

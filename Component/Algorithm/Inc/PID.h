@@ -6,13 +6,13 @@
 #define PID_H
 
 #include "stm32f4xx_hal.h"
-#include "stdbool.h"
 
 
 typedef struct
 {
     float target_vel;
-    float set_current;
+    float target_tor;
+    int16_t set_current;
 }target_data_t;
 
 typedef struct
@@ -28,9 +28,7 @@ typedef struct
     float d_out;
     float i_out_max;
     float max_out;
-    int32_t round_cnt;
-    int32_t loc_all;
-    target_data_t target_data;
+    float target_ecd;//不用作pid计算
 }pid_t;
 
 typedef struct

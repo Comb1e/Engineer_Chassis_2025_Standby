@@ -86,7 +86,21 @@ const osThreadAttr_t chassis_Task_attributes = {
 osThreadId_t iic_TaskHandle;
 const osThreadAttr_t iic_Task_attributes = {
   .name = "iic_Task",
-  .stack_size = 128 * 4,
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for hi229um_Task */
+osThreadId_t hi229um_TaskHandle;
+const osThreadAttr_t hi229um_Task_attributes = {
+  .name = "hi229um_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for imu_Task */
+osThreadId_t imu_TaskHandle;
+const osThreadAttr_t imu_Task_attributes = {
+  .name = "imu_Task",
+  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for CAN1SendQueue */
@@ -124,6 +138,16 @@ osSemaphoreId_t ChassisRFUpdateBinarySemHandle;
 const osSemaphoreAttr_t ChassisRFUpdateBinarySem_attributes = {
   .name = "ChassisRFUpdateBinarySem"
 };
+/* Definitions for HI229UMRxBinarySem */
+osSemaphoreId_t HI229UMRxBinarySemHandle;
+const osSemaphoreAttr_t HI229UMRxBinarySem_attributes = {
+  .name = "HI229UMRxBinarySem"
+};
+/* Definitions for IMUDMABinarySem */
+osSemaphoreId_t IMUDMABinarySemHandle;
+const osSemaphoreAttr_t IMUDMABinarySem_attributes = {
+  .name = "IMUDMABinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -146,6 +170,8 @@ void CAN1_Task(void *argument);
 void CAN2_Task(void *argument);
 void Chassis_Task(void *argument);
 void IIC_Task(void *argument);
+void HI229UM_Task(void *argument);
+void IMU_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -179,6 +205,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of ChassisRFUpdateBinarySem */
   ChassisRFUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ChassisRFUpdateBinarySem_attributes);
+
+  /* creation of HI229UMRxBinarySem */
+  HI229UMRxBinarySemHandle = osSemaphoreNew(1, 1, &HI229UMRxBinarySem_attributes);
+
+  /* creation of IMUDMABinarySem */
+  IMUDMABinarySemHandle = osSemaphoreNew(1, 1, &IMUDMABinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 0, &CAN1CountingSem_attributes);
@@ -223,6 +255,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of iic_Task */
   iic_TaskHandle = osThreadNew(IIC_Task, NULL, &iic_Task_attributes);
+
+  /* creation of hi229um_Task */
+  hi229um_TaskHandle = osThreadNew(HI229UM_Task, NULL, &hi229um_Task_attributes);
+
+  /* creation of imu_Task */
+  imu_TaskHandle = osThreadNew(IMU_Task, NULL, &imu_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -342,6 +380,42 @@ __weak void IIC_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END IIC_Task */
+}
+
+/* USER CODE BEGIN Header_HI229UM_Task */
+/**
+* @brief Function implementing the hi229um_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_HI229UM_Task */
+__weak void HI229UM_Task(void *argument)
+{
+  /* USER CODE BEGIN HI229UM_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END HI229UM_Task */
+}
+
+/* USER CODE BEGIN Header_IMU_Task */
+/**
+* @brief Function implementing the imu_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_IMU_Task */
+__weak void IMU_Task(void *argument)
+{
+  /* USER CODE BEGIN IMU_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END IMU_Task */
 }
 
 /* Private application code --------------------------------------------------*/

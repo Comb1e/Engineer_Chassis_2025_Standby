@@ -13,8 +13,7 @@ void PID_Init(pid_t *pid,float kp,float ki,float kd,float i_out_max,float max_ou
     pid->Kd = kd;
     pid->i_out_max = i_out_max;
     pid->max_out = max_out;
-    pid->round_cnt = 0;
-    pid->loc_all = 0;
+    pid->target_ecd = 0;
 }
 
 void PID_Error_Calculate_N_Loc(pid_t *pid,float target,float now)
@@ -29,7 +28,6 @@ void PID_Error_Calculate_Loc(pid_t *pid,float now,float last)
         if(now - last > 0.5)
         {
             pid->error = (1 - now + last);
-            pid->round_cnt--;
         }
         else
         {
@@ -41,7 +39,6 @@ void PID_Error_Calculate_Loc(pid_t *pid,float now,float last)
         if(now - last < -0.5)
         {
             pid->error = -(last - 0.5 + now);
-            pid->round_cnt++;
         }
         else
         {

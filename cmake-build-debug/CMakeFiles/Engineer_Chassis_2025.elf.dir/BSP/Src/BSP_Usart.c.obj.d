@@ -43,4 +43,5 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj: \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usb.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd_ex.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usart.h

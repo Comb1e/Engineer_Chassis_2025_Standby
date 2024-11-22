@@ -102,7 +102,7 @@ void CAN_Send(const DJI_motor_can_tx_t *DJI_motor_can_tx)
     {
         if(DJI_motor_can_tx->can_buff_num == DJI_CAN1_TX_BUFF_NUM)
         {
-            DJI_can_tx_buff[DJI_CAN1_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num] = DJI_motor_can_tx->data[0] >> 8;
+            DJI_can_tx_buff[DJI_CAN1_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num] = DJI_motor_can_tx->data[0];
             DJI_can_tx_buff[DJI_CAN1_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num + 1] = DJI_motor_can_tx->data[1];
             can_tx_member.can_tx_buff = DJI_can_tx_buff[DJI_CAN1_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num];
             switch (DJI_motor_can_tx->tx_buff_num)
@@ -131,7 +131,7 @@ void CAN_Send(const DJI_motor_can_tx_t *DJI_motor_can_tx)
         }
         else
         {
-            DJI_can_tx_buff[DJI_CAN2_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num] = DJI_motor_can_tx->data[0] >> 8;
+            DJI_can_tx_buff[DJI_CAN2_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num] = DJI_motor_can_tx->data[0];
             DJI_can_tx_buff[DJI_CAN2_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num + 1] = DJI_motor_can_tx->data[1];
             can_tx_member.can_tx_buff = DJI_can_tx_buff[DJI_CAN2_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num];
             switch (DJI_motor_can_tx->tx_buff_num)
@@ -194,7 +194,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
     uint8_t rx_data[8];
     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data);
     taskENTER_CRITICAL();
-    can_rx_callback[CAN1_DEVICE_SERIAL_NUM][rx_header.FilterMatchIndex](rx_data);
+    can_rx_callback[CAN1_DEVICE_SERIAL_NUM][rx_header.FilterMatchIndex](rx_header.StdId,rx_data);
     taskEXIT_CRITICAL();
 }
 
@@ -204,6 +204,6 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
     uint8_t rx_data[8];
     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO1, &rx_header, rx_data);
     taskENTER_CRITICAL();
-    can_rx_callback[CAN2_DEVICE_SERIAL_NUM][rx_header.FilterMatchIndex](rx_data);
+    can_rx_callback[CAN2_DEVICE_SERIAL_NUM][rx_header.FilterMatchIndex](rx_header.StdId,rx_data);
     taskEXIT_CRITICAL();
 }

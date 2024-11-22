@@ -19,5 +19,7 @@ extern osSemaphoreId_t ChassisLFUpdateBinarySemHandle;
 extern osSemaphoreId_t ChassisLBUpdateBinarySemHandle;
 extern osSemaphoreId_t ChassisRBUpdateBinarySemHandle;
 extern osSemaphoreId_t ChassisRFUpdateBinarySemHandle;
+extern osSemaphoreId_t HI229UMRxBinarySemHandle;
+extern osSemaphoreId_t IMUDMABinarySemHandle;
 
 #endif //RTOS_H

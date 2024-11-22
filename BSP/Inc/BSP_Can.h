@@ -5,6 +5,7 @@
 #ifndef BSP_CAN_H
 #define BSP_CAN_H
 
+#include "cmsis_os2.h"
 #include "stm32f4xx_hal.h"
 #include "stdbool.h"
 
@@ -24,7 +25,7 @@
 #define CAN2_DEVICE_SERIAL_NUM 1
 #define MAX_CAN_DEVICE_NUM (14 * 4)
 
-typedef void (can_rx_callback_f)(uint8_t *data);
+typedef void (can_rx_callback_f)(uint32_t rx_id,uint8_t *data);
 
 enum CAN_TYPE
 {
@@ -53,6 +54,7 @@ typedef struct
     CAN_HandleTypeDef *hcan;
     DJI_motor_can_tx_t tx;
     can_rx_t rx;
+    osSemaphoreId_t rx_sem;
 }DJI_motor_can_device_t;
 
 typedef struct
