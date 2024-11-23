@@ -25,7 +25,7 @@
 #define CAN2_DEVICE_SERIAL_NUM 1
 #define MAX_CAN_DEVICE_NUM (14 * 4)
 
-typedef void (can_rx_callback_f)(uint32_t rx_id,uint8_t *data);
+typedef void (can_rx_callback_f)(const uint32_t std_id,const uint8_t *data);
 
 enum CAN_TYPE
 {
@@ -87,5 +87,7 @@ static can_rx_callback_f *can_rx_callback[2][MAX_CAN_DEVICE_NUM];
 
 extern bool can1_filter_ready_to_init;
 extern bool can2_filter_ready_to_init;
+
+extern CAN_RxHeaderTypeDef rx_header;
 
 #endif //BSP_CAN_H

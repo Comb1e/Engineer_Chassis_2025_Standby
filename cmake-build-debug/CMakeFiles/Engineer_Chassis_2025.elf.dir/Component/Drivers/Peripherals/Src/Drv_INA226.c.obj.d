@@ -1,6 +1,6 @@
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.c.obj: \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Function\Src\Chassis_Task.c \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Function\Inc/Chassis_Task.h \
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj: \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_INA226.c \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_INA226.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/stm32f4xx_hal_conf.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
@@ -42,10 +42,24 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Ta
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usb.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd_ex.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Chassis.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Can.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_IIC.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/FreeRTOSConfig.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/projdefs.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/portable.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/deprecated_definitions.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F/portmacro.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/mpu_wrappers.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/newlib.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/list.h

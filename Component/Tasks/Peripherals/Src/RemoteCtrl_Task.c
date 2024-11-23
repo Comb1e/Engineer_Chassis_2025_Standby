@@ -20,7 +20,6 @@ void RemoteCtrl_Task(void *argument)
         status = osSemaphoreAcquire(RCUpdateBinarySemHandle, 20);
         if(status == osOK)
         {
-            i++;
             RC_Set_Connect();
             RC_UpdateData();
             RC_UpdateEvent();

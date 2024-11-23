@@ -39,3 +39,12 @@ uint16_t unsigned_16(uint8_t *p)
     memcpy(&u, p, 2);
     return u;
 }
+
+float ABS(float target)
+{
+    if(target < 0)
+    {
+        return -target;
+    }
+    return target;
+}

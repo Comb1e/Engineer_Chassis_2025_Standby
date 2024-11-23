@@ -25,8 +25,8 @@ typedef struct
 
 void Delay(uint32_t t);
 void IIC_Init(IIC_member_t *IIC_member,GPIO_TypeDef *GPIO, uint16_t SCL_PIN, uint16_t SDA_PIN);
-void Set_SDA(IIC_member_t *IIC_member,GPIO_LEVEL_e level);
-void Set_SCL(IIC_member_t *IIC_member,GPIO_LEVEL_e level);
+void IIC_Set_SDA(IIC_member_t *IIC_member,GPIO_LEVEL_e level);
+void IIC_Set_SCL(IIC_member_t *IIC_member,GPIO_LEVEL_e level);
 void IIC_Start(IIC_member_t *IIC_member);
 void IIC_Stop(IIC_member_t *IIC_member);
 void IIC_Send_1_Bit(IIC_member_t *IIC_member);
@@ -39,5 +39,6 @@ void IIC_Not_Send_ACK(IIC_member_t *IIC_member);
 uint8_t IIC_Read_Byte(IIC_member_t *IIC_member,uint8_t ack);
 void IIC_Write_Byte_To_Addr(IIC_member_t *IIC_member,uint8_t addr, uint8_t byte);
 uint8_t IIC_Read_Byte_From_Addr(IIC_member_t *IIC_member,uint8_t addr);
+uint8_t IIC_Wait_Ack(IIC_member_t *IIC_member);
 
 #endif //BSP_IIC_H

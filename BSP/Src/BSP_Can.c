@@ -8,6 +8,7 @@
 
 #include "can.h"
 #include "RTOS.h"
+#include "User_Lib.h"
 
 CAN_TxHeaderTypeDef can1_tx_header;
 CAN_TxHeaderTypeDef can2_tx_header;
@@ -187,15 +188,12 @@ void HAL_CAN_TxMailbox2CompleteCallback(CAN_HandleTypeDef *hcan)
 {
     CAN_Complete_Callback(hcan);
 }
-
+CAN_RxHeaderTypeDef rx_header;
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan)
 {
-    CAN_RxHeaderTypeDef rx_header;
     uint8_t rx_data[8];
     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO0, &rx_header, rx_data);
-    taskENTER_CRITICAL();
     can_rx_callback[CAN1_DEVICE_SERIAL_NUM][rx_header.FilterMatchIndex](rx_header.StdId,rx_data);
-    taskEXIT_CRITICAL();
 }
 
 void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
@@ -203,7 +201,5 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan)
     CAN_RxHeaderTypeDef rx_header;
     uint8_t rx_data[8];
     HAL_CAN_GetRxMessage(hcan, CAN_RX_FIFO1, &rx_header, rx_data);
-    taskENTER_CRITICAL();
     can_rx_callback[CAN2_DEVICE_SERIAL_NUM][rx_header.FilterMatchIndex](rx_header.StdId,rx_data);
-    taskEXIT_CRITICAL();
 }

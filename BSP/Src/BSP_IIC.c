@@ -11,7 +11,7 @@ void IIC_Init(IIC_member_t *IIC_member,GPIO_TypeDef *GPIO, uint16_t SCL_PIN, uin
     IIC_member->SDA = SDA_PIN;
 }
 
-void Set_SDA(IIC_member_t *IIC_member,GPIO_LEVEL_e level)
+void IIC_IIC_Set_SDA(IIC_member_t *IIC_member,GPIO_LEVEL_e level)
 {
     if(level == HIGH)
     {
@@ -23,7 +23,7 @@ void Set_SDA(IIC_member_t *IIC_member,GPIO_LEVEL_e level)
     }
 }
 
-void Set_SCL(IIC_member_t *IIC_member,GPIO_LEVEL_e level)
+void IIC_IIC_Set_SCL(IIC_member_t *IIC_member,GPIO_LEVEL_e level)
 {
     if(level == HIGH)
     {
@@ -37,45 +37,45 @@ void Set_SCL(IIC_member_t *IIC_member,GPIO_LEVEL_e level)
 
 void IIC_Start(IIC_member_t *IIC_member)
 {
-    Set_SDA(IIC_member,HIGH);
+    IIC_Set_SDA(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,HIGH);
+    IIC_Set_SCL(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SDA(IIC_member,LOW);
+    IIC_Set_SDA(IIC_member,LOW);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,LOW);
+    IIC_Set_SCL(IIC_member,LOW);
     Delay(DELAY_TIME);
 }
 
 void IIC_Stop(IIC_member_t *IIC_member)
 {
-    Set_SDA(IIC_member,LOW);
+    IIC_Set_SDA(IIC_member,LOW);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,HIGH);
+    IIC_Set_SCL(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SDA(IIC_member,HIGH);
+    IIC_Set_SDA(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,LOW);
+    IIC_Set_SCL(IIC_member,LOW);
     Delay(DELAY_TIME);
 }
 
 void IIC_Send_1_Bit(IIC_member_t *IIC_member)
 {
-    Set_SDA(IIC_member,HIGH);
+    IIC_Set_SDA(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,HIGH);
+    IIC_Set_SCL(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,LOW);
+    IIC_Set_SCL(IIC_member,LOW);
     Delay(DELAY_TIME);
 }
 
 void IIC_Send_0_Bit(IIC_member_t *IIC_member)
 {
-    Set_SDA(IIC_member,LOW);
+    IIC_Set_SDA(IIC_member,LOW);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,HIGH);
+    IIC_Set_SCL(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,LOW);
+    IIC_Set_SCL(IIC_member,LOW);
     Delay(DELAY_TIME);
 }
 
@@ -91,9 +91,9 @@ bool IIC_Read_SDA(IIC_member_t *IIC_member)
 bool IIC_Check_Receive_ACK(IIC_member_t *IIC_member)
 {
     uint16_t ucErrTime = 0;
-    Set_SDA(IIC_member,HIGH);
+    IIC_Set_SDA(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,HIGH);
+    IIC_Set_SCL(IIC_member,HIGH);
     Delay(DELAY_TIME / 2);
     while(IIC_Read_SDA(IIC_member))
     {
@@ -104,52 +104,52 @@ bool IIC_Check_Receive_ACK(IIC_member_t *IIC_member)
             return false;
         }
     }
-    Set_SCL(IIC_member,LOW);
+    IIC_Set_SCL(IIC_member,LOW);
     return true;
 }
 
 void IIC_Write_Byte(IIC_member_t *IIC_member,uint8_t data)
 {
     uint8_t t;
-    Set_SCL(IIC_member,LOW);
+    IIC_Set_SCL(IIC_member,LOW);
     for(t = 0; t < 8; t++)
     {
         if(data & 0x80)
         {
-            Set_SDA(IIC_member,HIGH);
+            IIC_Set_SDA(IIC_member,HIGH);
         }
         else
         {
-            Set_SDA(IIC_member,LOW);
+            IIC_Set_SDA(IIC_member,LOW);
         }
         data <<= 1;
         Delay(DELAY_TIME);
-        Set_SCL(IIC_member,HIGH);
+        IIC_Set_SCL(IIC_member,HIGH);
         Delay(DELAY_TIME);
-        Set_SCL(IIC_member,LOW);
+        IIC_Set_SCL(IIC_member,LOW);
         Delay(DELAY_TIME);
     }
 }
 
 void IIC_Send_ACK(IIC_member_t *IIC_member)
 {
-    Set_SDA(IIC_member,LOW);
+    IIC_Set_SDA(IIC_member,LOW);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,HIGH);
+    IIC_Set_SCL(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,LOW);
+    IIC_Set_SCL(IIC_member,LOW);
     Delay(DELAY_TIME);
 }
 
 void IIC_Not_Send_ACK(IIC_member_t *IIC_member)
 {
-    Set_SDA(IIC_member,HIGH);
+    IIC_Set_SDA(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,HIGH);
+    IIC_Set_SCL(IIC_member,HIGH);
     Delay(DELAY_TIME);
-    Set_SCL(IIC_member,LOW);
+    IIC_Set_SCL(IIC_member,LOW);
     Delay(DELAY_TIME);
-    Set_SDA(IIC_member,LOW);
+    IIC_Set_SDA(IIC_member,LOW);
     Delay(DELAY_TIME);
 }
 
@@ -159,14 +159,14 @@ uint8_t IIC_Read_Byte(IIC_member_t *IIC_member,uint8_t ack)
     uint8_t receive  = 0;
     for(i = 0; i < 8; i++)
     {
-        Set_SCL(IIC_member,HIGH);
+        IIC_Set_SCL(IIC_member,HIGH);
         Delay(DELAY_TIME);
         receive <<= 1;
         if(IIC_Read_SDA(IIC_member))
         {
             receive |= 0x01;
         }
-        Set_SCL(IIC_member,LOW);
+        IIC_Set_SCL(IIC_member,LOW);
         Delay(DELAY_TIME);
     }
     if(ack)
@@ -218,4 +218,24 @@ void Delay(uint32_t t)
     {
         t--;
     }
+}
+
+uint8_t IIC_Wait_Ack(IIC_member_t *IIC_member)
+{
+    uint16_t ucErrTime = 0;
+    IIC_Set_SDA(IIC_member,HIGH);
+    Delay(DELAY_TIME);
+    IIC_Set_SCL(IIC_member,HIGH);
+    Delay(DELAY_TIME);
+    while (IIC_Read_SDA(IIC_member))
+    {
+        ucErrTime++;
+        if (ucErrTime > 250)
+        {
+            IIC_Stop(IIC_member);
+            return 1;
+        }
+    }
+    IIC_Set_SCL(IIC_member,LOW);
+    return 0;
 }

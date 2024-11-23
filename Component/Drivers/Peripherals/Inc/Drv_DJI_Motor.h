@@ -81,8 +81,8 @@ typedef struct
 }DJI_motor_t;;
 
 void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type,CAN_HandleTypeDef *hcan,osSemaphoreId_t rx_sem,bool enable_pid_loc_flag);
-void Get_DJI_Motor_Raw_Data(DJI_motor_t *DJI_motor,const uint8_t *rx_data);
-void DJI_Motor_RX_Data_Update_CallBack(uint32_t rx_id,const uint8_t *rx_data);
+void Get_DJI_Motor_Raw_Data(DJI_motor_t *DJI_motor,const uint8_t *rx_data)  ;
+void DJI_Motor_RX_Data_Update_CallBack(const uint32_t std_id,const uint8_t *rx_data);
 void Check_DJI_Motor_Stall(DJI_motor_t *DJI_motor);
 void DJI_Motor_Update_Data(DJI_motor_t *DJI_motor);
 void DJI_Motor_Zero_Offset(DJI_motor_t *DJI_motor,bool return_to_zero_flag);

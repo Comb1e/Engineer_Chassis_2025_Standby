@@ -72,4 +72,5 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Can.c.obj: \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/User_Lib.h

@@ -5,6 +5,7 @@
 #include "Drv_DJI_Motor.h"
 #include <dsp/basic_math_functions.h>
 #include "can.h"
+#include "Drv_Chassis.h"
 #include "Drv_RemoteCtrl.h"
 #include "User_Lib.h"
 
@@ -28,6 +29,7 @@ void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,floa
     DJI_motor->state.enable_pid_tor_flag = false;
     DJI_motor->can_device.rx.rx_id = rx_id;
     DJI_motor->can_device.rx_sem = rx_sem;
+    DJI_motor->can_device.rx.rx_callback = DJI_Motor_RX_Data_Update_CallBack;
     if(DJI_motor->type == DJI_M3508 || DJI_motor->type == DJI_M2006)
     {
         if(rx_id <= 0x204)
@@ -68,14 +70,14 @@ void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,floa
     DJI_motor->state.ready_flag = false;
     DJI_motor->state.lost_flag = true;
 
-    while(DJI_motor->state.lost_flag == true)
-    {
+    //while(DJI_motor->state.lost_flag == true)
+    //{
         Check_DJI_Motor_Loss(DJI_motor);
-    }
-    while(DJI_motor->state.zero_offset_flag == false)
-    {
+    //}
+    //while(DJI_motor->state.zero_offset_flag == false)
+    //{
         DJI_Motor_Zero_Offset(DJI_motor,true);
-    }
+    //}
     Check_DJI_Motor_Ready(DJI_motor);
 }
 
@@ -87,11 +89,42 @@ void Get_DJI_Motor_Raw_Data(DJI_motor_t *DJI_motor,const uint8_t *rx_data)
     DJI_motor->raw_data.temperature = ((uint16_t)rx_data[6] << 8) | rx_data[7];
 }
 
-void DJI_Motor_RX_Data_Update_CallBack(uint32_t rx_id,const uint8_t *rx_data)
+void DJI_Motor_RX_Data_Update_CallBack(const uint32_t std_id,const uint8_t *rx_data)
 {
-    can_rx_t *can_rx = Container_Of(&rx_id,can_rx_t,rx_id);
-    DJI_motor_can_device_t *can_device = Container_Of(can_rx,DJI_motor_can_device_t,rx);
-    DJI_motor_t *DJI_motor = Container_Of(can_device,DJI_motor_t,can_device);
+    DJI_motor_t *DJI_motor = NULL;
+    switch (std_id)
+    {
+        case 0x201:
+        {
+            DJI_motor = &chassis.M3508[0];
+            break;
+        }
+        case 0x202:
+        {
+            DJI_motor = &chassis.M3508[1];
+            break;
+        }
+        case 0x203:
+        {
+            DJI_motor = &chassis.M3508[2];
+            break;
+        }
+        case 0x204:
+        {
+            DJI_motor = &chassis.M3508[3];
+            break;
+        }
+        case 0x205:
+        {
+            DJI_motor = &M2006;
+            break;
+        }
+        default:
+        {
+            DJI_motor = NULL;
+            break;
+        }
+    }
     Get_DJI_Motor_Raw_Data(DJI_motor,rx_data);
     DJI_Motor_Update_Data(DJI_motor);
     Check_DJI_Motor_Stall(DJI_motor);

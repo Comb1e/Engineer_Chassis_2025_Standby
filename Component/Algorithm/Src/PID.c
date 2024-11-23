@@ -54,7 +54,7 @@ __RAM_FUNC float PID_Calculate(pid_t *pid)
     pid->i_out += pid->Ki * pid->error;
     pid->i_out = ABS_Limit(pid->i_out,pid->i_out_max);
     pid->d_out = pid->Kd * (pid->error - pid->error_pre);
-    result = pid->i_out + + pid->i_out + pid->d_out;
+    result = pid->p_out + pid->i_out + pid->d_out;
     return result;
 }
 

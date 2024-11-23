@@ -24,4 +24,6 @@ void Chassis_Init();
 
 extern chassis_t chassis;
 
+extern DJI_motor_t M2006;
+
 #endif //DRV_CHASSIS_H

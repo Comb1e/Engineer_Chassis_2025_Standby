@@ -357,6 +357,30 @@ Component/Algorithm/Src/SPD_Plan.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.s
 .PHONY : Component/Algorithm/Src/SPD_Plan.c.s
 
+Component/Algorithm/Src/rotation_matrix.obj: Component/Algorithm/Src/rotation_matrix.cpp.obj
+.PHONY : Component/Algorithm/Src/rotation_matrix.obj
+
+# target to build an object file
+Component/Algorithm/Src/rotation_matrix.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.obj
+.PHONY : Component/Algorithm/Src/rotation_matrix.cpp.obj
+
+Component/Algorithm/Src/rotation_matrix.i: Component/Algorithm/Src/rotation_matrix.cpp.i
+.PHONY : Component/Algorithm/Src/rotation_matrix.i
+
+# target to preprocess a source file
+Component/Algorithm/Src/rotation_matrix.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.i
+.PHONY : Component/Algorithm/Src/rotation_matrix.cpp.i
+
+Component/Algorithm/Src/rotation_matrix.s: Component/Algorithm/Src/rotation_matrix.cpp.s
+.PHONY : Component/Algorithm/Src/rotation_matrix.s
+
+# target to generate assembly for a file
+Component/Algorithm/Src/rotation_matrix.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.s
+.PHONY : Component/Algorithm/Src/rotation_matrix.cpp.s
+
 Component/Drivers/Function/Src/Drv_Chassis.obj: Component/Drivers/Function/Src/Drv_Chassis.c.obj
 .PHONY : Component/Drivers/Function/Src/Drv_Chassis.obj
 
@@ -501,6 +525,54 @@ Component/Drivers/Peripherals/Src/Drv_IMU.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_IMU.c.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_IMU.c.s
 
+Component/Drivers/Peripherals/Src/Drv_INA226.obj: Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/Src/Drv_INA226.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
+
+Component/Drivers/Peripherals/Src/Drv_INA226.i: Component/Drivers/Peripherals/Src/Drv_INA226.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/Src/Drv_INA226.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.c.i
+
+Component/Drivers/Peripherals/Src/Drv_INA226.s: Component/Drivers/Peripherals/Src/Drv_INA226.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/Src/Drv_INA226.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.c.s
+
+Component/Drivers/Peripherals/Src/Drv_Ore.obj: Component/Drivers/Peripherals/Src/Drv_Ore.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/Src/Drv_Ore.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.c.obj
+
+Component/Drivers/Peripherals/Src/Drv_Ore.i: Component/Drivers/Peripherals/Src/Drv_Ore.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/Src/Drv_Ore.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.c.i
+
+Component/Drivers/Peripherals/Src/Drv_Ore.s: Component/Drivers/Peripherals/Src/Drv_Ore.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/Src/Drv_Ore.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.c.s
+
 Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj: Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj
 
@@ -548,6 +620,30 @@ Component/Drivers/Peripherals/Src/Drv_SerialServo.s: Component/Drivers/Periphera
 Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
+
+Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj: Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj
+
+Component/Drivers/Peripherals/Src/Drv_XGZP6847.i: Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.i
+
+Component/Drivers/Peripherals/Src/Drv_XGZP6847.s: Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.s
 
 Component/Tasks/Function/Src/Chassis_Task.obj: Component/Tasks/Function/Src/Chassis_Task.c.obj
 .PHONY : Component/Tasks/Function/Src/Chassis_Task.obj
@@ -2058,6 +2154,9 @@ help:
 	@echo ... Component/Algorithm/Src/SPD_Plan.obj
 	@echo ... Component/Algorithm/Src/SPD_Plan.i
 	@echo ... Component/Algorithm/Src/SPD_Plan.s
+	@echo ... Component/Algorithm/Src/rotation_matrix.obj
+	@echo ... Component/Algorithm/Src/rotation_matrix.i
+	@echo ... Component/Algorithm/Src/rotation_matrix.s
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.i
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.s
@@ -2076,12 +2175,21 @@ help:
 	@echo ... Component/Drivers/Peripherals/Src/Drv_IMU.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_IMU.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_IMU.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_INA226.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_INA226.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_INA226.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_Ore.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_Ore.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_Ore.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.s
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.obj
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.i
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.s

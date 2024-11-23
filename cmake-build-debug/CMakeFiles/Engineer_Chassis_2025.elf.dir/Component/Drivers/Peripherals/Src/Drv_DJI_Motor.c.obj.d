@@ -75,5 +75,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_D
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/utils.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Chassis.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_RemoteCtrl.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/User_Lib.h

@@ -17,6 +17,7 @@ uint32_t Get_Time_ms();
 float Get_Time_ms_us();
 float ABS_Limit(float target,float val);
 uint16_t unsigned_16(uint8_t *p);
+float ABS(float target);
 
 /**
  * @brief 知道一个结构体的子变量的地址，这个结构体的名称和这个子变量在结构体的名称，可以返回结构体变量的基地址
