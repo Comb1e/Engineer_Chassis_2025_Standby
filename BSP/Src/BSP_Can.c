@@ -101,33 +101,33 @@ void CAN_Send(const DJI_motor_can_tx_t *DJI_motor_can_tx)
     can_tx_member_t can_tx_member;
     if(DJI_motor_can_tx != NULL)
     {
+        switch (DJI_motor_can_tx->tx_buff_num)
+        {
+            case 0:
+            {
+                can_tx_member.can_id = 0x200;
+                break;
+            }
+            case 1:
+            {
+                can_tx_member.can_id = 0x1FF;
+                break;
+            }
+            case 2:
+            {
+                can_tx_member.can_id = 0x2FF;
+                break;
+            }
+            default:
+            {
+                break;
+            }
+        }
         if(DJI_motor_can_tx->can_buff_num == DJI_CAN1_TX_BUFF_NUM)
         {
             DJI_can_tx_buff[DJI_CAN1_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num] = DJI_motor_can_tx->data[0];
             DJI_can_tx_buff[DJI_CAN1_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num + 1] = DJI_motor_can_tx->data[1];
             can_tx_member.can_tx_buff = DJI_can_tx_buff[DJI_CAN1_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num];
-            switch (DJI_motor_can_tx->tx_buff_num)
-            {
-                case 0:
-                {
-                    can_tx_member.can_id = 0x200;
-                    break;
-                }
-                case 1:
-                {
-                    can_tx_member.can_id = 0x1FF;
-                    break;
-                }
-                case 2:
-                {
-                    can_tx_member.can_id = 0x2FF;
-                    break;
-                }
-                default:
-                {
-                    break;
-                }
-            }
             osMessageQueuePut(CAN1SendQueueHandle,&can_tx_member, 0, 0);
         }
         else
@@ -135,28 +135,6 @@ void CAN_Send(const DJI_motor_can_tx_t *DJI_motor_can_tx)
             DJI_can_tx_buff[DJI_CAN2_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num] = DJI_motor_can_tx->data[0];
             DJI_can_tx_buff[DJI_CAN2_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num][DJI_motor_can_tx->tx_buff_begin_serial_num + 1] = DJI_motor_can_tx->data[1];
             can_tx_member.can_tx_buff = DJI_can_tx_buff[DJI_CAN2_TX_BUFF_NUM][DJI_motor_can_tx->tx_buff_num];
-            switch (DJI_motor_can_tx->tx_buff_num)
-            {
-                case 0:
-                {
-                    can_tx_member.can_id = 0x200;
-                    break;
-                }
-                case 1:
-                {
-                    can_tx_member.can_id = 0x1FF;
-                    break;
-                }
-                case 2:
-                {
-                    can_tx_member.can_id = 0x2FF;
-                    break;
-                }
-                default:
-                {
-                    break;
-                }
-            }
             osMessageQueuePut(CAN2SendQueueHandle,&can_tx_member, 0, 0);
         }
     }

@@ -57,6 +57,7 @@ include_directories(${includes}
     Component/Drivers/Function/Inc
     Component/Algorithm/Inc
     Component/Drivers/Peripherals/IMU
+    Component
 )
 
 add_definitions(${defines})

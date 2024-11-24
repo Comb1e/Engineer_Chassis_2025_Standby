@@ -104,6 +104,34 @@ const osThreadAttr_t imu_Task_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for usb_Task */
+osThreadId_t usb_TaskHandle;
+const osThreadAttr_t usb_Task_attributes = {
+  .name = "usb_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for tof_check_Task */
+osThreadId_t tof_check_TaskHandle;
+const osThreadAttr_t tof_check_Task_attributes = {
+  .name = "tof_check_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for motor_check_Tas */
+osThreadId_t motor_check_TasHandle;
+const osThreadAttr_t motor_check_Tas_attributes = {
+  .name = "motor_check_Tas",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for servo_ctrl_Task */
+osThreadId_t servo_ctrl_TaskHandle;
+const osThreadAttr_t servo_ctrl_Task_attributes = {
+  .name = "servo_ctrl_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -154,6 +182,31 @@ osSemaphoreId_t IMUDMABinarySemHandle;
 const osSemaphoreAttr_t IMUDMABinarySem_attributes = {
   .name = "IMUDMABinarySem"
 };
+/* Definitions for TofUpdateBinarySem */
+osSemaphoreId_t TofUpdateBinarySemHandle;
+const osSemaphoreAttr_t TofUpdateBinarySem_attributes = {
+  .name = "TofUpdateBinarySem"
+};
+/* Definitions for GimbalYawUpdateBinarySem */
+osSemaphoreId_t GimbalYawUpdateBinarySemHandle;
+const osSemaphoreAttr_t GimbalYawUpdateBinarySem_attributes = {
+  .name = "GimbalYawUpdateBinarySem"
+};
+/* Definitions for GimbalSlideUpdateBinarySem */
+osSemaphoreId_t GimbalSlideUpdateBinarySemHandle;
+const osSemaphoreAttr_t GimbalSlideUpdateBinarySem_attributes = {
+  .name = "GimbalSlideUpdateBinarySem"
+};
+/* Definitions for ClawUpdateBinarySem */
+osSemaphoreId_t ClawUpdateBinarySemHandle;
+const osSemaphoreAttr_t ClawUpdateBinarySem_attributes = {
+  .name = "ClawUpdateBinarySem"
+};
+/* Definitions for ServoCtrlTXBinarySem */
+osSemaphoreId_t ServoCtrlTXBinarySemHandle;
+const osSemaphoreAttr_t ServoCtrlTXBinarySem_attributes = {
+  .name = "ServoCtrlTXBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -178,6 +231,10 @@ void Chassis_Task(void *argument);
 void IIC_Task(void *argument);
 void HI229UM_Task(void *argument);
 void IMU_Task(void *argument);
+void USB_Task(void *argument);
+void Tof_Check_Task(void *argument);
+void Motor_Check_Task(void *argument);
+void Servo_Ctrl_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -218,11 +275,26 @@ void MX_FREERTOS_Init(void) {
   /* creation of IMUDMABinarySem */
   IMUDMABinarySemHandle = osSemaphoreNew(1, 1, &IMUDMABinarySem_attributes);
 
+  /* creation of TofUpdateBinarySem */
+  TofUpdateBinarySemHandle = osSemaphoreNew(1, 1, &TofUpdateBinarySem_attributes);
+
+  /* creation of GimbalYawUpdateBinarySem */
+  GimbalYawUpdateBinarySemHandle = osSemaphoreNew(1, 1, &GimbalYawUpdateBinarySem_attributes);
+
+  /* creation of GimbalSlideUpdateBinarySem */
+  GimbalSlideUpdateBinarySemHandle = osSemaphoreNew(1, 1, &GimbalSlideUpdateBinarySem_attributes);
+
+  /* creation of ClawUpdateBinarySem */
+  ClawUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ClawUpdateBinarySem_attributes);
+
+  /* creation of ServoCtrlTXBinarySem */
+  ServoCtrlTXBinarySemHandle = osSemaphoreNew(1, 1, &ServoCtrlTXBinarySem_attributes);
+
   /* creation of CAN1CountingSem */
-  CAN1CountingSemHandle = osSemaphoreNew(3, 0, &CAN1CountingSem_attributes);
+  CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
 
   /* creation of CAN2CountingSem */
-  CAN2CountingSemHandle = osSemaphoreNew(3, 0, &CAN2CountingSem_attributes);
+  CAN2CountingSemHandle = osSemaphoreNew(3, 3, &CAN2CountingSem_attributes);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
@@ -270,6 +342,18 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of imu_Task */
   imu_TaskHandle = osThreadNew(IMU_Task, NULL, &imu_Task_attributes);
+
+  /* creation of usb_Task */
+  usb_TaskHandle = osThreadNew(USB_Task, NULL, &usb_Task_attributes);
+
+  /* creation of tof_check_Task */
+  tof_check_TaskHandle = osThreadNew(Tof_Check_Task, NULL, &tof_check_Task_attributes);
+
+  /* creation of motor_check_Tas */
+  motor_check_TasHandle = osThreadNew(Motor_Check_Task, NULL, &motor_check_Tas_attributes);
+
+  /* creation of servo_ctrl_Task */
+  servo_ctrl_TaskHandle = osThreadNew(Servo_Ctrl_Task, NULL, &servo_ctrl_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -425,6 +509,78 @@ __weak void IMU_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END IMU_Task */
+}
+
+/* USER CODE BEGIN Header_USB_Task */
+/**
+* @brief Function implementing the usb_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_USB_Task */
+__weak void USB_Task(void *argument)
+{
+  /* USER CODE BEGIN USB_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END USB_Task */
+}
+
+/* USER CODE BEGIN Header_Tof_Check_Task */
+/**
+* @brief Function implementing the tof_check_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Tof_Check_Task */
+__weak void Tof_Check_Task(void *argument)
+{
+  /* USER CODE BEGIN Tof_Check_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Tof_Check_Task */
+}
+
+/* USER CODE BEGIN Header_Motor_Check_Task */
+/**
+* @brief Function implementing the motor_check_Tas thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Motor_Check_Task */
+__weak void Motor_Check_Task(void *argument)
+{
+  /* USER CODE BEGIN Motor_Check_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Motor_Check_Task */
+}
+
+/* USER CODE BEGIN Header_Servo_Ctrl_Task */
+/**
+* @brief Function implementing the servo_ctrl_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Servo_Ctrl_Task */
+void Servo_Ctrl_Task(void *argument)
+{
+  /* USER CODE BEGIN Servo_Ctrl_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Servo_Ctrl_Task */
 }
 
 /* Private application code --------------------------------------------------*/

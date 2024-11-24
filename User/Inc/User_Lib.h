@@ -33,5 +33,19 @@ const typeof(((type *)0)->member) *__mptr = (ptr) ; \
 #define LOW_BYTE(x) ((uint8_t)((x) & 0x00ff))
 #define MERGE_BYTES(high, low) (((uint16_t) (high) << 8) | (uint16_t)(low))
 
+#define VAL_LIMIT(val, min, max) \
+do                         \
+{                          \
+if ((val) <= (min))    \
+{                      \
+(val) =(min);      \
+}                      \
+else if((val)>=(max))  \
+{                      \
+(val)=(max);       \
+}                      \
+\
+} while(0)
+
 
 #endif //USER_LIB_H

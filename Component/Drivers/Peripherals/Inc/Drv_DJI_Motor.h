@@ -23,6 +23,8 @@
 
 #define ECD_TO_ROUND (0.0001220703125f)         // 1/8192.0
 
+#define MOTOR_NUM 5
+
 enum DJI_MOTOR_TYPE
 {
     MOTOR_TYPE_NONE = 0,

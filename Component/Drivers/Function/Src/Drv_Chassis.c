@@ -37,5 +37,5 @@ void Chassis_Init()
 
     PID_Init(&M2006.pid_loc,1,0,0,100,1);
     PID_Init(&M2006.pid_vel,1000,0,0,100,1);
-    PID_Init(&M2006.pid_tor,1,0,0,100,1);
+    PID_Init(&M2006.pid_tor,10,0,0,100,1);
 }

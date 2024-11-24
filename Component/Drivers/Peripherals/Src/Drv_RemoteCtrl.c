@@ -26,7 +26,7 @@ void RC_Lost_CntDown()
 
 void RC_CheckConnection()
 {
-    if(rc.ctrl_protection.outage_cntdown > 150)
+    if(rc.ctrl_protection.outage_cntdown > 10)
     {
         rc.ctrl_protection.connect_flag = false;
     }

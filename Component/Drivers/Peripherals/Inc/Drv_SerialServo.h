@@ -10,6 +10,8 @@
 #include "bsp_usart.h"
 #include "stdbool.h"
 
+#define SERVO_UART   (huart6)// 115200
+
 /** @defgroup Instructions */
 
 #define LOBOT_SERVO_FRAME_HEADER         0x55

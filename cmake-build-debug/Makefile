@@ -621,6 +621,30 @@ Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
 
+Component/Drivers/Peripherals/Src/Drv_Usb.obj: Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.obj
+
+# target to build an object file
+Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj
+
+Component/Drivers/Peripherals/Src/Drv_Usb.i: Component/Drivers/Peripherals/Src/Drv_Usb.cpp.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.i
+
+# target to preprocess a source file
+Component/Drivers/Peripherals/Src/Drv_Usb.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Usb.cpp.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.cpp.i
+
+Component/Drivers/Peripherals/Src/Drv_Usb.s: Component/Drivers/Peripherals/Src/Drv_Usb.cpp.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.s
+
+# target to generate assembly for a file
+Component/Drivers/Peripherals/Src/Drv_Usb.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Usb.cpp.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.cpp.s
+
 Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj: Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj
 
@@ -765,6 +789,30 @@ Component/Tasks/Peripherals/Src/IMU_Task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/IMU_Task.c.s
 .PHONY : Component/Tasks/Peripherals/Src/IMU_Task.c.s
 
+Component/Tasks/Peripherals/Src/Motor_Check_Task.obj: Component/Tasks/Peripherals/Src/Motor_Check_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/Motor_Check_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/Motor_Check_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_Check_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/Motor_Check_Task.c.obj
+
+Component/Tasks/Peripherals/Src/Motor_Check_Task.i: Component/Tasks/Peripherals/Src/Motor_Check_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/Motor_Check_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/Motor_Check_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_Check_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/Motor_Check_Task.c.i
+
+Component/Tasks/Peripherals/Src/Motor_Check_Task.s: Component/Tasks/Peripherals/Src/Motor_Check_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/Motor_Check_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/Motor_Check_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_Check_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/Motor_Check_Task.c.s
+
 Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj: Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj
 .PHONY : Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj
 
@@ -788,6 +836,78 @@ Component/Tasks/Peripherals/Src/RemoteCtrl_Task.s: Component/Tasks/Peripherals/S
 Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s
 .PHONY : Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s
+
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.obj: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj
+
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.i: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.i
+
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.s: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.s
+
+Component/Tasks/Peripherals/Src/Tof_Check_Task.obj: Component/Tasks/Peripherals/Src/Tof_Check_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/Tof_Check_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/Tof_Check_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/Tof_Check_Task.c.obj
+
+Component/Tasks/Peripherals/Src/Tof_Check_Task.i: Component/Tasks/Peripherals/Src/Tof_Check_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/Tof_Check_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/Tof_Check_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/Tof_Check_Task.c.i
+
+Component/Tasks/Peripherals/Src/Tof_Check_Task.s: Component/Tasks/Peripherals/Src/Tof_Check_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/Tof_Check_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/Tof_Check_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/Tof_Check_Task.c.s
+
+Component/Tasks/Peripherals/Src/USB_Task.obj: Component/Tasks/Peripherals/Src/USB_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/USB_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.c.obj
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.c.obj
+
+Component/Tasks/Peripherals/Src/USB_Task.i: Component/Tasks/Peripherals/Src/USB_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/USB_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.c.i
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.c.i
+
+Component/Tasks/Peripherals/Src/USB_Task.s: Component/Tasks/Peripherals/Src/USB_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/USB_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.c.s
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.c.s
 
 Core/Src/can.obj: Core/Src/can.c.obj
 .PHONY : Core/Src/can.obj
@@ -2187,6 +2307,9 @@ help:
 	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.s
@@ -2205,9 +2328,21 @@ help:
 	@echo ... Component/Tasks/Peripherals/Src/IMU_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/IMU_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/IMU_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/Motor_Check_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/Motor_Check_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/Motor_Check_Task.s
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/RemoteCtrl_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/Tof_Check_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/Tof_Check_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/Tof_Check_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/USB_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/USB_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/USB_Task.s
 	@echo ... Core/Src/can.obj
 	@echo ... Core/Src/can.i
 	@echo ... Core/Src/can.s

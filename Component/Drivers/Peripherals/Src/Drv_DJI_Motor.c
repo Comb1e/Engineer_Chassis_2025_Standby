@@ -3,10 +3,13 @@
 //
 
 #include "Drv_DJI_Motor.h"
+#include "FreeRTOS.h"
 #include <dsp/basic_math_functions.h>
 #include "can.h"
 #include "Drv_Chassis.h"
 #include "Drv_RemoteCtrl.h"
+#include "portmacro.h"
+#include "task.h"
 #include "User_Lib.h"
 
 void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type,CAN_HandleTypeDef *hcan,osSemaphoreId_t rx_sem,bool enable_pid_loc_flag)
@@ -169,7 +172,7 @@ void DJI_Motor_Update_Data(DJI_motor_t *DJI_motor)
         }
         case DJI_M2006:
         {
-            DJI_motor->current_data.speed_rpm = (float)DJI_motor->raw_data.speed_rpm / DJI_MOTOR_MAX_SPEED_M2006;
+            DJI_motor->current_data.speed_rpm = (float)DJI_motor->raw_data.speed_rpm / -DJI_MOTOR_MAX_SPEED_M2006;
             break;
         }
         case DJI_GM6020:
@@ -211,6 +214,7 @@ void DJI_Motor_Update_Data(DJI_motor_t *DJI_motor)
         DJI_Motor_Update_TX_Data(&DJI_motor->can_device.tx,0);
     }
     CAN_Send(&DJI_motor->can_device.tx);
+
 }
 
 void DJI_Motor_Zero_Offset(DJI_motor_t *DJI_motor,bool return_to_zero_flag)
@@ -262,6 +266,6 @@ void Check_DJI_Motor_Ready(DJI_motor_t *DJI_motor)
 
 void DJI_Motor_Update_TX_Data(DJI_motor_can_tx_t *DJI_motor_can_tx,uint16_t data)
 {
-    DJI_motor_can_tx->data[0] = data << 8;
+    DJI_motor_can_tx->data[0] = data >> 8;
     DJI_motor_can_tx->data[1] = data;
 }

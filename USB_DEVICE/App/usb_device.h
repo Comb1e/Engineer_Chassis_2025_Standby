@@ -81,7 +81,10 @@ void MX_USB_DEVICE_Init(void);
  * -- Insert functions declaration here --
  */
 /* USER CODE BEGIN FD */
-
+   int8_t CDC_Receive_FS_Mine(uint8_t *Buf, uint32_t *Len);
+   int8_t CDC_Receive_FS_Mine_Del(uint8_t *Buf, uint32_t *Len);
+   uint8_t CDC_Transmit_FS_Mine(uint8_t* Buf, uint16_t Len);
+   uint8_t CDC_Transmit_FS_Mine_Del(uint8_t* Buf, uint16_t Len);
 /* USER CODE END FD */
 /**
   * @}

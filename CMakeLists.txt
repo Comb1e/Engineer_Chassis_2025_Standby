@@ -58,6 +58,7 @@ include_directories(Core/Inc Drivers/STM32F4xx_HAL_Driver/Inc Drivers/STM32F4xx_
     Component/Drivers/Function/Inc
     Component/Algorithm/Inc
     Component/Drivers/Peripherals/IMU
+    Component
 )
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32F427xx)

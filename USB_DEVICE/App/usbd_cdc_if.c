@@ -22,7 +22,7 @@
 #include "usbd_cdc_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-
+#include "cmsis_os2.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -316,7 +316,29 @@ static int8_t CDC_TransmitCplt_FS(uint8_t *Buf, uint32_t *Len, uint8_t epnum)
 }
 
 /* USER CODE BEGIN PRIVATE_FUNCTIONS_IMPLEMENTATION */
+int8_t CDC_Receive_FS_Mine(uint8_t *Buf, uint32_t *Len)
+{
+  return CDC_Receive_FS(Buf,Len);
+}
 
+int8_t CDC_Receive_FS_Mine_Del(uint8_t *Buf, uint32_t *Len)
+{
+  int8_t status = CDC_Receive_FS_Mine(Buf,Len);
+  osDelay(1);
+  return status;
+}
+
+uint8_t CDC_Transmit_FS_Mine(uint8_t* Buf, uint16_t Len)
+{
+  return CDC_Transmit_FS(Buf,Len);
+}
+
+uint8_t CDC_Transmit_FS_Mine_Del(uint8_t* Buf, uint16_t Len)
+{
+  uint8_t status = CDC_Transmit_FS_Mine(Buf,Len);
+  osDelay(1);
+  return status;
+}
 /* USER CODE END PRIVATE_FUNCTIONS_IMPLEMENTATION */
 
 /**
