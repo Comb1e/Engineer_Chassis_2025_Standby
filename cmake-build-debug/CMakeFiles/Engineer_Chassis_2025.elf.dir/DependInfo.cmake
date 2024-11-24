@@ -59,6 +59,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Src/BSP_LED.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Src/BSP_Usart.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Src/CRC.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.obj.d"
+  "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Src/Mecanum.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Src/PID.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Src/SPD_Plan.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Src/Drv_Chassis.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.c.obj.d"
@@ -81,7 +82,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/Tof_Check_Task.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.c.obj.d"
-  "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/USB_Task.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/can.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/dma.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Core/Src/freertos.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj.d"
@@ -139,6 +139,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "E:/RM/CubeMx/Engineer_Chassis_2025/User/Src/User_Lib.c" "CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Src/rotation_matrix.cpp" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.obj.d"
   "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_Usb.cpp" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj.d"
+  "E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/USB_Task.cpp" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.cpp.obj" "gcc" "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -49,13 +49,12 @@ void PID_Error_Calculate_Loc(pid_t *pid,float now,float last)
 
 __RAM_FUNC float PID_Calculate(pid_t *pid)
 {
-    float result = 0;
     pid->p_out = pid->Kp * pid->error;
     pid->i_out += pid->Ki * pid->error;
     pid->i_out = ABS_Limit(pid->i_out,pid->i_out_max);
     pid->d_out = pid->Kd * (pid->error - pid->error_pre);
-    result = pid->p_out + pid->i_out + pid->d_out;
-    return result;
+    pid->out = pid->p_out + pid->i_out + pid->d_out;
+    return pid->out;
 }
 
 void PID_Clear_Mem(pid_t *pid)

@@ -7,7 +7,11 @@
 
 #include "stm32f4xx_hal.h"
 
+#define MAHONY 1
 #define SERVO 1
 #define USB 1
+#define CHASSIS 1
+
+#define CAMERA_ON_ARM 1
 
 #endif //GLOBAL_CFG_H

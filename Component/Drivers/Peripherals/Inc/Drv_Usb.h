@@ -6,13 +6,12 @@
 #define DRV_USB_H
 
 #include "RTOS.h"
-#include "user_lib.h"
 #include "usbd_cdc_if.h"
 #include "CRC.h"
 #include "Eigen/Geometry"
-#include "Drv_SerialServo.h"
 #include "rotation_matrix.h"
 #include "PID.h"
+#include "Global_CFG.h"
 
 #define USB_CONTROL_CYCLE    (40U)//单位是ms
 
@@ -66,9 +65,6 @@
 #endif
 
 #define ORE_LENGTH                      (200)
-
-class arm_device;
-class robot_device;
 
 #pragma pack(1)
 union usb_rx_data_u

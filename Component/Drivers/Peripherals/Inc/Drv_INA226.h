@@ -24,7 +24,7 @@
 #define    INA226_VAL_LSB    2.5f    //分流电压 LSB 2.5uV
 #define     Voltage_LSB        1.25f   //总线电压 LSB 1.25mV
 #define     CURRENT_LSB    1.0f    //电流LSB 1mA
-#define     POWER_LSB       25*CURRENT_LSB
+#define     POWER_LSB       (25*CURRENT_LSB)
 #define     CAL             456     //0.00512/(Current_LSB*R_SHUNT) = 470  //电流偏大改小
 
 typedef struct

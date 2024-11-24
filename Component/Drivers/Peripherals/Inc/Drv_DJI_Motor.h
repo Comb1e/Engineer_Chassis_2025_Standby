@@ -65,6 +65,7 @@ typedef struct
     bool zero_offset_flag;
     bool ready_flag;
     bool lost_flag;
+    bool enable_flag;
 }DJI_motor_state_t;
 
 typedef struct
@@ -84,12 +85,13 @@ typedef struct
 
 void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type,CAN_HandleTypeDef *hcan,osSemaphoreId_t rx_sem,bool enable_pid_loc_flag);
 void Get_DJI_Motor_Raw_Data(DJI_motor_t *DJI_motor,const uint8_t *rx_data)  ;
-void DJI_Motor_RX_Data_Update_CallBack(const uint32_t std_id,const uint8_t *rx_data);
+void DJI_Motor_RX_Data_Update_CallBack(uint32_t std_id,const uint8_t *rx_data);
 void Check_DJI_Motor_Stall(DJI_motor_t *DJI_motor);
 void DJI_Motor_Update_Data(DJI_motor_t *DJI_motor);
 void DJI_Motor_Zero_Offset(DJI_motor_t *DJI_motor,bool return_to_zero_flag);
 void Check_DJI_Motor_Loss(DJI_motor_t *DJI_motor);
-void Check_DJI_Motor_Ready(DJI_motor_t *DJI_motor);
+void DJI_Motor_Update_Ready(DJI_motor_t *DJI_motor);
 void DJI_Motor_Update_TX_Data(DJI_motor_can_tx_t *DJI_motor_can_tx,uint16_t data);
+void DJI_Motor_Set_Free(DJI_motor_t *DJI_motor);
 
 #endif //DRV_DJI_MOTOR_H

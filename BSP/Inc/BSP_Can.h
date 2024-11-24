@@ -25,7 +25,7 @@
 #define CAN2_DEVICE_SERIAL_NUM 1
 #define MAX_CAN_DEVICE_NUM (14 * 4)
 
-typedef void (can_rx_callback_f)(const uint32_t std_id,const uint8_t *data);
+typedef void (can_rx_callback_f)(uint32_t std_id,const uint8_t *data);
 
 enum CAN_TYPE
 {
@@ -52,10 +52,20 @@ typedef struct
 typedef struct
 {
     CAN_HandleTypeDef *hcan;
-    DJI_motor_can_tx_t tx;
     can_rx_t rx;
     osSemaphoreId_t rx_sem;
+}basic_can_device_t;
+
+typedef struct
+{
+    DJI_motor_can_tx_t tx;
+    basic_can_device_t basic;
 }DJI_motor_can_device_t;
+
+typedef struct
+{
+    basic_can_device_t basic;
+}tof_can_device_t;
 
 typedef struct
 {

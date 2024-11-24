@@ -29,6 +29,7 @@ typedef struct
     float i_out_max;
     float max_out;
     float target_ecd;//不用作pid计算
+    float out;
 }pid_t;
 
 typedef struct

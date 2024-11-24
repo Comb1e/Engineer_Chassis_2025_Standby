@@ -67,7 +67,7 @@ float Inv_Sqrt(float x)
   *                 MPU_Set_Accel_Fsr(),
   *                 MPU_Device_Init() function
   */
-uint8_t Mpu_Write_Byte(uint8_t const reg, uint8_t const data)
+uint8_t Mpu_Write_Byte(uint8_t reg, uint8_t data)
 {
     MPU_NSS_LOW;
     tx = reg & 0x7F;
@@ -85,7 +85,7 @@ uint8_t Mpu_Write_Byte(uint8_t const reg, uint8_t const data)
   * @usage  call in Ist_Reg_Read_By_MPU(),
   *                 MPU_Device_Init() function
   */
-uint8_t Mpu_Read_Byte(uint8_t const reg)
+uint8_t Mpu_Read_Byte(uint8_t reg)
 {
     MPU_NSS_LOW;
     tx = reg | 0x80;
@@ -103,7 +103,7 @@ uint8_t Mpu_Read_Byte(uint8_t const reg)
   *                 Mpu_Get_Data(),
   *                 mpu_offset_call() function
   */
-uint8_t Mpu_Read_Bytes(uint8_t const regAddr, uint8_t *pData, uint8_t len)
+uint8_t Mpu_Read_Bytes(uint8_t regAddr, uint8_t *pData, uint8_t len)
 {
     MPU_NSS_LOW;
     tx = regAddr | 0x80;
@@ -114,7 +114,7 @@ uint8_t Mpu_Read_Bytes(uint8_t const regAddr, uint8_t *pData, uint8_t len)
     return 0;
 }
 
-uint8_t Mpu_Read_Bytes_DMA(uint8_t const regAddr, uint8_t *pData, uint8_t len)
+uint8_t Mpu_Read_Bytes_DMA(uint8_t regAddr, uint8_t *pData, uint8_t len)
 {
     MPU_NSS_LOW;
     tx = regAddr | 0x80;

@@ -7,7 +7,7 @@
 
 #include "User_Lib.h"
 #include "RTOS.h"
-#include "bsp_usart.h"
+#include "BSP_Usart.h"
 #include "stdbool.h"
 
 #define SERVO_UART   (huart6)// 115200

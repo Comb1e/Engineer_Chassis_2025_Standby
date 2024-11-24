@@ -309,6 +309,30 @@ Component/Algorithm/Src/CRC.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.s
 .PHONY : Component/Algorithm/Src/CRC.c.s
 
+Component/Algorithm/Src/Mecanum.obj: Component/Algorithm/Src/Mecanum.c.obj
+.PHONY : Component/Algorithm/Src/Mecanum.obj
+
+# target to build an object file
+Component/Algorithm/Src/Mecanum.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.c.obj
+.PHONY : Component/Algorithm/Src/Mecanum.c.obj
+
+Component/Algorithm/Src/Mecanum.i: Component/Algorithm/Src/Mecanum.c.i
+.PHONY : Component/Algorithm/Src/Mecanum.i
+
+# target to preprocess a source file
+Component/Algorithm/Src/Mecanum.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.c.i
+.PHONY : Component/Algorithm/Src/Mecanum.c.i
+
+Component/Algorithm/Src/Mecanum.s: Component/Algorithm/Src/Mecanum.c.s
+.PHONY : Component/Algorithm/Src/Mecanum.s
+
+# target to generate assembly for a file
+Component/Algorithm/Src/Mecanum.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.c.s
+.PHONY : Component/Algorithm/Src/Mecanum.c.s
+
 Component/Algorithm/Src/PID.obj: Component/Algorithm/Src/PID.c.obj
 .PHONY : Component/Algorithm/Src/PID.obj
 
@@ -885,29 +909,29 @@ Component/Tasks/Peripherals/Src/Tof_Check_Task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.c.s
 .PHONY : Component/Tasks/Peripherals/Src/Tof_Check_Task.c.s
 
-Component/Tasks/Peripherals/Src/USB_Task.obj: Component/Tasks/Peripherals/Src/USB_Task.c.obj
+Component/Tasks/Peripherals/Src/USB_Task.obj: Component/Tasks/Peripherals/Src/USB_Task.cpp.obj
 .PHONY : Component/Tasks/Peripherals/Src/USB_Task.obj
 
 # target to build an object file
-Component/Tasks/Peripherals/Src/USB_Task.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.c.obj
-.PHONY : Component/Tasks/Peripherals/Src/USB_Task.c.obj
+Component/Tasks/Peripherals/Src/USB_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.cpp.obj
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.cpp.obj
 
-Component/Tasks/Peripherals/Src/USB_Task.i: Component/Tasks/Peripherals/Src/USB_Task.c.i
+Component/Tasks/Peripherals/Src/USB_Task.i: Component/Tasks/Peripherals/Src/USB_Task.cpp.i
 .PHONY : Component/Tasks/Peripherals/Src/USB_Task.i
 
 # target to preprocess a source file
-Component/Tasks/Peripherals/Src/USB_Task.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.c.i
-.PHONY : Component/Tasks/Peripherals/Src/USB_Task.c.i
+Component/Tasks/Peripherals/Src/USB_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.cpp.i
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.cpp.i
 
-Component/Tasks/Peripherals/Src/USB_Task.s: Component/Tasks/Peripherals/Src/USB_Task.c.s
+Component/Tasks/Peripherals/Src/USB_Task.s: Component/Tasks/Peripherals/Src/USB_Task.cpp.s
 .PHONY : Component/Tasks/Peripherals/Src/USB_Task.s
 
 # target to generate assembly for a file
-Component/Tasks/Peripherals/Src/USB_Task.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.c.s
-.PHONY : Component/Tasks/Peripherals/Src/USB_Task.c.s
+Component/Tasks/Peripherals/Src/USB_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.cpp.s
+.PHONY : Component/Tasks/Peripherals/Src/USB_Task.cpp.s
 
 Core/Src/can.obj: Core/Src/can.c.obj
 .PHONY : Core/Src/can.obj
@@ -2268,6 +2292,9 @@ help:
 	@echo ... Component/Algorithm/Src/CRC.obj
 	@echo ... Component/Algorithm/Src/CRC.i
 	@echo ... Component/Algorithm/Src/CRC.s
+	@echo ... Component/Algorithm/Src/Mecanum.obj
+	@echo ... Component/Algorithm/Src/Mecanum.i
+	@echo ... Component/Algorithm/Src/Mecanum.s
 	@echo ... Component/Algorithm/Src/PID.obj
 	@echo ... Component/Algorithm/Src/PID.i
 	@echo ... Component/Algorithm/Src/PID.s

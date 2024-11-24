@@ -15,8 +15,8 @@
 void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type,CAN_HandleTypeDef *hcan,osSemaphoreId_t rx_sem,bool enable_pid_loc_flag)
 {
     DJI_motor->can_device.tx.can_type = DJI_MOTOR;
-    DJI_motor->can_device.hcan = hcan;
-    if(DJI_motor->can_device.hcan == &hcan1)
+    DJI_motor->can_device.basic.hcan = hcan;
+    if(DJI_motor->can_device.basic.hcan == &hcan1)
     {
         DJI_motor->can_device.tx.can_buff_num == DJI_CAN1_TX_BUFF_NUM;
     }
@@ -30,9 +30,9 @@ void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,floa
     DJI_motor->type = type;
 
     DJI_motor->state.enable_pid_tor_flag = false;
-    DJI_motor->can_device.rx.rx_id = rx_id;
-    DJI_motor->can_device.rx_sem = rx_sem;
-    DJI_motor->can_device.rx.rx_callback = DJI_Motor_RX_Data_Update_CallBack;
+    DJI_motor->can_device.basic.rx.rx_id = rx_id;
+    DJI_motor->can_device.basic.rx_sem = rx_sem;
+    DJI_motor->can_device.basic.rx.rx_callback = DJI_Motor_RX_Data_Update_CallBack;
     if(DJI_motor->type == DJI_M3508 || DJI_motor->type == DJI_M2006)
     {
         if(rx_id <= 0x204)
@@ -72,6 +72,7 @@ void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,floa
     DJI_motor->state.zero_offset_flag = false;
     DJI_motor->state.ready_flag = false;
     DJI_motor->state.lost_flag = true;
+    DJI_motor->state.enable_flag = true;
 
     //while(DJI_motor->state.lost_flag == true)
     //{
@@ -81,7 +82,7 @@ void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,floa
     //{
         DJI_Motor_Zero_Offset(DJI_motor,true);
     //}
-    Check_DJI_Motor_Ready(DJI_motor);
+    DJI_Motor_Update_Ready(DJI_motor);
 }
 
 void Get_DJI_Motor_Raw_Data(DJI_motor_t *DJI_motor,const uint8_t *rx_data)
@@ -92,7 +93,7 @@ void Get_DJI_Motor_Raw_Data(DJI_motor_t *DJI_motor,const uint8_t *rx_data)
     DJI_motor->raw_data.temperature = ((uint16_t)rx_data[6] << 8) | rx_data[7];
 }
 
-void DJI_Motor_RX_Data_Update_CallBack(const uint32_t std_id,const uint8_t *rx_data)
+void DJI_Motor_RX_Data_Update_CallBack(uint32_t std_id,const uint8_t *rx_data)
 {
     DJI_motor_t *DJI_motor = NULL;
     switch (std_id)
@@ -131,7 +132,7 @@ void DJI_Motor_RX_Data_Update_CallBack(const uint32_t std_id,const uint8_t *rx_d
     Get_DJI_Motor_Raw_Data(DJI_motor,rx_data);
     DJI_Motor_Update_Data(DJI_motor);
     Check_DJI_Motor_Stall(DJI_motor);
-    osSemaphoreRelease(DJI_motor->can_device.rx_sem);
+    osSemaphoreRelease(DJI_motor->can_device.basic.rx_sem);
 }
 
 void Check_DJI_Motor_Stall(DJI_motor_t *DJI_motor)
@@ -187,6 +188,10 @@ void DJI_Motor_Update_Data(DJI_motor_t *DJI_motor)
     }
     DJI_motor->current_data.ecd = (float)DJI_motor->raw_data.ecd * ECD_TO_ROUND;
 
+    Check_DJI_Motor_Loss(DJI_motor);
+    DJI_Motor_Zero_Offset(DJI_motor,false);
+
+
     if(DJI_motor->state.enable_pid_loc_flag)
     {
         PID_Error_Calculate_Loc(&DJI_motor->pid_loc,DJI_motor->current_data.ecd,DJI_motor->last_data.ecd);
@@ -205,16 +210,23 @@ void DJI_Motor_Update_Data(DJI_motor_t *DJI_motor)
     {
         DJI_motor->target_data.set_current = (int16_t)PID_Calculate(&DJI_motor->pid_vel);
     }
-    if(rc.ctrl_protection.connect_flag)
+    if(rc.ctrl_protection.connect_flag && DJI_motor->state.enable_flag)
     {
-        DJI_Motor_Update_TX_Data(&DJI_motor->can_device.tx,DJI_motor->target_data.set_current);
+        if(DJI_motor->type == DJI_M3508)
+        {
+            DJI_Motor_Update_TX_Data(&DJI_motor->can_device.tx,DJI_motor->target_data.set_current * chassis.power_control_data.k);
+        }
+        else
+        {
+            DJI_Motor_Update_TX_Data(&DJI_motor->can_device.tx,DJI_motor->target_data.set_current);
+        }
+
     }
     else
     {
         DJI_Motor_Update_TX_Data(&DJI_motor->can_device.tx,0);
     }
     CAN_Send(&DJI_motor->can_device.tx);
-
 }
 
 void DJI_Motor_Zero_Offset(DJI_motor_t *DJI_motor,bool return_to_zero_flag)
@@ -236,11 +248,12 @@ void DJI_Motor_Zero_Offset(DJI_motor_t *DJI_motor,bool return_to_zero_flag)
 
 void Check_DJI_Motor_Loss(DJI_motor_t *DJI_motor)
 {
-    osStatus_t stat = osSemaphoreAcquire(DJI_motor->can_device.rx_sem,15);;
+    osStatus_t stat = osSemaphoreAcquire(DJI_motor->can_device.basic.rx_sem,15);;
     if(stat == osOK)
     {
         if(DJI_motor->state.lost_flag)
         {
+            DJI_motor->state.zero_offset_flag = false;
             DJI_Motor_Zero_Offset(DJI_motor,true);
         }
         DJI_motor->state.lost_flag = false;
@@ -252,7 +265,7 @@ void Check_DJI_Motor_Loss(DJI_motor_t *DJI_motor)
 
 }
 
-void Check_DJI_Motor_Ready(DJI_motor_t *DJI_motor)
+void DJI_Motor_Update_Ready(DJI_motor_t *DJI_motor)
 {
     if(!DJI_motor->state.lost_flag && DJI_motor->state.zero_offset_flag)
     {
@@ -268,4 +281,13 @@ void DJI_Motor_Update_TX_Data(DJI_motor_can_tx_t *DJI_motor_can_tx,uint16_t data
 {
     DJI_motor_can_tx->data[0] = data >> 8;
     DJI_motor_can_tx->data[1] = data;
+}
+
+void DJI_Motor_Set_Free(DJI_motor_t *DJI_motor)
+{
+    DJI_motor->state.enable_flag = false;
+    DJI_motor->state.zero_offset_flag = false;
+    DJI_motor->pid_loc.i_out = 0;
+    DJI_motor->pid_vel.i_out = 0;
+    DJI_motor->pid_tor.i_out = 0;
 }

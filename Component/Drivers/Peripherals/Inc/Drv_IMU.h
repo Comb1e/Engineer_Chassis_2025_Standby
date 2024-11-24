@@ -95,10 +95,10 @@ typedef struct
 }IMU_t;
 
 float Inv_Sqrt(float x);
-uint8_t Mpu_Write_Byte(uint8_t const reg, uint8_t const data);
-uint8_t Mpu_Read_Byte(uint8_t const reg);
-uint8_t Mpu_Read_Bytes(uint8_t const regAddr, uint8_t *pData, uint8_t len);
-uint8_t Mpu_Read_Bytes_DMA(uint8_t const regAddr, uint8_t *pData, uint8_t len);
+uint8_t Mpu_Write_Byte(uint8_t reg, uint8_t data);
+uint8_t Mpu_Read_Byte(uint8_t reg);
+uint8_t Mpu_Read_Bytes(uint8_t regAddr, uint8_t *pData, uint8_t len);
+uint8_t Mpu_Read_Bytes_DMA(uint8_t regAddr, uint8_t *pData, uint8_t len);
 static void Ist_Reg_Write_By_MPU(uint8_t addr, uint8_t data);
 static uint8_t Ist_Reg_Read_By_MPU(uint8_t addr);
 static void Mpu_Master_I2C_Auto_Read_Config(uint8_t device_address, uint8_t reg_base_addr, uint8_t data_num);
