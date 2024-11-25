@@ -8,6 +8,7 @@
 #include "BSP_Can.h"
 #include "can.h"
 #include "Drv_HI229UM.h"
+#include "Drv_IMU.h"
 #include "Mecanum.h"
 #include "RTOS.h"
 #include "User_Lib.h"
@@ -28,8 +29,9 @@ void Chassis_Init(chassis_t *chassis)
     CAN1_Filter_ID_Init(chassis->M3508[CHASSIS_LB_NUM].can_device.basic.rx);
     CAN1_Filter_ID_Init(chassis->M3508[CHASSIS_RB_NUM].can_device.basic.rx);
     CAN1_Filter_ID_Init(chassis->M3508[CHASSIS_RF_NUM].can_device.basic.rx);
+    //
     CAN1_Filter_ID_Init(M2006.can_device.basic.rx);
-
+    //
 
     PID_Init(&chassis->M3508[CHASSIS_LF_NUM].pid_loc,1,0,0,100,1);
     PID_Init(&chassis->M3508[CHASSIS_LB_NUM].pid_loc,1,0,0,100,1);
@@ -41,9 +43,11 @@ void Chassis_Init(chassis_t *chassis)
     PID_Init(&chassis->M3508[CHASSIS_RB_NUM].pid_vel,1,0,0,100,DJI_MOTOR_MAX_CURRENT_M3508);
     PID_Init(&chassis->M3508[CHASSIS_RF_NUM].pid_vel,1,0,0,100,DJI_MOTOR_MAX_CURRENT_M3508);
 
+    //
     PID_Init(&M2006.pid_loc,1,0,0,100,1);
     PID_Init(&M2006.pid_vel,1000,0,0,100,1);
     PID_Init(&M2006.pid_tor,10,0,0,100,1);
+    //
 
     chassis->state.enable_flag = true;
     chassis->state.lost_flag = true;
@@ -51,6 +55,19 @@ void Chassis_Init(chassis_t *chassis)
     chassis->state.arm_need_flag = false;
     chassis->state.super_rotate_flag = false;
     chassis->state.robot_set_easter_use_flag = false;
+
+    chassis->control_type = Speed;
+
+    chassis->direction_angle = 0.0f;
+
+    chassis->velocity.speedY = 0;
+    chassis->velocity.speedX = 0;
+    chassis->velocity.speedSpin = 0;
+    chassis->velocity.rc_set_spin = 0;
+    chassis->velocity.small_gyroscope_speed = CHASSIS_SMALL_GYROSCOPE_SPEED;
+    chassis->velocity.vel_max.kb = CHASSIS_VEL_KB_MAX;
+    chassis->velocity.vel_max.rc = CHASSIS_VEL_RC_MAX;
+    chassis->velocity.vel_max.total = CHASSIS_VEL_TOTAL_MAX;
 }
 
 void Chassis_PowerCtrl_Data_Init(chassis_t *chassis)
@@ -207,13 +224,13 @@ __RAM_FUNC void Chassis_Update_Speed_Ctrl(chassis_t *chassis)
 
     Get_Slope_Speed(&chassis->kb_x_speed);
     Get_Slope_Speed(&chassis->kb_y_speed);
-    /*chassis->update_align();
+    Chassis_Update_Align(chassis);
 
-    chassis->set_speed_x(chassis->kb_x_speed.out);
-    chassis->set_speed_y(chassis->kb_y_speed.out);
+    Chassis_Set_Vel_X(chassis,chassis->kb_x_speed.out);
+    Chassis_Set_Vel_Y(chassis,chassis->kb_y_speed.out);
 
     speedX = chassis->velocity.speedX * arm_cos_f32(chassis->direction_angle * 2 * PI)
-        + chassis->velocity.speedY * arm_sin_f32(chassis->direction_angle * 2 * PI) + chassis->align_data.vel_x;
+        + chassis->velocity.speedY * arm_sin_f32(chassis->direction_angle * 2 * PI) + chassis->tof.align_data.vel_x;
     speedY = -chassis->velocity.speedX * arm_sin_f32(chassis->direction_angle * 2 * PI)
         + chassis->velocity.speedY * arm_cos_f32(chassis->direction_angle * 2 * PI);
 
@@ -224,20 +241,21 @@ __RAM_FUNC void Chassis_Update_Speed_Ctrl(chassis_t *chassis)
     }
     else
     {
-        if (!chassis->hi229um->check_enable() || chassis->hi229um->check_lost())
+        if (!hi229um.state.enable_flag || hi229um.state.lost_flag)
         {
-            chassis->close_yaw_spin();
-            chassis->set_speed_spin(10 * chassis->velocity.rc_set_spin + 30.F*chassis->align_data.vel_spin + 0.5f * chassis->align_data.delta_rounds);
+            Chassis_Close_Yaw_Spin(chassis);
+            Chassis_Set_Vel_Spin(chassis,10 * chassis->velocity.rc_set_spin + 30.F*chassis->tof.align_data.vel_spin + 0.5f * chassis->tof.align_data.delta_rounds);
             speedSpin = chassis->velocity.speedSpin ;
         }
         else
         {
             use_hi229um_flag = true;
-            if (chassis->hi229um->check_zero_offset())
+            if (hi229um.state.zero_offset_flag)
             {
-                chassis->yaw_round_set += (0.08f * chassis->velocity.rc_set_spin + 0.05f*chassis->align_data.vel_spin) * chassis->yaw_round_set_proportion;
+                chassis->yaw_round_set += (0.08f * chassis->velocity.rc_set_spin + 0.05f*chassis->tof.align_data.vel_spin) * chassis->yaw_round_set_proportion;
 #if MAHONY
-                chassis->set_speed_spin(chassis->rotpid.calculate(chassis->yaw_round_set, chassis->hi229um->get_yaw_total_deg()));
+                PID_Error_Calculate_N_Loc(&chassis->rot_pid,chassis->yaw_round_set,HI229UM_Get_Yaw_Total_Deg());
+                Chassis_Set_Vel_Spin(chassis,PID_Calculate(&chassis->rot_pid));
 #else
                 chassis->set_speed_spin(chassis->rotpid.calculate(chassis->yaw_round_set,  chassis->hi229um->get_yaw_total_deg()));
 #endif
@@ -250,7 +268,7 @@ __RAM_FUNC void Chassis_Update_Speed_Ctrl(chassis_t *chassis)
                 chassis->yaw_round_set = 0;
             }
         }
-    }*/
+    }
 
     if (chassis->state.super_rotate_flag)
     {
@@ -261,4 +279,74 @@ __RAM_FUNC void Chassis_Update_Speed_Ctrl(chassis_t *chassis)
         Chassis_Motor_SolverSet(chassis->M3508, speedX, speedY, speedSpin);
     }
     Chassis_PowerCtrl_Update(chassis);
+}
+
+void Chassis_Update_Align(chassis_t *chassis)
+{
+    if(!chassis->state.tof_lost_flag)
+    {
+        chassis->tof.align_data.beta = atanf((chassis->tof.align_data.right_dist - chassis->tof.align_data.left_dist) / TOF_DEVICE_DISTANCE);
+        chassis->tof.align_data.center_dist = (chassis->tof.align_data.right_dist+ chassis->tof.align_data.left_dist) / 2.f;
+    }
+
+    if(chassis->state.enable_align_flag && !chassis->state.tof_lost_flag)
+    {
+
+        if(ABS(chassis->tof.align_data.beta) <= ALIGN_CRITICAL_ANGLE && chassis->tof.align_data.center_dist <= (chassis->tof.align_data.target_dist + ALIGN_DELTA_DISTANCE))
+        {
+            chassis->tof.align_data.delta_rounds = chassis->tof.align_data.beta/(2*PI);
+            PID_Error_Calculate_N_Loc(&chassis->tof.dist_pid,chassis->tof.align_data.target_dist, chassis->tof.align_data.center_dist);
+            chassis->tof.align_data.vel_x = -PID_Calculate(&chassis->tof.dist_pid);
+            if(chassis->tof.align_data.left_dist < ALIGN_CRITICAL_DISTANCE || chassis->tof.align_data.right_dist < ALIGN_CRITICAL_DISTANCE)
+            {
+                PID_Error_Calculate_N_Loc(&chassis->tof.align_pid,0,chassis->tof.align_data.delta_rounds);
+                chassis->tof.align_data.vel_spin = -PID_Calculate(&chassis->tof.align_pid);
+            }else
+            {
+                chassis->tof.align_data.vel_spin = 0;
+            }
+        }
+        else
+        {
+            chassis->tof.align_data.vel_x = 0.0f;
+            chassis->tof.align_data.vel_y = 0.0f;
+            chassis->tof.align_data.vel_spin = 0.0f;
+            chassis->tof.align_data.delta_rounds = 0.0f;
+        }
+    }
+    else
+    {
+        chassis->tof.align_data.vel_x = 0.0f;
+        chassis->tof.align_data.vel_y = 0.0f;
+        chassis->tof.align_data.vel_spin = 0.0f;
+        chassis->tof.align_data.beta = 0.0f;
+        chassis->tof.align_data.delta_rounds = 0.0f;
+    }
+}
+
+void Chassis_Set_Vel_X(chassis_t *chassis,float vel_x)
+{
+    vel_x = ABS_Limit(vel_x,chassis->velocity.vel_max.total);
+    chassis->velocity.speedX = vel_x;
+}
+
+void Chassis_Set_Vel_Y(chassis_t *chassis,float vel_y)
+{
+    vel_y = ABS_Limit(vel_y,chassis->velocity.vel_max.total);
+    chassis->velocity.speedY = vel_y;
+}
+
+void Chassis_Set_Vel_Spin(chassis_t *chassis,float vel_spin)
+{
+    vel_spin = ABS_Limit(vel_spin,chassis->velocity.vel_max.total * 0.8);
+    chassis->velocity.speedSpin = vel_spin;
+}
+
+void Chassis_Close_Yaw_Spin(chassis_t *chassis)
+{
+    IMU_Set_Current_As_Offset();
+    HI229UM_Set_Current_As_Offset();
+
+    chassis->yaw_round_set = 0.0f;
+    chassis->velocity.speedSpin = 0.0f;
 }

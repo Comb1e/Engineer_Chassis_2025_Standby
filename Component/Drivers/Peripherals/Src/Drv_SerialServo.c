@@ -106,16 +106,19 @@ void LobotSerialServoSetSavePosOffset(servo_t *_servo, uint8_t _id, int8_t _offs
 }
 
 //总线上只有一个舵机时使用其读ID
-uint8_t LobotSerialReadID(servo_t *_servo) {
+uint8_t LobotSerialReadID(servo_t *_servo)
+{
     return LobotSerialServoReadID(_servo, LOBOT_BROADCAST_ID);
 }
 
 /** ------------------------------------- BASIC FUNCTIONS ---------------------------------------- **/
 
-uint8_t LobotCheckSum(uint8_t buf[]) {
+uint8_t LobotCheckSum(uint8_t buf[])
+{
     uint8_t i;
     uint16_t temp = 0;
-    for (i = 2; i < buf[3] + 2; i++) {
+    for (i = 2; i < buf[3] + 2; i++)
+    {
         temp += buf[i];
     }
     temp = ~temp;
@@ -123,7 +126,8 @@ uint8_t LobotCheckSum(uint8_t buf[]) {
     return i;
 }
 
-bool LobotReadCheck(uint8_t rx_buf[], uint8_t _id, uint8_t _data_len, uint8_t _instruction) {
+bool LobotReadCheck(uint8_t rx_buf[], uint8_t _id, uint8_t _data_len, uint8_t _instruction)
+{
 
     if (unsigned_16(rx_buf) == 0x5555 &&
         rx_buf[2] == _id && rx_buf[3] == _data_len &&
@@ -137,7 +141,8 @@ bool LobotReadCheck(uint8_t rx_buf[], uint8_t _id, uint8_t _data_len, uint8_t _i
 
 /** ------------------------------------- WRITE ---------------------------------------- **/
 //1 0-1000 0-30000
-void LobotSerialServoMoveSet(servo_t *_servo, uint8_t _id, int16_t _position, uint16_t _time_ms) {
+void LobotSerialServoMoveSet(servo_t *_servo, uint8_t _id, int16_t _position, uint16_t _time_ms)
+{
     servo_device_t *_servo_dev = _servo->id2dev[_id];
     uint8_t _buf[10];//static,这个用了static后如果不用osdelay就会只动一个爪子
     if (_position < 0) _position = 0;
@@ -389,7 +394,8 @@ void LobotSerialServoErrorCfg(servo_t *_servo, uint8_t _id, uint8_t _error_type)
 //if (DR16_BUFF_LEN - __HAL_DMA_GET_COUNTER(_rc_dev->_huart->hdmarx) == 18)
 
 //14 _id应为254 只能有一个舵机
-uint8_t LobotSerialServoReadID(servo_t *_servo, uint8_t _id) {
+uint8_t LobotSerialServoReadID(servo_t *_servo, uint8_t _id)
+{
 //    static osStatus_t stat = osError;
     uint8_t rec_data_len = 4, rec_buf[7] = {0}, error_cnt = 0;
     uint8_t _buf[6];
@@ -407,20 +413,23 @@ uint8_t LobotSerialServoReadID(servo_t *_servo, uint8_t _id) {
 //        }
 //        error_cnt++;
 //    }
-    while (!LobotReadCheck(rec_buf, _id, rec_data_len, LOBOT_SERVO_ID_READ) && error_cnt < 30) {
+    while (!LobotReadCheck(rec_buf, _id, rec_data_len, LOBOT_SERVO_ID_READ) && error_cnt < 30)
+    {
         LobotSerialWrite(_servo->huart, _buf, 6);
         LobotSerialRead(_servo->huart, rec_buf, SERVO_BUFF_LEN);//rec_data_len+3
         //这个地方可以大一点,或者是取最大即可,给rec_buf可以直接给最大,不用特别标准
         error_cnt++;
     }
     if (error_cnt < 30)
+    {
         return rec_buf[5];//ID
-    else
-        return UINT8_ERROR_RETURN;
+    }
+    return UINT8_ERROR_RETURN;
 }
 
 //19 -125~125
-int8_t LobotSerialServoReadPosOffset(servo_t *_servo, uint8_t _id) {
+int8_t LobotSerialServoReadPosOffset(servo_t *_servo, uint8_t _id)
+{
     servo_device_t *_servo_dev = _servo->id2dev[_id];
     uint8_t rec_data_len = 4, rec_buf[7] = {0}, error_cnt = 0;
     uint8_t _buf[6];
@@ -430,16 +439,18 @@ int8_t LobotSerialServoReadPosOffset(servo_t *_servo, uint8_t _id) {
     _buf[4] = LOBOT_SERVO_ANGLE_OFFSET_READ;
     _buf[5] = LobotCheckSum(_buf);
 
-    while (!LobotReadCheck(rec_buf, _id, rec_data_len, LOBOT_SERVO_ANGLE_OFFSET_READ) && error_cnt < 30) {
+    while (!LobotReadCheck(rec_buf, _id, rec_data_len, LOBOT_SERVO_ANGLE_OFFSET_READ) && error_cnt < 30)
+    {
         LobotSerialWrite(_servo->huart, _buf, 6);
         LobotSerialRead(_servo->huart, rec_buf, SERVO_BUFF_LEN);//rec_data_len+3
         error_cnt++;
     }
-    if (error_cnt < 30) {
+    if (error_cnt < 30)
+    {
         _servo_dev->mode.pos_offset = (int8_t) rec_buf[5];//Offset
         return (int8_t) rec_buf[5];//Offset
-    } else
-        return INT8_ERROR_RETURN;
+    }
+    return INT8_ERROR_RETURN;
 }
 
 //26
@@ -485,7 +496,8 @@ int16_t LobotSerialServoReadVoltage(servo_t *_servo, uint8_t _id) {
 }
 
 //28读出角度可能为负值
-int16_t LobotSerialServoReadPosition(servo_t *_servo, uint8_t _id) {
+int16_t LobotSerialServoReadPosition(servo_t *_servo, uint8_t _id)
+{
     servo_device_t *_servo_dev = _servo->id2dev[_id];
     uint8_t rec_data_len = 5, rec_buf[7] = {0}, error_cnt = 0;
     uint8_t _buf[6];

@@ -30,7 +30,7 @@ void Chassis_Task(void *argument)
                 }
                 case Speed:
                 {
-                    //g_chassis.update_speed_control();
+                    Chassis_Update_Speed_Ctrl(&chassis);
                     break;
                 }
                 default:

@@ -25,6 +25,8 @@
 
 #define MOTOR_NUM 5
 
+#define RESET_ERROR_MIN 0.8f
+
 enum DJI_MOTOR_TYPE
 {
     MOTOR_TYPE_NONE = 0,
@@ -32,6 +34,13 @@ enum DJI_MOTOR_TYPE
     DJI_M2006,
     DJI_GM6020,
 };
+
+enum reset_step_e
+{
+    START = 0,//开始
+    GET_OFFSET,//以一个速度进行复位堵转，得到offset
+    ONE_POS,//到达堵转点后运动到一个特定点，防止持续堵转
+  };
 
 typedef struct
 {
@@ -66,7 +75,34 @@ typedef struct
     bool ready_flag;
     bool lost_flag;
     bool enable_flag;
+    bool reset_flag;
 }DJI_motor_state_t;
+
+
+typedef struct
+{
+    float min_rounds;
+    float max_rounds;
+    float rounds_offset;
+    float motion_min;
+    float motion_max;
+    float motion_initial;
+   // pid_init_param_t control_pospid;
+   // pid_init_param_t control_velpid;
+}motor_reset_data_t;
+
+typedef struct
+{
+    bool success_flag;//复位成功标志位
+    bool need_reset_flag;
+    enum reset_step_e step;//复位状态
+    float motor_set_rounds;
+    motor_reset_data_t data ;//复位数据
+    float reset_speed;
+    pid_t pid_loc;
+    pid_t pid_vel;
+    pid_t pid_tor;
+}reset_t;
 
 typedef struct
 {
@@ -81,6 +117,7 @@ typedef struct
     enum DJI_MOTOR_TYPE type;
     target_data_t target_data;
     DJI_motor_state_t state;
+    reset_t reset;
 }DJI_motor_t;;
 
 void DJI_Motor_Init(DJI_motor_t *DJI_motor,bool reverse_flag,uint32_t rx_id,float stall_current_max,float stall_speed_min,enum DJI_MOTOR_TYPE type,CAN_HandleTypeDef *hcan,osSemaphoreId_t rx_sem,bool enable_pid_loc_flag);
@@ -93,5 +130,11 @@ void Check_DJI_Motor_Loss(DJI_motor_t *DJI_motor);
 void DJI_Motor_Update_Ready(DJI_motor_t *DJI_motor);
 void DJI_Motor_Update_TX_Data(DJI_motor_can_tx_t *DJI_motor_can_tx,uint16_t data);
 void DJI_Motor_Set_Free(DJI_motor_t *DJI_motor);
+void DJI_Motor_Reset_Init(DJI_motor_t *DJI_motor,float reset_speed,float min_rounds,float max_rounds,float rounds_offset,float motion_min,float motion_max);
+void DJI_Motor_Set_Reset(DJI_motor_t *DJI_motor);
+void DJI_Motor_Set_N_Reset(DJI_motor_t *DJI_motor);
+bool DJI_Motor_Check_Reset_Complete(const DJI_motor_t *DJI_motor);
+void DJI_Motor_Reset(DJI_motor_t *DJI_motor);
+bool DJI_Motor_Get_Reset_Offset(DJI_motor_t *DJI_motor);
 
 #endif //DRV_DJI_MOTOR_H

@@ -429,6 +429,30 @@ Component/Drivers/Function/Src/Drv_Chassis.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.c.s
 .PHONY : Component/Drivers/Function/Src/Drv_Chassis.c.s
 
+Component/Drivers/Function/Src/Drv_Gimbal.obj: Component/Drivers/Function/Src/Drv_Gimbal.c.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Gimbal.obj
+
+# target to build an object file
+Component/Drivers/Function/Src/Drv_Gimbal.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.c.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Gimbal.c.obj
+
+Component/Drivers/Function/Src/Drv_Gimbal.i: Component/Drivers/Function/Src/Drv_Gimbal.c.i
+.PHONY : Component/Drivers/Function/Src/Drv_Gimbal.i
+
+# target to preprocess a source file
+Component/Drivers/Function/Src/Drv_Gimbal.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.c.i
+.PHONY : Component/Drivers/Function/Src/Drv_Gimbal.c.i
+
+Component/Drivers/Function/Src/Drv_Gimbal.s: Component/Drivers/Function/Src/Drv_Gimbal.c.s
+.PHONY : Component/Drivers/Function/Src/Drv_Gimbal.s
+
+# target to generate assembly for a file
+Component/Drivers/Function/Src/Drv_Gimbal.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.c.s
+.PHONY : Component/Drivers/Function/Src/Drv_Gimbal.c.s
+
 Component/Drivers/Peripherals/IMU/QuaternionEKF.obj: Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
 .PHONY : Component/Drivers/Peripherals/IMU/QuaternionEKF.obj
 
@@ -716,6 +740,54 @@ Component/Tasks/Function/Src/Chassis_Task.s: Component/Tasks/Function/Src/Chassi
 Component/Tasks/Function/Src/Chassis_Task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.c.s
 .PHONY : Component/Tasks/Function/Src/Chassis_Task.c.s
+
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj: Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.obj
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj
+
+# target to build an object file
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.obj
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.obj
+
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.i: Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.i
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.i
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.i
+
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.s: Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.s
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.s
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.c.s
+
+Component/Tasks/Function/Src/Gimbal_Slide_Task.obj: Component/Tasks/Function/Src/Gimbal_Slide_Task.c.obj
+.PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.obj
+
+# target to build an object file
+Component/Tasks/Function/Src/Gimbal_Slide_Task.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.c.obj
+.PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.c.obj
+
+Component/Tasks/Function/Src/Gimbal_Slide_Task.i: Component/Tasks/Function/Src/Gimbal_Slide_Task.c.i
+.PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Function/Src/Gimbal_Slide_Task.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.c.i
+.PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.c.i
+
+Component/Tasks/Function/Src/Gimbal_Slide_Task.s: Component/Tasks/Function/Src/Gimbal_Slide_Task.c.s
+.PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Function/Src/Gimbal_Slide_Task.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.c.s
+.PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.c.s
 
 Component/Tasks/Peripherals/Src/CAN1_Task.obj: Component/Tasks/Peripherals/Src/CAN1_Task.c.obj
 .PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.obj
@@ -2307,6 +2379,9 @@ help:
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.i
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.s
+	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.obj
+	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.i
+	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.s
 	@echo ... Component/Drivers/Peripherals/IMU/QuaternionEKF.obj
 	@echo ... Component/Drivers/Peripherals/IMU/QuaternionEKF.i
 	@echo ... Component/Drivers/Peripherals/IMU/QuaternionEKF.s
@@ -2343,6 +2418,12 @@ help:
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.obj
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.i
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.s
+	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj
+	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.i
+	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.s
+	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.obj
+	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.i
+	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.s
 	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.s

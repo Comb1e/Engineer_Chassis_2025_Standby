@@ -28,6 +28,19 @@
 
 #define CHASSIS_POWER_LIMIT     (24 * 10)
 
+/*------------------底盘速度相关限制-------------*/
+//键鼠
+#define CHASSIS_KB_VEL_STEER_MODE_QUICK       0.7f
+#define CHASSIS_KB_VEL_STEER_MODE_SLOW        0.3f
+#define CHASSIS_KB_VEL_MINE_MODE              0.05f
+
+#define CHASSIS_VEL_RC_MAX 0.5f
+#define CHASSIS_VEL_KB_MAX 0.95f
+#define CHASSIS_VEL_TOTAL_MAX 0.95f
+#define CHASSIS_VEL_TOTAL_MIN 0.2f
+
+#define CHASSIS_SMALL_GYROSCOPE_SPEED 0.5f
+
 typedef enum
 {
     Position = 1,
@@ -105,6 +118,23 @@ typedef struct
 
 typedef struct
 {
+    float rc;
+    float kb;
+    float total;
+}vel_max_t;
+
+typedef struct
+{
+    float speedX;
+    float speedY;
+    float speedSpin;
+    float small_gyroscope_speed;
+    vel_max_t vel_max;
+    float rc_set_spin;
+}chassis_velocity_t;
+
+typedef struct
+{
     DJI_motor_t M3508[4];//轮子
     chassis_power_control_data_t power_control_data;
     slope_speed_t kb_x_speed;
@@ -114,7 +144,12 @@ typedef struct
     chassis_control_type control_type;
     chassis_position_t position;
     pid_t pos_rot_pid;
+    pid_t rot_pid;
     float pos_yaw_angle;//位置环时的控制角度
+    chassis_velocity_t velocity;
+    float direction_angle;
+    float yaw_round_set;
+    float yaw_round_set_proportion;//速度控制的时候的比例补偿，防止限幅更新之后不跟手
 }chassis_t;
 
 void Chassis_Init(chassis_t *chassis);
@@ -127,7 +162,13 @@ void TOF_RX_Data_Update_CallBack(uint32_t std_id,const uint8_t *rx_data);
 void Chassis_Update_Ready(chassis_t *chassis);
 void Chassis_Set_Free(chassis_t *chassis);
 __RAM_FUNC void Chassis_Update_Position_Ctrl(chassis_t *chassis);
+__RAM_FUNC void Chassis_Update_Speed_Ctrl(chassis_t *chassis);
 void Chassis_Add_Position_Spin(chassis_t *chassis,float delta_spin);
+void Chassis_Update_Align(chassis_t *chassis);
+void Chassis_Set_Vel_X(chassis_t *chassis,float vel_x);
+void Chassis_Set_Vel_Y(chassis_t *chassis,float vel_y);
+void Chassis_Set_Vel_Spin(chassis_t *chassis,float vel_spin);
+void Chassis_Close_Yaw_Spin(chassis_t *chassis);
 
 extern chassis_t chassis;
 extern DJI_motor_t M2006;

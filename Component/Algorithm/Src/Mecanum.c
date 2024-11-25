@@ -17,7 +17,8 @@ __RAM_FUNC void Chassis_Motor_SolverSet(DJI_motor_t wheels[], float vel_x, float
     arm_sqrt_f32(vel_x * vel_x + vel_y * vel_y, &v);
 
     //其实这一步可以没有，因为有这一步其实是改变了w和x和y的比例分配问题（最大功率有限制），实际上可以改spin的值来做
-    if (v > 1) {
+    if (v > 1)
+    {
         float theta = atanf(vel_y / vel_x);
         vel_x = arm_cos_f32(theta);
         vel_y = arm_sin_f32(theta);

@@ -132,6 +132,20 @@ const osThreadAttr_t servo_ctrl_Task_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for gimbal_slide */
+osThreadId_t gimbal_slideHandle;
+const osThreadAttr_t gimbal_slide_attributes = {
+  .name = "gimbal_slide",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for gimbal_attitude */
+osThreadId_t gimbal_attitudeHandle;
+const osThreadAttr_t gimbal_attitude_attributes = {
+  .name = "gimbal_attitude",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -235,6 +249,8 @@ void USB_Task(void *argument);
 void Tof_Check_Task(void *argument);
 void Motor_Check_Task(void *argument);
 void Servo_Ctrl_Task(void *argument);
+void Gimbal_Slide_Task(void *argument);
+void Gimbal_Attitude_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -354,6 +370,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of servo_ctrl_Task */
   servo_ctrl_TaskHandle = osThreadNew(Servo_Ctrl_Task, NULL, &servo_ctrl_Task_attributes);
+
+  /* creation of gimbal_slide */
+  gimbal_slideHandle = osThreadNew(Gimbal_Slide_Task, NULL, &gimbal_slide_attributes);
+
+  /* creation of gimbal_attitude */
+  gimbal_attitudeHandle = osThreadNew(Gimbal_Attitude_Task, NULL, &gimbal_attitude_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -572,7 +594,7 @@ __weak void Motor_Check_Task(void *argument)
 * @retval None
 */
 /* USER CODE END Header_Servo_Ctrl_Task */
-void Servo_Ctrl_Task(void *argument)
+__weak void Servo_Ctrl_Task(void *argument)
 {
   /* USER CODE BEGIN Servo_Ctrl_Task */
   /* Infinite loop */
@@ -581,6 +603,42 @@ void Servo_Ctrl_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END Servo_Ctrl_Task */
+}
+
+/* USER CODE BEGIN Header_Gimbal_Slide_Task */
+/**
+* @brief Function implementing the gimbal_slide thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Gimbal_Slide_Task */
+__weak void Gimbal_Slide_Task(void *argument)
+{
+  /* USER CODE BEGIN Gimbal_Slide_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Gimbal_Slide_Task */
+}
+
+/* USER CODE BEGIN Header_Gimbal_Attitude_Task */
+/**
+* @brief Function implementing the gimbal_attitude thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Gimbal_Attitude_Task */
+__weak void Gimbal_Attitude_Task(void *argument)
+{
+  /* USER CODE BEGIN Gimbal_Attitude_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Gimbal_Attitude_Task */
 }
 
 /* Private application code --------------------------------------------------*/

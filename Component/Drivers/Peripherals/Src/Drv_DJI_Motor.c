@@ -173,7 +173,7 @@ void DJI_Motor_Update_Data(DJI_motor_t *DJI_motor)
         }
         case DJI_M2006:
         {
-            DJI_motor->current_data.speed_rpm = (float)DJI_motor->raw_data.speed_rpm / -DJI_MOTOR_MAX_SPEED_M2006;
+            DJI_motor->current_data.speed_rpm = (float)DJI_motor->raw_data.speed_rpm / DJI_MOTOR_MAX_SPEED_M2006;
             break;
         }
         case DJI_GM6020:
@@ -192,23 +192,40 @@ void DJI_Motor_Update_Data(DJI_motor_t *DJI_motor)
     DJI_Motor_Zero_Offset(DJI_motor,false);
 
 
-    if(DJI_motor->state.enable_pid_loc_flag)
-    {
-        PID_Error_Calculate_Loc(&DJI_motor->pid_loc,DJI_motor->current_data.ecd,DJI_motor->last_data.ecd);
-        DJI_motor->target_data.target_vel = PID_Calculate(&DJI_motor->pid_loc);
-    }
+    pid_t *pid_loc;
+    pid_t *pid_vel;
+    pid_t *pid_tor;
 
-    PID_Error_Calculate_N_Loc(&DJI_motor->pid_vel,DJI_motor->target_data.target_vel,DJI_motor->current_data.speed_rpm);
-    if(DJI_motor->state.enable_pid_tor_flag)
+    if(DJI_motor->state.reset_flag)
     {
-        DJI_motor->target_data.target_tor = PID_Calculate(&DJI_motor->pid_vel);
-
-        PID_Error_Calculate_N_Loc(&DJI_motor->pid_tor,DJI_motor->target_data.target_tor,DJI_motor->current_data.torque_current);
-        DJI_motor->target_data.set_current = (int16_t)PID_Calculate(&DJI_motor->pid_tor);
+        pid_loc = &DJI_motor->reset.pid_loc;
+        pid_vel = &DJI_motor->reset.pid_vel;
+        pid_tor = &DJI_motor->reset.pid_tor;
     }
     else
     {
-        DJI_motor->target_data.set_current = (int16_t)PID_Calculate(&DJI_motor->pid_vel);
+        pid_loc = &DJI_motor->pid_loc;
+        pid_vel = &DJI_motor->pid_vel;
+        pid_tor = &DJI_motor->pid_tor;
+    }
+
+    if(DJI_motor->state.enable_pid_loc_flag)
+    {
+        PID_Error_Calculate_Loc(pid_loc,DJI_motor->current_data.ecd,DJI_motor->last_data.ecd);
+        DJI_motor->target_data.target_vel = PID_Calculate(pid_loc);
+    }
+
+    PID_Error_Calculate_N_Loc(pid_vel,DJI_motor->target_data.target_vel,DJI_motor->current_data.speed_rpm);
+    if(DJI_motor->state.enable_pid_tor_flag)
+    {
+        DJI_motor->target_data.target_tor = PID_Calculate(pid_vel);
+
+        PID_Error_Calculate_N_Loc(pid_tor,DJI_motor->target_data.target_tor,DJI_motor->current_data.torque_current);
+        DJI_motor->target_data.set_current = (int16_t)PID_Calculate(pid_tor);
+    }
+    else
+    {
+        DJI_motor->target_data.set_current = (int16_t)PID_Calculate(pid_vel);
     }
     if(rc.ctrl_protection.connect_flag && DJI_motor->state.enable_flag)
     {
@@ -290,4 +307,106 @@ void DJI_Motor_Set_Free(DJI_motor_t *DJI_motor)
     DJI_motor->pid_loc.i_out = 0;
     DJI_motor->pid_vel.i_out = 0;
     DJI_motor->pid_tor.i_out = 0;
+}
+
+void DJI_Motor_Reset_Init(DJI_motor_t *DJI_motor,float reset_speed,float min_rounds,float max_rounds,float rounds_offset,float motion_min,float motion_max)
+{
+    DJI_motor->reset.success_flag = false;
+    DJI_motor->reset.step = START;
+    DJI_motor->reset.need_reset_flag = true;
+    DJI_motor->reset.motor_set_rounds = 0.0f;
+
+    DJI_motor->reset.reset_speed = reset_speed;
+    DJI_motor->reset.data.min_rounds = min_rounds;
+    DJI_motor->reset.data.max_rounds = max_rounds;
+    DJI_motor->reset.data.rounds_offset = rounds_offset;
+    DJI_motor->reset.data.motion_min = motion_min;
+    DJI_motor->reset.data.motion_max = motion_max;
+}
+
+void DJI_Motor_Set_Reset(DJI_motor_t *DJI_motor)
+{
+    DJI_motor->state.reset_flag = true;
+}
+
+void DJI_Motor_Set_N_Reset(DJI_motor_t *DJI_motor)
+{
+    DJI_motor->state.reset_flag = false;
+}
+
+bool DJI_Motor_Get_Reset_Offset(DJI_motor_t *DJI_motor)
+{
+    if(DJI_motor->reset.success_flag)
+    {
+        return true;
+    }
+    DJI_motor->target_data.target_vel = DJI_motor->reset.reset_speed;
+
+    if(DJI_motor->stall.flag)
+    {
+        DJI_Motor_Zero_Offset(DJI_motor,false);
+        DJI_motor->reset.success_flag = true;
+        return true;
+    }
+    return false;
+}
+
+void DJI_Motor_Set_Reset_Pos(DJI_motor_t *DJI_motor)
+{
+    VAL_LIMIT(DJI_motor->reset.data.motion_initial,DJI_motor->reset.data.motion_min,DJI_motor->reset.data.motion_max);
+    DJI_motor->reset.motor_set_rounds = DJI_motor->reset.data.min_rounds + (DJI_motor->reset.data.motion_initial - DJI_motor->reset.data.motion_min) / (DJI_motor->reset.data.motion_max - DJI_motor->reset.data.motion_min) * (DJI_motor->reset.data.max_rounds - DJI_motor->reset.data.min_rounds);
+    VAL_LIMIT(DJI_motor->reset.motor_set_rounds,DJI_motor->reset.data.min_rounds,DJI_motor->reset.data.max_rounds);
+    DJI_motor->pid_loc.error += DJI_motor->reset.motor_set_rounds - DJI_motor->pid_loc.target_ecd;
+}
+
+bool DJI_Motor_Check_Reset_Complete(const DJI_motor_t *DJI_motor)
+{
+    if(ABS(DJI_motor->pid_loc.error) < RESET_ERROR_MIN)
+    {
+        return true;
+    }
+    return false;
+}
+
+void DJI_Motor_Reset(DJI_motor_t *DJI_motor)
+{
+    if(DJI_motor->reset.need_reset_flag)
+    {
+        switch (DJI_motor->reset.step)
+        {
+            case START:
+            {
+                if(DJI_motor->state.ready_flag)
+                {
+                    DJI_Motor_Set_Reset(DJI_motor);
+                    DJI_motor->reset.step = GET_OFFSET;
+                }
+                break;
+            }
+            case GET_OFFSET:
+            {
+                if(DJI_Motor_Get_Reset_Offset(DJI_motor))
+                {
+                    DJI_Motor_Set_Reset_Pos(DJI_motor);
+                    DJI_motor->reset.step = ONE_POS;
+                }
+                break;
+            }
+            case ONE_POS:
+            {
+                if(DJI_Motor_Check_Reset_Complete(DJI_motor))
+                {
+                    DJI_motor->reset.step = START;
+                    DJI_motor->reset.need_reset_flag = false;
+                    DJI_Motor_Set_N_Reset(DJI_motor);
+                }
+                break;
+            }
+            default:
+            {
+                break;
+            }
+
+        }
+    }
 }

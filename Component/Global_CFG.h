@@ -11,6 +11,7 @@
 #define SERVO 1
 #define USB 1
 #define CHASSIS 1
+#define GIMBAL 1
 
 #define CAMERA_ON_ARM 1
 
