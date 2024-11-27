@@ -63,14 +63,13 @@ void USB_Device_Init(usb_device_t *usb_device)
 
     usb_device->ore_down_transformation.xyz_mm << -150.f, 0.0f, -135.f;//吸盘35 100 + 35
 
-    PID_Init(&usb_device->arm_pitch_pid,2,0,0,0,10);
+    usb_device->arm_pitch_pid.Init(2,0,0,0,10);
 }
 
 
 void Remain_Camera_Horizontal(usb_device_t *usb_device)
 {
-    PID_Error_Calculate_N_Loc(&usb_device->arm_pitch_pid,0,usb_device->arm_pitch_real_angle);
-    float out = PID_Calculate(&usb_device->arm_pitch_pid);
+    float out = usb_device->arm_pitch_pid.Calculate(0, usb_device->arm_pitch_real_angle);
     VAL_LIMIT(out,-10.f,0.0f);
     /*usb_device->arm->set_point_target_pos(ARM_PITCH,out);*/
 }
@@ -363,6 +362,6 @@ float USB_Solve_Pitch_Com(float set_pitch)
     float res;
     arm_sqrt_f32(4901.9f - 10.f * set_pitch,&a);
     res = (13.8592f - a/5.f) * 180.f /PI;
-    res = ABS_Limit(res,70.f);
+    ABS_LIMIT(res,70.f);
     return res;
 }

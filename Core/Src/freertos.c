@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "BSP_Can.h"
+#include "Compilable.h"
 #include "Drv_SerialServo.h"
 /* USER CODE END Includes */
 
@@ -146,6 +146,13 @@ const osThreadAttr_t gimbal_attitude_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for info_Task */
+osThreadId_t info_TaskHandle;
+const osThreadAttr_t info_Task_attributes = {
+  .name = "info_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -251,6 +258,7 @@ void Motor_Check_Task(void *argument);
 void Servo_Ctrl_Task(void *argument);
 void Gimbal_Slide_Task(void *argument);
 void Gimbal_Attitude_Task(void *argument);
+void Info_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -376,6 +384,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of gimbal_attitude */
   gimbal_attitudeHandle = osThreadNew(Gimbal_Attitude_Task, NULL, &gimbal_attitude_attributes);
+
+  /* creation of info_Task */
+  info_TaskHandle = osThreadNew(Info_Task, NULL, &info_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -639,6 +650,24 @@ __weak void Gimbal_Attitude_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END Gimbal_Attitude_Task */
+}
+
+/* USER CODE BEGIN Header_Info_Task */
+/**
+* @brief Function implementing the info_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Info_Task */
+__weak void Info_Task(void *argument)
+{
+  /* USER CODE BEGIN Info_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Info_Task */
 }
 
 /* Private application code --------------------------------------------------*/

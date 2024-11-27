@@ -9,7 +9,7 @@
 #include "RTOS.h"
 
 #if SERVO
-void servo_ctrl_task(void *argument)
+void Servo_Ctrl_Task(void *argument)
 {
     HAL_UART_RegisterCallback(&SERVO_UART, HAL_UART_TX_COMPLETE_CB_ID, Servo_Ctrl_UartTxCpltCallBack);
     osSemaphoreRelease(ServoCtrlTXBinarySemHandle);

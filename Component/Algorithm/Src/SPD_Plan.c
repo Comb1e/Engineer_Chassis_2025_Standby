@@ -21,7 +21,7 @@ void Slope_Speed_Init(slope_speed_t *slope_speed, float out, float acc, float de
 float Get_Slope_Speed(slope_speed_t *slope_speed)
 {
     float target_speed = slope_speed->target;
-    target_speed = ABS_Limit(target_speed, slope_speed->out_max);
+    ABS_LIMIT(target_speed, slope_speed->out_max);
     bool if_acc = true;
     int dir;
     if(slope_speed->out > 0)

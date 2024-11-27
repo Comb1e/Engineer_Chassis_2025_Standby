@@ -8,6 +8,8 @@
 #include "stm32f4xx_hal.h"
 #include "cmsis_os.h"
 
+extern uint32_t debug;
+
 /*队列*/
 extern osMessageQueueId_t CAN1SendQueueHandle;
 extern osMessageQueueId_t CAN2SendQueueHandle;

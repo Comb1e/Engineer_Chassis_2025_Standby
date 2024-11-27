@@ -1,7 +1,7 @@
 //
 // Created by CYK on 2024/11/22.
 //
-
+//名字应该是hi229
 #include "HI299UM_Task.h"
 #include "cmsis_os2.h"
 #include "Drv_HI229UM.h"

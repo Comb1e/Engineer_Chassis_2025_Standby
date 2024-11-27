@@ -12,6 +12,7 @@
 #define USB 1
 #define CHASSIS 1
 #define GIMBAL 1
+#define IMU 0
 
 #define CAMERA_ON_ARM 1
 

@@ -3,3 +3,5 @@
 //
 
 #include "RTOS.h"
+
+uint32_t debug;

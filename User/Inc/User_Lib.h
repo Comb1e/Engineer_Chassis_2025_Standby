@@ -15,7 +15,6 @@
 uint32_t Get_Time_us();
 uint32_t Get_Time_ms();
 float Get_Time_ms_us();
-float ABS_Limit(float target,float val);
 uint16_t unsigned_16(uint8_t *p);
 float ABS(float target);
 
@@ -47,5 +46,17 @@ else if((val)>=(max))  \
 \
 } while(0)
 
+#define ABS_LIMIT(val, limit) \
+do                             \
+{                              \
+if ((val) <= -(limit))          \
+{                            \
+(val) = -(limit);             \
+}                            \
+else if ((val) >= (limit))     \
+{                            \
+(val) = (limit);             \
+}                            \
+} while (0)
 
 #endif //USER_LIB_H

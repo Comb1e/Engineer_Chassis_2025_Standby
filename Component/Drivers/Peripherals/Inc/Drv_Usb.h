@@ -171,7 +171,7 @@ typedef struct
 
   float arm_pitch_real_angle;
 
-  pid_t arm_pitch_pid;
+  pid arm_pitch_pid;
 }usb_device_t;
 
 void USB_Device_Init(usb_device_t *usb_device);

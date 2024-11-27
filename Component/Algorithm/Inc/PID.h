@@ -1,5 +1,5 @@
 //
-// Created by CYK on 2024/11/21.
+// Created by CYK on 2024/11/27.
 //
 
 #ifndef PID_H
@@ -7,61 +7,44 @@
 
 #include "stm32f4xx_hal.h"
 
-
 typedef struct
 {
-    float target_vel;
-    float target_tor;
-    int16_t set_current;
-}target_data_t;
-
-typedef struct
-{
-    float Kp;
-    float Ki;
-    float Kd;
-    float error;
-    float error_pre;
-    float error_pre2;
-    float p_out;
-    float i_out;
-    float d_out;
-    float i_out_max;
+    float p;
+    float i;
+    float d;
     float max_out;
-    float target_ecd;//不用作pid计算
-    float out;
-}pid_t;
+    float integral_higher_limit;
+    float integral_lower_limit;
+}pid_param;
+
 
 typedef struct
 {
-    float error;
-    float error_pre;
     float max_out;
-    float i_max;
-    float Ap;
-    float Bp;
-    float Cp;
-    float Ai;
-    float Ci;
+    float integral_limit;
     float kp;
     float ki;
     float kd;
-    float p_out;
-    float i_out;
-    float d_out;
-    int32_t round_cnt;
-    int32_t loc_all;
-    target_data_t target_data;
-}variable_structure_pid_t;
+}pid_init_param_t;
 
-void PID_Init(pid_t *pid,float kp,float ki,float kd,float i_out_max,float max_out);
-void PID_Error_Calculate_N_Loc(pid_t *pid,float target,float now);
-void PID_Error_Calculate_Loc(pid_t *pid,float now,float last);
+class pid
+{
+public:
+    pid_param param;
 
-__RAM_FUNC float PID_Calculate(pid_t *pid);//要与error_calculate结合使用
-void PID_Clear_Mem(pid_t *pid);
+    __RAM_FUNC void Init(float kp,float ki,float kd,float integral_limit,float max_out);
+    float Calculate(float set, float get);
+protected:
+    bool enable_flag;
 
-void VS_PID_Init(variable_structure_pid_t *variable_structure_pid,float max_out, float i_max, float Ap, float Bp, float Cp,float Ai,float Ci,float kd);
-__RAM_FUNC float VS_PID_Calculate(variable_structure_pid_t *variable_structure_pid);
+    float error;
+    float last_error;
+    float penultimate_error;
+
+    float pout;
+    float iout;
+    float dout;
+    float out;
+};
 
 #endif //PID_H

@@ -1,9 +1,11 @@
 //
 // Created by CYK on 2024/11/24.
 //
-
+/*
 #include "Tof_Check_Task.h"
 #include "cmsis_os2.h"
+#include "Drv_chassis.h"
+#include "Drv_Gimbal.h"
 #include "RTOS.h"
 
 uint64_t tof_lost_num = 0;
@@ -14,9 +16,9 @@ void Tof_Check_Task(void * argument)
     for (;;)
     {
         osDelay(6);
-        /*g_chassis.check_tof_for_loss();
-        g_gimbal.check_motor_lost();
-        if(g_chassis.check_tof_lost())
+        Chassis_Check_Tof_For_Loss(&chassis);
+        Gimbal_Check_Motor_Lost(&gimbal);
+        if(chassis.state.tof_lost_flag)
         {
             tof_lost_num++;
             tof_connect_num = 0;
@@ -27,12 +29,14 @@ void Tof_Check_Task(void * argument)
             tof_lost_num = 0;
         }
 
-        if(tof_connect_num > 10)
+        /*if(tof_connect_num > 10)
         {
             g_robot.disable_use_claw();
-        }else if(tof_lost_num > 0)
+        }
+        else if(tof_lost_num > 0)
         {
             g_robot.enable_use_claw();
         }*/
-    }
+    /*}
 }
+*/
