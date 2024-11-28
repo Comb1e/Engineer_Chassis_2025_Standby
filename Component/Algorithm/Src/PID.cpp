@@ -35,7 +35,6 @@ __RAM_FUNC void pid::Init(float kp, float ki, float kd, float integral_limit, fl
 
 float pid::Calculate(float set, float get)
 {
-
     this->error = set - get;
 
     this->pout = this->param.p * this->error;
@@ -47,7 +46,7 @@ float pid::Calculate(float set, float get)
     ABS_LIMIT(this->out,this->param.max_out);
     this->last_error = this->error;
 
-    if(this->enable_flag)
+    if(!this->enable_flag)
     {
         this->out = 0;
     }

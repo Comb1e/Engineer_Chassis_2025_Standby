@@ -309,6 +309,30 @@ Component/Algorithm/Src/CRC.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.s
 .PHONY : Component/Algorithm/Src/CRC.c.s
 
+Component/Algorithm/Src/Mecanum.obj: Component/Algorithm/Src/Mecanum.cpp.obj
+.PHONY : Component/Algorithm/Src/Mecanum.obj
+
+# target to build an object file
+Component/Algorithm/Src/Mecanum.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.cpp.obj
+.PHONY : Component/Algorithm/Src/Mecanum.cpp.obj
+
+Component/Algorithm/Src/Mecanum.i: Component/Algorithm/Src/Mecanum.cpp.i
+.PHONY : Component/Algorithm/Src/Mecanum.i
+
+# target to preprocess a source file
+Component/Algorithm/Src/Mecanum.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.cpp.i
+.PHONY : Component/Algorithm/Src/Mecanum.cpp.i
+
+Component/Algorithm/Src/Mecanum.s: Component/Algorithm/Src/Mecanum.cpp.s
+.PHONY : Component/Algorithm/Src/Mecanum.s
+
+# target to generate assembly for a file
+Component/Algorithm/Src/Mecanum.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.cpp.s
+.PHONY : Component/Algorithm/Src/Mecanum.cpp.s
+
 Component/Algorithm/Src/PID.obj: Component/Algorithm/Src/PID.cpp.obj
 .PHONY : Component/Algorithm/Src/PID.obj
 
@@ -716,6 +740,54 @@ Component/Tasks/Function/Src/Gimbal_Slide_Task.s: Component/Tasks/Function/Src/G
 Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.s
 .PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.s
+
+Component/Tasks/Peripherals/Src/CAN1_Task.obj: Component/Tasks/Peripherals/Src/CAN1_Task.cpp.obj
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/CAN1_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.cpp.obj
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.cpp.obj
+
+Component/Tasks/Peripherals/Src/CAN1_Task.i: Component/Tasks/Peripherals/Src/CAN1_Task.cpp.i
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/CAN1_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.cpp.i
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.cpp.i
+
+Component/Tasks/Peripherals/Src/CAN1_Task.s: Component/Tasks/Peripherals/Src/CAN1_Task.cpp.s
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/CAN1_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.cpp.s
+.PHONY : Component/Tasks/Peripherals/Src/CAN1_Task.cpp.s
+
+Component/Tasks/Peripherals/Src/CAN2_Task.obj: Component/Tasks/Peripherals/Src/CAN2_Task.cpp.obj
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/CAN2_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.cpp.obj
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.cpp.obj
+
+Component/Tasks/Peripherals/Src/CAN2_Task.i: Component/Tasks/Peripherals/Src/CAN2_Task.cpp.i
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/CAN2_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.cpp.i
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.cpp.i
+
+Component/Tasks/Peripherals/Src/CAN2_Task.s: Component/Tasks/Peripherals/Src/CAN2_Task.cpp.s
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/CAN2_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.cpp.s
+.PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.cpp.s
 
 Component/Tasks/Peripherals/Src/HI299UM_Task.obj: Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
 .PHONY : Component/Tasks/Peripherals/Src/HI299UM_Task.obj
@@ -2189,29 +2261,29 @@ User/Src/RTOS.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.s
 .PHONY : User/Src/RTOS.c.s
 
-User/Src/User_Lib.obj: User/Src/User_Lib.c.obj
+User/Src/User_Lib.obj: User/Src/User_Lib.cpp.obj
 .PHONY : User/Src/User_Lib.obj
 
 # target to build an object file
-User/Src/User_Lib.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.obj
-.PHONY : User/Src/User_Lib.c.obj
+User/Src/User_Lib.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.cpp.obj
+.PHONY : User/Src/User_Lib.cpp.obj
 
-User/Src/User_Lib.i: User/Src/User_Lib.c.i
+User/Src/User_Lib.i: User/Src/User_Lib.cpp.i
 .PHONY : User/Src/User_Lib.i
 
 # target to preprocess a source file
-User/Src/User_Lib.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.i
-.PHONY : User/Src/User_Lib.c.i
+User/Src/User_Lib.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.cpp.i
+.PHONY : User/Src/User_Lib.cpp.i
 
-User/Src/User_Lib.s: User/Src/User_Lib.c.s
+User/Src/User_Lib.s: User/Src/User_Lib.cpp.s
 .PHONY : User/Src/User_Lib.s
 
 # target to generate assembly for a file
-User/Src/User_Lib.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.c.s
-.PHONY : User/Src/User_Lib.c.s
+User/Src/User_Lib.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.cpp.s
+.PHONY : User/Src/User_Lib.cpp.s
 
 # Help Target
 help:
@@ -2244,6 +2316,9 @@ help:
 	@echo ... Component/Algorithm/Src/CRC.obj
 	@echo ... Component/Algorithm/Src/CRC.i
 	@echo ... Component/Algorithm/Src/CRC.s
+	@echo ... Component/Algorithm/Src/Mecanum.obj
+	@echo ... Component/Algorithm/Src/Mecanum.i
+	@echo ... Component/Algorithm/Src/Mecanum.s
 	@echo ... Component/Algorithm/Src/PID.obj
 	@echo ... Component/Algorithm/Src/PID.i
 	@echo ... Component/Algorithm/Src/PID.s
@@ -2295,6 +2370,12 @@ help:
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.obj
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.i
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/CAN1_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.s
 	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.s

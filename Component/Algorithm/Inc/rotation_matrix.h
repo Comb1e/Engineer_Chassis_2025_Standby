@@ -22,6 +22,7 @@ void set_rotMatrix_from_euler_zyx(float z, float y, float x, float rotMat_arr[9]
 void set_rotMatrix_from_fixed_xyz(float x, float y, float z, float rotMat_arr[9]);
 void set_rotMatrix_from_euler_zyz(float z1, float y, float z2, float rotMat_arr[9]);
 void set_rotMatrix_from_euler_xyx(float x1, float y, float x2, float rotMat_arr[9]);
+
 #ifdef __cplusplus
 }
 #endif

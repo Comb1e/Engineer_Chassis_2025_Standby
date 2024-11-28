@@ -12,18 +12,19 @@ extern "C"
 
 #include "stm32f4xx_hal.h"
 
+#pragma pack(1)
 typedef struct
 {
     uint32_t tx_id;
+    uint8_t len;
     uint8_t *buf_data;
-    uint32_t len;
 }can_tx_member_t;
+#pragma pack()
 
 void BSP_CAN_Init();
-
-//extern uint32_t debug;
 
 #ifdef __cplusplus
 }
 #endif
+
 #endif //COMPILABLE_H

@@ -5,6 +5,7 @@
 #include "Drv_DJI_Motor.h"
 
 #include "can.h"
+#include "RTOS.h"
 #include "User_Lib.h"
 uint8_t DJI_Motor_Device::can1_tx_buff_0x200[8] = {};
 uint8_t DJI_Motor_Device::can1_tx_buff_0x1ff[8] = {};
@@ -105,6 +106,8 @@ void DJI_Motor_RX_Callback(can_device_t *can_device,uint8_t *rx_data)
 {
     DJI_Motor_Device *DJI_Motor = Container_Of(can_device,DJI_Motor_Device,can_device);
     DJI_Motor->Update_Data(rx_data);
+    DJI_Motor->Check_Stall();
+
 }
 
 void DJI_Motor_Device::Update_Data(uint8_t *rx_data)
@@ -217,17 +220,17 @@ void DJI_Motor_Device::Set_Current(float current)
     {
         case DJI_M3508:
         {
-            this->set_data.set_current = set_current * DJI_MOTOR_MAX_SPEED_M3508;
+            this->set_data.set_current = set_current * DJI_MOTOR_MAX_CURRENT_M3508;
             break;
         }
         case DJI_M2006:
         {
-            this->set_data.set_current = set_current * DJI_MOTOR_MAX_SPEED_M2006;
+            this->set_data.set_current = set_current * DJI_MOTOR_MAX_CURRENT_M2006;
             break;
         }
         case DJI_GM6020:
         {
-            this->set_data.set_current = set_current * DJI_MOTOR_MAX_SPEED_GM6020;
+            this->set_data.set_current = set_current * DJI_MOTOR_MAX_CURRENT_GM6020;
             break;
         }
         default:
@@ -259,6 +262,7 @@ void DJI_Motor_Device::Set_Current_To_CAN_TX_Buf() const
     {
         index -= 4;
     }
+    index = index * 2 - 2;
     this->can_device.tx_member.buf_data[index] = HIGH_BYTE(this->set_data.set_current);
     this->can_device.tx_member.buf_data[index + 1] = LOW_BYTE(this->set_data.set_current);
 }

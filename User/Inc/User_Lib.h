@@ -5,6 +5,11 @@
 #ifndef USER_LIB_H
 #define USER_LIB_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #include "stm32f4xx_hal.h"
 
 #define NORMALIZATION_MAX 1
@@ -17,6 +22,11 @@ uint32_t Get_Time_ms();
 float Get_Time_ms_us();
 uint16_t unsigned_16(uint8_t *p);
 float ABS(float target);
+
+#ifdef __cplusplus
+}
+#endif
+
 
 /**
  * @brief 知道一个结构体的子变量的地址，这个结构体的名称和这个子变量在结构体的名称，可以返回结构体变量的基地址
@@ -59,4 +69,7 @@ else if ((val) >= (limit))     \
 }                            \
 } while (0)
 
+
+
 #endif //USER_LIB_H
+

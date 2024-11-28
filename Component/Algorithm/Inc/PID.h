@@ -5,6 +5,11 @@
 #ifndef PID_H
 #define PID_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #include "stm32f4xx_hal.h"
 
 typedef struct
@@ -26,6 +31,10 @@ typedef struct
     float ki;
     float kd;
 }pid_init_param_t;
+
+#ifdef __cplusplus
+}
+#endif
 
 class pid
 {

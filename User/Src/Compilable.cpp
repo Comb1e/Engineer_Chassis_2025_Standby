@@ -5,8 +5,6 @@
 #include "Compilable.h"
 #include "can.h"
 
-//uint32_t debug;
-
 void BSP_CAN_Init()
 {
     HAL_CAN_Start(&hcan1);
