@@ -139,6 +139,20 @@ const osThreadAttr_t info_Task_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for kb_state_Task */
+osThreadId_t kb_state_TaskHandle;
+const osThreadAttr_t kb_state_Task_attributes = {
+  .name = "kb_state_Task",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for kb_event_Task */
+osThreadId_t kb_event_TaskHandle;
+const osThreadAttr_t kb_event_Task_attributes = {
+  .name = "kb_event_Task",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -243,6 +257,8 @@ void Servo_Ctrl_Task(void *argument);
 void Gimbal_Slide_Task(void *argument);
 void Gimbal_Attitude_Task(void *argument);
 void Info_Task(void *argument);
+void KB_State_Task(void *argument);
+void KB_Event_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -365,6 +381,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of info_Task */
   info_TaskHandle = osThreadNew(Info_Task, NULL, &info_Task_attributes);
+
+  /* creation of kb_state_Task */
+  kb_state_TaskHandle = osThreadNew(KB_State_Task, NULL, &kb_state_Task_attributes);
+
+  /* creation of kb_event_Task */
+  kb_event_TaskHandle = osThreadNew(KB_Event_Task, NULL, &kb_event_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -610,6 +632,42 @@ __weak void Info_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END Info_Task */
+}
+
+/* USER CODE BEGIN Header_KB_State_Task */
+/**
+* @brief Function implementing the kb_state_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_KB_State_Task */
+__weak void KB_State_Task(void *argument)
+{
+  /* USER CODE BEGIN KB_State_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END KB_State_Task */
+}
+
+/* USER CODE BEGIN Header_KB_Event_Task */
+/**
+* @brief Function implementing the kb_event_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_KB_Event_Task */
+__weak void KB_Event_Task(void *argument)
+{
+  /* USER CODE BEGIN KB_Event_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END KB_Event_Task */
 }
 
 /* Private application code --------------------------------------------------*/

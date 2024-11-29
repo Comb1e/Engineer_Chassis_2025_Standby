@@ -98,7 +98,7 @@ public:
     void Update_Data(uint8_t *rx_data);
     void Check_Stall();
     void Update_Ready();
-    bool Check_Ready();
+    bool Check_Ready() const;
     void Set_Current(float current);
     float Get_Total_Rounds() const;
     float Get_Current_Rounds() const;
@@ -114,6 +114,8 @@ public:
     void Set_Free();
     void Vel_To_Current();
     void Loc_To_Vel();
+    void Set_Vel(float vel);
+    void Set_Loc(float loc);
 
     friend void DJI_Motor_RX_Callback(can_device_t *can_device,uint8_t *rx_data);
 };

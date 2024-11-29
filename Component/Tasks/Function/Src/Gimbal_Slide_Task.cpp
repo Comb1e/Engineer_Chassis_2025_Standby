@@ -9,30 +9,51 @@
 #include "RTOS.h"
 #include "Global_CFG.h"
 
-Gimbal_Device Gimbal;//id和can写的测试电机的
-
 #if GIMBAL
 
 void Gimbal_Slide_Task(void *argument)
 {
-    /*TEST*/
-    /*Gimbal.M2006.Init(0x05,DJI_M2006,&hcan1,false,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
-    Gimbal.M2006.pid_vel.Init(2.5,0,0,100,1);
+#if TEST
+
+    gimbal.M2006.Init(0x05,DJI_M2006,&hcan1,false,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
+    gimbal.M2006.pid_vel.Init(2.5,0,0,100,1);
     for(;;)
     {
         if(rc.ctrl_protection.connect_flag)
         {
-            Gimbal.M2006.Vel_To_Current();
-            Gimbal.M2006.Set_Current_To_CAN_TX_Buf();
-            Gimbal.M2006.Send_CAN_MSG();
-            debug++;
+            gimbal.M2006.Vel_To_Current();
+            gimbal.M2006.Set_Current_To_CAN_TX_Buf();
+            gimbal.M2006.Send_CAN_MSG();
         }
-
         osDelay(1);
-    }*/
+    }
+
+#else
+
+    gimbal.Init();
+    while(!gimbal.Check_Init_Completely())
+    {
+        osDelay(1);
+    }
     for(;;)
     {
+        gimbal.Update_Ready();
+        if(gimbal.Check_Reset())
+        {
+
+        }
+        else if(gimbal.Check_Ready() && gimbal.Check_Enable())
+        {
+            gimbal.Slide_Control();
+        }
+        else
+        {
+            gimbal.Set_Free();
+        }
+        osDelay(1);
     }
+
+#endif
 }
 
 #endif

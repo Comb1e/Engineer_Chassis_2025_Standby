@@ -5,4 +5,157 @@
 #ifndef DRV_CHASSIS_H
 #define DRV_CHASSIS_H
 
+
+#include "Drv_DJI_Motor.h"
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+#include "stm32f4xx_hal.h"
+#include "SPD_Plan.h"
+
+#define CHASSIS_CAN &hcan1
+
+#define CHASSIS_MOTOR_LF_NUM 0
+#define CHASSIS_MOTOR_LB_NUM 1
+#define CHASSIS_MOTOR_RB_NUM 2
+#define CHASSIS_MOTOR_RF_NUM 3
+
+#define CHASSIS_MOTOR_LF_ID 0x201
+#define CHASSIS_MOTOR_LB_ID 0x202
+#define CHASSIS_MOTOR_RB_ID 0x203
+#define CHASSIS_MOTOR_RF_ID 0x204
+
+#define TOF_RX_ID (0x222)
+
+#define TOF_DEVICE_DISTANCE         178.0f //mm
+#define ALIGN_DELTA_DISTANCE        300.0f //mm //转动留出空间
+#define ALIGN_CRITICAL_DISTANCE     700.0f //mm 小于这个距离就开始转动
+#define ALIGN_CRITICAL_ANGLE        50.0f
+#define TOF_OFFSET                  100.f
+#define ALIGN_CRITICAL_ROUND        (ALIGN_CRITICAL_ANGLE/360.0f)
+
+/*------------------车的相应参数----------------*/
+#define CHASSIS_LENGTH        (600.0f)
+#define CHASSIS_WIDTH          (600.0f)
+/*-----------------键盘控制各个数值-----------------------*/
+/*------------------底盘速度相关限制-------------*/
+//键鼠
+#define CHASSIS_KB_VEL_STEER_MODE_QUICK       0.7f
+#define CHASSIS_KB_VEL_STEER_MODE_SLOW        0.3f
+#define CHASSIS_KB_VEL_MINE_MODE              0.05f
+
+#define CHASSIS_VEL_RC_MAX 0.5f
+#define CHASSIS_VEL_KB_MAX 0.95f
+#define CHASSIS_VEL_TOTAL_MAX 0.95f
+#define CHASSIS_VEL_TOTAL_MIN 0.2f
+
+#define CHASSIS_SMALL_GYROSCOPE_SPEED 0.5f
+/**沿吸盘反向前进的时候的pitch补偿**/
+#define EXCHANGE_PITCH_COMPENSATION      5.0f//向下
+
+#define KB_CONTROL_CYCLE    (2U)
+
+#define CHASSIS_POWER_LIMIT     (24 * 10)
+
+typedef enum
+{
+    SPEED = 0,
+    POSITION
+}control_type_e;
+
+typedef struct
+{
+    float x;
+    float y;
+    float spin;
+}position_t;
+
+typedef struct
+{
+    float rc;
+    float kb;
+}vel_max_t;
+
+typedef struct
+{
+    float x;
+    float y;
+    float spin;
+
+    float rc_set_x;
+    float rc_set_y;
+    float rc_set_spin;
+}set_vel_t;
+
+typedef struct align_data_t
+{
+    float left_dist;
+    float right_dist;
+    float target_dist;
+    float center_dist;
+    float delta_rounds;
+    float beta;
+    pid dist_pid;//前进的pid
+    pid rot_pid;//对齐的pid
+    set_vel_t set_vel;
+}align_data_t;
+
+#ifdef __cplusplus
+}
+#endif
+
+class Chassis_Device
+{
+private:
+
+public:
+    Chassis_Device();
+
+    DJI_Motor_Device wheel[4];
+
+    bool lost_flag;
+    bool ready_flag;
+    bool enable_flag;
+    bool zero_offset_flag;
+    bool tof_lost_flag;
+    bool tof_enable_flag;
+
+    control_type_e control_type;
+
+    slope_speed_t kb_vel_x;
+    slope_speed_t kb_vel_y;
+
+    set_vel_t set_vel;
+    vel_max_t vel_max;
+
+    position_t position;
+
+    align_data_t align_data;
+
+    pid pid_rot;
+
+    float pos_yaw_angle;//2PI
+
+    void Init();
+    bool Check_Init_Completely();
+    uint8_t Check_Motor_Lost();
+    bool Check_Ready_Flag() const;
+    bool Check_Enable_Flag() const;
+    void Set_Free();
+    void Update_Ready();
+    bool Check_Can_Use();
+    void Update_Speed_Control();
+    void Update_Enable_Flag();
+    void Update_Align();
+    void Check_Tof_For_Loss();
+    bool Check_Tof_Lost_Flag() const;
+    void Update_Position_Control();
+    void Add_Position_Spin(float delta);
+};
+
+extern Chassis_Device chassis;
+
 #endif //DRV_CHASSIS_H

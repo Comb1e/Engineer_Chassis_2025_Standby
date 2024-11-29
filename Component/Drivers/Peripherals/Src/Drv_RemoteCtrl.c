@@ -116,8 +116,8 @@ void RC_UpdateData()
     rc.data.left_rocker.y = ((float)rc.rx_data.raw_data.ch3 - (float)CH_ORIGINE) / (float)CH_ERROR_MAX;
     ABS_LIMIT(rc.data.left_rocker.y,NORMALIZATION_MAX);
 
-    rc.data.left_sw = (enum RC_SW)rc.rx_data.raw_data.s2;
-    rc.data.right_sw = (enum RC_SW)rc.rx_data.raw_data.s1;
+    rc.data.left_sw = (enum RC_SW)rc.rx_data.raw_data.s1;
+    rc.data.right_sw = (enum RC_SW)rc.rx_data.raw_data.s2;
 
     rc.data.mouse.x = (float)rc.rx_data.raw_data.mouse_x / (float)MOUSE_X_MAX;
     rc.data.mouse.y = (float)rc.rx_data.raw_data.mouse_y / (float)MOUSE_Y_MAX;
@@ -196,6 +196,174 @@ void RC_UpdateEvent()
         rc.event.sw_act &= (~RC_SW_L_AREA);
         rc.event.sw_act |= RC_SW_L_MID2DOWN;
     }
-
     taskEXIT_CRITICAL();
+}
+
+bool RC_Check_Key_Down_State(const enum keyMap key)
+{
+    switch (key) {
+        case KeyA: return rc.data.kb.key_bit_state.A;
+            break;
+        case KeyB: return rc.data.kb.key_bit_state.B;
+            break;
+        case KeyC: return rc.data.kb.key_bit_state.C;
+            break;
+        case KeyD: return rc.data.kb.key_bit_state.D;
+            break;
+        case KeyE: return rc.data.kb.key_bit_state.E;
+            break;
+        case KeyF: return rc.data.kb.key_bit_state.F;
+            break;
+        case KeyG: return rc.data.kb.key_bit_state.G;
+            break;
+        case KeyQ: return rc.data.kb.key_bit_state.Q;
+            break;
+        case KeyR: return rc.data.kb.key_bit_state.R;
+            break;
+        case KeyS: return rc.data.kb.key_bit_state.S;
+            break;
+        case KeyZ: return rc.data.kb.key_bit_state.Z;
+            break;
+        case KeyX: return rc.data.kb.key_bit_state.X;
+            break;
+        case KeyV: return rc.data.kb.key_bit_state.V;
+            break;
+        case KeyW: return rc.data.kb.key_bit_state.W;
+            break;
+        case KeySHIFT: return rc.data.kb.key_bit_state.SHIFT;
+            break;
+        case KeyCTRL: return rc.data.kb.key_bit_state.CTRL;
+            break;
+        default: return false;
+    }
+}
+
+bool RC_Check_Key_Up_State(const enum keyMap key)
+{
+    return !RC_Check_Key_Down_State(key);
+}
+
+bool RC_Check_Key_Down_Event( const enum keyMap key)
+{
+    uint16_t key_state = (1 << key);
+    taskENTER_CRITICAL();
+    if ((rc.event.keys_down_act & key_state) == key_state)
+    {
+        rc.event.keys_down_act &= (~key_state);
+        taskEXIT_CRITICAL();
+        return true;
+    }
+    taskEXIT_CRITICAL();
+    return false;
+}
+
+bool RC_Check_Key_Up_Event( const enum keyMap key)
+{
+    uint16_t key_state = (1 << key);
+    taskENTER_CRITICAL();
+    if ((rc.event.keys_up_act & key_state) == key_state)
+    {
+        rc.event.keys_up_act &= (~key_state);
+        taskEXIT_CRITICAL();
+        return true;
+    }
+    taskEXIT_CRITICAL();
+    return false;
+}
+
+bool RC_Check_Mouse_Left_Click_Down_Event()
+{
+    taskENTER_CRITICAL();
+    if (rc.event.left_button_down_act)
+    {
+        rc.event.left_button_down_act = 0;
+        taskEXIT_CRITICAL();
+        return true;
+    }
+    taskEXIT_CRITICAL();
+    return false;
+}
+
+bool RC_Check_Mouse_Left_Click_Up_Event()
+{
+    taskENTER_CRITICAL();
+    if (rc.event.left_button_up_act)
+    {
+        rc.event.left_button_up_act = 0;
+        taskEXIT_CRITICAL();
+        return true;
+    }
+    taskEXIT_CRITICAL();
+    return false;
+}
+
+bool RC_Check_Mouse_Right_Click_Down_Event()
+{
+    taskENTER_CRITICAL();
+    if (rc.event.right_button_down_act)
+    {
+        rc.event.right_button_down_act = 0;
+        taskEXIT_CRITICAL();
+        return true;
+    }
+    taskEXIT_CRITICAL();
+    return false;
+}
+
+bool RC_Check_Mouse_Right_Click_Up_Event()
+{
+    taskENTER_CRITICAL();
+    if (rc.event.right_button_up_act)
+    {
+        rc.event.right_button_up_act = 0;
+        taskEXIT_CRITICAL();
+        return true;
+    }
+    taskEXIT_CRITICAL();
+    return false;
+}
+
+bool RC_Check_SW_State(enum RC_SW_STATE sw_state)
+{
+    if (sw_state <= 3)
+    {
+        if (sw_state - RC_SW_L_UP == rc.data.left_sw - RC_SW_UP)
+        {
+            return true;
+        }
+    }
+    else
+    {
+        if (sw_state - RC_SW_R_UP == rc.data.right_sw - RC_SW_UP)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool RC_Check_SW_Event(uint16_t sw_event)
+{
+    taskENTER_CRITICAL();
+    if ((rc.event.sw_act & sw_event) == sw_event)
+    {
+        rc.event.sw_act &= (~(sw_event & 0x00FF));
+        taskEXIT_CRITICAL();
+        return true;
+    }
+    taskEXIT_CRITICAL();
+    return false;
+}
+
+bool RC_Check_Wheel_State(enum RC_WHEEL_STATE wheel_state)
+{
+    if (rc.data.wheel > 0.85f && wheel_state == RC_WHEEL_UP)
+    {
+        return true;
+    }
+    if (rc.data.wheel < -0.85f && wheel_state == RC_WHEEL_DOWN)
+    {
+        return true;
+    }
+    return false;
 }

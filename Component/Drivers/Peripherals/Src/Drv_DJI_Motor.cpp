@@ -203,7 +203,7 @@ void DJI_Motor_Device::Update_Ready()
     }
 }
 
-bool DJI_Motor_Device::Check_Ready()
+bool DJI_Motor_Device::Check_Ready() const
 {
     return this->ready_flag;
 }
@@ -343,4 +343,15 @@ void DJI_Motor_Device::Vel_To_Current()
 void DJI_Motor_Device::Loc_To_Vel()
 {
     this->set_data.set_vel = this->pid_loc.Calculate(this->set_data.set_loc,this->Get_Total_Rounds());
+}
+
+void DJI_Motor_Device::Set_Vel(float vel)
+{
+    this->set_data.set_vel = vel;
+    ABS_LIMIT(this->set_data.set_vel,1);
+}
+
+void DJI_Motor_Device::Set_Loc(float loc)
+{
+    this->set_data.set_loc = loc;
 }

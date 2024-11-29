@@ -1,10 +1,19 @@
 //
-// Created by CYK on 2024/11/24.
+// Created by CYK on 2024/11/29.
 //
 
 #ifndef TOF_CHECK_TASK_H
 #define TOF_CHECK_TASK_H
 
-#include "stm32f4xx_hal.h"
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
+void Tof_Check_Task(void *argument);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //TOF_CHECK_TASK_H

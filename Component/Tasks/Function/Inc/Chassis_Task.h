@@ -5,6 +5,8 @@
 #ifndef CHASSIS_TASK_H
 #define CHASSIS_TASK_H
 
+#include "Drv_DJI_Motor.h"
+
 #ifdef __cplusplus
 extern "C"
 {
@@ -17,5 +19,7 @@ void Chassis_Task(void *argument);
 #ifdef __cplusplus
 }
 #endif
+
+
 
 #endif //CHASSIS_TASK_H
