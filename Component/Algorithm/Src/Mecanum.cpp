@@ -8,10 +8,10 @@
 
 #include "User_Lib.h"
 
-void Chassis_Motor_Solver_Set(DJI_Motor_Device wheels[],float vel_x,float vel_y,float vel_spin)
+void Chassis_Motor_Solver_Set(DJI_Motor_Device wheels[],float vel_x,float vel_y,float vel_spin,float vel_max)
 {
     float speeds[4];
-    float speed_correction = 1;//限制轮子的最大速度
+    float speed_correction = vel_max;//限制轮子的最大速度
     float w = 0.8f;
     float v;
     ABS_LIMIT(vel_x, 1.0f);
@@ -37,12 +37,14 @@ void Chassis_Motor_Solver_Set(DJI_Motor_Device wheels[],float vel_x,float vel_y,
         if (fabsf(speed) > speed_correction)
             speed_correction = fabsf(speed);
     }
-    speed_correction = 1.0f / speed_correction;
+    speed_correction = vel_max / speed_correction;
 
     for (int i = 0; i < 4; i++)
     {
         wheels[i].Set_Vel(speed_correction * speeds[i]);
         wheels[i].Vel_To_Current();
+        wheels[i].Set_Current_To_CAN_TX_Buf();
+        wheels[i].Send_CAN_MSG();
     }
 }
 

@@ -153,6 +153,13 @@ const osThreadAttr_t kb_event_Task_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for absorb_Task */
+osThreadId_t absorb_TaskHandle;
+const osThreadAttr_t absorb_Task_attributes = {
+  .name = "absorb_Task",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -228,6 +235,11 @@ osSemaphoreId_t ServoCtrlTXBinarySemHandle;
 const osSemaphoreAttr_t ServoCtrlTXBinarySem_attributes = {
   .name = "ServoCtrlTXBinarySem"
 };
+/* Definitions for AbsorbUpdateBinarySem */
+osSemaphoreId_t AbsorbUpdateBinarySemHandle;
+const osSemaphoreAttr_t AbsorbUpdateBinarySem_attributes = {
+  .name = "AbsorbUpdateBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -259,6 +271,7 @@ void Gimbal_Attitude_Task(void *argument);
 void Info_Task(void *argument);
 void KB_State_Task(void *argument);
 void KB_Event_Task(void *argument);
+void Absorb_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -313,6 +326,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of ServoCtrlTXBinarySem */
   ServoCtrlTXBinarySemHandle = osSemaphoreNew(1, 0, &ServoCtrlTXBinarySem_attributes);
+
+  /* creation of AbsorbUpdateBinarySem */
+  AbsorbUpdateBinarySemHandle = osSemaphoreNew(1, 1, &AbsorbUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -387,6 +403,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of kb_event_Task */
   kb_event_TaskHandle = osThreadNew(KB_Event_Task, NULL, &kb_event_Task_attributes);
+
+  /* creation of absorb_Task */
+  absorb_TaskHandle = osThreadNew(Absorb_Task, NULL, &absorb_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -668,6 +687,24 @@ __weak void KB_Event_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END KB_Event_Task */
+}
+
+/* USER CODE BEGIN Header_Absorb_Task */
+/**
+* @brief Function implementing the absorb_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Absorb_Task */
+__weak void Absorb_Task(void *argument)
+{
+  /* USER CODE BEGIN Absorb_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Absorb_Task */
 }
 
 /* Private application code --------------------------------------------------*/

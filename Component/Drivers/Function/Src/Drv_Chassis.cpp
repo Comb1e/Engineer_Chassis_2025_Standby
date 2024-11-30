@@ -3,15 +3,13 @@
 //
 
 #include "Drv_Chassis.h"
-
 #include <math.h>
-
 #include "can.h"
 #include "RTOS.h"
 #include "Chassis_Task.h"
-#include "Drv_HI229UM.h"
 #include "Drv_RemoteCtrl.h"
 #include "User_Lib.h"
+#include "Global_CFG.h"
 #include "Mecanum.h"
 
 Chassis_Device chassis;
@@ -31,20 +29,20 @@ Chassis_Device::Chassis_Device()
 
 void Chassis_Device::Init()
 {
-    this->wheel[CHASSIS_MOTOR_LF_NUM].Init(CHASSIS_MOTOR_LF_ID,DJI_M3508,CHASSIS_CAN,false,ChassisLFUpdateBinarySemHandle,0,0);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].Init(CHASSIS_MOTOR_LB_ID,DJI_M3508,CHASSIS_CAN,false,ChassisLBUpdateBinarySemHandle,0,0);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].Init(CHASSIS_MOTOR_RB_ID,DJI_M3508,CHASSIS_CAN,false,ChassisLFUpdateBinarySemHandle,0,0);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].Init(CHASSIS_MOTOR_RF_ID,DJI_M3508,CHASSIS_CAN,false,ChassisLFUpdateBinarySemHandle,0,0);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].Init(CHASSIS_MOTOR_LF_ID,DJI_M3508,CHASSIS_CAN,false,ChassisLFUpdateBinarySemHandle,2000,0.3);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].Init(CHASSIS_MOTOR_LB_ID,DJI_M3508,CHASSIS_CAN,false,ChassisLBUpdateBinarySemHandle,2000,0.3);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].Init(CHASSIS_MOTOR_RB_ID,DJI_M3508,CHASSIS_CAN,true,ChassisLFUpdateBinarySemHandle,2000,0.3);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].Init(CHASSIS_MOTOR_RF_ID,DJI_M3508,CHASSIS_CAN,true,ChassisLFUpdateBinarySemHandle,2000,0.3);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(1,0,0,100,1);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(1,0,0,100,1);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(1,0,0,100,1);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(1,0,0,100,1);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(0.08,0,0,100,0.9);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(0.08,0,0,100,0.9);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(0.08,0,0,100,0.9);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.08,0,0,100,0.9);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(1,0,0,100,1);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(1,0,0,100,1);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(1,0,0,100,1);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(1,0,0,100,1);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(1.8f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(1.8f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(1.8f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(1.8f, 0.0f, 0.0f,100.0f,0.95);
 
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
@@ -117,7 +115,7 @@ bool Chassis_Device::Check_Can_Use()
 {
     for(auto & i : this->wheel)
     {
-        if(!this->lost_flag && !this->zero_offset_flag)
+        if(!i.lost_flag && !i.zero_offset_flag)
         {
             return false;
         }
@@ -127,16 +125,24 @@ bool Chassis_Device::Check_Can_Use()
 
 void Chassis_Device::Update_Speed_Control()
 {
-    this->set_vel.x = this->set_vel.rc_set_x;
     ABS_LIMIT(this->set_vel.x,1);
-    this->set_vel.y = this->set_vel.rc_set_y;
-    ABS_LIMIT(this->set_vel.x,1);
-    this->set_vel.spin = this->set_vel.rc_set_spin;
-    ABS_LIMIT(this->set_vel.x,1);
+    ABS_LIMIT(this->set_vel.y,1);
+    ABS_LIMIT(this->set_vel.spin,1);
+
+    float vel_max = 0;
+
+    if(rc.data.using_kb_flag)
+    {
+        vel_max = this->vel_max.kb;
+    }
+    else
+    {
+        vel_max = this->vel_max.rc;
+    }
 
     this->Update_Align();
 
-    Chassis_Motor_Solver_Set(this->wheel,this->set_vel.x,this->set_vel.y,this->set_vel.spin);
+    Chassis_Motor_Solver_Set(this->wheel,this->set_vel.x,this->set_vel.y,this->set_vel.spin,vel_max);
 }
 
 void Chassis_Device::Update_Enable_Flag()
@@ -217,8 +223,7 @@ void Chassis_Device::Update_Position_Control()
     {
         return;
     }
-
-    this->Add_Position_Spin(2 * PI * this->pid_rot.Calculate(this->pos_yaw_angle,HI229UM_Get_Yaw_Total_Deg()));
+    //this->Add_Position_Spin(2 * PI * this->pid_rot.Calculate(this->pos_yaw_angle,HI229UM_Get_Yaw_Total_Deg()));
     Chassis_Motor_Loc_SolverSet(this->wheel,this->position.x,this->position.y,this->position.spin);
 }
 

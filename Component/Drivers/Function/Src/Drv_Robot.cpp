@@ -24,12 +24,12 @@ void Robot_Device::RC_Set_Chassis_Vel_X(float vel_x)
 
 void Robot_Device::RC_Set_Chassis_Vel_Y(float vel_y)
 {
-    chassis.set_vel.x = vel_y * chassis.vel_max.rc;
+    chassis.set_vel.y = vel_y * chassis.vel_max.rc;
 }
 
 void Robot_Device::RC_Set_Chassis_Vel_Spin(float vel_spin)
 {
-    chassis.set_vel.x = vel_spin * chassis.vel_max.rc;
+    chassis.set_vel.spin = vel_spin * chassis.vel_max.rc;
 }
 
 void Robot_Device::KB_Set_Chassis_Vel_X(float dir)

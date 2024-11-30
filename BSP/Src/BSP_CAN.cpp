@@ -124,7 +124,7 @@ void can_device_t::RX_Add(CAN_HandleTypeDef *hcan,uint32_t rx_id,can_rx_callback
         CAN_FilterInitStruct.FilterMaskIdHigh = can_filter_id[channel][3] << 5;
     }
     HAL_CAN_ConfigFilter(this->hcan, &CAN_FilterInitStruct);
-    if(can_device_num[channel] % 4 == 3)
+    if(can_device_num[channel] % 4 == 0)
     {
         memset(can_filter_id[channel],0,sizeof(can_filter_id[channel]));
     }

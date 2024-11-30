@@ -72,4 +72,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_C
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/usart.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/gpio.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/gpio.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_RemoteCtrl.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_HI229UM.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/CRC.h

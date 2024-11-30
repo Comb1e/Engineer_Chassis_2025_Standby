@@ -11,14 +11,21 @@
 #include "gpio.h"
 #include "RTOS.h"
 #include "User_Lib.h"
+#include "Drv_RemoteCtrl.h"
+#include "Drv_HI229UM.h"
 
 #define MAHONY 1
 #define SERVO 1
 #define USB 1
 #define CHASSIS 1
-#define GIMBAL 1
+#define GIMBAL 0
 #define IMU 0
+
 #define TEST 1
+
+#define GIMBAL_TEST 0
+#define CHASSIS_TEST 0
+#define CHASSIS_TEST_WHEEL 1
 
 #define CAMERA_ON_ARM 1
 

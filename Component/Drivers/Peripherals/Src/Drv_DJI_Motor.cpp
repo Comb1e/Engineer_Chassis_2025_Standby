@@ -214,7 +214,7 @@ void DJI_Motor_Device::Set_Current(float current)
     float set_current = current;
     if(this->reverse_flag)
     {
-        current *= -1;
+        set_current *= -1.0f;
     }
     switch (this->type)
     {
@@ -242,16 +242,28 @@ void DJI_Motor_Device::Set_Current(float current)
 
 float DJI_Motor_Device::Get_Total_Rounds() const
 {
+    if(this->reverse_flag)
+    {
+        return -this->data.total_rounds;
+    }
     return this->data.total_rounds;
 }
 
 float DJI_Motor_Device::Get_Current_Rounds() const
 {
+    if(this->reverse_flag)
+    {
+        return -this->data.current_round;
+    }
     return this->data.current_round;
 }
 
 float DJI_Motor_Device::Get_Vel() const
 {
+    if(this->reverse_flag)
+    {
+        return -this->data.vel;
+    }
     return this->data.vel;
 }
 
@@ -333,11 +345,12 @@ void DJI_Motor_Device::Set_Free()
     this->zero_offset_flag = false;
     this->set_data.set_current = 0;
     this->Set_Current_To_CAN_TX_Buf();
+    this->Send_CAN_MSG();
 }
 
 void DJI_Motor_Device::Vel_To_Current()
 {
-    this->Set_Current(this->pid_vel.Calculate(this->set_data.set_vel,this->data.vel));
+    this->Set_Current(this->pid_vel.Calculate(this->set_data.set_vel,this->Get_Vel()));
 }
 
 void DJI_Motor_Device::Loc_To_Vel()

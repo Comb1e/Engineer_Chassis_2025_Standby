@@ -6,7 +6,6 @@
 #define DRV_HI229UM_H
 
 #include <stdbool.h>
-
 #include "stm32f4xx_hal.h"
 #include "CRC.h"
 #include "BSP_Usart.h"

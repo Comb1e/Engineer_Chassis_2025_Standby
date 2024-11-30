@@ -16,9 +16,6 @@ extern "C"
 
 #define CAN_DEVICE_MAX_NUM (4*14)
 
-//void CAN1_Task(void *argument);
-//void CAN2_Task(void *argument);
-
 void CAN_TX_Complete_Callback(CAN_HandleTypeDef *hcan);
 void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan);
 void HAL_CAN_TxMailbox1CompleteCallback(CAN_HandleTypeDef *hcan);
@@ -53,9 +50,6 @@ public:
     void TX_Init(CAN_HandleTypeDef *hcan,uint32_t tx_id,uint8_t *buf_data,uint32_t len);
     void Send_MSG();
     void RX_Add(CAN_HandleTypeDef *hcan,uint32_t rx_id,can_rx_callback *rx_callback,osSemaphoreId_t rx_sem);
-
-    //friend void CAN1_Task(void *argument);
-    //friend void CAN2_Task(void *argument);
 
     friend void HAL_CAN_TxMailbox0CompleteCallback(CAN_HandleTypeDef *hcan);
     friend void HAL_CAN_TxMailbox1CompleteCallback(CAN_HandleTypeDef *hcan);

@@ -14,7 +14,7 @@
 
 void Gimbal_Slide_Task(void *argument)
 {
-#if TEST
+#if GIMBAL_TEST
 
     gimbal.slide_motor.Init(0x05,DJI_M2006,&hcan1,false,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
     gimbal.slide_motor.pid_vel.Init(4,0,1,0,1);

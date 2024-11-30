@@ -16,8 +16,8 @@ void KB_Device::Check_RC_State()
         if(!rc.data.using_kb_flag)
         {
             robot.RC_Set_Chassis_Vel_X(rc.data.left_rocker.y);
-            robot.RC_Set_Chassis_Vel_Y(rc.data.left_rocker.x);
-            robot.RC_Set_Chassis_Vel_Spin(rc.data.right_rocker.x);
+            robot.RC_Set_Chassis_Vel_Y(-rc.data.left_rocker.x);
+            robot.RC_Set_Chassis_Vel_Spin(-rc.data.right_rocker.x);
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_MID))

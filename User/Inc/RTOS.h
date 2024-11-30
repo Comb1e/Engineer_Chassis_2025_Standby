@@ -29,5 +29,6 @@ extern osSemaphoreId_t GimbalYawUpdateBinarySemHandle;
 extern osSemaphoreId_t GimbalSlideUpdateBinarySemHandle;
 extern osSemaphoreId_t ClawUpdateBinarySemHandle;
 extern osSemaphoreId_t ServoCtrlTXBinarySemHandle;
+extern osSemaphoreId_t AbsorbUpdateBinarySemHandle;
 
 #endif //RTOS_H

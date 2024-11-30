@@ -455,4 +455,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Tas
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/usart.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/gpio.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/gpio.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_RemoteCtrl.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_HI229UM.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Usart.h
