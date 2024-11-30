@@ -11,7 +11,6 @@ void KB_Device::Check_Mouse_State()
 
 void KB_Device::Check_RC_State()
 {
-    debug++;
     if(RC_Check_SW_State(RC_SW_L_UP))
     {
         if(!rc.data.using_kb_flag)

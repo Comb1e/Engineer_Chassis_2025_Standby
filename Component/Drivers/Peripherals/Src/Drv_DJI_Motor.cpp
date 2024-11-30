@@ -173,7 +173,7 @@ void DJI_Motor_Device::Update_Data(uint8_t *rx_data)
 
 void DJI_Motor_Device::Check_Stall()
 {
-    if(this->stall_current_max < this->set_data.set_current && this->stall_speed_min > this->data.vel)
+    if(ABS(this->stall_current_max) < ABS(this->data.torque) && ABS(this->stall_speed_min) > ABS(this->data.vel))
     {
         this->stall_cnt++;
     }
@@ -349,9 +349,12 @@ void DJI_Motor_Device::Set_Vel(float vel)
 {
     this->set_data.set_vel = vel;
     ABS_LIMIT(this->set_data.set_vel,1);
+    this->Vel_To_Current();
 }
 
 void DJI_Motor_Device::Set_Loc(float loc)
 {
     this->set_data.set_loc = loc;
+    this->Loc_To_Vel();
+    this->Vel_To_Current();
 }

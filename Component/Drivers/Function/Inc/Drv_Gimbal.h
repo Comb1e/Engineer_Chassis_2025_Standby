@@ -51,6 +51,8 @@ extern "C"
 
 #define GIMBAL_SLIDE_RESET_SPEED        (-0.12f)
 
+#define GIMBAL_SLIDE_ERROR_MIN           (0.5f)
+
 typedef struct
 {
     float dist;

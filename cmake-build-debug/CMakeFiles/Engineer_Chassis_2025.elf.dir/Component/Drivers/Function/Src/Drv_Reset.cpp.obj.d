@@ -1,7 +1,8 @@
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Reset.cpp.obj: \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Src\Drv_Reset.cpp \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Reset.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component/Global_CFG.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_CAN.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/stm32f4xx_hal_conf.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
@@ -43,6 +44,10 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Rese
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usb.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd_ex.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/compilable.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component/Global_CFG.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/usart.h \
