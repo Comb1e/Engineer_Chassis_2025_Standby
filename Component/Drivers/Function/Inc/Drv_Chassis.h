@@ -77,6 +77,7 @@ typedef struct
 {
     float rc;
     float kb;
+    float total;
 }vel_max_t;
 
 typedef struct
@@ -84,11 +85,25 @@ typedef struct
     float x;
     float y;
     float spin;
-
-    float rc_set_x;
-    float rc_set_y;
-    float rc_set_spin;
 }set_vel_t;
+
+//功率环
+typedef struct
+{
+    float now_power;
+    float limit_power;
+    float para_R[5];////功率环系数R
+    float para_H[5];//系数H
+    float para_Hinc;
+    float para_Hkp;
+    float para_H_init;//初始H值
+    float para_H_sum_i;
+    float k;
+    float qA,qB,qC;
+    float UpHill_h;
+    float UpHill_l;
+    float Buffer;
+}chassis_power_control_data_t;
 
 typedef struct align_data_t
 {
@@ -137,6 +152,8 @@ public:
 
     pid pid_rot;
 
+    chassis_power_control_data_t power_control;
+
     float pos_yaw_angle;//2PI
 
     void Init();
@@ -154,6 +171,17 @@ public:
     bool Check_Tof_Lost_Flag() const;
     void Update_Position_Control();
     void Add_Position_Spin(float delta);
+    void Set_X_Slope_Speed_Target(float target);
+    void Set_Y_Slope_Speed_Target(float target);
+    void Set_Vel_X(float vel_x);
+    void Set_Vel_Y(float vel_y);
+    void Set_Vel_Spin(float vel_spin);
+    void Power_Control_Data_Init();
+    void Power_Control_Update();
+    void Set_Power_Control_Now_Power(float now_power);
+    float Get_Pos_Yaw() const;
+    void Add_Position_X(float delta);
+    void Add_Position_Y(float delta);
 };
 
 extern Chassis_Device chassis;

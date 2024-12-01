@@ -1932,7 +1932,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_D
   E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/User_Lib.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/Compilable.h
 
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_HI229UM.c \
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp \
   E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
   E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
   E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
@@ -7414,6 +7414,8 @@ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/bits/nested_e
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/bits/new_allocator.h:
 
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp:
+
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/bits/node_handle.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Eigen/src/misc/RealSvd2x2.h:
@@ -7831,8 +7833,6 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/IMU/QuaternionE
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/IMU/kalman_filter_whx.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c:
-
-E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_HI229UM.c:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_INA226.c:
 

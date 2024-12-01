@@ -19,7 +19,6 @@ void Reset_To_Min(reset_t *reset)
     reset->motor->Set_Current_To_CAN_TX_Buf();
     reset->motor->Send_CAN_MSG();
     reset->motor->Check_Stall();
-    debug++;
     if(reset->motor->stall_flag)
     {
         reset->motor->Reset_Total_Rounds_Offset(reset->data.min_rounds + reset->data.rounds_offset);
@@ -62,7 +61,6 @@ void Update_Reset(reset_t *reset)
             }
             case RESET_TO_MIN:
             {
-
                 if(reset->reset_to_min_success_flag)
                 {
                     reset->state = RESET_TO_INITIAL;

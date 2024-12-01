@@ -16,15 +16,17 @@ void Gimbal_Slide_Task(void *argument)
 {
 #if GIMBAL_TEST
 
-    gimbal.slide_motor.Init(0x05,DJI_M2006,&hcan1,false,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
-    gimbal.slide_motor.pid_vel.Init(4,0,1,0,1);
-    gimbal.slide_motor.pid_loc.Init(0.11,0,2.6,0,1);
+    gimbal.Init();
+    while(!gimbal.Check_Init_Completely())
+    {
+        osDelay(1);
+    }
     static reset_t gimbal_reset =
     {
-        1,0,0.11,0,2.6,
-        1,0,4,0,1,
-        1,0,0.11,0,2.6,
-        1,0,4,0,1,
+        0.5,0,0.2,0,2.6,
+        0.5,0,4,0,1,
+        0.6,0,0.2,0,2.6,
+        0.6,0,4,0,1,
         GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM,GIMBAL_SLIDE_INITIAL_DISTANCE,
         GIMBAL_SLIDE_RESET_SPEED,
         GIMBAL_SLIDE_MOTOR_MIN_ROUNDS,GIMBAL_SLIDE_MOTOR_MAX_ROUNDS,GIMBAL_SLIDE_MOTOR_ROUNDS_OFFSET,
@@ -56,10 +58,9 @@ void Gimbal_Slide_Task(void *argument)
         else
         {
             gimbal.slide_motor.Set_Current_Zero();
-            gimbal.slide_motor.Set_Current_To_CAN_TX_Buf();
             gimbal.slide_motor.Send_CAN_MSG();
         }
-        osDelay(1);
+        osDelay(3);
     }
 
 #else
@@ -72,37 +73,42 @@ void Gimbal_Slide_Task(void *argument)
 
     static reset_t gimbal_reset =
     {
-        1,100,1,0,1,
-        1,100,1,0,1,
-        1,100,1,0,1,
-        1,100,1,0,1,
+        0.5,0,0.2,0,2.6,
+        0.5,0,4,0,1,
+        0.5,0,0.2,0,2.6,
+        0.5,0,4,0,1,
         GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM,GIMBAL_SLIDE_INITIAL_DISTANCE,
         GIMBAL_SLIDE_RESET_SPEED,
         GIMBAL_SLIDE_MOTOR_MIN_ROUNDS,GIMBAL_SLIDE_MOTOR_MAX_ROUNDS,GIMBAL_SLIDE_MOTOR_ROUNDS_OFFSET,
         GIMBAL_SLIDE_ERROR_MIN
     };
-    Reset_Init(&gimbal_reset);
+    Reset_Init(&gimbal_reset,&gimbal.slide_motor);
 
     for(;;)
     {
         gimbal.Update_Ready();
-        if(gimbal.Check_Reset())
+        gimbal.Update_Enable_Flag();
+        if(gimbal.Check_Ready() && gimbal.Check_Enable())
         {
-            Update_Reset(&gimbal_reset);
-            if(!gimbal_reset.reset_flag)
+            if(gimbal.Check_Reset())
             {
-                gimbal.reset_flag = false;
+                Update_Reset(&gimbal_reset);
+                if(!gimbal_reset.reset_flag)
+                {
+                    gimbal.reset_flag = false;
+                    gimbal.slide_ctrl_data.dist = 0;
+                }
             }
-        }
-        else if(gimbal.Check_Ready() && gimbal.Check_Enable())
-        {
-            gimbal.Slide_Control();
+            else
+            {
+                gimbal.Slide_Control();
+            }
         }
         else
         {
             gimbal.Set_Free();
         }
-        osDelay(1);
+        osDelay(3);
     }
 
 #endif

@@ -110,7 +110,7 @@ void DJI_Motor_RX_Callback(can_device_t *can_device,uint8_t *rx_data)
 
 }
 
-void DJI_Motor_Device::Update_Data(uint8_t *rx_data)
+__RAM_FUNC void DJI_Motor_Device::Update_Data(uint8_t *rx_data)
 {
     this->raw_data.ecd = rx_data[0] << 8 | rx_data[1];
     this->raw_data.speed_rpm = rx_data[2] << 8 | rx_data[3];
@@ -169,6 +169,7 @@ void DJI_Motor_Device::Update_Data(uint8_t *rx_data)
     this->zero_offset_flag = true;
 
     this->data.torque = this->raw_data.torque;
+    debug++;
 }
 
 void DJI_Motor_Device::Check_Stall()
@@ -327,7 +328,7 @@ void DJI_Motor_Device::Set_PID(pid_init_param_t pid_vel, pid_init_param_t pid_lo
 void DJI_Motor_Device::Reset_Total_Rounds_Offset(float total_rounds)
 {
     float round_f = total_rounds - (int)total_rounds;
-    if(this->zero_offset_flag)
+    if(this->reverse_flag)
     {
         this->data.round_cnt = (int)total_rounds;
         this->data.zero_offset_round = this->data.current_round - round_f;

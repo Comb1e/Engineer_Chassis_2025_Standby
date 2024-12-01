@@ -42,6 +42,11 @@ public:
     void RC_Set_Chassis_Vel_X(float vel_x);
     void RC_Set_Chassis_Vel_Y(float vel_y);
     void RC_Set_Chassis_Vel_Spin(float vel_spin);
+    void RC_Set_Chassis_Vel(float vel_x,float vel_y,float vel_spin);
+
+    void RC_Set_Chasssis_Position(float pos_x,float pos_y,float pos_spin);
+
+    void RC_Set_Gimbal_Position(float delta);
 
     void KB_Set_Chassis_Vel_X(float dir);
     void KB_Set_Chassis_Vel_Y(float dir);

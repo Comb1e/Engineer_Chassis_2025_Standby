@@ -15,14 +15,31 @@ void KB_Device::Check_RC_State()
     {
         if(!rc.data.using_kb_flag)
         {
-            robot.RC_Set_Chassis_Vel_X(rc.data.left_rocker.y);
-            robot.RC_Set_Chassis_Vel_Y(-rc.data.left_rocker.x);
-            robot.RC_Set_Chassis_Vel_Spin(-rc.data.right_rocker.x);
+            switch(chassis.control_type)
+            {
+                case SPEED:
+                {
+                    robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.5f);
+                    break;
+                }
+                case POSITION:
+                {
+                    robot.RC_Set_Chasssis_Position(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.1f);
+                    break;
+                }
+                default:
+                {
+                    break;
+                }
+            }
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_MID))
     {
-
+        if(!rc.data.using_kb_flag)
+        {
+            robot.RC_Set_Gimbal_Position(-rc.data.right_rocker.x * 0.6f);
+        }
     }
     else if(RC_Check_SW_State(RC_SW_L_DOWN))
     {

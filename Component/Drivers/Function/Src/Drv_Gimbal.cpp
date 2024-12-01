@@ -19,6 +19,8 @@ Gimbal_Device::Gimbal_Device()
 void Gimbal_Device::Init()
 {
     this->slide_motor.Init(GIMBAL_SLIDE_MOTOR_ID,DJI_M2006,GIMBAL_CAN,true,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
+    gimbal.slide_motor.pid_vel.Init(4,0,1,0,1);
+    gimbal.slide_motor.pid_loc.Init(0.2,0,2.6,0,0.6);
 }
 
 bool Gimbal_Device::Check_Init_Completely()
@@ -81,4 +83,18 @@ void Gimbal_Device::Slide_Control()
     VAL_LIMIT(this->slide_ctrl_data.rounds,GIMBAL_SLIDE_MOTOR_MIN_ROUNDS,GIMBAL_SLIDE_MOTOR_MAX_ROUNDS);
     this->slide_motor.Set_Loc(this->slide_ctrl_data.rounds);
     this->slide_motor.Loc_To_Vel();
+    gimbal.slide_motor.Set_Current_To_CAN_TX_Buf();
+    gimbal.slide_motor.Send_CAN_MSG();
+}
+
+void Gimbal_Device::Update_Enable_Flag()
+{
+    if(rc.ctrl_protection.connect_flag)
+    {
+        this->enable_flag = true;
+    }
+    else
+    {
+        this->enable_flag = false;
+    }
 }

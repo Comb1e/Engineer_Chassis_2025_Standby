@@ -18,7 +18,7 @@
 #define SERVO 1
 #define USB 1
 #define CHASSIS 1
-#define GIMBAL 0
+#define GIMBAL 1
 #define IMU 0
 
 #define TEST 1

@@ -390,19 +390,19 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_D
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.s"
 	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_DJI_Motor.cpp -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_DJI_Motor.cpp.s
 
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_HI229UM.c
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj"
-	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_HI229UM.c.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_HI229UM.c.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_HI229UM.c
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=E:\RM\CubeMx\Engineer_Chassis_2025\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj -MF CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_HI229UM.cpp.obj.d -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_HI229UM.cpp.obj -c E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_HI229UM.cpp
 
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i"
-	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_HI229UM.c > CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_HI229UM.c.i
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.i"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_HI229UM.cpp > CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_HI229UM.cpp.i
 
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s"
-	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_HI229UM.c -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_HI229UM.c.s
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s"
+	E:\gcc-arm-none-eabi-10.3-2021.10\bin\arm-none-eabi-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Src\Drv_HI229UM.cpp -o CMakeFiles\Engineer_Chassis_2025.elf.dir\Component\Drivers\Peripherals\Src\Drv_HI229UM.cpp.s
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj: CMakeFiles/Engineer_Chassis_2025.elf.dir/flags.make
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_INA226.c
@@ -1478,7 +1478,7 @@ Engineer_Chassis_2025_elf_OBJECTS = \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.obj" \
-"CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj" \
+"CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj" \
 "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj" \
@@ -1581,7 +1581,7 @@ Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Dr
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.obj
-Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj
+Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj
 Engineer_Chassis_2025.elf: CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.obj

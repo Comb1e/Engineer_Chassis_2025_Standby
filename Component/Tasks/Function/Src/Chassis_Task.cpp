@@ -71,7 +71,7 @@ void Chassis_Task(void *argument) {
         {
             chassis.Set_Free();
         }
-        osDelay(1);
+        osDelay(3);
     }
 #endif
 

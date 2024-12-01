@@ -17,7 +17,7 @@ extern "C"
 
 #define GIMBAL_CAN      (&hcan1)
 
-#define GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX    (1300)
+#define GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX    (1800)
 #define GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN  (0.07f)
 
 #define GIMBAL_PITCH_SERVO_ID                     (1)
@@ -87,6 +87,7 @@ public:
     bool Check_Reset();
     void Set_Free();
     void Slide_Control();
+    void Update_Enable_Flag();
 };
 
 extern Gimbal_Device gimbal;

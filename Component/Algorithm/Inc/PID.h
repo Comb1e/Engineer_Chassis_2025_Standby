@@ -54,6 +54,8 @@ protected:
     float iout;
     float dout;
     float out;
+
+    friend class Chassis_Device;
 };
 
 #endif //PID_H

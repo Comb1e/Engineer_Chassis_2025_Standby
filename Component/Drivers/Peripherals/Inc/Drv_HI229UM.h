@@ -5,6 +5,11 @@
 #ifndef DRV_HI229UM_H
 #define DRV_HI229UM_H
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #include <stdbool.h>
 #include "stm32f4xx_hal.h"
 #include "CRC.h"
@@ -169,5 +174,9 @@ float HI229UM_Get_Yaw_Total_Deg();
 void HI229UM_Set_Nine_Axis_Mode();
 
 extern hi229um_t hi229um;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif //DRV_HI229UM_H

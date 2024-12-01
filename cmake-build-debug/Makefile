@@ -693,29 +693,29 @@ Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.s
 
-Component/Drivers/Peripherals/Src/Drv_HI229UM.obj: Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj
+Component/Drivers/Peripherals/Src/Drv_HI229UM.obj: Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.obj
 
 # target to build an object file
-Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.c.obj
+Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj
 
-Component/Drivers/Peripherals/Src/Drv_HI229UM.i: Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i
+Component/Drivers/Peripherals/Src/Drv_HI229UM.i: Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.i
 .PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.i
 
 # target to preprocess a source file
-Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.c.i
+Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.i
 
-Component/Drivers/Peripherals/Src/Drv_HI229UM.s: Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s
+Component/Drivers/Peripherals/Src/Drv_HI229UM.s: Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.s
 
 # target to generate assembly for a file
-Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.c.s
+Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s
 
 Component/Drivers/Peripherals/Src/Drv_INA226.obj: Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.obj

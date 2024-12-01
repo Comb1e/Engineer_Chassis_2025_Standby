@@ -43,8 +43,6 @@ void Chassis_Motor_Solver_Set(DJI_Motor_Device wheels[],float vel_x,float vel_y,
     {
         wheels[i].Set_Vel(speed_correction * speeds[i]);
         wheels[i].Vel_To_Current();
-        wheels[i].Set_Current_To_CAN_TX_Buf();
-        wheels[i].Send_CAN_MSG();
     }
 }
 
