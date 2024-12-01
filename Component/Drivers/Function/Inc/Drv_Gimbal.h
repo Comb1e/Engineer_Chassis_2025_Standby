@@ -7,6 +7,7 @@
 
 #include "Global_CFG.h"
 #include "Drv_DJI_Motor.h"
+#include "Drv_ServoCtrl.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -59,6 +60,15 @@ typedef struct
     float rounds;
 }gimbal_slide_ctrl_data_t;
 
+typedef struct
+{
+    float yaw_deg;
+    int16_t servo_set_yaw_1000;
+
+    float pitch_deg;
+    int16_t servo_set_pitch_1000;
+}gimbal_attitude_data_t;
+
 #ifdef __cplusplus
 }
 #endif
@@ -75,8 +85,13 @@ public:
     bool ready_flag;
     bool enable_flag;
     bool reset_flag;
+    bool pitch_enable_flag;
+    bool yaw_enable_flag;
 
     gimbal_slide_ctrl_data_t slide_ctrl_data;
+    gimbal_attitude_data_t attitude_data;
+    Servo_Device pitch_servo;
+    Servo_Device yaw_servo;
 
     void Init();
     bool Check_Init_Completely();
@@ -88,6 +103,8 @@ public:
     void Set_Free();
     void Slide_Control();
     void Update_Enable_Flag();
+    void Update_Pitch_Control();
+    void Update_Yaw_Control();
 };
 
 extern Gimbal_Device gimbal;

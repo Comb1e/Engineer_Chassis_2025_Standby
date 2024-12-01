@@ -1,6 +1,6 @@
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj: \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Peripherals\Src\Servo_Ctrl_Task.c \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Peripherals\Inc/Servo_Ctrl_Task.h \
+CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj: \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Function\Src\Gimbal_Attitude_Task.cpp \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Function\Inc/Gimbal_Attitude_Task.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/stm32f4xx_hal_conf.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
@@ -42,8 +42,12 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_C
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usb.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd_ex.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_SerialServo.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/User_Lib.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Gimbal.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component/Global_CFG.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/usart.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/gpio.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/RTOS.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
@@ -66,13 +70,16 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_C
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Usart.h \
- E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component/Global_CFG.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/usart.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/gpio.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/User_Lib.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_RemoteCtrl.h \
+ E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_HI229UM.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/CRC.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/CRC.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Usart.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_CAN.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/compilable.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_ServoCtrl.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/Compilable.h

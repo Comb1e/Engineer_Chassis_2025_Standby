@@ -16,7 +16,6 @@ void Chassis_Task(void *argument) {
     {
         osDelay(1);
     }
-    debug = 0;
 #if CHASSIS_TEST
     for(;;)
     {

@@ -18,12 +18,14 @@
 #define SERVO 1
 #define USB 1
 #define CHASSIS 1
-#define GIMBAL 1
+#define GIMBAL_SLIDE 0
+#define GIMBAL_ATTITUDE 1
 #define IMU 0
 
 #define TEST 1
 
-#define GIMBAL_TEST 0
+#define GIMBAL_Slide_TEST 0
+#define GIMBAL_ATTITUDE_TEST 0
 #define CHASSIS_TEST 0
 #define CHASSIS_TEST_WHEEL 1
 

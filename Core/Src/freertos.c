@@ -26,7 +26,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Compilable.h"
-#include "Drv_SerialServo.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -325,7 +324,7 @@ void MX_FREERTOS_Init(void) {
   ClawUpdateBinarySemHandle = osSemaphoreNew(1, 0, &ClawUpdateBinarySem_attributes);
 
   /* creation of ServoCtrlTXBinarySem */
-  ServoCtrlTXBinarySemHandle = osSemaphoreNew(1, 0, &ServoCtrlTXBinarySem_attributes);
+  ServoCtrlTXBinarySemHandle = osSemaphoreNew(1, 1, &ServoCtrlTXBinarySem_attributes);
 
   /* creation of AbsorbUpdateBinarySem */
   AbsorbUpdateBinarySemHandle = osSemaphoreNew(1, 1, &AbsorbUpdateBinarySem_attributes);

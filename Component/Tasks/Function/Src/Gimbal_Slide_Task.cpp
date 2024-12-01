@@ -10,11 +10,11 @@
 #include "RTOS.h"
 #include "Global_CFG.h"
 
-#if GIMBAL
+#if GIMBAL_SLIDE
 
 void Gimbal_Slide_Task(void *argument)
 {
-#if GIMBAL_TEST
+#if GIMBAL_Slide_TEST
 
     gimbal.Init();
     while(!gimbal.Check_Init_Completely())

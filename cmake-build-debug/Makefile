@@ -789,29 +789,29 @@ Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.c.s
 
-Component/Drivers/Peripherals/Src/Drv_SerialServo.obj: Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.obj
+Component/Drivers/Peripherals/Src/Drv_ServoCtrl.obj: Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_ServoCtrl.obj
 
 # target to build an object file
-Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.c.obj
+Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj
 
-Component/Drivers/Peripherals/Src/Drv_SerialServo.i: Component/Drivers/Peripherals/Src/Drv_SerialServo.c.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.i
+Component/Drivers/Peripherals/Src/Drv_ServoCtrl.i: Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_ServoCtrl.i
 
 # target to preprocess a source file
-Component/Drivers/Peripherals/Src/Drv_SerialServo.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.c.i
+Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.i
 
-Component/Drivers/Peripherals/Src/Drv_SerialServo.s: Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.s
+Component/Drivers/Peripherals/Src/Drv_ServoCtrl.s: Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_ServoCtrl.s
 
 # target to generate assembly for a file
-Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_SerialServo.c.s
+Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.s
 
 Component/Drivers/Peripherals/Src/Drv_Usb.obj: Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.obj
@@ -908,6 +908,30 @@ Component/Tasks/Function/Src/Chassis_Task.s: Component/Tasks/Function/Src/Chassi
 Component/Tasks/Function/Src/Chassis_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.cpp.s
 .PHONY : Component/Tasks/Function/Src/Chassis_Task.cpp.s
+
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj: Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj
+
+# target to build an object file
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj
+
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.i: Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.i
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.i
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.i
+
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.s: Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.s
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.s
+.PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.s
 
 Component/Tasks/Function/Src/Gimbal_Slide_Task.obj: Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.obj
 .PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.obj
@@ -1077,29 +1101,29 @@ Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s
 .PHONY : Component/Tasks/Peripherals/Src/RemoteCtrl_Task.c.s
 
-Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.obj: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.obj: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj
 .PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.obj
 
 # target to build an object file
-Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj
-.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.obj
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj
 
-Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.i: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.i
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.i: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.i
 .PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.i
 
 # target to preprocess a source file
-Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.i
-.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.i
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.i
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.i
 
-Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.s: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.s
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.s: Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.s
 .PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.s
 
 # target to generate assembly for a file
-Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.s
-.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.c.s
+Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.s
+.PHONY : Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.s
 
 Component/Tasks/Peripherals/Src/Tof_Check_Task.obj: Component/Tasks/Peripherals/Src/Tof_Check_Task.cpp.obj
 .PHONY : Component/Tasks/Peripherals/Src/Tof_Check_Task.obj
@@ -2592,9 +2616,9 @@ help:
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_RemoteCtrl.s
-	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.obj
-	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.i
-	@echo ... Component/Drivers/Peripherals/Src/Drv_SerialServo.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.s
@@ -2607,6 +2631,9 @@ help:
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.obj
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.i
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.s
+	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj
+	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.i
+	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.s
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.obj
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.i
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.s

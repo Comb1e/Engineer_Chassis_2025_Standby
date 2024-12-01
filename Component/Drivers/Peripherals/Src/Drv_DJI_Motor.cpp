@@ -169,7 +169,6 @@ __RAM_FUNC void DJI_Motor_Device::Update_Data(uint8_t *rx_data)
     this->zero_offset_flag = true;
 
     this->data.torque = this->raw_data.torque;
-    debug++;
 }
 
 void DJI_Motor_Device::Check_Stall()

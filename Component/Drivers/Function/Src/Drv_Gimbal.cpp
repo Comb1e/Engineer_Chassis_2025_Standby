@@ -6,14 +6,23 @@
 
 Gimbal_Device gimbal;
 
-Gimbal_Device::Gimbal_Device()
+Gimbal_Device::Gimbal_Device():
+pitch_servo(&SERVO_UART, GIMBAL_PITCH_SERVO_ID),
+yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID)
 {
     this->ready_flag = false;
     this->enable_flag = true;
     this->reset_flag = true;
+    this->pitch_enable_flag = true;
+    this->yaw_enable_flag = true;
 
     this->slide_ctrl_data.dist = GIMBAL_SLIDE_MIN_MM;
     this->slide_ctrl_data.rounds = GIMBAL_SLIDE_MOTOR_MIN_ROUNDS;
+
+    this->attitude_data.yaw_deg = 0.0f;
+    this->attitude_data.pitch_deg = 30.0f;
+    this->attitude_data.servo_set_yaw_1000 = GIMBAL_SERVO_YAW_FORWARD_1000;
+    this->attitude_data.servo_set_pitch_1000 = GIMBAL_SERVO_PITCH_HORIZONTAL_1000;
 }
 
 void Gimbal_Device::Init()
@@ -96,5 +105,33 @@ void Gimbal_Device::Update_Enable_Flag()
     else
     {
         this->enable_flag = false;
+    }
+}
+
+void Gimbal_Device::Update_Pitch_Control()
+{
+    static int16_t s_pitch_last_msg = 0;
+    float pitch = this->attitude_data.pitch_deg;
+
+    this->attitude_data.servo_set_pitch_1000 = GIMBAL_SERVO_PITCH_HORIZONTAL_1000 - (SERVO_CONTROL_K * pitch);
+
+    if (ABS(s_pitch_last_msg - this->attitude_data.servo_set_pitch_1000) > 0.005f)
+    {
+        this->pitch_servo.Set_Pos(this->attitude_data.servo_set_pitch_1000);
+        s_pitch_last_msg = this->attitude_data.servo_set_pitch_1000;
+    }
+}
+
+void Gimbal_Device::Update_Yaw_Control()
+{
+    static int16_t s_yaw_last_msg = 0;
+    float yaw = this->attitude_data.yaw_deg;
+
+    this->attitude_data.servo_set_yaw_1000 = GIMBAL_SERVO_YAW_FORWARD_1000 - (SERVO_CONTROL_K * yaw);
+
+    if (ABS(s_yaw_last_msg - this->attitude_data.servo_set_yaw_1000) > 0.005f)
+    {
+        this->yaw_servo.Set_Pos(this->attitude_data.servo_set_yaw_1000);
+        s_yaw_last_msg = this->attitude_data.servo_set_yaw_1000;
     }
 }
