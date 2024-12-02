@@ -17,7 +17,6 @@ void Servo_Ctrl_Task(void *argument)
         servo_ctrl_data_t ctrl_data;
         osSemaphoreAcquire(ServoCtrlTXBinarySemHandle, osWaitForever);
         osMessageQueueGet(ServoCtrlQueueHandle, &ctrl_data, 0, osWaitForever);
-        debug++;
         LobotSerialServoMoveSet(&Servo_Device::servos, ctrl_data.id, ctrl_data.set_1000, 0);
     }
 }

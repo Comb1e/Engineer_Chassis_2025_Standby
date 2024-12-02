@@ -108,7 +108,7 @@ void Gimbal_Slide_Task(void *argument)
         {
             gimbal.Set_Free();
         }
-        osDelay(3);
+        osDelay(2);
     }
 
 #endif

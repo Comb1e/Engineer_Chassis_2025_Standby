@@ -20,7 +20,7 @@ void Gimbal_Attitude_Task(void *argument)
             }
             if(gimbal.yaw_enable_flag)
             {
-
+                gimbal.Update_Yaw_Control();
             }
         }
         osDelay(1);

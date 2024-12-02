@@ -40,10 +40,10 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(0.2,0,0,100,0.5);
     this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.2,0,0,100,0.5);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(6.0f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(6.0f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(3.5f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(3.5f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
 
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
