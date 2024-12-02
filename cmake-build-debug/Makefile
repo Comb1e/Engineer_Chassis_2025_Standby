@@ -381,6 +381,30 @@ Component/Algorithm/Src/SPD_Plan.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.s
 .PHONY : Component/Algorithm/Src/SPD_Plan.c.s
 
+Component/Algorithm/Src/Trajectory.obj: Component/Algorithm/Src/Trajectory.cpp.obj
+.PHONY : Component/Algorithm/Src/Trajectory.obj
+
+# target to build an object file
+Component/Algorithm/Src/Trajectory.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Trajectory.cpp.obj
+.PHONY : Component/Algorithm/Src/Trajectory.cpp.obj
+
+Component/Algorithm/Src/Trajectory.i: Component/Algorithm/Src/Trajectory.cpp.i
+.PHONY : Component/Algorithm/Src/Trajectory.i
+
+# target to preprocess a source file
+Component/Algorithm/Src/Trajectory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Trajectory.cpp.i
+.PHONY : Component/Algorithm/Src/Trajectory.cpp.i
+
+Component/Algorithm/Src/Trajectory.s: Component/Algorithm/Src/Trajectory.cpp.s
+.PHONY : Component/Algorithm/Src/Trajectory.s
+
+# target to generate assembly for a file
+Component/Algorithm/Src/Trajectory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Trajectory.cpp.s
+.PHONY : Component/Algorithm/Src/Trajectory.cpp.s
+
 Component/Algorithm/Src/rotation_matrix.obj: Component/Algorithm/Src/rotation_matrix.cpp.obj
 .PHONY : Component/Algorithm/Src/rotation_matrix.obj
 
@@ -429,6 +453,30 @@ Component/Drivers/Function/Src/Drv_Absorb.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Absorb.cpp.s
 .PHONY : Component/Drivers/Function/Src/Drv_Absorb.cpp.s
 
+Component/Drivers/Function/Src/Drv_Arm.obj: Component/Drivers/Function/Src/Drv_Arm.cpp.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Arm.obj
+
+# target to build an object file
+Component/Drivers/Function/Src/Drv_Arm.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.cpp.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Arm.cpp.obj
+
+Component/Drivers/Function/Src/Drv_Arm.i: Component/Drivers/Function/Src/Drv_Arm.cpp.i
+.PHONY : Component/Drivers/Function/Src/Drv_Arm.i
+
+# target to preprocess a source file
+Component/Drivers/Function/Src/Drv_Arm.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.cpp.i
+.PHONY : Component/Drivers/Function/Src/Drv_Arm.cpp.i
+
+Component/Drivers/Function/Src/Drv_Arm.s: Component/Drivers/Function/Src/Drv_Arm.cpp.s
+.PHONY : Component/Drivers/Function/Src/Drv_Arm.s
+
+# target to generate assembly for a file
+Component/Drivers/Function/Src/Drv_Arm.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.cpp.s
+.PHONY : Component/Drivers/Function/Src/Drv_Arm.cpp.s
+
 Component/Drivers/Function/Src/Drv_Chassis.obj: Component/Drivers/Function/Src/Drv_Chassis.cpp.obj
 .PHONY : Component/Drivers/Function/Src/Drv_Chassis.obj
 
@@ -476,6 +524,30 @@ Component/Drivers/Function/Src/Drv_Gimbal.s: Component/Drivers/Function/Src/Drv_
 Component/Drivers/Function/Src/Drv_Gimbal.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.cpp.s
 .PHONY : Component/Drivers/Function/Src/Drv_Gimbal.cpp.s
+
+Component/Drivers/Function/Src/Drv_Info.obj: Component/Drivers/Function/Src/Drv_Info.cpp.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Info.obj
+
+# target to build an object file
+Component/Drivers/Function/Src/Drv_Info.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Info.cpp.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Info.cpp.obj
+
+Component/Drivers/Function/Src/Drv_Info.i: Component/Drivers/Function/Src/Drv_Info.cpp.i
+.PHONY : Component/Drivers/Function/Src/Drv_Info.i
+
+# target to preprocess a source file
+Component/Drivers/Function/Src/Drv_Info.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Info.cpp.i
+.PHONY : Component/Drivers/Function/Src/Drv_Info.cpp.i
+
+Component/Drivers/Function/Src/Drv_Info.s: Component/Drivers/Function/Src/Drv_Info.cpp.s
+.PHONY : Component/Drivers/Function/Src/Drv_Info.s
+
+# target to generate assembly for a file
+Component/Drivers/Function/Src/Drv_Info.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Info.cpp.s
+.PHONY : Component/Drivers/Function/Src/Drv_Info.cpp.s
 
 Component/Drivers/Function/Src/Drv_KB_Event.obj: Component/Drivers/Function/Src/Drv_KB_Event.cpp.obj
 .PHONY : Component/Drivers/Function/Src/Drv_KB_Event.obj
@@ -885,6 +957,30 @@ Component/Tasks/Function/Src/Absorb_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Absorb_Task.cpp.s
 .PHONY : Component/Tasks/Function/Src/Absorb_Task.cpp.s
 
+Component/Tasks/Function/Src/Arm_Task.obj: Component/Tasks/Function/Src/Arm_Task.cpp.obj
+.PHONY : Component/Tasks/Function/Src/Arm_Task.obj
+
+# target to build an object file
+Component/Tasks/Function/Src/Arm_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Arm_Task.cpp.obj
+.PHONY : Component/Tasks/Function/Src/Arm_Task.cpp.obj
+
+Component/Tasks/Function/Src/Arm_Task.i: Component/Tasks/Function/Src/Arm_Task.cpp.i
+.PHONY : Component/Tasks/Function/Src/Arm_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Function/Src/Arm_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Arm_Task.cpp.i
+.PHONY : Component/Tasks/Function/Src/Arm_Task.cpp.i
+
+Component/Tasks/Function/Src/Arm_Task.s: Component/Tasks/Function/Src/Arm_Task.cpp.s
+.PHONY : Component/Tasks/Function/Src/Arm_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Function/Src/Arm_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Arm_Task.cpp.s
+.PHONY : Component/Tasks/Function/Src/Arm_Task.cpp.s
+
 Component/Tasks/Function/Src/Chassis_Task.obj: Component/Tasks/Function/Src/Chassis_Task.cpp.obj
 .PHONY : Component/Tasks/Function/Src/Chassis_Task.obj
 
@@ -957,6 +1053,30 @@ Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.s
 .PHONY : Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.s
 
+Component/Tasks/Function/Src/Info_Task.obj: Component/Tasks/Function/Src/Info_Task.cpp.obj
+.PHONY : Component/Tasks/Function/Src/Info_Task.obj
+
+# target to build an object file
+Component/Tasks/Function/Src/Info_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Info_Task.cpp.obj
+.PHONY : Component/Tasks/Function/Src/Info_Task.cpp.obj
+
+Component/Tasks/Function/Src/Info_Task.i: Component/Tasks/Function/Src/Info_Task.cpp.i
+.PHONY : Component/Tasks/Function/Src/Info_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Function/Src/Info_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Info_Task.cpp.i
+.PHONY : Component/Tasks/Function/Src/Info_Task.cpp.i
+
+Component/Tasks/Function/Src/Info_Task.s: Component/Tasks/Function/Src/Info_Task.cpp.s
+.PHONY : Component/Tasks/Function/Src/Info_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Function/Src/Info_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Info_Task.cpp.s
+.PHONY : Component/Tasks/Function/Src/Info_Task.cpp.s
+
 Component/Tasks/Function/Src/KB_Task.obj: Component/Tasks/Function/Src/KB_Task.cpp.obj
 .PHONY : Component/Tasks/Function/Src/KB_Task.obj
 
@@ -1028,6 +1148,30 @@ Component/Tasks/Peripherals/Src/CAN2_Task.s: Component/Tasks/Peripherals/Src/CAN
 Component/Tasks/Peripherals/Src/CAN2_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.cpp.s
 .PHONY : Component/Tasks/Peripherals/Src/CAN2_Task.cpp.s
+
+Component/Tasks/Peripherals/Src/Check_Communicate_Task.obj: Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.obj
+.PHONY : Component/Tasks/Peripherals/Src/Check_Communicate_Task.obj
+
+# target to build an object file
+Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.obj
+.PHONY : Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.obj
+
+Component/Tasks/Peripherals/Src/Check_Communicate_Task.i: Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.i
+.PHONY : Component/Tasks/Peripherals/Src/Check_Communicate_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.i
+.PHONY : Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.i
+
+Component/Tasks/Peripherals/Src/Check_Communicate_Task.s: Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.s
+.PHONY : Component/Tasks/Peripherals/Src/Check_Communicate_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.s
+.PHONY : Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.s
 
 Component/Tasks/Peripherals/Src/HI299UM_Task.obj: Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
 .PHONY : Component/Tasks/Peripherals/Src/HI299UM_Task.obj
@@ -2565,18 +2709,27 @@ help:
 	@echo ... Component/Algorithm/Src/SPD_Plan.obj
 	@echo ... Component/Algorithm/Src/SPD_Plan.i
 	@echo ... Component/Algorithm/Src/SPD_Plan.s
+	@echo ... Component/Algorithm/Src/Trajectory.obj
+	@echo ... Component/Algorithm/Src/Trajectory.i
+	@echo ... Component/Algorithm/Src/Trajectory.s
 	@echo ... Component/Algorithm/Src/rotation_matrix.obj
 	@echo ... Component/Algorithm/Src/rotation_matrix.i
 	@echo ... Component/Algorithm/Src/rotation_matrix.s
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.i
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.s
+	@echo ... Component/Drivers/Function/Src/Drv_Arm.obj
+	@echo ... Component/Drivers/Function/Src/Drv_Arm.i
+	@echo ... Component/Drivers/Function/Src/Drv_Arm.s
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.i
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.s
 	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.i
 	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.s
+	@echo ... Component/Drivers/Function/Src/Drv_Info.obj
+	@echo ... Component/Drivers/Function/Src/Drv_Info.i
+	@echo ... Component/Drivers/Function/Src/Drv_Info.s
 	@echo ... Component/Drivers/Function/Src/Drv_KB_Event.obj
 	@echo ... Component/Drivers/Function/Src/Drv_KB_Event.i
 	@echo ... Component/Drivers/Function/Src/Drv_KB_Event.s
@@ -2628,6 +2781,9 @@ help:
 	@echo ... Component/Tasks/Function/Src/Absorb_Task.obj
 	@echo ... Component/Tasks/Function/Src/Absorb_Task.i
 	@echo ... Component/Tasks/Function/Src/Absorb_Task.s
+	@echo ... Component/Tasks/Function/Src/Arm_Task.obj
+	@echo ... Component/Tasks/Function/Src/Arm_Task.i
+	@echo ... Component/Tasks/Function/Src/Arm_Task.s
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.obj
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.i
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.s
@@ -2637,6 +2793,9 @@ help:
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.obj
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.i
 	@echo ... Component/Tasks/Function/Src/Gimbal_Slide_Task.s
+	@echo ... Component/Tasks/Function/Src/Info_Task.obj
+	@echo ... Component/Tasks/Function/Src/Info_Task.i
+	@echo ... Component/Tasks/Function/Src/Info_Task.s
 	@echo ... Component/Tasks/Function/Src/KB_Task.obj
 	@echo ... Component/Tasks/Function/Src/KB_Task.i
 	@echo ... Component/Tasks/Function/Src/KB_Task.s
@@ -2646,6 +2805,9 @@ help:
 	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/CAN2_Task.s
+	@echo ... Component/Tasks/Peripherals/Src/Check_Communicate_Task.obj
+	@echo ... Component/Tasks/Peripherals/Src/Check_Communicate_Task.i
+	@echo ... Component/Tasks/Peripherals/Src/Check_Communicate_Task.s
 	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/HI299UM_Task.s

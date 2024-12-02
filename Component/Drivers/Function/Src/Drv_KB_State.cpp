@@ -38,7 +38,7 @@ void KB_Device::Check_RC_State()
     {
         if(!rc.data.using_kb_flag)
         {
-            robot.RC_Set_Gimbal_Position(-rc.data.right_rocker.x * 0.6f);
+            robot.RC_Set_Gimbal_Position(-rc.data.right_rocker.x * 0.4f);
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_DOWN))

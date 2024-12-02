@@ -17,10 +17,12 @@
 #define MAHONY 1
 #define SERVO 1
 #define USB 1
-#define CHASSIS 1
-#define GIMBAL_SLIDE 1
-#define GIMBAL_ATTITUDE 1
+#define CHASSIS 0
+#define GIMBAL_SLIDE 0
+#define GIMBAL_ATTITUDE 0
+#define ABSORB 0
 #define IMU 0
+#define INFO 1
 
 #define TEST 0
 

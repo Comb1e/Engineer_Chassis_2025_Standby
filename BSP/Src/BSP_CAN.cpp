@@ -11,6 +11,7 @@
 #include "can.h"
 #include "cmsis_os.h"
 #include "Compilable.h"
+#include "RTOS.h"
 
 CAN_FilterTypeDef can_device_t::CAN_FilterInitStruct =
 {

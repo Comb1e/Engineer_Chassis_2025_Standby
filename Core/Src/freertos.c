@@ -159,6 +159,20 @@ const osThreadAttr_t absorb_Task_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for arm_Task */
+osThreadId_t arm_TaskHandle;
+const osThreadAttr_t arm_Task_attributes = {
+  .name = "arm_Task",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
+/* Definitions for check_communi */
+osThreadId_t check_communiHandle;
+const osThreadAttr_t check_communi_attributes = {
+  .name = "check_communi",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -239,6 +253,16 @@ osSemaphoreId_t AbsorbUpdateBinarySemHandle;
 const osSemaphoreAttr_t AbsorbUpdateBinarySem_attributes = {
   .name = "AbsorbUpdateBinarySem"
 };
+/* Definitions for ArmResetInitBinarySem */
+osSemaphoreId_t ArmResetInitBinarySemHandle;
+const osSemaphoreAttr_t ArmResetInitBinarySem_attributes = {
+  .name = "ArmResetInitBinarySem"
+};
+/* Definitions for ArmUpdateBinarySem */
+osSemaphoreId_t ArmUpdateBinarySemHandle;
+const osSemaphoreAttr_t ArmUpdateBinarySem_attributes = {
+  .name = "ArmUpdateBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -271,6 +295,8 @@ void Info_Task(void *argument);
 void KB_State_Task(void *argument);
 void KB_Event_Task(void *argument);
 void Absorb_Task(void *argument);
+void Arm_Task(void *argument);
+void Check_Communicate_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -328,6 +354,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of AbsorbUpdateBinarySem */
   AbsorbUpdateBinarySemHandle = osSemaphoreNew(1, 1, &AbsorbUpdateBinarySem_attributes);
+
+  /* creation of ArmResetInitBinarySem */
+  ArmResetInitBinarySemHandle = osSemaphoreNew(1, 1, &ArmResetInitBinarySem_attributes);
+
+  /* creation of ArmUpdateBinarySem */
+  ArmUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ArmUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -405,6 +437,12 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of absorb_Task */
   absorb_TaskHandle = osThreadNew(Absorb_Task, NULL, &absorb_Task_attributes);
+
+  /* creation of arm_Task */
+  arm_TaskHandle = osThreadNew(Arm_Task, NULL, &arm_Task_attributes);
+
+  /* creation of check_communi */
+  check_communiHandle = osThreadNew(Check_Communicate_Task, NULL, &check_communi_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -704,6 +742,42 @@ __weak void Absorb_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END Absorb_Task */
+}
+
+/* USER CODE BEGIN Header_Arm_Task */
+/**
+* @brief Function implementing the arm_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Arm_Task */
+__weak void Arm_Task(void *argument)
+{
+  /* USER CODE BEGIN Arm_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Arm_Task */
+}
+
+/* USER CODE BEGIN Header_Check_Communicate_Task */
+/**
+* @brief Function implementing the check_communi thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Check_Communicate_Task */
+__weak void Check_Communicate_Task(void *argument)
+{
+  /* USER CODE BEGIN Check_Communicate_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Check_Communicate_Task */
 }
 
 /* Private application code --------------------------------------------------*/

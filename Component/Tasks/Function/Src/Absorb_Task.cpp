@@ -3,6 +3,9 @@
 //
 
 #include "Absorb_Task.h"
+#include "Global_CFG.h"
+
+#if ABSORB
 
 void Absorb_Task(void *argument)
 {
@@ -20,3 +23,5 @@ void Absorb_Task(void *argument)
         osDelay(8);
     }
 }
+
+#endif

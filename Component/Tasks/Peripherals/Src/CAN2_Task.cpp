@@ -18,7 +18,7 @@ void CAN2_Task(void *argument)
     for(;;)
     {
         osSemaphoreAcquire(CAN2CountingSemHandle,osWaitForever);
-        osMessageQueueGet(CAN2SendQueueHandle,&tx_member,NULL,osWaitForever);
+        osMessageQueueGet(CAN2SendQueueHandle,&tx_member,0,osWaitForever);
         tx_header.StdId = tx_member.tx_id;
         tx_header.DLC = tx_member.len;
         HAL_CAN_AddTxMessage(&hcan2,&tx_header,tx_member.buf_data,&tx_mailbox);
