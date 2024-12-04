@@ -106,7 +106,6 @@ public:
     void Update_Enable();
     bool Check_Enable();
     void Check_Lost();
-    bool Check_Connect_Flag() const;
 
     friend void Info_Rx_Data_Callback(can_device_t *can_device, uint8_t *rx_data);
 };

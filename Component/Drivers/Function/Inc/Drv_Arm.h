@@ -39,9 +39,8 @@ extern "C"
 #define FRAME_EXTENSION_MAX   (660.0f)     //框架最大伸出长度        mm
 #define FRAME_EXTENSION_MIN   (0.0f)     //框架最大伸出长度        mm
 
-
 #define FRAME_UPLIFT_MAX      (660.0f)     //最大抬升高度        mm
-#define FRAME_UPLIFT_MIN      (0.0f)     //最大抬升高度        mm
+#define FRAME_UPLIFT_MIN      (0.0f)     //最小抬升高度        mm
 #define X2_RADIUS           (0.0f)         //偏心
 #define FRAME_SLIDING_MAX      (138.0f)    //最大横移长度        mm
 #define FRAME_SLIDING_MIN      (0.0f)    //最小横移长度        mm
@@ -56,30 +55,28 @@ extern "C"
 
 /*------------------------机械臂可达空间的参数---------------*/
 #define X_TOTAL_MAX       (FRAME_EXTENSION_MAX + ARM_LENGTH)//966.5
-#define X_TOTAL_MIN       (0.0F)//320
+#define X_MIN             (ARM_LENGTH - ARM_LENGTH_2_ACT)
 #define Y_TOTAL_MAX       (FRAME_SLIDING_MAX + ARM_LENGTH  )//513
 #define Y_TOTAL_MIN       (FRAME_SLIDING_MIN - ARM_LENGTH )//-372
 #define Z_TOTAL_MAX       (FRAME_UPLIFT_MAX)//624
 #define Z_TOTAL_MIN       (FRAME_UPLIFT_MIN - ARM_LENGTH_2_ACT)//-70
 
-/*------------------------机械臂在运动过程中因arm_yaw改变而可能改变的值(坐标值域)-------------------------*/
-#define Y_MAX  (Y_TOTAL_MAX)
-#define Y_MIN  (Y_TOTAL_MIN)
-#define X_MAX  (X_TOTAL_MAX)
-#define X_MIN  (X_TOTAL_MIN)
-#define Z_MAX                (Z_TOTAL_MAX)
-#define Z_MIN                (Z_TOTAL_MIN)
 #define YAW_MIN(arm_yaw)        (-90.0f + arm_yaw)
 #define YAW_MAX(arm_yaw)        (90.0f + arm_yaw)
 #define PITCH_MIN(arm_pitch)    (-90.f + arm_pitch)
 #define PITCH_MAX(arm_pitch)    (90.f + arm_pitch)
 /*------------------------吸盘的姿态-------------------------*/
-
-
 #define ROLL_LIMIT      (255.0f)
 
 #define YAW_LIMIT       (160.0f)
 #define PITCH_LIMIT      (160.0f)
+
+#define Sucker_LIMIT_Y_MIN (30.0f)
+/*------------------------机械臂在运动过程中因arm_yaw改变而可能改变的值(坐标值域)-------------------------*/
+#define Y_MAX  (Y_TOTAL_MAX)
+#define Y_MIN  (Y_TOTAL_MIN)
+#define Z_MAX                (Z_TOTAL_MAX)
+#define Z_MIN                (Z_TOTAL_MIN)
 
 /*----------------------控制yaw转为大yaw的限值--------------------------*/
 #define YAW2ARM_YAW_LIMIT  (82.f)
@@ -94,26 +91,6 @@ extern "C"
 #define INIT_SUCKER_YAW         (0.0f)
 #define INIT_SUCKER_PITCH       (0.0f)
 
-/*----------------------机械臂归位时候的状态---------------------*/
-#define HOMING_ARM_YAW_DEG        (0.0f)
-#define HOMING_ARM_PITCH_DEG        (0.0f)
-#define HOMING_ARM_X              (400.0f)
-#define HOMING_ARM_Y              (70.0f)
-#define HOMING_ARM_Z              (20.0f)
-#define HOMING_SUCKER_ROLL        (0.0f)
-#define HOMING_SUCKER_YAW         (0.0f)
-#define HOMING_SUCKER_PITCH       (0.0f)
-
-//有矿的时候
-
-#define HOMING_ARM_YAW_DEG                  (0.0f)
-#define HOMING_ARM_X_WITH_ORE               (520.0f)
-#define HOMING_ARM_Y_WITH_ORE               (70.0f)
-#define HOMING_ARM_Z_WITH_ORE               (0.0f)
-#define HOMING_SUCKER_ROLL_WITH_ORE         (0.0f)
-#define HOMING_SUCKER_YAW_WITH_ORE          (0.0f)
-#define HOMING_SUCKER_PITCH_WITH_ORE        (90.0f)
-
 #define ARM_CAN             (&hcan2)
 
 /*----------------------与云台板通信的CANid---------------------*/
@@ -124,9 +101,21 @@ extern "C"
 #define ARM_Y_OFFSET    400
 #define ARM_Z_OFFSET    150
 
-#define ARM_CONTROL_CYCLE    (3U)//单位是ms
+#define ARM_CONTROL_CYCLE    (3U)//单    位是ms
 #define XYZ_ERROR           (5.0f)
 #define RYP_ERROR           (5.0f)
+
+/*----------------------左右吸盘坐标---------------------*/
+#define LEFT_SUCKER_X (320.0f)
+#define LEFT_SUCKER_Y (450.0f)
+#define RIGHT_SUCKER_X (320.0f)
+#define RIGHT_SUCKER_Y  (-220.0f)
+#define SUCKER_SIZE (5.0f)
+
+#define UPLIFT_FRAME_X (50.0f)
+#define LEFT_UPLIFT_FRAME_Y (290.0f)
+#define RIGHT_UPLIFT_FRAME_Y (-110.0f)
+#define UPLIFT_FRAME_SIZE (5.0f)
 
 #pragma pack(1)
 typedef struct
@@ -164,6 +153,17 @@ typedef struct
     float arm_pitch;
 }arm_data_t;
 
+typedef struct
+{
+    float x_base;
+    float y_base;
+    float arm_xoy_length;
+    float arm_y_length;
+    float arm_x_length;
+    float arm_yaw_radian;
+    float k;
+}arm_limit_basic_data_t;
+
 #ifdef __cplusplus
 }
 #endif
@@ -172,31 +172,59 @@ class Arm_Device
 {
 private:
 
+protected:
+
 public:
     Arm_Device();
 
     bool ptz_reset_ok_flag;
     bool enable_flag;
     bool connect_flag;
+    bool arm_chassis_cooperate_flag;
+    bool arm_yaw_cooperate_flag;
+
+    Trajectory_Device trajectory[TRAJ_ITEM_NUM];
+    float trajectory_final[TRAJ_ITEM_NUM];
 
     can_device_t can_device;
 
     arm_tx_data_t can_tx_data;
     arm_data_t fb_current_data;
     arm_data_t ctrl_data;
+    arm_limit_basic_data_t limit_basic_data;
 
     float min_limit[TRAJ_ITEM_NUM];
     float max_limit[TRAJ_ITEM_NUM];
 
     void Init(CAN_HandleTypeDef *hcan, uint32_t rx_stdid, uint32_t tx_stdid, osSemaphoreId_t rx_sem);
+    void Limit_Init();
     void Update_Limit();
+    void Posture_Init();
     void Check_Lost();
-    bool Check_Connect_Flag() const;
     void Update_Enable();
     bool Check_Enable() const;
     void Update_Control();
     void CAN_Send_MSG();
     void CAN_Set();
+    void Set_Point_Final_Posture(traj_item_e point,float posture);
+    void Set_Point_Posture(traj_item_e point,float posture);
+    void Update_Limit_Basic_Data();
+    void Update_X_Limit();
+    void Update_Y_Limit();
+    void Update_Z_Limit();
+    void Update_Pitch_Limit();
+    void Update_Final();
+    void Update_Trajectory_Data();
+    void Update_Ctrl_Data();
+    void Set_X(float track_point);
+    void Set_Y(float track_point);
+    void Set_Z(float track_point);
+    void Set_Yaw(float track_point);
+    void Set_Pitch(float track_point);
+    void Set_Roll(float track_point);
+    void Set_Arm_Yaw(float track_point);
+    void Set_Arm_Pitch(float track_point);
+    void Add_Point_Target_Pos_From_Control(traj_item_e point, float delta);
 
     friend void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
 };

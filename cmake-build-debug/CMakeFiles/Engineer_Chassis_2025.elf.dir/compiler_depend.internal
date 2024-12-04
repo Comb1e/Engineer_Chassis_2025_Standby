@@ -1235,6 +1235,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/tr1/riemann_zeta.tcc
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/tr1/special_function_util.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/type_traits
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/limits.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/ieeefp.h
@@ -1244,7 +1245,10 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdlib.h
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/string.h
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/cdefs.h
@@ -1252,11 +1256,22 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h
+ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/syslimits.h
+ E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/float.h
+ E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/limits.h
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h
+ E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/syslimits.h
  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_CAN.h
  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Usart.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/arm_math_memory.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/arm_math_types.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/basic_math_functions.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/fast_math_functions.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/none.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Include/dsp/utils.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Global_CFG.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/Trajectory.h
@@ -1682,6 +1697,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_KB_E
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/PID.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/SPD_Plan.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/Trajectory.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_KB_Event.h
@@ -1771,6 +1788,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_KB_S
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/PID.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/SPD_Plan.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/Trajectory.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_KB_State.h
@@ -2035,6 +2054,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Robo
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/PID.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/SPD_Plan.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/Trajectory.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h
@@ -3679,6 +3700,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/KB_Task.cp
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/PID.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/SPD_Plan.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/Trajectory.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h
@@ -4064,6 +4087,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_C
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/PID.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/SPD_Plan.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/Trajectory.h
+ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h
  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h

@@ -18,7 +18,7 @@ void Info_Task(void *argument)
     for(;;)
     {
         info.Update_Enable();
-        if(info.Check_Enable() && info.Check_Connect_Flag())
+        if(info.Check_Enable())
         {
             info.Update_Data();
             info.CAN_Send_MSG();

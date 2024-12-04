@@ -38,12 +38,21 @@ void KB_Device::Check_RC_State()
     {
         if(!rc.data.using_kb_flag)
         {
-            robot.RC_Set_Gimbal_Position(-rc.data.right_rocker.x * 0.4f);
+            arm.Add_Point_Target_Pos_From_Control(X,rc.data.left_rocker.y);
+            arm.Add_Point_Target_Pos_From_Control(Y,-rc.data.left_rocker.x);
+            arm.Add_Point_Target_Pos_From_Control(Z,rc.data.right_rocker.y);
+            arm.Add_Point_Target_Pos_From_Control(ARM_YAW,-rc.data.right_rocker.x);
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_DOWN))
     {
-
+        if(!rc.data.using_kb_flag)
+        {
+            arm.Add_Point_Target_Pos_From_Control(ARM_PITCH,-rc.data.right_rocker.y);
+            arm.Add_Point_Target_Pos_From_Control(PITCH,-rc.data.left_rocker.y);
+            arm.Add_Point_Target_Pos_From_Control(ROLL,rc.data.right_rocker.x);
+            arm.Add_Point_Target_Pos_From_Control(YAW,-rc.data.left_rocker.x);
+        }
     }
 
     if(RC_Check_SW_State(RC_SW_R_UP))

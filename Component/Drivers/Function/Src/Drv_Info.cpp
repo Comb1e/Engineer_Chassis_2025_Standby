@@ -12,7 +12,7 @@ Info_Device info;
 
 Info_Device::Info_Device()
 {
-    this->enable_flag = true;
+    this->enable_flag = false;
     this->tx_raw_data.pose_mode = single;
 }
 
@@ -112,10 +112,4 @@ void Info_Device::Check_Lost()
         this->connect_flag = false;
     }
 }
-
-bool Info_Device::Check_Connect_Flag() const
-{
-    return this->connect_flag;
-}
-
 

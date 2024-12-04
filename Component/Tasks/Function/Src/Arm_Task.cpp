@@ -15,9 +15,8 @@ void Arm_Task(void *argument)
     for(;;)
     {
         arm.Update_Enable();
-        if(arm.Check_Connect_Flag() && arm.Check_Enable())
+        if(arm.Check_Enable())
         {
-            debug++;
             arm.Update_Control();
             arm.CAN_Send_MSG();
         }

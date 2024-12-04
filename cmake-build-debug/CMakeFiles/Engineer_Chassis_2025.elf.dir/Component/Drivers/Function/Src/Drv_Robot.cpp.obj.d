@@ -84,4 +84,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Robo
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/CRC.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Usart.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_ServoCtrl.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/Compilable.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/Compilable.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Arm.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/Trajectory.h

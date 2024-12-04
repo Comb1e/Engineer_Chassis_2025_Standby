@@ -30,7 +30,7 @@ void RC_CheckConnection()
     {
         rc.ctrl_protection.connect_flag = false;
     }
-    else
+    else if (rc.ctrl_protection.outage_cntdown == 0)
     {
         rc.ctrl_protection.connect_flag = true;
     }

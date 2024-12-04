@@ -9,6 +9,7 @@
 #include "Drv_Gimbal.h"
 #include "RTOS.h"
 #include "Global_CFG.h"
+#include "Drv_Arm.h"
 
 #ifdef __cplusplus
 extern "C"
