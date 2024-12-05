@@ -13,31 +13,24 @@ void KB_Device::Check_RC_State()
 {
     if(RC_Check_SW_State(RC_SW_L_UP))
     {
+        arm.arm_chassis_cooperate_flag = false;
         if(!rc.data.using_kb_flag)
         {
-            switch(chassis.control_type)
+            if(chassis.control_type == POSITION)
             {
-                case SPEED:
-                {
-                    robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.5f);
-                    break;
-                }
-                case POSITION:
-                {
-                    robot.RC_Set_Chasssis_Position(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.1f);
-                    break;
-                }
-                default:
-                {
-                    break;
-                }
+                chassis.control_type = SPEED;
             }
+            robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.5f);
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_MID))
     {
         if(!rc.data.using_kb_flag)
         {
+            if(chassis.control_type == SPEED)
+            {
+                chassis.control_type = POSITION;
+            }
             arm.Add_Point_Target_Pos_From_Control(X,rc.data.left_rocker.y);
             arm.Add_Point_Target_Pos_From_Control(Y,-rc.data.left_rocker.x);
             arm.Add_Point_Target_Pos_From_Control(Z,rc.data.right_rocker.y);

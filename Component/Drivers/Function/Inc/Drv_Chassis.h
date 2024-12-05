@@ -182,6 +182,12 @@ public:
     float Get_Pos_Yaw() const;
     void Add_Position_X(float delta);
     void Add_Position_Y(float delta);
+    void Judge_For_Arm_Need();
+    void Clean_Speed_Control();
+    void Close_Yaw_Spin();
+    void Change_To_Position_Type();
+    void Clean_Poition_Control();
+    void Change_To_Speed_Type();
 };
 
 extern Chassis_Device chassis;

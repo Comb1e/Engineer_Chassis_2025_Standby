@@ -8,6 +8,7 @@
 #include <dsp/fast_math_functions.h>
 
 #include "Drv_Info.h"
+#include "rotation_matrix.h"
 
 Arm_Device arm;
 
@@ -23,8 +24,7 @@ trajectory{Trajectory_Device(XYZ_ERROR, ARM_TRAJECTORY_VEL_XYZ),
 {
     this->enable_flag = false;
     this->arm_chassis_cooperate_flag = false;
-    this->arm_yaw_cooperate_flag = false;
-    this->limit_basic_data.y_base = 0;
+    this->init_cnt = 0;
 }
 
 void Arm_Device::Init(CAN_HandleTypeDef *hcan, uint32_t rx_stdid, uint32_t tx_stdid, osSemaphoreId_t rx_sem)
@@ -110,6 +110,7 @@ void Arm_Device::Update_Control()
 {
     this->Update_Limit_Basic_Data();
     this->Update_Limit();
+
     this->Update_Final();
     this->Update_Trajectory_Data();
     this->Update_Ctrl_Data();
@@ -165,25 +166,22 @@ void Arm_Device::Set_Point_Posture(traj_item_e point, float posture)
 
 void Arm_Device::Posture_Init()
 {
-    this->trajectory_final[X] = INIT_ARM_X;
-    this->trajectory_final[Y] = INIT_ARM_Y;
-    this->trajectory_final[Z] = INIT_ARM_Z;
-    this->trajectory_final[YAW] = INIT_SUCKER_YAW;
-    this->trajectory_final[PITCH] = INIT_SUCKER_PITCH;
-    this->trajectory_final[ROLL] = INIT_SUCKER_ROLL;
-    this->trajectory_final[ARM_YAW] = INIT_ARM_YAW_DEG;
-    this->trajectory_final[ARM_PITCH] = INIT_ARM_PITCH_DEG;
+    this->Set_Point_Posture(X, INIT_ARM_X);
+    this->Set_Point_Posture(Y, INIT_ARM_Y);
+    this->Set_Point_Posture(Z, INIT_ARM_Z);
+    this->Set_Point_Posture(YAW, INIT_SUCKER_YAW);
+    this->Set_Point_Posture(PITCH, INIT_SUCKER_PITCH);
+    this->Set_Point_Posture(ROLL, INIT_SUCKER_ROLL);
+    this->Set_Point_Posture(ARM_YAW, INIT_ARM_YAW_DEG);
+    this->Set_Point_Posture(ARM_PITCH,INIT_ARM_PITCH_DEG);
 }
 
 void Arm_Device::Update_Limit_Basic_Data()
 {
     this->limit_basic_data.arm_xoy_length = ARM_LENGTH - ARM_LENGTH_2_ACT + ARM_LENGTH_2_ACT * arm_cos_f32(this->trajectory[PITCH].track_point * PI / 180.0f);
     this->limit_basic_data.arm_yaw_radian = this->trajectory[ARM_YAW].track_point * PI / 180.0f;
-    this->limit_basic_data.k = arm_sin_f32(this->limit_basic_data.arm_yaw_radian) / arm_cos_f32(this->limit_basic_data.arm_yaw_radian);
     this->limit_basic_data.arm_x_length = this->limit_basic_data.arm_xoy_length * arm_cos_f32(this->limit_basic_data.arm_yaw_radian);
     this->limit_basic_data.arm_y_length = this->limit_basic_data.arm_xoy_length * arm_sin_f32(this->limit_basic_data.arm_yaw_radian);
-    this->limit_basic_data.y_base = this->trajectory[Y].track_point - this->limit_basic_data.arm_y_length;
-    this->limit_basic_data.x_base = this->trajectory[X].track_point - this->limit_basic_data.arm_x_length;
 }
 
 void Arm_Device::Update_Limit()
@@ -222,9 +220,56 @@ void Arm_Device::Update_Final()
 {
     for (traj_item_e point = X; point < TRAJ_ITEM_NUM; point = (traj_item_e) (point + 1))
     {
-        VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
-        this->trajectory[point].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[point]);
-        this->trajectory[point].final = this->trajectory_final[point];
+        if(point == X)
+        {
+            if(this->trajectory_final[X] > max_limit[X])
+            {
+                this->arm_chassis_cooperate_flag = true;
+                this->chassis_move_data.x += this->trajectory_final[X] - max_limit[X] - this->chassis_move_data.x;
+                this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(max_limit[X]);
+                this->trajectory[X].final = this->trajectory_final[X] - this->chassis_move_data.x;
+            }
+            else if(this->trajectory_final[X] < min_limit[X])
+            {
+                this->arm_chassis_cooperate_flag = true;
+                this->chassis_move_data.x += this->trajectory_final[X] - min_limit[X] - this->chassis_move_data.x;
+                this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(min_limit[X]);
+                this->trajectory[X].final = this->trajectory_final[X] - this->chassis_move_data.x;
+            }
+            else
+            {
+                this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[X]);
+                this->trajectory[X].final = this->trajectory_final[X];
+            }
+        }
+        else if(point == Y)
+        {
+            if(this->trajectory_final[Y] > max_limit[Y])
+            {
+                this->arm_chassis_cooperate_flag = true;
+                this->chassis_move_data.y += this->trajectory_final[Y] - max_limit[Y] - this->chassis_move_data.y;
+                this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(max_limit[Y]);
+                this->trajectory[Y].final = this->trajectory_final[Y] - this->chassis_move_data.y;
+            }
+            else if(this->trajectory_final[Y] < min_limit[Y])
+            {
+                this->arm_chassis_cooperate_flag = true;
+                this->chassis_move_data.y += this->trajectory_final[Y] - min_limit[Y] - this->chassis_move_data.y;
+                this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(min_limit[Y]);
+                this->trajectory[Y].final = this->trajectory_final[Y] - this->chassis_move_data.y;
+            }
+            else
+            {
+                this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[Y]);
+                this->trajectory[Y].final = this->trajectory_final[Y];
+            }
+        }
+        else
+        {
+            VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
+            this->trajectory[point].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[point]);
+            this->trajectory[point].final = this->trajectory_final[point];
+        }
     }
 }
 
@@ -324,5 +369,140 @@ void Arm_Device::Add_Point_Target_Pos_From_Control(traj_item_e point, float delt
     else if(fabsf(delta) > 1.0f)
     {
         this->trajectory_final[point] += delta/ fabsf(delta) *this->trajectory[point].basic_step;
+    }
+
+    if(point !=X && point !=Y)
+    {
+        VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
+    }
+}
+
+void Arm_Device::Clean_Control()
+{
+    this->Set_FeedBack_As_Target();
+    this->arm_chassis_cooperate_flag = false;
+    this->chassis_move_data.x = 0;
+    this->chassis_move_data.y = 0;
+}
+
+void Arm_Device::Set_FeedBack_As_Target()
+{
+    this->Set_Point_Posture(X,this->fb_current_data.x);
+    this->Set_Point_Posture(Y,this->fb_current_data.y);
+    this->Set_Point_Posture(Z,this->fb_current_data.z);
+    this->Set_Point_Posture(ARM_YAW,this->fb_current_data.arm_yaw);
+    this->Set_Point_Posture(ARM_PITCH,this->fb_current_data.arm_pitch);
+    this->Set_Point_Posture(YAW,this->fb_current_data.sucker_yaw_deg);
+    this->Set_Point_Posture(PITCH,this->fb_current_data.sucker_pitch_deg);
+    this->Set_Point_Posture(ROLL,this->fb_current_data.sucker_roll_deg);
+    this->trajectory_final[X] = this->fb_current_data.x;
+    this->trajectory_final[Y] = this->fb_current_data.y;
+}
+
+bool Arm_Device::Check_Init_Completely()
+{
+    if(this->init_cnt < 6000)
+    {
+        this->init_cnt++;
+        return false;
+    }
+    return true;
+}
+
+void Arm_Device::Add_Point_Target_Pos(traj_item_e point, float delta_target)
+{
+    this->trajectory_final[point] += delta_target;
+    if (this->arm_chassis_cooperate_flag)
+    {
+        if (point != X && point != Y)
+        {
+            VAL_LIMIT(this->trajectory_final[point], this->min_limit[point], this->max_limit[point]);
+        }
+    }
+    else
+    {
+        VAL_LIMIT(this->trajectory_final[point], this->min_limit[point], this->max_limit[point]);
+    }
+}
+
+/**
+ * @brief 沿吸盘的三个方向推
+ * @param point
+ * @param compensation
+ * @param distance
+ * @param vel
+ */
+void Arm_Device::Rectilinear_Motion(traj_item_e point,float compensation, float distance,float vel)
+{
+    if(point >= YAW)
+    {
+        return;
+    }
+
+    float mat[9] = {0};
+    float dx, dy, dz;
+    float dx_v, dy_v, dz_v;
+
+
+    set_rotMatrix_from_euler_zyx((this->trajectory[YAW].track_point / 180.0f) * PI,
+                                 ((this->trajectory[PITCH].track_point + compensation) / 180.0f) * PI,
+                                 (this->trajectory[ROLL].track_point / 180.0f) * PI, mat);
+    dx = distance * mat[point];
+    dy = distance * mat[point + 3];
+    dz = distance * mat[point + 6];
+
+    dx_v = vel * mat[point];
+    dy_v = vel * mat[point + 3];
+    dz_v = vel * mat[point + 6];
+
+    this->Add_Point_Target_Pos(X, dx);
+    this->Add_Point_Target_Pos(Y, dy);
+    this->Add_Point_Target_Pos(Z, dz);
+
+    if (fabsf(dx_v) > 0.001)
+    {
+        this->trajectory[X].Change_Basic_Step(dx_v);
+    }
+    if (fabsf(dy_v) > 0.001)
+    {
+        this->trajectory[Y].Change_Basic_Step(dy_v);
+    }
+    if (fabsf(dz_v) > 0.001)
+    {
+        this->trajectory[Z].Change_Basic_Step(dz_v);
+    }
+}
+
+void Arm_Device::Arm_Yaw_Dir_Move(float distance, float vel)
+{
+    float mat[9] = {0};
+    float dx, dy, dz;
+    float dx_v, dy_v, dz_v;
+    set_rotMatrix_from_euler_zyx((this->trajectory[ARM_YAW].track_point / 180.0f) * PI,
+                                 0,
+                                 0, mat);
+    dx = distance * mat[0];
+    dy = distance * mat[3];
+    dz = distance * mat[6];
+
+    dx_v = vel * mat[0];
+    dy_v = vel * mat[3];
+    dz_v = vel * mat[6];
+
+    this->Add_Point_Target_Pos(X, dx);
+    this->Add_Point_Target_Pos(Y, dy);
+    this->Add_Point_Target_Pos(Z, dz);
+
+    if (fabsf(dx_v) > 0.001)
+    {
+        this->trajectory[X].Change_Basic_Step(dx_v);
+    }
+    if (fabsf(dy_v) > 0.001)
+    {
+        this->trajectory[Y].Change_Basic_Step(dy_v);
+    }
+    if (fabsf(dz_v) > 0.001)
+    {
+        this->trajectory[Z].Change_Basic_Step(dz_v);
     }
 }

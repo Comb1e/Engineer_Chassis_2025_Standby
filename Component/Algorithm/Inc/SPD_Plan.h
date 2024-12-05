@@ -21,5 +21,6 @@ typedef struct
 void Slope_Speed_Init(slope_speed_t *slope_speed, float out, float acc, float dec, float out_max, float target);
 float Get_Slope_Speed(slope_speed_t *slope_speed);
 void Update_Slope_SPD(slope_speed_t *slope_speed, float acc, float dec, float out_max);
+void Clean_Slope_Speed(slope_speed_t *slope_speed);
 
 #endif //SPD_PLAN_H

@@ -11,6 +11,7 @@
 #include "User_Lib.h"
 #include "Global_CFG.h"
 #include "Mecanum.h"
+#include "Drv_Arm.h"
 
 Chassis_Device chassis;
 
@@ -35,10 +36,10 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RB_NUM].Init(CHASSIS_MOTOR_RB_ID,DJI_M3508,CHASSIS_CAN,true,ChassisLFUpdateBinarySemHandle,2000,0.3);
     this->wheel[CHASSIS_MOTOR_RF_NUM].Init(CHASSIS_MOTOR_RF_ID,DJI_M3508,CHASSIS_CAN,true,ChassisLFUpdateBinarySemHandle,2000,0.3);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(0.2,0,0,100,0.5);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(0.2,0,0,100,0.5);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(0.2,0,0,100,0.5);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.2,0,0,100,0.5);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(0.15,0,0,100,0.2);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(0.15,0,0,100,0.2);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(0.15,0,0,100,0.2);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.15,0,0,100,0.2);
 
     this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
     this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
@@ -100,6 +101,10 @@ void Chassis_Device::Set_Free()
     {
         i.Set_Free();
     }
+
+    this->Clean_Speed_Control();
+    this->Clean_Poition_Control();
+    this->control_type = SPEED;
 }
 
 void Chassis_Device::Update_Ready()
@@ -233,7 +238,7 @@ __RAM_FUNC void Chassis_Device::Update_Position_Control()
     {
         return;
     }
-    this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()));
+    //this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()));
     Chassis_Motor_Loc_SolverSet(this->wheel,this->position.x,this->position.y,this->position.spin);
     for(auto & i : this->wheel)
     {
@@ -374,3 +379,73 @@ void Chassis_Device::Add_Position_Y(float delta)
     this->position.y += delta;
 }
 
+void Chassis_Device::Judge_For_Arm_Need()
+{
+    if(arm.arm_chassis_cooperate_flag)
+    {
+        this->position.x = arm.chassis_move_data.x;
+        this->position.y = arm.chassis_move_data.y;
+        if(ABS(this->position.x) < 0.5f && ABS(this->position.y) < 0.5f)
+        {
+            arm.arm_chassis_cooperate_flag = false;
+            arm.chassis_move_data.x = 0;
+            arm.chassis_move_data.y = 0;
+        }
+    }
+}
+
+void Chassis_Device::Clean_Speed_Control()
+{
+    this->Close_Yaw_Spin();
+
+    Clean_Slope_Speed(&this->kb_vel_x);
+    Clean_Slope_Speed(&this->kb_vel_y);
+
+    this->Set_Vel_X(0.0f);
+    this->Set_Vel_Y(0.0f);
+    this->Set_Vel_Spin(0.0f);
+
+    this->wheel[0].Reset_Total_Rounds_Offset(0);
+    this->wheel[1].Reset_Total_Rounds_Offset(0);
+    this->wheel[2].Reset_Total_Rounds_Offset(0);
+    this->wheel[3].Reset_Total_Rounds_Offset(0);
+
+    for(auto & i : this->wheel)
+    {
+        i.Set_Free();
+    }
+}
+
+void Chassis_Device::Close_Yaw_Spin()
+{
+    HI229UM_Set_Current_As_Offset();
+
+    this->pos_yaw_angle = HI229UM_Get_Yaw_Total_Deg();
+    this->set_vel.spin = 0.0f;
+}
+
+void Chassis_Device::Change_To_Position_Type()
+{
+    this->Clean_Speed_Control();
+    this->control_type = POSITION;
+}
+
+void Chassis_Device::Clean_Poition_Control()
+{
+    this->Close_Yaw_Spin();
+
+    this->position.x = 0;
+    this->position.y = 0;
+    this->position.spin = 0;
+
+    for(auto & i : this->wheel)
+    {
+        i.Set_Free();
+    }
+}
+
+void Chassis_Device::Change_To_Speed_Type()
+{
+    this->Clean_Poition_Control();
+    this->control_type = SPEED;
+}

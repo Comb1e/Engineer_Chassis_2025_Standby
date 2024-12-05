@@ -155,14 +155,17 @@ typedef struct
 
 typedef struct
 {
-    float x_base;
-    float y_base;
     float arm_xoy_length;
     float arm_y_length;
     float arm_x_length;
     float arm_yaw_radian;
-    float k;
 }arm_limit_basic_data_t;
+
+typedef struct
+{
+    float x;
+    float y;
+}chassis_move_t;
 
 #ifdef __cplusplus
 }
@@ -173,7 +176,8 @@ class Arm_Device
 private:
 
 protected:
-
+    Trajectory_Device trajectory[TRAJ_ITEM_NUM];
+    float trajectory_final[TRAJ_ITEM_NUM];
 public:
     Arm_Device();
 
@@ -181,10 +185,8 @@ public:
     bool enable_flag;
     bool connect_flag;
     bool arm_chassis_cooperate_flag;
-    bool arm_yaw_cooperate_flag;
 
-    Trajectory_Device trajectory[TRAJ_ITEM_NUM];
-    float trajectory_final[TRAJ_ITEM_NUM];
+    uint16_t init_cnt;
 
     can_device_t can_device;
 
@@ -192,6 +194,8 @@ public:
     arm_data_t fb_current_data;
     arm_data_t ctrl_data;
     arm_limit_basic_data_t limit_basic_data;
+
+    chassis_move_t chassis_move_data;
 
     float min_limit[TRAJ_ITEM_NUM];
     float max_limit[TRAJ_ITEM_NUM];
@@ -225,6 +229,12 @@ public:
     void Set_Arm_Yaw(float track_point);
     void Set_Arm_Pitch(float track_point);
     void Add_Point_Target_Pos_From_Control(traj_item_e point, float delta);
+    void Clean_Control();
+    void Set_FeedBack_As_Target();
+    bool Check_Init_Completely();
+    void Rectilinear_Motion(traj_item_e point,float compensation, float distance,float vel);
+    void Add_Point_Target_Pos(traj_item_e point, float delta_target);
+    void Arm_Yaw_Dir_Move(float distance, float vel);
 
     friend void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
 };

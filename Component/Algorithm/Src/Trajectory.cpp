@@ -23,6 +23,13 @@ __RAM_FUNC void Trajectory_Device::Update_Data()
         this->track_point -= this->basic_step;
         this->already_count--;
     }
+    else
+    {
+        this->initial = this->final;
+        this->track_point = this->final;
+        this->already_count = 0;
+        this->target_count = 0;
+    }
 }
 
 __RAM_FUNC void Trajectory_Device::Change_Basic_Step(float new_step)
@@ -57,8 +64,6 @@ __RAM_FUNC bool Trajectory_Device::Check_Track_Point_As_Final() const
 __RAM_FUNC void Trajectory_Device::Set_Posture(float set)
 {
     this->final = set;
-    this->track_point = set;
-    this->initial = set;
     this->already_count = 0;
     this->target_count = 0;
 }
@@ -79,5 +84,4 @@ void Trajectory_Device::Set_Step_N_Protected()
 {
     this->step_protected_flag = false;
 }
-
 

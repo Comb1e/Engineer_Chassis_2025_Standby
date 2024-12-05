@@ -70,3 +70,9 @@ void Update_Slope_SPD(slope_speed_t *slope_speed, float acc, float dec, float ou
     slope_speed->dec = dec;
     slope_speed->out_max = out_max;
 }
+
+void Clean_Slope_Speed(slope_speed_t *slope_speed)
+{
+    slope_speed->out = 0;
+    slope_speed->target = 0;
+}

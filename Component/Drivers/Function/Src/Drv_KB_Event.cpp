@@ -11,7 +11,27 @@ void KB_Device::Check_Mouse_Event()
 
 void KB_Device::Check_RC_Event()
 {
+    if(RC_Check_SW_Event(RC_SW_L_MID2UP))
+    {
+        arm.Clean_Control();
+        chassis.Clean_Poition_Control();
+        chassis.Clean_Speed_Control();
+        chassis.control_type = SPEED;
+    }
+    else if(RC_Check_SW_Event(RC_SW_L_UP2MID))
+    {
+        arm.Clean_Control();
+        chassis.Clean_Speed_Control();
+        chassis.control_type = POSITION;
+    }
+    else if(RC_Check_SW_Event(RC_SW_L_MID2DOWN))
+    {
 
+    }
+    else if(RC_Check_SW_Event(RC_SW_L_DOWN2MID))
+    {
+
+    }
 }
 
 void KB_Device::KeyW_Event_Callback(enum KEY_DIR dir)
