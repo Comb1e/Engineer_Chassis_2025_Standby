@@ -4,6 +4,8 @@
 
 #include "Drv_KB_Event.h"
 
+#include "Drv_Absorb.h"
+
 void KB_Device::Check_Mouse_Event()
 {
 
@@ -31,6 +33,23 @@ void KB_Device::Check_RC_Event()
     else if(RC_Check_SW_Event(RC_SW_L_DOWN2MID))
     {
 
+    }
+
+    if(RC_Check_SW_Event(RC_SW_R_MID2UP))
+    {
+        absorb.Set_Sucker_Open(RIGHT_SUCKER);
+    }
+    else if(RC_Check_SW_Event(RC_SW_R_UP2MID))
+    {
+        absorb.Set_Sucker_Close(RIGHT_SUCKER);
+    }
+    else if(RC_Check_SW_Event(RC_SW_R_DOWN2MID))
+    {
+        absorb.Set_Sucker_Close(LEFT_SUCKER);
+    }
+    else if(RC_Check_SW_Event(RC_SW_R_MID2DOWN))
+    {
+        absorb.Set_Sucker_Open(LEFT_SUCKER);
     }
 }
 

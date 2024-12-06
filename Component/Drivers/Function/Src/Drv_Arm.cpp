@@ -178,10 +178,11 @@ void Arm_Device::Posture_Init()
 
 void Arm_Device::Update_Limit_Basic_Data()
 {
-    this->limit_basic_data.arm_xoy_length = ARM_LENGTH - ARM_LENGTH_2_ACT + ARM_LENGTH_2_ACT * arm_cos_f32(this->trajectory[PITCH].track_point * PI / 180.0f);
+    this->limit_basic_data.arm_xoy_length = ARM_LENGTH - ARM_LENGTH_2_ACT + ARM_LENGTH_2_ACT * arm_cos_f32(this->trajectory[ARM_PITCH].track_point * PI / 180.0f);
     this->limit_basic_data.arm_yaw_radian = this->trajectory[ARM_YAW].track_point * PI / 180.0f;
     this->limit_basic_data.arm_x_length = this->limit_basic_data.arm_xoy_length * arm_cos_f32(this->limit_basic_data.arm_yaw_radian);
     this->limit_basic_data.arm_y_length = this->limit_basic_data.arm_xoy_length * arm_sin_f32(this->limit_basic_data.arm_yaw_radian);
+    this->limit_basic_data.y_base = this->trajectory[Y].track_point - this->limit_basic_data.arm_y_length;
 }
 
 void Arm_Device::Update_Limit()
@@ -225,17 +226,18 @@ void Arm_Device::Update_Final()
             if(this->trajectory_final[X] > max_limit[X])
             {
                 this->arm_chassis_cooperate_flag = true;
-                this->chassis_move_data.x += this->trajectory_final[X] - max_limit[X] - this->chassis_move_data.x;
+                this->chassis_move_data.x += this->trajectory_final[X];
                 this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(max_limit[X]);
-                this->trajectory[X].final = this->trajectory_final[X] - this->chassis_move_data.x;
+                this->trajectory_final[Y] = max_limit[Y];
+                this->trajectory[Y].final = max_limit[Y];
             }
             else if(this->trajectory_final[X] < min_limit[X])
             {
                 this->arm_chassis_cooperate_flag = true;
-                this->chassis_move_data.x += this->trajectory_final[X] - min_limit[X] - this->chassis_move_data.x;
+                this->chassis_move_data.x += this->trajectory_final[X] - min_limit[X];
                 this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(min_limit[X]);
-                this->trajectory[X].final = this->trajectory_final[X] - this->chassis_move_data.x;
-            }
+                this->trajectory_final[X] = min_limit[X];
+                this->trajectory[X].final = min_limit[X];            }
             else
             {
                 this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[X]);
@@ -247,16 +249,18 @@ void Arm_Device::Update_Final()
             if(this->trajectory_final[Y] > max_limit[Y])
             {
                 this->arm_chassis_cooperate_flag = true;
-                this->chassis_move_data.y += this->trajectory_final[Y] - max_limit[Y] - this->chassis_move_data.y;
+                this->chassis_move_data.y += this->trajectory_final[Y] - max_limit[Y];
                 this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(max_limit[Y]);
-                this->trajectory[Y].final = this->trajectory_final[Y] - this->chassis_move_data.y;
+                this->trajectory_final[Y] = max_limit[Y];
+                this->trajectory[Y].final = max_limit[Y];
             }
             else if(this->trajectory_final[Y] < min_limit[Y])
             {
                 this->arm_chassis_cooperate_flag = true;
-                this->chassis_move_data.y += this->trajectory_final[Y] - min_limit[Y] - this->chassis_move_data.y;
+                this->chassis_move_data.y += this->trajectory_final[Y] - min_limit[Y];
                 this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(min_limit[Y]);
-                this->trajectory[Y].final = this->trajectory_final[Y] - this->chassis_move_data.y;
+                this->trajectory_final[Y] = min_limit[Y];
+                this->trajectory[Y].final = min_limit[Y];
             }
             else
             {
@@ -401,7 +405,7 @@ void Arm_Device::Set_FeedBack_As_Target()
 
 bool Arm_Device::Check_Init_Completely()
 {
-    if(this->init_cnt < 6000)
+    if(this->init_cnt < 2000)
     {
         this->init_cnt++;
         return false;

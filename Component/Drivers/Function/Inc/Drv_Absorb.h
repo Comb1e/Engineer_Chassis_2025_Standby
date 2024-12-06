@@ -85,6 +85,7 @@ public:
 
     bool lost_flag;
     bool ready_flag;
+    bool enable_flag;
 
     uint8_t ore_num;
 
@@ -102,7 +103,12 @@ public:
     Ore_Device* Get_Ore_State();
     uint8_t Get_Ore_Num() const;
     sucker_e Find_Ore();
-    pump_state_e Get_Pump_State(sucker_e sucker);
+    pump_state_e Get_Sucker_State(sucker_e sucker);
+    sucker_e Find_To_Store();
+    bool Check_Sucker_Holding(sucker_e pos);
+    void Set_Sucker_Holding();
+    void Update_Enable();
+    bool Check_Enable();
 
     friend void Absorb_RX_Callback(can_device_t *can_device,uint8_t *rx_data);
 

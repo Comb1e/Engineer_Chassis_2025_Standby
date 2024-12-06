@@ -58,9 +58,9 @@ void RemoteDataProcess(uint8_t *pData)
     rc.rx_data.raw_data.left_click = pData[12];
     rc.rx_data.raw_data.right_click = pData[13];
 
-    rc.rx_data.raw_data.keys = ((int16_t)pData[14]);
+    rc.rx_data.raw_data.keys = ((int16_t)pData[14]) | ((int16_t)pData[15]) << 8;;
 
-    rc.rx_data.raw_data.wheel = (((int16_t)pData[16]) | ((int16_t)pData[17]) << 8);
+    rc.rx_data.raw_data.wheel = ((int16_t)pData[16]) | ((int16_t)pData[17]) << 8;
 }
 
 
@@ -137,7 +137,7 @@ void RC_UpdateData()
         rc.data.using_kb_flag = true;
     }
 
-    rc.data.wheel = (-(float)rc.rx_data.raw_data.wheel - WHEEL_ORIGIN) / (float)WHEEL_ERROR_MAX;
+    rc.data.wheel = ((float)rc.rx_data.raw_data.wheel - WHEEL_ORIGIN) / (float)WHEEL_ERROR_MAX;
     ABS_LIMIT(rc.data.wheel,NORMALIZATION_MAX);
 
     taskEXIT_CRITICAL();

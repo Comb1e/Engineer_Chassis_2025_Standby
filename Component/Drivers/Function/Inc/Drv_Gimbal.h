@@ -105,6 +105,8 @@ public:
     void Update_Enable_Flag();
     void Update_Pitch_Control();
     void Update_Yaw_Control();
+    void Add_Pitch_Deg(float delta_pitch_deg);
+    void Add_Yaw_Deg(float delta_yaw_deg);
 };
 
 extern Gimbal_Device gimbal;

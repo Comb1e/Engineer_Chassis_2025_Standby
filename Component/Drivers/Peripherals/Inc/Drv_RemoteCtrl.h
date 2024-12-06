@@ -164,7 +164,6 @@ typedef struct
     uint16_t wheel;
 }raw_data_t;
 
-
 typedef struct
 {
     rc_rocker_t left_rocker;

@@ -18,6 +18,7 @@ Absorb_Device::Absorb_Device():
     this->ore_num = 0;
     this->lost_flag = true;
     this->ready_flag = false;
+    this->enable_flag = false;
 }
 
 void Absorb_Device::Init(CAN_HandleTypeDef *hcan, uint32_t rx_stdid, uint32_t tx_stdid, osSemaphoreId_t rx_sem)
@@ -88,6 +89,7 @@ void Absorb_Device::Update_Ore_Num()
 
 void Absorb_Device::Update_MSG()
 {
+    debug = this->sucker[ARM_SUCKER].pump_on_flag;
     this->tx_data.arm_sucker_pump_on_flag = this->sucker[ARM_SUCKER].pump_on_flag;
     this->tx_data.left_sucker_pump_on_flag = this->sucker[LEFT_SUCKER].pump_on_flag;
     this->tx_data.right_sucker_pump_on_flag = this->sucker[RIGHT_SUCKER].pump_on_flag;
@@ -119,6 +121,19 @@ uint8_t Absorb_Device::Get_Ore_Num() const
     return this->ore_num;
 }
 
+sucker_e Absorb_Device::Find_To_Store()
+{
+    if (!this->sucker[LEFT_SUCKER].holding_flag )
+    {
+        return LEFT_SUCKER;
+    }
+    if (!this->sucker[RIGHT_SUCKER].holding_flag )
+    {
+        return RIGHT_SUCKER;
+    }
+    return ORE_STORE_FULL;
+}
+
 sucker_e Absorb_Device::Find_Ore()
 {
     if (this->sucker[LEFT_SUCKER].holding_flag)
@@ -132,7 +147,54 @@ sucker_e Absorb_Device::Find_Ore()
     return ORE_STORE_NONE;
 }
 
-pump_state_e Absorb_Device::Get_Pump_State(sucker_e sucker)
+pump_state_e Absorb_Device::Get_Sucker_State(sucker_e sucker)
 {
     return this->sucker[sucker].state;
+}
+
+bool Absorb_Device::Check_Sucker_Holding(sucker_e pos)
+{
+    return this->sucker[pos].holding_flag;
+}
+
+void Absorb_Device::Set_Sucker_Holding() {
+    taskENTER_CRITICAL();
+    if(this->sucker[ARM_SUCKER].pump_on_flag && !this->sucker[ARM_SUCKER].holding_flag)
+    {
+        this->sucker[ARM_SUCKER].Set_Holding();
+        taskEXIT_CRITICAL();
+        return;
+    }
+
+    if(this->sucker[LEFT_SUCKER].pump_on_flag && !this->sucker[LEFT_SUCKER].holding_flag)
+    {
+        this->sucker[LEFT_SUCKER].Set_Holding();
+        taskEXIT_CRITICAL();
+        return;
+    }
+
+    if(this->sucker[RIGHT_SUCKER].pump_on_flag && !this->sucker[RIGHT_SUCKER].holding_flag)
+    {
+        this->sucker[RIGHT_SUCKER].Set_Holding();
+        taskEXIT_CRITICAL();
+        return;
+    }
+    taskEXIT_CRITICAL();
+}
+
+void Absorb_Device::Update_Enable()
+{
+    if(rc.ctrl_protection.connect_flag)
+    {
+        this->enable_flag = true;
+    }
+    else
+    {
+        this->enable_flag = false;
+    }
+}
+
+bool Absorb_Device::Check_Enable()
+{
+    return this->enable_flag;
 }

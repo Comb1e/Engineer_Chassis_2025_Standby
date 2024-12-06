@@ -4,6 +4,8 @@
 
 #include "Drv_Pump.h"
 
+#include "RTOS.h"
+
 Pump_Device::Pump_Device(float block_current_min, float block_current_max)
 {
     this->block_current_min = block_current_min;

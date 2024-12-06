@@ -64,20 +64,3 @@ void Robot_Device::RC_Set_Gimbal_Position(float delta)
 }
 
 
-void Robot_Device::KB_Set_Chassis_Vel_X(float dir)
-{
-    chassis.Set_X_Slope_Speed_Target(dir * chassis.vel_max.kb);
-    chassis.Set_Vel_X(Get_Slope_Speed(&chassis.kb_vel_x));
-}
-
-void Robot_Device::KB_Set_Chassis_Vel_Y(float dir)
-{
-    chassis.Set_Y_Slope_Speed_Target(dir * chassis.vel_max.kb);
-    chassis.Set_Vel_Y(Get_Slope_Speed(&chassis.kb_vel_y));
-}
-
-void Robot_Device::KB_Set_Chassis_Vel_Spin()
-{
-
-}
-

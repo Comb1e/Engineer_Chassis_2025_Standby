@@ -48,10 +48,6 @@ public:
     void RC_Set_Chasssis_Position(float pos_x,float pos_y,float pos_spin);
 
     void RC_Set_Gimbal_Position(float delta);
-
-    void KB_Set_Chassis_Vel_X(float dir);
-    void KB_Set_Chassis_Vel_Y(float dir);
-    void KB_Set_Chassis_Vel_Spin();
 };
 
 extern Robot_Device robot;

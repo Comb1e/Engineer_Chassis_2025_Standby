@@ -12,6 +12,7 @@
 #include "Global_CFG.h"
 #include "Mecanum.h"
 #include "Drv_Arm.h"
+#include "Drv_Robot.h"
 
 Chassis_Device chassis;
 
@@ -49,7 +50,7 @@ void Chassis_Device::Init()
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
 
-    this->pid_rot.Init(9.2,0,0,100,1);
+    this->pid_rot.Init(8.5,0,0,100,1);
 
     this->Power_Control_Data_Init();
 }
@@ -385,7 +386,7 @@ void Chassis_Device::Judge_For_Arm_Need()
     {
         this->position.x = arm.chassis_move_data.x;
         this->position.y = arm.chassis_move_data.y;
-        if(ABS(this->position.x) < 0.5f && ABS(this->position.y) < 0.5f)
+        if(ABS(this->position.x) < 0.1f && ABS(this->position.y) < 0.1f)
         {
             arm.arm_chassis_cooperate_flag = false;
             arm.chassis_move_data.x = 0;

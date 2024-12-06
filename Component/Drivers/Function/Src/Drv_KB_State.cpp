@@ -4,9 +4,156 @@
 
 #include "Drv_KB_State.h"
 
+#include "Drv_Absorb.h"
+
 void KB_Device::Check_Mouse_State()
 {
+    switch (robot.control_mode)
+    {
+        case STEER_MODE:
+        {
+            if(rc.data.mouse.left_button)
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(Z,2.0f);
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(Z,1.0f);
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
 
+                }
+                else
+                {
+
+                }
+            }
+            else if(rc.data.mouse.right_button)
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(Z,-2.0f);
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(Z,-1.0f);
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(YAW,-4.0f * rc.data.mouse.x);
+                    arm.Add_Point_Target_Pos_From_Control(PITCH,4.0f * rc.data.mouse.y);
+                    arm.Add_Point_Target_Pos_From_Control(ROLL,16.0f * rc.data.mouse.z);
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(YAW,-2.0f * rc.data.mouse.x);
+                    arm.Add_Point_Target_Pos_From_Control(PITCH,2.0f * rc.data.mouse.y);
+                    arm.Add_Point_Target_Pos_From_Control(ROLL,5.0f * rc.data.mouse.z);
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else
+                {
+                    gimbal.Add_Pitch_Deg(0.36f * rc.data.mouse.y);
+                    if(rc.data.using_kb_flag)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(-1 * rc.data.mouse.x);
+                    }
+                }
+            }
+            break;
+        }
+        case MINE_MODE:
+        {
+            if(rc.data.mouse.left_button)
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(Z,2.0f);
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(Z,1.0f);
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            else if(rc.data.mouse.right_button)
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(Z,-2.0f);
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(Z,-1.0f);
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            else
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(YAW,-4.0f * rc.data.mouse.x);
+                    arm.Add_Point_Target_Pos_From_Control(PITCH,4.0f * rc.data.mouse.y);
+                    arm.Add_Point_Target_Pos_From_Control(ROLL,16.0f * rc.data.mouse.z);
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+                    arm.Add_Point_Target_Pos_From_Control(YAW,-2.0f * rc.data.mouse.x);
+                    arm.Add_Point_Target_Pos_From_Control(PITCH,2.0f * rc.data.mouse.y);
+                    arm.Add_Point_Target_Pos_From_Control(ROLL,5.0f * rc.data.mouse.z);
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+                    gimbal.Add_Pitch_Deg(0.36f * 2 * rc.data.mouse.y);
+                    gimbal.Add_Yaw_Deg(-0.36f * 2 * rc.data.mouse.x);
+                }
+                else
+                {
+                    gimbal.Add_Pitch_Deg(0.36f * rc.data.mouse.y);
+                    if(rc.data.using_kb_flag)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(-1 * rc.data.mouse.x);
+                    }
+                }
+            }
+            break;
+        }
+        default:
+        {
+            break;
+        }
+    }
 }
 
 void KB_Device::Check_RC_State()
@@ -20,7 +167,7 @@ void KB_Device::Check_RC_State()
             {
                 chassis.control_type = SPEED;
             }
-            robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.5f);
+            robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.7f);
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_MID))
@@ -60,6 +207,15 @@ void KB_Device::Check_RC_State()
     {
 
     }
+
+    if(RC_Check_Wheel_State(RC_WHEEL_UP))
+    {
+        absorb.Set_Sucker_Open(ARM_SUCKER);
+    }
+    else if(RC_Check_Wheel_State(RC_WHEEL_DOWN))
+    {
+        absorb.Set_Sucker_Close(ARM_SUCKER);
+    }
 }
 
 void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
@@ -80,11 +236,11 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(CHASSIS_KB_VEL_STEER_MODE_QUICK);
                 }
                 else
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(CHASSIS_KB_VEL_STEER_MODE_SLOW);
                 }
             }
             else if(dir == DIR_UP)
@@ -99,11 +255,28 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    if(RC_Check_Key_Down_State(KeyS))
+                    {
+                        robot.RC_Set_Chassis_Vel_X(-CHASSIS_KB_VEL_STEER_MODE_QUICK);
+                    }
+                    else
+                    {
+                            robot.RC_Set_Chassis_Vel_X(0);
+                    }
                 }
                 else
                 {
-
+                    if(RC_Check_Key_Down_State(KeyS))
+                    {
+                        robot.RC_Set_Chassis_Vel_X(-CHASSIS_KB_VEL_STEER_MODE_SLOW);
+                    }
+                    else
+                    {
+                        if(rc.data.using_kb_flag)
+                        {
+                            robot.RC_Set_Chassis_Vel_X(0);
+                        }
+                    }
                 }
             }
             break;
@@ -175,11 +348,11 @@ void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(-CHASSIS_KB_VEL_STEER_MODE_QUICK);
                 }
                 else
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(-CHASSIS_KB_VEL_STEER_MODE_SLOW);
                 }
             }
             else if(dir == DIR_UP)
@@ -194,11 +367,28 @@ void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    if(RC_Check_Key_Down_State(KeyW))
+                    {
+                        robot.RC_Set_Chassis_Vel_X(CHASSIS_KB_VEL_STEER_MODE_QUICK);
+                    }
+                    else
+                    {
+                        robot.RC_Set_Chassis_Vel_X(0);
+                    }
                 }
                 else
                 {
-
+                    if(RC_Check_Key_Down_State(KeyW))
+                    {
+                        robot.RC_Set_Chassis_Vel_X(CHASSIS_KB_VEL_STEER_MODE_SLOW);
+                    }
+                    else
+                    {
+                        if(rc.data.using_kb_flag)
+                        {
+                            robot.RC_Set_Chassis_Vel_X(0);
+                        }
+                    }
                 }
             }
             break;
@@ -270,11 +460,11 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(CHASSIS_KB_VEL_STEER_MODE_QUICK);
                 }
                 else
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(CHASSIS_KB_VEL_STEER_MODE_SLOW);
                 }
             }
             else if(dir == DIR_UP)
@@ -289,11 +479,28 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                   if(RC_Check_Key_Down_State(KeyD))
+                   {
+                       robot.RC_Set_Chassis_Vel_Y(-CHASSIS_KB_VEL_STEER_MODE_QUICK);
+                   }
+                    else
+                    {
+                        robot.RC_Set_Chassis_Vel_Y(0);
+                    }
                 }
                 else
                 {
-
+                    if(RC_Check_Key_Down_State(KeyD))
+                    {
+                        robot.RC_Set_Chassis_Vel_Y(-CHASSIS_KB_VEL_STEER_MODE_SLOW);
+                    }
+                    else
+                    {
+                        if(rc.data.using_kb_flag)
+                        {
+                            robot.RC_Set_Chassis_Vel_Y(0);
+                        }
+                    }
                 }
             }
             break;
@@ -365,11 +572,11 @@ void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(-CHASSIS_KB_VEL_STEER_MODE_QUICK);
                 }
                 else
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(-CHASSIS_KB_VEL_STEER_MODE_SLOW);
                 }
             }
             else if(dir == DIR_UP)
@@ -384,11 +591,28 @@ void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    if(RC_Check_Key_Down_State(KeyA))
+                    {
+                        robot.RC_Set_Chassis_Vel_Y(CHASSIS_KB_VEL_STEER_MODE_QUICK);
+                    }
+                    else
+                    {
+                        robot.RC_Set_Chassis_Vel_Y(0);
+                    }
                 }
                 else
                 {
-
+                    if(RC_Check_Key_Down_State(KeyA))
+                    {
+                        robot.RC_Set_Chassis_Vel_Y(CHASSIS_KB_VEL_STEER_MODE_SLOW);
+                    }
+                    else
+                    {
+                        if(rc.data.using_kb_flag)
+                        {
+                            robot.RC_Set_Chassis_Vel_Y(0);
+                        }
+                    }
                 }
             }
             break;

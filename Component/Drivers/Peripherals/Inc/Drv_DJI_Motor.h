@@ -22,7 +22,7 @@
 
 typedef enum
 {
-    NONE = 0,
+    DJI_TYPE_NONE = 0,
     DJI_M3508,
     DJI_M2006,
     DJI_GM6020

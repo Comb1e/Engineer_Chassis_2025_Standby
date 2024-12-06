@@ -25,7 +25,7 @@ void KB_Device::Check_KB_Event()
 {
     for(keyMap key = KeyW; key < KeyNum; key = (keyMap)(key + 1))
     {
-        if(RC_Check_Key_Down_State(key))
+        if(RC_Check_Key_Down_Event(key))
         {
             Key_Event[key](DIR_DOWN);
         }

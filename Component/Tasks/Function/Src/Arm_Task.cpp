@@ -4,12 +4,17 @@
 
 #include "Arm_Task.h"
 #include "Drv_Arm.h"
+#include "Drv_Chassis.h"
 
 void Arm_Task(void *argument)
 {
     arm.Init(ARM_CAN,ARM_RX_CAN2_STDID,ARM_TX_CAN2_STDID,ArmUpdateBinarySemHandle);
     uint32_t tick = 0;
     tick = osKernelGetTickCount();
+    while(!rc.ctrl_protection.connect_flag)
+    {
+        osDelay(1);
+    }
     while(!arm.Check_Init_Completely())
     {
         osDelay(1);

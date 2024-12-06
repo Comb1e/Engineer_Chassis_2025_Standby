@@ -159,6 +159,7 @@ typedef struct
     float arm_y_length;
     float arm_x_length;
     float arm_yaw_radian;
+    float y_base;
 }arm_limit_basic_data_t;
 
 typedef struct
