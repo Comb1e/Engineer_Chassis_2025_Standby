@@ -33,6 +33,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj: \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ex.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ramfunc.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_iwdg.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr_ex.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_spi.h \
@@ -66,6 +67,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj: \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/dma.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/iwdg.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/spi.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/tim.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/usart.h \

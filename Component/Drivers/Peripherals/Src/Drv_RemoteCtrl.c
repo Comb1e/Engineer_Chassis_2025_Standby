@@ -137,7 +137,7 @@ void RC_UpdateData()
         rc.data.using_kb_flag = true;
     }
 
-    rc.data.wheel = ((float)rc.rx_data.raw_data.wheel - WHEEL_ORIGIN) / (float)WHEEL_ERROR_MAX;
+    rc.data.wheel = -((float)rc.rx_data.raw_data.wheel - WHEEL_ORIGIN) / (float)WHEEL_ERROR_MAX;
     ABS_LIMIT(rc.data.wheel,NORMALIZATION_MAX);
 
     taskEXIT_CRITICAL();

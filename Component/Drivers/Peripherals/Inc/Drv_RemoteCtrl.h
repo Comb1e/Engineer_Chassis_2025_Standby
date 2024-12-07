@@ -229,6 +229,7 @@ bool RC_Check_Key_Up_Event(const enum keyMap key);
 bool RC_Check_Mouse_Left_Click_Down_Event();
 bool RC_Check_Mouse_Left_Click_Up_Event();
 bool RC_Check_Mouse_Right_Click_Down_Event();
+bool RC_Check_Mouse_Right_Click_Up_Event();
 bool RC_Check_SW_State(enum RC_SW_STATE sw_state);
 bool RC_Check_SW_Event(uint16_t sw_event);
 bool RC_Check_Wheel_State(enum RC_WHEEL_STATE wheel_state);

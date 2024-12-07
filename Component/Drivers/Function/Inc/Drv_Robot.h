@@ -38,6 +38,11 @@ public:
 
     bool enable_flag;
 
+    bool select_left_flag;
+    bool select_right_flag;
+    bool select_center_flag;
+    bool cancel_flag;
+
     control_mode_e control_mode;
 
     void RC_Set_Chassis_Vel_X(float vel_x);
@@ -48,6 +53,16 @@ public:
     void RC_Set_Chasssis_Position(float pos_x,float pos_y,float pos_spin);
 
     void RC_Set_Gimbal_Position(float delta);
+    void Sucker_Directional_Move(traj_item_e point, float delta_distance);
+
+    void Set_Select_Left_Flag();
+    void Set_Select_Right_Flag();
+    void Set_Select_Center_Flag();
+    void Set_Cancel_Flag();
+    bool Check_Select_Center();
+    bool Check_Select_Right();
+    bool Check_Select_Left();
+    bool Check_Cancel();
 };
 
 extern Robot_Device robot;

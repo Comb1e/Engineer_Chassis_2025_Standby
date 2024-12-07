@@ -28,6 +28,7 @@ Chassis_Device::Chassis_Device()
     this->vel_max.kb = CHASSIS_VEL_KB_MAX;
     this->vel_max.rc = CHASSIS_VEL_RC_MAX;
     this->vel_max.total = CHASSIS_VEL_TOTAL_MAX;
+    this->arm_need_cnt = 0;
 }
 
 void Chassis_Device::Init()
@@ -37,20 +38,20 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RB_NUM].Init(CHASSIS_MOTOR_RB_ID,DJI_M3508,CHASSIS_CAN,true,ChassisLFUpdateBinarySemHandle,2000,0.3);
     this->wheel[CHASSIS_MOTOR_RF_NUM].Init(CHASSIS_MOTOR_RF_ID,DJI_M3508,CHASSIS_CAN,true,ChassisLFUpdateBinarySemHandle,2000,0.3);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(0.15,0,0,100,0.2);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(0.15,0,0,100,0.2);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(0.07,0,0,100,0.2);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(0.18,0,0,100,0.2);
     this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(0.15,0,0,100,0.2);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.15,0,0,100,0.2);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.09,0,0,100,0.2);
 
     this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
     this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
     this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(11.0f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(9.0f, 0.0f, 0.0f,100.0f,0.95);
 
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
 
-    this->pid_rot.Init(8.5,0,0,100,1);
+    this->pid_rot.Init(8.2,0,0,100,1);
 
     this->Power_Control_Data_Init();
 }
@@ -195,7 +196,7 @@ void Chassis_Device::Update_Align()
             this->set_vel.x += this->align_data.set_vel.x;
             return;
         }
-        this->align_data.delta_rounds = this->align_data.beta/(2*PI);
+        this->align_data.delta_rounds = this->align_data.beta/(2 * PI);
         if(ABS(this->align_data.beta) <= ALIGN_CRITICAL_ANGLE && (this->align_data.left_dist < ALIGN_CRITICAL_DISTANCE || this->align_data.right_dist < ALIGN_CRITICAL_DISTANCE))
         {
             this->align_data.set_vel.spin = this->align_data.rot_pid.Calculate(this->align_data.delta_rounds,0);
@@ -384,27 +385,39 @@ void Chassis_Device::Judge_For_Arm_Need()
 {
     if(arm.arm_chassis_cooperate_flag)
     {
+        if(this->control_type == SPEED)
+        {
+            this->Clean_Speed_Control();
+            this->Change_To_Position_Type();
+        }
         this->position.x = arm.chassis_move_data.x;
         this->position.y = arm.chassis_move_data.y;
-        if(ABS(this->position.x) < 0.1f && ABS(this->position.y) < 0.1f)
+        this->arm_need_cnt++;
+
+        if(this->arm_need_cnt > 200)
         {
             arm.arm_chassis_cooperate_flag = false;
             arm.chassis_move_data.x = 0;
             arm.chassis_move_data.y = 0;
+            this->arm_need_cnt = 0;
+            this->Clean_Poition_Control();
+            this->Clean_Speed_Control();
+            this->Change_To_Speed_Type();
         }
     }
 }
 
 void Chassis_Device::Clean_Speed_Control()
 {
+    taskENTER_CRITICAL();
     this->Close_Yaw_Spin();
 
     Clean_Slope_Speed(&this->kb_vel_x);
     Clean_Slope_Speed(&this->kb_vel_y);
 
-    this->Set_Vel_X(0.0f);
-    this->Set_Vel_Y(0.0f);
-    this->Set_Vel_Spin(0.0f);
+    this->Set_Vel_X(0);
+    this->Set_Vel_Y(0);
+    this->Set_Vel_Spin(0);
 
     this->wheel[0].Reset_Total_Rounds_Offset(0);
     this->wheel[1].Reset_Total_Rounds_Offset(0);
@@ -413,8 +426,11 @@ void Chassis_Device::Clean_Speed_Control()
 
     for(auto & i : this->wheel)
     {
-        i.Set_Free();
+        i.set_data.set_current = 0;
+        i.Set_Current_To_CAN_TX_Buf();
+        i.Send_CAN_MSG();
     }
+    taskEXIT_CRITICAL();
 }
 
 void Chassis_Device::Close_Yaw_Spin()
@@ -427,12 +443,12 @@ void Chassis_Device::Close_Yaw_Spin()
 
 void Chassis_Device::Change_To_Position_Type()
 {
-    this->Clean_Speed_Control();
     this->control_type = POSITION;
 }
 
 void Chassis_Device::Clean_Poition_Control()
 {
+    taskENTER_CRITICAL();
     this->Close_Yaw_Spin();
 
     this->position.x = 0;
@@ -441,12 +457,14 @@ void Chassis_Device::Clean_Poition_Control()
 
     for(auto & i : this->wheel)
     {
-        i.Set_Free();
+        i.set_data.set_current = 0;
+        i.Set_Current_To_CAN_TX_Buf();
+        i.Send_CAN_MSG();
     }
+    taskEXIT_CRITICAL();
 }
 
 void Chassis_Device::Change_To_Speed_Type()
 {
-    this->Clean_Poition_Control();
     this->control_type = SPEED;
 }

@@ -156,6 +156,8 @@ public:
 
     float pos_yaw_angle;//2PI
 
+    uint32_t arm_need_cnt;
+
     void Init();
     bool Check_Init_Completely();
     uint8_t Check_Motor_Lost();

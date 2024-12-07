@@ -7,6 +7,7 @@
 #include <math.h>
 #include <dsp/fast_math_functions.h>
 
+#include "Drv_Chassis.h"
 #include "Drv_Info.h"
 #include "rotation_matrix.h"
 
@@ -226,10 +227,12 @@ void Arm_Device::Update_Final()
             if(this->trajectory_final[X] > max_limit[X])
             {
                 this->arm_chassis_cooperate_flag = true;
-                this->chassis_move_data.x += this->trajectory_final[X];
+                this->chassis_move_data.x += this->trajectory_final[X] - max_limit[X];
                 this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(max_limit[X]);
-                this->trajectory_final[Y] = max_limit[Y];
-                this->trajectory[Y].final = max_limit[Y];
+                this->trajectory_final[X] = max_limit[X];
+                this->trajectory[X].final = max_limit[X];
+
+                chassis.arm_need_cnt = 0;
             }
             else if(this->trajectory_final[X] < min_limit[X])
             {
@@ -237,7 +240,10 @@ void Arm_Device::Update_Final()
                 this->chassis_move_data.x += this->trajectory_final[X] - min_limit[X];
                 this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(min_limit[X]);
                 this->trajectory_final[X] = min_limit[X];
-                this->trajectory[X].final = min_limit[X];            }
+                this->trajectory[X].final = min_limit[X];
+
+                chassis.arm_need_cnt = 0;
+            }
             else
             {
                 this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[X]);
@@ -253,6 +259,8 @@ void Arm_Device::Update_Final()
                 this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(max_limit[Y]);
                 this->trajectory_final[Y] = max_limit[Y];
                 this->trajectory[Y].final = max_limit[Y];
+
+                chassis.arm_need_cnt = 0;
             }
             else if(this->trajectory_final[Y] < min_limit[Y])
             {
@@ -261,6 +269,8 @@ void Arm_Device::Update_Final()
                 this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(min_limit[Y]);
                 this->trajectory_final[Y] = min_limit[Y];
                 this->trajectory[Y].final = min_limit[Y];
+
+                chassis.arm_need_cnt = 0;
             }
             else
             {
@@ -405,7 +415,7 @@ void Arm_Device::Set_FeedBack_As_Target()
 
 bool Arm_Device::Check_Init_Completely()
 {
-    if(this->init_cnt < 2000)
+    if(this->init_cnt < 5000)
     {
         this->init_cnt++;
         return false;
@@ -510,3 +520,4 @@ void Arm_Device::Arm_Yaw_Dir_Move(float distance, float vel)
         this->trajectory[Z].Change_Basic_Step(dz_v);
     }
 }
+

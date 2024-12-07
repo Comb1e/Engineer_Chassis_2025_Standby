@@ -8,7 +8,179 @@
 
 void KB_Device::Check_Mouse_Event()
 {
+    switch (robot.control_mode)
+    {
+        case STEER_MODE:
+        {
+            if(RC_Check_Mouse_Left_Click_Down_Event())
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
 
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+                    absorb.Set_Sucker_Open(ARM_SUCKER);
+                }
+                else
+                {
+                    robot.Set_Select_Left_Flag();
+                }
+            }
+
+            if(RC_Check_Mouse_Right_Click_Down_Event())
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+                    absorb.Set_Sucker_Close(ARM_SUCKER);
+                }
+                else
+                {
+                    robot.Set_Select_Right_Flag();
+                }
+            }
+
+            if(RC_Check_Mouse_Left_Click_Up_Event())
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+
+            if(RC_Check_Mouse_Right_Click_Up_Event())
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            break;
+        }
+        case MINE_MODE:
+        {
+            if(RC_Check_Mouse_Left_Click_Down_Event())
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+                    absorb.Set_Sucker_Open(ARM_SUCKER);
+                }
+                else
+                {
+                    robot.Set_Select_Left_Flag();
+                }
+            }
+
+            if(RC_Check_Mouse_Right_Click_Down_Event())
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+                    absorb.Set_Sucker_Close(ARM_SUCKER);
+                }
+                else
+                {
+                    robot.Set_Select_Right_Flag();
+                }
+            }
+
+            if(RC_Check_Mouse_Left_Click_Up_Event())
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+
+            if(RC_Check_Mouse_Right_Click_Up_Event())
+            {
+                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.CTRL)
+                {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
+
+                }
+                else
+                {
+
+                }
+            }
+            break;
+        }
+        default:
+        {
+            break;
+        }
+    }
 }
 
 void KB_Device::Check_RC_Event()
@@ -18,13 +190,12 @@ void KB_Device::Check_RC_Event()
         arm.Clean_Control();
         chassis.Clean_Poition_Control();
         chassis.Clean_Speed_Control();
-        chassis.control_type = SPEED;
+        chassis.arm_need_cnt = 0;
     }
     else if(RC_Check_SW_Event(RC_SW_L_UP2MID))
     {
         arm.Clean_Control();
         chassis.Clean_Speed_Control();
-        chassis.control_type = POSITION;
     }
     else if(RC_Check_SW_Event(RC_SW_L_MID2DOWN))
     {

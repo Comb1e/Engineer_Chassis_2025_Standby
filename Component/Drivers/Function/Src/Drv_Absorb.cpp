@@ -89,7 +89,6 @@ void Absorb_Device::Update_Ore_Num()
 
 void Absorb_Device::Update_MSG()
 {
-    debug = this->sucker[ARM_SUCKER].pump_on_flag;
     this->tx_data.arm_sucker_pump_on_flag = this->sucker[ARM_SUCKER].pump_on_flag;
     this->tx_data.left_sucker_pump_on_flag = this->sucker[LEFT_SUCKER].pump_on_flag;
     this->tx_data.right_sucker_pump_on_flag = this->sucker[RIGHT_SUCKER].pump_on_flag;

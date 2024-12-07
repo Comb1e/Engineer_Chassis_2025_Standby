@@ -15,6 +15,8 @@ void Arm_Task(void *argument)
     {
         osDelay(1);
     }
+    arm.Update_Control();
+    arm.CAN_Send_MSG();
     while(!arm.Check_Init_Completely())
     {
         osDelay(1);

@@ -34,6 +34,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ex.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ramfunc.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_iwdg.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr_ex.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_spi.h \
@@ -142,6 +143,10 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/none.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/utils.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/basic_math_functions.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Chassis.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/SPD_Plan.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Info.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/rotation_matrix.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/arm_math.h \

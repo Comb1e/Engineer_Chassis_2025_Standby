@@ -174,10 +174,6 @@ void KB_Device::Check_RC_State()
     {
         if(!rc.data.using_kb_flag)
         {
-            if(chassis.control_type == SPEED)
-            {
-                chassis.control_type = POSITION;
-            }
             arm.Add_Point_Target_Pos_From_Control(X,rc.data.left_rocker.y);
             arm.Add_Point_Target_Pos_From_Control(Y,-rc.data.left_rocker.x);
             arm.Add_Point_Target_Pos_From_Control(Z,rc.data.right_rocker.y);
@@ -228,11 +224,11 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    arm.Add_Point_Target_Pos_From_Control(X,2.0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    arm.Add_Point_Target_Pos_From_Control(X,1.0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -287,11 +283,11 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    arm.Add_Point_Target_Pos_From_Control(X,2.0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    arm.Add_Point_Target_Pos_From_Control(X,1.0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -870,7 +866,7 @@ void KB_Device::KeyQ_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    arm.Add_Point_Target_Pos_From_Control(ARM_YAW,1.0f);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -912,7 +908,7 @@ void KB_Device::KeyQ_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    arm.Add_Point_Target_Pos_From_Control(ARM_YAW,1.0f);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -965,7 +961,7 @@ void KB_Device::KeyE_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    arm.Add_Point_Target_Pos_From_Control(ARM_YAW,-1.0f);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -1007,7 +1003,7 @@ void KB_Device::KeyE_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    arm.Add_Point_Target_Pos_From_Control(ARM_YAW,-1.0f);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -1151,15 +1147,15 @@ void KB_Device::KeyF_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Sucker_Directional_Move(Z,0.2f);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.Sucker_Directional_Move(Y,0.2f);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Sucker_Directional_Move(X,0.2f);
                 }
                 else
                 {
@@ -1193,15 +1189,15 @@ void KB_Device::KeyF_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Sucker_Directional_Move(Z,0.2f);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.Sucker_Directional_Move(Y,0.2f);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Sucker_Directional_Move(X,0.2f);
                 }
                 else
                 {
@@ -1246,15 +1242,15 @@ void KB_Device::KeyG_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Sucker_Directional_Move(Z,-0.2f);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.Sucker_Directional_Move(Y,-0.2f);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Sucker_Directional_Move(X,-0.2f);
                 }
                 else
                 {
@@ -1288,15 +1284,15 @@ void KB_Device::KeyG_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Sucker_Directional_Move(Z,-0.2f);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.Sucker_Directional_Move(Y,-0.2f);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Sucker_Directional_Move(X,-0.2f);
                 }
                 else
                 {

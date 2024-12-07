@@ -138,12 +138,12 @@ void Gimbal_Device::Update_Yaw_Control()
 
 void Gimbal_Device::Add_Pitch_Deg(float delta_pitch_deg)
 {
-    this->attitude_data.servo_set_pitch_1000 += delta_pitch_deg;
-    VAL_LIMIT(this->attitude_data.servo_set_pitch_1000, GIMBAL_PITCH_MIN, GIMBAL_PITCH_MAX);
+    this->attitude_data.pitch_deg += delta_pitch_deg;
+    VAL_LIMIT(this->attitude_data.pitch_deg, GIMBAL_PITCH_MIN, GIMBAL_PITCH_MAX);
 }
 
 void Gimbal_Device::Add_Yaw_Deg(float delta_yaw_deg)
 {
-    this->attitude_data.servo_set_yaw_1000 += delta_yaw_deg;
-    VAL_LIMIT(this->attitude_data.servo_set_yaw_1000, GIMBAL_YAW_MIN, GIMBAL_YAW_MAX);
+    this->attitude_data.yaw_deg += delta_yaw_deg;
+    VAL_LIMIT(this->attitude_data.yaw_deg, GIMBAL_YAW_MIN, GIMBAL_YAW_MAX);
 }

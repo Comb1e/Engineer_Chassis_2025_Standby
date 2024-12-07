@@ -17,6 +17,7 @@ void Gimbal_Attitude_Task(void *argument)
             if(gimbal.pitch_enable_flag)
             {
                 gimbal.Update_Pitch_Control();
+                debug++;
             }
             if(gimbal.yaw_enable_flag)
             {

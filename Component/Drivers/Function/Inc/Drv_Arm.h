@@ -238,6 +238,8 @@ public:
     void Arm_Yaw_Dir_Move(float distance, float vel);
 
     friend void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
+
+    friend class Robot_Device;
 };
 
 void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
