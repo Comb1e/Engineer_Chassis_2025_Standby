@@ -1,6 +1,10 @@
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.obj: \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Automation\Src\Auto_Exchange_Task.cpp \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Automation\Inc/Auto_Exchange_Task.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Robot.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Chassis.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_CAN.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/stm32f4xx_hal_conf.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
@@ -43,6 +47,11 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exc
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usb.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd_ex.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/compilable.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/SPD_Plan.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Gimbal.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component/Global_CFG.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/main.h \
@@ -76,15 +85,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exc
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_HI229UM.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/CRC.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Usart.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Robot.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Chassis.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_CAN.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/compilable.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/SPD_Plan.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Gimbal.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_ServoCtrl.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/Compilable.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Arm.h \
@@ -92,4 +92,5 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exc
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Absorb.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Pump.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_Ore.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Keyboard.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Keyboard.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Info.h

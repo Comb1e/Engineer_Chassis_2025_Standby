@@ -51,7 +51,7 @@ void Chassis_Device::Init()
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
 
-    this->pid_rot.Init(8.2,0,0,100,1);
+    this->pid_rot.Init(7.6,0,0,100,1);
 
     this->Power_Control_Data_Init();
 }

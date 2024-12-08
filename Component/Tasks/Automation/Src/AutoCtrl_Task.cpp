@@ -9,8 +9,8 @@ void AutoCtrl_Task(void *argument)
 {
     for(;;)
     {
-        //robot.Update_Chassis_Speed_Limit();
-        //robot.Check_KB_Event();
+        robot.Update_Chassis_Speed_Limit();
+        robot.Check_KB_Event();
         osDelay(2);
     }
 }

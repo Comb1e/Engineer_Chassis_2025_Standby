@@ -80,7 +80,7 @@ void Trajectory_Device::Set_Step_Protected()
     this->step_protected_flag = true;
 }
 
-void Trajectory_Device::Set_Step_N_Protected()
+void Trajectory_Device::Close_Step_Protected()
 {
     this->step_protected_flag = false;
 }

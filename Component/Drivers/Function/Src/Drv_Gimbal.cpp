@@ -136,10 +136,22 @@ void Gimbal_Device::Update_Yaw_Control()
     }
 }
 
+void Gimbal_Device::Set_Pitch_Deg(float pitch_deg)
+{
+    this->attitude_data.pitch_deg = pitch_deg;
+    VAL_LIMIT(this->attitude_data.pitch_deg, GIMBAL_PITCH_MIN, GIMBAL_PITCH_MAX);
+}
+
 void Gimbal_Device::Add_Pitch_Deg(float delta_pitch_deg)
 {
     this->attitude_data.pitch_deg += delta_pitch_deg;
     VAL_LIMIT(this->attitude_data.pitch_deg, GIMBAL_PITCH_MIN, GIMBAL_PITCH_MAX);
+}
+
+void Gimbal_Device::Set_Yaw_Deg(float yaw_deg)
+{
+    this->attitude_data.yaw_deg += yaw_deg;
+    VAL_LIMIT(this->attitude_data.yaw_deg, GIMBAL_PITCH_MIN, GIMBAL_PITCH_MAX);
 }
 
 void Gimbal_Device::Add_Yaw_Deg(float delta_yaw_deg)
@@ -148,8 +160,28 @@ void Gimbal_Device::Add_Yaw_Deg(float delta_yaw_deg)
     VAL_LIMIT(this->attitude_data.yaw_deg, GIMBAL_YAW_MIN, GIMBAL_YAW_MAX);
 }
 
+void Gimbal_Device::Set_Slide_Distance(float dist)
+{
+    this->slide_ctrl_data.dist = dist;
+    VAL_LIMIT(this->slide_ctrl_data.dist,GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM);
+}
+
 void Gimbal_Device::Add_Slide_Distance(float delta)
 {
     this->slide_ctrl_data.dist += delta;
     VAL_LIMIT(this->slide_ctrl_data.dist,GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM);
+}
+
+void Gimbal_Device::Set_Gimbal_Left()
+{
+    this->Set_Pitch_Deg(20.f);
+    this->Set_Yaw_Deg(-20.f);
+    this->Set_Slide_Distance(200.f);
+}
+
+void Gimbal_Device::Set_Gimbal_Right()
+{
+    this->Set_Pitch_Deg(20.f);
+    this->Set_Yaw_Deg(20.f);
+    this->Set_Slide_Distance(-200.f);
 }

@@ -62,6 +62,9 @@ public:
 
     bool exchange_five_grade_flag;
     bool exchange_four_grade_flag;
+    bool gimbal_reset_flag;
+
+    uint32_t gimbal_reset_cnt;
 
     void Check_RC_State();
     void Check_KB_State();
@@ -107,6 +110,7 @@ public:
 
     void Set_Exchange_Four_Grade();
     void Set_Exchange_Five_Grade();
+    void Set_Gimbal_Reset();
 };
 
 extern KB_Device kb;

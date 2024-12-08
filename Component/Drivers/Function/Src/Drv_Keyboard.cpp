@@ -10,6 +10,9 @@ KB_Device::KB_Device()
 {
     this->exchange_five_grade_flag = false;
     this->exchange_four_grade_flag = false;
+    this->gimbal_reset_flag = false;
+
+    this->gimbal_reset_cnt = 0;
 }
 
 
@@ -51,4 +54,9 @@ void KB_Device::Set_Exchange_Five_Grade()
 void KB_Device::Set_Exchange_Four_Grade()
 {
     this->exchange_four_grade_flag = true;
+}
+
+void KB_Device::Set_Gimbal_Reset()
+{
+    this->gimbal_reset_flag = true;
 }

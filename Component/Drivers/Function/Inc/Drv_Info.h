@@ -106,6 +106,7 @@ public:
     void Update_Enable();
     bool Check_Enable();
     void Check_Lost();
+    void Set_Pose_Mode(pose_mode_e pose_mode);
 
     friend void Info_Rx_Data_Callback(can_device_t *can_device, uint8_t *rx_data);
 };

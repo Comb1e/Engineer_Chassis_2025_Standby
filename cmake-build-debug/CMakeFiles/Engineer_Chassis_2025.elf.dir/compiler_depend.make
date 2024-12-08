@@ -1710,6 +1710,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chas
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
@@ -2013,6 +2014,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_KB_E
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_KB_Event.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
@@ -2107,6 +2109,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_KB_S
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_KB_State.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
@@ -2457,6 +2460,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Robo
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
@@ -3604,6 +3608,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/AutoCtrl
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
@@ -3698,6 +3703,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exc
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
@@ -4297,6 +4303,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/KB_Task.cp
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
@@ -4690,6 +4697,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_C
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Arm.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Chassis.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \

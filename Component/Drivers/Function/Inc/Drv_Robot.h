@@ -12,6 +12,7 @@
 #include "Drv_Arm.h"
 #include "Drv_Absorb.h"
 #include "Drv_Keyboard.h"
+#include "Drv_Info.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -33,19 +34,19 @@ typedef enum
 
 typedef enum
 {
-    autoOK = 0,
-    autoError = -1,
-    autoErrorTimeout = -2,
-    autoSuspend = -3,
+    AutoOK = 0,
+    AutoError = -1,
+    AutoErrorTimeout = -2,
+    AutoSuspend = -3,
 }autoStatus_e;
 
 typedef enum
 {
-    auto_None = 0,
-    big_island,
-    small_island,
-    exchange_mine,
-    ground_mine,
+    Auto_None = 0,
+    Big_Island,
+    Small_Island,
+    Exchange_Mine,
+    Ground_Mine,
 }autoSituation_e;
 
 class Robot_Device
@@ -63,6 +64,9 @@ public:
     bool cancel_flag;
 
     control_mode_e control_mode;
+
+    void Set_Control_Mode_Mine();
+    void Set_Control_Mode_Steer();
 
     void RC_Set_Chassis_Vel_X(float vel_x);
     void RC_Set_Chassis_Vel_Y(float vel_y);
@@ -89,8 +93,15 @@ public:
 
     void Check_KB_Event();
 
+    void Gimbal_Reset();
+
     void Exchange_Five_Grade();
+    void Left_Exchange_Five_Grade();
+    void Right_Exchange_Five_Grade();
+
     void Exchange_Four_Grade();
+    void Left_Exchange_Four_Grade();
+    void Right_Exchange_Four_Grade();
 
 /*----------automation----------*/
     autoStatus_e autoStatus;
@@ -110,7 +121,7 @@ public:
     void Exit_Task();
 //AutoExchange
     void CreatTask_Auto_Exchange(void *argument);
-    void ExitTask_autoExchange();
+    void ExitTask_AutoExchange();
 };
 
 extern Robot_Device robot;

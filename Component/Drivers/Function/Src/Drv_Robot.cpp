@@ -21,7 +21,24 @@ AutoGroundMine_Attributes({.name = "autoGroundMine", .stack_size = 128 *4, .prio
 #endif
 
     this->control_mode = STEER_MODE;
+    this->autoSituation = Auto_None;
+    this->autoStatus = AutoOK;
+    this->cancel_flag = false;
+    this->select_center_flag = false;
+    this->select_left_flag = false;
+    this->select_right_flag = false;
 }
+
+void Robot_Device::Set_Control_Mode_Mine()
+{
+    this->control_mode = MINE_MODE;
+}
+
+void Robot_Device::Set_Control_Mode_Steer()
+{
+    this->control_mode = STEER_MODE;
+}
+
 
 void Robot_Device::RC_Set_Chassis_Vel_X(float vel_x)
 {
@@ -192,15 +209,225 @@ void Robot_Device::Check_KB_Event()
         this->Exchange_Four_Grade();
         kb.exchange_four_grade_flag = false;
     }
+    else if(kb.gimbal_reset_flag)
+    {
+        this->Gimbal_Reset();
+        kb.gimbal_reset_flag = false;
+    }
+}
+
+void Robot_Device::Gimbal_Reset()
+{
+    if(absorb.Check_Sucker_Holding(ARM_SUCKER))
+    {
+        arm.Set_Point_Target_Pos_Vel(X,420.0f,0.25f);
+        arm.Set_Point_Target_Pos_Vel(Y, 95.0f, 0.25f);
+        arm.Set_Point_Target_Pos_Vel(Z, 420.0f, 0.25f);
+        arm.Set_Point_Target_Pos_Vel(YAW, 0.0f, 0.08f);
+
+        while (!arm.Check_All_Get_To_Final())
+        {
+            osDelay(1);
+        }
+
+        absorb.Set_Sucker_Close(ARM_SUCKER);
+        osDelay(400);
+    }
+
+    info.tx_raw_data.gimbal_reset_flag = true;
+    osDelay(2000);
+    arm.Posture_Init();
 }
 
 void Robot_Device::Exchange_Five_Grade()
 {
-
+    this->ExitTask_AutoExchange();
+    if(this->Check_Select_Left())
+    {
+        this->Left_Exchange_Five_Grade();
+    }
+    else if(this->Check_Select_Right())
+    {
+        this->Right_Exchange_Five_Grade();
+    }
 }
+
+void Robot_Device::Left_Exchange_Five_Grade()
+{
+    gimbal.Set_Gimbal_Left();
+
+    info.Set_Pose_Mode(single);
+    osDelay(1);
+    arm.Set_Point_Target_Pos_Vel(Y, 350.f, 0.9f);
+    arm.Set_Point_Target_Pos_Vel(Z, 480.f, 1.2f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(X, 600.f, 1.2f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(ARM_YAW, -30.f, 0.4f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(PITCH, 10.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(ROLL, 0.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(YAW, -120.f, 0.4f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+}
+
+void Robot_Device::Right_Exchange_Five_Grade()
+{
+    gimbal.Set_Gimbal_Right();
+
+    info.Set_Pose_Mode(single);
+    osDelay(1);
+    arm.Set_Point_Target_Pos_Vel(Y, -200.f, 0.9f);
+    arm.Set_Point_Target_Pos_Vel(Z, 480.f, 1.2f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(X, 600.f, 1.2f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(ARM_YAW, 30.f, 0.4f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(PITCH, 10.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(ROLL, 0.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(YAW, 120.f, 0.4f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+}
+
 
 void Robot_Device::Exchange_Four_Grade()
 {
-
+    this->ExitTask_AutoExchange();
+    if(this->Check_Select_Left())
+    {
+        this->Left_Exchange_Four_Grade();
+    }
+    else if(this->Check_Select_Right())
+    {
+        this->Right_Exchange_Four_Grade();
+    }
 }
+
+void Robot_Device::Left_Exchange_Four_Grade()
+{
+    info.Set_Pose_Mode(single);
+    osDelay(1);
+    arm.Set_Point_Target_Pos_Vel(Y, 350.f, 0.9f);
+    arm.Set_Point_Target_Pos_Vel(Z, 480.f, 1.2f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(X, 600.f, 1.2f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(PITCH, 40.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(ROLL, -0.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(YAW, -80.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(ARM_YAW, 0.f, 0.4f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+}
+
+void Robot_Device::Right_Exchange_Four_Grade()
+{
+    info.Set_Pose_Mode(single);
+    osDelay(1);
+    arm.Set_Point_Target_Pos_Vel(Y, -200.f, 0.9f);
+    arm.Set_Point_Target_Pos_Vel(Z, 480.f, 1.2f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(X, 600.f, 1.2f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+
+    arm.Set_Point_Target_Pos_Vel(PITCH, 40.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(ROLL, 0.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(YAW, 80.f, 0.4f);
+    arm.Set_Point_Target_Pos_Vel(ARM_YAW, 0.f, 0.4f);
+    arm.Set_Step_Protected();
+
+    while (!arm.Check_All_Get_To_Final())
+    {
+        osDelay(1);
+    }
+    arm.Close_Step_protected();
+}
+
 

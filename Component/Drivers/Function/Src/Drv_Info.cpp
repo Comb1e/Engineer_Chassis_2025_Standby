@@ -113,3 +113,9 @@ void Info_Device::Check_Lost()
     }
 }
 
+void Info_Device::Set_Pose_Mode(pose_mode_e pose_mode)
+{
+    this->tx_raw_data.pose_mode = pose_mode;
+}
+
+

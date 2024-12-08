@@ -821,7 +821,7 @@ void KB_Device::KeyE_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    kb.Set_Exchange_Five_Grade();
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
@@ -874,7 +874,8 @@ void KB_Device::KeyR_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    __set_FAULTMASK(1);//关闭全局中断
+                    HAL_NVIC_SystemReset();//hal库芯片内部flash读写,比较危险,找空白的地址
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
@@ -916,7 +917,8 @@ void KB_Device::KeyR_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    __set_FAULTMASK(1);//关闭全局中断
+                    HAL_NVIC_SystemReset();//hal库芯片内部flash读写,比较危险,找空白的地址
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
@@ -1547,7 +1549,7 @@ void KB_Device::KeyB_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Set_Control_Mode_Mine();
                 }
                 else
                 {
@@ -1589,7 +1591,7 @@ void KB_Device::KeyB_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.Set_Control_Mode_Steer();
                 }
                 else
                 {

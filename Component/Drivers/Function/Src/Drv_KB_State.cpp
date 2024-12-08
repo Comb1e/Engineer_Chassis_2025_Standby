@@ -570,7 +570,7 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
                     {
                         if(rc.data.using_kb_flag)
                         {
-                            robot.RC_Set_Chassis_Vel_X(0);
+                            robot.RC_Set_Chassis_Vel_Y(0);
                         }
                     }
                 }
@@ -980,7 +980,11 @@ void KB_Device::KeyR_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    kb.gimbal_reset_cnt++;
+                    if(kb.gimbal_reset_cnt == 200)
+                    {
+                        kb.Set_Gimbal_Reset();
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -999,7 +1003,7 @@ void KB_Device::KeyR_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    kb.gimbal_reset_cnt = 0;
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {

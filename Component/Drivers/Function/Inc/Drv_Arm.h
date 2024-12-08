@@ -236,6 +236,10 @@ public:
     void Rectilinear_Motion(traj_item_e point,float compensation, float distance,float vel);
     void Add_Point_Target_Pos(traj_item_e point, float delta_target);
     void Arm_Yaw_Dir_Move(float distance, float vel);
+    void Set_Step_Protected();
+    void Close_Step_protected();
+    bool Check_All_Get_To_Final();
+    void Set_Point_Target_Pos_Vel(traj_item_e point,float pos,float vel);
 
     friend void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
 

@@ -3,8 +3,6 @@
 //
 
 #include "Auto_Exchange_Task.h"
-#include "Global_CFG.h"
-#include "Drv_Robot.h"
 
 void AutoExchange_Task(void *argument)
 {
@@ -14,10 +12,10 @@ void AutoExchange_Task(void *argument)
 void Robot_Device::CreatTask_Auto_Exchange(void *argument)
 {
     osThreadState_t state = osThreadGetState(this->AutoExchangeHandle);
-    if (this->enable_flag && this->autoSituation == auto_None && (absorb.Get_Ore_Num() != 0))
+    if (this->enable_flag && this->autoSituation == Auto_None && (absorb.Get_Ore_Num() != 0))
     {
         taskENTER_CRITICAL();
-        this->autoSituation = exchange_mine;
+        this->autoSituation = Exchange_Mine;
         osThreadTerminate(this->AutoBigIslandHandle);
         osThreadTerminate(this->AutoSmallIslandHandle);
         osThreadTerminate(this->AutoGroundMineHandle);
@@ -26,7 +24,7 @@ void Robot_Device::CreatTask_Auto_Exchange(void *argument)
         {
             osThreadTerminate(this->AutoExchangeHandle);
             osDelay(20);
-            this->autoSituation = exchange_mine;
+            this->autoSituation = Exchange_Mine;
             this->Creat_Task_Init();
             this->AutoExchangeHandle = osThreadNew(AutoExchange_Task, NULL, &this->AutoExchange_Attributes);
         }
@@ -35,7 +33,7 @@ void Robot_Device::CreatTask_Auto_Exchange(void *argument)
 }
 
 
-void Robot_Device::ExitTask_autoExchange()
+void Robot_Device::ExitTask_AutoExchange()
 {
     if (this->enable_flag && osThreadGetState(this->AutoExchangeHandle) != osThreadTerminated)
     {

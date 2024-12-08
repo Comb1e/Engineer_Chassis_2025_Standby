@@ -61,7 +61,7 @@ public:
     __RAM_FUNC void Set_Posture(float set);
     __RAM_FUNC void Add_Posture(float delta);
     void Set_Step_Protected();
-    void Set_Step_N_Protected();
+    void Close_Step_Protected();
 
     friend class Arm_Device;
 };

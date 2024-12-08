@@ -143,7 +143,7 @@ void Arm_Device::CAN_Set()
 
 void Arm_Device::Set_Point_Final_Posture(traj_item_e point, float posture)
 {
-  this->trajectory_final[point] = posture;
+    this->trajectory_final[point] = posture;
 }
 
 void Arm_Device::Set_Point_Posture(traj_item_e point, float posture)
@@ -363,15 +363,15 @@ void Arm_Device::Add_Point_Target_Pos_From_Control(traj_item_e point, float delt
     {
         if(point<=Z)
         {
-            step = ARM_TRAJECTORY_VEL_XYZ;
+            step = ARM_TRAJECTORY_VEL_XYZ / KB_CONTROL_CYCLE * ARM_CONTROL_CYCLE;
         }
         else
         {
-            step = ARM_TRAJECTORY_VEL_RPY;
+            step = ARM_TRAJECTORY_VEL_RPY / KB_CONTROL_CYCLE * ARM_CONTROL_CYCLE;
         }
-        if(fabsf(delta) <= 1.0f){
 
-        }else if(fabsf(delta) > 1.0f){
+        if(fabsf(delta) > 1.0f)
+        {
             step *= fabsf(delta);
         }
         this->trajectory[point].Change_Basic_Step(step);
@@ -425,14 +425,7 @@ bool Arm_Device::Check_Init_Completely()
 void Arm_Device::Add_Point_Target_Pos(traj_item_e point, float delta_target)
 {
     this->trajectory_final[point] += delta_target;
-    if (this->arm_chassis_cooperate_flag)
-    {
-        if (point != X && point != Y)
-        {
-            VAL_LIMIT(this->trajectory_final[point], this->min_limit[point], this->max_limit[point]);
-        }
-    }
-    else
+    if (point != X && point != Y)
     {
         VAL_LIMIT(this->trajectory_final[point], this->min_limit[point], this->max_limit[point]);
     }
@@ -520,3 +513,36 @@ void Arm_Device::Arm_Yaw_Dir_Move(float distance, float vel)
     }
 }
 
+void Arm_Device::Set_Step_Protected()
+{
+    for (traj_item_e point = X; point < TRAJ_ITEM_NUM; point = (traj_item_e) (point + 1))
+    {
+        this->trajectory[point].Set_Step_Protected();
+    }
+}
+
+void Arm_Device::Close_Step_protected()
+{
+    for (traj_item_e point = X; point < TRAJ_ITEM_NUM; point = (traj_item_e) (point + 1))
+    {
+        this->trajectory[point].Close_Step_Protected();
+    }
+}
+
+bool Arm_Device::Check_All_Get_To_Final()
+{
+    for (traj_item_e point = X; point < TRAJ_ITEM_NUM; point = (traj_item_e) (point + 1))
+    {
+        if(!this->trajectory[point].Check_Track_Point_As_Final())
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void Arm_Device::Set_Point_Target_Pos_Vel(traj_item_e point, float pos, float vel)
+{
+    this->Set_Point_Final_Posture(point,pos);
+    this->trajectory[point].Change_Basic_Step(vel);
+}
