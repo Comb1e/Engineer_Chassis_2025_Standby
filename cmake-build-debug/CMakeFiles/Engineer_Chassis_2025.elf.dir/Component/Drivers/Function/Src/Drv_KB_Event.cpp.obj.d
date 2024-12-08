@@ -92,4 +92,5 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_KB_E
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/Trajectory.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Absorb.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Pump.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_Ore.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_Ore.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Absorb.h

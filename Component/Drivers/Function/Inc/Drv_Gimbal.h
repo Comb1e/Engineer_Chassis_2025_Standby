@@ -107,6 +107,7 @@ public:
     void Update_Yaw_Control();
     void Add_Pitch_Deg(float delta_pitch_deg);
     void Add_Yaw_Deg(float delta_yaw_deg);
+    void Add_Slide_Distance(float delta);
 };
 
 extern Gimbal_Device gimbal;

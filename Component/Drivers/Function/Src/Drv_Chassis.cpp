@@ -148,6 +148,9 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
 
     this->Update_Align();
 
+    chassis.Set_Vel_X(Get_Slope_Speed(&chassis.kb_vel_x));
+    chassis.Set_Vel_Y(Get_Slope_Speed(&chassis.kb_vel_y));
+
     this->Set_Vel_X(this->set_vel.x + this->align_data.set_vel.x);
     this->Set_Vel_Y(this->set_vel.y + this->align_data.set_vel.y);
     this->Set_Vel_Spin(this->set_vel.spin + this->align_data.set_vel.spin);
@@ -405,6 +408,10 @@ void Chassis_Device::Judge_For_Arm_Need()
             this->Change_To_Speed_Type();
         }
     }
+    else
+    {
+        this->Reset_Total_Rounds();
+    }
 }
 
 void Chassis_Device::Clean_Speed_Control()
@@ -412,17 +419,10 @@ void Chassis_Device::Clean_Speed_Control()
     taskENTER_CRITICAL();
     this->Close_Yaw_Spin();
 
-    Clean_Slope_Speed(&this->kb_vel_x);
-    Clean_Slope_Speed(&this->kb_vel_y);
+    this->Set_X_Slope_Speed_Target(0);
+    this->Set_Y_Slope_Speed_Target(0);
 
-    this->Set_Vel_X(0);
-    this->Set_Vel_Y(0);
-    this->Set_Vel_Spin(0);
-
-    this->wheel[0].Reset_Total_Rounds_Offset(0);
-    this->wheel[1].Reset_Total_Rounds_Offset(0);
-    this->wheel[2].Reset_Total_Rounds_Offset(0);
-    this->wheel[3].Reset_Total_Rounds_Offset(0);
+    this->Reset_Total_Rounds();
 
     for(auto & i : this->wheel)
     {
@@ -438,7 +438,7 @@ void Chassis_Device::Close_Yaw_Spin()
     HI229UM_Set_Current_As_Offset();
 
     this->pos_yaw_angle = HI229UM_Get_Yaw_Total_Deg();
-    this->set_vel.spin = 0.0f;
+    this->Set_Vel_Spin(0);
 }
 
 void Chassis_Device::Change_To_Position_Type()
@@ -467,4 +467,19 @@ void Chassis_Device::Clean_Poition_Control()
 void Chassis_Device::Change_To_Speed_Type()
 {
     this->control_type = SPEED;
+}
+
+void Chassis_Device::Update_Vel_Max(float total,float rc,float kb)
+{
+    this->vel_max.kb = kb;
+    this->vel_max.total = total;
+    this->vel_max.rc = rc;
+}
+
+void Chassis_Device::Reset_Total_Rounds()
+{
+    this->wheel[0].Reset_Total_Rounds_Offset(0);
+    this->wheel[1].Reset_Total_Rounds_Offset(0);
+    this->wheel[2].Reset_Total_Rounds_Offset(0);
+    this->wheel[3].Reset_Total_Rounds_Offset(0);
 }

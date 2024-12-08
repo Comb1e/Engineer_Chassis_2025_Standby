@@ -10,6 +10,8 @@
 #include "RTOS.h"
 #include "Global_CFG.h"
 #include "Drv_Arm.h"
+#include "Drv_Absorb.h"
+#include "Drv_Keyboard.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -28,6 +30,23 @@ typedef enum
     STEER_MODE,
     MINE_MODE
 }control_mode_e;
+
+typedef enum
+{
+    autoOK = 0,
+    autoError = -1,
+    autoErrorTimeout = -2,
+    autoSuspend = -3,
+}autoStatus_e;
+
+typedef enum
+{
+    auto_None = 0,
+    big_island,
+    small_island,
+    exchange_mine,
+    ground_mine,
+}autoSituation_e;
 
 class Robot_Device
 {
@@ -53,6 +72,7 @@ public:
     void RC_Set_Chasssis_Position(float pos_x,float pos_y,float pos_spin);
 
     void RC_Set_Gimbal_Position(float delta);
+
     void Sucker_Directional_Move(traj_item_e point, float delta_distance);
 
     void Set_Select_Left_Flag();
@@ -63,6 +83,34 @@ public:
     bool Check_Select_Right();
     bool Check_Select_Left();
     bool Check_Cancel();
+
+    float Get_Arm_Point_Limit_Chassis_Val();
+    void Update_Chassis_Speed_Limit();
+
+    void Check_KB_Event();
+
+    void Exchange_Five_Grade();
+    void Exchange_Four_Grade();
+
+/*----------automation----------*/
+    autoStatus_e autoStatus;
+    autoSituation_e autoSituation;
+
+    osThreadId_t AutoSmallIslandHandle;
+    osThreadId_t AutoBigIslandHandle;
+    osThreadId_t AutoExchangeHandle;
+    osThreadId_t AutoGroundMineHandle;
+
+    const osThreadAttr_t AutoSmallIsland_Attributes;
+    const osThreadAttr_t AutoBigIsland_Attributes;
+    const osThreadAttr_t AutoExchange_Attributes;
+    const osThreadAttr_t AutoGroundMine_Attributes;
+
+    void Creat_Task_Init();
+    void Exit_Task();
+//AutoExchange
+    void CreatTask_Auto_Exchange(void *argument);
+    void ExitTask_autoExchange();
 };
 
 extern Robot_Device robot;

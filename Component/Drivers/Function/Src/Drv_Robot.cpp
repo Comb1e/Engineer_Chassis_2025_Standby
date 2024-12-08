@@ -3,14 +3,16 @@
 //
 
 #include "Drv_Robot.h"
-
 #include <dsp/fast_math_functions.h>
 
-#include "Drv_Absorb.h"
 
 Robot_Device robot;
 
-Robot_Device::Robot_Device()
+Robot_Device::Robot_Device():
+AutoBigIsland_Attributes({.name = "autoBigIsland", .stack_size = 128 * 4, .priority = (osPriority_t) osPriorityAboveNormal,}),
+AutoExchange_Attributes({.name = "autoExchange", .stack_size = 128 * 4, .priority = (osPriority_t) osPriorityAboveNormal,}),
+AutoSmallIsland_Attributes({.name = "autoSmallIsland", .stack_size = 128 *4, .priority = (osPriority_t) osPriorityAboveNormal,}),
+AutoGroundMine_Attributes({.name = "autoGroundMine", .stack_size = 128 *4, .priority = (osPriority_t) osPriorityAboveNormal,})
 {
 #if TEST
     this->enable_flag = true;
@@ -24,14 +26,11 @@ Robot_Device::Robot_Device()
 void Robot_Device::RC_Set_Chassis_Vel_X(float vel_x)
 {
     chassis.Set_X_Slope_Speed_Target(vel_x * chassis.vel_max.rc);
-    chassis.Set_Vel_X(Get_Slope_Speed(&chassis.kb_vel_x));
-
 }
 
 void Robot_Device::RC_Set_Chassis_Vel_Y(float vel_y)
 {
     chassis.Set_Y_Slope_Speed_Target(vel_y * chassis.vel_max.rc);
-    chassis.Set_Vel_Y(Get_Slope_Speed(&chassis.kb_vel_y));
 }
 
 void Robot_Device::RC_Set_Chassis_Vel_Spin(float vel_spin)
@@ -138,3 +137,70 @@ bool Robot_Device::Check_Cancel()
     taskEXIT_CRITICAL();
     return flag;
 }
+
+float Robot_Device::Get_Arm_Point_Limit_Chassis_Val()
+{
+    float initial_x = INIT_ARM_X, final_x = X_TOTAL_MAX;
+    float initial_z = INIT_ARM_Z, final_z = Z_TOTAL_MAX;
+    float dist = 0.0f, dist_max = 0.0f;
+    float x = arm.trajectory[X].track_point;
+    float z = arm.trajectory[Z].track_point;
+
+    VAL_LIMIT(x, initial_x, final_x);
+    VAL_LIMIT(z, initial_z, final_z);
+
+    float z_x_rate = 2.8f;//z比x的权重为3
+
+    arm_sqrt_f32((x - initial_x) * (x - initial_x) + (z_x_rate * z_x_rate * (z - initial_z) * (z - initial_z)), &dist);
+    arm_sqrt_f32((initial_x - final_x) * (initial_x - final_x) +
+        (z_x_rate * z_x_rate * (initial_z - final_z) * (initial_z - final_z)), &dist_max);
+
+    float val = (1.0f - 2.f * (dist / dist_max)) * CHASSIS_VEL_TOTAL_MAX;
+
+    VAL_LIMIT(val, CHASSIS_VEL_TOTAL_MIN, CHASSIS_VEL_TOTAL_MAX);
+    return val;
+}
+
+void Robot_Device::Update_Chassis_Speed_Limit()
+{
+    float val = this->Get_Arm_Point_Limit_Chassis_Val();
+    chassis.Update_Vel_Max(val, CHASSIS_VEL_RC_MAX, CHASSIS_VEL_KB_MAX);
+    Update_Slope_SPD(&chassis.kb_vel_x, val * 0.005f, val * 0.005f, sqrtf(val) * CHASSIS_VEL_KB_MAX);
+    Update_Slope_SPD(&chassis.kb_vel_y, val * 0.006f, val * 0.006f, sqrtf(val) * CHASSIS_VEL_KB_MAX);
+}
+
+void Robot_Device::Creat_Task_Init()
+{
+
+}
+
+void Robot_Device::Exit_Task()
+{
+
+}
+
+
+void Robot_Device::Check_KB_Event()
+{
+    if(kb.exchange_five_grade_flag)
+    {
+        this->Exchange_Five_Grade();
+        kb.exchange_five_grade_flag = false;
+    }
+    else if(kb.exchange_four_grade_flag)
+    {
+        this->Exchange_Four_Grade();
+        kb.exchange_four_grade_flag = false;
+    }
+}
+
+void Robot_Device::Exchange_Five_Grade()
+{
+
+}
+
+void Robot_Device::Exchange_Four_Grade()
+{
+
+}
+

@@ -190,6 +190,8 @@ public:
     void Change_To_Position_Type();
     void Clean_Poition_Control();
     void Change_To_Speed_Type();
+    void Update_Vel_Max(float total,float rc,float kb);
+    void Reset_Total_Rounds();
 };
 
 extern Chassis_Device chassis;

@@ -6,6 +6,13 @@
 
 KB_Device kb;
 
+KB_Device::KB_Device()
+{
+    this->exchange_five_grade_flag = false;
+    this->exchange_four_grade_flag = false;
+}
+
+
 void KB_Device::Check_KB_State()
 {
     for(keyMap key = KeyW; key < KeyNum; key = (keyMap)(key + 1))
@@ -34,4 +41,14 @@ void KB_Device::Check_KB_Event()
             Key_Event[key](DIR_UP);
         }
     }
+}
+
+void KB_Device::Set_Exchange_Five_Grade()
+{
+    this->exchange_five_grade_flag = true;
+}
+
+void KB_Device::Set_Exchange_Four_Grade()
+{
+    this->exchange_four_grade_flag = true;
 }

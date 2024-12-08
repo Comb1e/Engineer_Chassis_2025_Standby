@@ -612,41 +612,11 @@ void KB_Device::KeySHIFT_Event_Callback(enum KEY_DIR dir)
         {
             if(dir == DIR_DOWN)
             {
-                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
-                {
 
-                }
-                else if(rc.data.kb.key_bit_state.CTRL)
-                {
-
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
-                }
-                else
-                {
-
-                }
             }
             else if(dir == DIR_UP)
             {
-                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
-                {
 
-                }
-                else if(rc.data.kb.key_bit_state.CTRL)
-                {
-
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
-                }
-                else
-                {
-
-                }
             }
             break;
         }
@@ -654,41 +624,11 @@ void KB_Device::KeySHIFT_Event_Callback(enum KEY_DIR dir)
         {
             if(dir == DIR_DOWN)
             {
-                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
-                {
 
-                }
-                else if(rc.data.kb.key_bit_state.CTRL)
-                {
-
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
-                }
-                else
-                {
-
-                }
             }
             else if(dir == DIR_UP)
             {
-                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
-                {
 
-                }
-                else if(rc.data.kb.key_bit_state.CTRL)
-                {
-
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
-                }
-                else
-                {
-
-                }
             }
             break;
         }
@@ -707,41 +647,11 @@ void KB_Device::KeyCTRL_Event_Callback(enum KEY_DIR dir)
         {
             if(dir == DIR_DOWN)
             {
-                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
-                {
 
-                }
-                else if(rc.data.kb.key_bit_state.CTRL)
-                {
-
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
-                }
-                else
-                {
-
-                }
             }
             else if(dir == DIR_UP)
             {
-                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
-                {
 
-                }
-                else if(rc.data.kb.key_bit_state.CTRL)
-                {
-
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
-                }
-                else
-                {
-
-                }
             }
             break;
         }
@@ -749,41 +659,11 @@ void KB_Device::KeyCTRL_Event_Callback(enum KEY_DIR dir)
         {
             if(dir == DIR_DOWN)
             {
-                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
-                {
 
-                }
-                else if(rc.data.kb.key_bit_state.CTRL)
-                {
-
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
-                }
-                else
-                {
-
-                }
             }
             else if(dir == DIR_UP)
             {
-                if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
-                {
 
-                }
-                else if(rc.data.kb.key_bit_state.CTRL)
-                {
-
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
-                }
-                else
-                {
-
-                }
             }
             break;
         }
@@ -804,7 +684,7 @@ void KB_Device::KeyQ_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    absorb.Set_Sucker_Holding();
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
@@ -846,7 +726,7 @@ void KB_Device::KeyQ_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    kb.Set_Exchange_Four_Grade();
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {

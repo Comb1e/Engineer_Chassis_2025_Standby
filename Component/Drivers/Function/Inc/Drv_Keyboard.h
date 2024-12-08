@@ -58,8 +58,10 @@ private:
     };
 
 public:
+    KB_Device();
 
-
+    bool exchange_five_grade_flag;
+    bool exchange_four_grade_flag;
 
     void Check_RC_State();
     void Check_KB_State();
@@ -102,6 +104,9 @@ public:
     static void KeyC_Event_Callback(enum KEY_DIR dir);
     static void KeyV_Event_Callback(enum KEY_DIR dir);
     static void KeyB_Event_Callback(enum KEY_DIR dir);;
+
+    void Set_Exchange_Four_Grade();
+    void Set_Exchange_Five_Grade();
 };
 
 extern KB_Device kb;

@@ -147,3 +147,9 @@ void Gimbal_Device::Add_Yaw_Deg(float delta_yaw_deg)
     this->attitude_data.yaw_deg += delta_yaw_deg;
     VAL_LIMIT(this->attitude_data.yaw_deg, GIMBAL_YAW_MIN, GIMBAL_YAW_MAX);
 }
+
+void Gimbal_Device::Add_Slide_Distance(float delta)
+{
+    this->slide_ctrl_data.dist += delta;
+    VAL_LIMIT(this->slide_ctrl_data.dist,GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM);
+}

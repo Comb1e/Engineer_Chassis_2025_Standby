@@ -174,6 +174,13 @@ const osThreadAttr_t check_communi_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for autoctrl_Task */
+osThreadId_t autoctrl_TaskHandle;
+const osThreadAttr_t autoctrl_Task_attributes = {
+  .name = "autoctrl_Task",
+  .stack_size = 256 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -298,6 +305,7 @@ void KB_Event_Task(void *argument);
 void Absorb_Task(void *argument);
 void Arm_Task(void *argument);
 void Check_Communicate_Task(void *argument);
+void AutoCtrl_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -444,6 +452,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of check_communi */
   check_communiHandle = osThreadNew(Check_Communicate_Task, NULL, &check_communi_attributes);
+
+  /* creation of autoctrl_Task */
+  autoctrl_TaskHandle = osThreadNew(AutoCtrl_Task, NULL, &autoctrl_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -781,6 +792,24 @@ __weak void Check_Communicate_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END Check_Communicate_Task */
+}
+
+/* USER CODE BEGIN Header_AutoCtrl_Task */
+/**
+* @brief Function implementing the autoctrl_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_AutoCtrl_Task */
+__weak void AutoCtrl_Task(void *argument)
+{
+  /* USER CODE BEGIN AutoCtrl_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END AutoCtrl_Task */
 }
 
 /* Private application code --------------------------------------------------*/
