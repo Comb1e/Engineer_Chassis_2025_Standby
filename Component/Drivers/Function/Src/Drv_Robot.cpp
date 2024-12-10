@@ -448,9 +448,10 @@ void Robot_Device::Gimbal_Reset()
 void Robot_Device::Turn_Chassis_Back()
 {
     uint32_t time = 0;
-    this->RC_Set_Chassis_Vel_Spin(0.5f);
+    this->RC_Set_Chassis_Vel_Spin(180.0f);
     while(!chassis.Check_Yaw_At_Set())
     {
+        chassis.Set_Vel_Spin(chassis.pid_rot.Calculate(chassis.Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()));
         time++;
         if(time > 8000)
         {

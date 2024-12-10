@@ -500,7 +500,7 @@ bool Chassis_Device::Check_Yaw_At_Set() const
 {
     if(hi229um.state.ready_flag)
     {
-        if(ABS(this->pos_yaw_angle - HI229UM_Get_Yaw_Total_Deg()) < 0.03f)
+        if(ABS(this->pos_yaw_angle / 360.0f - HI229UM_Get_Yaw_Total_Deg()) < 0.03f)
         {
             return true;
         }
