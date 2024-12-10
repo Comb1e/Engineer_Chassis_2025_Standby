@@ -91,6 +91,26 @@ extern "C"
 #define INIT_SUCKER_YAW         (0.0f)
 #define INIT_SUCKER_PITCH       (0.0f)
 
+/*----------------------机械臂归位时候的状态---------------------*/
+#define HOMING_ARM_YAW_DEG        (0.0f)
+#define HOMING_ARM_PITCH_DEG        (0.0f)
+#define HOMING_ARM_X              (400.0f)
+#define HOMING_ARM_Y              (70.0f)
+#define HOMING_ARM_Z              (20.0f)
+#define HOMING_SUCKER_ROLL        (0.0f)
+#define HOMING_SUCKER_YAW         (0.0f)
+#define HOMING_SUCKER_PITCH       (0.0f)
+
+//有矿的时候
+
+#define HOMING_ARM_YAW_DEG                  (0.0f)
+#define HOMING_ARM_X_WITH_ORE               (520.0f)
+#define HOMING_ARM_Y_WITH_ORE               (70.0f)
+#define HOMING_ARM_Z_WITH_ORE               (0.0f)
+#define HOMING_SUCKER_ROLL_WITH_ORE         (0.0f)
+#define HOMING_SUCKER_YAW_WITH_ORE          (0.0f)
+#define HOMING_SUCKER_PITCH_WITH_ORE        (90.0f)
+
 #define ARM_CAN             (&hcan2)
 
 /*----------------------与云台板通信的CANid---------------------*/
@@ -240,6 +260,10 @@ public:
     void Close_Step_protected();
     bool Check_All_Get_To_Final();
     void Set_Point_Target_Pos_Vel(traj_item_e point,float pos,float vel);
+    void Add_Point_Target_Pos_Vel(traj_item_e point,float delta,float vel);
+    void Change_XYZ_Basic_Step(float new_step);
+    void Change_RYP_Basic_Step(float new_step);
+    bool Check_Safe_Position();
 
     friend void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
 

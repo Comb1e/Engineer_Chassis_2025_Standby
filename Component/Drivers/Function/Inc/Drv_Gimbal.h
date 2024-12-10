@@ -111,8 +111,9 @@ public:
     void Set_Pitch_Deg(float pitch_deg);
     void Set_Yaw_Deg(float yaw_deg);
     void Set_Slide_Distance(float dist);
-    void Set_Gimbal_Left();
-    void Set_Gimbal_Right();
+    void Set_Left();
+    void Set_Right();
+    void Set_Homing();
 };
 
 extern Gimbal_Device gimbal;

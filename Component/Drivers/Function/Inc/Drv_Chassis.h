@@ -138,6 +138,8 @@ public:
     bool tof_lost_flag;
     bool tof_enable_flag;
 
+    bool rot_flag;
+
     control_type_e control_type;
 
     slope_speed_t kb_vel_x;
@@ -192,6 +194,9 @@ public:
     void Change_To_Speed_Type();
     void Update_Vel_Max(float total,float rc,float kb);
     void Reset_Total_Rounds();
+    void Set_Rot();
+    void Close_Rot();
+    bool Check_Yaw_At_Set() const;
 };
 
 extern Chassis_Device chassis;

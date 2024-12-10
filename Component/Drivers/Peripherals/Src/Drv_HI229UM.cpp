@@ -8,6 +8,7 @@
 #include "cmsis_os2.h"
 #include "FreeRTOS.h"
 #include "portmacro.h"
+#include "RTOS.h"
 #include "task.h"
 
 const char mode_cmd_91[] = "AT+SETPTL=91\r\n";

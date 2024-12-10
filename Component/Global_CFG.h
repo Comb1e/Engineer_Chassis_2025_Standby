@@ -23,7 +23,7 @@
 #define ABSORB 1
 #define INFO 1
 
-#define TEST 1
+#define TEST 0
 
 #define GIMBAL_Slide_TEST 0
 #define GIMBAL_ATTITUDE_TEST 0

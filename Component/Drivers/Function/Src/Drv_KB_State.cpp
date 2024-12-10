@@ -8,7 +8,7 @@
 
 void KB_Device::Check_Mouse_State()
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -17,18 +17,32 @@ void KB_Device::Check_Mouse_State()
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Z,2.0f);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Z,1.0f);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
             }
             else if(rc.data.mouse.right_button)
@@ -36,18 +50,32 @@ void KB_Device::Check_Mouse_State()
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Z,-2.0f);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Z,-1.0f);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
             }
             else
@@ -57,16 +85,27 @@ void KB_Device::Check_Mouse_State()
                     arm.Add_Point_Target_Pos_From_Control(YAW,-4.0f * rc.data.mouse.x);
                     arm.Add_Point_Target_Pos_From_Control(PITCH,4.0f * rc.data.mouse.y);
                     arm.Add_Point_Target_Pos_From_Control(ROLL,16.0f * rc.data.mouse.z);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(YAW,-2.0f * rc.data.mouse.x);
                     arm.Add_Point_Target_Pos_From_Control(PITCH,2.0f * rc.data.mouse.y);
                     arm.Add_Point_Target_Pos_From_Control(ROLL,5.0f * rc.data.mouse.z);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else
                 {
@@ -74,6 +113,13 @@ void KB_Device::Check_Mouse_State()
                     if(rc.data.using_kb_flag)
                     {
                         robot.RC_Set_Chassis_Vel_Spin(-1 * rc.data.mouse.x);
+                    }
+                    else
+                    {
+                        if(!RC_Check_SW_State(RC_SW_L_UP) && !kb.auto_rot)
+                        {
+                            robot.RC_Set_Chassis_Vel_Spin(0);
+                        }
                     }
                 }
             }
@@ -86,18 +132,32 @@ void KB_Device::Check_Mouse_State()
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Z,2.0f);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Z,1.0f);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
             }
             else if(rc.data.mouse.right_button)
@@ -105,18 +165,32 @@ void KB_Device::Check_Mouse_State()
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Z,-2.0f);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Z,-1.0f);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else
                 {
-
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
             }
             else
@@ -126,17 +200,29 @@ void KB_Device::Check_Mouse_State()
                     arm.Add_Point_Target_Pos_From_Control(YAW,-4.0f * rc.data.mouse.x);
                     arm.Add_Point_Target_Pos_From_Control(PITCH,4.0f * rc.data.mouse.y);
                     arm.Add_Point_Target_Pos_From_Control(ROLL,16.0f * rc.data.mouse.z);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(YAW,-2.0f * rc.data.mouse.x);
                     arm.Add_Point_Target_Pos_From_Control(PITCH,2.0f * rc.data.mouse.y);
                     arm.Add_Point_Target_Pos_From_Control(ROLL,5.0f * rc.data.mouse.z);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
                     gimbal.Add_Pitch_Deg(0.36f * 2 * rc.data.mouse.y);
                     gimbal.Add_Yaw_Deg(-0.36f * 2 * rc.data.mouse.x);
+                    if(!kb.auto_rot)
+                    {
+                        robot.RC_Set_Chassis_Vel_Spin(0);
+                    }
                 }
                 else
                 {
@@ -144,6 +230,13 @@ void KB_Device::Check_Mouse_State()
                     if(rc.data.using_kb_flag)
                     {
                         robot.RC_Set_Chassis_Vel_Spin(-1 * rc.data.mouse.x);
+                    }
+                    else
+                    {
+                        if(!RC_Check_SW_State(RC_SW_L_UP) && !kb.auto_rot)
+                        {
+                            robot.RC_Set_Chassis_Vel_Spin(0);
+                        }
                     }
                 }
             }
@@ -160,20 +253,18 @@ void KB_Device::Check_RC_State()
 {
     if(RC_Check_SW_State(RC_SW_L_UP))
     {
-        arm.arm_chassis_cooperate_flag = false;
         if(!rc.data.using_kb_flag)
         {
+            arm.arm_chassis_cooperate_flag = false;
             if(chassis.control_type == POSITION)
             {
                 chassis.control_type = SPEED;
             }
-            robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.7f);
+            robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.3f);
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_MID))
     {
-        chassis.Set_X_Slope_Speed_Target(0);
-        chassis.Set_Y_Slope_Speed_Target(0);
         if(!rc.data.using_kb_flag)
         {
             arm.Add_Point_Target_Pos_From_Control(X,rc.data.left_rocker.y);
@@ -184,8 +275,6 @@ void KB_Device::Check_RC_State()
     }
     else if(RC_Check_SW_State(RC_SW_L_DOWN))
     {
-        chassis.Set_X_Slope_Speed_Target(0);
-        chassis.Set_Y_Slope_Speed_Target(0);
         if(!rc.data.using_kb_flag)
         {
             arm.Add_Point_Target_Pos_From_Control(ARM_PITCH,-rc.data.right_rocker.y);
@@ -220,7 +309,7 @@ void KB_Device::Check_RC_State()
 
 void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -229,10 +318,12 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(X,2.0);
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(X,1.0);
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -247,11 +338,11 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -276,6 +367,17 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
                         {
                             robot.RC_Set_Chassis_Vel_X(0);
                         }
+                        else
+                        {
+                            if(RC_Check_SW_State(RC_SW_L_UP))
+                            {
+                                robot.RC_Set_Chassis_Vel_X(rc.data.left_rocker.y);
+                            }
+                            else
+                            {
+                                robot.RC_Set_Chassis_Vel_X(0);
+                            }
+                        }
                     }
                 }
             }
@@ -288,14 +390,16 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(X,2.0);
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(X,1.0);
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else
                 {
@@ -306,28 +410,25 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else
                 {
-                    if(RC_Check_Key_Down_Event(KeyS))
+                    if(RC_Check_Key_Down_State(KeyS))
                     {
                         robot.RC_Set_Chassis_Vel_X(-CHASSIS_KB_VEL_MINE_MODE);
                     }
                     else
                     {
-                        if(rc.data.using_kb_flag)
-                        {
-                            robot.RC_Set_Chassis_Vel_X(0);
-                        }
+                        robot.RC_Set_Chassis_Vel_X(0);
                     }
                 }
             }
@@ -342,7 +443,7 @@ void KB_Device::KeyW_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -351,10 +452,12 @@ void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(X,-2.0);
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(X,-1.0);
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -369,11 +472,11 @@ void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -398,6 +501,17 @@ void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
                         {
                             robot.RC_Set_Chassis_Vel_X(0);
                         }
+                        else
+                        {
+                            if(RC_Check_SW_State(RC_SW_L_UP))
+                            {
+                                robot.RC_Set_Chassis_Vel_X(rc.data.left_rocker.y);
+                            }
+                            else
+                            {
+                                robot.RC_Set_Chassis_Vel_X(0);
+                            }
+                        }
                     }
                 }
             }
@@ -410,14 +524,16 @@ void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(X,-2.0);
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(X,-1.0);
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else
                 {
@@ -428,28 +544,25 @@ void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_X(0);
                 }
                 else
                 {
-                    if(RC_Check_Key_Down_Event(KeyW))
+                    if(RC_Check_Key_Down_State(KeyW))
                     {
                         robot.RC_Set_Chassis_Vel_X(CHASSIS_KB_VEL_MINE_MODE);
                     }
                     else
                     {
-                        if(rc.data.using_kb_flag)
-                        {
-                            robot.RC_Set_Chassis_Vel_X(0);
-                        }
+                        robot.RC_Set_Chassis_Vel_X(0);
                     }
                 }
             }
@@ -464,7 +577,7 @@ void KB_Device::KeyS_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -473,10 +586,12 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Y,2.0);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Y,1.0);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -491,11 +606,11 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -503,10 +618,10 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
                    {
                        robot.RC_Set_Chassis_Vel_Y(-CHASSIS_KB_VEL_STEER_MODE_QUICK);
                    }
-                    else
-                    {
-                        robot.RC_Set_Chassis_Vel_Y(0);
-                    }
+                   else
+                   {
+                       robot.RC_Set_Chassis_Vel_Y(0);
+                   }
                 }
                 else
                 {
@@ -520,6 +635,17 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
                         {
                             robot.RC_Set_Chassis_Vel_Y(0);
                         }
+                        else
+                        {
+                            if(RC_Check_SW_State(RC_SW_L_UP))
+                            {
+                                robot.RC_Set_Chassis_Vel_Y(rc.data.left_rocker.x);
+                            }
+                            else
+                            {
+                                robot.RC_Set_Chassis_Vel_Y(0);
+                            }
+                        }
                     }
                 }
             }
@@ -532,14 +658,17 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Y,2.0);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Y,1.0);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
                     gimbal.Add_Slide_Distance(0.25f);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else
                 {
@@ -550,28 +679,25 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else
                 {
-                    if(RC_Check_Key_Down_Event(KeyD))
+                    if(RC_Check_Key_Down_State(KeyD))
                     {
                         robot.RC_Set_Chassis_Vel_Y(-CHASSIS_KB_VEL_MINE_MODE);
                     }
                     else
                     {
-                        if(rc.data.using_kb_flag)
-                        {
-                            robot.RC_Set_Chassis_Vel_Y(0);
-                        }
+                        robot.RC_Set_Chassis_Vel_Y(0);
                     }
                 }
             }
@@ -586,7 +712,7 @@ void KB_Device::KeyA_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -595,10 +721,12 @@ void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Y,-2.0);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Y,-1.0);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -613,11 +741,11 @@ void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
@@ -642,6 +770,17 @@ void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
                         {
                             robot.RC_Set_Chassis_Vel_Y(0);
                         }
+                        else
+                        {
+                            if(RC_Check_SW_State(RC_SW_L_UP))
+                            {
+                                robot.RC_Set_Chassis_Vel_Y(rc.data.left_rocker.x);
+                            }
+                            else
+                            {
+                                robot.RC_Set_Chassis_Vel_Y(0);
+                            }
+                        }
                     }
                 }
             }
@@ -654,14 +793,17 @@ void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Y,-2.0);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
                     arm.Add_Point_Target_Pos_From_Control(Y,-1.0);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
                     gimbal.Add_Slide_Distance(-0.25f);
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else
                 {
@@ -672,28 +814,25 @@ void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    robot.RC_Set_Chassis_Vel_Y(0);
                 }
                 else
                 {
-                    if(RC_Check_Key_Down_Event(KeyA))
+                    if(RC_Check_Key_Down_State(KeyA))
                     {
                         robot.RC_Set_Chassis_Vel_Y(CHASSIS_KB_VEL_MINE_MODE);
                     }
                     else
                     {
-                        if(rc.data.using_kb_flag)
-                        {
-                            robot.RC_Set_Chassis_Vel_X(0);
-                        }
+                        robot.RC_Set_Chassis_Vel_Y(0);
                     }
                 }
             }
@@ -708,7 +847,7 @@ void KB_Device::KeyD_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeySHIFT_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -743,7 +882,7 @@ void KB_Device::KeySHIFT_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyCTRL_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -778,7 +917,7 @@ void KB_Device::KeyCTRL_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyQ_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -873,7 +1012,7 @@ void KB_Device::KeyQ_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyE_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -968,7 +1107,7 @@ void KB_Device::KeyE_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyR_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -980,15 +1119,15 @@ void KB_Device::KeyR_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
+
+                }
+                else if(rc.data.kb.key_bit_state.SHIFT)
+                {
                     kb.gimbal_reset_cnt++;
                     if(kb.gimbal_reset_cnt == 200)
                     {
                         kb.Set_Gimbal_Reset();
                     }
-                }
-                else if(rc.data.kb.key_bit_state.SHIFT)
-                {
-
                 }
                 else
                 {
@@ -1003,11 +1142,11 @@ void KB_Device::KeyR_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    kb.gimbal_reset_cnt = 0;
+
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    kb.gimbal_reset_cnt = 0;
                 }
                 else
                 {
@@ -1030,7 +1169,11 @@ void KB_Device::KeyR_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    kb.gimbal_reset_cnt++;
+                    if(kb.gimbal_reset_cnt == 200)
+                    {
+                        kb.Set_Gimbal_Reset();
+                    }
                 }
                 else
                 {
@@ -1049,7 +1192,7 @@ void KB_Device::KeyR_State_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-
+                    kb.gimbal_reset_cnt = 0;
                 }
                 else
                 {
@@ -1067,7 +1210,7 @@ void KB_Device::KeyR_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyF_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1162,7 +1305,7 @@ void KB_Device::KeyF_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyG_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1257,7 +1400,7 @@ void KB_Device::KeyG_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyZ_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1352,7 +1495,7 @@ void KB_Device::KeyZ_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyX_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1447,7 +1590,7 @@ void KB_Device::KeyX_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyC_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1542,7 +1685,7 @@ void KB_Device::KeyC_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyV_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1637,7 +1780,7 @@ void KB_Device::KeyV_State_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyB_State_Callback(enum KEY_DIR dir)
 {
-    switch (robot.control_mode)
+    switch (robot.kb_control_mode)
     {
         case STEER_MODE:
         {

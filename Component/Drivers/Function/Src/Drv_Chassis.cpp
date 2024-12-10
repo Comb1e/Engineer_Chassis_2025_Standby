@@ -29,6 +29,7 @@ Chassis_Device::Chassis_Device()
     this->vel_max.rc = CHASSIS_VEL_RC_MAX;
     this->vel_max.total = CHASSIS_VEL_TOTAL_MAX;
     this->arm_need_cnt = 0;
+    this->rot_flag = false;
 }
 
 void Chassis_Device::Init()
@@ -51,7 +52,7 @@ void Chassis_Device::Init()
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
 
-    this->pid_rot.Init(7.6,0,0,100,1);
+    this->pid_rot.Init(8.2,0,0,100,0.9);
 
     this->Power_Control_Data_Init();
 }
@@ -239,11 +240,8 @@ bool Chassis_Device::Check_Tof_Lost_Flag() const
 
 __RAM_FUNC void Chassis_Device::Update_Position_Control()
 {
-    if(!hi229um.state.ready_flag)
-    {
-        return;
-    }
     //this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()));
+
     Chassis_Motor_Loc_SolverSet(this->wheel,this->position.x,this->position.y,this->position.spin);
     for(auto & i : this->wheel)
     {
@@ -395,6 +393,7 @@ void Chassis_Device::Judge_For_Arm_Need()
         }
         this->position.x = arm.chassis_move_data.x;
         this->position.y = arm.chassis_move_data.y;
+        this->Close_Yaw_Spin();
         this->arm_need_cnt++;
 
         if(this->arm_need_cnt > 200)
@@ -482,4 +481,30 @@ void Chassis_Device::Reset_Total_Rounds()
     this->wheel[1].Reset_Total_Rounds_Offset(0);
     this->wheel[2].Reset_Total_Rounds_Offset(0);
     this->wheel[3].Reset_Total_Rounds_Offset(0);
+}
+
+void Chassis_Device::Set_Rot()
+{
+    this->rot_flag = true;
+    kb.auto_rot = true;
+}
+
+void Chassis_Device::Close_Rot()
+{
+    this->rot_flag = false;
+    kb.auto_rot = false;
+    this->Close_Yaw_Spin();
+}
+
+bool Chassis_Device::Check_Yaw_At_Set() const
+{
+    if(hi229um.state.ready_flag)
+    {
+        if(ABS(this->pos_yaw_angle - HI229UM_Get_Yaw_Total_Deg()) < 0.03f)
+        {
+            return true;
+        }
+        return false;
+    }
+    return true;
 }

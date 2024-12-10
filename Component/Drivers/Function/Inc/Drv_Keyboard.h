@@ -13,6 +13,17 @@ extern "C"
 #include "stm32f4xx_hal.h"
 #include "Drv_RemoteCtrl.h"
 
+typedef struct
+{
+    bool exchange_five_grade_flag;
+    bool exchange_four_grade_flag;
+    bool gimbal_reset_flag;
+    bool arm_homing_flag;
+    bool sucker_reset_flag;
+    bool turn_chassis_back_flag;
+    bool adjust_ore_flag;
+}sign_t;
+
 #ifdef __cplusplus
 }
 #endif
@@ -60,9 +71,9 @@ private:
 public:
     KB_Device();
 
-    bool exchange_five_grade_flag;
-    bool exchange_four_grade_flag;
-    bool gimbal_reset_flag;
+    sign_t sign;
+
+    bool auto_rot;
 
     uint32_t gimbal_reset_cnt;
 
@@ -111,6 +122,10 @@ public:
     void Set_Exchange_Four_Grade();
     void Set_Exchange_Five_Grade();
     void Set_Gimbal_Reset();
+    void Set_Arm_Homing();
+    void Set_Sucker_Reset();
+    void Set_Turn_Chassis_Back();
+    void Set_Adjust_Ore();
 };
 
 extern KB_Device kb;

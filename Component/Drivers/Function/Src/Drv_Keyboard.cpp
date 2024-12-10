@@ -8,9 +8,12 @@ KB_Device kb;
 
 KB_Device::KB_Device()
 {
-    this->exchange_five_grade_flag = false;
-    this->exchange_four_grade_flag = false;
-    this->gimbal_reset_flag = false;
+    this->sign.exchange_five_grade_flag = false;
+    this->sign.exchange_four_grade_flag = false;
+    this->sign.gimbal_reset_flag = false;
+    this->sign.arm_homing_flag = false;
+    this->sign.sucker_reset_flag = false;
+    this->sign.adjust_ore_flag = false;
 
     this->gimbal_reset_cnt = 0;
 }
@@ -48,15 +51,37 @@ void KB_Device::Check_KB_Event()
 
 void KB_Device::Set_Exchange_Five_Grade()
 {
-    this->exchange_five_grade_flag = true;
+    this->sign.exchange_five_grade_flag = true;
 }
 
 void KB_Device::Set_Exchange_Four_Grade()
 {
-    this->exchange_four_grade_flag = true;
+    this->sign.exchange_four_grade_flag = true;
 }
 
 void KB_Device::Set_Gimbal_Reset()
 {
-    this->gimbal_reset_flag = true;
+    this->sign.gimbal_reset_flag = true;
 }
+
+void KB_Device::Set_Arm_Homing()
+{
+    this->sign.arm_homing_flag = true;
+}
+
+void KB_Device::Set_Sucker_Reset()
+{
+    this->sign.sucker_reset_flag = true;
+}
+
+void KB_Device::Set_Turn_Chassis_Back()
+{
+    this->sign.turn_chassis_back_flag = true;
+    this->auto_rot = true;
+}
+
+void KB_Device::Set_Adjust_Ore()
+{
+    this->sign.adjust_ore_flag = true;
+}
+

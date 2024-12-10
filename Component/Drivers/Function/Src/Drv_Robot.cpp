@@ -20,7 +20,7 @@ AutoGroundMine_Attributes({.name = "autoGroundMine", .stack_size = 128 *4, .prio
     this->enable_flag = false;
 #endif
 
-    this->control_mode = STEER_MODE;
+    this->kb_control_mode = STEER_MODE;
     this->autoSituation = Auto_None;
     this->autoStatus = AutoOK;
     this->cancel_flag = false;
@@ -29,25 +29,45 @@ AutoGroundMine_Attributes({.name = "autoGroundMine", .stack_size = 128 *4, .prio
     this->select_right_flag = false;
 }
 
-void Robot_Device::Set_Control_Mode_Mine()
+void Robot_Device::Set_Control_Mode(robot_control_mode_e control_mode)
 {
-    this->control_mode = MINE_MODE;
+    this->control_mode = control_mode;
 }
 
-void Robot_Device::Set_Control_Mode_Steer()
+void Robot_Device::Set_KB_Control_Mode_Mine()
 {
-    this->control_mode = STEER_MODE;
+    this->kb_control_mode = MINE_MODE;
+}
+
+void Robot_Device::Set_KB_Control_Mode_Steer()
+{
+    this->kb_control_mode = STEER_MODE;
 }
 
 
 void Robot_Device::RC_Set_Chassis_Vel_X(float vel_x)
 {
-    chassis.Set_X_Slope_Speed_Target(vel_x * chassis.vel_max.rc);
+    if(rc.data.using_kb_flag)
+    {
+        chassis.Set_X_Slope_Speed_Target(vel_x * chassis.vel_max.kb);
+    }
+    else
+    {
+        chassis.Set_X_Slope_Speed_Target(vel_x * chassis.vel_max.rc);
+    }
 }
 
 void Robot_Device::RC_Set_Chassis_Vel_Y(float vel_y)
 {
-    chassis.Set_Y_Slope_Speed_Target(vel_y * chassis.vel_max.rc);
+    if(rc.data.using_kb_flag)
+    {
+        chassis.Set_Y_Slope_Speed_Target(vel_y * chassis.vel_max.kb);
+    }
+    else
+    {
+        chassis.Set_Y_Slope_Speed_Target(vel_y * chassis.vel_max.rc);
+    }
+
 }
 
 void Robot_Device::RC_Set_Chassis_Vel_Spin(float vel_spin)
@@ -60,7 +80,6 @@ void Robot_Device::RC_Set_Chassis_Vel_Spin(float vel_spin)
     else
     {
         chassis.Set_Vel_Spin(vel_spin * chassis.vel_max.rc);
-        HI229UM_Set_Current_As_Offset();
     }
 }
 
@@ -186,6 +205,15 @@ void Robot_Device::Update_Chassis_Speed_Limit()
     Update_Slope_SPD(&chassis.kb_vel_y, val * 0.006f, val * 0.006f, sqrtf(val) * CHASSIS_VEL_KB_MAX);
 }
 
+void Robot_Device::Set_Auto_Situation(autoSituation_e autoSituation)
+{
+    this->autoSituation = autoSituation;
+    if(this->autoSituation == Auto_None)
+    {
+        this->Set_Control_Mode(RC_KB_CONTROL);
+    }
+}
+
 void Robot_Device::Creat_Task_Init()
 {
 
@@ -196,25 +224,203 @@ void Robot_Device::Exit_Task()
 
 }
 
+void Robot_Device::Check_Rot()
+{
+    if(chassis.rot_flag && arm.Check_Safe_Position())
+    {
+        this->RC_Set_Chassis_Vel_Spin(0.1f);
+    }
+}
 
 void Robot_Device::Check_KB_Event()
 {
-    if(kb.exchange_five_grade_flag)
+    if(kb.sign.exchange_five_grade_flag)
     {
         this->Exchange_Five_Grade();
-        kb.exchange_five_grade_flag = false;
+        kb.sign.exchange_five_grade_flag = false;
     }
-    else if(kb.exchange_four_grade_flag)
+    else if(kb.sign.exchange_four_grade_flag)
     {
         this->Exchange_Four_Grade();
-        kb.exchange_four_grade_flag = false;
+        kb.sign.exchange_four_grade_flag = false;
     }
-    else if(kb.gimbal_reset_flag)
+    else if(kb.sign.gimbal_reset_flag)
     {
         this->Gimbal_Reset();
-        kb.gimbal_reset_flag = false;
+        kb.sign.gimbal_reset_flag = false;
+    }
+    else if(kb.sign.arm_homing_flag)
+    {
+        this->Arm_Homing();
+        kb.sign.arm_homing_flag = false;
+    }
+    else if(kb.sign.sucker_reset_flag)
+    {
+        this->Sucker_Reset();
+        kb.sign.sucker_reset_flag = false;
+    }
+    else if(kb.sign.turn_chassis_back_flag)
+    {
+        this->Turn_Chassis_Back();
+        kb.sign.turn_chassis_back_flag = false;
+        kb.auto_rot = false;
+    }
+    else if(kb.sign.adjust_ore_flag)
+    {
+        this->Adjust_Ore();
+        kb.sign.adjust_ore_flag = false;
     }
 }
+
+void Robot_Device::Adjust_Ore()
+{
+
+}
+
+
+void Robot_Device::Set_Store_Sucker()
+{
+    while(true)
+    {
+        if(this->Check_Select_Center())
+        {
+            absorb.Set_Sucker_Open(ARM_SUCKER);
+            break;
+        }
+        if(this->Check_Select_Left())
+        {
+            absorb.Set_Sucker_Open(LEFT_SUCKER);
+            break;
+        }
+        if(this->Check_Select_Right())
+        {
+            absorb.Set_Sucker_Open(RIGHT_SUCKER);
+            break;
+        }
+    }
+}
+
+
+void Robot_Device::Sucker_Reset()
+{
+    if (absorb.Check_Sucker_Holding(ARM_SUCKER))
+    {
+        absorb.Set_Sucker_Close(ARM_SUCKER);
+        osDelay(400);
+    }
+
+    info.tx_raw_data.sucker_reset_flag = true;
+    osDelay(10);
+    arm.Set_Point_Final_Posture(ROLL, INIT_SUCKER_ROLL);
+    arm.Set_Point_Final_Posture(YAW, INIT_SUCKER_YAW);
+    arm.Set_Point_Final_Posture(PITCH, INIT_SUCKER_PITCH);
+}
+
+void Robot_Device::Arm_Homing()
+{
+    arm.Change_XYZ_Basic_Step(HOME_ARM_TRAJECTORY_VEL_XYZ);
+    arm.Change_RYP_Basic_Step(HOME_ARM_TRAJECTORY_VEL_RPY);
+    arm.Set_Step_Protected();
+    uint32_t time = HAL_GetTick();
+    if (absorb.Check_Sucker_Holding(ARM_SUCKER))
+    {
+        arm.Set_Point_Final_Posture(Y, HOMING_ARM_Y_WITH_ORE);
+        while (!arm.Check_All_Get_To_Final())
+        {
+            if (HAL_GetTick() > time + 8000)
+            {
+                break;
+            }
+            osDelay(1);
+        }
+
+        time = HAL_GetTick();
+        arm.Set_Point_Final_Posture(ARM_YAW, HOMING_ARM_YAW_DEG);
+        arm.Set_Point_Final_Posture(ARM_PITCH,HOMING_ARM_PITCH_DEG);
+        arm.Set_Point_Final_Posture(X, HOMING_ARM_X_WITH_ORE);
+        arm.Set_Point_Final_Posture(Z, HOMING_ARM_Z);
+
+        while (!arm.Check_All_Get_To_Final())
+        {
+            if (HAL_GetTick() > time + 8000)
+            {
+                break;
+            }
+            osDelay(1);
+        }
+
+        time = HAL_GetTick();
+        arm.Set_Point_Final_Posture(YAW, HOMING_SUCKER_YAW_WITH_ORE);
+        arm.Set_Point_Final_Posture(PITCH, HOMING_SUCKER_PITCH_WITH_ORE);
+        arm.Set_Point_Final_Posture(ROLL, HOMING_SUCKER_ROLL_WITH_ORE);
+        while (!arm.Check_All_Get_To_Final())
+        {
+            if (HAL_GetTick() > time + 8000)
+            {
+                break;
+            }
+            osDelay(1);
+        }
+        time = HAL_GetTick();
+        arm.Set_Point_Final_Posture(Z, HOMING_ARM_Z_WITH_ORE);
+
+        while (!arm.Check_All_Get_To_Final())
+        {
+            if (HAL_GetTick() > time + 8000)
+            {
+                break;
+            }
+            osDelay(1);
+        }
+    }
+    else
+    {
+        arm.Set_Point_Final_Posture(ARM_YAW, HOMING_ARM_YAW_DEG);
+        arm.Set_Point_Final_Posture(ARM_PITCH,HOMING_ARM_PITCH_DEG);
+        arm.Set_Point_Target_Pos_Vel(Y,HOMING_ARM_Y,HOME_ARM_TRAJECTORY_VEL_XYZ);
+        while (!arm.Check_All_Get_To_Final())
+        {
+            if (HAL_GetTick() > time + 12000)
+            {
+                break;
+            }
+            osDelay(1);
+        }
+        arm.Set_Point_Target_Pos_Vel(ARM_YAW,HOMING_ARM_YAW_DEG,HOME_ARM_TRAJECTORY_VEL_RPY);
+        while (!arm.Check_All_Get_To_Final())
+        {
+            if (HAL_GetTick() > time + 12000)
+            {
+                break;
+            }
+            osDelay(1);
+        }
+        arm.Set_Point_Target_Pos_Vel(ROLL,HOMING_SUCKER_ROLL,HOME_ARM_TRAJECTORY_VEL_RPY);
+        arm.Set_Point_Target_Pos_Vel(PITCH,HOMING_SUCKER_PITCH,HOME_ARM_TRAJECTORY_VEL_RPY);
+        arm.Set_Point_Target_Pos_Vel(YAW,HOMING_SUCKER_YAW,HOME_ARM_TRAJECTORY_VEL_RPY);
+        while (!arm.Check_All_Get_To_Final())
+        {
+            if (HAL_GetTick() > time + 12000)
+            {
+                break;
+            }
+            osDelay(1);
+        }
+        arm.Set_Point_Target_Pos_Vel(X,HOMING_ARM_X,HOME_ARM_TRAJECTORY_VEL_XYZ);
+        arm.Set_Point_Target_Pos_Vel(Z,HOMING_ARM_Z,HOME_ARM_TRAJECTORY_VEL_XYZ);
+
+        while (!arm.Check_All_Get_To_Final())
+        {
+            if (HAL_GetTick() > time + 12000)
+            {
+                break;
+            }
+            osDelay(1);
+        }
+    }
+    arm.Close_Step_protected();
+}
+
 
 void Robot_Device::Gimbal_Reset()
 {
@@ -239,6 +445,22 @@ void Robot_Device::Gimbal_Reset()
     arm.Posture_Init();
 }
 
+void Robot_Device::Turn_Chassis_Back()
+{
+    uint32_t time = 0;
+    this->RC_Set_Chassis_Vel_Spin(0.5f);
+    while(!chassis.Check_Yaw_At_Set())
+    {
+        time++;
+        if(time > 8000)
+        {
+            break;
+        }
+        osDelay(1);
+    }
+}
+
+
 void Robot_Device::Exchange_Five_Grade()
 {
     this->ExitTask_AutoExchange();
@@ -254,7 +476,7 @@ void Robot_Device::Exchange_Five_Grade()
 
 void Robot_Device::Left_Exchange_Five_Grade()
 {
-    gimbal.Set_Gimbal_Left();
+    gimbal.Set_Left();
 
     info.Set_Pose_Mode(single);
     osDelay(1);
@@ -300,7 +522,7 @@ void Robot_Device::Left_Exchange_Five_Grade()
 
 void Robot_Device::Right_Exchange_Five_Grade()
 {
-    gimbal.Set_Gimbal_Right();
+    gimbal.Set_Right();
 
     info.Set_Pose_Mode(single);
     osDelay(1);

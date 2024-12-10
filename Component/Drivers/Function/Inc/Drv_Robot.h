@@ -30,7 +30,14 @@ typedef enum
     MODE_NONE,
     STEER_MODE,
     MINE_MODE
-}control_mode_e;
+}kb_control_mode_e;
+
+typedef enum
+{
+    RC_KB_CONTROL = 0,//键盘遥控器
+    VISUAL_CONTROL,//视觉
+    AUTO_CONTROL,//自动化模块
+}robot_control_mode_e;
 
 typedef enum
 {
@@ -63,10 +70,15 @@ public:
     bool select_center_flag;
     bool cancel_flag;
 
-    control_mode_e control_mode;
+    sucker_e store_sucker;
 
-    void Set_Control_Mode_Mine();
-    void Set_Control_Mode_Steer();
+    kb_control_mode_e kb_control_mode;
+    robot_control_mode_e control_mode;
+
+    void Set_Control_Mode(robot_control_mode_e control_mode);
+
+    void Set_KB_Control_Mode_Mine();
+    void Set_KB_Control_Mode_Steer();
 
     void RC_Set_Chassis_Vel_X(float vel_x);
     void RC_Set_Chassis_Vel_Y(float vel_y);
@@ -91,9 +103,17 @@ public:
     float Get_Arm_Point_Limit_Chassis_Val();
     void Update_Chassis_Speed_Limit();
 
+    void Check_Rot();
     void Check_KB_Event();
 
+    void Adjust_Ore();
+    void Set_Store_Sucker();
+
     void Gimbal_Reset();
+    void Arm_Homing();
+    void Sucker_Reset();
+
+    void Turn_Chassis_Back();
 
     void Exchange_Five_Grade();
     void Left_Exchange_Five_Grade();
@@ -117,11 +137,21 @@ public:
     const osThreadAttr_t AutoExchange_Attributes;
     const osThreadAttr_t AutoGroundMine_Attributes;
 
+    void Set_Auto_Situation(autoSituation_e autoSituation);
     void Creat_Task_Init();
     void Exit_Task();
 //AutoExchange
-    void CreatTask_Auto_Exchange(void *argument);
+    void CreatTask_Auto_Exchange();
     void ExitTask_AutoExchange();
+//AutoBigIsland
+    void CreatTask_Auto_BigIsland();
+    void ExitTask_Auto_BigIsland();
+//AutoSmallIsland
+    void CreatTask_Auto_SmallIsland();
+    void ExitTask_Auto_SmallIsland();
+//AutoGroundMine
+    void CreatTask_Auto_GroundMine();
+    void ExitTask_Auto_GroundMine();
 };
 
 extern Robot_Device robot;

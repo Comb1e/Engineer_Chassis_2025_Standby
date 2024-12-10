@@ -9,7 +9,7 @@ void AutoExchange_Task(void *argument)
     osThreadExit();
 }
 
-void Robot_Device::CreatTask_Auto_Exchange(void *argument)
+void Robot_Device::CreatTask_Auto_Exchange()
 {
     osThreadState_t state = osThreadGetState(this->AutoExchangeHandle);
     if (this->enable_flag && this->autoSituation == Auto_None && (absorb.Get_Ore_Num() != 0))

@@ -957,6 +957,30 @@ Component/Tasks/Automation/Src/AutoCtrl_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/AutoCtrl_Task.cpp.s
 .PHONY : Component/Tasks/Automation/Src/AutoCtrl_Task.cpp.s
 
+Component/Tasks/Automation/Src/Auto_BigIsland_Task.obj: Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.obj
+.PHONY : Component/Tasks/Automation/Src/Auto_BigIsland_Task.obj
+
+# target to build an object file
+Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.obj
+.PHONY : Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.obj
+
+Component/Tasks/Automation/Src/Auto_BigIsland_Task.i: Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.i
+.PHONY : Component/Tasks/Automation/Src/Auto_BigIsland_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.i
+.PHONY : Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.i
+
+Component/Tasks/Automation/Src/Auto_BigIsland_Task.s: Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.s
+.PHONY : Component/Tasks/Automation/Src/Auto_BigIsland_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.s
+.PHONY : Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.s
+
 Component/Tasks/Automation/Src/Auto_Exchange_Task.obj: Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.obj
 .PHONY : Component/Tasks/Automation/Src/Auto_Exchange_Task.obj
 
@@ -980,6 +1004,54 @@ Component/Tasks/Automation/Src/Auto_Exchange_Task.s: Component/Tasks/Automation/
 Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s
 .PHONY : Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s
+
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj
+
+# target to build an object file
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
+
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.i: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
+
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.s: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
+
+Component/Tasks/Automation/Src/Auto_SmallIsland.obj: Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.obj
+.PHONY : Component/Tasks/Automation/Src/Auto_SmallIsland.obj
+
+# target to build an object file
+Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.obj
+.PHONY : Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.obj
+
+Component/Tasks/Automation/Src/Auto_SmallIsland.i: Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.i
+.PHONY : Component/Tasks/Automation/Src/Auto_SmallIsland.i
+
+# target to preprocess a source file
+Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.i
+.PHONY : Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.i
+
+Component/Tasks/Automation/Src/Auto_SmallIsland.s: Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.s
+.PHONY : Component/Tasks/Automation/Src/Auto_SmallIsland.s
+
+# target to generate assembly for a file
+Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.s
+.PHONY : Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.s
 
 Component/Tasks/Function/Src/Absorb_Task.obj: Component/Tasks/Function/Src/Absorb_Task.cpp.obj
 .PHONY : Component/Tasks/Function/Src/Absorb_Task.obj
@@ -2877,9 +2949,18 @@ help:
 	@echo ... Component/Tasks/Automation/Src/AutoCtrl_Task.obj
 	@echo ... Component/Tasks/Automation/Src/AutoCtrl_Task.i
 	@echo ... Component/Tasks/Automation/Src/AutoCtrl_Task.s
+	@echo ... Component/Tasks/Automation/Src/Auto_BigIsland_Task.obj
+	@echo ... Component/Tasks/Automation/Src/Auto_BigIsland_Task.i
+	@echo ... Component/Tasks/Automation/Src/Auto_BigIsland_Task.s
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.obj
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.i
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.s
+	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj
+	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.i
+	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.s
+	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.obj
+	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.i
+	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.s
 	@echo ... Component/Tasks/Function/Src/Absorb_Task.obj
 	@echo ... Component/Tasks/Function/Src/Absorb_Task.i
 	@echo ... Component/Tasks/Function/Src/Absorb_Task.s

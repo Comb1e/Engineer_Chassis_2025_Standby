@@ -144,6 +144,10 @@ void Arm_Device::CAN_Set()
 void Arm_Device::Set_Point_Final_Posture(traj_item_e point, float posture)
 {
     this->trajectory_final[point] = posture;
+    if(point != X && point != Y)
+    {
+        VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
+    }
 }
 
 void Arm_Device::Set_Point_Posture(traj_item_e point, float posture)
@@ -210,29 +214,29 @@ void Arm_Device::Update_Final()
 {
     for (traj_item_e point = X; point < TRAJ_ITEM_NUM; point = (traj_item_e) (point + 1))
     {
-        if(chassis.set_vel.x == 0 && chassis.set_vel.y == 0 && chassis.set_vel.spin == 0)
+        if(chassis.set_vel.x == 0 && chassis.set_vel.y == 0 && ABS(chassis.set_vel.spin) < 0.01f)
         {
             if(point == X)
             {
                  if(this->trajectory_final[X] > max_limit[X])
                 {
-                     this->arm_chassis_cooperate_flag = true;
-                     this->chassis_move_data.x += this->trajectory_final[X] - max_limit[X];
-                     this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(max_limit[X]);
-                     this->trajectory_final[X] = max_limit[X];
-                     this->trajectory[X].final = max_limit[X];
+                    this->arm_chassis_cooperate_flag = true;
+                    this->chassis_move_data.x += this->trajectory_final[X] - max_limit[X];
+                    this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(max_limit[X]);
+                    this->trajectory_final[X] = max_limit[X];
+                    this->trajectory[X].final = max_limit[X];
 
-                     chassis.arm_need_cnt = 0;
+                    chassis.arm_need_cnt = 0;
                 }
-                else if(this->trajectory_final[X] < min_limit[X] && chassis.set_vel.x == 0 && chassis.set_vel.y == 0 && chassis.set_vel.spin == 0)
+                else if(this->trajectory_final[X] < min_limit[X])
                 {
-                     this->arm_chassis_cooperate_flag = true;
-                     this->chassis_move_data.x += this->trajectory_final[X] - min_limit[X];
-                     this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(min_limit[X]);
-                     this->trajectory_final[X] = min_limit[X];
-                     this->trajectory[X].final = min_limit[X];
+                    this->arm_chassis_cooperate_flag = true;
+                    this->chassis_move_data.x += this->trajectory_final[X] - min_limit[X];
+                    this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(min_limit[X]);
+                    this->trajectory_final[X] = min_limit[X];
+                    this->trajectory[X].final = min_limit[X];
 
-                     chassis.arm_need_cnt = 0;
+                    chassis.arm_need_cnt = 0;
                 }
                 else
                 {
@@ -243,7 +247,7 @@ void Arm_Device::Update_Final()
             }
             else if(point == Y)
             {
-                if(this->trajectory_final[Y] > max_limit[Y] && chassis.set_vel.x == 0 && chassis.set_vel.y == 0 && chassis.set_vel.spin == 0)
+                if(this->trajectory_final[Y] > max_limit[Y])
                 {
                     this->arm_chassis_cooperate_flag = true;
                     this->chassis_move_data.y += this->trajectory_final[Y] - max_limit[Y];
@@ -253,7 +257,7 @@ void Arm_Device::Update_Final()
 
                     chassis.arm_need_cnt = 0;
                 }
-                else if(this->trajectory_final[Y] < min_limit[Y] && chassis.set_vel.x == 0 && chassis.set_vel.y == 0 && chassis.set_vel.spin == 0)
+                else if(this->trajectory_final[Y] < min_limit[Y])
                 {
                     this->arm_chassis_cooperate_flag = true;
                     this->chassis_move_data.y += this->trajectory_final[Y] - min_limit[Y];
@@ -386,7 +390,7 @@ void Arm_Device::Add_Point_Target_Pos_From_Control(traj_item_e point, float delt
         this->trajectory_final[point] += delta/ fabsf(delta) *this->trajectory[point].basic_step;
     }
 
-    if(point !=X && point !=Y)
+    if(point != X && point != Y)
     {
         VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
     }
@@ -545,4 +549,43 @@ void Arm_Device::Set_Point_Target_Pos_Vel(traj_item_e point, float pos, float ve
 {
     this->Set_Point_Final_Posture(point,pos);
     this->trajectory[point].Change_Basic_Step(vel);
+}
+
+void Arm_Device::Add_Point_Target_Pos_Vel(traj_item_e point, float delta, float vel)
+{
+    this->trajectory_final[point] += delta;
+    this->trajectory[point].Change_Basic_Step(vel);
+    if(point != X && point != Y)
+    {
+        VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
+    }
+}
+
+void Arm_Device::Change_RYP_Basic_Step(float new_step)
+{
+    this->trajectory[YAW].Change_Basic_Step(new_step);
+    this->trajectory[PITCH].Change_Basic_Step(new_step);
+    this->trajectory[ROLL].Change_Basic_Step(new_step);
+    this->trajectory[ARM_YAW].Change_Basic_Step(new_step);
+    this->trajectory[ARM_PITCH].Change_Basic_Step(new_step);
+}
+
+void Arm_Device::Change_XYZ_Basic_Step(float new_step)
+{
+    this->trajectory[X].Change_Basic_Step(new_step);
+    this->trajectory[Y].Change_Basic_Step(new_step);
+    this->trajectory[Z].Change_Basic_Step(new_step);
+}
+
+/**
+ * @brief 检查机械臂是否处于相对安全的位置（主要是xyz)，认为初始位置即为安全位置
+ * @return
+ */
+bool Arm_Device::Check_Safe_Position()
+{
+    if(fabsf(this->trajectory[X].track_point - INIT_ARM_X) < XYZ_ERROR && fabsf(this->trajectory[Y].track_point - INIT_ARM_Y) < XYZ_ERROR && fabsf(this->trajectory[Z].track_point - INIT_ARM_Z) < XYZ_ERROR)
+    {
+        return true;
+    }
+    return false;
 }
