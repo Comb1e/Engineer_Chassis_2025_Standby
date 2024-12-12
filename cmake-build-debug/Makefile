@@ -885,29 +885,29 @@ Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.s
 
-Component/Drivers/Peripherals/Src/Drv_Usb.obj: Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.obj
+Component/Drivers/Peripherals/Src/Drv_USB.obj: Component/Drivers/Peripherals/Src/Drv_USB.cpp.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_USB.obj
 
 # target to build an object file
-Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.cpp.obj
+Component/Drivers/Peripherals/Src/Drv_USB.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_USB.cpp.obj
+.PHONY : Component/Drivers/Peripherals/Src/Drv_USB.cpp.obj
 
-Component/Drivers/Peripherals/Src/Drv_Usb.i: Component/Drivers/Peripherals/Src/Drv_Usb.cpp.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.i
+Component/Drivers/Peripherals/Src/Drv_USB.i: Component/Drivers/Peripherals/Src/Drv_USB.cpp.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_USB.i
 
 # target to preprocess a source file
-Component/Drivers/Peripherals/Src/Drv_Usb.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Usb.cpp.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.cpp.i
+Component/Drivers/Peripherals/Src/Drv_USB.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_USB.cpp.i
+.PHONY : Component/Drivers/Peripherals/Src/Drv_USB.cpp.i
 
-Component/Drivers/Peripherals/Src/Drv_Usb.s: Component/Drivers/Peripherals/Src/Drv_Usb.cpp.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.s
+Component/Drivers/Peripherals/Src/Drv_USB.s: Component/Drivers/Peripherals/Src/Drv_USB.cpp.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_USB.s
 
 # target to generate assembly for a file
-Component/Drivers/Peripherals/Src/Drv_Usb.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Usb.cpp.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Usb.cpp.s
+Component/Drivers/Peripherals/Src/Drv_USB.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_USB.cpp.s
+.PHONY : Component/Drivers/Peripherals/Src/Drv_USB.cpp.s
 
 Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj: Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj
@@ -2940,9 +2940,9 @@ help:
 	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.s
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.obj
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.i
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Usb.s
+	@echo ... Component/Drivers/Peripherals/Src/Drv_USB.obj
+	@echo ... Component/Drivers/Peripherals/Src/Drv_USB.i
+	@echo ... Component/Drivers/Peripherals/Src/Drv_USB.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.s

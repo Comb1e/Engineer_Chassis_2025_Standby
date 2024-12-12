@@ -156,7 +156,7 @@ public:
 
     chassis_power_control_data_t power_control;
 
-    float pos_yaw_angle;//2PI
+    float pos_yaw_angle;//角度
 
     uint32_t arm_need_cnt;
 

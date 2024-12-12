@@ -10,17 +10,15 @@
 #if USB
 void USB_Task(void *argument)
 {
-    USB_Device_Init(&usb_device);
     uint32_t tick = 0;
     tick = osKernelGetTickCount();
     for (;;)
     {
-        USB_Receive(&usb_device);
-        USB_Update_RX_Data(&usb_device);
-        USB_Update_TX_Data(&usb_device);
-        USB_Transmit(&usb_device);
-        USB_Calculate_Camera_Pose_To_Effector_Pose(&usb_device);
-        //        g_usb.remain_camera_horizontal();
+        usb.Receive_Data();
+        usb.Update_RX_Data();
+        usb.Update_TX_Data();
+        usb.Transmit_Data();
+        usb.Calculate_Camera_Get_Pose_To_Effector_Pose();
         tick += USB_CONTROL_CYCLE;
         osDelayUntil(tick);
     }

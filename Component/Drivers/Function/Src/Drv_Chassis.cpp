@@ -240,7 +240,7 @@ bool Chassis_Device::Check_Tof_Lost_Flag() const
 
 __RAM_FUNC void Chassis_Device::Update_Position_Control()
 {
-    //this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()));
+    this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()) - this->position.spin);
 
     Chassis_Motor_Loc_SolverSet(this->wheel,this->position.x,this->position.y,this->position.spin);
     for(auto & i : this->wheel)
@@ -436,7 +436,7 @@ void Chassis_Device::Close_Yaw_Spin()
 {
     HI229UM_Set_Current_As_Offset();
 
-    this->pos_yaw_angle = HI229UM_Get_Yaw_Total_Deg();
+    this->pos_yaw_angle = HI229UM_Get_Yaw_Total_Deg() * 360.0f;
     this->Set_Vel_Spin(0);
 }
 

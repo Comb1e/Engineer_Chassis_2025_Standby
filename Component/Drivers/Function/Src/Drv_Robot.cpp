@@ -90,13 +90,6 @@ void Robot_Device::RC_Set_Chassis_Vel(float vel_x, float vel_y, float vel_spin)
     this->RC_Set_Chassis_Vel_Spin(vel_spin);
 }
 
-void Robot_Device::RC_Set_Chasssis_Position(float pos_x, float pos_y, float pos_spin)
-{
-    chassis.Add_Position_X(pos_x);
-    chassis.Add_Position_Y(pos_y);
-    chassis.pos_yaw_angle += pos_spin;
-}
-
 void Robot_Device::RC_Set_Gimbal_Position(float delta)
 {
     gimbal.slide_ctrl_data.dist += delta;

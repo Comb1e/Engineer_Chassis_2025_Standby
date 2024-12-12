@@ -1541,7 +1541,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"path" : "Component/Drivers/Peripherals/Inc/Drv_Usb.h",
+			"path" : "Component/Drivers/Peripherals/Inc/Drv_USB.h",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -1588,7 +1588,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 1,
-			"path" : "Component/Drivers/Peripherals/Src/Drv_Usb.cpp",
+			"path" : "Component/Drivers/Peripherals/Src/Drv_USB.cpp",
 			"sourceGroupIndex" : 1
 		},
 		{

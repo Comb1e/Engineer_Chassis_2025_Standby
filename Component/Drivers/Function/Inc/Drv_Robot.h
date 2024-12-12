@@ -85,8 +85,6 @@ public:
     void RC_Set_Chassis_Vel_Spin(float vel_spin);
     void RC_Set_Chassis_Vel(float vel_x,float vel_y,float vel_spin);
 
-    void RC_Set_Chasssis_Position(float pos_x,float pos_y,float pos_spin);
-
     void RC_Set_Gimbal_Position(float delta);
 
     void Sucker_Directional_Move(traj_item_e point, float delta_distance);

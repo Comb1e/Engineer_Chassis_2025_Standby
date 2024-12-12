@@ -143,9 +143,9 @@ typedef struct
     uint16_t x: 11;//0~1024
     uint16_t y: 11;//0~1024
     uint16_t z: 11;//0~1024
-    int16_t sucker_yaw: 10;//yaw -256~256
-    int16_t sucker_pitch: 9;//pitch -128~128
-    int16_t sucker_roll: 10;//roll -256~256
+    int16_t sucker_yaw: 10;//yaw -256~256 角度
+    int16_t sucker_pitch: 9;//pitch -128~128 角度
+    int16_t sucker_roll: 10;//roll -256~256 角度
     int16_t reserve: 2;//arm_yaw-128~128
 }arm_tx_data_t;//状态的描述
 
@@ -154,9 +154,9 @@ typedef struct
     uint16_t x: 10;//0~1024
     uint16_t y: 10;//-372.5~513
     uint16_t z: 10;//-54~624
-    int16_t sucker_yaw: 9;//yaw -256~256
-    int16_t sucker_pitch: 8;//pitch -128~128
-    int16_t sucker_roll: 9;//roll -256~256
+    int16_t sucker_yaw: 9;//yaw -256~256 角度
+    int16_t sucker_pitch: 8;//pitch -128~128 角度
+    int16_t sucker_roll: 9;//roll -256~256 角度
     uint16_t reserve_0: 8;
 }arm_rec_data_t;
 #pragma pack()
@@ -166,11 +166,11 @@ typedef struct
     float x;
     float y;
     float z;
-    float arm_yaw;
-    float sucker_yaw_deg;
-    float sucker_roll_deg;
-    float sucker_pitch_deg;
-    float arm_pitch;
+    float arm_yaw;//角度
+    float sucker_yaw_deg;//角度
+    float sucker_roll_deg;//角度
+    float sucker_pitch_deg;//角度
+    float arm_pitch;//角度
 }arm_data_t;
 
 typedef struct
@@ -178,7 +178,7 @@ typedef struct
     float arm_xoy_length;
     float arm_y_length;
     float arm_x_length;
-    float arm_yaw_radian;
+    float arm_yaw_radian;//弧度
     float y_base;
 }arm_limit_basic_data_t;
 
