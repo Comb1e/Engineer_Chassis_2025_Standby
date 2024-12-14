@@ -29,5 +29,5 @@ void set_rotMatrix_from_euler_xyx(float x1, float y, float x2, float rotMat_arr[
 
 #include "Eigen/Geometry"
 
-Eigen::Vector3f rotMatrix_to_euler_zyx(Eigen::Matrix3f rot);
+Eigen::Vector3f RotMatrix_To_Euler_ZYX(Eigen::Matrix3f rot);
 #endif //ENGINEER_CHASSIS_ABOARD_ROTATION_MATRIX_H

@@ -101,13 +101,8 @@ void Robot_Device::RC_Set_Gimbal_Position(float delta)
  */
 void Robot_Device::Sucker_Directional_Move(traj_item_e point, float delta_distance)
 {
-    float kb_state_pitch_compensation =
-        (EXCHANGE_PITCH_COMPENSATION + (5.f * arm_cos_f32(arm.trajectory[PITCH].track_point / 180.f * PI))
-            + 22.f * arm_sin_f32(arm.trajectory[PITCH].track_point / 180.f * PI));
-    arm.Rectilinear_Motion(point,
-                                  kb_state_pitch_compensation,
-                                  delta_distance * KB_CONTROL_CYCLE / ARM_CONTROL_CYCLE,
-                                  ARM_TRAJECTORY_VEL_XYZ);
+    float kb_state_pitch_compensation = (EXCHANGE_PITCH_COMPENSATION + (5.f * arm_cos_f32(arm.trajectory[PITCH].track_point / 180.f * PI)) + 22.f * arm_sin_f32(arm.trajectory[PITCH].track_point / 180.f * PI));
+    arm.Rectilinear_Motion(point,kb_state_pitch_compensation,delta_distance * KB_CONTROL_CYCLE / ARM_CONTROL_CYCLE,ARM_TRAJECTORY_VEL_XYZ);
 }
 
 void Robot_Device::Set_Select_Left_Flag()
@@ -166,6 +161,12 @@ bool Robot_Device::Check_Cancel()
     taskEXIT_CRITICAL();
     return flag;
 }
+
+bool Robot_Device::Check_Control_Mode_RC_KB_CONTROL()
+{
+    return (this->control_mode == RC_KB_CONTROL);
+}
+
 
 float Robot_Device::Get_Arm_Point_Limit_Chassis_Val()
 {
@@ -318,98 +319,40 @@ void Robot_Device::Arm_Homing()
     if (absorb.Check_Sucker_Holding(ARM_SUCKER))
     {
         arm.Set_Point_Final_Posture(Y, HOMING_ARM_Y_WITH_ORE);
-        while (!arm.Check_All_Get_To_Final())
-        {
-            if (HAL_GetTick() > time + 8000)
-            {
-                break;
-            }
-            osDelay(1);
-        }
+        arm.Wait_For_Moving();
 
-        time = HAL_GetTick();
         arm.Set_Point_Final_Posture(ARM_YAW, HOMING_ARM_YAW_DEG);
         arm.Set_Point_Final_Posture(ARM_PITCH,HOMING_ARM_PITCH_DEG);
         arm.Set_Point_Final_Posture(X, HOMING_ARM_X_WITH_ORE);
         arm.Set_Point_Final_Posture(Z, HOMING_ARM_Z);
+        arm.Wait_For_Moving();
 
-        while (!arm.Check_All_Get_To_Final())
-        {
-            if (HAL_GetTick() > time + 8000)
-            {
-                break;
-            }
-            osDelay(1);
-        }
-
-        time = HAL_GetTick();
         arm.Set_Point_Final_Posture(YAW, HOMING_SUCKER_YAW_WITH_ORE);
         arm.Set_Point_Final_Posture(PITCH, HOMING_SUCKER_PITCH_WITH_ORE);
         arm.Set_Point_Final_Posture(ROLL, HOMING_SUCKER_ROLL_WITH_ORE);
-        while (!arm.Check_All_Get_To_Final())
-        {
-            if (HAL_GetTick() > time + 8000)
-            {
-                break;
-            }
-            osDelay(1);
-        }
-        time = HAL_GetTick();
-        arm.Set_Point_Final_Posture(Z, HOMING_ARM_Z_WITH_ORE);
+        arm.Wait_For_Moving();
 
-        while (!arm.Check_All_Get_To_Final())
-        {
-            if (HAL_GetTick() > time + 8000)
-            {
-                break;
-            }
-            osDelay(1);
-        }
+        arm.Set_Point_Final_Posture(Z, HOMING_ARM_Z_WITH_ORE);
+        arm.Wait_For_Moving();
     }
     else
     {
         arm.Set_Point_Final_Posture(ARM_YAW, HOMING_ARM_YAW_DEG);
         arm.Set_Point_Final_Posture(ARM_PITCH,HOMING_ARM_PITCH_DEG);
         arm.Set_Point_Target_Pos_Vel(Y,HOMING_ARM_Y,HOME_ARM_TRAJECTORY_VEL_XYZ);
-        while (!arm.Check_All_Get_To_Final())
-        {
-            if (HAL_GetTick() > time + 12000)
-            {
-                break;
-            }
-            osDelay(1);
-        }
+        arm.Wait_For_Moving();
+
         arm.Set_Point_Target_Pos_Vel(ARM_YAW,HOMING_ARM_YAW_DEG,HOME_ARM_TRAJECTORY_VEL_RPY);
-        while (!arm.Check_All_Get_To_Final())
-        {
-            if (HAL_GetTick() > time + 12000)
-            {
-                break;
-            }
-            osDelay(1);
-        }
+        arm.Wait_For_Moving();
+
         arm.Set_Point_Target_Pos_Vel(ROLL,HOMING_SUCKER_ROLL,HOME_ARM_TRAJECTORY_VEL_RPY);
         arm.Set_Point_Target_Pos_Vel(PITCH,HOMING_SUCKER_PITCH,HOME_ARM_TRAJECTORY_VEL_RPY);
         arm.Set_Point_Target_Pos_Vel(YAW,HOMING_SUCKER_YAW,HOME_ARM_TRAJECTORY_VEL_RPY);
-        while (!arm.Check_All_Get_To_Final())
-        {
-            if (HAL_GetTick() > time + 12000)
-            {
-                break;
-            }
-            osDelay(1);
-        }
+        arm.Wait_For_Moving();
+
         arm.Set_Point_Target_Pos_Vel(X,HOMING_ARM_X,HOME_ARM_TRAJECTORY_VEL_XYZ);
         arm.Set_Point_Target_Pos_Vel(Z,HOMING_ARM_Z,HOME_ARM_TRAJECTORY_VEL_XYZ);
-
-        while (!arm.Check_All_Get_To_Final())
-        {
-            if (HAL_GetTick() > time + 12000)
-            {
-                break;
-            }
-            osDelay(1);
-        }
+        arm.Wait_For_Moving();
     }
     arm.Close_Step_protected();
 }
@@ -423,11 +366,7 @@ void Robot_Device::Gimbal_Reset()
         arm.Set_Point_Target_Pos_Vel(Y, 95.0f, 0.25f);
         arm.Set_Point_Target_Pos_Vel(Z, 420.0f, 0.25f);
         arm.Set_Point_Target_Pos_Vel(YAW, 0.0f, 0.08f);
-
-        while (!arm.Check_All_Get_To_Final())
-        {
-            osDelay(1);
-        }
+        arm.Wait_For_Moving();
 
         absorb.Set_Sucker_Close(ARM_SUCKER);
         osDelay(400);
@@ -477,40 +416,24 @@ void Robot_Device::Left_Exchange_Five_Grade()
     arm.Set_Point_Target_Pos_Vel(Y, 350.f, 0.9f);
     arm.Set_Point_Target_Pos_Vel(Z, 480.f, 1.2f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(X, 600.f, 1.2f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(ARM_YAW, -30.f, 0.4f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(PITCH, 10.f, 0.4f);
     arm.Set_Point_Target_Pos_Vel(ROLL, 0.f, 0.4f);
     arm.Set_Point_Target_Pos_Vel(YAW, -120.f, 0.4f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 }
 
@@ -523,40 +446,24 @@ void Robot_Device::Right_Exchange_Five_Grade()
     arm.Set_Point_Target_Pos_Vel(Y, -200.f, 0.9f);
     arm.Set_Point_Target_Pos_Vel(Z, 480.f, 1.2f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(X, 600.f, 1.2f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(ARM_YAW, 30.f, 0.4f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(PITCH, 10.f, 0.4f);
     arm.Set_Point_Target_Pos_Vel(ROLL, 0.f, 0.4f);
     arm.Set_Point_Target_Pos_Vel(YAW, 120.f, 0.4f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 }
 
@@ -581,20 +488,12 @@ void Robot_Device::Left_Exchange_Four_Grade()
     arm.Set_Point_Target_Pos_Vel(Y, 350.f, 0.9f);
     arm.Set_Point_Target_Pos_Vel(Z, 480.f, 1.2f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(X, 600.f, 1.2f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(PITCH, 40.f, 0.4f);
@@ -602,11 +501,7 @@ void Robot_Device::Left_Exchange_Four_Grade()
     arm.Set_Point_Target_Pos_Vel(YAW, -80.f, 0.4f);
     arm.Set_Point_Target_Pos_Vel(ARM_YAW, 0.f, 0.4f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 }
 
@@ -617,20 +512,12 @@ void Robot_Device::Right_Exchange_Four_Grade()
     arm.Set_Point_Target_Pos_Vel(Y, -200.f, 0.9f);
     arm.Set_Point_Target_Pos_Vel(Z, 480.f, 1.2f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(X, 600.f, 1.2f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 
     arm.Set_Point_Target_Pos_Vel(PITCH, 40.f, 0.4f);
@@ -638,11 +525,7 @@ void Robot_Device::Right_Exchange_Four_Grade()
     arm.Set_Point_Target_Pos_Vel(YAW, 80.f, 0.4f);
     arm.Set_Point_Target_Pos_Vel(ARM_YAW, 0.f, 0.4f);
     arm.Set_Step_Protected();
-
-    while (!arm.Check_All_Get_To_Final())
-    {
-        osDelay(1);
-    }
+    arm.Wait_For_Moving();
     arm.Close_Step_protected();
 }
 

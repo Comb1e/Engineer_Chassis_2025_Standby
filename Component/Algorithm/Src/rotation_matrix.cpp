@@ -248,7 +248,8 @@ void mat_rot_y_T(float a, float mat[9]) {
 }//绕y轴转a角度，即pitch
 
 //ZYX坐标系变换 //默认y取[-180,180]
-Eigen::Vector3f rotMatrix_to_euler_zyx(Eigen::Matrix3f rot) {
+Eigen::Vector3f RotMatrix_To_Euler_ZYX(Eigen::Matrix3f rot)
+{
     Eigen::Vector3f euler_zyx;
     euler_zyx << 0,0,0;
 
@@ -263,7 +264,6 @@ Eigen::Vector3f rotMatrix_to_euler_zyx(Eigen::Matrix3f rot) {
     arm_atan2_f32(rot(1, 0), rot(0, 0),&r4);
     euler_zyx << r4, r3, r1;
     return euler_zyx;
-
 }
 
 #undef s

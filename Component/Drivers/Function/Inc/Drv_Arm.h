@@ -5,6 +5,7 @@
 #ifndef DRV_ARM_H
 #define DRV_ARM_H
 
+#include "Eigen/Geometry"
 #include "BSP_CAN.h"
 #include "Trajectory.h"
 
@@ -69,7 +70,7 @@ extern "C"
 #define ROLL_LIMIT      (255.0f)
 
 #define YAW_LIMIT       (160.0f)
-#define PITCH_LIMIT      (160.0f)
+#define PITCH_LIMIT      (90.0f)
 
 #define Sucker_LIMIT_Y_MIN (30.0f)
 /*------------------------机械臂在运动过程中因arm_yaw改变而可能改变的值(坐标值域)-------------------------*/
@@ -78,8 +79,7 @@ extern "C"
 #define Z_MAX                (Z_TOTAL_MAX)
 #define Z_MIN                (Z_TOTAL_MIN)
 
-/*----------------------控制yaw转为大yaw的限值--------------------------*/
-#define YAW2ARM_YAW_LIMIT  (82.f)
+#define YAW_INITIAL_LIMIT  (82.0f)
 
 /*----------------------机械臂复位之后的初始状态-----------------*/
 #define INIT_ARM_YAW_DEG        (0.0f)
@@ -179,7 +179,6 @@ typedef struct
     float arm_y_length;
     float arm_x_length;
     float arm_yaw_radian;//弧度
-    float y_base;
 }arm_limit_basic_data_t;
 
 typedef struct
@@ -218,6 +217,8 @@ public:
 
     chassis_move_t chassis_move_data;
 
+    Eigen::Matrix3f rotation_matrix;
+
     float min_limit[TRAJ_ITEM_NUM];
     float max_limit[TRAJ_ITEM_NUM];
 
@@ -237,6 +238,7 @@ public:
     void Update_X_Limit();
     void Update_Y_Limit();
     void Update_Z_Limit();
+    void Update_Yaw_Limit();
     void Update_Pitch_Limit();
     void Update_Final();
     void Update_Trajectory_Data();
@@ -264,6 +266,14 @@ public:
     void Change_XYZ_Basic_Step(float new_step);
     void Change_RYP_Basic_Step(float new_step);
     bool Check_Safe_Position();
+    void Update_X_Final();
+    void Update_Y_Final();
+    void Update_Yaw_Final();
+    void Update_Pitch_Final();
+    void Update_Normal_Final(traj_item_e point);//除x,y,yaw,pitch
+    void Wait_For_Moving();
+    void Sucker_Dir_Move(float dist,float vel);
+    void Update_Chassis_To_Sucker_RotMatrix();
 
     friend void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
 

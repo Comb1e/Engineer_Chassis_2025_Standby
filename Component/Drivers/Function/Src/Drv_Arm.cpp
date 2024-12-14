@@ -144,7 +144,7 @@ void Arm_Device::CAN_Set()
 void Arm_Device::Set_Point_Final_Posture(traj_item_e point, float posture)
 {
     this->trajectory_final[point] = posture;
-    if(point != X && point != Y)
+    if(point != X && point != Y && point != PITCH && point != YAW)
     {
         VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
     }
@@ -175,7 +175,6 @@ void Arm_Device::Update_Limit_Basic_Data()
     this->limit_basic_data.arm_yaw_radian = this->trajectory[ARM_YAW].track_point * PI / 180.0f;
     this->limit_basic_data.arm_x_length = this->limit_basic_data.arm_xoy_length * arm_cos_f32(this->limit_basic_data.arm_yaw_radian);
     this->limit_basic_data.arm_y_length = this->limit_basic_data.arm_xoy_length * arm_sin_f32(this->limit_basic_data.arm_yaw_radian);
-    this->limit_basic_data.y_base = this->trajectory[Y].track_point - this->limit_basic_data.arm_y_length;
 }
 
 void Arm_Device::Update_Limit()
@@ -183,6 +182,7 @@ void Arm_Device::Update_Limit()
     this->Update_X_Limit();
     this->Update_Y_Limit();
     this->Update_Z_Limit();
+    this->Update_Yaw_Limit();
     this->Update_Pitch_Limit();
 }
 
@@ -204,10 +204,16 @@ void Arm_Device::Update_Z_Limit()
     max_limit[Z] = min_limit[Z] + FRAME_UPLIFT_MAX;
 }
 
+void Arm_Device::Update_Yaw_Limit()
+{
+    min_limit[YAW] = this->trajectory[ARM_YAW].track_point - YAW_INITIAL_LIMIT;
+    max_limit[YAW] = this->trajectory[ARM_YAW].track_point + YAW_INITIAL_LIMIT;
+}
+
 void Arm_Device::Update_Pitch_Limit()
 {
     min_limit[PITCH] = this->trajectory[ARM_PITCH].track_point - 90.0f;
-    max_limit[PITCH] = this->trajectory[ARM_PITCH].track_point + 90.0f;
+    max_limit[PITCH] = 90.0f;
 }
 
 void Arm_Device::Update_Final()
@@ -218,79 +224,155 @@ void Arm_Device::Update_Final()
         {
             if(point == X)
             {
-                 if(this->trajectory_final[X] > max_limit[X])
-                {
-                    this->arm_chassis_cooperate_flag = true;
-                    this->chassis_move_data.x += this->trajectory_final[X] - max_limit[X];
-                    this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(max_limit[X]);
-                    this->trajectory_final[X] = max_limit[X];
-                    this->trajectory[X].final = max_limit[X];
-
-                    chassis.arm_need_cnt = 0;
-                }
-                else if(this->trajectory_final[X] < min_limit[X])
-                {
-                    this->arm_chassis_cooperate_flag = true;
-                    this->chassis_move_data.x += this->trajectory_final[X] - min_limit[X];
-                    this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(min_limit[X]);
-                    this->trajectory_final[X] = min_limit[X];
-                    this->trajectory[X].final = min_limit[X];
-
-                    chassis.arm_need_cnt = 0;
-                }
-                else
-                {
-                    VAL_LIMIT(this->trajectory_final[X],this->min_limit[X],this->max_limit[X]);
-                    this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[X]);
-                    this->trajectory[X].final = this->trajectory_final[X];
-                }
+                this->Update_X_Final();
             }
             else if(point == Y)
             {
-                if(this->trajectory_final[Y] > max_limit[Y])
-                {
-                    this->arm_chassis_cooperate_flag = true;
-                    this->chassis_move_data.y += this->trajectory_final[Y] - max_limit[Y];
-                    this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(max_limit[Y]);
-                    this->trajectory_final[Y] = max_limit[Y];
-                    this->trajectory[Y].final = max_limit[Y];
-
-                    chassis.arm_need_cnt = 0;
-                }
-                else if(this->trajectory_final[Y] < min_limit[Y])
-                {
-                    this->arm_chassis_cooperate_flag = true;
-                    this->chassis_move_data.y += this->trajectory_final[Y] - min_limit[Y];
-                    this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(min_limit[Y]);
-                    this->trajectory_final[Y] = min_limit[Y];
-                    this->trajectory[Y].final = min_limit[Y];
-
-                    chassis.arm_need_cnt = 0;
-                }
-                else
-                {
-                    VAL_LIMIT(this->trajectory_final[Y],this->min_limit[Y],this->max_limit[Y]);
-                    this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[Y]);
-                    this->trajectory[Y].final = this->trajectory_final[Y];
-                }
+                this->Update_Y_Final();
+            }
+            else if(point == YAW)
+            {
+                this->Update_Yaw_Final();
+            }
+            else if(point == PITCH)
+            {
+                this->Update_Pitch_Final();
             }
             else
             {
-                VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
-                this->trajectory[point].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[point]);
-                this->trajectory[point].final = this->trajectory_final[point];
+                this->Update_Normal_Final(point);
             }
+        }
+        else if(point == YAW)
+        {
+            this->Update_Yaw_Final();
+        }
+        else if(point == PITCH)
+        {
+            this->Update_Pitch_Final();
         }
         else
         {
-            VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
-            this->trajectory[point].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[point]);
-            this->trajectory[point].final = this->trajectory_final[point];
+            this->Update_Normal_Final(point);
 
             chassis.Reset_Total_Rounds();
         }
     }
 }
+
+void Arm_Device::Update_X_Final()
+{
+    if(this->trajectory_final[X] > max_limit[X])
+    {
+        this->arm_chassis_cooperate_flag = true;
+        this->chassis_move_data.x += this->trajectory_final[X] - max_limit[X];
+        this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(max_limit[X]);
+        this->trajectory_final[X] = max_limit[X];
+        this->trajectory[X].final = max_limit[X];
+
+        chassis.arm_need_cnt = 0;
+    }
+    else if(this->trajectory_final[X] < min_limit[X])
+    {
+        this->arm_chassis_cooperate_flag = true;
+        this->chassis_move_data.x += this->trajectory_final[X] - min_limit[X];
+        this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(min_limit[X]);
+        this->trajectory_final[X] = min_limit[X];
+        this->trajectory[X].final = min_limit[X];
+
+        chassis.arm_need_cnt = 0;
+    }
+    else
+    {
+        this->trajectory[X].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[X]);
+        this->trajectory[X].final = this->trajectory_final[X];
+    }
+}
+
+void Arm_Device::Update_Y_Final()
+{
+    if(this->trajectory_final[Y] > max_limit[Y])
+    {
+        this->arm_chassis_cooperate_flag = true;
+        this->chassis_move_data.y += this->trajectory_final[Y] - max_limit[Y];
+        this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(max_limit[Y]);
+        this->trajectory_final[Y] = max_limit[Y];
+        this->trajectory[Y].final = max_limit[Y];
+
+        chassis.arm_need_cnt = 0;
+    }
+    else if(this->trajectory_final[Y] < min_limit[Y])
+    {
+        this->arm_chassis_cooperate_flag = true;
+        this->chassis_move_data.y += this->trajectory_final[Y] - min_limit[Y];
+        this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(min_limit[Y]);
+        this->trajectory_final[Y] = min_limit[Y];
+        this->trajectory[Y].final = min_limit[Y];
+
+        chassis.arm_need_cnt = 0;
+    }
+    else
+    {
+        this->trajectory[Y].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[Y]);
+        this->trajectory[Y].final = this->trajectory_final[Y];
+    }
+}
+
+void Arm_Device::Update_Normal_Final(traj_item_e point)
+{
+    VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
+    this->trajectory[point].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[point]);
+    this->trajectory[point].final = this->trajectory_final[point];
+}
+
+void Arm_Device::Update_Yaw_Final()
+{
+    if(this->trajectory_final[YAW] > max_limit[YAW])
+    {
+        this->trajectory_final[ARM_YAW] += this->trajectory_final[YAW] - max_limit[YAW];
+        this->trajectory[YAW].Change_Target_Cnt_Based_On_New_Final(max_limit[YAW]);
+        this->trajectory_final[YAW] = max_limit[YAW];
+        this->trajectory[YAW].final = max_limit[YAW];
+    }
+    else if(this->trajectory_final[YAW] < min_limit[YAW])
+    {
+        this->trajectory_final[ARM_YAW] += this->trajectory_final[YAW] - min_limit[YAW];
+        this->trajectory_final[YAW] = min_limit[YAW];
+        this->trajectory[YAW].Change_Target_Cnt_Based_On_New_Final(min_limit[YAW]);
+        this->trajectory_final[YAW] = min_limit[YAW];
+        this->trajectory[YAW].final = min_limit[YAW];
+    }
+    else
+    {
+        this->trajectory[YAW].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[YAW]);
+        this->trajectory[YAW].final = this->trajectory_final[YAW];
+    }
+}
+
+void Arm_Device::Update_Pitch_Final()
+{
+    if(this->trajectory_final[PITCH] > max_limit[PITCH])
+    {
+        this->trajectory_final[ARM_PITCH] += this->trajectory_final[PITCH] - max_limit[PITCH];
+        this->trajectory[PITCH].Change_Target_Cnt_Based_On_New_Final(max_limit[PITCH]);
+        this->trajectory_final[PITCH] = max_limit[PITCH];
+        this->trajectory[PITCH].final = max_limit[PITCH];
+    }
+    else if(this->trajectory_final[PITCH] < min_limit[PITCH])
+    {
+        this->trajectory_final[ARM_PITCH] += this->trajectory_final[PITCH] - min_limit[PITCH];
+        this->trajectory_final[PITCH] = min_limit[PITCH];
+        this->trajectory[PITCH].Change_Target_Cnt_Based_On_New_Final(min_limit[PITCH]);
+        this->trajectory_final[PITCH] = min_limit[PITCH];
+        this->trajectory[PITCH].final = min_limit[PITCH];
+    }
+    else
+    {
+        this->trajectory[PITCH].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[PITCH]);
+        this->trajectory[PITCH].final = this->trajectory_final[PITCH];
+    }
+}
+
 
 void Arm_Device::Update_Trajectory_Data()
 {
@@ -390,7 +472,7 @@ void Arm_Device::Add_Point_Target_Pos_From_Control(traj_item_e point, float delt
         this->trajectory_final[point] += delta/ fabsf(delta) *this->trajectory[point].basic_step;
     }
 
-    if(point != X && point != Y)
+    if(point != X && point != Y && point != PITCH && point != YAW)
     {
         VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
     }
@@ -429,7 +511,7 @@ bool Arm_Device::Check_Init_Completely()
 void Arm_Device::Add_Point_Target_Pos(traj_item_e point, float delta_target)
 {
     this->trajectory_final[point] += delta_target;
-    if (point != X && point != Y)
+    if (point != X && point != Y && point != PITCH && point != YAW)
     {
         VAL_LIMIT(this->trajectory_final[point], this->min_limit[point], this->max_limit[point]);
     }
@@ -465,10 +547,6 @@ void Arm_Device::Rectilinear_Motion(traj_item_e point,float compensation, float 
     dy_v = vel * mat[point + 3];
     dz_v = vel * mat[point + 6];
 
-    this->Add_Point_Target_Pos(X, dx);
-    this->Add_Point_Target_Pos(Y, dy);
-    this->Add_Point_Target_Pos(Z, dz);
-
     if (fabsf(dx_v) > 0.001)
     {
         this->trajectory[X].Change_Basic_Step(dx_v);
@@ -481,6 +559,10 @@ void Arm_Device::Rectilinear_Motion(traj_item_e point,float compensation, float 
     {
         this->trajectory[Z].Change_Basic_Step(dz_v);
     }
+
+    this->Add_Point_Target_Pos(X, dx);
+    this->Add_Point_Target_Pos(Y, dy);
+    this->Add_Point_Target_Pos(Z, dz);
 }
 
 void Arm_Device::Arm_Yaw_Dir_Move(float distance, float vel)
@@ -555,7 +637,7 @@ void Arm_Device::Add_Point_Target_Pos_Vel(traj_item_e point, float delta, float 
 {
     this->trajectory_final[point] += delta;
     this->trajectory[point].Change_Basic_Step(vel);
-    if(point != X && point != Y)
+    if(point != X && point != Y && point != PITCH && point != YAW)
     {
         VAL_LIMIT(this->trajectory_final[point],min_limit[point],max_limit[point]);
     }
@@ -588,4 +670,42 @@ bool Arm_Device::Check_Safe_Position()
         return true;
     }
     return false;
+}
+
+void Arm_Device::Wait_For_Moving()
+{
+    uint32_t time = HAL_GetTick();
+    while(!arm.Check_All_Get_To_Final())
+    {
+        if (HAL_GetTick() > time + 8000)
+        {
+            break;
+        }
+        osDelay(1);
+    }
+}
+
+void Arm_Device::Update_Chassis_To_Sucker_RotMatrix()
+{
+    this->rotation_matrix = Eigen::AngleAxisf(this->trajectory[YAW].track_point / 180.0f * PI, Eigen::Vector3f::UnitZ()) *
+                            Eigen::AngleAxisf(this->trajectory[PITCH].track_point / 180.0f * PI, Eigen::Vector3f::UnitY()) *
+                            Eigen::AngleAxisf(this->trajectory[ROLL].track_point / 180.0f * PI, Eigen::Vector3f::UnitX());
+}
+
+
+void Arm_Device::Sucker_Dir_Move(float dist,float vel)
+{
+    float dx = 0;
+    float dy = 0;
+    float dz = 0;
+    for(int i=0;i<3;i++)
+    {
+        dx += this->rotation_matrix(0,i);
+        dy += this->rotation_matrix(1,i);
+        dz += this->rotation_matrix(2,i);
+    }
+
+    this->Set_Point_Target_Pos_Vel(X,dx * dist,dx * vel);
+    this->Set_Point_Target_Pos_Vel(Y,dy * dist,dy * vel);
+    this->Set_Point_Target_Pos_Vel(Z,dz * dist,dz * vel);
 }

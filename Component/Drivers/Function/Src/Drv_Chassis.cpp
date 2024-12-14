@@ -436,7 +436,7 @@ void Chassis_Device::Close_Yaw_Spin()
 {
     HI229UM_Set_Current_As_Offset();
 
-    this->pos_yaw_angle = HI229UM_Get_Yaw_Total_Deg() * 360.0f;
+    this->pos_yaw_angle = 0.0f;
     this->Set_Vel_Spin(0);
 }
 

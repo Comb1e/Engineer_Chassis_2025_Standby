@@ -23,6 +23,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Trajectory.cpp.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.obj"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.obj.d"
+  "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.obj"
+  "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Absorb.cpp.obj"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Absorb.cpp.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Arm.cpp.obj"

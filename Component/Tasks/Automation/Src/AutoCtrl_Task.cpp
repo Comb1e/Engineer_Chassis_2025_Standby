@@ -12,6 +12,7 @@ void AutoCtrl_Task(void *argument)
         robot.Update_Chassis_Speed_Limit();
         robot.Check_KB_Event();
         robot.Check_Rot();
+        robot.Update_Visual_Exchange();
         osDelay(2);
     }
 }

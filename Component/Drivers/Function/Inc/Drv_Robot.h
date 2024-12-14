@@ -13,6 +13,7 @@
 #include "Drv_Absorb.h"
 #include "Drv_Keyboard.h"
 #include "Drv_Info.h"
+#include "Drv_USB.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -80,6 +81,8 @@ public:
     void Set_KB_Control_Mode_Mine();
     void Set_KB_Control_Mode_Steer();
 
+    bool Check_Control_Mode_RC_KB_CONTROL();
+
     void RC_Set_Chassis_Vel_X(float vel_x);
     void RC_Set_Chassis_Vel_Y(float vel_y);
     void RC_Set_Chassis_Vel_Spin(float vel_spin);
@@ -120,6 +123,12 @@ public:
     void Exchange_Four_Grade();
     void Left_Exchange_Four_Grade();
     void Right_Exchange_Four_Grade();
+
+    bool Check_Visual_Control();
+    void Update_Visual_Exchange();
+    void Visual_To_Arm_Control();
+    void Close_Visual_Control();
+    void Set_Arm_To_Exchagne_Initial(pose_t pose);
 
 /*----------automation----------*/
     autoStatus_e autoStatus;

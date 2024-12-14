@@ -26,6 +26,7 @@ void Arm_Task(void *argument)
         arm.Update_Enable();
         if(arm.Check_Enable())
         {
+            arm.Update_Chassis_To_Sucker_RotMatrix();
             arm.Update_Control();
             arm.CAN_Send_MSG();
         }

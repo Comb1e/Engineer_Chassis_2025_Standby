@@ -429,6 +429,30 @@ Component/Algorithm/Src/rotation_matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.s
 .PHONY : Component/Algorithm/Src/rotation_matrix.cpp.s
 
+Component/Drivers/Automation/Src/Drv_Visual_Exchange.obj: Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Visual_Exchange.obj
+
+# target to build an object file
+Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.obj
+
+Component/Drivers/Automation/Src/Drv_Visual_Exchange.i: Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Visual_Exchange.i
+
+# target to preprocess a source file
+Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.i
+
+Component/Drivers/Automation/Src/Drv_Visual_Exchange.s: Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Visual_Exchange.s
+
+# target to generate assembly for a file
+Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.s
+
 Component/Drivers/Function/Src/Drv_Absorb.obj: Component/Drivers/Function/Src/Drv_Absorb.cpp.obj
 .PHONY : Component/Drivers/Function/Src/Drv_Absorb.obj
 
@@ -2883,6 +2907,9 @@ help:
 	@echo ... Component/Algorithm/Src/rotation_matrix.obj
 	@echo ... Component/Algorithm/Src/rotation_matrix.i
 	@echo ... Component/Algorithm/Src/rotation_matrix.s
+	@echo ... Component/Drivers/Automation/Src/Drv_Visual_Exchange.obj
+	@echo ... Component/Drivers/Automation/Src/Drv_Visual_Exchange.i
+	@echo ... Component/Drivers/Automation/Src/Drv_Visual_Exchange.s
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.i
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.s
