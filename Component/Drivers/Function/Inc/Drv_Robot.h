@@ -76,6 +76,7 @@ public:
     kb_control_mode_e kb_control_mode;
     robot_control_mode_e control_mode;
 
+/*----------Drv_Robot----------*/
     void Set_Control_Mode(robot_control_mode_e control_mode);
 
     void Set_KB_Control_Mode_Mine();
@@ -130,7 +131,9 @@ public:
     void Close_Visual_Control();
     void Set_Arm_To_Exchagne_Initial(pose_t pose);
 
-/*----------automation----------*/
+    void Wait_For_Sucker_Holding(sucker_e sucker);
+
+/*----------Automation----------*/
     autoStatus_e autoStatus;
     autoSituation_e autoSituation;
 
@@ -147,18 +150,27 @@ public:
     void Set_Auto_Situation(autoSituation_e autoSituation);
     void Creat_Task_Init();
     void Exit_Task();
-//AutoExchange
+
+//Drv_AutoExchange
     void CreatTask_Auto_Exchange();
     void ExitTask_AutoExchange();
-//AutoBigIsland
+//Drv_AutoBigIsland
     void CreatTask_Auto_BigIsland();
     void ExitTask_Auto_BigIsland();
-//AutoSmallIsland
+//Drv_AutoSmallIsland
     void CreatTask_Auto_SmallIsland();
     void ExitTask_Auto_SmallIsland();
-//AutoGroundMine
+//Drv_AutoGroundMinew
     void CreatTask_Auto_GroundMine();
     void ExitTask_Auto_GroundMine();
+
+//Drv_Back
+    void Back_With_Ore();
+    void Arm_Back_Home();
+    void Back_To_Arm_Sucker();
+    void Back_To_Left_Sucker(float x_offset);
+    void Back_To_Right_Sucker(float x_offset);
+    void Back_To_Sucker();
 };
 
 extern Robot_Device robot;

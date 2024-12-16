@@ -29,7 +29,7 @@ void Gimbal_Device::Init()
 {
     this->slide_motor.Init(GIMBAL_SLIDE_MOTOR_ID,DJI_M2006,GIMBAL_CAN,true,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
     gimbal.slide_motor.pid_vel.Init(4,0,1,0,1);
-    gimbal.slide_motor.pid_loc.Init(0.2,0,2.6,0,0.6);
+    gimbal.slide_motor.pid_loc.Init(0.2,0,2.6,0,0.4);
 }
 
 bool Gimbal_Device::Check_Init_Completely()

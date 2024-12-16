@@ -23,6 +23,7 @@ trajectory{Trajectory_Device(XYZ_ERROR, ARM_TRAJECTORY_VEL_XYZ),
 {
     this->enable_flag = false;
     this->arm_chassis_cooperate_flag = false;
+    this->enable_arm_chassis_cooperate_flag = true;
     this->init_cnt = 0;
 }
 
@@ -220,7 +221,7 @@ void Arm_Device::Update_Final()
 {
     for (traj_item_e point = X; point < TRAJ_ITEM_NUM; point = (traj_item_e) (point + 1))
     {
-        if(chassis.set_vel.x == 0 && chassis.set_vel.y == 0 && ABS(chassis.set_vel.spin) < 0.01f)
+        if(chassis.set_vel.x == 0 && chassis.set_vel.y == 0 && ABS(chassis.set_vel.spin) < 0.01f && this->enable_arm_chassis_cooperate_flag)
         {
             if(point == X)
             {
@@ -708,4 +709,20 @@ void Arm_Device::Sucker_Dir_Move(float dist,float vel)
     this->Set_Point_Target_Pos_Vel(X,dx * dist,dx * vel);
     this->Set_Point_Target_Pos_Vel(Y,dy * dist,dy * vel);
     this->Set_Point_Target_Pos_Vel(Z,dz * dist,dz * vel);
+}
+
+void Arm_Device::Disable_Arm_Chassis_Cooperate()
+{
+    this->arm_chassis_cooperate_flag = false;
+    this->chassis_move_data.x = 0;
+    this->chassis_move_data.y = 0;
+    chassis.arm_need_cnt = 0;
+    chassis.Clean_Poition_Control();
+    chassis.Clean_Speed_Control();
+    chassis.Change_To_Speed_Type();
+}
+
+void Arm_Device::Enable_Arm_Chassis_Cooperate()
+{
+    this->arm_chassis_cooperate_flag = true;
 }

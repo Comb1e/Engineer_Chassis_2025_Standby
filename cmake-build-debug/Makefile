@@ -429,6 +429,54 @@ Component/Algorithm/Src/rotation_matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/rotation_matrix.cpp.s
 .PHONY : Component/Algorithm/Src/rotation_matrix.cpp.s
 
+Component/Drivers/Automation/Src/Drv_AutoTask.obj: Component/Drivers/Automation/Src/Drv_AutoTask.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_AutoTask.obj
+
+# target to build an object file
+Component/Drivers/Automation/Src/Drv_AutoTask.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_AutoTask.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_AutoTask.cpp.obj
+
+Component/Drivers/Automation/Src/Drv_AutoTask.i: Component/Drivers/Automation/Src/Drv_AutoTask.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_AutoTask.i
+
+# target to preprocess a source file
+Component/Drivers/Automation/Src/Drv_AutoTask.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_AutoTask.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_AutoTask.cpp.i
+
+Component/Drivers/Automation/Src/Drv_AutoTask.s: Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_AutoTask.s
+
+# target to generate assembly for a file
+Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s
+
+Component/Drivers/Automation/Src/Drv_Back.obj: Component/Drivers/Automation/Src/Drv_Back.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Back.obj
+
+# target to build an object file
+Component/Drivers/Automation/Src/Drv_Back.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Back.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Back.cpp.obj
+
+Component/Drivers/Automation/Src/Drv_Back.i: Component/Drivers/Automation/Src/Drv_Back.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Back.i
+
+# target to preprocess a source file
+Component/Drivers/Automation/Src/Drv_Back.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Back.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Back.cpp.i
+
+Component/Drivers/Automation/Src/Drv_Back.s: Component/Drivers/Automation/Src/Drv_Back.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Back.s
+
+# target to generate assembly for a file
+Component/Drivers/Automation/Src/Drv_Back.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Back.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Back.cpp.s
+
 Component/Drivers/Automation/Src/Drv_Visual_Exchange.obj: Component/Drivers/Automation/Src/Drv_Visual_Exchange.cpp.obj
 .PHONY : Component/Drivers/Automation/Src/Drv_Visual_Exchange.obj
 
@@ -2907,6 +2955,12 @@ help:
 	@echo ... Component/Algorithm/Src/rotation_matrix.obj
 	@echo ... Component/Algorithm/Src/rotation_matrix.i
 	@echo ... Component/Algorithm/Src/rotation_matrix.s
+	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.obj
+	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.i
+	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.s
+	@echo ... Component/Drivers/Automation/Src/Drv_Back.obj
+	@echo ... Component/Drivers/Automation/Src/Drv_Back.i
+	@echo ... Component/Drivers/Automation/Src/Drv_Back.s
 	@echo ... Component/Drivers/Automation/Src/Drv_Visual_Exchange.obj
 	@echo ... Component/Drivers/Automation/Src/Drv_Visual_Exchange.i
 	@echo ... Component/Drivers/Automation/Src/Drv_Visual_Exchange.s

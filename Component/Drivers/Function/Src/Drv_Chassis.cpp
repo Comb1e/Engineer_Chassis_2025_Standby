@@ -384,7 +384,7 @@ void Chassis_Device::Add_Position_Y(float delta)
 
 void Chassis_Device::Judge_For_Arm_Need()
 {
-    if(arm.arm_chassis_cooperate_flag)
+    if(arm.arm_chassis_cooperate_flag && arm.enable_arm_chassis_cooperate_flag)
     {
         if(this->control_type == SPEED)
         {
@@ -409,6 +409,9 @@ void Chassis_Device::Judge_For_Arm_Need()
     }
     else
     {
+        arm.chassis_move_data.x = 0;
+        arm.chassis_move_data.y = 0;
+        this->arm_need_cnt = 0;
         this->Reset_Total_Rounds();
     }
 }

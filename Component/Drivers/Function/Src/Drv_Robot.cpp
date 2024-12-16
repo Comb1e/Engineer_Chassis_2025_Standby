@@ -208,16 +208,6 @@ void Robot_Device::Set_Auto_Situation(autoSituation_e autoSituation)
     }
 }
 
-void Robot_Device::Creat_Task_Init()
-{
-
-}
-
-void Robot_Device::Exit_Task()
-{
-
-}
-
 void Robot_Device::Check_Rot()
 {
     if(chassis.rot_flag && arm.Check_Safe_Position())
@@ -268,9 +258,8 @@ void Robot_Device::Check_KB_Event()
 
 void Robot_Device::Adjust_Ore()
 {
-
+    this->Set_Store_Sucker();
 }
-
 
 void Robot_Device::Set_Store_Sucker()
 {
@@ -294,7 +283,6 @@ void Robot_Device::Set_Store_Sucker()
     }
 }
 
-
 void Robot_Device::Sucker_Reset()
 {
     if (absorb.Check_Sucker_Holding(ARM_SUCKER))
@@ -312,24 +300,25 @@ void Robot_Device::Sucker_Reset()
 
 void Robot_Device::Arm_Homing()
 {
+    arm.Disable_Arm_Chassis_Cooperate();
+
     arm.Change_XYZ_Basic_Step(HOME_ARM_TRAJECTORY_VEL_XYZ);
     arm.Change_RYP_Basic_Step(HOME_ARM_TRAJECTORY_VEL_RPY);
     arm.Set_Step_Protected();
-    uint32_t time = HAL_GetTick();
     if (absorb.Check_Sucker_Holding(ARM_SUCKER))
     {
-        arm.Set_Point_Final_Posture(Y, HOMING_ARM_Y_WITH_ORE);
+        arm.Set_Point_Final_Posture(YAW, HOMING_SUCKER_YAW_WITH_ORE);
+        arm.Set_Point_Final_Posture(PITCH, HOMING_SUCKER_PITCH_WITH_ORE);
+        arm.Set_Point_Final_Posture(ROLL, HOMING_SUCKER_ROLL_WITH_ORE);
         arm.Wait_For_Moving();
 
         arm.Set_Point_Final_Posture(ARM_YAW, HOMING_ARM_YAW_DEG);
         arm.Set_Point_Final_Posture(ARM_PITCH,HOMING_ARM_PITCH_DEG);
-        arm.Set_Point_Final_Posture(X, HOMING_ARM_X_WITH_ORE);
-        arm.Set_Point_Final_Posture(Z, HOMING_ARM_Z);
         arm.Wait_For_Moving();
 
-        arm.Set_Point_Final_Posture(YAW, HOMING_SUCKER_YAW_WITH_ORE);
-        arm.Set_Point_Final_Posture(PITCH, HOMING_SUCKER_PITCH_WITH_ORE);
-        arm.Set_Point_Final_Posture(ROLL, HOMING_SUCKER_ROLL_WITH_ORE);
+        arm.Set_Point_Final_Posture(Y, HOMING_ARM_Y_WITH_ORE);
+        arm.Set_Point_Final_Posture(X, HOMING_ARM_X_WITH_ORE);
+        arm.Set_Point_Final_Posture(Z, HOMING_ARM_Z);
         arm.Wait_For_Moving();
 
         arm.Set_Point_Final_Posture(Z, HOMING_ARM_Z_WITH_ORE);
@@ -337,6 +326,11 @@ void Robot_Device::Arm_Homing()
     }
     else
     {
+        arm.Set_Point_Target_Pos_Vel(ROLL,HOMING_SUCKER_ROLL,HOME_ARM_TRAJECTORY_VEL_RPY);
+        arm.Set_Point_Target_Pos_Vel(PITCH,HOMING_SUCKER_PITCH,HOME_ARM_TRAJECTORY_VEL_RPY);
+        arm.Set_Point_Target_Pos_Vel(YAW,HOMING_SUCKER_YAW,HOME_ARM_TRAJECTORY_VEL_RPY);
+        arm.Wait_For_Moving();
+
         arm.Set_Point_Final_Posture(ARM_YAW, HOMING_ARM_YAW_DEG);
         arm.Set_Point_Final_Posture(ARM_PITCH,HOMING_ARM_PITCH_DEG);
         arm.Set_Point_Target_Pos_Vel(Y,HOMING_ARM_Y,HOME_ARM_TRAJECTORY_VEL_XYZ);
@@ -345,16 +339,13 @@ void Robot_Device::Arm_Homing()
         arm.Set_Point_Target_Pos_Vel(ARM_YAW,HOMING_ARM_YAW_DEG,HOME_ARM_TRAJECTORY_VEL_RPY);
         arm.Wait_For_Moving();
 
-        arm.Set_Point_Target_Pos_Vel(ROLL,HOMING_SUCKER_ROLL,HOME_ARM_TRAJECTORY_VEL_RPY);
-        arm.Set_Point_Target_Pos_Vel(PITCH,HOMING_SUCKER_PITCH,HOME_ARM_TRAJECTORY_VEL_RPY);
-        arm.Set_Point_Target_Pos_Vel(YAW,HOMING_SUCKER_YAW,HOME_ARM_TRAJECTORY_VEL_RPY);
-        arm.Wait_For_Moving();
-
         arm.Set_Point_Target_Pos_Vel(X,HOMING_ARM_X,HOME_ARM_TRAJECTORY_VEL_XYZ);
         arm.Set_Point_Target_Pos_Vel(Z,HOMING_ARM_Z,HOME_ARM_TRAJECTORY_VEL_XYZ);
         arm.Wait_For_Moving();
     }
     arm.Close_Step_protected();
+
+    arm.Enable_Arm_Chassis_Cooperate();
 }
 
 
@@ -409,6 +400,8 @@ void Robot_Device::Exchange_Five_Grade()
 
 void Robot_Device::Left_Exchange_Five_Grade()
 {
+    arm.Disable_Arm_Chassis_Cooperate();
+
     gimbal.Set_Left();
 
     info.Set_Pose_Mode(single);
@@ -435,10 +428,14 @@ void Robot_Device::Left_Exchange_Five_Grade()
     arm.Set_Step_Protected();
     arm.Wait_For_Moving();
     arm.Close_Step_protected();
+
+    arm.Enable_Arm_Chassis_Cooperate();
 }
 
 void Robot_Device::Right_Exchange_Five_Grade()
 {
+    arm.Disable_Arm_Chassis_Cooperate();
+
     gimbal.Set_Right();
 
     info.Set_Pose_Mode(single);
@@ -465,6 +462,8 @@ void Robot_Device::Right_Exchange_Five_Grade()
     arm.Set_Step_Protected();
     arm.Wait_For_Moving();
     arm.Close_Step_protected();
+
+    arm.Enable_Arm_Chassis_Cooperate();
 }
 
 
@@ -483,6 +482,8 @@ void Robot_Device::Exchange_Four_Grade()
 
 void Robot_Device::Left_Exchange_Four_Grade()
 {
+    arm.Disable_Arm_Chassis_Cooperate();
+
     info.Set_Pose_Mode(single);
     osDelay(1);
     arm.Set_Point_Target_Pos_Vel(Y, 350.f, 0.9f);
@@ -503,10 +504,14 @@ void Robot_Device::Left_Exchange_Four_Grade()
     arm.Set_Step_Protected();
     arm.Wait_For_Moving();
     arm.Close_Step_protected();
+
+    arm.Enable_Arm_Chassis_Cooperate();
 }
 
 void Robot_Device::Right_Exchange_Four_Grade()
 {
+    arm.Disable_Arm_Chassis_Cooperate();
+
     info.Set_Pose_Mode(single);
     osDelay(1);
     arm.Set_Point_Target_Pos_Vel(Y, -200.f, 0.9f);
@@ -527,6 +532,19 @@ void Robot_Device::Right_Exchange_Four_Grade()
     arm.Set_Step_Protected();
     arm.Wait_For_Moving();
     arm.Close_Step_protected();
+
+    arm.Enable_Arm_Chassis_Cooperate();
 }
 
+void Robot_Device::Wait_For_Sucker_Holding(sucker_e sucker)
+{
+    while(!absorb.Check_Sucker_Holding(sucker))
+    {
+        osDelay(1);
+        if(this->Check_Cancel())
+        {
+            absorb.Set_Sucker_Holding();
+        }
+    }
+}
 

@@ -14,7 +14,6 @@ extern "C"
 {
 #endif
 
-#include "stm32f4xx_hal.h"
 #include "Global_CFG.h"
 
 //俯视图
@@ -205,6 +204,7 @@ public:
     bool enable_flag;
     bool connect_flag;
     bool arm_chassis_cooperate_flag;
+    bool enable_arm_chassis_cooperate_flag;
 
     uint16_t init_cnt;
 
@@ -274,6 +274,8 @@ public:
     void Wait_For_Moving();
     void Sucker_Dir_Move(float dist,float vel);
     void Update_Chassis_To_Sucker_RotMatrix();
+    void Enable_Arm_Chassis_Cooperate();
+    void Disable_Arm_Chassis_Cooperate();
 
     friend void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
 
