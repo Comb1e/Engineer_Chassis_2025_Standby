@@ -1454,7 +1454,7 @@ void KB_Device::KeyV_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_AutoExchange();
+                    robot.ExitTask_Auto_Exchange();
                 }
                 else
                 {
@@ -1496,7 +1496,7 @@ void KB_Device::KeyV_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_AutoExchange();
+                    robot.ExitTask_Auto_Exchange();
                 }
                 else
                 {

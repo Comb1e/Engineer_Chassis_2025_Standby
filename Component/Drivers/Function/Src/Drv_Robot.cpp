@@ -256,33 +256,6 @@ void Robot_Device::Check_KB_Event()
     }
 }
 
-void Robot_Device::Adjust_Ore()
-{
-    this->Set_Store_Sucker();
-}
-
-void Robot_Device::Set_Store_Sucker()
-{
-    while(true)
-    {
-        if(this->Check_Select_Center())
-        {
-            absorb.Set_Sucker_Open(ARM_SUCKER);
-            break;
-        }
-        if(this->Check_Select_Left())
-        {
-            absorb.Set_Sucker_Open(LEFT_SUCKER);
-            break;
-        }
-        if(this->Check_Select_Right())
-        {
-            absorb.Set_Sucker_Open(RIGHT_SUCKER);
-            break;
-        }
-    }
-}
-
 void Robot_Device::Sucker_Reset()
 {
     if (absorb.Check_Sucker_Holding(ARM_SUCKER))
@@ -387,7 +360,7 @@ void Robot_Device::Turn_Chassis_Back()
 
 void Robot_Device::Exchange_Five_Grade()
 {
-    this->ExitTask_AutoExchange();
+    this->ExitTask_Auto_Exchange();
     if(this->Check_Select_Left())
     {
         this->Left_Exchange_Five_Grade();
@@ -469,7 +442,7 @@ void Robot_Device::Right_Exchange_Five_Grade()
 
 void Robot_Device::Exchange_Four_Grade()
 {
-    this->ExitTask_AutoExchange();
+    this->ExitTask_Auto_Exchange();
     if(this->Check_Select_Left())
     {
         this->Left_Exchange_Four_Grade();

@@ -8,20 +8,8 @@ void Robot_Device::Update_Visual_Exchange()
 {
     if(this->control_mode == VISUAL_CONTROL)
     {
-        if(usb.aim_flag)
+        if(usb.controllable_flag && usb.exchanging_flag && usb.truly_controllable_flag && usb.rx_exchanging_flag && usb.rx_controllable_flag)
         {
-            if(usb.side_flag)
-            {
-                if(usb.left_flag)
-                {
-                    gimbal.Set_Left();
-                }
-                else if(usb.right_flag)
-                {
-                    gimbal.Set_Right();
-                }
-            }
-
             while(!usb.effector_useful_flag)
             {
                 osDelay(1);
@@ -32,7 +20,6 @@ void Robot_Device::Update_Visual_Exchange()
             }
 
             this->Visual_To_Arm_Control();
-            this->Close_Visual_Control();
         }
     }
 }
@@ -44,26 +31,20 @@ bool Robot_Device::Check_Visual_Control()
 
 void Robot_Device::Visual_To_Arm_Control()
 {
-    usb.using_visual_flag = true;
+    usb.controllable_flag = false;
 
-    if(usb.effector_rdy_to_exchange_pose.z < Z_TOTAL_MAX - 20.0f)
+    if(usb.arm_target_pose.z < Z_TOTAL_MAX - 20.0f)
     {
-        this->Set_Arm_To_Exchagne_Initial(usb.effector_rdy_to_exchange_pose);
-
-        arm.Sucker_Dir_Move(ORE_LENGTH,0.5f);
+        this->Set_Arm_To_Exchagne_Initial(usb.arm_target_pose);
         arm.Wait_For_Moving();
     }
     else
     {
-        this->Set_Arm_To_Exchagne_Initial(usb.ore_down_effector_rdy_to_exchange_pose);
-
-        arm.Set_Point_Target_Pos_Vel(X,usb.ore_down_chassis_to_target_pose.x,0.5f);
-        arm.Set_Point_Target_Pos_Vel(Y,usb.ore_down_chassis_to_target_pose.y,0.5f);
-        arm.Set_Point_Target_Pos_Vel(Z,usb.ore_down_chassis_to_target_pose.z,0.5f);
+        this->Set_Arm_To_Exchagne_Initial(usb.ore_down_arm_target_pose);
         arm.Wait_For_Moving();
     }
 
-    usb.using_visual_flag = false;
+    usb.controllable_flag = true;
 }
 
 void Robot_Device::Set_Arm_To_Exchagne_Initial(pose_t pose)
@@ -100,6 +81,13 @@ void Robot_Device::Set_Arm_To_Exchagne_Initial(pose_t pose)
 
 void Robot_Device::Close_Visual_Control()
 {
-    this->control_mode == RC_KB_CONTROL;
+    this->control_mode = RC_KB_CONTROL;
     info.Set_Pose_Mode(single);
+}
+
+void Robot_Device::Open_Visual_Control()
+{
+    this->control_mode = VISUAL_CONTROL;
+    usb.exchanging_flag = true;
+    usb.exchanging_started_flag = true;
 }

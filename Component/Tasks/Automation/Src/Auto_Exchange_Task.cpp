@@ -6,7 +6,21 @@
 
 void AutoExchange_Task(void *argument)
 {
-    osThreadExit();
+    if(absorb.Get_Ore_Num() == 0)
+    {
+        robot.autoSituation = Auto_None;
+        osThreadExit();
+    }
+
+    robot.Arm_Take_Ore_From_Sucker();
+    robot.Pre_For_Auto_Exchange();
+    robot.Update_Visual_Exchange();
+
+    if(!usb.exchanging_flag)
+    {
+        robot.End_Exchange();
+        osThreadExit();
+    }
 }
 
 void Robot_Device::CreatTask_Auto_Exchange()
@@ -28,12 +42,14 @@ void Robot_Device::CreatTask_Auto_Exchange()
             this->Creat_Task_Init();
             this->AutoExchangeHandle = osThreadNew(AutoExchange_Task, NULL, &this->AutoExchange_Attributes);
         }
+
+        robot.Open_Visual_Control();
         taskEXIT_CRITICAL();
     }
 }
 
 
-void Robot_Device::ExitTask_AutoExchange()
+void Robot_Device::ExitTask_Auto_Exchange()
 {
     if (this->enable_flag && osThreadGetState(this->AutoExchangeHandle) != osThreadTerminated)
     {

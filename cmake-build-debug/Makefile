@@ -453,6 +453,30 @@ Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s
 .PHONY : Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s
 
+Component/Drivers/Automation/Src/Drv_Auto_Exchange.obj: Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_Exchange.obj
+
+# target to build an object file
+Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.obj
+
+Component/Drivers/Automation/Src/Drv_Auto_Exchange.i: Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_Exchange.i
+
+# target to preprocess a source file
+Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.i
+
+Component/Drivers/Automation/Src/Drv_Auto_Exchange.s: Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_Exchange.s
+
+# target to generate assembly for a file
+Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.s
+
 Component/Drivers/Automation/Src/Drv_Back.obj: Component/Drivers/Automation/Src/Drv_Back.cpp.obj
 .PHONY : Component/Drivers/Automation/Src/Drv_Back.obj
 
@@ -2958,6 +2982,9 @@ help:
 	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.obj
 	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.i
 	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.s
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.obj
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.i
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.s
 	@echo ... Component/Drivers/Automation/Src/Drv_Back.obj
 	@echo ... Component/Drivers/Automation/Src/Drv_Back.i
 	@echo ... Component/Drivers/Automation/Src/Drv_Back.s

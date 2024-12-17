@@ -13,18 +13,15 @@ USB_Device usb;
 
 USB_Device::USB_Device()
 {
-    this->aim_flag = false;
     this->data_valid_flag = false;
     this->effector_useful_flag = false;
-    this->end_filtering_flag = false;
-    this->filter_finish_flag = false;
-    this->front_flag = false;
-    this->left_flag = false;
-    this->right_flag = false;
     this->lost_flag = false;;
-    this->set_auto_exchange_flag = false;
-    this->side_flag = false;
-    this->start_filtering_flag = false;
+
+    this->exchanging_flag = false;
+    this->exchanging_started_flag = false;
+    this->controllable_flag = false;
+    this->exchanging_started_flag_sent_flag = false;
+    this->truly_controllable_flag = false;
 
     this->gravity_compensation_rotation_matrix = Eigen::AngleAxisf(0.0f, Eigen::Vector3f::UnitZ()) *
                                                  Eigen::AngleAxisf(GRAVITY_ORE_PITCH_COMPENSATION, Eigen::Vector3f::UnitY()) *
@@ -34,18 +31,7 @@ USB_Device::USB_Device()
     this->ore_front_to_down_eigen_pose.rotation_matrix = Eigen::AngleAxisf(0.0f, Eigen::Vector3f::UnitZ()) *
                                                          Eigen::AngleAxisf(-90.0f / 180.0f * PI, Eigen::Vector3f::UnitY()) *
                                                          Eigen::AngleAxisf(0.0f, Eigen::Vector3f::UnitX());
-
-    this->ore_front_to_left_eigen_pose.xyz_mm << -300.f , -170.f , 0.0f;
-    this->ore_front_to_left_eigen_pose.rotation_matrix = Eigen::AngleAxisf(90.0f / 180.0f * PI, Eigen::Vector3f::UnitZ()) *
-                                                         Eigen::AngleAxisf(0.0f, Eigen::Vector3f::UnitY()) *
-                                                         Eigen::AngleAxisf(0.0f, Eigen::Vector3f::UnitX());
-
-    this->ore_front_to_right_eigen_pose.xyz_mm << -300.f , 170.f , 0.0f;
-    this->ore_front_to_right_eigen_pose.rotation_matrix = Eigen::AngleAxisf(-90.0f / 180.0f * PI, Eigen::Vector3f::UnitZ()) *
-                                                          Eigen::AngleAxisf(0.0f, Eigen::Vector3f::UnitY()) *
-                                                          Eigen::AngleAxisf(0.0f, Eigen::Vector3f::UnitX());
 }
-
 
 void USB_Device::Receive_Data()
 {
@@ -62,23 +48,38 @@ void USB_Device::Receive_Data()
 void USB_Device::Update_RX_Data()
 {
     static uint32_t lost_num = 0;
-    this->data_valid_flag = (this->rx_raw_data.head == FRAME_HEADER && this->rx_raw_data.tail == FRAME_TAIL);
+    uint16_t crc = 0;
+    CRC16_Update(&crc,rx_raw_data.buf + 1,USB_INFO_RX_BUF_NUM - 4);
+    this->data_valid_flag = (this->rx_raw_data.head == FRAME_HEADER && this->rx_raw_data.tail == FRAME_TAIL && crc == this->rx_raw_data.crc);
     if (this->data_valid_flag)
     {
         lost_num = 0;
-        this->aim_flag = this->rx_raw_data.aim_flag;
-        this->filter_finish_flag = this->rx_raw_data.filter_finish_flag;
-        this->front_flag = this->rx_raw_data.front_flag;
-        this->side_flag = this->rx_raw_data.side_flag;
-        this->right_flag = this->rx_raw_data.right_flag;
-        this->left_flag = this->rx_raw_data.left_flag;
+
+        this->last_visual_control_pose.x = this->camera_to_target_pose.x;
+        this->last_visual_control_pose.y = this->camera_to_target_pose.y;
+        this->last_visual_control_pose.z = this->camera_to_target_pose.z;
+        this->last_visual_control_pose.roll = this->camera_to_target_pose.roll;
+        this->last_visual_control_pose.pitch = this->camera_to_target_pose.pitch;
+        this->last_visual_control_pose.yaw = this->camera_to_target_pose.yaw;
+
         this->camera_to_target_pose.x = float(this->rx_raw_data.x);
         this->camera_to_target_pose.y = float(this->rx_raw_data.y);
         this->camera_to_target_pose.z = float(this->rx_raw_data.z);
         this->camera_to_target_pose.yaw = float(this->rx_raw_data.yaw);
         this->camera_to_target_pose.pitch = float(this->rx_raw_data.pitch);
         this->camera_to_target_pose.roll = float(this->rx_raw_data.roll);
-        this->filtered_value = float(this->rx_raw_data.filtered_value);
+
+        this->rx_controllable_flag = this->rx_raw_data.controllable;
+        this->rx_exchanging_flag = this->rx_raw_data.exchanging;
+
+        if(this->exchanging_started_flag_sent_flag)
+        {
+            this->exchanging_started_flag = false;
+            if(!this->rx_exchanging_flag)
+            {
+                this->exchanging_flag = false;
+            }
+        }
     }
     else
     {
@@ -96,36 +97,24 @@ void USB_Device::Update_RX_Data()
 
 void USB_Device::Update_TX_Data()
 {
-    this->tx_data.end_filter_flag = this->end_filtering_flag;
-    this->tx_data.start_filter_flag = this->start_filtering_flag;
     this->tx_data.head = FRAME_HEADER;
+    this->tx_data.exchanging = this->exchanging_flag;
+    this->tx_data.exchange_started = this->exchanging_started_flag;
+    this->tx_data.controllable = this->controllable_flag;
     this->tx_data.tail = FRAME_TAIL;
+
+    uint16_t crc = 0;
+    CRC16_Update(&crc,this->tx_data.buf + 1,USB_INFO_TX_BUF_NUM - 4);
+    this->tx_data.crc = crc;
+
 }
 
 void USB_Device::Transmit_Data()
 {
-    static uint8_t start_num = 0;
-    static uint8_t end_num = 0;
-    if(this->start_filtering_flag && start_num < 2)
+    CDC_Transmit_FS_Mine_Del((uint8_t *)&this->tx_data, USB_INFO_TX_BUF_NUM);
+    if(this->tx_data.exchange_started)
     {
-        CDC_Transmit_FS_Mine_Del((uint8_t *)&this->tx_data, USB_INFO_TX_BUF_NUM);
-        start_num++;
-    }
-    else
-    {
-        start_num = 0;
-        this->start_filtering_flag = false;
-    }
-
-    if(this->end_filtering_flag && end_num < 2)
-    {
-        CDC_Transmit_FS_Mine_Del((uint8_t *)&this->tx_data, USB_INFO_TX_BUF_NUM);
-        end_num++;
-    }
-    else
-    {
-        end_num = 0;
-        this->end_filtering_flag = false;
+        this->exchanging_started_flag_sent_flag = true;
     }
 }
 
@@ -133,7 +122,7 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
 {
     if(this->data_valid_flag)
     {
-        if(this->aim_flag && !this->using_visual_flag)
+        if(this->controllable_flag && this->rx_controllable_flag && this->exchanging_flag && this->rx_exchanging_flag && this->truly_controllable_flag)
         {
             this->camera_yaw = arm.fb_current_data.arm_yaw + FRONT_CAMERA_FOCUS_ANGLE;
             float camera_yaw_radian = this->camera_yaw / 180.0f * PI;
@@ -161,13 +150,11 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
             eigen_pose_t_To_pose_t(this->chassis_to_target_eigen_pose,&this->chassis_to_target_pose);
 
             //吸住正面兑换
-            this->effector_rdy_to_exchange_eigen_pose.rotation_matrix = this->chassis_to_target_eigen_pose.rotation_matrix * this->gravity_compensation_rotation_matrix;
-            this->effector_rdy_to_exchange_eigen_pose.euler_radian = RotMatrix_To_Euler_ZYX(this->effector_rdy_to_exchange_eigen_pose.rotation_matrix);
-            this->effector_rdy_to_exchange_eigen_pose.euler_angle = this->effector_rdy_to_exchange_eigen_pose.euler_radian / PI * 180.0f;
-            this->effector_rdy_to_exchange_eigen_pose.xyz_mm << this->chassis_to_target_eigen_pose.xyz_mm[0] - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(0,0),
-                                                                this->chassis_to_target_eigen_pose.xyz_mm[1] - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(1,0),
-                                                                this->chassis_to_target_eigen_pose.xyz_mm[2] - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(2,0);
-            eigen_pose_t_To_pose_t(this->effector_rdy_to_exchange_eigen_pose,&this->effector_rdy_to_exchange_pose);
+            this->arm_target_eigen_pose.rotation_matrix = this->chassis_to_target_eigen_pose.rotation_matrix * this->gravity_compensation_rotation_matrix;
+            this->arm_target_eigen_pose.euler_radian = RotMatrix_To_Euler_ZYX(this->arm_target_eigen_pose.rotation_matrix);
+            this->arm_target_eigen_pose.euler_angle = this->arm_target_eigen_pose.euler_radian / PI * 180.0f;
+            this->arm_target_eigen_pose.xyz_mm << this->chassis_to_target_eigen_pose.xyz_mm[0] , this->chassis_to_target_eigen_pose.xyz_mm[1] , this->chassis_to_target_eigen_pose.xyz_mm[2];
+            eigen_pose_t_To_pose_t(this->arm_target_eigen_pose,&this->arm_target_pose);
 
             //吸住底面兑换
             this->ore_down_chassis_to_target_eigen_pose.rotation_matrix = this->chassis_to_target_eigen_pose.rotation_matrix * this->ore_front_to_down_eigen_pose.rotation_matrix;
@@ -176,34 +163,12 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
             this->ore_down_chassis_to_target_eigen_pose.xyz_mm = this->chassis_to_target_eigen_pose.rotation_matrix * this->ore_front_to_down_eigen_pose.xyz_mm + this->chassis_to_target_eigen_pose.xyz_mm;
             eigen_pose_t_To_pose_t(this->ore_down_chassis_to_target_eigen_pose,&this->ore_down_chassis_to_target_pose);
 
-            this->ore_down_effector_rdy_to_exchange_pose.yaw = this->ore_down_chassis_to_target_pose.yaw;
-            this->ore_down_effector_rdy_to_exchange_pose.pitch = this->ore_down_chassis_to_target_pose.pitch;
-            this->ore_down_effector_rdy_to_exchange_pose.roll = this->ore_down_chassis_to_target_pose.roll;
-            this->ore_down_effector_rdy_to_exchange_pose.x = this->ore_down_chassis_to_target_pose.x - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(0,0);
-            this->ore_down_effector_rdy_to_exchange_pose.y = this->ore_down_chassis_to_target_pose.y - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(1,0);
-            this->ore_down_effector_rdy_to_exchange_pose.z = this->ore_down_chassis_to_target_pose.z - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(2,0);
-
-            //吸住侧面兑换
-            if(this->left_flag)
-            {
-                this->ore_l_or_r_chassis_to_target_eigen_pose.rotation_matrix = this->chassis_to_target_eigen_pose.rotation_matrix * this->ore_front_to_left_eigen_pose.rotation_matrix * this->gravity_compensation_rotation_matrix;
-                this->ore_l_or_r_chassis_to_target_eigen_pose.xyz_mm = this->chassis_to_target_eigen_pose.rotation_matrix * this->ore_front_to_left_eigen_pose.xyz_mm + this->chassis_to_target_eigen_pose.xyz_mm;
-            }
-            else if(this->right_flag)
-            {
-                this->ore_l_or_r_chassis_to_target_eigen_pose.rotation_matrix = this->chassis_to_target_eigen_pose.rotation_matrix * this->ore_front_to_right_eigen_pose.rotation_matrix * this->gravity_compensation_rotation_matrix;
-                this->ore_l_or_r_chassis_to_target_eigen_pose.xyz_mm = this->chassis_to_target_eigen_pose.rotation_matrix * this->ore_front_to_right_eigen_pose.xyz_mm + this->chassis_to_target_eigen_pose.xyz_mm;
-            }
-            this->ore_l_or_r_chassis_to_target_eigen_pose.euler_radian = RotMatrix_To_Euler_ZYX(this->ore_l_or_r_chassis_to_target_eigen_pose.rotation_matrix);
-            this->ore_l_or_r_chassis_to_target_eigen_pose.euler_angle = this->ore_l_or_r_chassis_to_target_eigen_pose.euler_radian / PI * 180.0f;
-            eigen_pose_t_To_pose_t(this->ore_l_or_r_chassis_to_target_eigen_pose,&this->ore_l_or_r_chassis_to_target_pose);
-
-            this->ore_l_or_r_effector_rdy_to_exchange_pose.yaw = this->ore_l_or_r_chassis_to_target_pose.yaw;
-            this->ore_l_or_r_effector_rdy_to_exchange_pose.pitch = this->ore_l_or_r_chassis_to_target_pose.pitch;
-            this->ore_l_or_r_effector_rdy_to_exchange_pose.roll = this->ore_l_or_r_chassis_to_target_pose.roll;
-            this->ore_l_or_r_effector_rdy_to_exchange_pose.x = this->ore_l_or_r_chassis_to_target_pose.x - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(0,0);;
-            this->ore_l_or_r_effector_rdy_to_exchange_pose.y = this->ore_l_or_r_chassis_to_target_pose.y - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(1,0);;
-            this->ore_l_or_r_effector_rdy_to_exchange_pose.z = this->ore_l_or_r_chassis_to_target_pose.z - PRE_EXCHANGE_LENGTH * this->effector_rdy_to_exchange_eigen_pose.rotation_matrix(2,0);;
+            this->ore_down_arm_target_pose.yaw = this->ore_down_chassis_to_target_pose.yaw;
+            this->ore_down_arm_target_pose.pitch = this->ore_down_chassis_to_target_pose.pitch;
+            this->ore_down_arm_target_pose.roll = this->ore_down_chassis_to_target_pose.roll;
+            this->ore_down_arm_target_pose.x = this->ore_down_chassis_to_target_pose.x;
+            this->ore_down_arm_target_pose.y = this->ore_down_chassis_to_target_pose.y;
+            this->ore_down_arm_target_pose.z = this->ore_down_chassis_to_target_pose.z;
 
             this->effector_useful_flag = true;
         }
@@ -226,4 +191,21 @@ void eigen_pose_t_To_pose_t(eigen_pose_t eigen_pose,pose_t *pose)
     pose->yaw = eigen_pose.euler_angle[0];
     pose->pitch = eigen_pose.euler_angle[1];
     pose->roll = eigen_pose.euler_angle[2];
+}
+
+void USB_Device::Check_Change_Visual_Control()
+{
+    if(this->camera_to_target_pose.x == last_visual_control_pose.x &&
+       this->camera_to_target_pose.y == last_visual_control_pose.y &&
+       this->camera_to_target_pose.z == last_visual_control_pose.z &&
+       this->camera_to_target_pose.yaw == last_visual_control_pose.yaw &&
+       this->camera_to_target_pose.pitch == last_visual_control_pose.pitch &&
+       this->camera_to_target_pose.roll == last_visual_control_pose.roll)
+    {
+        this->truly_controllable_flag = true;
+    }
+    else
+    {
+        this->truly_controllable_flag = false;
+    }
 }

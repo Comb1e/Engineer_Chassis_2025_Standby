@@ -108,9 +108,6 @@ public:
     void Check_Rot();
     void Check_KB_Event();
 
-    void Adjust_Ore();
-    void Set_Store_Sucker();
-
     void Gimbal_Reset();
     void Arm_Homing();
     void Sucker_Reset();
@@ -128,6 +125,7 @@ public:
     bool Check_Visual_Control();
     void Update_Visual_Exchange();
     void Visual_To_Arm_Control();
+    void Open_Visual_Control();
     void Close_Visual_Control();
     void Set_Arm_To_Exchagne_Initial(pose_t pose);
 
@@ -153,7 +151,15 @@ public:
 
 //Drv_AutoExchange
     void CreatTask_Auto_Exchange();
-    void ExitTask_AutoExchange();
+    void ExitTask_Auto_Exchange();
+    void Pre_For_Auto_Exchange();
+    void Adjust_Ore();
+    void Set_Store_Sucker();
+    void Arm_Take_Ore_From_Sucker();
+    void Arm_Take_Ore_From_Side_Sucker_To_Center();
+    void Arm_Take_Ore_From_Left_Sucker();
+    void Arm_Take_Ore_From_Right_Sucker();
+    void End_Exchange();
 //Drv_AutoBigIsland
     void CreatTask_Auto_BigIsland();
     void ExitTask_Auto_BigIsland();

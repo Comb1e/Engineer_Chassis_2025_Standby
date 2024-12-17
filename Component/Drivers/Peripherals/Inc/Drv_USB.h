@@ -15,8 +15,8 @@ extern "C"
 
 #define USB_CONTROL_CYCLE    (40U)//单位是ms
 
-#define USB_INFO_RX_BUF_NUM         (4*6 +5)
-#define USB_INFO_TX_BUF_NUM         (4)
+#define USB_INFO_RX_BUF_NUM         (4*6 +6)
+#define USB_INFO_TX_BUF_NUM         (7)
 
 #define FRAME_HEADER        (0X5A)
 #define FRAME_TAIL          (0X66)
@@ -37,21 +37,16 @@ typedef union
     uint8_t buf[USB_INFO_RX_BUF_NUM];
     struct
     {
-        uint8_t head; //0x5a，固定头部
+        uint8_t head; //0x5A，固定头部
         float x;
         float y;
         float z;
         float yaw;
         float pitch;
         float roll;
-        float filtered_value;
-        uint8_t filter_finish_flag;
-        uint8_t aim_flag;
-        uint8_t front_flag;
-        uint8_t side_flag;
-        uint8_t left_flag;
-        uint8_t right_flag;
-        uint8_t crc;
+        uint8_t exchanging;
+        uint8_t controllable;
+        uint16_t crc;
         uint8_t tail; //0x66 固定尾部
     };
 }usb_rx_data_u;
@@ -62,8 +57,10 @@ typedef union
     struct
     {
         uint8_t head;//0x5a，固定头部
-        uint8_t start_filter_flag;
-        uint8_t end_filter_flag;
+        uint8_t exchanging;
+        uint8_t exchange_started;
+        uint8_t controllable;
+        uint16_t crc;
         uint8_t tail;//0x66 固定尾部
     };
 }usb_tx_data_u;
@@ -101,19 +98,17 @@ public:
     USB_Device();
 
     bool lost_flag;
-    bool aim_flag;//
     bool data_valid_flag;//目前的数据包CRC校验后有效
-    bool set_auto_exchange_flag;//视觉兑矿的开关
     bool effector_useful_flag;
-    bool using_visual_flag;
-    bool start_filtering_flag;//开始滤波
-    bool end_filtering_flag;//结束滤波
-    bool filter_finish_flag;
-    bool front_flag;
-    bool side_flag;
-    bool left_flag;
-    bool right_flag;
-    float filtered_value;
+
+    bool exchanging_flag;
+    bool exchanging_started_flag;
+    bool exchanging_started_flag_sent_flag;
+    bool controllable_flag;
+    bool truly_controllable_flag;
+
+    bool rx_exchanging_flag;
+    bool rx_controllable_flag;
 
     usb_rx_data_u rx_raw_data;
     usb_tx_data_u tx_data;
@@ -125,30 +120,26 @@ public:
     eigen_pose_t chassis_to_camera_eigen_pose;
     eigen_pose_t camera_to_target_eigen_pose;
     eigen_pose_t chassis_to_target_eigen_pose;
-    eigen_pose_t effector_rdy_to_exchange_eigen_pose;
+    eigen_pose_t arm_target_eigen_pose;
 
     eigen_pose_t ore_front_to_down_eigen_pose;
     eigen_pose_t ore_down_chassis_to_target_eigen_pose;
 
-    eigen_pose_t ore_front_to_left_eigen_pose;
-    eigen_pose_t ore_front_to_right_eigen_pose;
-    eigen_pose_t ore_l_or_r_chassis_to_target_eigen_pose;
-
     pose_t camera_to_target_pose;
     pose_t chassis_to_target_pose;
-    pose_t effector_rdy_to_exchange_pose;
+    pose_t arm_target_pose;
 
     pose_t ore_down_chassis_to_target_pose;
-    pose_t ore_down_effector_rdy_to_exchange_pose;
+    pose_t ore_down_arm_target_pose;
 
-    pose_t ore_l_or_r_chassis_to_target_pose;
-    pose_t ore_l_or_r_effector_rdy_to_exchange_pose;
+    pose_t last_visual_control_pose;
 
     void Receive_Data();
     void Update_RX_Data();
     void Update_TX_Data();
     void Transmit_Data();
     void Calculate_Camera_Get_Pose_To_Effector_Pose();
+    void Check_Change_Visual_Control();
 };
 
 void eigen_pose_t_To_pose_t(eigen_pose_t eigen_pose,pose_t *pose);
