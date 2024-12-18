@@ -97,6 +97,7 @@ void Gimbal_Slide_Task(void *argument)
                 {
                     gimbal.reset_flag = false;
                     gimbal.slide_ctrl_data.dist = 0;
+                    gimbal_reset.reset_flag = true;
                 }
             }
             else

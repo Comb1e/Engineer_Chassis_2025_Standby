@@ -73,8 +73,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_USB.cpp.obj"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_USB.cpp.obj.d"
-  "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj"
-  "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/AutoCtrl_Task.cpp.obj"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/AutoCtrl_Task.cpp.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.obj"

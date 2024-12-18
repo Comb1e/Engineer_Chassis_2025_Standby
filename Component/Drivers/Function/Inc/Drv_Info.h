@@ -107,6 +107,9 @@ public:
     bool Check_Enable();
     void Check_Lost();
     void Set_Pose_Mode(pose_mode_e pose_mode);
+    bool Check_Gyro_Lost_Flag();
+    bool Check_Motor_Lost_Flag();
+    bool Check_Motor_High_Tempature_Flag();
 
     friend void Info_Rx_Data_Callback(can_device_t *can_device, uint8_t *rx_data);
 };

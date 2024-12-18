@@ -427,6 +427,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chas
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Robot.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Chassis.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Gimbal.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Reset.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_ServoCtrl.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/Compilable.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Arm.h \

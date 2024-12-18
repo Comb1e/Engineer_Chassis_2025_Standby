@@ -140,6 +140,7 @@ public:
     void Transmit_Data();
     void Calculate_Camera_Get_Pose_To_Effector_Pose();
     void Check_Change_Visual_Control();
+    bool Check_Lost_Flag();
 };
 
 void eigen_pose_t_To_pose_t(eigen_pose_t eigen_pose,pose_t *pose);

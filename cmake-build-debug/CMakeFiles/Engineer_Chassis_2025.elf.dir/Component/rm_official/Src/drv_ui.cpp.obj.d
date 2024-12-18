@@ -464,6 +464,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_ui.cpp.ob
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/SPD_Plan.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Gimbal.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Reset.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_ServoCtrl.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/Compilable.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Arm.h \

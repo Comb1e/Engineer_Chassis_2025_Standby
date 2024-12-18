@@ -42,5 +42,14 @@ void Motor_Check_Task(void *argument)
         {
             death_cnt = 0;
         }
+
+        if(death_cnt >= 10)
+        {
+            robot.Set_Death();
+        }
+        else
+        {
+            robot.Set_Easter();
+        }
     }
 }

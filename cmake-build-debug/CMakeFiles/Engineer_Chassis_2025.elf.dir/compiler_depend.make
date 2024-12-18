@@ -1501,6 +1501,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Au
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -1959,6 +1960,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Au
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -2417,6 +2419,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Au
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -2875,6 +2878,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Ba
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -3333,6 +3337,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Vi
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -4317,6 +4322,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chas
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -4408,6 +4414,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimb
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/PID.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_RemoteCtrl.h \
@@ -4985,6 +4992,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_KB_E
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_KB_Event.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -5443,6 +5451,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_KB_S
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_KB_State.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -6096,6 +6105,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Robo
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -7167,54 +7177,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_U
   E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/User_Lib.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/Compilable.h
 
-CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c \
-  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
-  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
-  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
-  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
-  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
-  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/features.h \
-  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
-  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
-  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_IIC.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_XGZP6847.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f427xx.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_compiler.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_gcc.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/core_cm4.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/mpu_armv7.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_exti.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h
-
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/AutoCtrl_Task.cpp.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Automation/Src/AutoCtrl_Task.cpp \
   E:/RM/CubeMx/Engineer_Chassis_2025/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Eigen/src/plugins/ArrayCwiseUnaryOps.h \
@@ -7608,6 +7570,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/AutoCtrl
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -8066,6 +8029,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Big
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -8524,6 +8488,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exc
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -8982,6 +8947,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Gro
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -9440,6 +9406,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Sma
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -10118,6 +10085,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Att
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/PID.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Gimbal.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_RemoteCtrl.h \
@@ -10737,6 +10705,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/KB_Task.cp
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -11828,6 +11797,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_C
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -13213,6 +13183,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_ui.cpp.ob
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
@@ -13697,6 +13668,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/task_communic
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Info.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Robot.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_DJI_Motor.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
@@ -16691,9 +16663,9 @@ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/config.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Automation/Src/AutoCtrl_Task.cpp:
-
 E:/RM/CubeMx/Engineer_Chassis_2025/Eigen/src/QR/CompleteOrthogonalDecomposition.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Automation/Src/AutoCtrl_Task.cpp:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Drivers/CMSIS/Include/cmsis_version.h:
 
@@ -17329,9 +17301,9 @@ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/bits/stl_heap
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/rm_official/Inc/judgement.h:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Automation/Inc/AutoCtrl_Task.h:
-
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/bits/stl_tempbuf.h:
+
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Automation/Inc/AutoCtrl_Task.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/bits/stl_uninitialized.h:
 
@@ -17408,8 +17380,6 @@ E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/functional:
 E:/RM/CubeMx/Engineer_Chassis_2025/Eigen/src/Core/EigenBase.h:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/initializer_list:
-
-E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/ios:
 
@@ -17695,6 +17665,8 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Keyboard.h
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Pump.h:
 
+E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h:
+
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_ServoCtrl.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c:
@@ -17721,8 +17693,6 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Src/Drv_Keyboard.c
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Src/Drv_Pump.cpp:
 
-E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Inc/Drv_Reset.h:
-
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Function/Src/Drv_Robot.cpp:
 
 E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/time.h:
@@ -17736,8 +17706,6 @@ E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_INA226.
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_INA226.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Src/Drv_Ore.cpp:
-
-E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_XGZP6847.h:
 
 E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp:
 

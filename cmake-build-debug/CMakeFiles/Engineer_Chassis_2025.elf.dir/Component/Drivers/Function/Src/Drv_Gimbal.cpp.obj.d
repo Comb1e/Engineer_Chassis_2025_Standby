@@ -81,5 +81,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimb
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/compilable.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/PID.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Reset.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_ServoCtrl.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/Compilable.h

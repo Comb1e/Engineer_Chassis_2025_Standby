@@ -61,7 +61,7 @@ void Absorb_Device::Update_Ready()
     }
 }
 
-void Absorb_Device::Check_Pump_For_Loss()
+void Absorb_Device::Check_Pump_MCU_For_Loss()
 {
     osStatus_t status = osSemaphoreAcquire(AbsorbUpdateBinarySemHandle,15);
     if(status != osOK)

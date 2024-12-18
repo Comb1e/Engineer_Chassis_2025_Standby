@@ -163,23 +163,9 @@ public:
 
     bool Check_Control_Mode_RC_KB_CONTROL();
 
-    void RC_Set_Chassis_Vel_X(float vel_x);
-    void RC_Set_Chassis_Vel_Y(float vel_y);
-    void RC_Set_Chassis_Vel_Spin(float vel_spin);
-    void RC_Set_Chassis_Vel(float vel_x,float vel_y,float vel_spin);
-
     void RC_Set_Gimbal_Position(float delta);
 
     void Sucker_Directional_Move(traj_item_e point, float delta_distance);
-
-    void Set_Select_Left_Flag();
-    void Set_Select_Right_Flag();
-    void Set_Select_Center_Flag();
-    void Set_Cancel_Flag();
-    bool Check_Select_Center();
-    bool Check_Select_Right();
-    bool Check_Select_Left();
-    bool Check_Cancel();
 
     float Get_Arm_Point_Limit_Chassis_Val();
     void Update_Chassis_Speed_Limit();
@@ -201,6 +187,31 @@ public:
     void Left_Exchange_Four_Grade();
     void Right_Exchange_Four_Grade();
 
+    void Wait_For_Sucker_Holding(sucker_e sucker);
+
+    pump_state_e Get_Sucker_State(sucker_e sucker);
+
+    kb_control_mode_e Get_KB_Control_Mode();
+
+    void Check_Error();
+
+/*----------Set_Chassis_Vel----------*/
+    void RC_Set_Chassis_Vel_X(float vel_x);
+    void RC_Set_Chassis_Vel_Y(float vel_y);
+    void RC_Set_Chassis_Vel_Spin(float vel_spin);
+    void RC_Set_Chassis_Vel(float vel_x,float vel_y,float vel_spin);
+
+/*----------Select----------*/
+    void Set_Select_Left_Flag();
+    void Set_Select_Right_Flag();
+    void Set_Select_Center_Flag();
+    void Set_Cancel_Flag();
+    bool Check_Select_Center();
+    bool Check_Select_Right();
+    bool Check_Select_Left();
+    bool Check_Cancel();
+
+/*----------Visual_Control----------*/
     bool Check_Visual_Control();
     void Update_Visual_Exchange();
     void Visual_To_Arm_Control();
@@ -208,11 +219,12 @@ public:
     void Close_Visual_Control();
     void Set_Arm_To_Exchagne_Initial(pose_t pose);
 
-    void Wait_For_Sucker_Holding(sucker_e sucker);
+/*----------Death----------*/
+    bool death_flag;
 
-    pump_state_e Get_Sucker_State(sucker_e sucker);
-
-    kb_control_mode_e Get_KB_Control_Mode();
+    void Check_Death();
+    void Set_Death();
+    void Set_Easter();
 
 /*----------Automation----------*/
     autoStatus_e autoStatus;
@@ -265,7 +277,7 @@ public:
     void Back_To_Right_Sucker(float x_offset);
     void Back_To_Sucker();
 
-//rm_official
+/*----------rm_official----------*/
     uint16_t remain_hp;
     robot_error_u error_code;
     robot_gimbal_error_u gimbal_error_code;

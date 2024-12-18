@@ -95,7 +95,7 @@ public:
     void Init(CAN_HandleTypeDef *hcan, uint32_t rx_stdid, uint32_t tx_stdid, osSemaphoreId_t rx_sem);
     void Update_Data();
     void Update_Ready();
-    void Check_Pump_For_Loss();
+    void Check_Pump_MCU_For_Loss();
     void Update_Ore_Num();
     void Update_MSG();
     void Set_Sucker_Open(sucker_e sucker);

@@ -209,3 +209,8 @@ void USB_Device::Check_Change_Visual_Control()
         this->truly_controllable_flag = false;
     }
 }
+
+bool USB_Device::Check_Lost_Flag()
+{
+    return this->lost_flag;
+}

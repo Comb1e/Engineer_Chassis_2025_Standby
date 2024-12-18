@@ -726,3 +726,8 @@ void Arm_Device::Enable_Arm_Chassis_Cooperate()
 {
     this->arm_chassis_cooperate_flag = true;
 }
+
+bool Arm_Device::Check_Lost_Flag()
+{
+    return !this->connect_flag;
+}

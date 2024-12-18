@@ -192,3 +192,8 @@ void Gimbal_Device::Set_Homing()
     this->Set_Yaw_Deg(0.0f);
     this->Set_Slide_Distance(0.0f);
 }
+
+void Gimbal_Device::Set_Slide_Reset()
+{
+    this->reset_flag = true;
+}

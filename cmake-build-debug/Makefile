@@ -1029,30 +1029,6 @@ Component/Drivers/Peripherals/Src/Drv_USB.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_USB.cpp.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_USB.cpp.s
 
-Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj: Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj
-
-# target to build an object file
-Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.obj
-
-Component/Drivers/Peripherals/Src/Drv_XGZP6847.i: Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.i
-
-# target to preprocess a source file
-Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.i
-
-Component/Drivers/Peripherals/Src/Drv_XGZP6847.s: Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.s
-
-# target to generate assembly for a file
-Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_XGZP6847.c.s
-
 Component/Tasks/Automation/Src/AutoCtrl_Task.obj: Component/Tasks/Automation/Src/AutoCtrl_Task.cpp.obj
 .PHONY : Component/Tasks/Automation/Src/AutoCtrl_Task.obj
 
@@ -3198,9 +3174,6 @@ help:
 	@echo ... Component/Drivers/Peripherals/Src/Drv_USB.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_USB.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_USB.s
-	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.obj
-	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.i
-	@echo ... Component/Drivers/Peripherals/Src/Drv_XGZP6847.s
 	@echo ... Component/Tasks/Automation/Src/AutoCtrl_Task.obj
 	@echo ... Component/Tasks/Automation/Src/AutoCtrl_Task.i
 	@echo ... Component/Tasks/Automation/Src/AutoCtrl_Task.s

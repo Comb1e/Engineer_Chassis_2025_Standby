@@ -7,6 +7,7 @@
 
 #include "Global_CFG.h"
 #include "Drv_DJI_Motor.h"
+#include "Drv_Reset.h"
 #include "Drv_ServoCtrl.h"
 
 #ifdef __cplusplus
@@ -79,6 +80,7 @@ private:
 
 public:
     Gimbal_Device();
+    void Init();
 
     DJI_Motor_Device slide_motor;
 
@@ -92,8 +94,8 @@ public:
     gimbal_attitude_data_t attitude_data;
     Servo_Device pitch_servo;
     Servo_Device yaw_servo;
+    reset_t *gimbal_slide_reset;
 
-    void Init();
     bool Check_Init_Completely();
     uint8_t Check_Motor_Lost();
     void Update_Ready();
@@ -114,6 +116,7 @@ public:
     void Set_Left();
     void Set_Right();
     void Set_Homing();
+    void Set_Slide_Reset();
 };
 
 extern Gimbal_Device gimbal;

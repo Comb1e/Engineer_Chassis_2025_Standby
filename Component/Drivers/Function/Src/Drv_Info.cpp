@@ -118,4 +118,18 @@ void Info_Device::Set_Pose_Mode(pose_mode_e pose_mode)
     this->tx_raw_data.pose_mode = pose_mode;
 }
 
+bool Info_Device::Check_Gyro_Lost_Flag()
+{
+    return this->rx_data.fb_gimbal_gyro_lost_flag;
+}
+
+bool Info_Device::Check_Motor_Lost_Flag()
+{
+    return this->rx_data.fb_gimbal_motor_lost_flag;
+}
+
+bool Info_Device::Check_Motor_High_Tempature_Flag()
+{
+    return this->rx_data.fb_gimbal_motor_high_temperature_flag;
+}
 

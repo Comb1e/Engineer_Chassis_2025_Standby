@@ -276,6 +276,7 @@ public:
     void Update_Chassis_To_Sucker_RotMatrix();
     void Enable_Arm_Chassis_Cooperate();
     void Disable_Arm_Chassis_Cooperate();
+    bool Check_Lost_Flag();
 
     friend void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
 

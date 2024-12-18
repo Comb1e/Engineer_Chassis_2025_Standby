@@ -28,6 +28,7 @@ AutoGroundMine_Attributes({.name = "autoGroundMine", .stack_size = 128 *4, .prio
     this->select_center_flag = false;
     this->select_left_flag = false;
     this->select_right_flag = false;
+    this->death_flag = false;
 
     this->remain_hp = 250.0f;
     this->error_code.code = 0;
@@ -595,3 +596,42 @@ void Robot_Device::Wait_For_Sucker_Holding(sucker_e sucker)
     }
 }
 
+void Robot_Device::Check_Death()
+{
+    if(this->death_flag)
+    {
+        this->gimbal->Set_Slide_Reset();
+    }
+}
+
+void Robot_Device::Set_Death()
+{
+    this->death_flag = true;
+}
+
+void Robot_Device::Set_Easter()
+{
+    this->death_flag = false;
+}
+
+void Robot_Device::Check_Error()
+{
+    this->error_code.arm_sucker = this->absorb->sucker[ARM_SUCKER].Check_Lost_Flag();
+    this->error_code.left_sucker = this->absorb->sucker[LEFT_SUCKER].Check_Lost_Flag();
+    this->error_code.right_sucker = this->absorb->sucker[RIGHT_SUCKER].Check_Lost_Flag();
+
+    this->error_code.chassis_lb = this->chassis->wheel[CHASSIS_MOTOR_LB_NUM].Check_Lost_Flag();
+    this->error_code.chassis_lf = this->chassis->wheel[CHASSIS_MOTOR_LF_NUM].Check_Lost_Flag();
+    this->error_code.chassis_rb = this->chassis->wheel[CHASSIS_MOTOR_RB_NUM].Check_Lost_Flag();
+    this->error_code.chassis_rf = this->chassis->wheel[CHASSIS_MOTOR_RF_NUM].Check_Lost_Flag();
+
+    this->error_code.remote = !rc.ctrl_protection.connect_flag;
+
+    this->error_code.gimbal_arm = this->arm->Check_Lost_Flag();
+
+    this->error_code.vision = this->usb->Check_Lost_Flag();
+
+    this->gimbal_error_code.gyro = this->info->Check_Gyro_Lost_Flag();
+    this->gimbal_error_code.motor = this->info->Check_Motor_Lost_Flag();
+    this->gimbal_error_code.temp = this->info->Check_Motor_High_Tempature_Flag();
+}
