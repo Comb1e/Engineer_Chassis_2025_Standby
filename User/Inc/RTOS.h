@@ -32,5 +32,9 @@ extern osSemaphoreId_t ServoCtrlTXBinarySemHandle;
 extern osSemaphoreId_t AbsorbUpdateBinarySemHandle;
 extern osSemaphoreId_t ArmResetInitBinarySemHandle;
 extern osSemaphoreId_t ArmUpdateBinarySemHandle;
+extern osSemaphoreId_t JudgementInitBinarySemHandle;
+/*裁判系统*/
+extern osEventFlagsId_t RefereeEventHandle;
+extern osEventFlagsId_t refereeEventHandle;
 
 #endif //RTOS_H

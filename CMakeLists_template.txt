@@ -60,6 +60,7 @@ include_directories(${includes}
     Component
     Component/Tasks/Automation/Inc
     Component/Drivers/Automation/Inc
+    Component/rm_official/Inc
 )
 
 add_definitions(${defines})

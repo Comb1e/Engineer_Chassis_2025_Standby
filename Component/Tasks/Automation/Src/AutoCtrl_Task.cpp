@@ -7,6 +7,7 @@
 
 void AutoCtrl_Task(void *argument)
 {
+    robot.PTR_Init(&chassis,&gimbal,&usb,&arm,&info,&absorb);
     for(;;)
     {
         robot.Update_Chassis_Speed_Limit();

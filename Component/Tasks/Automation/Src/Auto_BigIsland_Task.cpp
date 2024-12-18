@@ -6,11 +6,13 @@
 
 void Auto_BigIsland_Task(void *argument)
 {
-    if (absorb.Check_Sucker_Holding(ARM_SUCKER))
+    if (robot.absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
         robot.Set_Auto_Situation(Auto_None);
         osThreadExit();
     }
+
+
 
     osThreadExit();
 }
@@ -18,7 +20,7 @@ void Auto_BigIsland_Task(void *argument)
 void Robot_Device::CreatTask_Auto_BigIsland()
 {
     osThreadState_t state = osThreadGetState(this->AutoBigIslandHandle);
-    if (this->enable_flag && this->autoSituation == Auto_None && !absorb.Check_Sucker_Holding(ARM_SUCKER))
+    if (this->enable_flag && this->autoSituation == Auto_None && !this->absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
         taskENTER_CRITICAL();
         this->autoSituation = Big_Island;

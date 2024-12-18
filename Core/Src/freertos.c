@@ -271,6 +271,11 @@ osSemaphoreId_t ArmUpdateBinarySemHandle;
 const osSemaphoreAttr_t ArmUpdateBinarySem_attributes = {
   .name = "ArmUpdateBinarySem"
 };
+/* Definitions for JudgementInitBinarySem */
+osSemaphoreId_t JudgementInitBinarySemHandle;
+const osSemaphoreAttr_t JudgementInitBinarySem_attributes = {
+  .name = "JudgementInitBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -280,6 +285,16 @@ const osSemaphoreAttr_t CAN1CountingSem_attributes = {
 osSemaphoreId_t CAN2CountingSemHandle;
 const osSemaphoreAttr_t CAN2CountingSem_attributes = {
   .name = "CAN2CountingSem"
+};
+/* Definitions for RefereeEvent */
+osEventFlagsId_t RefereeEventHandle;
+const osEventFlagsAttr_t RefereeEvent_attributes = {
+  .name = "RefereeEvent"
+};
+/* Definitions for refereeEvent */
+osEventFlagsId_t refereeEventHandle;
+const osEventFlagsAttr_t refereeEvent_attributes = {
+  .name = "refereeEvent"
 };
 
 /* Private function prototypes -----------------------------------------------*/
@@ -370,6 +385,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of ArmUpdateBinarySem */
   ArmUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ArmUpdateBinarySem_attributes);
 
+  /* creation of JudgementInitBinarySem */
+  JudgementInitBinarySemHandle = osSemaphoreNew(1, 1, &JudgementInitBinarySem_attributes);
+
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
 
@@ -459,6 +477,13 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
+
+  /* Create the event(s) */
+  /* creation of RefereeEvent */
+  RefereeEventHandle = osEventFlagsNew(&RefereeEvent_attributes);
+
+  /* creation of refereeEvent */
+  refereeEventHandle = osEventFlagsNew(&refereeEvent_attributes);
 
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */

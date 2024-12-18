@@ -28,6 +28,76 @@ extern "C"
 
 typedef enum
 {
+    remote= 0,
+    chassis_lf,
+    chassis_lb,
+    chassis_rf,
+    chassis_rb,
+    gimbal_yaw,
+    gimbal_arm,
+    vision,
+    left_sucker,
+    right_sucker,
+    arm_sucker,
+    ar_sucker,
+    al_sucker,
+    rl_sucker,
+    arl_sucker,
+    none
+}robot_error_type;
+
+typedef enum
+{
+    gyro= 0,
+    motor,
+    gy_mo,
+    temp,
+    None
+}robot_gimbal_error_type;
+
+typedef enum
+{
+    CENTER = 0,
+    LEFT = 1,
+    RIGHT = 2,
+}direction_need_e;
+
+#pragma pack(1)
+union robot_error_u
+{
+  uint32_t code;
+  struct
+  {
+    uint32_t remote:1;
+    uint32_t chassis_lf:1;
+    uint32_t chassis_lb:1;
+    uint32_t chassis_rf:1;
+    uint32_t chassis_rb:1;
+    uint32_t gimbal_yaw:1;
+    uint32_t gimbal_arm:1;
+    uint32_t vision:1;
+    uint32_t left_sucker:1;
+    uint32_t right_sucker:1;
+    uint32_t arm_sucker:1;
+    uint32_t reverse:11;
+  };
+};
+
+union robot_gimbal_error_u
+{
+  uint32_t code;
+  struct
+  {
+    uint32_t gyro:1;
+    uint32_t motor:1;
+    uint32_t temp:1;
+    uint32_t reverse:29;
+  };
+};
+#pragma pack()
+
+typedef enum
+{
     MODE_NONE,
     STEER_MODE,
     MINE_MODE
@@ -76,7 +146,16 @@ public:
     kb_control_mode_e kb_control_mode;
     robot_control_mode_e control_mode;
 
+    Chassis_Device *chassis;
+    Gimbal_Device *gimbal;
+    USB_Device *usb;
+    Arm_Device *arm;
+    Info_Device *info;
+    Absorb_Device *absorb;
+
 /*----------Drv_Robot----------*/
+    void PTR_Init(Chassis_Device *chassis,Gimbal_Device *gimbal,USB_Device *usb,Arm_Device *arm,Info_Device *info,Absorb_Device *absorb);
+
     void Set_Control_Mode(robot_control_mode_e control_mode);
 
     void Set_KB_Control_Mode_Mine();
@@ -131,6 +210,10 @@ public:
 
     void Wait_For_Sucker_Holding(sucker_e sucker);
 
+    pump_state_e Get_Sucker_State(sucker_e sucker);
+
+    kb_control_mode_e Get_KB_Control_Mode();
+
 /*----------Automation----------*/
     autoStatus_e autoStatus;
     autoSituation_e autoSituation;
@@ -161,8 +244,12 @@ public:
     void Arm_Take_Ore_From_Right_Sucker();
     void End_Exchange();
 //Drv_AutoBigIsland
+    direction_need_e big_island_dir;
+
     void CreatTask_Auto_BigIsland();
     void ExitTask_Auto_BigIsland();
+    void Pre_For_Auto_BigIsland();
+    void Select_Ming_Channel();
 //Drv_AutoSmallIsland
     void CreatTask_Auto_SmallIsland();
     void ExitTask_Auto_SmallIsland();
@@ -177,6 +264,22 @@ public:
     void Back_To_Left_Sucker(float x_offset);
     void Back_To_Right_Sucker(float x_offset);
     void Back_To_Sucker();
+
+//rm_official
+    uint16_t remain_hp;
+    robot_error_u error_code;
+    robot_gimbal_error_u gimbal_error_code;
+
+    void Update_HP(float hp);
+    float Get_Arm_Track_Point(traj_item_e traj_item);
+    float Get_Arm_Final_Point(traj_item_e traj_item);
+    pose_mode_e Get_Pose_Mode();
+    float Get_Tof_Dist();
+    bool Get_Camera_Catching();
+    autoSituation_e Get_Auto_Situation();
+    direction_need_e Get_BigIsland_Dir();
+    robot_error_u Get_Error_Code();
+    robot_gimbal_error_u Get_Gimbal_Error_Code();
 };
 
 extern Robot_Device robot;

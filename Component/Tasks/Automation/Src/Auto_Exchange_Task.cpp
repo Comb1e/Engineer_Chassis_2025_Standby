@@ -6,7 +6,7 @@
 
 void AutoExchange_Task(void *argument)
 {
-    if(absorb.Get_Ore_Num() == 0)
+    if(robot.absorb->Get_Ore_Num() == 0)
     {
         robot.autoSituation = Auto_None;
         osThreadExit();
@@ -26,7 +26,7 @@ void AutoExchange_Task(void *argument)
 void Robot_Device::CreatTask_Auto_Exchange()
 {
     osThreadState_t state = osThreadGetState(this->AutoExchangeHandle);
-    if (this->enable_flag && this->autoSituation == Auto_None && (absorb.Get_Ore_Num() != 0))
+    if (this->enable_flag && this->autoSituation == Auto_None && (this->absorb->Get_Ore_Num() != 0))
     {
         taskENTER_CRITICAL();
         this->autoSituation = Exchange_Mine;

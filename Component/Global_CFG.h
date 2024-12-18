@@ -34,4 +34,7 @@
 
 #define MOTOR_NUM 5
 
+#define JUDGEMENT_POWER_UART     (huart3) //115200
+#define JUDGEMENT_TRANSFER_UART     (huart8) //115200
+
 #endif //GLOBAL_CFG_H

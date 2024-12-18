@@ -38,17 +38,17 @@ void Robot_Device::Set_Store_Sucker()
     {
         if(this->Check_Select_Center())
         {
-            absorb.Set_Sucker_Open(ARM_SUCKER);
+            this->absorb->Set_Sucker_Open(ARM_SUCKER);
             break;
         }
         if(this->Check_Select_Left())
         {
-            absorb.Set_Sucker_Open(LEFT_SUCKER);
+            this->absorb->Set_Sucker_Open(LEFT_SUCKER);
             break;
         }
         if(this->Check_Select_Right())
         {
-            absorb.Set_Sucker_Open(RIGHT_SUCKER);
+            this->absorb->Set_Sucker_Open(RIGHT_SUCKER);
             break;
         }
     }
@@ -56,19 +56,19 @@ void Robot_Device::Set_Store_Sucker()
 
 void Robot_Device::Arm_Take_Ore_From_Sucker()
 {
-    if(absorb.Check_Sucker_Holding(ARM_SUCKER))
+    if(this->absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
         return;
     }
-    absorb.Set_Sucker_Open(ARM_SUCKER);
-    sucker_e sucker = absorb.Find_Ore();
+    this->absorb->Set_Sucker_Open(ARM_SUCKER);
+    sucker_e sucker = this->absorb->Find_Ore();
     if(sucker == ORE_STORE_NONE)
     {
         return;
     }
     this->Sucker_Reset();
     osDelay(2500);
-    arm.Disable_Arm_Chassis_Cooperate();
+    this->arm->Disable_Arm_Chassis_Cooperate();
     osDelay(2);
 
     if(sucker == LEFT_SUCKER)
@@ -82,95 +82,95 @@ void Robot_Device::Arm_Take_Ore_From_Sucker()
 
     this->Arm_Take_Ore_From_Side_Sucker_To_Center();
     osDelay(200);
-    arm.Enable_Arm_Chassis_Cooperate();
+    this->arm->Enable_Arm_Chassis_Cooperate();
 
 }
 
 void Robot_Device::Arm_Take_Ore_From_Side_Sucker_To_Center()
 {
-    arm.Set_Point_Target_Pos_Vel(YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
-    arm.Set_Point_Target_Pos_Vel(PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
-    arm.Set_Point_Target_Pos_Vel(ROLL,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ROLL,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ROLL,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ROLL,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ARM_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
-    arm.Set_Point_Target_Pos_Vel(ARM_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ARM_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ARM_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ARM_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(X,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_X,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Y,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_Y,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Z,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_Z,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(X,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_X,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_Y,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Z,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_Z,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
 }
 
 void Robot_Device::Arm_Take_Ore_From_Left_Sucker()
 {
-    arm.Set_Point_Target_Pos_Vel(X,TAKING_LEFT_SUCKER_POSITION_PRE_X,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Y,TAKING_LEFT_SUCKER_POSITION_PRE_Y,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Z,TAKING_LEFT_SUCKER_POSITION_PRE_Z,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(PITCH,TAKING_LEFT_SUCKER_POSITION_PRE_PITCH,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(X,TAKING_LEFT_SUCKER_POSITION_PRE_X,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_LEFT_SUCKER_POSITION_PRE_Y,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Z,TAKING_LEFT_SUCKER_POSITION_PRE_Z,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,TAKING_LEFT_SUCKER_POSITION_PRE_PITCH,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_LEFT_SUCKER_POSITION_ARM_YAW,TAKING_LEFT_SUCKER_POSITION_ARM_VEL);
-    arm.Set_Point_Target_Pos_Vel(ARM_PITCH,TAKING_LEFT_SUCKER_POSITION_ARM_PITCH,TAKING_LEFT_SUCKER_POSITION_ARM_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_LEFT_SUCKER_POSITION_ARM_YAW,TAKING_LEFT_SUCKER_POSITION_ARM_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,TAKING_LEFT_SUCKER_POSITION_ARM_PITCH,TAKING_LEFT_SUCKER_POSITION_ARM_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(PITCH,TAKING_LEFT_SUCKER_POSITION_PITCH,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
-    arm.Set_Point_Target_Pos_Vel(YAW,TAKING_LEFT_SUCKER_POSITION_YAW,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
-    arm.Set_Point_Target_Pos_Vel(ROLL,TAKING_LEFT_SUCKER_POSITION_ROLL,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,TAKING_LEFT_SUCKER_POSITION_PITCH,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(YAW,TAKING_LEFT_SUCKER_POSITION_YAW,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ROLL,TAKING_LEFT_SUCKER_POSITION_ROLL,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(X,TAKING_LEFT_SUCKER_POSITION_X,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Y,TAKING_LEFT_SUCKER_POSITION_Y,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Z,TAKING_LEFT_SUCKER_POSITION_Z,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(X,TAKING_LEFT_SUCKER_POSITION_X,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_LEFT_SUCKER_POSITION_Y,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Z,TAKING_LEFT_SUCKER_POSITION_Z,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(Y,TAKING_LEFT_SUCKER_POSITION_FINAL_Y,TAKING_LEFT_SUCKER_POSITION_FINAL_Y_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_LEFT_SUCKER_POSITION_FINAL_Y,TAKING_LEFT_SUCKER_POSITION_FINAL_Y_VEL);
+    this->arm->Wait_For_Moving();
 
     this->Wait_For_Sucker_Holding(ARM_SUCKER);
-    absorb.Set_Sucker_Close(LEFT_SUCKER);
-    absorb.Get_Ore_State()->Set_Ore_Source(WAREHOUSE);
-    arm.Set_FeedBack_As_Target();
+    this->absorb->Set_Sucker_Close(LEFT_SUCKER);
+    this->absorb->Get_Ore_State()->Set_Ore_Source(WAREHOUSE);
+    this->arm->Set_FeedBack_As_Target();
 }
 
 void Robot_Device::Arm_Take_Ore_From_Right_Sucker()
 {
-    arm.Set_Point_Target_Pos_Vel(X,TAKING_RIGHT_SUCKER_POSITION_PRE_X,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Y,TAKING_RIGHT_SUCKER_POSITION_PRE_Y,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Z,TAKING_RIGHT_SUCKER_POSITION_PRE_Z,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(PITCH,TAKING_RIGHT_SUCKER_POSITION_PRE_PITCH,TAKING_RIGHT_SUCKER_POSITION_RYP_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(X,TAKING_RIGHT_SUCKER_POSITION_PRE_X,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_RIGHT_SUCKER_POSITION_PRE_Y,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Z,TAKING_RIGHT_SUCKER_POSITION_PRE_Z,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,TAKING_RIGHT_SUCKER_POSITION_PRE_PITCH,TAKING_RIGHT_SUCKER_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_RIGHT_SUCKER_POSITION_ARM_YAW,TAKING_RIGHT_SUCKER_POSITION_ARM_VEL);
-    arm.Set_Point_Target_Pos_Vel(ARM_PITCH,TAKING_RIGHT_SUCKER_POSITION_ARM_PITCH,TAKING_RIGHT_SUCKER_POSITION_ARM_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_RIGHT_SUCKER_POSITION_ARM_YAW,TAKING_RIGHT_SUCKER_POSITION_ARM_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,TAKING_RIGHT_SUCKER_POSITION_ARM_PITCH,TAKING_RIGHT_SUCKER_POSITION_ARM_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(PITCH,TAKING_RIGHT_SUCKER_POSITION_PITCH,TAKING_RIGHT_SUCKER_POSITION_RYP_VEL);
-    arm.Set_Point_Target_Pos_Vel(YAW,TAKING_RIGHT_SUCKER_POSITION_YAW,TAKING_RIGHT_SUCKER_POSITION_RYP_VEL);
-    arm.Set_Point_Target_Pos_Vel(ROLL,TAKING_RIGHT_SUCKER_POSITION_ROLL,TAKING_RIGHT_SUCKER_POSITION_RYP_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,TAKING_RIGHT_SUCKER_POSITION_PITCH,TAKING_RIGHT_SUCKER_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(YAW,TAKING_RIGHT_SUCKER_POSITION_YAW,TAKING_RIGHT_SUCKER_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ROLL,TAKING_RIGHT_SUCKER_POSITION_ROLL,TAKING_RIGHT_SUCKER_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(X,TAKING_RIGHT_SUCKER_POSITION_X,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Y,TAKING_RIGHT_SUCKER_POSITION_Y,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
-    arm.Set_Point_Target_Pos_Vel(Z,TAKING_RIGHT_SUCKER_POSITION_Z,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(X,TAKING_RIGHT_SUCKER_POSITION_X,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_RIGHT_SUCKER_POSITION_Y,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Z,TAKING_RIGHT_SUCKER_POSITION_Z,TAKING_RIGHT_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
 
-    arm.Set_Point_Target_Pos_Vel(Y,TAKING_RIGHT_SUCKER_POSITION_FINAL_Y,TAKING_RIGHT_SUCKER_POSITION_FINAL_Y_VEL);
-    arm.Wait_For_Moving();
+    this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_RIGHT_SUCKER_POSITION_FINAL_Y,TAKING_RIGHT_SUCKER_POSITION_FINAL_Y_VEL);
+    this->arm->Wait_For_Moving();
 
     this->Wait_For_Sucker_Holding(ARM_SUCKER);
-    absorb.Set_Sucker_Close(RIGHT_SUCKER);
-    absorb.Get_Ore_State()->Set_Ore_Source(WAREHOUSE);
-    arm.Set_FeedBack_As_Target();
+    this->absorb->Set_Sucker_Close(RIGHT_SUCKER);
+    this->absorb->Get_Ore_State()->Set_Ore_Source(WAREHOUSE);
+    this->arm->Set_FeedBack_As_Target();
 }
 
 void Robot_Device::End_Exchange()
 {
-    absorb.Set_Sucker_Close(ARM_SUCKER);
+    this->absorb->Set_Sucker_Close(ARM_SUCKER);
     this->Set_KB_Control_Mode_Steer();
-    info.Set_Pose_Mode(single);
-    gimbal.Set_Yaw_Deg(0.0f);
+    this->info->Set_Pose_Mode(single);
+    this->gimbal->Set_Yaw_Deg(0.0f);
     robot.Close_Visual_Control();
     osDelay(3);
 }

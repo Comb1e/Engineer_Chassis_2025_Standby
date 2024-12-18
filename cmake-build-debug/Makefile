@@ -453,6 +453,30 @@ Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s
 .PHONY : Component/Drivers/Automation/Src/Drv_AutoTask.cpp.s
 
+Component/Drivers/Automation/Src/Drv_Auto_BigIsland.obj: Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_BigIsland.obj
+
+# target to build an object file
+Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.obj
+
+Component/Drivers/Automation/Src/Drv_Auto_BigIsland.i: Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_BigIsland.i
+
+# target to preprocess a source file
+Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.i
+
+Component/Drivers/Automation/Src/Drv_Auto_BigIsland.s: Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_BigIsland.s
+
+# target to generate assembly for a file
+Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_BigIsland.cpp.s
+
 Component/Drivers/Automation/Src/Drv_Auto_Exchange.obj: Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.obj
 .PHONY : Component/Drivers/Automation/Src/Drv_Auto_Exchange.obj
 
@@ -1532,6 +1556,126 @@ Component/Tasks/Peripherals/Src/USB_Task.s: Component/Tasks/Peripherals/Src/USB_
 Component/Tasks/Peripherals/Src/USB_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/USB_Task.cpp.s
 .PHONY : Component/Tasks/Peripherals/Src/USB_Task.cpp.s
+
+Component/rm_official/Src/bsp_rm_usart.obj: Component/rm_official/Src/bsp_rm_usart.c.obj
+.PHONY : Component/rm_official/Src/bsp_rm_usart.obj
+
+# target to build an object file
+Component/rm_official/Src/bsp_rm_usart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/bsp_rm_usart.c.obj
+.PHONY : Component/rm_official/Src/bsp_rm_usart.c.obj
+
+Component/rm_official/Src/bsp_rm_usart.i: Component/rm_official/Src/bsp_rm_usart.c.i
+.PHONY : Component/rm_official/Src/bsp_rm_usart.i
+
+# target to preprocess a source file
+Component/rm_official/Src/bsp_rm_usart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/bsp_rm_usart.c.i
+.PHONY : Component/rm_official/Src/bsp_rm_usart.c.i
+
+Component/rm_official/Src/bsp_rm_usart.s: Component/rm_official/Src/bsp_rm_usart.c.s
+.PHONY : Component/rm_official/Src/bsp_rm_usart.s
+
+# target to generate assembly for a file
+Component/rm_official/Src/bsp_rm_usart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/bsp_rm_usart.c.s
+.PHONY : Component/rm_official/Src/bsp_rm_usart.c.s
+
+Component/rm_official/Src/drv_data_fifo.obj: Component/rm_official/Src/drv_data_fifo.c.obj
+.PHONY : Component/rm_official/Src/drv_data_fifo.obj
+
+# target to build an object file
+Component/rm_official/Src/drv_data_fifo.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_data_fifo.c.obj
+.PHONY : Component/rm_official/Src/drv_data_fifo.c.obj
+
+Component/rm_official/Src/drv_data_fifo.i: Component/rm_official/Src/drv_data_fifo.c.i
+.PHONY : Component/rm_official/Src/drv_data_fifo.i
+
+# target to preprocess a source file
+Component/rm_official/Src/drv_data_fifo.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_data_fifo.c.i
+.PHONY : Component/rm_official/Src/drv_data_fifo.c.i
+
+Component/rm_official/Src/drv_data_fifo.s: Component/rm_official/Src/drv_data_fifo.c.s
+.PHONY : Component/rm_official/Src/drv_data_fifo.s
+
+# target to generate assembly for a file
+Component/rm_official/Src/drv_data_fifo.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_data_fifo.c.s
+.PHONY : Component/rm_official/Src/drv_data_fifo.c.s
+
+Component/rm_official/Src/drv_judgement.obj: Component/rm_official/Src/drv_judgement.cpp.obj
+.PHONY : Component/rm_official/Src/drv_judgement.obj
+
+# target to build an object file
+Component/rm_official/Src/drv_judgement.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_judgement.cpp.obj
+.PHONY : Component/rm_official/Src/drv_judgement.cpp.obj
+
+Component/rm_official/Src/drv_judgement.i: Component/rm_official/Src/drv_judgement.cpp.i
+.PHONY : Component/rm_official/Src/drv_judgement.i
+
+# target to preprocess a source file
+Component/rm_official/Src/drv_judgement.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_judgement.cpp.i
+.PHONY : Component/rm_official/Src/drv_judgement.cpp.i
+
+Component/rm_official/Src/drv_judgement.s: Component/rm_official/Src/drv_judgement.cpp.s
+.PHONY : Component/rm_official/Src/drv_judgement.s
+
+# target to generate assembly for a file
+Component/rm_official/Src/drv_judgement.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_judgement.cpp.s
+.PHONY : Component/rm_official/Src/drv_judgement.cpp.s
+
+Component/rm_official/Src/drv_ui.obj: Component/rm_official/Src/drv_ui.cpp.obj
+.PHONY : Component/rm_official/Src/drv_ui.obj
+
+# target to build an object file
+Component/rm_official/Src/drv_ui.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_ui.cpp.obj
+.PHONY : Component/rm_official/Src/drv_ui.cpp.obj
+
+Component/rm_official/Src/drv_ui.i: Component/rm_official/Src/drv_ui.cpp.i
+.PHONY : Component/rm_official/Src/drv_ui.i
+
+# target to preprocess a source file
+Component/rm_official/Src/drv_ui.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_ui.cpp.i
+.PHONY : Component/rm_official/Src/drv_ui.cpp.i
+
+Component/rm_official/Src/drv_ui.s: Component/rm_official/Src/drv_ui.cpp.s
+.PHONY : Component/rm_official/Src/drv_ui.s
+
+# target to generate assembly for a file
+Component/rm_official/Src/drv_ui.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/drv_ui.cpp.s
+.PHONY : Component/rm_official/Src/drv_ui.cpp.s
+
+Component/rm_official/Src/task_communicate.obj: Component/rm_official/Src/task_communicate.cpp.obj
+.PHONY : Component/rm_official/Src/task_communicate.obj
+
+# target to build an object file
+Component/rm_official/Src/task_communicate.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/task_communicate.cpp.obj
+.PHONY : Component/rm_official/Src/task_communicate.cpp.obj
+
+Component/rm_official/Src/task_communicate.i: Component/rm_official/Src/task_communicate.cpp.i
+.PHONY : Component/rm_official/Src/task_communicate.i
+
+# target to preprocess a source file
+Component/rm_official/Src/task_communicate.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/task_communicate.cpp.i
+.PHONY : Component/rm_official/Src/task_communicate.cpp.i
+
+Component/rm_official/Src/task_communicate.s: Component/rm_official/Src/task_communicate.cpp.s
+.PHONY : Component/rm_official/Src/task_communicate.s
+
+# target to generate assembly for a file
+Component/rm_official/Src/task_communicate.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/rm_official/Src/task_communicate.cpp.s
+.PHONY : Component/rm_official/Src/task_communicate.cpp.s
 
 Core/Src/can.obj: Core/Src/can.c.obj
 .PHONY : Core/Src/can.obj
@@ -2982,6 +3126,9 @@ help:
 	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.obj
 	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.i
 	@echo ... Component/Drivers/Automation/Src/Drv_AutoTask.s
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_BigIsland.obj
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_BigIsland.i
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_BigIsland.s
 	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.obj
 	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.i
 	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.s
@@ -3117,6 +3264,21 @@ help:
 	@echo ... Component/Tasks/Peripherals/Src/USB_Task.obj
 	@echo ... Component/Tasks/Peripherals/Src/USB_Task.i
 	@echo ... Component/Tasks/Peripherals/Src/USB_Task.s
+	@echo ... Component/rm_official/Src/bsp_rm_usart.obj
+	@echo ... Component/rm_official/Src/bsp_rm_usart.i
+	@echo ... Component/rm_official/Src/bsp_rm_usart.s
+	@echo ... Component/rm_official/Src/drv_data_fifo.obj
+	@echo ... Component/rm_official/Src/drv_data_fifo.i
+	@echo ... Component/rm_official/Src/drv_data_fifo.s
+	@echo ... Component/rm_official/Src/drv_judgement.obj
+	@echo ... Component/rm_official/Src/drv_judgement.i
+	@echo ... Component/rm_official/Src/drv_judgement.s
+	@echo ... Component/rm_official/Src/drv_ui.obj
+	@echo ... Component/rm_official/Src/drv_ui.i
+	@echo ... Component/rm_official/Src/drv_ui.s
+	@echo ... Component/rm_official/Src/task_communicate.obj
+	@echo ... Component/rm_official/Src/task_communicate.i
+	@echo ... Component/rm_official/Src/task_communicate.s
 	@echo ... Core/Src/can.obj
 	@echo ... Core/Src/can.i
 	@echo ... Core/Src/can.s
