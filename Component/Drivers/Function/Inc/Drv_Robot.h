@@ -21,6 +21,8 @@ extern "C"
 
 #include "stm32f4xx_hal.h"
 
+#define DISTANCE_FOR_CLAW      (210.f)
+
 #ifdef __cplusplus
 }
 #endif
@@ -192,7 +194,7 @@ public:
 
     kb_control_mode_e Get_KB_Control_Mode();
 
-    void Check_Error();
+    void Keep_Apart(float dist);
 
 /*----------Set_Chassis_Vel----------*/
     void RC_Set_Chassis_Vel_X(float vel_x);
@@ -270,8 +272,15 @@ public:
     void BigIsland_3();
     void BigIsland_Pre_Back();
 //Drv_AutoSmallIsland_Or_GroundMine
-    void CreatTask_Auto_SmallIsland_Or_GroundMine();
-    void ExitTask_Auto_SmallIsland_Or_GroundMine();
+    void CreatTask_Auto_SmallIsland();
+    void ExitTask_Auto_SmallIsland();
+    void CreatTask_Auto_GroundMine();
+    void ExitTask_Auto_GroundMine();
+    void Pre_For_Auto_SmallIsland_Or_GroundMine();
+    void SmallIsland_Or_GroundMine_Pre();
+    void SmallIsland_Or_GroundMine_1();
+    void SmallIsland_Or_GroundMine_Touching();
+    void SmallIsland_Or_GroundMine_Pre_Back();
 
 //Drv_Back
     void Back_With_Ore();
@@ -296,6 +305,7 @@ public:
     direction_need_e Get_BigIsland_Dir();
     robot_error_u Get_Error_Code();
     robot_gimbal_error_u Get_Gimbal_Error_Code();
+    void Check_Error();
 };
 
 extern Robot_Device robot;

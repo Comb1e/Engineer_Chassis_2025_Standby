@@ -4,7 +4,7 @@
 
 #include "Auto_Exchange_Task.h"
 
-void AutoExchange_Task(void *argument)
+__NO_RETURN void AutoExchange_Task(void *argument)
 {
     if(robot.absorb->Get_Ore_Num() == 0)
     {

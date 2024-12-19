@@ -24,7 +24,7 @@ Chassis_Device::Chassis_Device()
     this->control_type = SPEED;
     this->zero_offset_flag = false;
     this->tof_lost_flag = true;
-    this->tof_enable_flag = true;
+    this->tof_enable_flag = false;
     this->vel_max.kb = CHASSIS_VEL_KB_MAX;
     this->vel_max.rc = CHASSIS_VEL_RC_MAX;
     this->vel_max.total = CHASSIS_VEL_TOTAL_MAX;
@@ -190,7 +190,7 @@ void Chassis_Device::Update_Align()
         return;
     }
     this->align_data.beta = atanf((this->align_data.right_dist - this->align_data.left_dist) / TOF_DEVICE_DISTANCE);
-    this->align_data.center_dist = (this->align_data.right_dist+ this->align_data.left_dist) / 2.f;
+    this->align_data.center_dist = (this->align_data.right_dist + this->align_data.left_dist) / 2.f;
 
     if(this->tof_enable_flag)
     {
@@ -301,7 +301,7 @@ void Chassis_Device::Power_Control_Data_Init()
     this->power_control.para_H_sum_i = 0.0f;
     this->power_control.limit_power = 0.0f;
     this->power_control.now_power = 0.0f;
-    this->power_control.limit_power =CHASSIS_POWER_LIMIT;
+    this->power_control.limit_power = CHASSIS_POWER_LIMIT;
 }
 
 void Chassis_Device::Power_Control_Update()
@@ -510,4 +510,23 @@ bool Chassis_Device::Check_Yaw_At_Set() const
         return false;
     }
     return true;
+}
+
+void Chassis_Device::Disable_Align()
+{
+    this->tof_enable_flag = false;
+}
+
+void Chassis_Device::Enable_Align()
+{
+    this->tof_enable_flag = true;
+}
+
+bool Chassis_Device::Check_Align()
+{
+    if(ABS(this->align_data.center_dist - this->align_data.target_dist) < 0.01f && ABS(this->align_data.delta_rounds) < 0.1f)
+    {
+        return true;
+    }
+    return false;
 }

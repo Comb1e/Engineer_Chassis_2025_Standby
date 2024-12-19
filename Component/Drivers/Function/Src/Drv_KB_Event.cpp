@@ -1264,11 +1264,11 @@ void KB_Device::KeyX_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_SmallIsland_Or_GroundMine();
+                    robot.ExitTask_Auto_SmallIsland();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_SmallIsland_Or_GroundMine();
+                    robot.CreatTask_Auto_SmallIsland();
                 }
             }
             else if(dir == DIR_UP)
@@ -1306,11 +1306,11 @@ void KB_Device::KeyX_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_SmallIsland_Or_GroundMine();
+                    robot.ExitTask_Auto_SmallIsland();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_SmallIsland_Or_GroundMine();
+                    robot.CreatTask_Auto_SmallIsland();
                 }
             }
             else if(dir == DIR_UP)

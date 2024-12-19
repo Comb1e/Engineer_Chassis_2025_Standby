@@ -9,6 +9,7 @@ void Robot_Device::Pre_For_Auto_BigIsland()
 {
     this->Select_Mine_Channel();
     this->info->Set_Pose_Mode(concentric_double);
+    this->Keep_Apart(DISTANCE_FOR_CLAW);
     osDelay(3);
 }
 

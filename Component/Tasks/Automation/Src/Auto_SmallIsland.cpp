@@ -4,7 +4,7 @@
 
 #include "Auto_SmallIsland.h"
 
-void Auto_SmallIsland_Or_GroundMine_Task(void *argument)
+__NO_RETURN void Auto_SmallIsland_Or_GroundMine_Task(void *argument)
 {
     if (robot.absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
@@ -12,10 +12,22 @@ void Auto_SmallIsland_Or_GroundMine_Task(void *argument)
         osThreadExit();
     }
 
+    robot.Pre_For_Auto_SmallIsland_Or_GroundMine();
+    robot.Keep_Apart(100.0f);
+    robot.SmallIsland_Or_GroundMine_Pre();
+    robot.SmallIsland_Or_GroundMine_1();
+    robot.SmallIsland_Or_GroundMine_Touching();
+
+    robot.absorb->Get_Ore_State()->Set_Ore_Source(SMALL_ISLAND);
+
+    robot.SmallIsland_Or_GroundMine_Pre_Back();
+    robot.Back_With_Ore();
+
+    robot.Set_Auto_Situation(Auto_None);
     osThreadExit();
 }
 
-void Robot_Device::CreatTask_Auto_SmallIsland_Or_GroundMine()
+void Robot_Device::CreatTask_Auto_SmallIsland()
 {
     osThreadState_t state = osThreadGetState(this->AutoSmallIslandHandle);
     if (this->enable_flag && this->autoSituation == Auto_None && !this->absorb->Check_Sucker_Holding(ARM_SUCKER))
@@ -38,7 +50,7 @@ void Robot_Device::CreatTask_Auto_SmallIsland_Or_GroundMine()
     }
 }
 
-void Robot_Device::ExitTask_Auto_SmallIsland_Or_GroundMine()
+void Robot_Device::ExitTask_Auto_SmallIsland()
 {
     if (this->enable_flag)
     {

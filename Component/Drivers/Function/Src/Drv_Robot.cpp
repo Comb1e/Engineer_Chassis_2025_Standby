@@ -635,3 +635,17 @@ void Robot_Device::Check_Error()
     this->gimbal_error_code.motor = this->info->Check_Motor_Lost_Flag();
     this->gimbal_error_code.temp = this->info->Check_Motor_High_Tempature_Flag();
 }
+
+void Robot_Device::Keep_Apart(float dist)
+{
+    this->chassis->Enable_Align();
+    this->chassis->align_data.target_dist = dist;
+
+    uint32_t time = HAL_GetTick();
+    while(!this->chassis->Check_Align() && time + 4000 < HAL_GetTick())
+    {
+        osDelay(1);
+    }
+
+    this->chassis->Disable_Align();
+}

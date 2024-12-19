@@ -501,6 +501,30 @@ Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.s
 .PHONY : Component/Drivers/Automation/Src/Drv_Auto_Exchange.cpp.s
 
+Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.obj: Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.obj
+
+# target to build an object file
+Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.obj
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.obj
+
+Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.i: Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.i
+
+# target to preprocess a source file
+Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.i
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.i
+
+Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.s: Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.s
+
+# target to generate assembly for a file
+Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.s
+.PHONY : Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.cpp.s
+
 Component/Drivers/Automation/Src/Drv_Back.obj: Component/Drivers/Automation/Src/Drv_Back.cpp.obj
 .PHONY : Component/Drivers/Automation/Src/Drv_Back.obj
 
@@ -1100,6 +1124,30 @@ Component/Tasks/Automation/Src/Auto_Exchange_Task.s: Component/Tasks/Automation/
 Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s
 .PHONY : Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s
+
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj
+
+# target to build an object file
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
+
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.i: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
+
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.s: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
+.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
 
 Component/Tasks/Automation/Src/Auto_SmallIsland.obj: Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.obj
 .PHONY : Component/Tasks/Automation/Src/Auto_SmallIsland.obj
@@ -3084,6 +3132,9 @@ help:
 	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.obj
 	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.i
 	@echo ... Component/Drivers/Automation/Src/Drv_Auto_Exchange.s
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.obj
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.i
+	@echo ... Component/Drivers/Automation/Src/Drv_Auto_SmallIsland_Or_GroundMine.s
 	@echo ... Component/Drivers/Automation/Src/Drv_Back.obj
 	@echo ... Component/Drivers/Automation/Src/Drv_Back.i
 	@echo ... Component/Drivers/Automation/Src/Drv_Back.s
@@ -3159,6 +3210,9 @@ help:
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.obj
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.i
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.s
+	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj
+	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.i
+	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.s
 	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.obj
 	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.i
 	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.s

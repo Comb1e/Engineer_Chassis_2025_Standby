@@ -197,6 +197,9 @@ public:
     void Set_Rot();
     void Close_Rot();
     bool Check_Yaw_At_Set() const;
+    void Disable_Align();
+    void Enable_Align();
+    bool Check_Align();
 };
 
 extern Chassis_Device chassis;
