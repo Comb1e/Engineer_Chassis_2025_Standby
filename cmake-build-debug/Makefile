@@ -1101,30 +1101,6 @@ Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s
 .PHONY : Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.s
 
-Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
-.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj
-
-# target to build an object file
-Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
-.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj
-
-Component/Tasks/Automation/Src/Auto_GroundMine_Task.i: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
-.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.i
-
-# target to preprocess a source file
-Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
-.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.i
-
-Component/Tasks/Automation/Src/Auto_GroundMine_Task.s: Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
-.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.s
-
-# target to generate assembly for a file
-Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
-.PHONY : Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.s
-
 Component/Tasks/Automation/Src/Auto_SmallIsland.obj: Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.obj
 .PHONY : Component/Tasks/Automation/Src/Auto_SmallIsland.obj
 
@@ -3183,9 +3159,6 @@ help:
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.obj
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.i
 	@echo ... Component/Tasks/Automation/Src/Auto_Exchange_Task.s
-	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.obj
-	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.i
-	@echo ... Component/Tasks/Automation/Src/Auto_GroundMine_Task.s
 	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.obj
 	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.i
 	@echo ... Component/Tasks/Automation/Src/Auto_SmallIsland.s

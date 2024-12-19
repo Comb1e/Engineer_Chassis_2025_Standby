@@ -35,19 +35,19 @@ void Robot_Device::Visual_To_Arm_Control()
 
     if(this->usb->arm_target_pose.z < Z_TOTAL_MAX - 20.0f)
     {
-        this->Set_Arm_To_Exchagne_Initial(this->usb->arm_target_pose);
+        this->Set_Arm_To_Exchange_Initial(this->usb->arm_target_pose);
         this->arm->Wait_For_Moving();
     }
     else
     {
-        this->Set_Arm_To_Exchagne_Initial(this->usb->ore_down_arm_target_pose);
+        this->Set_Arm_To_Exchange_Initial(this->usb->ore_down_arm_target_pose);
         this->arm->Wait_For_Moving();
     }
 
     this->usb->controllable_flag = true;
 }
 
-void Robot_Device::Set_Arm_To_Exchagne_Initial(pose_t pose)
+void Robot_Device::Set_Arm_To_Exchange_Initial(pose_t pose)
 {
     if((pose.yaw < 0 && this->arm->trajectory[Y].track_point < pose.y)
     || (pose.yaw > 0 && this->arm->trajectory[Y].track_point > pose.y))

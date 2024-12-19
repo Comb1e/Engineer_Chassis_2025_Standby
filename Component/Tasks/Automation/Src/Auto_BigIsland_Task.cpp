@@ -4,7 +4,7 @@
 
 #include "Auto_BigIsland_Task.h"
 
-void Auto_BigIsland_Task(void *argument)
+__NO_RETURN void Auto_BigIsland_Task(void *argument)
 {
     if (robot.absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
@@ -12,8 +12,18 @@ void Auto_BigIsland_Task(void *argument)
         osThreadExit();
     }
 
+    robot.Pre_For_Auto_BigIsland();
+    robot.BigIsland_Pre();
+    robot.BigIsland_1();
+    robot.BigIsland_Touching();
+    robot.BigIsland_Adjust_1();
+    robot.BigIsland_2();
+    robot.BigIsland_Adjust_2();
+    robot.BigIsland_3();
+    robot.BigIsland_Pre_Back();
+    robot.Back_With_Ore();
 
-
+    robot.Set_Auto_Situation(Auto_None);
     osThreadExit();
 }
 

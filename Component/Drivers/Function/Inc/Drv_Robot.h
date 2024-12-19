@@ -7,7 +7,6 @@
 
 #include "Drv_Chassis.h"
 #include "Drv_Gimbal.h"
-#include "RTOS.h"
 #include "Global_CFG.h"
 #include "Drv_Arm.h"
 #include "Drv_Absorb.h"
@@ -217,7 +216,7 @@ public:
     void Visual_To_Arm_Control();
     void Open_Visual_Control();
     void Close_Visual_Control();
-    void Set_Arm_To_Exchagne_Initial(pose_t pose);
+    void Set_Arm_To_Exchange_Initial(pose_t pose);
 
 /*----------Death----------*/
     bool death_flag;
@@ -261,13 +260,18 @@ public:
     void CreatTask_Auto_BigIsland();
     void ExitTask_Auto_BigIsland();
     void Pre_For_Auto_BigIsland();
-    void Select_Ming_Channel();
-//Drv_AutoSmallIsland
-    void CreatTask_Auto_SmallIsland();
-    void ExitTask_Auto_SmallIsland();
-//Drv_AutoGroundMinew
-    void CreatTask_Auto_GroundMine();
-    void ExitTask_Auto_GroundMine();
+    void Select_Mine_Channel();
+    void BigIsland_Pre();
+    void BigIsland_1();
+    void BigIsland_Touching();
+    void BigIsland_Adjust_1();
+    void BigIsland_2();
+    void BigIsland_Adjust_2();
+    void BigIsland_3();
+    void BigIsland_Pre_Back();
+//Drv_AutoSmallIsland_Or_GroundMine
+    void CreatTask_Auto_SmallIsland_Or_GroundMine();
+    void ExitTask_Auto_SmallIsland_Or_GroundMine();
 
 //Drv_Back
     void Back_With_Ore();

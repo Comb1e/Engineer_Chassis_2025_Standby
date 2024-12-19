@@ -79,8 +79,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_BigIsland_Task.cpp.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.obj"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_Exchange_Task.cpp.obj.d"
-  "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj"
-  "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_GroundMine_Task.cpp.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.obj"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Automation/Src/Auto_SmallIsland.cpp.obj.d"
   "CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Absorb_Task.cpp.obj"

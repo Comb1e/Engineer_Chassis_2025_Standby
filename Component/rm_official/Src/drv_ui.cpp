@@ -8,6 +8,8 @@
 #include "drv_keyboard.h"
 #include "drv_judgement.h"
 
+ui_device ui;
+
 ui_device::ui_device() : using_custom_ctrl_flag(false), clear_all_flag(false), remind_big_island_flag(false) {}
 
 void ui_device::update_data_send() {

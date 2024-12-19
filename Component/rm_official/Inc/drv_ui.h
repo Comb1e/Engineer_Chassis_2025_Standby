@@ -5,9 +5,9 @@
 #ifndef ENGINEER_CHASSIS_2024_DRV_UI_H
 #define ENGINEER_CHASSIS_2024_DRV_UI_H
 
-#include "user_lib.h"
-#include "drv_usb.h"
-#include "drv_robot.h"
+#include "User_Lib.h"
+#include "Drv_USB.h"
+#include "Drv_Robot.h"
 #include "task_communicate.h"
 #include "Eigen/Dense"
 #ifdef __cplusplus
@@ -214,6 +214,8 @@ class ui_device {
                         uint32_t _width,
                         uint32_t start_x,
                         uint32_t start_y);
-
 };
+
+extern ui_device ui;
+
 #endif //ENGINEER_CHASSIS_2024_DRV_UI_H
