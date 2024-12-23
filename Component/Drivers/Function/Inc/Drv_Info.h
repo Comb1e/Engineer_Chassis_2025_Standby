@@ -6,6 +6,7 @@
 #define DRV_INFO_H
 
 #include "BSP_CAN.h"
+#include "Drv_Communication.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -5,8 +5,9 @@
 #ifndef DRV_CHASSIS_H
 #define DRV_CHASSIS_H
 
-
 #include "Drv_DJI_Motor.h"
+#include "Global_CFG.h"
+#include "Drv_Communication.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -169,14 +170,12 @@ public:
 
     float pos_yaw_angle;//角度
 
-    uint32_t arm_need_cnt;
-
     can_device_t tof_can;
     tof_rx_data_t tof_rx_data;
 
     void Init();
     bool Check_Init_Completely();
-    uint8_t Check_Motor_Lost();
+    void Check_Motor_Lost();
     bool Check_Ready_Flag() const;
     bool Check_Enable_Flag() const;
     void Set_Free();
@@ -200,16 +199,13 @@ public:
     float Get_Pos_Yaw() const;
     void Add_Position_X(float delta);
     void Add_Position_Y(float delta);
-    void Judge_For_Arm_Need();
     void Clean_Speed_Control();
     void Close_Yaw_Spin();
     void Change_To_Position_Type();
-    void Clean_Poition_Control();
+    void Clean_Position_Control();
     void Change_To_Speed_Type();
     void Update_Vel_Max(float total,float rc,float kb);
     void Reset_Total_Rounds();
-    void Set_Rot();
-    void Close_Rot();
     bool Check_Yaw_At_Set() const;
     void Disable_Align();
     void Enable_Align();

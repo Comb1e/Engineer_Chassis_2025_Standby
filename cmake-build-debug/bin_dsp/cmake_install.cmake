@@ -1,4 +1,4 @@
-# Install script for directory: E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Source
+# Install script for directory: E:/RM/2025/Engineer_Chassis_2025_Test/CMSIS-DSP/Source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

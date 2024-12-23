@@ -41,17 +41,15 @@ bool Gimbal_Device::Check_Init_Completely()
     return false;
 }
 
-uint8_t Gimbal_Device::Check_Motor_Lost()
+void Gimbal_Device::Check_Motor_Lost()
 {
     osStatus status = osSemaphoreAcquire(GimbalSlideUpdateBinarySemHandle,20);
     if(status == osOK)
     {
         this->slide_motor.lost_flag = false;
-        return 0;
     }
     // this->Set_Slide_Reset();
     this->slide_motor.lost_flag = true;
-    return 1;
 }
 
 void Gimbal_Device::Update_Ready()
@@ -98,7 +96,7 @@ void Gimbal_Device::Slide_Control()
 
 void Gimbal_Device::Update_Enable_Flag()
 {
-    if(rc.ctrl_protection.connect_flag)
+    if(communication.connect_flag)
     {
         this->enable_flag = true;
     }

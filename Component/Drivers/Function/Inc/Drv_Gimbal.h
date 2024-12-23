@@ -9,6 +9,7 @@
 #include "Drv_DJI_Motor.h"
 #include "Drv_Reset.h"
 #include "Drv_ServoCtrl.h"
+#include "Drv_Communication.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -97,7 +98,7 @@ public:
     reset_t *gimbal_slide_reset;
 
     bool Check_Init_Completely();
-    uint8_t Check_Motor_Lost();
+    void Check_Motor_Lost();
     void Update_Ready();
     bool Check_Ready();
     bool Check_Enable();

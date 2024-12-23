@@ -85,7 +85,7 @@ __RAM_FUNC void Info_Device::CAN_Send_MSG()
 
 void Info_Device::Update_Enable()
 {
-    if(rc.ctrl_protection.connect_flag)
+    if(communication.connect_flag)
     {
         this->enable_flag = true;
     }

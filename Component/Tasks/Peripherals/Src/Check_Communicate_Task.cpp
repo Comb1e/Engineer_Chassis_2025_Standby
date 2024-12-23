@@ -7,7 +7,6 @@
 #include "Drv_Absorb.h"
 #include "Global_CFG.h"
 #include "Drv_Info.h"
-#include "Drv_Arm.h"
 
 void Check_Communicate_Task(void *argument)
 {
@@ -19,6 +18,5 @@ void Check_Communicate_Task(void *argument)
         osDelay(6);
         absorb.Check_Pump_MCU_For_Loss();
         info.Check_Lost();
-        arm.Check_Lost();
     }
 }

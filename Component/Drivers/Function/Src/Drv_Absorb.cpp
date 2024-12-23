@@ -4,6 +4,8 @@
 
 #include "Drv_Absorb.h"
 
+#include "Drv_Communication.h"
+
 Absorb_Device absorb;
 
 Absorb_Device::Absorb_Device():
@@ -183,7 +185,7 @@ void Absorb_Device::Set_Sucker_Holding() {
 
 void Absorb_Device::Update_Enable()
 {
-    if(rc.ctrl_protection.connect_flag)
+    if(communication.connect_flag)
     {
         this->enable_flag = true;
     }

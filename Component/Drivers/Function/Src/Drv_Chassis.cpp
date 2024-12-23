@@ -5,14 +5,9 @@
 #include "Drv_Chassis.h"
 #include <math.h>
 #include "can.h"
-#include "RTOS.h"
 #include "Chassis_Task.h"
-#include "Drv_RemoteCtrl.h"
 #include "User_Lib.h"
-#include "Global_CFG.h"
 #include "Mecanum.h"
-#include "Drv_Arm.h"
-#include "Drv_Robot.h"
 
 Chassis_Device chassis;
 
@@ -27,7 +22,6 @@ Chassis_Device::Chassis_Device()
     this->vel_max.kb = CHASSIS_VEL_KB_MAX;
     this->vel_max.rc = CHASSIS_VEL_RC_MAX;
     this->vel_max.total = CHASSIS_VEL_TOTAL_MAX;
-    this->arm_need_cnt = 0;
     this->rot_flag = false;
     this->need_flag = true;
 #if ALIGN_TEST
@@ -75,7 +69,7 @@ bool Chassis_Device::Check_Init_Completely()
     return true;
 }
 
-uint8_t Chassis_Device::Check_Motor_Lost()
+void Chassis_Device::Check_Motor_Lost()
 {
     uint8_t lost_num = 0;
     for(auto & i : this->wheel)
@@ -91,7 +85,6 @@ uint8_t Chassis_Device::Check_Motor_Lost()
     {
         this->lost_flag = false;
     }
-    return lost_num;
 }
 
 bool Chassis_Device::Check_Ready_Flag() const
@@ -112,7 +105,7 @@ void Chassis_Device::Set_Free()
     }
 
     this->Clean_Speed_Control();
-    this->Clean_Poition_Control();
+    this->Clean_Position_Control();
     this->control_type = SPEED;
 }
 
@@ -144,15 +137,6 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
 {
     float vel_max = 0;
 
-    if(rc.data.using_kb_flag)
-    {
-        vel_max = this->vel_max.kb;
-    }
-    else
-    {
-        vel_max = this->vel_max.rc;
-    }
-
     chassis.Set_Vel_X(Get_Slope_Speed(&chassis.kb_vel_x));
     chassis.Set_Vel_Y(Get_Slope_Speed(&chassis.kb_vel_y));
 
@@ -182,7 +166,7 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
 
 void Chassis_Device::Update_Enable_Flag()
 {
-    if(rc.ctrl_protection.connect_flag && this->need_flag)
+    if(communication.connect_flag && this->need_flag)
     {
         this->enable_flag = true;
     }
@@ -399,47 +383,6 @@ void Chassis_Device::Add_Position_Y(float delta)
     this->position.y += delta;
 }
 
-void Chassis_Device::Judge_For_Arm_Need()
-{
-    if(arm.arm_chassis_cooperate_flag && arm.enable_arm_chassis_cooperate_flag)
-    {
-        if(this->control_type == SPEED)
-        {
-            this->Clean_Speed_Control();
-            this->Change_To_Position_Type();
-        }
-        this->position.x = arm.chassis_move_data.x;
-        this->position.y = arm.chassis_move_data.y;
-        this->Close_Yaw_Spin();
-
-        if(this->wheel[0].pid_loc.error < 0.2f && this->wheel[1].pid_loc.error < 0.2f && this->wheel[2].pid_loc.error < 0.2f && this->wheel[3].pid_loc.error < 0.2f)
-        {
-            this->arm_need_cnt++;
-        }
-        else
-        {
-            this->arm_need_cnt = 0;
-        }
-        if(this->arm_need_cnt > 200)
-        {
-            arm.arm_chassis_cooperate_flag = false;
-            arm.chassis_move_data.x = 0;
-            arm.chassis_move_data.y = 0;
-            this->arm_need_cnt = 0;
-            this->Clean_Poition_Control();
-            this->Clean_Speed_Control();
-            this->Change_To_Speed_Type();
-        }
-    }
-    else
-    {
-        arm.chassis_move_data.x = 0;
-        arm.chassis_move_data.y = 0;
-        this->arm_need_cnt = 0;
-        this->Reset_Total_Rounds();
-    }
-}
-
 void Chassis_Device::Clean_Speed_Control()
 {
     taskENTER_CRITICAL();
@@ -472,7 +415,7 @@ void Chassis_Device::Change_To_Position_Type()
     this->control_type = POSITION;
 }
 
-void Chassis_Device::Clean_Poition_Control()
+void Chassis_Device::Clean_Position_Control()
 {
     taskENTER_CRITICAL();
     this->Close_Yaw_Spin();
@@ -508,19 +451,6 @@ void Chassis_Device::Reset_Total_Rounds()
     this->wheel[1].Reset_Total_Rounds_Offset(0);
     this->wheel[2].Reset_Total_Rounds_Offset(0);
     this->wheel[3].Reset_Total_Rounds_Offset(0);
-}
-
-void Chassis_Device::Set_Rot()
-{
-    this->rot_flag = true;
-    kb.auto_rot = true;
-}
-
-void Chassis_Device::Close_Rot()
-{
-    this->rot_flag = false;
-    kb.auto_rot = false;
-    this->Close_Yaw_Spin();
 }
 
 bool Chassis_Device::Check_Yaw_At_Set() const

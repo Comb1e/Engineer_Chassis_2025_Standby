@@ -8,6 +8,7 @@
 #include "BSP_CAN.h"
 #include "Drv_Pump.h"
 #include "Drv_Ore.h"
+#include "Drv_Communication.h"
 
 #ifdef __cplusplus
 extern "C"

@@ -5,9 +5,7 @@
 #include "Gimbal_Slide_Task.h"
 #include "can.h"
 #include "Drv_Gimbal.h"
-#include "Drv_RemoteCtrl.h"
 #include "Drv_Reset.h"
-#include "RTOS.h"
 #include "Global_CFG.h"
 
 #if GIMBAL_SLIDE

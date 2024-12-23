@@ -11,7 +11,6 @@
 #include "gpio.h"
 #include "RTOS.h"
 #include "User_Lib.h"
-#include "Drv_RemoteCtrl.h"
 #include "Drv_HI229UM.h"
 
 #define MAHONY 1

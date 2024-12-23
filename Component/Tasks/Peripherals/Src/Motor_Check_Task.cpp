@@ -5,7 +5,7 @@
 #include "Motor_Check_Task.h"
 #include "cmsis_os2.h"
 #include "Drv_Chassis.h"
-#include "Drv_Robot.h"
+#include "Drv_Gimbal.h"
 #include "Global_CFG.h"
 #include "RTOS.h"
 
@@ -26,30 +26,7 @@ void Motor_Check_Task(void *argument)
     for(;;)
     {
         osDelay(6);
-        lost_num = 0;
-        lost_num += chassis.Check_Motor_Lost();
-        lost_num += gimbal.Check_Motor_Lost();
-        if(lost_num >= MOTOR_NUM)
-        {
-            death_cnt++;
-        }
-        else if(lost_num == 0)
-        {
-            robot.enable_flag = true;
-            death_cnt = 0;
-        }
-        else
-        {
-            death_cnt = 0;
-        }
-
-        if(death_cnt >= 10)
-        {
-            robot.Set_Death();
-        }
-        else
-        {
-            robot.Set_Easter();
-        }
+        chassis.Check_Motor_Lost();
+        gimbal.Check_Motor_Lost();
     }
 }

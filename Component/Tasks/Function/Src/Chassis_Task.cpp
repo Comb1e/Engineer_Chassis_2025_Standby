@@ -44,7 +44,6 @@ void Chassis_Task(void *argument) {
         {
             if(chassis.Check_Can_Use())
             {
-                chassis.Judge_For_Arm_Need();
                 switch (chassis.control_type)
                 {
                     case SPEED:
