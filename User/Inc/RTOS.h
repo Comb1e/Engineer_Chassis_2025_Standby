@@ -14,7 +14,6 @@ extern uint32_t debug;
 extern osMessageQueueId_t CAN1SendQueueHandle;
 extern osMessageQueueId_t CAN2SendQueueHandle;
 /*信号量*/
-extern osSemaphoreId_t RCUpdateBinarySemHandle;
 extern osSemaphoreId_t CAN1CountingSemHandle;
 extern osSemaphoreId_t CAN2CountingSemHandle;
 extern osSemaphoreId_t ChassisLFUpdateBinarySemHandle;
@@ -27,14 +26,7 @@ extern osSemaphoreId_t ServoCtrlQueueHandle;
 extern osSemaphoreId_t TofUpdateBinarySemHandle;
 extern osSemaphoreId_t GimbalYawUpdateBinarySemHandle;
 extern osSemaphoreId_t GimbalSlideUpdateBinarySemHandle;
-extern osSemaphoreId_t ClawUpdateBinarySemHandle;
 extern osSemaphoreId_t ServoCtrlTXBinarySemHandle;
 extern osSemaphoreId_t AbsorbUpdateBinarySemHandle;
-extern osSemaphoreId_t ArmResetInitBinarySemHandle;
-extern osSemaphoreId_t ArmUpdateBinarySemHandle;
-extern osSemaphoreId_t JudgementInitBinarySemHandle;
-/*裁判系统*/
-extern osEventFlagsId_t RefereeEventHandle;
-extern osEventFlagsId_t refereeEventHandle;
 
 #endif //RTOS_H

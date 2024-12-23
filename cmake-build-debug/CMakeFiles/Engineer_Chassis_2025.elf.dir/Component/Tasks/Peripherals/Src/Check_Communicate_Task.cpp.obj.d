@@ -81,5 +81,4 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_C
  E:\RM\2025\Engineer_Chassis_2025_Test\Component\Drivers\Peripherals\Inc/Drv_HI229UM.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
  E:\RM\2025\Engineer_Chassis_2025_Test\Component\Algorithm\Inc/CRC.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\BSP\Inc/BSP_Usart.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Drivers\Function\Inc/Drv_Info.h
+ E:\RM\2025\Engineer_Chassis_2025_Test\BSP\Inc/BSP_Usart.h

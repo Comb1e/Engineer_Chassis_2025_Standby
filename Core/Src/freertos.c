@@ -55,13 +55,6 @@ const osThreadAttr_t defaultTask_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for remotectrl_Task */
-osThreadId_t remotectrl_TaskHandle;
-const osThreadAttr_t remotectrl_Task_attributes = {
-  .name = "remotectrl_Task",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
 /* Definitions for can1_Task */
 osThreadId_t can1_TaskHandle;
 const osThreadAttr_t can1_Task_attributes = {
@@ -88,13 +81,6 @@ osThreadId_t hi229um_TaskHandle;
 const osThreadAttr_t hi229um_Task_attributes = {
   .name = "hi229um_Task",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for usb_Task */
-osThreadId_t usb_TaskHandle;
-const osThreadAttr_t usb_Task_attributes = {
-  .name = "usb_Task",
-  .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for tof_check_Task */
@@ -139,31 +125,10 @@ const osThreadAttr_t info_Task_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
-/* Definitions for kb_state_Task */
-osThreadId_t kb_state_TaskHandle;
-const osThreadAttr_t kb_state_Task_attributes = {
-  .name = "kb_state_Task",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for kb_event_Task */
-osThreadId_t kb_event_TaskHandle;
-const osThreadAttr_t kb_event_Task_attributes = {
-  .name = "kb_event_Task",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
 /* Definitions for absorb_Task */
 osThreadId_t absorb_TaskHandle;
 const osThreadAttr_t absorb_Task_attributes = {
   .name = "absorb_Task",
-  .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for arm_Task */
-osThreadId_t arm_TaskHandle;
-const osThreadAttr_t arm_Task_attributes = {
-  .name = "arm_Task",
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
@@ -172,13 +137,6 @@ osThreadId_t check_communiHandle;
 const osThreadAttr_t check_communi_attributes = {
   .name = "check_communi",
   .stack_size = 128 * 4,
-  .priority = (osPriority_t) osPriorityNormal,
-};
-/* Definitions for autoctrl_Task */
-osThreadId_t autoctrl_TaskHandle;
-const osThreadAttr_t autoctrl_Task_attributes = {
-  .name = "autoctrl_Task",
-  .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for CAN1SendQueue */
@@ -195,11 +153,6 @@ const osMessageQueueAttr_t CAN2SendQueue_attributes = {
 osMessageQueueId_t ServoCtrlQueueHandle;
 const osMessageQueueAttr_t ServoCtrlQueue_attributes = {
   .name = "ServoCtrlQueue"
-};
-/* Definitions for RCUpdateBinarySem */
-osSemaphoreId_t RCUpdateBinarySemHandle;
-const osSemaphoreAttr_t RCUpdateBinarySem_attributes = {
-  .name = "RCUpdateBinarySem"
 };
 /* Definitions for ChassisLFUpdateBinarySem */
 osSemaphoreId_t ChassisLFUpdateBinarySemHandle;
@@ -246,11 +199,6 @@ osSemaphoreId_t GimbalSlideUpdateBinarySemHandle;
 const osSemaphoreAttr_t GimbalSlideUpdateBinarySem_attributes = {
   .name = "GimbalSlideUpdateBinarySem"
 };
-/* Definitions for ClawUpdateBinarySem */
-osSemaphoreId_t ClawUpdateBinarySemHandle;
-const osSemaphoreAttr_t ClawUpdateBinarySem_attributes = {
-  .name = "ClawUpdateBinarySem"
-};
 /* Definitions for ServoCtrlTXBinarySem */
 osSemaphoreId_t ServoCtrlTXBinarySemHandle;
 const osSemaphoreAttr_t ServoCtrlTXBinarySem_attributes = {
@@ -260,21 +208,6 @@ const osSemaphoreAttr_t ServoCtrlTXBinarySem_attributes = {
 osSemaphoreId_t AbsorbUpdateBinarySemHandle;
 const osSemaphoreAttr_t AbsorbUpdateBinarySem_attributes = {
   .name = "AbsorbUpdateBinarySem"
-};
-/* Definitions for ArmResetInitBinarySem */
-osSemaphoreId_t ArmResetInitBinarySemHandle;
-const osSemaphoreAttr_t ArmResetInitBinarySem_attributes = {
-  .name = "ArmResetInitBinarySem"
-};
-/* Definitions for ArmUpdateBinarySem */
-osSemaphoreId_t ArmUpdateBinarySemHandle;
-const osSemaphoreAttr_t ArmUpdateBinarySem_attributes = {
-  .name = "ArmUpdateBinarySem"
-};
-/* Definitions for JudgementInitBinarySem */
-osSemaphoreId_t JudgementInitBinarySemHandle;
-const osSemaphoreAttr_t JudgementInitBinarySem_attributes = {
-  .name = "JudgementInitBinarySem"
 };
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
@@ -286,16 +219,6 @@ osSemaphoreId_t CAN2CountingSemHandle;
 const osSemaphoreAttr_t CAN2CountingSem_attributes = {
   .name = "CAN2CountingSem"
 };
-/* Definitions for RefereeEvent */
-osEventFlagsId_t RefereeEventHandle;
-const osEventFlagsAttr_t RefereeEvent_attributes = {
-  .name = "RefereeEvent"
-};
-/* Definitions for refereeEvent */
-osEventFlagsId_t refereeEventHandle;
-const osEventFlagsAttr_t refereeEvent_attributes = {
-  .name = "refereeEvent"
-};
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -303,24 +226,18 @@ const osEventFlagsAttr_t refereeEvent_attributes = {
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void *argument);
-void RemoteCtrl_Task(void *argument);
 void CAN1_Task(void *argument);
 void CAN2_Task(void *argument);
 void Chassis_Task(void *argument);
 void HI229UM_Task(void *argument);
-void USB_Task(void *argument);
 void Tof_Check_Task(void *argument);
 void Motor_Check_Task(void *argument);
 void Servo_Ctrl_Task(void *argument);
 void Gimbal_Slide_Task(void *argument);
 void Gimbal_Attitude_Task(void *argument);
 void Info_Task(void *argument);
-void KB_State_Task(void *argument);
-void KB_Event_Task(void *argument);
 void Absorb_Task(void *argument);
-void Arm_Task(void *argument);
 void Check_Communicate_Task(void *argument);
-void AutoCtrl_Task(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -339,9 +256,6 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE END RTOS_MUTEX */
 
   /* Create the semaphores(s) */
-  /* creation of RCUpdateBinarySem */
-  RCUpdateBinarySemHandle = osSemaphoreNew(1, 0, &RCUpdateBinarySem_attributes);
-
   /* creation of ChassisLFUpdateBinarySem */
   ChassisLFUpdateBinarySemHandle = osSemaphoreNew(1, 0, &ChassisLFUpdateBinarySem_attributes);
 
@@ -369,23 +283,11 @@ void MX_FREERTOS_Init(void) {
   /* creation of GimbalSlideUpdateBinarySem */
   GimbalSlideUpdateBinarySemHandle = osSemaphoreNew(1, 0, &GimbalSlideUpdateBinarySem_attributes);
 
-  /* creation of ClawUpdateBinarySem */
-  ClawUpdateBinarySemHandle = osSemaphoreNew(1, 0, &ClawUpdateBinarySem_attributes);
-
   /* creation of ServoCtrlTXBinarySem */
   ServoCtrlTXBinarySemHandle = osSemaphoreNew(1, 1, &ServoCtrlTXBinarySem_attributes);
 
   /* creation of AbsorbUpdateBinarySem */
   AbsorbUpdateBinarySemHandle = osSemaphoreNew(1, 1, &AbsorbUpdateBinarySem_attributes);
-
-  /* creation of ArmResetInitBinarySem */
-  ArmResetInitBinarySemHandle = osSemaphoreNew(1, 1, &ArmResetInitBinarySem_attributes);
-
-  /* creation of ArmUpdateBinarySem */
-  ArmUpdateBinarySemHandle = osSemaphoreNew(1, 1, &ArmUpdateBinarySem_attributes);
-
-  /* creation of JudgementInitBinarySem */
-  JudgementInitBinarySemHandle = osSemaphoreNew(1, 1, &JudgementInitBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -419,9 +321,6 @@ void MX_FREERTOS_Init(void) {
   /* creation of defaultTask */
   defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
 
-  /* creation of remotectrl_Task */
-  remotectrl_TaskHandle = osThreadNew(RemoteCtrl_Task, NULL, &remotectrl_Task_attributes);
-
   /* creation of can1_Task */
   can1_TaskHandle = osThreadNew(CAN1_Task, NULL, &can1_Task_attributes);
 
@@ -433,9 +332,6 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of hi229um_Task */
   hi229um_TaskHandle = osThreadNew(HI229UM_Task, NULL, &hi229um_Task_attributes);
-
-  /* creation of usb_Task */
-  usb_TaskHandle = osThreadNew(USB_Task, NULL, &usb_Task_attributes);
 
   /* creation of tof_check_Task */
   tof_check_TaskHandle = osThreadNew(Tof_Check_Task, NULL, &tof_check_Task_attributes);
@@ -455,34 +351,15 @@ void MX_FREERTOS_Init(void) {
   /* creation of info_Task */
   info_TaskHandle = osThreadNew(Info_Task, NULL, &info_Task_attributes);
 
-  /* creation of kb_state_Task */
-  kb_state_TaskHandle = osThreadNew(KB_State_Task, NULL, &kb_state_Task_attributes);
-
-  /* creation of kb_event_Task */
-  kb_event_TaskHandle = osThreadNew(KB_Event_Task, NULL, &kb_event_Task_attributes);
-
   /* creation of absorb_Task */
   absorb_TaskHandle = osThreadNew(Absorb_Task, NULL, &absorb_Task_attributes);
-
-  /* creation of arm_Task */
-  arm_TaskHandle = osThreadNew(Arm_Task, NULL, &arm_Task_attributes);
 
   /* creation of check_communi */
   check_communiHandle = osThreadNew(Check_Communicate_Task, NULL, &check_communi_attributes);
 
-  /* creation of autoctrl_Task */
-  autoctrl_TaskHandle = osThreadNew(AutoCtrl_Task, NULL, &autoctrl_Task_attributes);
-
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
-
-  /* Create the event(s) */
-  /* creation of RefereeEvent */
-  RefereeEventHandle = osEventFlagsNew(&RefereeEvent_attributes);
-
-  /* creation of refereeEvent */
-  refereeEventHandle = osEventFlagsNew(&refereeEvent_attributes);
 
   /* USER CODE BEGIN RTOS_EVENTS */
   /* add events, ... */
@@ -508,24 +385,6 @@ void StartDefaultTask(void *argument)
     osDelay(500);
   }
   /* USER CODE END StartDefaultTask */
-}
-
-/* USER CODE BEGIN Header_RemoteCtrl_Task */
-/**
-* @brief Function implementing the remotectrl_Task thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_RemoteCtrl_Task */
-__weak void RemoteCtrl_Task(void *argument)
-{
-  /* USER CODE BEGIN RemoteCtrl_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END RemoteCtrl_Task */
 }
 
 /* USER CODE BEGIN Header_CAN1_Task */
@@ -598,24 +457,6 @@ __weak void HI229UM_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END HI229UM_Task */
-}
-
-/* USER CODE BEGIN Header_USB_Task */
-/**
-* @brief Function implementing the usb_Task thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_USB_Task */
-__weak void USB_Task(void *argument)
-{
-  /* USER CODE BEGIN USB_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END USB_Task */
 }
 
 /* USER CODE BEGIN Header_Tof_Check_Task */
@@ -726,42 +567,6 @@ __weak void Info_Task(void *argument)
   /* USER CODE END Info_Task */
 }
 
-/* USER CODE BEGIN Header_KB_State_Task */
-/**
-* @brief Function implementing the kb_state_Task thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_KB_State_Task */
-__weak void KB_State_Task(void *argument)
-{
-  /* USER CODE BEGIN KB_State_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END KB_State_Task */
-}
-
-/* USER CODE BEGIN Header_KB_Event_Task */
-/**
-* @brief Function implementing the kb_event_Task thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_KB_Event_Task */
-__weak void KB_Event_Task(void *argument)
-{
-  /* USER CODE BEGIN KB_Event_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END KB_Event_Task */
-}
-
 /* USER CODE BEGIN Header_Absorb_Task */
 /**
 * @brief Function implementing the absorb_Task thread.
@@ -780,24 +585,6 @@ __weak void Absorb_Task(void *argument)
   /* USER CODE END Absorb_Task */
 }
 
-/* USER CODE BEGIN Header_Arm_Task */
-/**
-* @brief Function implementing the arm_Task thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_Arm_Task */
-__weak void Arm_Task(void *argument)
-{
-  /* USER CODE BEGIN Arm_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END Arm_Task */
-}
-
 /* USER CODE BEGIN Header_Check_Communicate_Task */
 /**
 * @brief Function implementing the check_communi thread.
@@ -814,24 +601,6 @@ __weak void Check_Communicate_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END Check_Communicate_Task */
-}
-
-/* USER CODE BEGIN Header_AutoCtrl_Task */
-/**
-* @brief Function implementing the autoctrl_Task thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_AutoCtrl_Task */
-__weak void AutoCtrl_Task(void *argument)
-{
-  /* USER CODE BEGIN AutoCtrl_Task */
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(1);
-  }
-  /* USER CODE END AutoCtrl_Task */
 }
 
 /* Private application code --------------------------------------------------*/

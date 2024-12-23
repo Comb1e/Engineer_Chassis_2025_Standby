@@ -61,7 +61,6 @@ include_directories(Core/Inc Drivers/STM32F4xx_HAL_Driver/Inc Drivers/STM32F4xx_
     Component
     Component/Tasks/Automation/Inc
     Component/Drivers/Automation/Inc
-    Component/rm_official/Inc
 )
 
 add_definitions(-DDEBUG -DUSE_HAL_DRIVER -DSTM32F427xx)

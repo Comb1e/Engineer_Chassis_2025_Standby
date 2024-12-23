@@ -20,7 +20,6 @@ void Motor_Check_Task(void *argument)
     osSemaphoreAcquire(ChassisRBUpdateBinarySemHandle, 10);
     osSemaphoreAcquire(GimbalYawUpdateBinarySemHandle, 10);
     osSemaphoreAcquire(GimbalSlideUpdateBinarySemHandle, 10);
-    osSemaphoreAcquire(ClawUpdateBinarySemHandle,10);
 
     uint8_t lost_num = 0;
     for(;;)
