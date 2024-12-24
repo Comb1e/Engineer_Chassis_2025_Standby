@@ -13,13 +13,13 @@ void Absorb_Task(void *argument)
     osDelay(1000);
     for(;;)
     {
-        absorb.Update_Enable();
         absorb.Update_Ready();
         if(absorb.ready_flag && absorb.Check_Enable())
         {
             absorb.Update_Data();
             absorb.Update_Ore_Num();
             absorb.Update_MSG();
+            absorb.Update_Pump_Open();
         }
         osDelay(8);
     }

@@ -139,6 +139,13 @@ const osThreadAttr_t check_communi_attributes = {
   .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for communicat_Task */
+osThreadId_t communicat_TaskHandle;
+const osThreadAttr_t communicat_Task_attributes = {
+  .name = "communicat_Task",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -179,11 +186,6 @@ osSemaphoreId_t HI229UMRxBinarySemHandle;
 const osSemaphoreAttr_t HI229UMRxBinarySem_attributes = {
   .name = "HI229UMRxBinarySem"
 };
-/* Definitions for IMUDMABinarySem */
-osSemaphoreId_t IMUDMABinarySemHandle;
-const osSemaphoreAttr_t IMUDMABinarySem_attributes = {
-  .name = "IMUDMABinarySem"
-};
 /* Definitions for TofUpdateBinarySem */
 osSemaphoreId_t TofUpdateBinarySemHandle;
 const osSemaphoreAttr_t TofUpdateBinarySem_attributes = {
@@ -208,6 +210,11 @@ const osSemaphoreAttr_t ServoCtrlTXBinarySem_attributes = {
 osSemaphoreId_t AbsorbUpdateBinarySemHandle;
 const osSemaphoreAttr_t AbsorbUpdateBinarySem_attributes = {
   .name = "AbsorbUpdateBinarySem"
+};
+/* Definitions for GimbalToChassisUpdateBinarySem */
+osSemaphoreId_t GimbalToChassisUpdateBinarySemHandle;
+const osSemaphoreAttr_t GimbalToChassisUpdateBinarySem_attributes = {
+  .name = "GimbalToChassisUpdateBinarySem"
 };
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
@@ -238,6 +245,7 @@ void Gimbal_Attitude_Task(void *argument);
 void Info_Task(void *argument);
 void Absorb_Task(void *argument);
 void Check_Communicate_Task(void *argument);
+void Communication_Task(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -271,9 +279,6 @@ void MX_FREERTOS_Init(void) {
   /* creation of HI229UMRxBinarySem */
   HI229UMRxBinarySemHandle = osSemaphoreNew(1, 0, &HI229UMRxBinarySem_attributes);
 
-  /* creation of IMUDMABinarySem */
-  IMUDMABinarySemHandle = osSemaphoreNew(1, 0, &IMUDMABinarySem_attributes);
-
   /* creation of TofUpdateBinarySem */
   TofUpdateBinarySemHandle = osSemaphoreNew(1, 0, &TofUpdateBinarySem_attributes);
 
@@ -288,6 +293,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of AbsorbUpdateBinarySem */
   AbsorbUpdateBinarySemHandle = osSemaphoreNew(1, 1, &AbsorbUpdateBinarySem_attributes);
+
+  /* creation of GimbalToChassisUpdateBinarySem */
+  GimbalToChassisUpdateBinarySemHandle = osSemaphoreNew(1, 1, &GimbalToChassisUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -356,6 +364,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of check_communi */
   check_communiHandle = osThreadNew(Check_Communicate_Task, NULL, &check_communi_attributes);
+
+  /* creation of communicat_Task */
+  communicat_TaskHandle = osThreadNew(Communication_Task, NULL, &communicat_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -601,6 +612,24 @@ __weak void Check_Communicate_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END Check_Communicate_Task */
+}
+
+/* USER CODE BEGIN Header_Communication_Task */
+/**
+* @brief Function implementing the communicat_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Communication_Task */
+__weak void Communication_Task(void *argument)
+{
+  /* USER CODE BEGIN Communication_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Communication_Task */
 }
 
 /* Private application code --------------------------------------------------*/

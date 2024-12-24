@@ -12,6 +12,7 @@
 #include "RTOS.h"
 #include "User_Lib.h"
 #include "Drv_HI229UM.h"
+#include "cstring"
 
 #define MAHONY 1
 #define SERVO 1
@@ -29,8 +30,6 @@
 #define CHASSIS_TEST 0
 #define CHASSIS_TEST_WHEEL 1
 #define ALIGN_TEST 0
-
-#define CAMERA_ON_ARM 1
 
 #define MOTOR_NUM 5
 

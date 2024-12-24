@@ -4,9 +4,9 @@
 
 #include "Drv_Gimbal.h"
 
-Gimbal_Device gimbal;
+Small_Gimbal_Device small_gimbal;
 
-Gimbal_Device::Gimbal_Device():
+Small_Gimbal_Device::Small_Gimbal_Device():
 pitch_servo(&SERVO_UART, GIMBAL_PITCH_SERVO_ID),
 yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID)
 {
@@ -25,14 +25,14 @@ yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID)
     this->attitude_data.servo_set_pitch_1000 = GIMBAL_SERVO_PITCH_HORIZONTAL_1000;
 }
 
-void Gimbal_Device::Init()
+void Small_Gimbal_Device::Init()
 {
     this->slide_motor.Init(GIMBAL_SLIDE_MOTOR_ID,DJI_M2006,GIMBAL_CAN,true,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
-    gimbal.slide_motor.pid_vel.Init(4,0,1,0,1);
-    gimbal.slide_motor.pid_loc.Init(0.2,0,2.6,0,0.4);
+    small_gimbal.slide_motor.pid_vel.Init(4,0,1,0,1);
+    small_gimbal.slide_motor.pid_loc.Init(0.2,0,2.6,0,0.4);
 }
 
-bool Gimbal_Device::Check_Init_Completely()
+bool Small_Gimbal_Device::Check_Init_Completely()
 {
     if(this->slide_motor.zero_offset_flag)
     {
@@ -41,7 +41,7 @@ bool Gimbal_Device::Check_Init_Completely()
     return false;
 }
 
-void Gimbal_Device::Check_Motor_Lost()
+void Small_Gimbal_Device::Check_Motor_Lost()
 {
     osStatus status = osSemaphoreAcquire(GimbalSlideUpdateBinarySemHandle,20);
     if(status == osOK)
@@ -52,7 +52,7 @@ void Gimbal_Device::Check_Motor_Lost()
     this->slide_motor.lost_flag = true;
 }
 
-void Gimbal_Device::Update_Ready()
+void Small_Gimbal_Device::Update_Ready()
 {
     if(this->slide_motor.Check_Lost_Flag())
     {
@@ -64,49 +64,37 @@ void Gimbal_Device::Update_Ready()
     }
 }
 
-bool Gimbal_Device::Check_Ready()
+bool Small_Gimbal_Device::Check_Ready()
 {
     return this->ready_flag;
 }
 
-bool Gimbal_Device::Check_Enable()
+bool Small_Gimbal_Device::Check_Enable()
 {
     return this->enable_flag;
 }
 
-bool Gimbal_Device::Check_Reset()
+bool Small_Gimbal_Device::Check_Reset()
 {
     return this->reset_flag;
 }
 
-void Gimbal_Device::Set_Free()
+void Small_Gimbal_Device::Set_Free()
 {
     this->slide_motor.Set_Free();
 }
 
-void Gimbal_Device::Slide_Control()
+void Small_Gimbal_Device::Slide_Control()
 {
     VAL_LIMIT(this->slide_ctrl_data.dist,GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM);
     this->slide_ctrl_data.rounds = GIMBAL_SLIDE_MOTOR_MIN_ROUNDS + (this->slide_ctrl_data.dist - GIMBAL_SLIDE_MIN_MM)/(GIMBAL_SLIDE_MAX_MM - GIMBAL_SLIDE_MIN_MM) * (GIMBAL_SLIDE_MOTOR_MAX_ROUNDS - GIMBAL_SLIDE_MOTOR_MIN_ROUNDS);
     VAL_LIMIT(this->slide_ctrl_data.rounds,GIMBAL_SLIDE_MOTOR_MIN_ROUNDS,GIMBAL_SLIDE_MOTOR_MAX_ROUNDS);
     this->slide_motor.Set_Loc(this->slide_ctrl_data.rounds);
-    gimbal.slide_motor.Set_Current_To_CAN_TX_Buf();
-    gimbal.slide_motor.Send_CAN_MSG();
+    small_gimbal.slide_motor.Set_Current_To_CAN_TX_Buf();
+    small_gimbal.slide_motor.Send_CAN_MSG();
 }
 
-void Gimbal_Device::Update_Enable_Flag()
-{
-    if(communication.connect_flag)
-    {
-        this->enable_flag = true;
-    }
-    else
-    {
-        this->enable_flag = false;
-    }
-}
-
-void Gimbal_Device::Update_Pitch_Control()
+void Small_Gimbal_Device::Update_Pitch_Control()
 {
     static int16_t s_pitch_last_msg = 0;
     float pitch = this->attitude_data.pitch_deg;
@@ -120,7 +108,7 @@ void Gimbal_Device::Update_Pitch_Control()
     }
 }
 
-void Gimbal_Device::Update_Yaw_Control()
+void Small_Gimbal_Device::Update_Yaw_Control()
 {
     static int16_t s_yaw_last_msg = 0;
     float yaw = this->attitude_data.yaw_deg;
@@ -134,64 +122,64 @@ void Gimbal_Device::Update_Yaw_Control()
     }
 }
 
-void Gimbal_Device::Set_Pitch_Deg(float pitch_deg)
+void Small_Gimbal_Device::Set_Pitch_Deg(float pitch_deg)
 {
     this->attitude_data.pitch_deg = pitch_deg;
     VAL_LIMIT(this->attitude_data.pitch_deg, GIMBAL_PITCH_MIN, GIMBAL_PITCH_MAX);
 }
 
-void Gimbal_Device::Add_Pitch_Deg(float delta_pitch_deg)
+void Small_Gimbal_Device::Add_Pitch_Deg(float delta_pitch_deg)
 {
     this->attitude_data.pitch_deg += delta_pitch_deg;
     VAL_LIMIT(this->attitude_data.pitch_deg, GIMBAL_PITCH_MIN, GIMBAL_PITCH_MAX);
 }
 
-void Gimbal_Device::Set_Yaw_Deg(float yaw_deg)
+void Small_Gimbal_Device::Set_Yaw_Deg(float yaw_deg)
 {
     this->attitude_data.yaw_deg += yaw_deg;
     VAL_LIMIT(this->attitude_data.yaw_deg, GIMBAL_PITCH_MIN, GIMBAL_PITCH_MAX);
 }
 
-void Gimbal_Device::Add_Yaw_Deg(float delta_yaw_deg)
+void Small_Gimbal_Device::Add_Yaw_Deg(float delta_yaw_deg)
 {
     this->attitude_data.yaw_deg += delta_yaw_deg;
     VAL_LIMIT(this->attitude_data.yaw_deg, GIMBAL_YAW_MIN, GIMBAL_YAW_MAX);
 }
 
-void Gimbal_Device::Set_Slide_Distance(float dist)
+void Small_Gimbal_Device::Set_Slide_Distance(float dist)
 {
     this->slide_ctrl_data.dist = dist;
     VAL_LIMIT(this->slide_ctrl_data.dist,GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM);
 }
 
-void Gimbal_Device::Add_Slide_Distance(float delta)
+void Small_Gimbal_Device::Add_Slide_Distance(float delta)
 {
     this->slide_ctrl_data.dist += delta;
     VAL_LIMIT(this->slide_ctrl_data.dist,GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM);
 }
 
-void Gimbal_Device::Set_Left()
+void Small_Gimbal_Device::Set_Left()
 {
     this->Set_Pitch_Deg(20.f);
     this->Set_Yaw_Deg(-20.f);
     this->Set_Slide_Distance(200.f);
 }
 
-void Gimbal_Device::Set_Right()
+void Small_Gimbal_Device::Set_Right()
 {
     this->Set_Pitch_Deg(20.f);
     this->Set_Yaw_Deg(20.f);
     this->Set_Slide_Distance(-200.f);
 }
 
-void Gimbal_Device::Set_Homing()
+void Small_Gimbal_Device::Set_Homing()
 {
     this->Set_Pitch_Deg(40.0f);
     this->Set_Yaw_Deg(0.0f);
     this->Set_Slide_Distance(0.0f);
 }
 
-void Gimbal_Device::Set_Slide_Reset()
+void Small_Gimbal_Device::Set_Slide_Reset()
 {
     this->reset_flag = true;
 }

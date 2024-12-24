@@ -9,7 +9,6 @@
 #include "Drv_DJI_Motor.h"
 #include "Drv_Reset.h"
 #include "Drv_ServoCtrl.h"
-#include "Drv_Communication.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -75,12 +74,12 @@ typedef struct
 }
 #endif
 
-class Gimbal_Device
+class Small_Gimbal_Device
 {
 private:
 
 public:
-    Gimbal_Device();
+    Small_Gimbal_Device();
     void Init();
 
     DJI_Motor_Device slide_motor;
@@ -105,7 +104,6 @@ public:
     bool Check_Reset();
     void Set_Free();
     void Slide_Control();
-    void Update_Enable_Flag();
     void Update_Pitch_Control();
     void Update_Yaw_Control();
     void Add_Pitch_Deg(float delta_pitch_deg);
@@ -120,6 +118,6 @@ public:
     void Set_Slide_Reset();
 };
 
-extern Gimbal_Device gimbal;
+extern Small_Gimbal_Device small_gimbal;
 
 #endif //DRV_GIMBAL_H

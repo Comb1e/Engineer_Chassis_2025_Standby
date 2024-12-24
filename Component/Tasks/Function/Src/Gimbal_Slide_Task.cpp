@@ -14,8 +14,8 @@ void Gimbal_Slide_Task(void *argument)
 {
 #if GIMBAL_Slide_TEST
 
-    gimbal.Init();
-    while(!gimbal.Check_Init_Completely())
+    small_gimbal.Init();
+    while(!small_gimbal.Check_Init_Completely())
     {
         osDelay(1);
     }
@@ -30,41 +30,41 @@ void Gimbal_Slide_Task(void *argument)
         GIMBAL_SLIDE_MOTOR_MIN_ROUNDS,GIMBAL_SLIDE_MOTOR_MAX_ROUNDS,GIMBAL_SLIDE_MOTOR_ROUNDS_OFFSET,
         GIMBAL_SLIDE_ERROR_MIN
     };
-    Reset_Init(&gimbal_reset,&gimbal.slide_motor);
+    Reset_Init(&gimbal_reset,&small_gimbal.slide_motor);
     gimbal_reset.reset_flag = false;
-    gimbal.reset_flag = false;
+    small_gimbal.reset_flag = false;
     for(;;)
     {
         if(rc.ctrl_protection.connect_flag)
         {
-            if(gimbal.Check_Reset())
+            if(small_gimbal.Check_Reset())
             {
                 Update_Reset(&gimbal_reset);
                 if(!gimbal_reset.reset_flag)
                 {
-                    gimbal.reset_flag = false;
+                    small_gimbal.reset_flag = false;
                 }
             }
             else
             {
-                gimbal.slide_motor.Loc_To_Vel_To_Current();
-                gimbal.slide_motor.Vel_To_Current();
-                gimbal.slide_motor.Set_Current_To_CAN_TX_Buf();
-                gimbal.slide_motor.Send_CAN_MSG();
+                small_gimbal.slide_motor.Loc_To_Vel_To_Current();
+                small_gimbal.slide_motor.Vel_To_Current();
+                small_gimbal.slide_motor.Set_Current_To_CAN_TX_Buf();
+                small_gimbal.slide_motor.Send_CAN_MSG();
             }
         }
         else
         {
-            gimbal.slide_motor.Set_Current_Zero();
-            gimbal.slide_motor.Send_CAN_MSG();
+            small_gimbal.slide_motor.Set_Current_Zero();
+            small_gimbal.slide_motor.Send_CAN_MSG();
         }
         osDelay(3);
     }
 
 #else
 
-    gimbal.Init();
-    while(!gimbal.Check_Init_Completely())
+    small_gimbal.Init();
+    while(!small_gimbal.Check_Init_Completely())
     {
         osDelay(1);
     }
@@ -80,32 +80,31 @@ void Gimbal_Slide_Task(void *argument)
         GIMBAL_SLIDE_MOTOR_MIN_ROUNDS,GIMBAL_SLIDE_MOTOR_MAX_ROUNDS,GIMBAL_SLIDE_MOTOR_ROUNDS_OFFSET,
         GIMBAL_SLIDE_ERROR_MIN
     };
-    Reset_Init(&gimbal_reset,&gimbal.slide_motor);
+    Reset_Init(&gimbal_reset,&small_gimbal.slide_motor);
 
     for(;;)
     {
-        gimbal.Update_Ready();
-        gimbal.Update_Enable_Flag();
-        if(gimbal.Check_Ready() && gimbal.Check_Enable())
+        small_gimbal.Update_Ready();
+        if(small_gimbal.Check_Ready() && small_gimbal.Check_Enable())
         {
-            if(gimbal.Check_Reset())
+            if(small_gimbal.Check_Reset())
             {
                 Update_Reset(&gimbal_reset);
                 if(!gimbal_reset.reset_flag)
                 {
-                    gimbal.reset_flag = false;
-                    gimbal.slide_ctrl_data.dist = 0;
+                    small_gimbal.reset_flag = false;
+                    small_gimbal.slide_ctrl_data.dist = 0;
                     gimbal_reset.reset_flag = true;
                 }
             }
             else
             {
-                gimbal.Slide_Control();
+                small_gimbal.Slide_Control();
             }
         }
         else
         {
-            gimbal.Set_Free();
+            small_gimbal.Set_Free();
         }
         osDelay(3);
     }

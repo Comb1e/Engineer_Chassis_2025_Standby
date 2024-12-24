@@ -429,6 +429,30 @@ Component/Drivers/Function/Src/Drv_Chassis.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.cpp.s
 .PHONY : Component/Drivers/Function/Src/Drv_Chassis.cpp.s
 
+Component/Drivers/Function/Src/Drv_Communication.obj: Component/Drivers/Function/Src/Drv_Communication.cpp.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Communication.obj
+
+# target to build an object file
+Component/Drivers/Function/Src/Drv_Communication.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Communication.cpp.obj
+.PHONY : Component/Drivers/Function/Src/Drv_Communication.cpp.obj
+
+Component/Drivers/Function/Src/Drv_Communication.i: Component/Drivers/Function/Src/Drv_Communication.cpp.i
+.PHONY : Component/Drivers/Function/Src/Drv_Communication.i
+
+# target to preprocess a source file
+Component/Drivers/Function/Src/Drv_Communication.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Communication.cpp.i
+.PHONY : Component/Drivers/Function/Src/Drv_Communication.cpp.i
+
+Component/Drivers/Function/Src/Drv_Communication.s: Component/Drivers/Function/Src/Drv_Communication.cpp.s
+.PHONY : Component/Drivers/Function/Src/Drv_Communication.s
+
+# target to generate assembly for a file
+Component/Drivers/Function/Src/Drv_Communication.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Communication.cpp.s
+.PHONY : Component/Drivers/Function/Src/Drv_Communication.cpp.s
+
 Component/Drivers/Function/Src/Drv_Gimbal.obj: Component/Drivers/Function/Src/Drv_Gimbal.cpp.obj
 .PHONY : Component/Drivers/Function/Src/Drv_Gimbal.obj
 
@@ -548,30 +572,6 @@ Component/Drivers/Peripherals/IMU/kalman_filter_whx.s: Component/Drivers/Periphe
 Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.s
 .PHONY : Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.s
-
-Component/Drivers/Peripherals/Src/Drv_Communication.obj: Component/Drivers/Peripherals/Src/Drv_Communication.cpp.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Communication.obj
-
-# target to build an object file
-Component/Drivers/Peripherals/Src/Drv_Communication.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Communication.cpp.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Communication.cpp.obj
-
-Component/Drivers/Peripherals/Src/Drv_Communication.i: Component/Drivers/Peripherals/Src/Drv_Communication.cpp.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Communication.i
-
-# target to preprocess a source file
-Component/Drivers/Peripherals/Src/Drv_Communication.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Communication.cpp.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Communication.cpp.i
-
-Component/Drivers/Peripherals/Src/Drv_Communication.s: Component/Drivers/Peripherals/Src/Drv_Communication.cpp.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Communication.s
-
-# target to generate assembly for a file
-Component/Drivers/Peripherals/Src/Drv_Communication.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Communication.cpp.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Communication.cpp.s
 
 Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj: Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj
@@ -740,6 +740,30 @@ Component/Tasks/Function/Src/Chassis_Task.s: Component/Tasks/Function/Src/Chassi
 Component/Tasks/Function/Src/Chassis_Task.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.cpp.s
 .PHONY : Component/Tasks/Function/Src/Chassis_Task.cpp.s
+
+Component/Tasks/Function/Src/Communication_Task.obj: Component/Tasks/Function/Src/Communication_Task.cpp.obj
+.PHONY : Component/Tasks/Function/Src/Communication_Task.obj
+
+# target to build an object file
+Component/Tasks/Function/Src/Communication_Task.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Communication_Task.cpp.obj
+.PHONY : Component/Tasks/Function/Src/Communication_Task.cpp.obj
+
+Component/Tasks/Function/Src/Communication_Task.i: Component/Tasks/Function/Src/Communication_Task.cpp.i
+.PHONY : Component/Tasks/Function/Src/Communication_Task.i
+
+# target to preprocess a source file
+Component/Tasks/Function/Src/Communication_Task.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Communication_Task.cpp.i
+.PHONY : Component/Tasks/Function/Src/Communication_Task.cpp.i
+
+Component/Tasks/Function/Src/Communication_Task.s: Component/Tasks/Function/Src/Communication_Task.cpp.s
+.PHONY : Component/Tasks/Function/Src/Communication_Task.s
+
+# target to generate assembly for a file
+Component/Tasks/Function/Src/Communication_Task.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Communication_Task.cpp.s
+.PHONY : Component/Tasks/Function/Src/Communication_Task.cpp.s
 
 Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj: Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj
 .PHONY : Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj
@@ -2235,6 +2259,9 @@ help:
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.i
 	@echo ... Component/Drivers/Function/Src/Drv_Chassis.s
+	@echo ... Component/Drivers/Function/Src/Drv_Communication.obj
+	@echo ... Component/Drivers/Function/Src/Drv_Communication.i
+	@echo ... Component/Drivers/Function/Src/Drv_Communication.s
 	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.i
 	@echo ... Component/Drivers/Function/Src/Drv_Gimbal.s
@@ -2250,9 +2277,6 @@ help:
 	@echo ... Component/Drivers/Peripherals/IMU/kalman_filter_whx.obj
 	@echo ... Component/Drivers/Peripherals/IMU/kalman_filter_whx.i
 	@echo ... Component/Drivers/Peripherals/IMU/kalman_filter_whx.s
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Communication.obj
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Communication.i
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Communication.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_DJI_Motor.s
@@ -2274,6 +2298,9 @@ help:
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.obj
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.i
 	@echo ... Component/Tasks/Function/Src/Chassis_Task.s
+	@echo ... Component/Tasks/Function/Src/Communication_Task.obj
+	@echo ... Component/Tasks/Function/Src/Communication_Task.i
+	@echo ... Component/Tasks/Function/Src/Communication_Task.s
 	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.obj
 	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.i
 	@echo ... Component/Tasks/Function/Src/Gimbal_Attitude_Task.s

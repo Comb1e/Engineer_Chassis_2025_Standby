@@ -19,11 +19,7 @@ Chassis_Device::Chassis_Device()
     this->control_type = SPEED;
     this->zero_offset_flag = false;
     this->tof_lost_flag = true;
-    this->vel_max.kb = CHASSIS_VEL_KB_MAX;
-    this->vel_max.rc = CHASSIS_VEL_RC_MAX;
-    this->vel_max.total = CHASSIS_VEL_TOTAL_MAX;
-    this->rot_flag = false;
-    this->need_flag = true;
+    this->is_vel_control_flag = true;
 #if ALIGN_TEST
     this->tof_enable_flag = true;
     this->align_data.target_dist = 500;
@@ -48,9 +44,6 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.0f, 0.0f, 0.0f,100.0f,0.95);
     this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.0f, 0.0f, 0.0f,100.0f,0.95);
     this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.0f, 0.0f, 0.0f,100.0f,0.95);
-
-    Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
-    Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
 
     this->pid_rot.Init(0.7,10,8,5,4,0,0,0);
 
@@ -137,9 +130,6 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
 {
     float vel_max = 0;
 
-    chassis.Set_Vel_X(Get_Slope_Speed(&chassis.kb_vel_x));
-    chassis.Set_Vel_Y(Get_Slope_Speed(&chassis.kb_vel_y));
-
     if(this->tof_enable_flag)
     {
         HI229UM_Set_Current_As_Offset();
@@ -148,11 +138,11 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
     }
     else
     {
-        this->Set_Vel_X(this->set_vel.x);
-        this->Set_Vel_Spin(this->set_vel.spin);
+        this->Set_Vel_X(this->rx_vel_data.x);
+        this->Set_Vel_Y(this->rx_vel_data.y);
+        this->pos_yaw_angle += this->rx_vel_data.spin_add;
+        this->Set_Vel_Spin(this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()));
     }
-
-    this->Set_Vel_Y(this->set_vel.y + this->align_data.set_vel.y);
 
     Chassis_Motor_Solver_Set(this->wheel,this->set_vel.x,this->set_vel.y,this->set_vel.spin,vel_max);
     this->Power_Control_Update();
@@ -161,18 +151,6 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
         i.set_data.set_current = (int16_t)((float)i.set_data.set_current * this->power_control.k);
         i.Set_Current_To_CAN_TX_Buf();
         i.Send_CAN_MSG();
-    }
-}
-
-void Chassis_Device::Update_Enable_Flag()
-{
-    if(communication.connect_flag && this->need_flag)
-    {
-        this->enable_flag = true;
-    }
-    else
-    {
-        this->enable_flag = false;
     }
 }
 
@@ -238,6 +216,10 @@ bool Chassis_Device::Check_Tof_Lost_Flag() const
 
 __RAM_FUNC void Chassis_Device::Update_Position_Control()
 {
+    this->position.x = this->rx_pos_data.x;
+    this->position.y = this->rx_pos_data.y;
+    this->position.spin += this->rx_pos_data.spin_add;
+
     //this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()) - this->position.spin);
 
     Chassis_Motor_Loc_SolverSet(this->wheel,this->position.x,this->position.y,this->position.spin);
@@ -254,37 +236,25 @@ void Chassis_Device::Add_Position_Spin(float delta)
     ABS_LIMIT(this->position.spin,30);
 }
 
-void Chassis_Device::Set_X_Slope_Speed_Target(float target)
-{
-    this->kb_vel_x.target = target;
-    ABS_LIMIT(this->kb_vel_x.target,this->vel_max.total);
-}
-
-void Chassis_Device::Set_Y_Slope_Speed_Target(float target)
-{
-    this->kb_vel_y.target = target;
-    ABS_LIMIT(this->kb_vel_y.target,this->vel_max.total);
-}
-
 void Chassis_Device::Set_Vel_X(float vel_x)
 {
     this->set_vel.x = vel_x;
     Remove_Subtle_Error(&this->set_vel.x,0.005f);
-    ABS_LIMIT(this->set_vel.x,vel_max.total);
+    ABS_LIMIT(this->set_vel.x,1);
 }
 
 void Chassis_Device::Set_Vel_Y(float vel_y)
 {
     this->set_vel.y = vel_y;
     Remove_Subtle_Error(&this->set_vel.y,0.005f);
-    ABS_LIMIT(this->set_vel.y,vel_max.total);
+    ABS_LIMIT(this->set_vel.y,1);
 }
 
 void Chassis_Device::Set_Vel_Spin(float vel_spin)
 {
     this->set_vel.spin = vel_spin;
     Remove_Subtle_Error(&this->set_vel.spin,0.005f);
-    ABS_LIMIT(this->set_vel.spin,vel_max.total);
+    ABS_LIMIT(this->set_vel.spin,1);
 }
 
 
@@ -388,9 +358,6 @@ void Chassis_Device::Clean_Speed_Control()
     taskENTER_CRITICAL();
     this->Close_Yaw_Spin();
 
-    this->Set_X_Slope_Speed_Target(0);
-    this->Set_Y_Slope_Speed_Target(0);
-
     this->Reset_Total_Rounds();
 
     for(auto & i : this->wheel)
@@ -436,13 +403,6 @@ void Chassis_Device::Clean_Position_Control()
 void Chassis_Device::Change_To_Speed_Type()
 {
     this->control_type = SPEED;
-}
-
-void Chassis_Device::Update_Vel_Max(float total,float rc,float kb)
-{
-    this->vel_max.kb = kb;
-    this->vel_max.total = total;
-    this->vel_max.rc = rc;
 }
 
 void Chassis_Device::Reset_Total_Rounds()
@@ -499,5 +459,42 @@ void Tof_Rx_CallBack(can_device_t *can_device, uint8_t *rx_buff)
     auto chassis = Container_Of(can_device,Chassis_Device,tof_can);
     chassis->align_data.left_dist = tof_data->left_dist;
     chassis->align_data.right_dist = tof_data->right_dist;
+}
+
+void Chassis_Device::Update_Control_Type()
+{
+    if(this->is_vel_control_flag)
+    {
+        this->control_type = SPEED;
+    }
+    else
+    {
+        this->control_type = POSITION;
+    }
+}
+
+void Chassis_Device::Update_Data()
+{
+    switch (this->control_type)
+    {
+        case SPEED:
+        {
+            this->rx_vel_data.spin_add = (float)this->rx_raw_data.spin / INT8_MAX;
+            this->rx_vel_data.x = (float)this->rx_raw_data.x / INT16_MAX;
+            this->rx_vel_data.y = (float)this->rx_raw_data.y / INT16_MAX;
+            break;
+        }
+        case POSITION:
+        {
+            this->rx_pos_data.spin_add = (float)this->rx_raw_data.spin / INT8_MAX;
+            this->rx_pos_data.x = (float)this->rx_raw_data.x;
+            this->rx_pos_data.y = (float)this->rx_raw_data.y;
+            break;
+        }
+        default:
+        {
+            break;
+        }
+    }
 }
 

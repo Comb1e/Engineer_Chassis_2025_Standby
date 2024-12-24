@@ -8,7 +8,6 @@
 #include "BSP_CAN.h"
 #include "Drv_Pump.h"
 #include "Drv_Ore.h"
-#include "Drv_Communication.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -88,6 +87,10 @@ public:
     bool ready_flag;
     bool enable_flag;
 
+    bool open_left_pump_flag;
+    bool open_right_pump_flag;
+    bool open_arm_pump_flag;
+
     uint8_t ore_num;
 
     absorb_can_tx_data_t tx_data;
@@ -108,8 +111,8 @@ public:
     sucker_e Find_To_Store();
     bool Check_Sucker_Holding(sucker_e pos);
     void Set_Sucker_Holding();
-    void Update_Enable();
     bool Check_Enable();
+    void Update_Pump_Open();
 
     friend void Absorb_RX_Callback(can_device_t *can_device,uint8_t *rx_data);
 

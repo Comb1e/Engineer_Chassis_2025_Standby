@@ -12,15 +12,15 @@ void Gimbal_Attitude_Task(void *argument)
 {
     for(;;)
     {
-        if(gimbal.Check_Enable())
+        if(small_gimbal.Check_Enable())
         {
-            if(gimbal.pitch_enable_flag)
+            if(small_gimbal.pitch_enable_flag)
             {
-                gimbal.Update_Pitch_Control();
+                small_gimbal.Update_Pitch_Control();
             }
-            if(gimbal.yaw_enable_flag)
+            if(small_gimbal.yaw_enable_flag)
             {
-                gimbal.Update_Yaw_Control();
+                small_gimbal.Update_Yaw_Control();
             }
         }
         osDelay(1);

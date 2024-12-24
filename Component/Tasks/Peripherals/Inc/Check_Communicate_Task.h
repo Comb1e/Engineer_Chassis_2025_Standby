@@ -11,6 +11,7 @@ extern "C"
 #endif
 
 #include "stm32f4xx_hal.h"
+#include "Global_CFG.h"
 
 void Check_Communicate_Task(void *argument);
 

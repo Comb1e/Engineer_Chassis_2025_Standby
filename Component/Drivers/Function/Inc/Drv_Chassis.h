@@ -7,7 +7,6 @@
 
 #include "Drv_DJI_Motor.h"
 #include "Global_CFG.h"
-#include "Drv_Communication.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -48,11 +47,6 @@ extern "C"
 #define CHASSIS_KB_VEL_STEER_MODE_SLOW        0.3f
 #define CHASSIS_KB_VEL_MINE_MODE              0.05f
 
-#define CHASSIS_VEL_RC_MAX 0.5f
-#define CHASSIS_VEL_KB_MAX 0.95f
-#define CHASSIS_VEL_TOTAL_MAX 0.95f
-#define CHASSIS_VEL_TOTAL_MIN 0.2f
-
 #define CHASSIS_SMALL_GYROSCOPE_SPEED 0.5f
 /**沿吸盘反向前进的时候的pitch补偿**/
 #define EXCHANGE_PITCH_COMPENSATION      5.0f//向下
@@ -60,6 +54,9 @@ extern "C"
 #define KB_CONTROL_CYCLE    (2U)
 
 #define CHASSIS_POWER_LIMIT     (24 * 10)
+
+#define INT16_MAX 32768
+#define INT8_MAX 128
 
 typedef enum
 {
@@ -73,13 +70,6 @@ typedef struct
     float y;
     float spin;
 }position_t;
-
-typedef struct
-{
-    float rc;
-    float kb;
-    float total;
-}vel_max_t;
 
 typedef struct
 {
@@ -129,6 +119,27 @@ typedef struct align_data_t
     set_vel_t set_vel;
 }align_data_t;
 
+typedef struct
+{
+    uint8_t spin;//-128到+127
+    int16_t x;//-32768到+32767
+    int16_t y;//-32768到+32767
+}chassis_rx_raw_data_t;
+
+typedef struct
+{
+    float x;
+    float y;
+    float spin_add;
+}chassis_rx_vel_data_t;
+
+typedef struct
+{
+    float x;
+    float y;
+    float spin_add;
+}chassis_rx_pos_data_t;
+
 #ifdef __cplusplus
 }
 #endif
@@ -148,17 +159,11 @@ public:
     bool zero_offset_flag;
     bool tof_lost_flag;
     bool tof_enable_flag;
-    bool need_flag;
-
-    bool rot_flag;
+    bool is_vel_control_flag;
 
     control_type_e control_type;
 
-    slope_speed_t kb_vel_x;
-    slope_speed_t kb_vel_y;
-
     set_vel_t set_vel;
-    vel_max_t vel_max;
 
     position_t position;
 
@@ -167,6 +172,10 @@ public:
     variable_structure_pid pid_rot;
 
     chassis_power_control_data_t power_control;
+
+    chassis_rx_raw_data_t rx_raw_data;
+    chassis_rx_vel_data_t rx_vel_data;
+    chassis_rx_pos_data_t rx_pos_data;
 
     float pos_yaw_angle;//角度
 
@@ -182,14 +191,11 @@ public:
     void Update_Ready();
     bool Check_Can_Use();
     void Update_Speed_Control();
-    void Update_Enable_Flag();
     void Update_Align();
     void Check_Tof_For_Loss();
     bool Check_Tof_Lost_Flag() const;
     void Update_Position_Control();
     void Add_Position_Spin(float delta);
-    void Set_X_Slope_Speed_Target(float target);
-    void Set_Y_Slope_Speed_Target(float target);
     void Set_Vel_X(float vel_x);
     void Set_Vel_Y(float vel_y);
     void Set_Vel_Spin(float vel_spin);
@@ -204,13 +210,14 @@ public:
     void Change_To_Position_Type();
     void Clean_Position_Control();
     void Change_To_Speed_Type();
-    void Update_Vel_Max(float total,float rc,float kb);
     void Reset_Total_Rounds();
     bool Check_Yaw_At_Set() const;
     void Disable_Align();
     void Enable_Align();
     bool Check_Align();
     void Init_Tof(CAN_HandleTypeDef *hcan,uint32_t rx_id,osSemaphoreId_t rx_sem);
+    void Update_Control_Type();
+    void Update_Data();
 
     friend void Tof_Rx_CallBack(can_device_t *can_device,uint8_t *rx_buff);
 };

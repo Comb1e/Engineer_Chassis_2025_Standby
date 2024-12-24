@@ -4,8 +4,6 @@
 
 #include "Drv_Absorb.h"
 
-#include "Drv_Communication.h"
-
 Absorb_Device absorb;
 
 Absorb_Device::Absorb_Device():
@@ -21,6 +19,9 @@ Absorb_Device::Absorb_Device():
     this->lost_flag = true;
     this->ready_flag = false;
     this->enable_flag = false;
+    this->open_arm_pump_flag = false;
+    this->open_left_pump_flag = false;
+    this->open_right_pump_flag = false;
 }
 
 void Absorb_Device::Init(CAN_HandleTypeDef *hcan, uint32_t rx_stdid, uint32_t tx_stdid, osSemaphoreId_t rx_sem)
@@ -183,19 +184,23 @@ void Absorb_Device::Set_Sucker_Holding() {
     taskEXIT_CRITICAL();
 }
 
-void Absorb_Device::Update_Enable()
-{
-    if(communication.connect_flag)
-    {
-        this->enable_flag = true;
-    }
-    else
-    {
-        this->enable_flag = false;
-    }
-}
-
 bool Absorb_Device::Check_Enable()
 {
     return this->enable_flag;
+}
+
+void Absorb_Device::Update_Pump_Open()
+{
+    if(this->open_arm_pump_flag)
+    {
+        this->Set_Sucker_Open(ARM_SUCKER);
+    }
+    if(this->open_left_pump_flag)
+    {
+        this->Set_Sucker_Open(LEFT_SUCKER);
+    }
+    if(this->open_right_pump_flag)
+    {
+        this->Set_Sucker_Open(RIGHT_SUCKER);
+    }
 }

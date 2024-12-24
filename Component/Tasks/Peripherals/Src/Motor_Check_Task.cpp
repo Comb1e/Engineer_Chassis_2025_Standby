@@ -26,6 +26,6 @@ void Motor_Check_Task(void *argument)
     {
         osDelay(6);
         chassis.Check_Motor_Lost();
-        gimbal.Check_Motor_Lost();
+        small_gimbal.Check_Motor_Lost();
     }
 }

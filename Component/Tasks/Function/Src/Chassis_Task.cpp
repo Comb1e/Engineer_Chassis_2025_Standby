@@ -38,7 +38,8 @@ void Chassis_Task(void *argument) {
 #else
     for(;;)
     {
-        chassis.Update_Enable_Flag();
+        chassis.Update_Control_Type();
+        chassis.Update_Data();
         chassis.Update_Ready();
         if(chassis.Check_Ready_Flag() && chassis.Check_Enable_Flag())
         {

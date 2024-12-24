@@ -35,9 +35,9 @@ extern "C"
 /* wheelbase distance(mm) */ //轮距 前后轮之车轮轴距离
 #define WHEELBASE (362.9f)
 
-/* gimbal is relative to chassis center x axis offset(mm) */
+/* small_gimbal is relative to chassis center x axis offset(mm) */
 #define ROTATE_X_OFFSET (-165.0f)
-/* gimbal is relative to chassis center y axis offset(mm) */
+/* small_gimbal is relative to chassis center y axis offset(mm) */
 #define ROTATE_Y_OFFSET (0.0f)
 
 #define ECD_RATIO  (WHEELPERIMETER * MOTOR_DECELE_RATIO)

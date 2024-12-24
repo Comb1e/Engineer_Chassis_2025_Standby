@@ -21,12 +21,12 @@ extern osSemaphoreId_t ChassisLBUpdateBinarySemHandle;
 extern osSemaphoreId_t ChassisRBUpdateBinarySemHandle;
 extern osSemaphoreId_t ChassisRFUpdateBinarySemHandle;
 extern osSemaphoreId_t HI229UMRxBinarySemHandle;
-extern osSemaphoreId_t IMUDMABinarySemHandle;
 extern osSemaphoreId_t ServoCtrlQueueHandle;
 extern osSemaphoreId_t TofUpdateBinarySemHandle;
 extern osSemaphoreId_t GimbalYawUpdateBinarySemHandle;
 extern osSemaphoreId_t GimbalSlideUpdateBinarySemHandle;
 extern osSemaphoreId_t ServoCtrlTXBinarySemHandle;
 extern osSemaphoreId_t AbsorbUpdateBinarySemHandle;
+extern osSemaphoreId_t GimbalToChassisUpdateBinarySemHandle;
 
 #endif //RTOS_H
