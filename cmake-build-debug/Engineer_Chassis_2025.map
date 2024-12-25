@@ -161,8 +161,8 @@ Discarded input sections
                 0x00000000       0x28 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
  .debug_rnglists
                 0x00000000       0x19 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
- .debug_line    0x00000000      0x24d CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
- .debug_str     0x00000000      0x77f CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
+ .debug_line    0x00000000      0x239 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
+ .debug_str     0x00000000      0x775 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
  .debug_frame   0x00000000       0x40 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Buzzer.c.obj
  .ARM.attributes
@@ -225,8 +225,8 @@ Discarded input sections
                 0x00000000       0x60 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_DWT.c.obj
  .debug_rnglists
                 0x00000000       0x44 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_DWT.c.obj
- .debug_line    0x00000000      0x3ed CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_DWT.c.obj
- .debug_str     0x00000000      0x470 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_DWT.c.obj
+ .debug_line    0x00000000      0x3de CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_DWT.c.obj
+ .debug_str     0x00000000      0x466 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_DWT.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_DWT.c.obj
  .debug_frame   0x00000000      0x118 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_DWT.c.obj
  .ARM.attributes
@@ -275,8 +275,8 @@ Discarded input sections
                 0x00000000       0xa0 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_IIC.c.obj
  .debug_rnglists
                 0x00000000       0x73 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_IIC.c.obj
- .debug_line    0x00000000      0x585 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_IIC.c.obj
- .debug_str     0x00000000      0x416 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_IIC.c.obj
+ .debug_line    0x00000000      0x571 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_IIC.c.obj
+ .debug_str     0x00000000      0x40c CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_IIC.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_IIC.c.obj
  .debug_frame   0x00000000      0x1b4 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_IIC.c.obj
  .ARM.attributes
@@ -298,8 +298,8 @@ Discarded input sections
                 0x00000000       0x38 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj
  .debug_rnglists
                 0x00000000       0x25 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj
- .debug_line    0x00000000      0x213 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj
- .debug_str     0x00000000      0x291 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj
+ .debug_line    0x00000000      0x204 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj
+ .debug_str     0x00000000      0x287 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj
  .debug_frame   0x00000000       0x70 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_LED.c.obj
  .ARM.attributes
@@ -365,8 +365,8 @@ Discarded input sections
                 0x00000000       0x38 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
  .debug_rnglists
                 0x00000000       0x26 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
- .debug_line    0x00000000      0x2b2 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
- .debug_str     0x00000000      0x2af CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
+ .debug_line    0x00000000      0x2a8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
+ .debug_str     0x00000000      0x2a5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
  .debug_frame   0x00000000       0x50 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
  .ARM.attributes
@@ -778,8 +778,8 @@ Discarded input sections
                 0x00000000       0x50 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
  .debug_rnglists
                 0x00000000       0x48 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
- .debug_line    0x00000000      0xe3c CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
- .debug_str     0x00000000      0x93d CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
+ .debug_line    0x00000000      0xe2d CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
+ .debug_str     0x00000000      0x933 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
  .debug_frame   0x00000000      0x134 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/QuaternionEKF.c.obj
  .ARM.attributes
@@ -817,8 +817,8 @@ Discarded input sections
                 0x00000000       0x60 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
  .debug_rnglists
                 0x00000000       0x48 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
- .debug_line    0x00000000      0xb5b CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
- .debug_str     0x00000000      0x715 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
+ .debug_line    0x00000000      0xb4c CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
+ .debug_str     0x00000000      0x70b CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
  .debug_frame   0x00000000      0x130 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/IMU/kalman_filter_whx.c.obj
  .ARM.attributes
@@ -971,8 +971,8 @@ Discarded input sections
                 0x00000000       0x80 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
  .debug_rnglists
                 0x00000000       0x5b CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
- .debug_line    0x00000000      0x5be CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
- .debug_str     0x00000000      0x472 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
+ .debug_line    0x00000000      0x5a0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
+ .debug_str     0x00000000      0x468 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
  .debug_frame   0x00000000      0x164 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
  .ARM.attributes
@@ -1357,8 +1357,8 @@ Discarded input sections
                 0x00000000       0x38 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
  .debug_rnglists
                 0x00000000       0x26 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
- .debug_line    0x00000000      0xf41 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
- .debug_str     0x00000000      0x58c CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+ .debug_line    0x00000000      0xf32 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
+ .debug_str     0x00000000      0x582 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
  .debug_frame   0x00000000       0x74 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj
  .ARM.attributes
@@ -1392,8 +1392,8 @@ Discarded input sections
                 0x00000000       0x60 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
  .debug_rnglists
                 0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
- .debug_line    0x00000000      0x644 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
- .debug_str     0x00000000      0x424 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+ .debug_line    0x00000000      0x635 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
+ .debug_str     0x00000000      0x41a CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
  .debug_frame   0x00000000       0xe8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj
  .ARM.attributes
@@ -1444,8 +1444,8 @@ Discarded input sections
                 0x00000000       0xa0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
  .debug_rnglists
                 0x00000000       0x75 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
- .debug_line    0x00000000      0x7cc CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
- .debug_str     0x00000000      0x58d CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+ .debug_line    0x00000000      0x7b8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
+ .debug_str     0x00000000      0x583 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
  .debug_frame   0x00000000      0x164 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj
  .ARM.attributes
@@ -1509,8 +1509,8 @@ Discarded input sections
                 0x00000000       0xd8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
  .debug_rnglists
                 0x00000000       0xa0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
- .debug_line    0x00000000      0xa35 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
- .debug_str     0x00000000      0x714 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+ .debug_line    0x00000000      0xa26 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
+ .debug_str     0x00000000      0x70a CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
  .debug_frame   0x00000000      0x214 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj
  .ARM.attributes
@@ -1522,8 +1522,8 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x26 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
- .debug_line    0x00000000       0x85 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
- .debug_str     0x00000000      0x1fd CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+ .debug_line    0x00000000       0x80 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
+ .debug_str     0x00000000      0x1f3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
  .ARM.attributes
                 0x00000000       0x34 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj
@@ -1639,8 +1639,8 @@ Discarded input sections
                 0x00000000       0x38 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
  .debug_rnglists
                 0x00000000       0x25 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
- .debug_line    0x00000000      0x2f4 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
- .debug_str     0x00000000      0x786 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
+ .debug_line    0x00000000      0x2e5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
+ .debug_str     0x00000000      0x77c CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
  .debug_frame   0x00000000       0x5c CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c.obj
  .ARM.attributes
@@ -1688,8 +1688,8 @@ Discarded input sections
                 0x00000000       0xa0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
  .debug_rnglists
                 0x00000000       0x74 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
- .debug_line    0x00000000      0x480 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
- .debug_str     0x00000000      0x597 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+ .debug_line    0x00000000      0x46c CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
+ .debug_str     0x00000000      0x58d CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
  .debug_frame   0x00000000      0x138 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj
  .ARM.attributes
@@ -1723,8 +1723,8 @@ Discarded input sections
                 0x00000000       0x60 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
  .debug_rnglists
                 0x00000000       0x44 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
- .debug_line    0x00000000      0x562 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
- .debug_str     0x00000000      0x521 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+ .debug_line    0x00000000      0x54e CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
+ .debug_str     0x00000000      0x517 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
  .debug_frame   0x00000000       0xec CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj
  .ARM.attributes
@@ -1773,8 +1773,8 @@ Discarded input sections
                 0x00000000       0x58 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
  .debug_rnglists
                 0x00000000       0x40 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
- .debug_line    0x00000000      0x914 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
- .debug_str     0x00000000      0x5c6 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+ .debug_line    0x00000000      0x905 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
+ .debug_str     0x00000000      0x5bc CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
  .debug_frame   0x00000000       0xd8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj
  .ARM.attributes
@@ -2462,8 +2462,8 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x26 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
- .debug_line    0x00000000       0x79 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
- .debug_str     0x00000000      0x1f6 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
+ .debug_line    0x00000000       0x74 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
+ .debug_str     0x00000000      0x1ec CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
  .ARM.attributes
                 0x00000000       0x34 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/croutine.c.obj
@@ -2508,8 +2508,8 @@ Discarded input sections
                 0x00000000       0x90 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
  .debug_rnglists
                 0x00000000       0x85 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
- .debug_line    0x00000000      0xa7b CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
- .debug_str     0x00000000      0x86e CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
+ .debug_line    0x00000000      0xa6c CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
+ .debug_str     0x00000000      0x864 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
  .debug_frame   0x00000000      0x1b8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c.obj
  .ARM.attributes
@@ -2633,8 +2633,8 @@ Discarded input sections
                 0x00000000       0xe0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
  .debug_rnglists
                 0x00000000       0xc2 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
- .debug_line    0x00000000     0x13b0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
- .debug_str     0x00000000      0xa1d CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
+ .debug_line    0x00000000     0x13a1 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
+ .debug_str     0x00000000      0xa13 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
  .debug_frame   0x00000000      0x380 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c.obj
  .ARM.attributes
@@ -2758,8 +2758,8 @@ Discarded input sections
  .debug_abbrev  0x00000000       0x57 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
  .debug_aranges
                 0x00000000       0x18 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
- .debug_line    0x00000000      0x12c CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
- .debug_str     0x00000000      0x1ed CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
+ .debug_line    0x00000000      0x122 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
+ .debug_str     0x00000000      0x1e3 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
  .comment       0x00000000       0x46 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
  .ARM.attributes
                 0x00000000       0x34 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/RTOS.c.obj
@@ -2797,8 +2797,8 @@ Discarded input sections
                 0x00000000       0x20 bin_dsp\libCMSISDSP.a(arm_mat_add_f32.c.obj)
  .debug_rnglists
                 0x00000000       0x14 bin_dsp\libCMSISDSP.a(arm_mat_add_f32.c.obj)
- .debug_line    0x00000000      0x2b6 bin_dsp\libCMSISDSP.a(arm_mat_add_f32.c.obj)
- .debug_str     0x00000000      0x36c bin_dsp\libCMSISDSP.a(arm_mat_add_f32.c.obj)
+ .debug_line    0x00000000      0x2a7 bin_dsp\libCMSISDSP.a(arm_mat_add_f32.c.obj)
+ .debug_str     0x00000000      0x362 bin_dsp\libCMSISDSP.a(arm_mat_add_f32.c.obj)
  .comment       0x00000000       0x46 bin_dsp\libCMSISDSP.a(arm_mat_add_f32.c.obj)
  .debug_frame   0x00000000       0x34 bin_dsp\libCMSISDSP.a(arm_mat_add_f32.c.obj)
  .ARM.attributes
@@ -2814,8 +2814,8 @@ Discarded input sections
                 0x00000000       0x20 bin_dsp\libCMSISDSP.a(arm_mat_init_f32.c.obj)
  .debug_rnglists
                 0x00000000       0x13 bin_dsp\libCMSISDSP.a(arm_mat_init_f32.c.obj)
- .debug_line    0x00000000      0x1e0 bin_dsp\libCMSISDSP.a(arm_mat_init_f32.c.obj)
- .debug_str     0x00000000      0x278 bin_dsp\libCMSISDSP.a(arm_mat_init_f32.c.obj)
+ .debug_line    0x00000000      0x1d1 bin_dsp\libCMSISDSP.a(arm_mat_init_f32.c.obj)
+ .debug_str     0x00000000      0x26e bin_dsp\libCMSISDSP.a(arm_mat_init_f32.c.obj)
  .comment       0x00000000       0x46 bin_dsp\libCMSISDSP.a(arm_mat_init_f32.c.obj)
  .debug_frame   0x00000000       0x20 bin_dsp\libCMSISDSP.a(arm_mat_init_f32.c.obj)
  .ARM.attributes
@@ -2833,8 +2833,8 @@ Discarded input sections
                 0x00000000       0x20 bin_dsp\libCMSISDSP.a(arm_mat_inverse_f32.c.obj)
  .debug_rnglists
                 0x00000000       0x3b bin_dsp\libCMSISDSP.a(arm_mat_inverse_f32.c.obj)
- .debug_line    0x00000000      0x5ef bin_dsp\libCMSISDSP.a(arm_mat_inverse_f32.c.obj)
- .debug_str     0x00000000      0x3c2 bin_dsp\libCMSISDSP.a(arm_mat_inverse_f32.c.obj)
+ .debug_line    0x00000000      0x5e0 bin_dsp\libCMSISDSP.a(arm_mat_inverse_f32.c.obj)
+ .debug_str     0x00000000      0x3b8 bin_dsp\libCMSISDSP.a(arm_mat_inverse_f32.c.obj)
  .comment       0x00000000       0x46 bin_dsp\libCMSISDSP.a(arm_mat_inverse_f32.c.obj)
  .debug_frame   0x00000000       0x38 bin_dsp\libCMSISDSP.a(arm_mat_inverse_f32.c.obj)
  .ARM.attributes
@@ -2852,8 +2852,8 @@ Discarded input sections
                 0x00000000       0x20 bin_dsp\libCMSISDSP.a(arm_mat_mult_f32.c.obj)
  .debug_rnglists
                 0x00000000       0x14 bin_dsp\libCMSISDSP.a(arm_mat_mult_f32.c.obj)
- .debug_line    0x00000000      0x35b bin_dsp\libCMSISDSP.a(arm_mat_mult_f32.c.obj)
- .debug_str     0x00000000      0x388 bin_dsp\libCMSISDSP.a(arm_mat_mult_f32.c.obj)
+ .debug_line    0x00000000      0x34c bin_dsp\libCMSISDSP.a(arm_mat_mult_f32.c.obj)
+ .debug_str     0x00000000      0x37e bin_dsp\libCMSISDSP.a(arm_mat_mult_f32.c.obj)
  .comment       0x00000000       0x46 bin_dsp\libCMSISDSP.a(arm_mat_mult_f32.c.obj)
  .debug_frame   0x00000000       0x34 bin_dsp\libCMSISDSP.a(arm_mat_mult_f32.c.obj)
  .ARM.attributes
@@ -2871,8 +2871,8 @@ Discarded input sections
                 0x00000000       0x20 bin_dsp\libCMSISDSP.a(arm_mat_sub_f32.c.obj)
  .debug_rnglists
                 0x00000000       0x14 bin_dsp\libCMSISDSP.a(arm_mat_sub_f32.c.obj)
- .debug_line    0x00000000      0x2b6 bin_dsp\libCMSISDSP.a(arm_mat_sub_f32.c.obj)
- .debug_str     0x00000000      0x36c bin_dsp\libCMSISDSP.a(arm_mat_sub_f32.c.obj)
+ .debug_line    0x00000000      0x2a7 bin_dsp\libCMSISDSP.a(arm_mat_sub_f32.c.obj)
+ .debug_str     0x00000000      0x362 bin_dsp\libCMSISDSP.a(arm_mat_sub_f32.c.obj)
  .comment       0x00000000       0x46 bin_dsp\libCMSISDSP.a(arm_mat_sub_f32.c.obj)
  .debug_frame   0x00000000       0x34 bin_dsp\libCMSISDSP.a(arm_mat_sub_f32.c.obj)
  .ARM.attributes
@@ -2890,8 +2890,8 @@ Discarded input sections
                 0x00000000       0x20 bin_dsp\libCMSISDSP.a(arm_mat_trans_f32.c.obj)
  .debug_rnglists
                 0x00000000       0x13 bin_dsp\libCMSISDSP.a(arm_mat_trans_f32.c.obj)
- .debug_line    0x00000000      0x2e2 bin_dsp\libCMSISDSP.a(arm_mat_trans_f32.c.obj)
- .debug_str     0x00000000      0x359 bin_dsp\libCMSISDSP.a(arm_mat_trans_f32.c.obj)
+ .debug_line    0x00000000      0x2d3 bin_dsp\libCMSISDSP.a(arm_mat_trans_f32.c.obj)
+ .debug_str     0x00000000      0x34f bin_dsp\libCMSISDSP.a(arm_mat_trans_f32.c.obj)
  .comment       0x00000000       0x46 bin_dsp\libCMSISDSP.a(arm_mat_trans_f32.c.obj)
  .debug_frame   0x00000000       0x2c bin_dsp\libCMSISDSP.a(arm_mat_trans_f32.c.obj)
  .ARM.attributes
@@ -7117,148 +7117,148 @@ LOAD E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb
  .debug_rnglists
                 0x00001e71       0x14 bin_dsp\libCMSISDSP.a(arm_sin_f32.c.obj)
 
-.debug_line     0x00000000    0x2d114
- .debug_line    0x00000000      0x798 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_CAN.cpp.obj
- .debug_line    0x00000798      0x2be CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj
- .debug_line    0x00000a56      0x3b1 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.obj
- .debug_line    0x00000e07      0x7b3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.cpp.obj
- .debug_line    0x000015ba      0x62e CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.cpp.obj
- .debug_line    0x00001be8      0x9e6 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Absorb.cpp.obj
- .debug_line    0x000025ce     0x13ac CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.cpp.obj
- .debug_line    0x0000397a      0x86b CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Communication.cpp.obj
- .debug_line    0x000041e5      0xae4 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.cpp.obj
- .debug_line    0x00004cc9      0x3e2 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Pump.cpp.obj
- .debug_line    0x000050ab      0x76e CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Reset.cpp.obj
- .debug_line    0x00005819      0xb69 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.obj
- .debug_line    0x00006382      0x950 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj
- .debug_line    0x00006cd2      0x274 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj
- .debug_line    0x00006f46      0x5f7 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj
- .debug_line    0x0000753d      0x590 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Absorb_Task.cpp.obj
- .debug_line    0x00007acd      0x621 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.cpp.obj
- .debug_line    0x000080ee      0x667 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Communication_Task.cpp.obj
- .debug_line    0x00008755      0x5dd CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj
- .debug_line    0x00008d32      0x648 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.obj
- .debug_line    0x0000937a      0x339 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.cpp.obj
- .debug_line    0x000096b3      0x341 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.cpp.obj
- .debug_line    0x000099f4      0x624 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.obj
- .debug_line    0x0000a018      0x3c3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
- .debug_line    0x0000a3db      0x617 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_Check_Task.cpp.obj
- .debug_line    0x0000a9f2      0x50f CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj
- .debug_line    0x0000af01      0x58a CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.cpp.obj
- .debug_line    0x0000b48b      0x4b3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.obj
- .debug_line    0x0000b93e      0x1eb CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj
- .debug_line    0x0000bb29      0x645 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj
- .debug_line    0x0000c16e      0x2d4 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj
- .debug_line    0x0000c442      0x253 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/iwdg.c.obj
- .debug_line    0x0000c695      0x4ef CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj
- .debug_line    0x0000cb84      0x449 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/spi.c.obj
- .debug_line    0x0000cfcd      0x1e7 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_line    0x0000d1b4      0x344 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
- .debug_line    0x0000d4f8      0x4dc CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_line    0x0000d9d4      0x3e0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj
- .debug_line    0x0000ddb4      0x1b9 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj
- .debug_line    0x0000df6d      0x2a2 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj
- .debug_line    0x0000e20f      0x51d CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj
- .debug_line    0x0000e72c      0x9b3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj
- .debug_line    0x0000f0df      0x36d CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usb_otg.c.obj
- .debug_line    0x0000f44c       0x7a CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj
- .debug_line    0x0000f4c6      0x619 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_line    0x0000fadf     0x11c5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
- .debug_line    0x00010ca4      0x8a4 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_line    0x00011548      0xe87 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .debug_line    0x000123cf      0x771 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_line    0x00012b40      0x2b5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj
- .debug_line    0x00012df5     0x14a5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
- .debug_line    0x0001429a      0xc11 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_line    0x00014eab     0x28b2 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .debug_line    0x0001775d     0x47c2 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
- .debug_line    0x0001bf1f     0x1b0b CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
- .debug_line    0x0001da2a     0x3a91 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_line    0x000214bb     0x1fd2 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
- .debug_line    0x0002348d     0x2cb3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_line    0x00026140      0x3a9 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_line    0x000264e9      0x677 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_line    0x00026b60      0x748 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_line    0x000272a8     0x1d26 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_line    0x00028fce     0x287d CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_line    0x0002b84b      0xe54 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .debug_line    0x0002c69f      0x249 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/Compilable.cpp.obj
- .debug_line    0x0002c8e8      0x289 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.cpp.obj
- .debug_line    0x0002cb71      0x217 bin_dsp\libCMSISDSP.a(arm_cos_f32.c.obj)
- .debug_line    0x0002cd88      0x214 bin_dsp\libCMSISDSP.a(arm_sin_f32.c.obj)
- .debug_line    0x0002cf9c      0x178 bin_dsp\libCMSISDSP.a(arm_common_tables.c.obj)
+.debug_line     0x00000000    0x2ca61
+ .debug_line    0x00000000      0x770 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_CAN.cpp.obj
+ .debug_line    0x00000770      0x2aa CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj
+ .debug_line    0x00000a1a      0x3a7 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.obj
+ .debug_line    0x00000dc1      0x781 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.cpp.obj
+ .debug_line    0x00001542      0x61f CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.cpp.obj
+ .debug_line    0x00001b61      0x9b9 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Absorb.cpp.obj
+ .debug_line    0x0000251a     0x1375 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.cpp.obj
+ .debug_line    0x0000388f      0x83e CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Communication.cpp.obj
+ .debug_line    0x000040cd      0xab2 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.cpp.obj
+ .debug_line    0x00004b7f      0x3d3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Pump.cpp.obj
+ .debug_line    0x00004f52      0x741 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Reset.cpp.obj
+ .debug_line    0x00005693      0xb3c CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.obj
+ .debug_line    0x000061cf      0x923 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj
+ .debug_line    0x00006af2      0x26a CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj
+ .debug_line    0x00006d5c      0x5cf CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj
+ .debug_line    0x0000732b      0x563 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Absorb_Task.cpp.obj
+ .debug_line    0x0000788e      0x5ef CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.cpp.obj
+ .debug_line    0x00007e7d      0x635 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Communication_Task.cpp.obj
+ .debug_line    0x000084b2      0x5b0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj
+ .debug_line    0x00008a62      0x61b CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.obj
+ .debug_line    0x0000907d      0x31b CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.cpp.obj
+ .debug_line    0x00009398      0x323 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.cpp.obj
+ .debug_line    0x000096bb      0x5f7 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.obj
+ .debug_line    0x00009cb2      0x3a0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
+ .debug_line    0x0000a052      0x5ea CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_Check_Task.cpp.obj
+ .debug_line    0x0000a63c      0x4ec CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj
+ .debug_line    0x0000ab28      0x55d CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.cpp.obj
+ .debug_line    0x0000b085      0x49f CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.obj
+ .debug_line    0x0000b524      0x1dc CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj
+ .debug_line    0x0000b700      0x62c CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj
+ .debug_line    0x0000bd2c      0x2c5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj
+ .debug_line    0x0000bff1      0x23f CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/iwdg.c.obj
+ .debug_line    0x0000c230      0x4cc CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj
+ .debug_line    0x0000c6fc      0x435 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/spi.c.obj
+ .debug_line    0x0000cb31      0x1d8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_line    0x0000cd09      0x335 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+ .debug_line    0x0000d03e      0x4cd CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_line    0x0000d50b      0x3db CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj
+ .debug_line    0x0000d8e6      0x1b4 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj
+ .debug_line    0x0000da9a      0x293 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_line    0x0000dd2d      0x509 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj
+ .debug_line    0x0000e236      0x99f CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj
+ .debug_line    0x0000ebd5      0x359 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usb_otg.c.obj
+ .debug_line    0x0000ef2e       0x7a CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj
+ .debug_line    0x0000efa8      0x605 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_line    0x0000f5ad     0x11b1 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+ .debug_line    0x0001075e      0x890 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_line    0x00010fee      0xe78 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_line    0x00011e66      0x762 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_line    0x000125c8      0x2a6 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj
+ .debug_line    0x0001286e     0x1496 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+ .debug_line    0x00013d04      0xc02 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_line    0x00014906     0x28a3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_line    0x000171a9     0x47b3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_line    0x0001b95c     0x1afc CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_line    0x0001d458     0x3a7d CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_line    0x00020ed5     0x1fbe CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+ .debug_line    0x00022e93     0x2c95 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_line    0x00025b28      0x39a CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_line    0x00025ec2      0x668 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .debug_line    0x0002652a      0x739 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_line    0x00026c63     0x1d17 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_line    0x0002897a     0x286e CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_line    0x0002b1e8      0xe45 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_line    0x0002c02d      0x235 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/Compilable.cpp.obj
+ .debug_line    0x0002c262      0x27a CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.cpp.obj
+ .debug_line    0x0002c4dc      0x20d bin_dsp\libCMSISDSP.a(arm_cos_f32.c.obj)
+ .debug_line    0x0002c6e9      0x20a bin_dsp\libCMSISDSP.a(arm_sin_f32.c.obj)
+ .debug_line    0x0002c8f3      0x16e bin_dsp\libCMSISDSP.a(arm_common_tables.c.obj)
 
-.debug_str      0x00000000     0xfc45
- .debug_str     0x00000000     0xfc45 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_CAN.cpp.obj
-                                0xbcc (size before relaxing)
- .debug_str     0x0000fc45      0x8a8 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj
- .debug_str     0x0000fc45      0x330 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.obj
- .debug_str     0x0000fc45     0x1adf CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.cpp.obj
- .debug_str     0x0000fc45      0xdcd CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.cpp.obj
- .debug_str     0x0000fc45     0x1180 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Absorb.cpp.obj
- .debug_str     0x0000fc45     0x2eed CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.cpp.obj
- .debug_str     0x0000fc45     0x3543 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Communication.cpp.obj
- .debug_str     0x0000fc45     0x1eb3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.cpp.obj
- .debug_str     0x0000fc45      0x47b CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Pump.cpp.obj
- .debug_str     0x0000fc45     0x10cd CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Reset.cpp.obj
- .debug_str     0x0000fc45     0x113e CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.obj
- .debug_str     0x0000fc45      0xdf4 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj
- .debug_str     0x0000fc45      0x331 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj
- .debug_str     0x0000fc45      0xca8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj
- .debug_str     0x0000fc45     0x1077 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Absorb_Task.cpp.obj
- .debug_str     0x0000fc45     0x1ab8 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.cpp.obj
- .debug_str     0x0000fc45     0x349a CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Communication_Task.cpp.obj
- .debug_str     0x0000fc45     0x1d7f CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj
- .debug_str     0x0000fc45     0x1de3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.obj
- .debug_str     0x0000fc45      0x74b CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.cpp.obj
- .debug_str     0x0000fc45      0x74e CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.cpp.obj
- .debug_str     0x0000fc45     0x347a CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.obj
- .debug_str     0x0000fc45      0x98c CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
- .debug_str     0x0000fc45     0x299d CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_Check_Task.cpp.obj
- .debug_str     0x0000fc45      0xd6d CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj
- .debug_str     0x0000fc45     0x1ae9 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.cpp.obj
- .debug_str     0x0000fc45      0xc2c CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.obj
- .debug_str     0x0000fc45      0x870 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj
- .debug_str     0x0000fc45      0xf5b CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj
- .debug_str     0x0000fc45      0x3d0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj
- .debug_str     0x0000fc45      0x299 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/iwdg.c.obj
- .debug_str     0x0000fc45      0xbb6 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj
- .debug_str     0x0000fc45      0xec0 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/spi.c.obj
- .debug_str     0x0000fc45      0x86b CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj
- .debug_str     0x0000fc45      0xf0f CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
- .debug_str     0x0000fc45     0x1154 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj
- .debug_str     0x0000fc45      0x43c CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj
- .debug_str     0x0000fc45      0x268 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj
- .debug_str     0x0000fc45      0x3cb CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj
- .debug_str     0x0000fc45      0xb3e CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj
- .debug_str     0x0000fc45      0xfd6 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj
- .debug_str     0x0000fc45      0x825 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usb_otg.c.obj
- .debug_str     0x0000fc45       0x9f CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj
- .debug_str     0x0000fc45      0xc42 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
- .debug_str     0x0000fc45      0xa78 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
- .debug_str     0x0000fc45      0xd05 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
- .debug_str     0x0000fc45      0x7b9 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
- .debug_str     0x0000fc45      0x536 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
- .debug_str     0x0000fc45      0x2cb CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj
- .debug_str     0x0000fc45      0xe48 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
- .debug_str     0x0000fc45      0x75c CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
- .debug_str     0x0000fc45      0xe69 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
- .debug_str     0x0000fc45     0x1742 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
- .debug_str     0x0000fc45      0xf4e CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
- .debug_str     0x0000fc45     0x10e9 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
- .debug_str     0x0000fc45      0xd71 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
- .debug_str     0x0000fc45     0x2577 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
- .debug_str     0x0000fc45      0x345 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
- .debug_str     0x0000fc45      0x4c5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
- .debug_str     0x0000fc45      0x55e CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
- .debug_str     0x0000fc45      0xd5b CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
- .debug_str     0x0000fc45     0x168d CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
- .debug_str     0x0000fc45      0xfaf CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
- .debug_str     0x0000fc45      0x5a3 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/Compilable.cpp.obj
- .debug_str     0x0000fc45      0x2e2 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.cpp.obj
- .debug_str     0x0000fc45      0x26c bin_dsp\libCMSISDSP.a(arm_cos_f32.c.obj)
- .debug_str     0x0000fc45      0x26c bin_dsp\libCMSISDSP.a(arm_sin_f32.c.obj)
- .debug_str     0x0000fc45      0xb9f bin_dsp\libCMSISDSP.a(arm_common_tables.c.obj)
+.debug_str      0x00000000     0xfae2
+ .debug_str     0x00000000     0xfae2 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_CAN.cpp.obj
+                                0xbc2 (size before relaxing)
+ .debug_str     0x0000fae2      0x89e CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_Usart.c.obj
+ .debug_str     0x0000fae2      0x326 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/CRC.c.obj
+ .debug_str     0x0000fae2     0x1ad5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/Mecanum.cpp.obj
+ .debug_str     0x0000fae2      0xdc3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.cpp.obj
+ .debug_str     0x0000fae2     0x1176 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Absorb.cpp.obj
+ .debug_str     0x0000fae2     0x2ee3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Chassis.cpp.obj
+ .debug_str     0x0000fae2     0x3539 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Communication.cpp.obj
+ .debug_str     0x0000fae2     0x1ea9 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.cpp.obj
+ .debug_str     0x0000fae2      0x471 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Pump.cpp.obj
+ .debug_str     0x0000fae2     0x10c3 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Reset.cpp.obj
+ .debug_str     0x0000fae2     0x1134 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_DJI_Motor.cpp.obj
+ .debug_str     0x0000fae2      0xdea CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.obj
+ .debug_str     0x0000fae2      0x327 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj
+ .debug_str     0x0000fae2      0xc9e CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj
+ .debug_str     0x0000fae2     0x106d CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Absorb_Task.cpp.obj
+ .debug_str     0x0000fae2     0x1aae CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Chassis_Task.cpp.obj
+ .debug_str     0x0000fae2     0x3490 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Communication_Task.cpp.obj
+ .debug_str     0x0000fae2     0x1d75 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Attitude_Task.cpp.obj
+ .debug_str     0x0000fae2     0x1dd9 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Gimbal_Slide_Task.cpp.obj
+ .debug_str     0x0000fae2      0x741 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN1_Task.cpp.obj
+ .debug_str     0x0000fae2      0x744 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/CAN2_Task.cpp.obj
+ .debug_str     0x0000fae2     0x3470 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_Communicate_Task.cpp.obj
+ .debug_str     0x0000fae2      0x982 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM_Task.c.obj
+ .debug_str     0x0000fae2     0x2993 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_Check_Task.cpp.obj
+ .debug_str     0x0000fae2      0xd63 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj
+ .debug_str     0x0000fae2     0x1adf CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Tof_Check_Task.cpp.obj
+ .debug_str     0x0000fae2      0xc22 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/can.c.obj
+ .debug_str     0x0000fae2      0x866 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/dma.c.obj
+ .debug_str     0x0000fae2      0xf51 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/freertos.c.obj
+ .debug_str     0x0000fae2      0x3c6 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/gpio.c.obj
+ .debug_str     0x0000fae2      0x28f CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/iwdg.c.obj
+ .debug_str     0x0000fae2      0xbac CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/main.c.obj
+ .debug_str     0x0000fae2      0xeb6 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/spi.c.obj
+ .debug_str     0x0000fae2      0x861 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_msp.c.obj
+ .debug_str     0x0000fae2      0xf05 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_hal_timebase_tim.c.obj
+ .debug_str     0x0000fae2     0x114a CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/stm32f4xx_it.c.obj
+ .debug_str     0x0000fae2      0x432 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/syscalls.c.obj
+ .debug_str     0x0000fae2      0x25e CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/sysmem.c.obj
+ .debug_str     0x0000fae2      0x3c1 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/system_stm32f4xx.c.obj
+ .debug_str     0x0000fae2      0xb34 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/tim.c.obj
+ .debug_str     0x0000fae2      0xfcc CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usart.c.obj
+ .debug_str     0x0000fae2      0x81b CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Src/usb_otg.c.obj
+ .debug_str     0x0000fae2       0x95 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj
+ .debug_str     0x0000fae2      0xc38 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj
+ .debug_str     0x0000fae2      0xa6e CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c.obj
+ .debug_str     0x0000fae2      0xcfb CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj
+ .debug_str     0x0000fae2      0x7af CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj
+ .debug_str     0x0000fae2      0x52c CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj
+ .debug_str     0x0000fae2      0x2c1 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c.obj
+ .debug_str     0x0000fae2      0xe3e CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c.obj
+ .debug_str     0x0000fae2      0x752 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj
+ .debug_str     0x0000fae2      0xe5f CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c.obj
+ .debug_str     0x0000fae2     0x1738 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c.obj
+ .debug_str     0x0000fae2      0xf44 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c.obj
+ .debug_str     0x0000fae2     0x10df CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c.obj
+ .debug_str     0x0000fae2      0xd67 CMakeFiles/Engineer_Chassis_2025.elf.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c.obj
+ .debug_str     0x0000fae2     0x256d CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c.obj
+ .debug_str     0x0000fae2      0x33b CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/list.c.obj
+ .debug_str     0x0000fae2      0x4bb CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.c.obj
+ .debug_str     0x0000fae2      0x554 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c.obj
+ .debug_str     0x0000fae2      0xd51 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/queue.c.obj
+ .debug_str     0x0000fae2     0x1683 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/tasks.c.obj
+ .debug_str     0x0000fae2      0xfa5 CMakeFiles/Engineer_Chassis_2025.elf.dir/Middlewares/Third_Party/FreeRTOS/Source/timers.c.obj
+ .debug_str     0x0000fae2      0x599 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/Compilable.cpp.obj
+ .debug_str     0x0000fae2      0x2d8 CMakeFiles/Engineer_Chassis_2025.elf.dir/User/Src/User_Lib.cpp.obj
+ .debug_str     0x0000fae2      0x262 bin_dsp\libCMSISDSP.a(arm_cos_f32.c.obj)
+ .debug_str     0x0000fae2      0x262 bin_dsp\libCMSISDSP.a(arm_sin_f32.c.obj)
+ .debug_str     0x0000fae2      0xb95 bin_dsp\libCMSISDSP.a(arm_common_tables.c.obj)
 
 .comment        0x00000000       0x45
  .comment       0x00000000       0x45 CMakeFiles/Engineer_Chassis_2025.elf.dir/BSP/Src/BSP_CAN.cpp.obj
@@ -7433,19 +7433,19 @@ LOAD E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb
  .debug_frame   0x00007470       0x34 E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-__atexit.o)
 
 .debug_line_str
-                0x00000000      0x254
+                0x00000000      0x24a
  .debug_line_str
-                0x00000000      0x254 CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj
-                                 0x83 (size before relaxing)
+                0x00000000      0x24a CMakeFiles/Engineer_Chassis_2025.elf.dir/Core/Startup/startup_stm32f427iihx.s.obj
+                                 0x79 (size before relaxing)
  .debug_line_str
-                0x00000254       0xce E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
+                0x0000024a       0xce E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_addsubdf3.o)
  .debug_line_str
-                0x00000254       0xce E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
+                0x0000024a       0xce E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_arm_cmpdf2.o)
  .debug_line_str
-                0x00000254       0xc9 E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x0000024a       0xc9 E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_aeabi_uldivmod.o)
  .debug_line_str
-                0x00000254       0xcd E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(libunwind.o)
+                0x0000024a       0xcd E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(libunwind.o)
  .debug_line_str
-                0x00000254       0xcd E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
+                0x0000024a       0xcd E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a(_dvmd_tls.o)
  .debug_line_str
-                0x00000254       0xe3 E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memcpy.o)
+                0x0000024a       0xe3 E:/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libg.a(libc_a-memcpy.o)
