@@ -1312,8 +1312,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "E:/RM/2025/Engineer_Chassis_2025_Test/cmake-build-debug",
-		"source" : "E:/RM/2025/Engineer_Chassis_2025_Test"
+		"build" : "E:/RM/2025/Engineer_Chassis_Test/cmake-build-debug",
+		"source" : "E:/RM/2025/Engineer_Chassis_Test"
 	},
 	"version" : 
 	{

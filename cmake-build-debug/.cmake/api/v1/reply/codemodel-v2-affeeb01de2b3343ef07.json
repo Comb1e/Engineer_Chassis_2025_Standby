@@ -74,14 +74,14 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "CMSISDSP::@8c25d14a3fe0862eaffa",
-					"jsonFile" : "target-CMSISDSP-Debug-6d3884950a81dc9319e9.json",
+					"jsonFile" : "target-CMSISDSP-Debug-b5c6ed366fe07c84ea71.json",
 					"name" : "CMSISDSP",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "Engineer_Chassis_2025.elf::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Engineer_Chassis_2025.elf-Debug-257e71de316e919309e9.json",
+					"jsonFile" : "target-Engineer_Chassis_2025.elf-Debug-8685bf3b1f2a5119722b.json",
 					"name" : "Engineer_Chassis_2025.elf",
 					"projectIndex" : 0
 				}
@@ -91,8 +91,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/RM/2025/Engineer_Chassis_2025_Test/cmake-build-debug",
-		"source" : "E:/RM/2025/Engineer_Chassis_2025_Test"
+		"build" : "E:/RM/2025/Engineer_Chassis_Test/cmake-build-debug",
+		"source" : "E:/RM/2025/Engineer_Chassis_Test"
 	},
 	"version" : 
 	{

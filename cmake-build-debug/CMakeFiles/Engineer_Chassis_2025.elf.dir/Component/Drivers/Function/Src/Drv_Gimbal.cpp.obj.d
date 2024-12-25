@@ -1,14 +1,14 @@
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimbal.cpp.obj: \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Drivers\Function\Src\Drv_Gimbal.cpp \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Drivers\Function\Inc/Drv_Gimbal.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component/Global_CFG.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Core\Inc/stm32f4xx_hal_conf.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_def.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\CMSIS\Device\ST\STM32F4xx\Include/stm32f4xx.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\CMSIS\Device\ST\STM32F4xx\Include/stm32f427xx.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\CMSIS\Include/core_cm4.h \
+ E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Src\Drv_Gimbal.cpp \
+ E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Gimbal.h \
+ E:\RM\2025\Engineer_Chassis_Test\Component/Global_CFG.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal.h \
+ E:\RM\2025\Engineer_Chassis_Test\Core\Inc/stm32f4xx_hal_conf.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_def.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\CMSIS\Device\ST\STM32F4xx\Include/stm32f4xx.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\CMSIS\Device\ST\STM32F4xx\Include/stm32f427xx.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\CMSIS\Include/core_cm4.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/stdint.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_default_types.h \
@@ -16,47 +16,47 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimb
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_newlib_version.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_intsup.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_stdint.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\CMSIS\Include/cmsis_version.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\CMSIS\Include/cmsis_compiler.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\CMSIS\Include/cmsis_gcc.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\CMSIS\Include/mpu_armv7.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\CMSIS\Device\ST\STM32F4xx\Include/system_stm32f4xx.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/Legacy/stm32_hal_legacy.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\CMSIS\Include/cmsis_version.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\CMSIS\Include/cmsis_compiler.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\CMSIS\Include/cmsis_gcc.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\CMSIS\Include/mpu_armv7.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\CMSIS\Device\ST\STM32F4xx\Include/system_stm32f4xx.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/Legacy/stm32_hal_legacy.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc_ex.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_gpio.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_gpio_ex.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_exti.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma_ex.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_cortex.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_can.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ex.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ramfunc.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_iwdg.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr_ex.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_spi.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usb.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd_ex.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Core\Inc/can.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Core\Inc/main.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Core\Inc/usart.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Core\Inc/gpio.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\User\Inc/RTOS.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Core\Inc/FreeRTOSConfig.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\include/projdefs.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\include/portable.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\include/deprecated_definitions.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F/portmacro.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\include/mpu_wrappers.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_rcc_ex.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_gpio.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_gpio_ex.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_exti.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_dma_ex.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_cortex.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_can.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ex.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_flash_ramfunc.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_iwdg.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pwr_ex.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_spi.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_tim_ex.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_uart.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_ll_usb.h \
+ E:\RM\2025\Engineer_Chassis_Test\Drivers\STM32F4xx_HAL_Driver\Inc/stm32f4xx_hal_pcd_ex.h \
+ E:\RM\2025\Engineer_Chassis_Test\Core\Inc/can.h \
+ E:\RM\2025\Engineer_Chassis_Test\Core\Inc/main.h \
+ E:\RM\2025\Engineer_Chassis_Test\Core\Inc/usart.h \
+ E:\RM\2025\Engineer_Chassis_Test\Core\Inc/gpio.h \
+ E:\RM\2025\Engineer_Chassis_Test\User\Inc/RTOS.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\include/FreeRTOS.h \
+ E:\RM\2025\Engineer_Chassis_Test\Core\Inc/FreeRTOSConfig.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\include/projdefs.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\include/portable.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\include/deprecated_definitions.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\portable\GCC\ARM_CM4F/portmacro.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\include/mpu_wrappers.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/reent.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/reent.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \
@@ -67,14 +67,14 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimb
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_types.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/machine/_types.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/lock.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\User\Inc/User_Lib.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Drivers\Peripherals\Inc/Drv_HI229UM.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ E:\RM\2025\Engineer_Chassis_Test\User\Inc/User_Lib.h \
+ E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Peripherals\Inc/Drv_HI229UM.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdbool.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Algorithm\Inc/CRC.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\BSP\Inc/BSP_Usart.h \
+ E:\RM\2025\Engineer_Chassis_Test\Component\Algorithm\Inc/CRC.h \
+ E:\RM\2025\Engineer_Chassis_Test\BSP\Inc/BSP_Usart.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/cstring \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/c++config.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/c++/13.3.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/os_defines.h \
@@ -85,11 +85,11 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_Gimb
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/_locale.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/strings.h \
  E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/sys/string.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\BSP\Inc/BSP_CAN.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\User\Inc/compilable.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Algorithm\Inc/PID.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Drivers\Function\Inc/Drv_Reset.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\Component\Drivers\Peripherals\Inc/Drv_ServoCtrl.h \
- E:\RM\2025\Engineer_Chassis_2025_Test\User\Inc/Compilable.h
+ E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
+ E:\RM\2025\Engineer_Chassis_Test\BSP\Inc/BSP_CAN.h \
+ E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
+ E:\RM\2025\Engineer_Chassis_Test\User\Inc/compilable.h \
+ E:\RM\2025\Engineer_Chassis_Test\Component\Algorithm\Inc/PID.h \
+ E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Reset.h \
+ E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Peripherals\Inc/Drv_ServoCtrl.h \
+ E:\RM\2025\Engineer_Chassis_Test\User\Inc/Compilable.h

@@ -823,7 +823,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "e:/RM/2025/Engineer_Chassis_2025_Test/cmake-build-debug"
+			"value" : "e:/RM/2025/Engineer_Chassis_Test/cmake-build-debug"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -1295,7 +1295,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/RM/2025/Engineer_Chassis_2025_Test/cmake-build-debug/CMakeFiles/pkgRedirects"
+			"value" : "E:/RM/2025/Engineer_Chassis_Test/cmake-build-debug/CMakeFiles/pkgRedirects"
 		},
 		{
 			"name" : "CMAKE_GENERATOR",
@@ -1355,7 +1355,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "E:/RM/2025/Engineer_Chassis_2025_Test"
+			"value" : "E:/RM/2025/Engineer_Chassis_Test"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1851,7 +1851,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/RM/2025/Engineer_Chassis_2025_Test/cmake-build-debug/bin_dsp"
+			"value" : "E:/RM/2025/Engineer_Chassis_Test/cmake-build-debug/bin_dsp"
 		},
 		{
 			"name" : "CMSISDSP_IS_TOP_LEVEL",
@@ -1875,7 +1875,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/RM/2025/Engineer_Chassis_2025_Test/CMSIS-DSP/Source"
+			"value" : "E:/RM/2025/Engineer_Chassis_Test/CMSIS-DSP/Source"
 		},
 		{
 			"name" : "COMPLEXMATH",
@@ -2091,7 +2091,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/RM/2025/Engineer_Chassis_2025_Test/cmake-build-debug"
+			"value" : "E:/RM/2025/Engineer_Chassis_Test/cmake-build-debug"
 		},
 		{
 			"name" : "Engineer_Chassis_2025_IS_TOP_LEVEL",
@@ -2115,7 +2115,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "E:/RM/2025/Engineer_Chassis_2025_Test"
+			"value" : "E:/RM/2025/Engineer_Chassis_Test"
 		},
 		{
 			"name" : "FASTMATH",
