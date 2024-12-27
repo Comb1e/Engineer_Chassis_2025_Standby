@@ -32,7 +32,13 @@ void Arm_Task(void *argument)
         }
         else
         {
+
+#if VISUAL_CONTROL_TEST
+            arm.Update_Final();
+#else
             arm.Clean_Control();
+#endif
+
         }
         tick += ARM_CONTROL_CYCLE;
         osDelayUntil(tick);

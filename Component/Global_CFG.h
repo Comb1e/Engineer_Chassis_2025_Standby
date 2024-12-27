@@ -23,13 +23,14 @@
 #define ABSORB 1
 #define INFO 1
 
-#define TEST 0
+#define TEST 0 //需要有电机不动的时候置为1
 
 #define GIMBAL_Slide_TEST 0
 #define GIMBAL_ATTITUDE_TEST 0
 #define CHASSIS_TEST 0
 #define CHASSIS_TEST_WHEEL 1
 #define ALIGN_TEST 0
+#define VISUAL_CONTROL_TEST 1
 
 #define CAMERA_ON_ARM 1
 

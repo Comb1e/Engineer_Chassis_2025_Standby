@@ -5,6 +5,7 @@
 #include "AutoCtrl_Task.h"
 #include "Drv_Robot.h"
 
+bool reset_flag = false;
 void AutoCtrl_Task(void *argument)
 {
     osDelay(2000);
@@ -17,6 +18,15 @@ void AutoCtrl_Task(void *argument)
         robot.Check_Death();
         robot.Check_Error();
         robot.Update_Visual_Exchange();
+
+#if VISUAL_CONTROL_TEST
+        if(reset_flag)
+        {
+            kb.Set_Gimbal_Reset();
+            reset_flag = false;
+        }
+#endif
+
         osDelay(2);
     }
 }

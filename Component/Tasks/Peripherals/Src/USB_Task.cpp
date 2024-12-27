@@ -12,11 +12,11 @@ void USB_Task(void *argument)
 {
     uint32_t tick = 0;
     tick = osKernelGetTickCount();
+    debug = 10;
     for (;;)
     {
         usb.Receive_Data();
         usb.Update_RX_Data();
-        usb.Check_Change_Visual_Control();
         usb.Update_TX_Data();
         usb.Transmit_Data();
         usb.Calculate_Camera_Get_Pose_To_Effector_Pose();

@@ -14,13 +14,15 @@ __NO_RETURN void AutoExchange_Task(void *argument)
 
     robot.Arm_Take_Ore_From_Sucker();
     robot.Pre_For_Auto_Exchange();
-    robot.Update_Visual_Exchange();
 
-    if(!usb.exchanging_flag)
+    osDelay(2000);
+    while(robot.usb->rx_exchanging_flag)
     {
-        robot.End_Exchange();
-        osThreadExit();
+        osDelay(1);
     }
+
+    robot.End_Exchange();
+    osThreadExit();
 }
 
 void Robot_Device::CreatTask_Auto_Exchange()

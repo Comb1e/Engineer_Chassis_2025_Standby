@@ -45,15 +45,15 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RB_NUM].Init(CHASSIS_MOTOR_RB_ID,DJI_M3508,CHASSIS_CAN,true,ChassisRBUpdateBinarySemHandle,2000,0.3);
     this->wheel[CHASSIS_MOTOR_RF_NUM].Init(CHASSIS_MOTOR_RF_ID,DJI_M3508,CHASSIS_CAN,true,ChassisRFUpdateBinarySemHandle,2000,0.3);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(0.07,0,0,100,0.2);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(0.1,0,0,100,0.2);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(0.1,0,0,100,0.2);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.09,0,0,100,0.2);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(0.07,0.002,0,0.06,0.1);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(0.08,0.002,0,0.06,0.1);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(0.08,0.002,0,0.06,0.1);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.08,0.002,0,0.06,0.1);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.0f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.0f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.0f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.0f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.1f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.1f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.1f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.1f, 0.0f, 0.0f,100.0f,0.95);
 
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
@@ -112,7 +112,13 @@ void Chassis_Device::Set_Free()
     }
 
     this->Clean_Speed_Control();
+
+#if VISUAL_CONTROL_TEST
+
+#else
     this->Clean_Poition_Control();
+#endif
+
     this->control_type = SPEED;
 }
 

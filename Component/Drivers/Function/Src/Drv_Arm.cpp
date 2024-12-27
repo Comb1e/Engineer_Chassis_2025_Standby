@@ -634,7 +634,6 @@ void Arm_Device::Close_Step_protected()
     }
 }
 
-float tra_debug;
 bool Arm_Device::Check_All_Get_To_Final()
 {
     for (traj_item_e point = X; point < TRAJ_ITEM_NUM; point = (traj_item_e) (point + 1))
@@ -696,12 +695,18 @@ void Arm_Device::Wait_For_Moving()
 {
     osDelay(100);
     uint32_t time = HAL_GetTick();
-    while(!this->Check_All_Get_To_Final())
+    while(!this->Check_All_Get_To_Final() || this->chassis_move_data.x != 0 || this->chassis_move_data.y != 0)
     {
+
+#if VISUAL_CONTROL_TEST
+
+#else
         if (HAL_GetTick() > time + 8000)
         {
             break;
         }
+#endif
+
         osDelay(1);
     }
 }

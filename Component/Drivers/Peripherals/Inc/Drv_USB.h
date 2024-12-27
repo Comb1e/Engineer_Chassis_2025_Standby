@@ -105,7 +105,7 @@ public:
     bool exchanging_started_flag;
     bool exchanging_started_flag_sent_flag;
     bool controllable_flag;
-    bool truly_controllable_flag;
+    bool truly_started_exchanging_flag;
 
     bool rx_exchanging_flag;
     bool rx_controllable_flag;
@@ -133,13 +133,14 @@ public:
     pose_t ore_down_arm_target_pose;
 
     pose_t last_visual_control_pose;
+    pose_t temp_pose;
+    pose_t rx_pose;
 
     void Receive_Data();
     void Update_RX_Data();
     void Update_TX_Data();
     void Transmit_Data();
     void Calculate_Camera_Get_Pose_To_Effector_Pose();
-    void Check_Change_Visual_Control();
     bool Check_Lost_Flag();
 };
 
