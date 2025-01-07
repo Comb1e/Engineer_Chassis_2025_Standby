@@ -119,6 +119,6 @@ public:
     void Set_Slide_Reset();
 };
 
-extern Gimbal_Device gimbal;
+extern Gimbal_Device g_gimbal;
 
 #endif //DRV_GIMBAL_H

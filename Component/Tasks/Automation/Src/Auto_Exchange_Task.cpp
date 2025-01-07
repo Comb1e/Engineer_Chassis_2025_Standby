@@ -6,22 +6,22 @@
 
 __NO_RETURN void AutoExchange_Task(void *argument)
 {
-    if(robot.absorb->Get_Ore_Num() == 0)
+    if(g_robot.absorb->Get_Ore_Num() == 0)
     {
-        robot.autoSituation = Auto_None;
+        g_robot.autoSituation = Auto_None;
         osThreadExit();
     }
 
-    robot.Arm_Take_Ore_From_Sucker();
-    robot.Pre_For_Auto_Exchange();
+    g_robot.Arm_Take_Ore_From_Sucker();
+    g_robot.Pre_For_Auto_Exchange();
 
     osDelay(2000);
-    while(robot.usb->rx_exchanging_flag)
+    while(g_robot.usb->rx_exchanging_flag)
     {
         osDelay(1);
     }
 
-    robot.End_Exchange();
+    g_robot.End_Exchange();
     osThreadExit();
 }
 
@@ -45,7 +45,7 @@ void Robot_Device::CreatTask_Auto_Exchange()
             this->AutoExchangeHandle = osThreadNew(AutoExchange_Task, NULL, &this->AutoExchange_Attributes);
         }
 
-        robot.Open_Visual_Control();
+        g_robot.Open_Visual_Control();
         taskEXIT_CRITICAL();
     }
 }

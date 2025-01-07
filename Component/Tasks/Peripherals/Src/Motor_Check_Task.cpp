@@ -27,15 +27,15 @@ void Motor_Check_Task(void *argument)
     {
         osDelay(6);
         lost_num = 0;
-        lost_num += chassis.Check_Motor_Lost();
-        lost_num += gimbal.Check_Motor_Lost();
+        lost_num += g_chassis.Check_Motor_Lost();
+        lost_num += g_gimbal.Check_Motor_Lost();
         if(lost_num >= MOTOR_NUM)
         {
             death_cnt++;
         }
         else if(lost_num == 0)
         {
-            robot.enable_flag = true;
+            g_robot.enable_flag = true;
             death_cnt = 0;
         }
         else
@@ -45,11 +45,11 @@ void Motor_Check_Task(void *argument)
 
         if(death_cnt >= 10)
         {
-            robot.Set_Death();
+            g_robot.Set_Death();
         }
         else
         {
-            robot.Set_Easter();
+            g_robot.Set_Easter();
         }
     }
 }

@@ -11,17 +11,17 @@
 
 void Info_Task(void *argument)
 {
-    info.Init(INFO_CAN,INFO_RX_CAN2_STDID,INFO_TX_CAN2_STDID,ArmResetInitBinarySemHandle);
+    g_info.Init(INFO_CAN,INFO_RX_CAN2_STDID,INFO_TX_CAN2_STDID,ArmResetInitBinarySemHandle);
     osSemaphoreAcquire(ArmResetInitBinarySemHandle, 0);
-    info.Update_Data();
-    info.CAN_Send_MSG();
+    g_info.Update_Data();
+    g_info.CAN_Send_MSG();
     for(;;)
     {
-        info.Update_Enable();
-        if(info.Check_Enable())
+        g_info.Update_Enable();
+        if(g_info.Check_Enable())
         {
-            info.Update_Data();
-            info.CAN_Send_MSG();
+            g_info.Update_Data();
+            g_info.CAN_Send_MSG();
         }
         osDelay(2);
     }

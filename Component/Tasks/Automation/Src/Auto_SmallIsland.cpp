@@ -6,25 +6,25 @@
 
 __NO_RETURN void Auto_SmallIsland_Task(void *argument)
 {
-    if (robot.absorb->Check_Sucker_Holding(ARM_SUCKER))
+    if (g_robot.absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
-        robot.Set_Auto_Situation(Auto_None);
+        g_robot.Set_Auto_Situation(Auto_None);
         osThreadExit();
     }
 
-    robot.Pre_For_Auto_SmallIsland_Or_GroundMine();
-    //robot.Keep_Apart(100.0f);
-    robot.SmallIsland_Or_GroundMine_Pre();
-    robot.SmallIsland_Or_GroundMine_1();
-    robot.SmallIsland_Or_GroundMine_Touching();
+    g_robot.Pre_For_Auto_SmallIsland_Or_GroundMine();
+    //g_robot.Keep_Apart(100.0f);
+    g_robot.SmallIsland_Or_GroundMine_Pre();
+    g_robot.SmallIsland_Or_GroundMine_1();
+    g_robot.SmallIsland_Or_GroundMine_Touching();
 
-    robot.absorb->Get_Ore_State()->Set_Ore_Source(SMALL_ISLAND);
+    g_robot.absorb->Get_Ore_State()->Set_Ore_Source(SMALL_ISLAND);
 
-    robot.SmallIsland_Or_GroundMine_Pre_Back();
-    robot.Back_With_Ore();
+    g_robot.SmallIsland_Or_GroundMine_Pre_Back();
+    g_robot.Back_With_Ore();
 
-    robot.chassis->need_flag = true;
-    robot.Set_Auto_Situation(Auto_None);
+    g_robot.chassis->need_flag = true;
+    g_robot.Set_Auto_Situation(Auto_None);
     osThreadExit();
 }
 

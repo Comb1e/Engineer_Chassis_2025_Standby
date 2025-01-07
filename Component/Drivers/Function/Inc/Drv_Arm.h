@@ -285,6 +285,6 @@ public:
 
 void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data);
 
-extern Arm_Device arm;
+extern Arm_Device g_arm;
 
 #endif //DRV_ARM_H

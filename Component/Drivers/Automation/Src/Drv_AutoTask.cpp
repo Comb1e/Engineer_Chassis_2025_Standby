@@ -20,6 +20,7 @@ void Robot_Device::Creat_Task_Init()
 void Robot_Device::Exit_Task()
 {
     this->arm->Set_FeedBack_As_Target();
+    this->chassis->Disable_Align();
     this->store_sucker = ORE_STORE_NONE;
     this->select_center_flag = false;
     this->select_right_flag = false;

@@ -48,8 +48,8 @@ void judgeCtrl_task(void *argument) {
 //            dma_buffer_to_unpack_buffer(&judge_rx_obj, UART_IDLE_IT);
 //            dma_buffer_to_unpack_buffer(&judgement_usart.uart_dma_rxdata, UART_IDLE_IT);
             g_judgement_power.unpack_fifo_data(&g_judgement_power.judge_unpack_obj, DN_REG_ID);
-            robot.Update_HP(g_judgement_power.judge_rece_mesg.game_robot_state_data.current_HP);
-            chassis.Set_Power_Control_Now_Power(g_judgement_power.judge_rece_mesg.power_heat_data.chassis_power);
+            g_robot.Update_HP(g_judgement_power.judge_rece_mesg.game_robot_state_data.current_HP);
+            g_chassis.Set_Power_Control_Now_Power(g_judgement_power.judge_rece_mesg.power_heat_data.chassis_power);
             continue;
         }
 

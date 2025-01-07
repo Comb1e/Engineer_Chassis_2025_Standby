@@ -167,8 +167,10 @@ void Robot_Device::Back_To_Sucker()
 void Robot_Device::Back_With_Ore()
 {
     this->info->Set_Pose_Mode(single);
+    this->arm->Disable_Arm_Chassis_Cooperate();
     osDelay(3);
 
     this->Back_To_Sucker();
     this->Arm_Back_Home();
+    this->arm->Enable_Arm_Chassis_Cooperate();
 }

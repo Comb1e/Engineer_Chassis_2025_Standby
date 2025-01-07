@@ -21,8 +21,8 @@ extern "C"
 /* the perimeter of wheel(mm) */  //车轮周长 2*PI*R
 #define PERIMETER 483.8f
 
-/* chassis motor use 3508 */
-/* the deceleration ratio of chassis motor */
+/* g_chassis motor use 3508 */
+/* the deceleration ratio of g_chassis motor */
 #define MOTOR_DECELE_RATIO (1.0f / 19.0f)
 
 #define WHEELPERIMETER 395.0f
@@ -35,9 +35,9 @@ extern "C"
 /* wheelbase distance(mm) */ //轮距 前后轮之车轮轴距离
 #define WHEELBASE (362.9f)
 
-/* gimbal is relative to chassis center x axis offset(mm) */
+/* g_gimbal is relative to g_chassis center x axis offset(mm) */
 #define ROTATE_X_OFFSET (-165.0f)
-/* gimbal is relative to chassis center y axis offset(mm) */
+/* g_gimbal is relative to g_chassis center y axis offset(mm) */
 #define ROTATE_Y_OFFSET (0.0f)
 
 #define ECD_RATIO  (WHEELPERIMETER * MOTOR_DECELE_RATIO)

@@ -60,6 +60,16 @@ extern "C"
 
 #define CHASSIS_POWER_LIMIT     (24 * 10)
 
+#define WHEEL0_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.2f
+#define WHEEL1_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.2f
+#define WHEEL2_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.2f
+#define WHEEL3_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.2f
+
+#define WHEEL0_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
+#define WHEEL1_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
+#define WHEEL2_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
+#define WHEEL3_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
+
 typedef enum
 {
     SPEED = 0,
@@ -174,6 +184,8 @@ public:
     can_device_t tof_can;
     tof_rx_data_t tof_rx_data;
 
+    float wheel_loc_error_min;
+
     void Init();
     bool Check_Init_Completely();
     uint8_t Check_Motor_Lost();
@@ -215,12 +227,14 @@ public:
     void Enable_Align();
     bool Check_Align();
     void Init_Tof(CAN_HandleTypeDef *hcan,uint32_t rx_id,osSemaphoreId_t rx_sem);
+    void Change_To_Auto_Control();
+    void Change_To_KB_Control();
 
     friend void Tof_Rx_CallBack(can_device_t *can_device,uint8_t *rx_buff);
 };
 
 void Tof_Rx_CallBack(can_device_t *can_device,uint8_t *rx_buff);
 
-extern Chassis_Device chassis;
+extern Chassis_Device g_chassis;
 
 #endif //DRV_CHASSIS_H

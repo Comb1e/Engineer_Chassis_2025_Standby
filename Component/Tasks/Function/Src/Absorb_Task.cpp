@@ -9,17 +9,17 @@
 
 void Absorb_Task(void *argument)
 {
-    absorb.Init(PUMP_CAN,ABSORB_CAN_RX_STDID,ABSORB_CAN_TX_STDID,AbsorbUpdateBinarySemHandle);
+    g_absorb.Init(PUMP_CAN,ABSORB_CAN_RX_STDID,ABSORB_CAN_TX_STDID,AbsorbUpdateBinarySemHandle);
     osDelay(1000);
     for(;;)
     {
-        absorb.Update_Enable();
-        absorb.Update_Ready();
-        if(absorb.ready_flag && absorb.Check_Enable())
+        g_absorb.Update_Enable();
+        g_absorb.Update_Ready();
+        if(g_absorb.ready_flag && g_absorb.Check_Enable())
         {
-            absorb.Update_Data();
-            absorb.Update_Ore_Num();
-            absorb.Update_MSG();
+            g_absorb.Update_Data();
+            g_absorb.Update_Ore_Num();
+            g_absorb.Update_MSG();
         }
         osDelay(8);
     }

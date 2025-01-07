@@ -8,7 +8,7 @@
 
 void KB_Device::Check_Mouse_Event()
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -24,11 +24,11 @@ void KB_Device::Check_Mouse_Event()
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    absorb.Set_Sucker_Open(ARM_SUCKER);
+                    g_absorb.Set_Sucker_Open(ARM_SUCKER);
                 }
                 else
                 {
-                    robot.Set_Select_Left_Flag();
+                    g_robot.Set_Select_Left_Flag();
                 }
             }
 
@@ -44,11 +44,11 @@ void KB_Device::Check_Mouse_Event()
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    absorb.Set_Sucker_Close(ARM_SUCKER);
+                    g_absorb.Set_Sucker_Close(ARM_SUCKER);
                 }
                 else
                 {
-                    robot.Set_Select_Right_Flag();
+                    g_robot.Set_Select_Right_Flag();
                 }
             }
 
@@ -107,11 +107,11 @@ void KB_Device::Check_Mouse_Event()
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    absorb.Set_Sucker_Open(ARM_SUCKER);
+                    g_absorb.Set_Sucker_Open(ARM_SUCKER);
                 }
                 else
                 {
-                    robot.Set_Select_Left_Flag();
+                    g_robot.Set_Select_Left_Flag();
                 }
             }
 
@@ -127,11 +127,11 @@ void KB_Device::Check_Mouse_Event()
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    absorb.Set_Sucker_Close(ARM_SUCKER);
+                    g_absorb.Set_Sucker_Close(ARM_SUCKER);
                 }
                 else
                 {
-                    robot.Set_Select_Right_Flag();
+                    g_robot.Set_Select_Right_Flag();
                 }
             }
 
@@ -187,15 +187,15 @@ void KB_Device::Check_RC_Event()
 {
     if(RC_Check_SW_Event(RC_SW_L_MID2UP))
     {
-        arm.Clean_Control();
-        chassis.Clean_Poition_Control();
-        chassis.Clean_Speed_Control();
-        chassis.arm_need_cnt = 0;
+        g_arm.Clean_Control();
+        g_chassis.Clean_Poition_Control();
+        g_chassis.Clean_Speed_Control();
+        g_chassis.arm_need_cnt = 0;
     }
     else if(RC_Check_SW_Event(RC_SW_L_UP2MID))
     {
-        arm.Clean_Control();
-        chassis.Clean_Speed_Control();
+        g_arm.Clean_Control();
+        g_chassis.Clean_Speed_Control();
     }
     else if(RC_Check_SW_Event(RC_SW_L_MID2DOWN))
     {
@@ -208,30 +208,67 @@ void KB_Device::Check_RC_Event()
 
     if(RC_Check_SW_Event(RC_SW_R_MID2UP))
     {
-        //absorb.Set_Sucker_Open(RIGHT_SUCKER);
-        robot.CreatTask_Auto_BigIsland();
+#if AUTO_BIGISLAND_TEST
+        g_robot.CreatTask_Auto_BigIsland();
+#endif
+
+#if AUTO_SMALLISLAND_TEST
+        g_robot.CreatTask_Auto_SmallIsland();
+#endif
+
+#if AUTO_GROUNDMINE_TEST
+        g_robot.CreatTask_Auto_GroundMine();
+#endif
+
+#if AUTOCONTROL_TEST
+
+#else
+        g_absorb.Set_Sucker_Open(RIGHT_SUCKER);
+#endif
     }
     else if(RC_Check_SW_Event(RC_SW_R_UP2MID))
     {
-        //absorb.Set_Sucker_Close(RIGHT_SUCKER);
+#if AUTOCONTROL_TEST
+
+#else
+        g_absorb.Set_Sucker_Close(RIGHT_SUCKER);
+#endif
     }
     else if(RC_Check_SW_Event(RC_SW_R_DOWN2MID))
     {
-        //absorb.Set_Sucker_Close(LEFT_SUCKER);
+#if AUTOCONTROL_TEST
+
+#else
+        g_absorb.Set_Sucker_Close(LEFT_SUCKER);
+#endif
     }
     else if(RC_Check_SW_Event(RC_SW_R_MID2DOWN))
     {
-        //absorb.Set_Sucker_Open(LEFT_SUCKER);
-        robot.ExitTask_Auto_BigIsland();
-        robot.absorb->Set_Sucker_Close(ARM_SUCKER);
-        robot.absorb->Set_Sucker_Close(LEFT_SUCKER);
-        robot.absorb->Set_Sucker_Close(RIGHT_SUCKER);
+#if AUTO_BIGISLAND_TEST
+        g_robot.ExitTask_Auto_BigIsland();
+#endif
+
+#if AUTO_SMALLISLAND_TEST
+        g_robot.ExitTask_Auto_SmallIsland();
+#endif
+
+#if AUTO_GROUNDMINE_TEST
+        g_robot.ExitTask_Auto_GroundMine();
+#endif
+
+#if AUTOCONTROL_TEST
+        g_robot.absorb->Set_Sucker_Close(ARM_SUCKER);
+        g_robot.absorb->Set_Sucker_Close(LEFT_SUCKER);
+        g_robot.absorb->Set_Sucker_Close(RIGHT_SUCKER);
+#else
+        g_absorb.Set_Sucker_Open(LEFT_SUCKER);
+#endif
     }
 }
 
 void KB_Device::KeyW_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -326,7 +363,7 @@ void KB_Device::KeyW_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyS_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -421,7 +458,7 @@ void KB_Device::KeyS_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyA_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -516,7 +553,7 @@ void KB_Device::KeyA_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyD_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -611,7 +648,7 @@ void KB_Device::KeyD_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeySHIFT_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -646,7 +683,7 @@ void KB_Device::KeySHIFT_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyCTRL_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -681,7 +718,7 @@ void KB_Device::KeyCTRL_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyQ_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -689,7 +726,7 @@ void KB_Device::KeyQ_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    absorb.Set_Sucker_Holding();
+                    g_absorb.Set_Sucker_Holding();
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
@@ -776,7 +813,7 @@ void KB_Device::KeyQ_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyE_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -871,7 +908,7 @@ void KB_Device::KeyE_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyR_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -968,7 +1005,7 @@ void KB_Device::KeyR_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyF_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -988,7 +1025,7 @@ void KB_Device::KeyF_Event_Callback(enum KEY_DIR dir)
                 }
                 else
                 {
-                    robot.Set_Select_Center_Flag();
+                    g_robot.Set_Select_Center_Flag();
                 }
             }
             else if(dir == DIR_UP)
@@ -1030,7 +1067,7 @@ void KB_Device::KeyF_Event_Callback(enum KEY_DIR dir)
                 }
                 else
                 {
-                    robot.Set_Select_Center_Flag();
+                    g_robot.Set_Select_Center_Flag();
                 }
             }
             else if(dir == DIR_UP)
@@ -1063,7 +1100,7 @@ void KB_Device::KeyF_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyG_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1083,7 +1120,7 @@ void KB_Device::KeyG_Event_Callback(enum KEY_DIR dir)
                 }
                 else
                 {
-                    robot.Set_Cancel_Flag();
+                    g_robot.Set_Cancel_Flag();
                 }
             }
             else if(dir == DIR_UP)
@@ -1125,7 +1162,7 @@ void KB_Device::KeyG_Event_Callback(enum KEY_DIR dir)
                 }
                 else
                 {
-                    robot.Set_Cancel_Flag();
+                    g_robot.Set_Cancel_Flag();
                 }
             }
             else if(dir == DIR_UP)
@@ -1158,7 +1195,7 @@ void KB_Device::KeyG_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyZ_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1166,19 +1203,19 @@ void KB_Device::KeyZ_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    info.Set_Pose_Mode(single);
+                    g_info.Set_Pose_Mode(single);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    absorb.Set_Sucker_Open(LEFT_SUCKER);
+                    g_absorb.Set_Sucker_Open(LEFT_SUCKER);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_BigIsland();
+                    g_robot.ExitTask_Auto_BigIsland();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_BigIsland();
+                    g_robot.CreatTask_Auto_BigIsland();
                 }
             }
             else if(dir == DIR_UP)
@@ -1208,19 +1245,19 @@ void KB_Device::KeyZ_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    info.Set_Pose_Mode(single);
+                    g_info.Set_Pose_Mode(single);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    absorb.Set_Sucker_Open(LEFT_SUCKER);
+                    g_absorb.Set_Sucker_Open(LEFT_SUCKER);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_BigIsland();
+                    g_robot.ExitTask_Auto_BigIsland();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_BigIsland();
+                    g_robot.CreatTask_Auto_BigIsland();
                 }
             }
             else if(dir == DIR_UP)
@@ -1253,7 +1290,7 @@ void KB_Device::KeyZ_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyX_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1261,19 +1298,19 @@ void KB_Device::KeyX_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    chassis.Set_Rot();
+                    g_chassis.Set_Rot();
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    absorb.Set_Sucker_Close(LEFT_SUCKER);
+                    g_absorb.Set_Sucker_Close(LEFT_SUCKER);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_SmallIsland();
+                    g_robot.ExitTask_Auto_SmallIsland();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_SmallIsland();
+                    g_robot.CreatTask_Auto_SmallIsland();
                 }
             }
             else if(dir == DIR_UP)
@@ -1303,19 +1340,19 @@ void KB_Device::KeyX_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    chassis.Set_Rot();
+                    g_chassis.Set_Rot();
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    absorb.Set_Sucker_Close(LEFT_SUCKER);
+                    g_absorb.Set_Sucker_Close(LEFT_SUCKER);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_SmallIsland();
+                    g_robot.ExitTask_Auto_SmallIsland();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_SmallIsland();
+                    g_robot.CreatTask_Auto_SmallIsland();
                 }
             }
             else if(dir == DIR_UP)
@@ -1348,7 +1385,7 @@ void KB_Device::KeyX_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyC_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1356,19 +1393,19 @@ void KB_Device::KeyC_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    chassis.Close_Rot();
+                    g_chassis.Close_Rot();
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    absorb.Set_Sucker_Open(RIGHT_SUCKER);
+                    g_absorb.Set_Sucker_Open(RIGHT_SUCKER);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_GroundMine();
+                    g_robot.ExitTask_Auto_GroundMine();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_GroundMine();
+                    g_robot.CreatTask_Auto_GroundMine();
                 }
             }
             else if(dir == DIR_UP)
@@ -1398,19 +1435,19 @@ void KB_Device::KeyC_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    chassis.Close_Rot();
+                    g_chassis.Close_Rot();
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    absorb.Set_Sucker_Open(RIGHT_SUCKER);
+                    g_absorb.Set_Sucker_Open(RIGHT_SUCKER);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_GroundMine();
+                    g_robot.ExitTask_Auto_GroundMine();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_GroundMine();
+                    g_robot.CreatTask_Auto_GroundMine();
                 }
             }
             else if(dir == DIR_UP)
@@ -1443,7 +1480,7 @@ void KB_Device::KeyC_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyV_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1455,15 +1492,15 @@ void KB_Device::KeyV_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    absorb.Set_Sucker_Close(RIGHT_SUCKER);
+                    g_absorb.Set_Sucker_Close(RIGHT_SUCKER);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_Exchange();
+                    g_robot.ExitTask_Auto_Exchange();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_Exchange();
+                    g_robot.CreatTask_Auto_Exchange();
                 }
             }
             else if(dir == DIR_UP)
@@ -1497,15 +1534,15 @@ void KB_Device::KeyV_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
-                    absorb.Set_Sucker_Close(RIGHT_SUCKER);
+                    g_absorb.Set_Sucker_Close(RIGHT_SUCKER);
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.ExitTask_Auto_Exchange();
+                    g_robot.ExitTask_Auto_Exchange();
                 }
                 else
                 {
-                    robot.CreatTask_Auto_Exchange();
+                    g_robot.CreatTask_Auto_Exchange();
                 }
             }
             else if(dir == DIR_UP)
@@ -1538,7 +1575,7 @@ void KB_Device::KeyV_Event_Callback(enum KEY_DIR dir)
 
 void KB_Device::KeyB_Event_Callback(enum KEY_DIR dir)
 {
-    switch (robot.kb_control_mode)
+    switch (g_robot.kb_control_mode)
     {
         case STEER_MODE:
         {
@@ -1546,7 +1583,7 @@ void KB_Device::KeyB_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    arm.Add_Point_Target_Pos_Vel(PITCH,-90.0f,0.3f);
+                    g_arm.Add_Point_Target_Pos_Vel(PITCH,-90.0f,0.3f);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
@@ -1554,11 +1591,11 @@ void KB_Device::KeyB_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.Set_KB_Control_Mode_Mine();
+                    g_robot.Set_KB_Control_Mode_Mine();
                 }
                 else
                 {
-                    gimbal.Set_Homing();
+                    g_gimbal.Set_Homing();
                 }
             }
             else if(dir == DIR_UP)
@@ -1588,7 +1625,7 @@ void KB_Device::KeyB_Event_Callback(enum KEY_DIR dir)
             {
                 if(rc.data.kb.key_bit_state.CTRL && rc.data.kb.key_bit_state.SHIFT)
                 {
-                    arm.Add_Point_Target_Pos_Vel(PITCH,-90.0f,0.3f);
+                    g_arm.Add_Point_Target_Pos_Vel(PITCH,-90.0f,0.3f);
                 }
                 else if(rc.data.kb.key_bit_state.CTRL)
                 {
@@ -1596,11 +1633,11 @@ void KB_Device::KeyB_Event_Callback(enum KEY_DIR dir)
                 }
                 else if(rc.data.kb.key_bit_state.SHIFT)
                 {
-                    robot.Set_KB_Control_Mode_Steer();
+                    g_robot.Set_KB_Control_Mode_Steer();
                 }
                 else
                 {
-                    gimbal.Set_Homing();
+                    g_gimbal.Set_Homing();
                 }
             }
             else if(dir == DIR_UP)

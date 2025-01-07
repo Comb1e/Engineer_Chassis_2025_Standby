@@ -4,7 +4,7 @@
 
 #include "Drv_Absorb.h"
 
-Absorb_Device absorb;
+Absorb_Device g_absorb;
 
 Absorb_Device::Absorb_Device():
     sucker

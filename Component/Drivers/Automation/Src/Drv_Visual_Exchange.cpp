@@ -43,12 +43,12 @@ void Robot_Device::Visual_To_Arm_Control()
     /*if(this->usb->arm_target_pose.z < Z_TOTAL_MAX - 20.0f)
     {
         this->Set_Arm_To_Exchange_Initial(this->usb->arm_target_pose);
-        this->arm->Wait_For_Moving();
+        this->g_arm->Wait_For_Moving();
     }
     else
     {
         this->Set_Arm_To_Exchange_Initial(this->usb->ore_down_arm_target_pose);
-        this->arm->Wait_For_Moving();
+        this->g_arm->Wait_For_Moving();
     }*/
     debug=this->usb->arm_target_pose.x+this->arm->trajectory_final[X];
     if(ABS(this->usb->arm_target_pose.x - this->usb->last_visual_control_pose.x) > 1)

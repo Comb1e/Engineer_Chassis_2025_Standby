@@ -6,7 +6,7 @@
 #include <dsp/fast_math_functions.h>
 
 
-Robot_Device robot;
+Robot_Device g_robot;
 
 Robot_Device::Robot_Device():
 AutoBigIsland_Attributes({.name = "autoBigIsland", .stack_size = 128 * 4, .priority = (osPriority_t) osPriorityAboveNormal,}),

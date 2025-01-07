@@ -17,8 +17,8 @@ void Check_Communicate_Task(void *argument)
     for(;;)
     {
         osDelay(6);
-        absorb.Check_Pump_MCU_For_Loss();
-        info.Check_Lost();
-        arm.Check_Lost();
+        g_absorb.Check_Pump_MCU_For_Loss();
+        g_info.Check_Lost();
+        g_arm.Check_Lost();
     }
 }

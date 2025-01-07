@@ -6,24 +6,24 @@
 
 __NO_RETURN void Auto_BigIsland_Task(void *argument)
 {
-    if (robot.absorb->Check_Sucker_Holding(ARM_SUCKER))
+    if (g_robot.absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
-        robot.Set_Auto_Situation(Auto_None);
+        g_robot.Set_Auto_Situation(Auto_None);
         osThreadExit();
     }
 
-    robot.Pre_For_Auto_BigIsland();
-    robot.BigIsland_Pre();
-    robot.BigIsland_1();
-    robot.BigIsland_Touching();
-    robot.BigIsland_Adjust_1();
-    robot.BigIsland_2();
-    robot.BigIsland_Adjust_2();
-    robot.BigIsland_3();
-    robot.BigIsland_Pre_Back();
-    robot.Back_With_Ore();
+    g_robot.Pre_For_Auto_BigIsland();
+    g_robot.BigIsland_Pre();
+    g_robot.BigIsland_1();
+    g_robot.BigIsland_Touching();
+    g_robot.BigIsland_Adjust_1();
+    g_robot.BigIsland_2();
+    g_robot.BigIsland_Adjust_2();
+    g_robot.BigIsland_3();
+    g_robot.BigIsland_Pre_Back();
+    g_robot.Back_With_Ore();
+    g_robot.BigIsland_Exit();
 
-    robot.Set_Auto_Situation(Auto_None);
     osThreadExit();
 }
 

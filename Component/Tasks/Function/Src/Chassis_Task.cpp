@@ -11,9 +11,9 @@
 #if CHASSIS
 
 void Chassis_Task(void *argument) {
-    chassis.Init();
-    chassis.Init_Tof(CHASSIS_CAN,TOF_RX_ID,TofUpdateBinarySemHandle);
-    while(!chassis.Check_Init_Completely())
+    g_chassis.Init();
+    g_chassis.Init_Tof(CHASSIS_CAN,TOF_RX_ID,TofUpdateBinarySemHandle);
+    while(!g_chassis.Check_Init_Completely())
     {
         osDelay(1);
     }
@@ -22,39 +22,39 @@ void Chassis_Task(void *argument) {
     {
         if (rc.ctrl_protection.connect_flag)
         {
-            chassis.wheel[CHASSIS_TEST_WHEEL].Loc_To_Vel_To_Current();
-            chassis.wheel[CHASSIS_TEST_WHEEL].Vel_To_Current();
-            chassis.wheel[CHASSIS_TEST_WHEEL].Set_Current_To_CAN_TX_Buf();
-            chassis.wheel[CHASSIS_TEST_WHEEL].Send_CAN_MSG();
+            g_chassis.wheel[CHASSIS_TEST_WHEEL].Loc_To_Vel_To_Current();
+            g_chassis.wheel[CHASSIS_TEST_WHEEL].Vel_To_Current();
+            g_chassis.wheel[CHASSIS_TEST_WHEEL].Set_Current_To_CAN_TX_Buf();
+            g_chassis.wheel[CHASSIS_TEST_WHEEL].Send_CAN_MSG();
         }
         else
         {
-            chassis.wheel[CHASSIS_TEST_WHEEL].Set_Current_Zero();
-            chassis.wheel[CHASSIS_TEST_WHEEL].Set_Current_To_CAN_TX_Buf();
-            chassis.wheel[CHASSIS_TEST_WHEEL].Send_CAN_MSG();
+            g_chassis.wheel[CHASSIS_TEST_WHEEL].Set_Current_Zero();
+            g_chassis.wheel[CHASSIS_TEST_WHEEL].Set_Current_To_CAN_TX_Buf();
+            g_chassis.wheel[CHASSIS_TEST_WHEEL].Send_CAN_MSG();
         }
         osDelay(1);
     }
 #else
     for(;;)
     {
-        chassis.Update_Enable_Flag();
-        chassis.Update_Ready();
-        if(chassis.Check_Ready_Flag() && chassis.Check_Enable_Flag())
+        g_chassis.Update_Enable_Flag();
+        g_chassis.Update_Ready();
+        if(g_chassis.Check_Ready_Flag() && g_chassis.Check_Enable_Flag())
         {
-            if(chassis.Check_Can_Use())
+            if(g_chassis.Check_Can_Use())
             {
-                chassis.Judge_For_Arm_Need();
-                switch (chassis.control_type)
+                g_chassis.Judge_For_Arm_Need();
+                switch (g_chassis.control_type)
                 {
                     case SPEED:
                     {
-                        chassis.Update_Speed_Control();
+                        g_chassis.Update_Speed_Control();
                         break;
                     }
                     case POSITION:
                     {
-                        chassis.Update_Position_Control();
+                        g_chassis.Update_Position_Control();
                         break;
                     }
                     default:
@@ -70,7 +70,7 @@ void Chassis_Task(void *argument) {
         }
         else
         {
-            chassis.Set_Free();
+            g_chassis.Set_Free();
         }
         osDelay(3);
     }

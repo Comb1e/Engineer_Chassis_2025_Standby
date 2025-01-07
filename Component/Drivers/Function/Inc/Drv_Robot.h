@@ -271,6 +271,7 @@ public:
     void BigIsland_Adjust_2();
     void BigIsland_3();
     void BigIsland_Pre_Back();
+    void BigIsland_Exit();
 //Drv_AutoSmallIsland_Or_GroundMine
     void CreatTask_Auto_SmallIsland();
     void ExitTask_Auto_SmallIsland();
@@ -308,6 +309,6 @@ public:
     void Check_Error();
 };
 
-extern Robot_Device robot;
+extern Robot_Device g_robot;
 
 #endif //DRV_ROBOT_H

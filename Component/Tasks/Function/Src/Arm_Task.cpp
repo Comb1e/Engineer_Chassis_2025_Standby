@@ -8,35 +8,35 @@
 
 void Arm_Task(void *argument)
 {
-    arm.Init(ARM_CAN,ARM_RX_CAN2_STDID,ARM_TX_CAN2_STDID,ArmUpdateBinarySemHandle);
+    g_arm.Init(ARM_CAN,ARM_RX_CAN2_STDID,ARM_TX_CAN2_STDID,ArmUpdateBinarySemHandle);
     uint32_t tick = 0;
     tick = osKernelGetTickCount();
     while(!rc.ctrl_protection.connect_flag)
     {
         osDelay(1);
     }
-    arm.Update_Control();
-    arm.CAN_Send_MSG();
-    while(!arm.Check_Init_Completely())
+    g_arm.Update_Control();
+    g_arm.CAN_Send_MSG();
+    while(!g_arm.Check_Init_Completely())
     {
         osDelay(1);
     }
     for(;;)
     {
-        arm.Update_Enable();
-        if(arm.Check_Enable())
+        g_arm.Update_Enable();
+        if(g_arm.Check_Enable())
         {
-            arm.Update_Chassis_To_Sucker_RotMatrix();
-            arm.Update_Control();
-            arm.CAN_Send_MSG();
+            g_arm.Update_Chassis_To_Sucker_RotMatrix();
+            g_arm.Update_Control();
+            g_arm.CAN_Send_MSG();
         }
         else
         {
 
 #if VISUAL_CONTROL_TEST
-            arm.Update_Final();
+            g_arm.Update_Final();
 #else
-            arm.Clean_Control();
+            g_arm.Clean_Control();
 #endif
 
         }

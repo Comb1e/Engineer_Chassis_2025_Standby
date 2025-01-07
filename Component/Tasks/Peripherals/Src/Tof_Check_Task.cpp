@@ -14,8 +14,8 @@ void Tof_Check_Task(void *argument)
     osSemaphoreAcquire(TofUpdateBinarySemHandle,10);
     for(;;)
     {
-        chassis.Check_Tof_For_Loss();
-        if(chassis.Check_Tof_Lost_Flag())
+        g_chassis.Check_Tof_For_Loss();
+        if(g_chassis.Check_Tof_Lost_Flag())
         {
             tof_lost_num++;
             tof_connect_num = 0;

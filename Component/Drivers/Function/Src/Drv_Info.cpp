@@ -8,7 +8,7 @@
 
 #include "Global_CFG.h"
 
-Info_Device info;
+Info_Device g_info;
 
 Info_Device::Info_Device()
 {

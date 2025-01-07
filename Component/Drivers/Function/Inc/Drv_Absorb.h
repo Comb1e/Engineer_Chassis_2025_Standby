@@ -24,7 +24,7 @@ extern "C"
 #define ABSORB_CAN_RX_STDID  (0x501)
 
 #define ORE_NUM_MAX 3
-#define ARM_SUCKER_BLOCK_CURRENT_MIN   1850.0f
+#define ARM_SUCKER_BLOCK_CURRENT_MIN   1920.0f
 #define ARM_SUCKER_BLOCK_CURRENT_MAX   1940.0f
 
 #define LEFT_SUCKER_BLOCK_CURRENT_MIN   1850.0f
@@ -117,7 +117,7 @@ public:
 
 void Absorb_RX_Callback(can_device_t *can_device,uint8_t *rx_data);
 
-extern Absorb_Device absorb;
+extern Absorb_Device g_absorb;
 
 #endif //DRV_ABSORB_H
 

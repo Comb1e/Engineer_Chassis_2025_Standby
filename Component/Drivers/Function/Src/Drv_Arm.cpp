@@ -9,7 +9,7 @@
 #include "Drv_Info.h"
 #include "rotation_matrix.h"
 
-Arm_Device arm;
+Arm_Device g_arm;
 
 Arm_Device::Arm_Device():
 trajectory{Trajectory_Device(XYZ_ERROR, ARM_TRAJECTORY_VEL_XYZ),
@@ -52,8 +52,8 @@ void Arm_RX_Data_Update_Callback(can_device_t *can_device, uint8_t *rx_data)
     arm->fb_current_data.sucker_roll_deg = (float) fb_data->sucker_roll;
     arm->fb_current_data.sucker_yaw_deg = (float) fb_data->sucker_yaw;
 
-    arm->fb_current_data.arm_yaw = info.rx_data.fb_arm_yaw;
-    arm->fb_current_data.arm_pitch = info.rx_data.fb_arm_pitch;
+    arm->fb_current_data.arm_yaw = g_info.rx_data.fb_arm_yaw;
+    arm->fb_current_data.arm_pitch = g_info.rx_data.fb_arm_pitch;
 }
 
 void Arm_Device::Limit_Init()
@@ -136,8 +136,8 @@ void Arm_Device::CAN_Set()
     this->can_tx_data.sucker_pitch = (int16_t)roundf((this->ctrl_data.sucker_pitch_deg) * 2.f);
     this->can_tx_data.sucker_yaw = (int16_t)roundf((this->ctrl_data.sucker_yaw_deg) * 2.f);
 
-    info.tx_raw_data.arm_pitch_deg = this->ctrl_data.arm_pitch;
-    info.tx_raw_data.arm_yaw_deg = this->ctrl_data.arm_yaw;
+    g_info.tx_raw_data.arm_pitch_deg = this->ctrl_data.arm_pitch;
+    g_info.tx_raw_data.arm_yaw_deg = this->ctrl_data.arm_yaw;
 
     taskEXIT_CRITICAL();
 }
@@ -221,7 +221,7 @@ void Arm_Device::Update_Final()
 {
     for (traj_item_e point = X; point < TRAJ_ITEM_NUM; point = (traj_item_e) (point + 1))
     {
-        if(chassis.set_vel.x == 0 && chassis.set_vel.y == 0 && ABS(chassis.set_vel.spin) < 0.01f && this->enable_arm_chassis_cooperate_flag)
+        if(g_chassis.set_vel.x == 0 && g_chassis.set_vel.y == 0 && ABS(g_chassis.set_vel.spin) < 0.01f && this->enable_arm_chassis_cooperate_flag)
         {
             if(point == X)
             {
@@ -256,7 +256,7 @@ void Arm_Device::Update_Final()
         {
             this->Update_Normal_Final(point);
 
-            chassis.Reset_Total_Rounds();
+            g_chassis.Reset_Total_Rounds();
         }
     }
 }
@@ -271,7 +271,7 @@ void Arm_Device::Update_X_Final()
         this->trajectory_final[X] = max_limit[X];
         this->trajectory[X].final = max_limit[X];
 
-        chassis.arm_need_cnt = 0;
+        g_chassis.arm_need_cnt = 0;
     }
     else if(this->trajectory_final[X] < min_limit[X])
     {
@@ -281,7 +281,7 @@ void Arm_Device::Update_X_Final()
         this->trajectory_final[X] = min_limit[X];
         this->trajectory[X].final = min_limit[X];
 
-        chassis.arm_need_cnt = 0;
+        g_chassis.arm_need_cnt = 0;
     }
     else
     {
@@ -300,7 +300,7 @@ void Arm_Device::Update_Y_Final()
         this->trajectory_final[Y] = max_limit[Y];
         this->trajectory[Y].final = max_limit[Y];
 
-        chassis.arm_need_cnt = 0;
+        g_chassis.arm_need_cnt = 0;
     }
     else if(this->trajectory_final[Y] < min_limit[Y])
     {
@@ -310,7 +310,7 @@ void Arm_Device::Update_Y_Final()
         this->trajectory_final[Y] = min_limit[Y];
         this->trajectory[Y].final = min_limit[Y];
 
-        chassis.arm_need_cnt = 0;
+        g_chassis.arm_need_cnt = 0;
     }
     else
     {
@@ -693,21 +693,29 @@ bool Arm_Device::Check_Safe_Position()
 
 void Arm_Device::Wait_For_Moving()
 {
-    osDelay(100);
+    osDelay(200);
     uint32_t time = HAL_GetTick();
-    while(!this->Check_All_Get_To_Final() || this->chassis_move_data.x != 0 || this->chassis_move_data.y != 0)
+    while(!this->Check_All_Get_To_Final())
     {
+        osDelay(1);
+    }
+
+    if(this->enable_arm_chassis_cooperate_flag && g_chassis.need_flag)
+    {
+        while(!this->Check_All_Get_To_Final() || ABS(this->chassis_move_data.x) > 1 || ABS(this->chassis_move_data.y) > 1)
+        {
 
 #if VISUAL_CONTROL_TEST
 
 #else
-        if (HAL_GetTick() > time + 8000)
-        {
-            break;
-        }
+            if (HAL_GetTick() > time + 8000)
+            {
+                break;
+            }
 #endif
 
-        osDelay(1);
+            osDelay(1);
+        }
     }
 }
 
@@ -738,18 +746,18 @@ void Arm_Device::Sucker_Dir_Move(float dist,float vel)
 
 void Arm_Device::Disable_Arm_Chassis_Cooperate()
 {
-    this->arm_chassis_cooperate_flag = false;
+    this->enable_arm_chassis_cooperate_flag = false;
     this->chassis_move_data.x = 0;
     this->chassis_move_data.y = 0;
-    chassis.arm_need_cnt = 0;
-    chassis.Clean_Poition_Control();
-    chassis.Clean_Speed_Control();
-    chassis.Change_To_Speed_Type();
+    g_chassis.arm_need_cnt = 0;
+    g_chassis.Clean_Poition_Control();
+    g_chassis.Clean_Speed_Control();
+    g_chassis.Change_To_Speed_Type();
 }
 
 void Arm_Device::Enable_Arm_Chassis_Cooperate()
 {
-    this->arm_chassis_cooperate_flag = true;
+    this->enable_arm_chassis_cooperate_flag = true;
 }
 
 bool Arm_Device::Check_Lost_Flag()

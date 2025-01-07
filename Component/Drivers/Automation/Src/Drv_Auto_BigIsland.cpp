@@ -12,6 +12,9 @@ void Robot_Device::Pre_For_Auto_BigIsland()
 
     this->info->Set_Pose_Mode(concentric_double);
     //this->Keep_Apart(DISTANCE_FOR_CLAW);
+
+    this->chassis->Change_To_Auto_Control();
+
     osDelay(3);
 }
 
@@ -181,3 +184,9 @@ void Robot_Device::BigIsland_Pre_Back()
     }
 }
 
+void Robot_Device::BigIsland_Exit()
+{
+    this->chassis->Change_To_KB_Control();
+
+    g_robot.Set_Auto_Situation(Auto_None);
+}

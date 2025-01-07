@@ -12,7 +12,7 @@ void KB_State_Task(void *argument)
     osDelay(2000);
     for(;;)
     {
-        if(robot.enable_flag && robot.Check_Control_Mode_RC_KB_CONTROL())
+        if(g_robot.enable_flag && g_robot.Check_Control_Mode_RC_KB_CONTROL())
         {
             kb.Check_Mouse_State();
             kb.Check_RC_State();
@@ -30,7 +30,7 @@ void KB_Event_Task(void *argument)
 {
     for(;;)
     {
-        if(robot.enable_flag && robot.Check_Control_Mode_RC_KB_CONTROL())
+        if(g_robot.enable_flag && g_robot.Check_Control_Mode_RC_KB_CONTROL())
         {
             kb.Check_Mouse_Event();
             kb.Check_RC_Event();

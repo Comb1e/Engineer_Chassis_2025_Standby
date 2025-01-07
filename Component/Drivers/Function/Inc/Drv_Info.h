@@ -116,6 +116,6 @@ public:
 
 void Info_Rx_Data_Callback(can_device_t *can_device, uint8_t *rx_data);
 
-extern Info_Device info;
+extern Info_Device g_info;
 
 #endif //DRV_INFO_H

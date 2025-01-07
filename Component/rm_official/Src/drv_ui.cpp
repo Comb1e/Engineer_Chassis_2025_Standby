@@ -55,8 +55,8 @@ void ui_device::update_data() {
     this->data.error_code = this->robot->Get_Error_Code();
     this->data.gimbal_error_code = this->robot->Get_Gimbal_Error_Code();
 
-    /*this->data.remind_take_back_claw_flag = this->robot->get_remind_take_back_claw();
-    this->data.remind_extend_claw_flag = this->robot->get_remind_extend_claw();*/
+    /*this->data.remind_take_back_claw_flag = this->g_robot->get_remind_take_back_claw();
+    this->data.remind_extend_claw_flag = this->g_robot->get_remind_extend_claw();*/
 
 }
 

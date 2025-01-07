@@ -4,7 +4,7 @@
 
 #include "Drv_Gimbal.h"
 
-Gimbal_Device gimbal;
+Gimbal_Device g_gimbal;
 
 Gimbal_Device::Gimbal_Device():
 pitch_servo(&SERVO_UART, GIMBAL_PITCH_SERVO_ID),
@@ -28,8 +28,8 @@ yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID)
 void Gimbal_Device::Init()
 {
     this->slide_motor.Init(GIMBAL_SLIDE_MOTOR_ID,DJI_M2006,GIMBAL_CAN,true,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
-    gimbal.slide_motor.pid_vel.Init(4,0,1,0,1);
-    gimbal.slide_motor.pid_loc.Init(0.2,0,2.6,0,0.4);
+    this->slide_motor.pid_vel.Init(4,0,1,0,1);
+    this->slide_motor.pid_loc.Init(0.2,0,2.6,0,0.4);
 }
 
 bool Gimbal_Device::Check_Init_Completely()
@@ -92,8 +92,8 @@ void Gimbal_Device::Slide_Control()
     this->slide_ctrl_data.rounds = GIMBAL_SLIDE_MOTOR_MIN_ROUNDS + (this->slide_ctrl_data.dist - GIMBAL_SLIDE_MIN_MM)/(GIMBAL_SLIDE_MAX_MM - GIMBAL_SLIDE_MIN_MM) * (GIMBAL_SLIDE_MOTOR_MAX_ROUNDS - GIMBAL_SLIDE_MOTOR_MIN_ROUNDS);
     VAL_LIMIT(this->slide_ctrl_data.rounds,GIMBAL_SLIDE_MOTOR_MIN_ROUNDS,GIMBAL_SLIDE_MOTOR_MAX_ROUNDS);
     this->slide_motor.Set_Loc(this->slide_ctrl_data.rounds);
-    gimbal.slide_motor.Set_Current_To_CAN_TX_Buf();
-    gimbal.slide_motor.Send_CAN_MSG();
+    g_gimbal.slide_motor.Set_Current_To_CAN_TX_Buf();
+    g_gimbal.slide_motor.Send_CAN_MSG();
 }
 
 void Gimbal_Device::Update_Enable_Flag()

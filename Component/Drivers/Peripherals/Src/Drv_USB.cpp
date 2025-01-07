@@ -196,13 +196,13 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
     {
         if(this->controllable_flag && this->rx_controllable_flag && this->exchanging_flag && this->rx_exchanging_flag)
         {
-            this->camera_yaw = arm.fb_current_data.arm_yaw + FRONT_CAMERA_FOCUS_ANGLE;
+            this->camera_yaw = g_arm.fb_current_data.arm_yaw + FRONT_CAMERA_FOCUS_ANGLE;
             float camera_yaw_radian = this->camera_yaw / 180.0f * PI;
 
-            this->chassis_to_camera_eigen_pose.xyz_mm << info.rx_data.fb_frame_extend + FRONT_CAMERA_BASE_ON_ARM_LENGTH * arm_cos_f32(camera_yaw_radian),
-                                                         info.rx_data.fb_frame_slide  + FRONT_CAMERA_BASE_ON_ARM_LENGTH * arm_sin_f32(camera_yaw_radian),
-                                                         info.rx_data.fb_frame_uplift + FRONT_CAMERA_BASE_ON_ARM_HEIGHT;
-            this->chassis_to_camera_eigen_pose.euler_angle << info.rx_data.fb_arm_yaw , GRAVITY_COMPENSATION , 0;
+            this->chassis_to_camera_eigen_pose.xyz_mm << g_info.rx_data.fb_frame_extend + FRONT_CAMERA_BASE_ON_ARM_LENGTH * arm_cos_f32(camera_yaw_radian),
+                                                         g_info.rx_data.fb_frame_slide  + FRONT_CAMERA_BASE_ON_ARM_LENGTH * arm_sin_f32(camera_yaw_radian),
+                                                         g_info.rx_data.fb_frame_uplift + FRONT_CAMERA_BASE_ON_ARM_HEIGHT;
+            this->chassis_to_camera_eigen_pose.euler_angle << g_info.rx_data.fb_arm_yaw , GRAVITY_COMPENSATION , 0;
             this->chassis_to_camera_eigen_pose.euler_radian = this->chassis_to_camera_eigen_pose.euler_angle / 180.0f * PI;
             this->chassis_to_camera_eigen_pose.rotation_matrix = Eigen::AngleAxisf(this->chassis_to_camera_eigen_pose.euler_radian[0], Eigen::Vector3f::UnitZ()) *
                                                                  Eigen::AngleAxisf(this->chassis_to_camera_eigen_pose.euler_radian[1], Eigen::Vector3f::UnitY()) *

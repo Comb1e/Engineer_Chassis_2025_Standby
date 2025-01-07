@@ -25,20 +25,20 @@ void Pump_Device::Update_Data(float current)
     {
         this->measuring_current = current;
 
-        if(1000.0f< this->measuring_current && (this->measuring_current < this->block_current_min))
+        if(1000.0f < this->measuring_current && (this->measuring_current < this->block_current_min))
         {
             if(!this->pump_on_flag)
             {
-                pump_on_time = HAL_GetTick();
+                this->pump_on_time = HAL_GetTick();
             }
-            if (this->pump_on_flag && (HAL_GetTick() > pump_on_time + 500)&& HAL_GetTick() > (holding_time + 100))
+            if (this->pump_on_flag && (HAL_GetTick() > this->pump_on_time + 500) && HAL_GetTick() > (this->holding_time + 100))
             {
                 this->holding_flag = true;
             }
         }
-        else if(this->measuring_current > this->block_current_max || 1000.0f> this->measuring_current )
+        else if(this->measuring_current > this->block_current_max || 1000.0f > this->measuring_current )
         {
-            holding_time = HAL_GetTick();
+            this->holding_time = HAL_GetTick();
             this->holding_flag = false;
         }
     }

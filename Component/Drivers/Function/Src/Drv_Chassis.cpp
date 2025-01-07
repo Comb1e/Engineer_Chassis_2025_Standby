@@ -14,7 +14,7 @@
 #include "Drv_Arm.h"
 #include "Drv_Robot.h"
 
-Chassis_Device chassis;
+Chassis_Device g_chassis;
 
 Chassis_Device::Chassis_Device()
 {
@@ -30,6 +30,7 @@ Chassis_Device::Chassis_Device()
     this->arm_need_cnt = 0;
     this->rot_flag = false;
     this->need_flag = true;
+    this->wheel_loc_error_min = 0.2f;
 #if ALIGN_TEST
     this->tof_enable_flag = true;
     this->align_data.target_dist = 500;
@@ -45,15 +46,22 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RB_NUM].Init(CHASSIS_MOTOR_RB_ID,DJI_M3508,CHASSIS_CAN,true,ChassisRBUpdateBinarySemHandle,2000,0.3);
     this->wheel[CHASSIS_MOTOR_RF_NUM].Init(CHASSIS_MOTOR_RF_ID,DJI_M3508,CHASSIS_CAN,true,ChassisRFUpdateBinarySemHandle,2000,0.3);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(0.07,0.002,0,0.06,0.1);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(0.08,0.002,0,0.06,0.1);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(0.08,0.002,0,0.06,0.1);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(0.08,0.002,0,0.06,0.1);
+#if VISUAL_CONTROL_TEST
+    this->chassis->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_AUTO_CONTROL_PID_LOC);
+    this->chassis->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_AUTO_CONTROL_PID_LOC);
+    this->chassis->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_AUTO_CONTROL_PID_LOC);
+    this->chassis->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_AUTO_CONTROL_PID_LOC);
+#else
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_KB_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_KB_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_KB_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_KB_CONTROL_PID_LOC);
+#endif
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.1f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.1f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.1f, 0.0f, 0.0f,100.0f,0.95);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.1f, 0.0f, 0.0f,100.0f,0.95);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.1f, 0.002f, 0.0f,0.06f,0.95f);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.1f, 0.002f, 0.0f,0.06f,0.95f);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.1f, 0.002f, 0.0f,0.06f,0.95f);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.1f, 0.002f, 0.0f,0.06f,0.95f);
 
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
@@ -159,8 +167,8 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
         vel_max = this->vel_max.rc;
     }
 
-    chassis.Set_Vel_X(Get_Slope_Speed(&chassis.kb_vel_x));
-    chassis.Set_Vel_Y(Get_Slope_Speed(&chassis.kb_vel_y));
+    g_chassis.Set_Vel_X(Get_Slope_Speed(&g_chassis.kb_vel_x));
+    g_chassis.Set_Vel_Y(Get_Slope_Speed(&g_chassis.kb_vel_y));
 
     if(this->tof_enable_flag)
     {
@@ -407,18 +415,18 @@ void Chassis_Device::Add_Position_Y(float delta)
 
 void Chassis_Device::Judge_For_Arm_Need()
 {
-    if(arm.arm_chassis_cooperate_flag && arm.enable_arm_chassis_cooperate_flag)
+    if(g_arm.arm_chassis_cooperate_flag && g_arm.enable_arm_chassis_cooperate_flag && this->need_flag)
     {
         if(this->control_type == SPEED)
         {
             this->Clean_Speed_Control();
             this->Change_To_Position_Type();
         }
-        this->position.x = arm.chassis_move_data.x;
-        this->position.y = arm.chassis_move_data.y;
+        this->position.x = g_arm.chassis_move_data.x;
+        this->position.y = g_arm.chassis_move_data.y;
         this->Close_Yaw_Spin();
 
-        if(this->wheel[0].pid_loc.error < 0.2f && this->wheel[1].pid_loc.error < 0.2f && this->wheel[2].pid_loc.error < 0.2f && this->wheel[3].pid_loc.error < 0.2f)
+        if(this->wheel[0].pid_loc.error < this->wheel_loc_error_min && this->wheel[1].pid_loc.error < this->wheel_loc_error_min && this->wheel[2].pid_loc.error < this->wheel_loc_error_min && this->wheel[3].pid_loc.error < this->wheel_loc_error_min)
         {
             this->arm_need_cnt++;
         }
@@ -426,11 +434,11 @@ void Chassis_Device::Judge_For_Arm_Need()
         {
             this->arm_need_cnt = 0;
         }
-        if(this->arm_need_cnt > 200)
+        if(this->arm_need_cnt > 80)
         {
-            arm.arm_chassis_cooperate_flag = false;
-            arm.chassis_move_data.x = 0;
-            arm.chassis_move_data.y = 0;
+            g_arm.arm_chassis_cooperate_flag = false;
+            g_arm.chassis_move_data.x = 0;
+            g_arm.chassis_move_data.y = 0;
             this->arm_need_cnt = 0;
             this->Clean_Poition_Control();
             this->Clean_Speed_Control();
@@ -439,8 +447,8 @@ void Chassis_Device::Judge_For_Arm_Need()
     }
     else
     {
-        arm.chassis_move_data.x = 0;
-        arm.chassis_move_data.y = 0;
+        g_arm.chassis_move_data.x = 0;
+        g_arm.chassis_move_data.y = 0;
         this->arm_need_cnt = 0;
         this->Reset_Total_Rounds();
     }
@@ -577,3 +585,20 @@ void Tof_Rx_CallBack(can_device_t *can_device, uint8_t *rx_buff)
     chassis->align_data.right_dist = tof_data->right_dist;
 }
 
+void Chassis_Device::Change_To_Auto_Control()
+{
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_AUTO_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_AUTO_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_AUTO_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_AUTO_CONTROL_PID_LOC);
+    this->wheel_loc_error_min = 0.7f;
+}
+
+void Chassis_Device::Change_To_KB_Control()
+{
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_KB_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_KB_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_KB_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_KB_CONTROL_PID_LOC);
+    this->wheel_loc_error_min = 0.2f;
+}
