@@ -110,12 +110,6 @@ extern "C"
 #define HOMING_SUCKER_YAW_WITH_ORE          (0.0f)
 #define HOMING_SUCKER_PITCH_WITH_ORE        (90.0f)
 
-#define ARM_CAN             (&hcan2)
-
-/*----------------------与云台板通信的CANid---------------------*/
-#define ARM_TX_CAN2_STDID (0X301)
-#define ARM_RX_CAN2_STDID (0X303)
-
 #define ARM_X_OFFSET    (-200)
 #define ARM_Y_OFFSET    400
 #define ARM_Z_OFFSET    150

@@ -17,8 +17,6 @@ extern "C"
 
 #include "stm32f4xx_hal.h"
 
-#define GIMBAL_CAN      (&hcan1)
-
 #define GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX    (1800)
 #define GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN  (0.07f)
 

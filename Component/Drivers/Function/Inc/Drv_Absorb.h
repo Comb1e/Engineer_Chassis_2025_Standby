@@ -18,11 +18,6 @@ extern "C"
 #include "cmsis_os2.h"
 #include "Global_CFG.h"
 
-#define PUMP_CAN        (&hcan1)
-
-#define ABSORB_CAN_TX_STDID  (0x502)
-#define ABSORB_CAN_RX_STDID  (0x501)
-
 #define ORE_NUM_MAX 3
 #define ARM_SUCKER_BLOCK_CURRENT_MIN   1920.0f
 #define ARM_SUCKER_BLOCK_CURRENT_MAX   1940.0f

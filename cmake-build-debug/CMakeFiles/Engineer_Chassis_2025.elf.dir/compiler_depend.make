@@ -11889,10 +11889,14 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM
   E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Usart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Global_CFG.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_RemoteCtrl.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Inc/HI299UM_Task.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/FreeRTOSConfig.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/gpio.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/main.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/usart.h \
@@ -11939,7 +11943,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/HI299UM
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/RTOS.h
+  E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/RTOS.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/User_Lib.h
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Motor_Check_Task.cpp.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/Motor_Check_Task.cpp \
   E:/RM/CubeMx/Engineer_Chassis_2025/Eigen/src/plugins/ArrayCwiseBinaryOps.h \
@@ -12421,9 +12426,14 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteC
   E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stddef.h \
   E:/gcc-arm-none-eabi-10.3-2021.10/lib/gcc/arm-none-eabi/13.3.1/include/stdint.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/BSP/Inc/BSP_Usart.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Global_CFG.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Algorithm/Inc/CRC.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_HI229UM.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Drivers/Peripherals/Inc/Drv_RemoteCtrl.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Inc/RemoteCtrl_Task.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/FreeRTOSConfig.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/can.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/gpio.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/main.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/stm32f4xx_hal_conf.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Core/Inc/usart.h \
@@ -12470,7 +12480,8 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteC
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
   E:/RM/CubeMx/Engineer_Chassis_2025/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/portmacro.h \
-  E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/RTOS.h
+  E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/RTOS.h \
+  E:/RM/CubeMx/Engineer_Chassis_2025/User/Inc/User_Lib.h
 
 CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp.obj: E:/RM/CubeMx/Engineer_Chassis_2025/Component/Tasks/Peripherals/Src/Servo_Ctrl_Task.cpp \
   E:/gcc-arm-none-eabi-10.3-2021.10/arm-none-eabi/include/_ansi.h \

@@ -31,6 +31,7 @@ Chassis_Device::Chassis_Device()
     this->rot_flag = false;
     this->need_flag = true;
     this->wheel_loc_error_min = 0.2f;
+    this->chassis_first_flag = false;
 #if ALIGN_TEST
     this->tof_enable_flag = true;
     this->align_data.target_dist = 500;
@@ -47,10 +48,10 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RF_NUM].Init(CHASSIS_MOTOR_RF_ID,DJI_M3508,CHASSIS_CAN,true,ChassisRFUpdateBinarySemHandle,2000,0.3);
 
 #if VISUAL_CONTROL_TEST
-    this->chassis->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_AUTO_CONTROL_PID_LOC);
-    this->chassis->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_AUTO_CONTROL_PID_LOC);
-    this->chassis->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_AUTO_CONTROL_PID_LOC);
-    this->chassis->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_AUTO_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_AUTO_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_AUTO_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_AUTO_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_AUTO_CONTROL_PID_LOC);
 #else
     this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_KB_CONTROL_PID_LOC);
     this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_KB_CONTROL_PID_LOC);
@@ -127,7 +128,11 @@ void Chassis_Device::Set_Free()
     this->Clean_Poition_Control();
 #endif
 
+#if CHASSIS_POSITION_CONTROL_TEST
+
+#else
     this->control_type = SPEED;
+#endif
 }
 
 void Chassis_Device::Update_Ready()
@@ -268,7 +273,7 @@ bool Chassis_Device::Check_Tof_Lost_Flag() const
 
 __RAM_FUNC void Chassis_Device::Update_Position_Control()
 {
-    //this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()) - this->position.spin);
+    this->Add_Position_Spin(0.009f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()));
 
     Chassis_Motor_Loc_SolverSet(this->wheel,this->position.x,this->position.y,this->position.spin);
     for(auto & i : this->wheel)
@@ -424,7 +429,10 @@ void Chassis_Device::Judge_For_Arm_Need()
         }
         this->position.x = g_arm.chassis_move_data.x;
         this->position.y = g_arm.chassis_move_data.y;
-        this->Close_Yaw_Spin();
+        if(!(g_robot.control_mode == VISUAL_CONTROL))
+        {
+            this->Close_Yaw_Spin();
+        }
 
         if(this->wheel[0].pid_loc.error < this->wheel_loc_error_min && this->wheel[1].pid_loc.error < this->wheel_loc_error_min && this->wheel[2].pid_loc.error < this->wheel_loc_error_min && this->wheel[3].pid_loc.error < this->wheel_loc_error_min)
         {
@@ -450,14 +458,21 @@ void Chassis_Device::Judge_For_Arm_Need()
         g_arm.chassis_move_data.x = 0;
         g_arm.chassis_move_data.y = 0;
         this->arm_need_cnt = 0;
+#if CHASSIS_POSITION_CONTROL_TEST
+
+#else
         this->Reset_Total_Rounds();
+#endif
     }
 }
 
 void Chassis_Device::Clean_Speed_Control()
 {
     taskENTER_CRITICAL();
-    this->Close_Yaw_Spin();
+    if(!(g_robot.control_mode == VISUAL_CONTROL))
+    {
+        this->Close_Yaw_Spin();
+    }
 
     this->Set_X_Slope_Speed_Target(0);
     this->Set_Y_Slope_Speed_Target(0);
@@ -601,4 +616,11 @@ void Chassis_Device::Change_To_KB_Control()
     this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_KB_CONTROL_PID_LOC);
     this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_KB_CONTROL_PID_LOC);
     this->wheel_loc_error_min = 0.2f;
+}
+
+void Chassis_Device::Arm_Need_Chassis_Move(float x,float y)
+{
+    g_arm.arm_chassis_cooperate_flag = true;
+    g_arm.chassis_move_data.x = x;
+    g_arm.chassis_move_data.y = y;
 }

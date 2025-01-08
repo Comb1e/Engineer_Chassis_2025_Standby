@@ -46,7 +46,6 @@ void Chassis_Motor_Solver_Set(DJI_Motor_Device wheels[],float vel_x,float vel_y,
     }
 }
 
-float pre_w;
 __RAM_FUNC void Chassis_Motor_Loc_SolverSet(DJI_Motor_Device wheels[], float x, float y,float w)//机械臂的坐标系和底盘坐标系xy相反
 {
     float loc[4];
@@ -54,7 +53,7 @@ __RAM_FUNC void Chassis_Motor_Loc_SolverSet(DJI_Motor_Device wheels[], float x, 
     float ecd_ratio_w = (ECD_RATIO_X + ECD_RATIO_Y) /2.f;
     float pre_x = x/ECD_RATIO_X;
     float pre_y = y/ECD_RATIO_Y;
-    pre_w = w/ecd_ratio_w * rotate_ratio;
+    float pre_w = w/ecd_ratio_w * rotate_ratio;
     loc[0] = pre_x - pre_y - pre_w;
     loc[1] = pre_x + pre_y - pre_w;
     loc[2] = pre_x - pre_y + pre_w;

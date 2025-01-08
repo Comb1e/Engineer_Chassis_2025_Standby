@@ -7,6 +7,7 @@
 #include "Drv_HI229UM.h"
 #include "RTOS.h"
 #include "usart.h"
+#include "Global_CFG.h"
 
 void HI229UM_Task(void *argument)
 {

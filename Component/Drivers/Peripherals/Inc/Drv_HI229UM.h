@@ -15,8 +15,6 @@ extern "C"
 #include "CRC.h"
 #include "BSP_Usart.h"
 
-#define HI229UM_UART            (huart7)
-
 #define DRV_HI229UM_BUF_SIZE 90
 
 #define CHSYNC1         (0x5A)        //帧头

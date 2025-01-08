@@ -74,6 +74,12 @@ void USB_Device::Update_RX_Data()
                 this->temp_pose.x = this->rx_pose.x;
             }
         }
+        else if(this->rx_pose.x == 0)
+        {
+            this->temp_pose.x = 0;
+            this->camera_to_target_pose.x = 0;
+        }
+
         this->rx_pose.y = float(this->rx_raw_data.y);
         if(this->rx_pose.y != 0 && this->camera_to_target_pose.y == 0 && this->rx_exchanging_flag)
         {
@@ -86,6 +92,12 @@ void USB_Device::Update_RX_Data()
                 this->temp_pose.y = this->rx_pose.y;
             }
         }
+        else if(this->rx_pose.y == 0)
+        {
+            this->temp_pose.y = 0;
+            this->camera_to_target_pose.y = 0;
+        }
+
         this->rx_pose.z = float(this->rx_raw_data.z);
         if(this->rx_pose.z != 0 && this->camera_to_target_pose.z == 0 && this->rx_exchanging_flag)
         {
@@ -98,6 +110,12 @@ void USB_Device::Update_RX_Data()
                 this->temp_pose.z = this->rx_pose.z;
             }
         }
+        else if(this->rx_pose.z == 0)
+        {
+            this->temp_pose.z = 0;
+            this->camera_to_target_pose.z = 0;
+        }
+
         this->rx_pose.yaw = float(this->rx_raw_data.yaw);
         if(this->rx_pose.yaw != 0 && this->camera_to_target_pose.yaw == 0 && this->rx_exchanging_flag)
         {
@@ -110,6 +128,12 @@ void USB_Device::Update_RX_Data()
                 this->temp_pose.yaw = this->rx_pose.yaw;
             }
         }
+        else if(this->rx_pose.yaw == 0)
+        {
+            this->temp_pose.yaw = 0;
+            this->camera_to_target_pose.yaw = 0;
+        }
+
         this->rx_pose.pitch = float(this->rx_raw_data.pitch);
         if(this->rx_pose.pitch != 0 && this->camera_to_target_pose.pitch == 0 && this->rx_exchanging_flag)
         {
@@ -122,6 +146,12 @@ void USB_Device::Update_RX_Data()
                 this->temp_pose.pitch = this->rx_pose.pitch;
             }
         }
+        else if(this->rx_pose.pitch == 0)
+        {
+            this->temp_pose.pitch = 0;
+            this->camera_to_target_pose.pitch = 0;
+        }
+
         this->rx_pose.roll = float(this->rx_raw_data.roll);
         if(this->rx_pose.roll != 0 && this->camera_to_target_pose.roll == 0 && this->rx_exchanging_flag)
         {
@@ -133,6 +163,11 @@ void USB_Device::Update_RX_Data()
             {
                 this->temp_pose.roll = this->rx_pose.roll;
             }
+        }
+        else if(this->rx_pose.roll == 0)
+        {
+            this->temp_pose.roll = 0;
+            this->camera_to_target_pose.roll = 0;
         }
 
         this->rx_controllable_flag = this->rx_raw_data.controllable;
@@ -196,6 +231,7 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
     {
         if(this->controllable_flag && this->rx_controllable_flag && this->exchanging_flag && this->rx_exchanging_flag)
         {
+            debug++;
             this->camera_yaw = g_arm.fb_current_data.arm_yaw + FRONT_CAMERA_FOCUS_ANGLE;
             float camera_yaw_radian = this->camera_yaw / 180.0f * PI;
 

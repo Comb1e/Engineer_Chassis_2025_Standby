@@ -14,11 +14,6 @@ extern "C"
 
 #include "stm32f4xx_hal.h"
 
-#define INFO_CAN          (&hcan2)
-
-#define INFO_TX_CAN2_STDID        (0x302)
-#define INFO_RX_CAN2_STDID        (0X304)
-
 typedef enum
 {
     single = 0,

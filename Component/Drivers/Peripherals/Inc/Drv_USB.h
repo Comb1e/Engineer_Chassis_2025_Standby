@@ -21,8 +21,8 @@ extern "C"
 #define FRAME_HEADER        (0X5A)
 #define FRAME_TAIL          (0X66)
 
-#define FRONT_CAMERA_BASE_ON_ARM_LENGTH      (240.0f)
-#define FRONT_CAMERA_BASE_ON_ARM_HEIGHT      (55.f)
+#define FRONT_CAMERA_BASE_ON_ARM_LENGTH      (200.0f)
+#define FRONT_CAMERA_BASE_ON_ARM_HEIGHT      (105.f)
 #define FRONT_CAMERA_FOCUS_ANGLE     (15.f/ 180.0f * PI)
 
 #define GRAVITY_COMPENSATION (0.0f)

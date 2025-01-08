@@ -6,6 +6,7 @@
 #include "Drv_Arm.h"
 #include "Drv_Chassis.h"
 
+#if ARM
 void Arm_Task(void *argument)
 {
     g_arm.Init(ARM_CAN,ARM_RX_CAN2_STDID,ARM_TX_CAN2_STDID,ArmUpdateBinarySemHandle);
@@ -44,3 +45,4 @@ void Arm_Task(void *argument)
         osDelayUntil(tick);
     }
 }
+#endif

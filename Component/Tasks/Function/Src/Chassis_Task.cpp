@@ -17,7 +17,11 @@ void Chassis_Task(void *argument) {
     {
         osDelay(1);
     }
-#if CHASSIS_TEST
+#if CHASSIS_POSITION_CONTROL_TEST
+    g_chassis.control_type = POSITION;
+#endif
+
+#if CHASSIS_MOTOR_TEST
     for(;;)
     {
         if (rc.ctrl_protection.connect_flag)

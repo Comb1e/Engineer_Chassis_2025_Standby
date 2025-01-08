@@ -70,4 +70,10 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/RemoteC
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/task.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\include/list.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
- E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Usart.h
+ E:\RM\CubeMx\Engineer_Chassis_2025\BSP\Inc/BSP_Usart.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component/Global_CFG.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/can.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Core\Inc/gpio.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\User\Inc/User_Lib.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_HI229UM.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Algorithm\Inc/CRC.h

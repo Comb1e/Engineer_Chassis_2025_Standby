@@ -17,8 +17,6 @@ extern "C" {
 
 /** @defgroup Instructions */
 
-#define SERVO_UART huart6
-
 #define LOBOT_SERVO_FRAME_HEADER         0x55
 #define LOBOT_SERVO_MOVE_TIME_WRITE      1
 #define LOBOT_SERVO_MOVE_TIME_READ       2

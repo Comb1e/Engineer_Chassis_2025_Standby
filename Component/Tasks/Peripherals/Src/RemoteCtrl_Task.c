@@ -9,6 +9,7 @@
 #include "usart.h"
 #include "RTOS.h"
 #include "BSP_Usart.h"
+#include "Global_CFG.h"
 
 void RemoteCtrl_Task(void *argument)
 {
@@ -35,7 +36,7 @@ void RemoteCtrl_Task(void *argument)
 
 void RemoteCtrl_Task_Init()
 {
-    rc.huart = &huart1;
+    rc.huart = &RC_UART;
     HAL_UART_RegisterRxEventCallback(rc.huart,RC_RxCallBack);
     Usart_Start_Receive_Dma(rc.huart,rc.rx_data.rx_buff,DR16_BUFF_SIZE);
 

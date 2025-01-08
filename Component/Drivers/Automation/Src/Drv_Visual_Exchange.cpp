@@ -53,11 +53,26 @@ void Robot_Device::Visual_To_Arm_Control()
     debug=this->usb->arm_target_pose.x+this->arm->trajectory_final[X];
     if(ABS(this->usb->arm_target_pose.x - this->usb->last_visual_control_pose.x) > 1)
     {
-        this->arm->Set_Point_Target_Pos_Vel(X,this->usb->arm_target_pose.x+this->arm->fb_current_data.x,0.2f);
+        if(ABS(this->usb->arm_target_pose.x) > 300.0f)
+        {
+            this->chassis->Arm_Need_Chassis_Move(this->usb->arm_target_pose.x - 300.0f,0.0f);
+            this->arm->Set_Point_Target_Pos_Vel(X,300.0f + this->arm->fb_current_data.x,0.2f);
+        }
+        else
+        {
+            this->arm->Set_Point_Target_Pos_Vel(X,this->usb->arm_target_pose.x+this->arm->fb_current_data.x,0.2f);
+        }
     }
     if(ABS(this->usb->arm_target_pose.y - this->usb->last_visual_control_pose.y) > 1)
     {
-        this->arm->Set_Point_Target_Pos_Vel(Y,this->usb->arm_target_pose.y+this->arm->fb_current_data.y,0.2f);
+        if(ABS(this->usb->arm_target_pose.y) > 30.0f)
+        {
+            this->chassis->Arm_Need_Chassis_Move(0.0f,this->usb->arm_target_pose.y);
+        }
+        else
+        {
+            this->arm->Set_Point_Target_Pos_Vel(Y,this->usb->arm_target_pose.y+this->arm->fb_current_data.y,0.2f);
+        }
     }
     if(ABS(this->usb->arm_target_pose.z - this->usb->last_visual_control_pose.z) > 1)
     {
@@ -65,7 +80,15 @@ void Robot_Device::Visual_To_Arm_Control()
     }
     if(ABS(this->usb->arm_target_pose.yaw - this->usb->last_visual_control_pose.yaw) > 1)
     {
-        this->arm->Set_Point_Target_Pos_Vel(YAW,this->usb->arm_target_pose.yaw+this->arm->fb_current_data.sucker_yaw_deg,0.2f);
+        if(this->usb->arm_target_pose.yaw + this->arm->fb_current_data.arm_yaw > 60.0f)
+        {
+            this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,60.0f,0.2f);
+            this->arm->Set_Point_Target_Pos_Vel(YAW,this->usb->arm_target_pose.yaw - (60.0f - this->arm->fb_current_data.arm_yaw) + this->arm->fb_current_data.sucker_yaw_deg,0.2f);
+        }
+        else
+        {
+            this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,this->usb->arm_target_pose.yaw + this->arm->fb_current_data.arm_yaw,0.2f);
+        }
     }
     if(ABS(this->usb->arm_target_pose.pitch - this->usb->last_visual_control_pose.pitch) > 1)
     {

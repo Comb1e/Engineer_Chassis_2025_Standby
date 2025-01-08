@@ -14,7 +14,7 @@ AutoExchange_Attributes({.name = "autoExchange", .stack_size = 128 * 4, .priorit
 AutoSmallIsland_Attributes({.name = "autoSmallIsland", .stack_size = 128 *4, .priority = (osPriority_t) osPriorityAboveNormal,}),
 AutoGroundMine_Attributes({.name = "autoGroundMine", .stack_size = 128 *4, .priority = (osPriority_t) osPriorityAboveNormal,})
 {
-#if TEST
+#if MOTOR_TEST
     this->enable_flag = true;
 #else
     this->enable_flag = false;

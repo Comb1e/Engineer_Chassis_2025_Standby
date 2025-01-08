@@ -16,8 +16,6 @@ extern "C"
 #include "stm32f4xx_hal.h"
 #include "SPD_Plan.h"
 
-#define CHASSIS_CAN &hcan1
-
 #define CHASSIS_MOTOR_LF_NUM 0
 #define CHASSIS_MOTOR_LB_NUM 1
 #define CHASSIS_MOTOR_RB_NUM 2
@@ -27,8 +25,6 @@ extern "C"
 #define CHASSIS_MOTOR_LB_ID 2
 #define CHASSIS_MOTOR_RB_ID 3
 #define CHASSIS_MOTOR_RF_ID 4
-
-#define TOF_RX_ID (0x222)
 
 #define TOF_DEVICE_DISTANCE         178.0f //mm
 #define ALIGN_DELTA_DISTANCE        300.0f //mm //转动留出空间
@@ -60,10 +56,10 @@ extern "C"
 
 #define CHASSIS_POWER_LIMIT     (24 * 10)
 
-#define WHEEL0_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.2f
-#define WHEEL1_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.2f
-#define WHEEL2_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.2f
-#define WHEEL3_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.2f
+#define WHEEL0_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.3f
+#define WHEEL1_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.3f
+#define WHEEL2_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.3f
+#define WHEEL3_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.3f
 
 #define WHEEL0_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
 #define WHEEL1_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
@@ -158,6 +154,7 @@ public:
     bool tof_lost_flag;
     bool tof_enable_flag;
     bool need_flag;
+    bool chassis_first_flag;
 
     bool rot_flag;
 
@@ -229,6 +226,7 @@ public:
     void Init_Tof(CAN_HandleTypeDef *hcan,uint32_t rx_id,osSemaphoreId_t rx_sem);
     void Change_To_Auto_Control();
     void Change_To_KB_Control();
+    void Arm_Need_Chassis_Move(float x,float y);
 
     friend void Tof_Rx_CallBack(can_device_t *can_device,uint8_t *rx_buff);
 };
