@@ -20,8 +20,8 @@ extern "C"
 
 #define GIMBAL_TO_CHASSIS_HCAN (&hcan2)
 
-#define GIMBAL_TO_CHASSIS_TX_CAN2_STDID (0X301)
-#define GIMBAL_TO_CHASSIS_RX_CAN2_STDID (0X303)
+#define CHASSIS_TO_GIMBAL_TX_CAN2_STDID (0X301)
+#define CHASSIS_TO_GIMBAL_RX_CAN2_STDID (0X303)
 
 #pragma pack(1)
 typedef struct

@@ -295,7 +295,7 @@ void MX_FREERTOS_Init(void) {
   AbsorbUpdateBinarySemHandle = osSemaphoreNew(1, 1, &AbsorbUpdateBinarySem_attributes);
 
   /* creation of GimbalToChassisUpdateBinarySem */
-  GimbalToChassisUpdateBinarySemHandle = osSemaphoreNew(1, 1, &GimbalToChassisUpdateBinarySem_attributes);
+  GimbalToChassisUpdateBinarySemHandle = osSemaphoreNew(1, 0, &GimbalToChassisUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);

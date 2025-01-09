@@ -11,7 +11,7 @@ pitch_servo(&SERVO_UART, GIMBAL_PITCH_SERVO_ID),
 yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID)
 {
     this->ready_flag = false;
-    this->enable_flag = true;
+    this->enable_flag = false;
     this->reset_flag = true;
     this->pitch_enable_flag = true;
     this->yaw_enable_flag = true;

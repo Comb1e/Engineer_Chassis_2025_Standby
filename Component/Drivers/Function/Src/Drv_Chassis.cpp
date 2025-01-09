@@ -15,7 +15,7 @@ Chassis_Device::Chassis_Device()
 {
     this->lost_flag = true;
     this->ready_flag = false;
-    this->enable_flag = true;
+    this->enable_flag = false;
     this->control_type = SPEED;
     this->zero_offset_flag = false;
     this->tof_lost_flag = true;
