@@ -141,7 +141,7 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
         this->Set_Vel_X(this->rx_vel_data.x);
         this->Set_Vel_Y(this->rx_vel_data.y);
         this->pos_yaw_angle += this->rx_vel_data.spin_add;
-        this->Set_Vel_Spin(this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()));
+        this->Set_Vel_Spin(this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Rounds()));
     }
 
     Chassis_Motor_Solver_Set(this->wheel,this->set_vel.x,this->set_vel.y,this->set_vel.spin,vel_max);
@@ -220,7 +220,7 @@ __RAM_FUNC void Chassis_Device::Update_Position_Control()
     this->position.y = this->rx_pos_data.y;
     this->position.spin += this->rx_pos_data.spin_add;
 
-    //this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Deg()) - this->position.spin);
+    //this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Rounds()) - this->position.spin);
 
     Chassis_Motor_Loc_SolverSet(this->wheel,this->position.x,this->position.y,this->position.spin);
     for(auto & i : this->wheel)
@@ -417,7 +417,7 @@ bool Chassis_Device::Check_Yaw_At_Set() const
 {
     if(hi229um.state.ready_flag)
     {
-        if(ABS(this->pos_yaw_angle / 360.0f - HI229UM_Get_Yaw_Total_Deg()) < 0.03f)
+        if(ABS(this->pos_yaw_angle / 360.0f - HI229UM_Get_Yaw_Total_Rounds()) < 0.03f)
         {
             return true;
         }
@@ -482,6 +482,7 @@ void Chassis_Device::Update_Data()
             this->rx_vel_data.spin_add = (float)this->rx_raw_data.spin / INT8_MAX;
             this->rx_vel_data.x = (float)this->rx_raw_data.x / INT16_MAX;
             this->rx_vel_data.y = (float)this->rx_raw_data.y / INT16_MAX;
+            memset(&this->rx_pos_data,0,sizeof(this->rx_pos_data));
             break;
         }
         case POSITION:
@@ -489,6 +490,7 @@ void Chassis_Device::Update_Data()
             this->rx_pos_data.spin_add = (float)this->rx_raw_data.spin / INT8_MAX;
             this->rx_pos_data.x = (float)this->rx_raw_data.x;
             this->rx_pos_data.y = (float)this->rx_raw_data.y;
+            memset(&this->rx_vel_data,0,sizeof(this->rx_vel_data));
             break;
         }
         default:

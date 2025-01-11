@@ -13,7 +13,7 @@ GC_Communication_Device::GC_Communication_Device()
 
 void GC_Communication_Device::Init(uint32_t tx_id, uint32_t rx_id, osSemaphoreId_t rx_sem, CAN_HandleTypeDef *hcan)
 {
-    this->can_device.TX_Init(hcan,tx_id,(uint8_t *)&tx_raw_data,0x08);
+    this->can_device.TX_Init(hcan,tx_id,(uint8_t *)&tx_data,0x08);
     this->can_device.RX_Add(hcan,rx_id,Gimbal_To_Chassis_Rx_Callback,rx_sem);
 }
 
@@ -60,6 +60,16 @@ void GC_Communication_Device::Update_Data()
     this->chassis->rx_raw_data.spin = this->rx_raw_data.chassis_spin;
     this->chassis->rx_raw_data.x = this->rx_raw_data.chassis_x;
     this->chassis->rx_raw_data.y = this->rx_raw_data.chassis_y;
+
+    this->tx_data.chassis_gyro_totoal_rounds = HI229UM_Get_Yaw_Total_Rounds();
+    this->tx_data.is_arm_pump_holding_on = this->absorb->sucker[ARM_SUCKER].holding_flag;
+    this->tx_data.is_left_pump_holding_on = this->absorb->sucker[LEFT_SUCKER].holding_flag;
+    this->tx_data.is_right_pump_holding_on = this->absorb->sucker[RIGHT_SUCKER].holding_flag;
+    this->tx_data.is_gimbal_slide_lost = this->small_gimbal->slide_motor.lost_flag;
+    this->tx_data.is_wheel_lb_lost = this->chassis->wheel[CHASSIS_MOTOR_LB_NUM].lost_flag;
+    this->tx_data.is_wheel_lf_lost = this->chassis->wheel[CHASSIS_MOTOR_LF_NUM].lost_flag;
+    this->tx_data.is_wheel_rb_lost = this->chassis->wheel[CHASSIS_MOTOR_RB_NUM].lost_flag;
+    this->tx_data.is_wheel_rf_lost = this->chassis->wheel[CHASSIS_MOTOR_RF_NUM].lost_flag;
 }
 
 void GC_Communication_Device::Reset_Data()

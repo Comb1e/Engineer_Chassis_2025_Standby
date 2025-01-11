@@ -40,7 +40,16 @@ typedef struct
 
 typedef struct
 {
-}gimbal_to_chassis_tx_raw_data_t;
+    uint8_t is_arm_pump_holding_on : 1;
+    uint8_t is_left_pump_holding_on : 1;
+    uint8_t is_right_pump_holding_on : 1;
+    uint8_t is_wheel_lf_lost : 1;
+    uint8_t is_wheel_lb_lost : 1;
+    uint8_t is_wheel_rb_lost : 1;
+    uint8_t is_wheel_rf_lost : 1;
+    uint8_t is_gimbal_slide_lost : 1;
+    float chassis_gyro_totoal_rounds;//底盘陀螺仪的yaw
+}gimbal_to_chassis_tx_data_t;//共41位，保留23位，自定义控制器？
 #pragma pack(0)
 
 #ifdef __cplusplus
@@ -60,7 +69,7 @@ public:
     Absorb_Device *absorb;
 
     gimbal_to_chassis_rx_raw_data_t rx_raw_data;
-    gimbal_to_chassis_tx_raw_data_t tx_raw_data;
+    gimbal_to_chassis_tx_data_t tx_data;
 
     void Init(uint32_t tx_id,uint32_t rx_id,osSemaphoreId_t rx_sem,CAN_HandleTypeDef *hcan);
     void PTR_Init(Chassis_Device *chassis,Small_Gimbal_Device *small_gimbal,Absorb_Device *absorb);

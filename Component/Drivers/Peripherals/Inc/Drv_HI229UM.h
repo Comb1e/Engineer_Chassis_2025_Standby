@@ -170,7 +170,7 @@ void HI229UM_Set_Enable();
 void HI229UM_Set_Disable();
 void HI229UM_Set_Lost();
 void HI229UM_Set_Connect();
-float HI229UM_Get_Yaw_Total_Deg();
+float HI229UM_Get_Yaw_Total_Rounds();
 void HI229UM_Set_Nine_Axis_Mode();
 
 extern hi229um_t hi229um;

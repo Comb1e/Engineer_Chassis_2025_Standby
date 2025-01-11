@@ -223,7 +223,7 @@ void HI229UM_Set_Connect()
     hi229um.state.lost_flag = false;
 }
 
-float HI229UM_Get_Yaw_Total_Deg()
+float HI229UM_Get_Yaw_Total_Rounds()
 {
     return hi229um.data.euler.yaw.total_rounds;
 }
