@@ -6,6 +6,7 @@
 
 #include <dsp/fast_math_functions.h>
 
+#include "RTOS.h"
 #include "User_Lib.h"
 
 void Chassis_Motor_Solver_Set(DJI_Motor_Device wheels[],float vel_x,float vel_y,float vel_spin,float vel_max)
@@ -39,6 +40,7 @@ void Chassis_Motor_Solver_Set(DJI_Motor_Device wheels[],float vel_x,float vel_y,
     }
     speed_correction = vel_max / speed_correction;
 
+    debug = speed_correction*speeds[0] * 200.0f;
     for (int i = 0; i < 4; i++)
     {
         wheels[i].Set_Vel(speed_correction * speeds[i]);

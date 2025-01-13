@@ -128,11 +128,10 @@ bool Chassis_Device::Check_Can_Use()
 
 __RAM_FUNC void Chassis_Device::Update_Speed_Control()
 {
-    float vel_max = 0;
+    float vel_max = 0.95f;
 
     if(this->tof_enable_flag)
     {
-        HI229UM_Set_Current_As_Offset();
         this->pos_yaw_angle = 0.0f;
         this->Update_Align();
     }
@@ -140,8 +139,7 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
     {
         this->Set_Vel_X(this->rx_vel_data.x);
         this->Set_Vel_Y(this->rx_vel_data.y);
-        this->pos_yaw_angle += this->rx_vel_data.spin_add;
-        this->Set_Vel_Spin(this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Rounds()));
+        this->Set_Vel_Spin(this->rx_vel_data.spin);
     }
 
     Chassis_Motor_Solver_Set(this->wheel,this->set_vel.x,this->set_vel.y,this->set_vel.spin,vel_max);
@@ -218,9 +216,9 @@ __RAM_FUNC void Chassis_Device::Update_Position_Control()
 {
     this->position.x = this->rx_pos_data.x;
     this->position.y = this->rx_pos_data.y;
-    this->position.spin += this->rx_pos_data.spin_add;
+    this->pos_yaw_angle = this->rx_pos_data.spin * 360.0f;
 
-    //this->Add_Position_Spin(0.03f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Rounds()) - this->position.spin);
+    this->Add_Position_Spin(0.009f * this->pid_rot.Calculate(this->Get_Pos_Yaw(),HI229UM_Get_Yaw_Total_Rounds()));
 
     Chassis_Motor_Loc_SolverSet(this->wheel,this->position.x,this->position.y,this->position.spin);
     for(auto & i : this->wheel)
@@ -479,7 +477,7 @@ void Chassis_Device::Update_Data()
     {
         case SPEED:
         {
-            this->rx_vel_data.spin_add = (float)this->rx_raw_data.spin / INT8_MAX;
+            this->rx_vel_data.spin = (float)this->rx_raw_data.spin / INT8_MAX;
             this->rx_vel_data.x = (float)this->rx_raw_data.x / INT16_MAX;
             this->rx_vel_data.y = (float)this->rx_raw_data.y / INT16_MAX;
             memset(&this->rx_pos_data,0,sizeof(this->rx_pos_data));
@@ -487,7 +485,7 @@ void Chassis_Device::Update_Data()
         }
         case POSITION:
         {
-            this->rx_pos_data.spin_add = (float)this->rx_raw_data.spin / INT8_MAX;
+            this->rx_pos_data.spin = (float)this->rx_raw_data.spin / INT8_MAX;
             this->rx_pos_data.x = (float)this->rx_raw_data.x;
             this->rx_pos_data.y = (float)this->rx_raw_data.y;
             memset(&this->rx_vel_data,0,sizeof(this->rx_vel_data));

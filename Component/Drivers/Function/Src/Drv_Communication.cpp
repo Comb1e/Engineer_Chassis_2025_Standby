@@ -39,7 +39,7 @@ void Gimbal_To_Chassis_Rx_Callback(can_device_t *can_device,uint8_t *rx_data)
 
 void GC_Communication_Device::Check_Connect()
 {
-    osStatus_t status = osSemaphoreAcquire(this->can_device.rx_sem,20);
+    osStatus_t status = osSemaphoreAcquire(this->can_device.rx_sem,40);
     if(status == osOK)
     {
         this->connect_flag = true;

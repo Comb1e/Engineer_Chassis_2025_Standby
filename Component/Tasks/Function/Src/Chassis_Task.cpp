@@ -10,7 +10,8 @@
 
 #if CHASSIS
 
-void Chassis_Task(void *argument) {
+void Chassis_Task(void *argument)
+{
     chassis.Init();
     chassis.Init_Tof(CHASSIS_CAN,TOF_RX_ID,TofUpdateBinarySemHandle);
     while(!chassis.Check_Init_Completely())
@@ -43,13 +44,16 @@ void Chassis_Task(void *argument) {
         chassis.Update_Ready();
         if(chassis.Check_Ready_Flag() && chassis.Check_Enable_Flag())
         {
+            //debug++;
             if(chassis.Check_Can_Use())
             {
                 switch (chassis.control_type)
                 {
                     case SPEED:
                     {
+                        debug++;
                         chassis.Update_Speed_Control();
+                        chassis.Reset_Total_Rounds();   
                         break;
                     }
                     case POSITION:

@@ -7,7 +7,9 @@
 
 void Communication_Task(void *argument)
 {
+    gc_communication.PTR_Init(&chassis,&small_gimbal,&absorb);
     gc_communication.Init(CHASSIS_TO_GIMBAL_TX_CAN2_STDID,CHASSIS_TO_GIMBAL_RX_CAN2_STDID,GimbalToChassisUpdateBinarySemHandle,GIMBAL_TO_CHASSIS_HCAN);
+    debug = 200;
     osSemaphoreAcquire(GimbalToChassisUpdateBinarySemHandle,osWaitForever);
     for(;;)
     {

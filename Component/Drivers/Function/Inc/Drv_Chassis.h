@@ -130,14 +130,14 @@ typedef struct
 {
     float x;
     float y;
-    float spin_add;
+    float spin;
 }chassis_rx_vel_data_t;
 
 typedef struct
 {
     float x;
     float y;
-    float spin_add;
+    float spin;
 }chassis_rx_pos_data_t;
 
 #ifdef __cplusplus
