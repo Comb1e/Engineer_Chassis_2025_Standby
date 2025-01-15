@@ -3,26 +3,14 @@
 //
 
 #include "PID.h"
-
 #include <math.h>
-
 #include "User_Lib.h"
 
-__RAM_FUNC void pid::Init(float kp, float ki, float kd, float integral_limit, float max_out)
+__RAM_FUNC void pid::Init(float kp, float ki, float kd, float max_out,float i_limit_k,bool is_vel_control)
 {
     this->param.p = kp;
     this->param.i = ki;
     this->param.d = kd;
-    if(integral_limit >= 0)
-    {
-        this->param.integral_higher_limit = integral_limit;
-        this->param.integral_lower_limit = -integral_limit;
-    }
-    else
-    {
-        this->param.integral_higher_limit = -integral_limit;
-        this->param.integral_lower_limit = integral_limit;
-    }
     this->param.max_out = max_out;
 
     this->pout = 0;
@@ -33,6 +21,8 @@ __RAM_FUNC void pid::Init(float kp, float ki, float kd, float integral_limit, fl
     this->penultimate_error = 0;
     this->enable_flag = true;
     this->out = 0;
+    this->i_limit_k = i_limit_k;
+    this->is_vel_control = is_vel_control;
 }
 
 float pid::Calculate(float set, float get)
@@ -43,6 +33,14 @@ float pid::Calculate(float set, float get)
     this->iout += this->param.i * this->error;
     this->dout = this->param.d * (this->error - this->last_error);
 
+    if(this->is_vel_control)
+    {
+        this->Update_Integral_Limit(this->i_limit_k,set);
+    }
+    else
+    {
+        this->Update_Integral_Limit(this->i_limit_k,this->error);
+    }
     VAL_LIMIT(this->iout,this->param.integral_lower_limit,this->param.integral_higher_limit);
     this->out = this->pout + this->iout + this->dout;
     ABS_LIMIT(this->out,this->param.max_out);
@@ -53,6 +51,14 @@ float pid::Calculate(float set, float get)
         this->out = 0;
     }
     return (this->out);
+}
+
+void pid::Update_Integral_Limit(float k,float set)
+{
+    float temp = ABS(k * set);
+    VAL_LIMIT(temp,0.0f,0.7f);
+    this->param.integral_higher_limit = temp;
+    this->param.integral_lower_limit = -temp;
 }
 
 

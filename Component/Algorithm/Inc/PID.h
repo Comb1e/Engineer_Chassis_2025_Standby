@@ -25,10 +25,11 @@ typedef struct
 typedef struct
 {
     float max_out;
-    float integral_limit;
     float kp;
     float ki;
     float kd;
+    float i_limit_k;
+    bool is_vel_control;
 }pid_init_param_t;
 
 //变结构pi调节
@@ -55,10 +56,12 @@ class pid
 public:
     pid_param param;
 
-    __RAM_FUNC void Init(float kp,float ki,float kd,float integral_limit,float max_out);
+    __RAM_FUNC void Init(float kp,float ki,float kd,float max_out,float i_limit_k,bool is_vel_control);
     float Calculate(float set, float get);
+    void Update_Integral_Limit(float k,float set);
 protected:
     bool enable_flag;
+    bool is_vel_control;
 
     float error;
     float last_error;
@@ -68,6 +71,8 @@ protected:
     float iout;
     float dout;
     float out;
+
+    float i_limit_k;
 
     friend class Chassis_Device;
 };

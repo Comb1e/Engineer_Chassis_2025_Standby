@@ -20,7 +20,7 @@ yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID)
     this->slide_ctrl_data.rounds = GIMBAL_SLIDE_MOTOR_MIN_ROUNDS;
 
     this->attitude_data.yaw_deg = 0.0f;
-    this->attitude_data.pitch_deg = 30.0f;
+    this->attitude_data.pitch_deg = 0.0f;
     this->attitude_data.servo_set_yaw_1000 = GIMBAL_SERVO_YAW_FORWARD_1000;
     this->attitude_data.servo_set_pitch_1000 = GIMBAL_SERVO_PITCH_HORIZONTAL_1000;
 }
@@ -28,8 +28,8 @@ yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID)
 void Gimbal_Device::Init()
 {
     this->slide_motor.Init(GIMBAL_SLIDE_MOTOR_ID,DJI_M2006,GIMBAL_CAN,true,GimbalSlideUpdateBinarySemHandle,GIMBAL_SLIDE_MOTOR_STALL_CURRENT_MAX,GIMBAL_SLIDE_MOTOR_STALL_SPEED_MIN);
-    this->slide_motor.pid_vel.Init(4,0,1,0,1);
-    this->slide_motor.pid_loc.Init(0.2,0,2.6,0,0.4);
+    this->slide_motor.pid_vel.Init(4,0,1,1,0,true);
+    this->slide_motor.pid_loc.Init(0.2,0,2.6,0.3,0,false);
 }
 
 bool Gimbal_Device::Check_Init_Completely()

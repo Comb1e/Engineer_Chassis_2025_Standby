@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2024 STMicroelectronics.
+  * Copyright (c) 2025 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -64,7 +64,10 @@
   */
 
 /* USER CODE BEGIN EXPORTED_TYPES */
-
+int8_t CDC_Receive_FS_Mine(uint8_t *Buf, uint32_t *Len);
+int8_t CDC_Receive_FS_Mine_Del(uint8_t *Buf, uint32_t *Len);
+uint8_t CDC_Transmit_FS_Mine(uint8_t* Buf, uint16_t Len);
+uint8_t CDC_Transmit_FS_Mine_Del(uint8_t* Buf, uint16_t Len);
 /* USER CODE END EXPORTED_TYPES */
 
 /**

@@ -320,8 +320,8 @@ void DJI_Motor_Device::Set_Stall_Paramter(float stall_current_max, float stall_s
 
 void DJI_Motor_Device::Set_PID(pid_init_param_t pid_vel, pid_init_param_t pid_loc)
 {
-    this->pid_loc.Init(pid_loc.kp,pid_loc.ki,pid_loc.kd,pid_loc.integral_limit,pid_loc.max_out);
-    this->pid_vel.Init(pid_vel.kp,pid_vel.ki,pid_vel.kd,pid_vel.integral_limit,pid_vel.max_out);
+    this->pid_loc.Init(pid_loc.kp,pid_loc.ki,pid_loc.kd,pid_loc.max_out,pid_loc.i_limit_k,false);
+    this->pid_vel.Init(pid_vel.kp,pid_vel.ki,pid_vel.kd,pid_vel.max_out,pid_vel.i_limit_k,true);
 }
 
 void DJI_Motor_Device::Reset_Total_Rounds_Offset(float total_rounds)

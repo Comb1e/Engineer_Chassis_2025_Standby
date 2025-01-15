@@ -6,6 +6,7 @@
 #include "Drv_Robot.h"
 
 bool reset_flag = false;
+bool auto_exchange_flag = false;
 void AutoCtrl_Task(void *argument)
 {
     osDelay(2000);
@@ -23,6 +24,12 @@ void AutoCtrl_Task(void *argument)
         {
             kb.Set_Gimbal_Reset();
             reset_flag = false;
+        }
+
+        if(auto_exchange_flag)
+        {
+            auto_exchange_flag = false;
+            g_robot.CreatTask_Auto_Exchange();
         }
 
         osDelay(2);

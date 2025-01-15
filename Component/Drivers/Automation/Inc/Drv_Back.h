@@ -58,10 +58,10 @@ extern "C"
 #define ARM_SUCKER_POSITION_YAW       (0.0f)
 #define ARM_SUCKER_POSITION_ROLL      (0.0f)
 
-#define SIDE_SUCKER_POSITION_XYZ_VEL  (1.4f)
+#define SIDE_SUCKER_POSITION_XYZ_VEL  (0.8f)
 #define SIDE_SUCKER_POSITION_RYP_VEL  (0.1f)
 
-#define ARM_SUCKER_POSITION_XYZ_VEL   (1.4f)
+#define ARM_SUCKER_POSITION_XYZ_VEL   (0.8f)
 #define ARM_SUCKER_POSITION_RYP_VEL   (0.1f)
 
 #define BACK_HOME_POSITION_ARM_PITCH (0.0f)
@@ -74,9 +74,9 @@ extern "C"
 #define BACK_HOME_POSITION_Y        (70.f)
 #define BACK_HOME_POSITION_Z        (20.f)
 
-#define BACK_HOME_POSITION_X_VEL    (1.4f)
-#define BACK_HOME_POSITION_Z_VEL    (1.4f)
-#define BACK_HOME_POSITION_Y_VEL    (1.4f)
+#define BACK_HOME_POSITION_X_VEL    (0.8f)
+#define BACK_HOME_POSITION_Z_VEL    (0.8f)
+#define BACK_HOME_POSITION_Y_VEL    (0.8f)
 #define BACK_HOME_POSITION_RYP_VEL  (0.1f)
 #define BACK_HOME_POSITION_ARM_YAW_VEL  (0.25f)
 

@@ -56,15 +56,10 @@ extern "C"
 
 #define CHASSIS_POWER_LIMIT     (24 * 10)
 
-#define WHEEL0_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.3f
-#define WHEEL1_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.3f
-#define WHEEL2_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.3f
-#define WHEEL3_KB_CONTROL_PID_LOC 0.08f,0.0f,0,0.02f,0.3f
-
-#define WHEEL0_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
-#define WHEEL1_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
-#define WHEEL2_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
-#define WHEEL3_AUTO_CONTROL_PID_LOC 0.08f,0.001f,0,0.02f,0.2f
+#define WHEEL0_CONTROL_PID_LOC 0.08f,0.001f,1.0f,0.2f,0.3f,false
+#define WHEEL1_CONTROL_PID_LOC 0.08f,0.001f,1.0f,0.2f,0.3f,false
+#define WHEEL2_CONTROL_PID_LOC 0.08f,0.001f,1.0f,0.2f,0.3f,false
+#define WHEEL3_CONTROL_PID_LOC 0.08f,0.001f,1.0f,0.2f,0.3f,false
 
 typedef enum
 {
@@ -224,8 +219,6 @@ public:
     void Enable_Align();
     bool Check_Align();
     void Init_Tof(CAN_HandleTypeDef *hcan,uint32_t rx_id,osSemaphoreId_t rx_sem);
-    void Change_To_Auto_Control();
-    void Change_To_KB_Control();
     void Arm_Need_Chassis_Move(float x,float y);
 
     friend void Tof_Rx_CallBack(can_device_t *can_device,uint8_t *rx_buff);

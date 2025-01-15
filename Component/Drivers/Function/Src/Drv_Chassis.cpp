@@ -47,22 +47,15 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RB_NUM].Init(CHASSIS_MOTOR_RB_ID,DJI_M3508,CHASSIS_CAN,true,ChassisRBUpdateBinarySemHandle,2000,0.3);
     this->wheel[CHASSIS_MOTOR_RF_NUM].Init(CHASSIS_MOTOR_RF_ID,DJI_M3508,CHASSIS_CAN,true,ChassisRFUpdateBinarySemHandle,2000,0.3);
 
-#if VISUAL_CONTROL_TEST
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_AUTO_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_AUTO_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_AUTO_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_AUTO_CONTROL_PID_LOC);
-#else
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_KB_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_KB_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_KB_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_KB_CONTROL_PID_LOC);
-#endif
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_CONTROL_PID_LOC);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_CONTROL_PID_LOC);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.1f, 0.002f, 0.0f,0.06f,0.95f);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.1f, 0.002f, 0.0f,0.06f,0.95f);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.1f, 0.002f, 0.0f,0.06f,0.95f);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.1f, 0.002f, 0.0f,0.06f,0.95f);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.1f, 0.005f, 0.0f,0.95f,0.3f,true);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.1f, 0.005f, 0.0f,0.95f,0.3f,true);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.1f, 0.005f, 0.0f,0.95f,0.3f,true);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.1f, 0.005f, 0.0f,0.95f,0.3f,true);
 
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
@@ -121,12 +114,7 @@ void Chassis_Device::Set_Free()
     }
 
     this->Clean_Speed_Control();
-
-#if VISUAL_CONTROL_TEST
-
-#else
     this->Clean_Poition_Control();
-#endif
 
 #if CHASSIS_POSITION_CONTROL_TEST
 
@@ -556,7 +544,7 @@ bool Chassis_Device::Check_Yaw_At_Set() const
 {
     if(hi229um.state.ready_flag)
     {
-        if(ABS(this->pos_yaw_angle / 360.0f - HI229UM_Get_Yaw_Total_Deg()) < 0.03f)
+        if(ABS(this->Get_Pos_Yaw() - HI229UM_Get_Yaw_Total_Deg()) < 0.03f)
         {
             return true;
         }
@@ -588,8 +576,8 @@ void Chassis_Device::Init_Tof(CAN_HandleTypeDef *hcan, uint32_t rx_id, osSemapho
 {
     this->tof_can.RX_Add(hcan,rx_id,Tof_Rx_CallBack,rx_sem);
 
-    this->align_data.dist_pid.Init(0.0008,0,0,10,1);
-    this->align_data.rot_pid.Init(1,0,0,10,1);
+    this->align_data.dist_pid.Init(0.0008,0,0,1,0,false);
+    this->align_data.rot_pid.Init(1,0,0,1,0,false);
 }
 
 void Tof_Rx_CallBack(can_device_t *can_device, uint8_t *rx_buff)
@@ -600,27 +588,9 @@ void Tof_Rx_CallBack(can_device_t *can_device, uint8_t *rx_buff)
     chassis->align_data.right_dist = tof_data->right_dist;
 }
 
-void Chassis_Device::Change_To_Auto_Control()
-{
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_AUTO_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_AUTO_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_AUTO_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_AUTO_CONTROL_PID_LOC);
-    this->wheel_loc_error_min = 0.7f;
-}
-
-void Chassis_Device::Change_To_KB_Control()
-{
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_loc.Init(WHEEL0_KB_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_loc.Init(WHEEL1_KB_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_KB_CONTROL_PID_LOC);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_KB_CONTROL_PID_LOC);
-    this->wheel_loc_error_min = 0.2f;
-}
-
 void Chassis_Device::Arm_Need_Chassis_Move(float x,float y)
 {
     g_arm.arm_chassis_cooperate_flag = true;
-    g_arm.chassis_move_data.x = x;
-    g_arm.chassis_move_data.y = y;
+    g_arm.chassis_move_data.x += x;
+    g_arm.chassis_move_data.y += y;
 }

@@ -705,14 +705,14 @@ void Arm_Device::Wait_For_Moving()
         while(!this->Check_All_Get_To_Final() || ABS(this->chassis_move_data.x) > 1 || ABS(this->chassis_move_data.y) > 1)
         {
 
-//#if VISUAL_CONTROL_TEST
+#if VISUAL_CONTROL_TEST
 
-//#else
+#else
             if (HAL_GetTick() > time + 8000)
             {
                 break;
             }
-//#endif
+#endif
 
             osDelay(1);
         }

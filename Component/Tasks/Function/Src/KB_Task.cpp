@@ -20,6 +20,16 @@ void KB_State_Task(void *argument)
         }
         else
         {
+#if VISUAL_CONTROL_TEST
+            if(RC_Check_Wheel_State(RC_WHEEL_UP))
+            {
+                g_absorb.Set_Sucker_Open(ARM_SUCKER);
+            }
+            else if(RC_Check_Wheel_State(RC_WHEEL_DOWN))
+            {
+                g_absorb.Set_Sucker_Close(ARM_SUCKER);
+            }
+#endif
             continue;
         }
         osDelay(KB_CONTROL_CYCLE);

@@ -81,20 +81,20 @@ void Robot_Device::Arm_Take_Ore_From_Sucker()
     }
 
     this->Arm_Take_Ore_From_Side_Sucker_To_Center();
+    this->Arm_Back_Home();
     osDelay(200);
     this->arm->Enable_Arm_Chassis_Cooperate();
-
 }
 
 void Robot_Device::Arm_Take_Ore_From_Side_Sucker_To_Center()
 {
+    this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ARM_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ARM_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
+
     this->arm->Set_Point_Target_Pos_Vel(YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
     this->arm->Set_Point_Target_Pos_Vel(PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
     this->arm->Set_Point_Target_Pos_Vel(ROLL,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ROLL,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
-    this->arm->Wait_For_Moving();
-
-    this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ARM_YAW,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_ARM_PITCH,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
 
     this->arm->Set_Point_Target_Pos_Vel(X,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_X,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
@@ -108,7 +108,6 @@ void Robot_Device::Arm_Take_Ore_From_Left_Sucker()
     this->arm->Set_Point_Target_Pos_Vel(X,TAKING_LEFT_SUCKER_POSITION_PRE_X,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
     this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_LEFT_SUCKER_POSITION_PRE_Y,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
     this->arm->Set_Point_Target_Pos_Vel(Z,TAKING_LEFT_SUCKER_POSITION_PRE_Z,TAKING_LEFT_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(PITCH,TAKING_LEFT_SUCKER_POSITION_PRE_PITCH,TAKING_LEFT_SUCKER_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
 
     this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,TAKING_LEFT_SUCKER_POSITION_ARM_YAW,TAKING_LEFT_SUCKER_POSITION_ARM_VEL);

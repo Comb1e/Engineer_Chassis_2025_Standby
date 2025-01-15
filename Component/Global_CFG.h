@@ -42,6 +42,9 @@
 #define AUTO_SMALLISLAND_TEST 0
 #define AUTO_GROUNDMINE_TEST 0
 
+#define EXCHANGE_TEST 0
+
+/*----------SITUATION----------*/
 #define CAMERA_ON_ARM 1
 
 #define MOTOR_NUM 5

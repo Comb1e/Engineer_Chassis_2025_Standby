@@ -112,7 +112,12 @@ void KB_Device::Check_Mouse_State()
                     g_gimbal.Add_Pitch_Deg(0.36f * rc.data.mouse.y);
                     if(rc.data.using_kb_flag)
                     {
+#if EXCHANGE_TEST
+                        debug++;
+                        g_gimbal.Add_Yaw_Deg(-0.36f * rc.data.mouse.x);
+#else
                         g_robot.RC_Set_Chassis_Vel_Spin(-1 * rc.data.mouse.x);
+#endif
                     }
                     else
                     {

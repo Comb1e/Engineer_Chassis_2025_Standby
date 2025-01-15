@@ -73,10 +73,10 @@ void Gimbal_Slide_Task(void *argument)
 
     static reset_t gimbal_reset =
     {
-        0.5,0,0.2,0,2.6,
-        0.5,0,4,0,1,
-        0.5,0,0.2,0,2.6,
-        0.5,0,4,0,1,
+        0.5f,0.2f,0.0f,2.6f,0.0f,false,
+        0.5f,4.0f,0.0f,1.0f,0.0f,true,
+        0.5f,0.2f,0.0f,2.6f,0.0f,false,
+        0.5f,4.0f,0.0f,1.0f,0.0f,true,
         GIMBAL_SLIDE_MIN_MM,GIMBAL_SLIDE_MAX_MM,GIMBAL_SLIDE_INITIAL_DISTANCE,
         GIMBAL_SLIDE_RESET_SPEED,
         GIMBAL_SLIDE_MOTOR_MIN_ROUNDS,GIMBAL_SLIDE_MOTOR_MAX_ROUNDS,GIMBAL_SLIDE_MOTOR_ROUNDS_OFFSET,
