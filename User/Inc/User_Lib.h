@@ -14,7 +14,7 @@ extern "C"
 
 #define NORMALIZATION_MAX 1
 
-#define PI 3.14159265358979f
+#define PI 3.14159265358979323846f
 #define DEC_CON (float) PI/180
 
 uint32_t Get_Time_us();

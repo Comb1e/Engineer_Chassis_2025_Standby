@@ -18,14 +18,14 @@
 #define SERVO 1
 #define USB 1
 #define CHASSIS 1
-#define GIMBAL_SLIDE 1
+#define GIMBAL_SLIDE 0
 #define GIMBAL_ATTITUDE 1
 #define ABSORB 1
 #define INFO 1
 #define ARM 1
 
 /*----------TEST----------*/
-#define MOTOR_TEST 0 //需要有电机不动的时候置为1
+#define MOTOR_TEST 1 //需要有电机不动的时候置为1
 
 #define GIMBAL_Slide_TEST 0
 #define GIMBAL_ATTITUDE_TEST 0
@@ -35,7 +35,7 @@
 #define CHASSIS_POSITION_CONTROL_TEST 0
 
 #define ALIGN_TEST 0
-#define VISUAL_CONTROL_TEST 0
+#define VISUAL_CONTROL_TEST 1
 
 #define AUTOCONTROL_TEST 0
 #define AUTO_BIGISLAND_TEST 0

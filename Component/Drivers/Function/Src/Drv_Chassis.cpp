@@ -30,7 +30,11 @@ Chassis_Device::Chassis_Device()
     this->arm_need_cnt = 0;
     this->rot_flag = false;
     this->need_flag = true;
+#if VISUAL_CONTROL_TEST
+    this->wheel_loc_error_min = 1.0f;
+#else
     this->wheel_loc_error_min = 0.2f;
+#endif
     this->chassis_first_flag = false;
 #if ALIGN_TEST
     this->tof_enable_flag = true;
@@ -52,10 +56,10 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_CONTROL_PID_LOC);
     this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_CONTROL_PID_LOC);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.1f, 0.005f, 0.0f,0.95f,0.3f,true);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.1f, 0.005f, 0.0f,0.95f,0.3f,true);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.1f, 0.005f, 0.0f,0.95f,0.3f,true);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.1f, 0.005f, 0.0f,0.95f,0.3f,true);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.0f, 0.005f, 0.0f,0.95f,0.0f,true);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.0f, 0.005f, 0.0f,0.95f,0.0f,true);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.0f, 0.005f, 0.0f,0.95f,0.0f,true);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.0f, 0.005f, 0.0f,0.95f,0.0f,true);
 
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
@@ -430,7 +434,7 @@ void Chassis_Device::Judge_For_Arm_Need()
         {
             this->arm_need_cnt = 0;
         }
-        if(this->arm_need_cnt > 80)
+        if(this->arm_need_cnt > 120)
         {
             g_arm.arm_chassis_cooperate_flag = false;
             g_arm.chassis_move_data.x = 0;

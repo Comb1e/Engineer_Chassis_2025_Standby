@@ -255,6 +255,7 @@ public:
     void Arm_Take_Ore_From_Side_Sucker_To_Center();
     void Arm_Take_Ore_From_Left_Sucker();
     void Arm_Take_Ore_From_Right_Sucker();
+    void Filt_RYP();
     void End_Exchange();
 //Drv_AutoBigIsland
     direction_need_e big_island_dir;

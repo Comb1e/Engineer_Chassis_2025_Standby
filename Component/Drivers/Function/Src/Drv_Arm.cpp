@@ -693,7 +693,7 @@ bool Arm_Device::Check_Safe_Position()
 
 void Arm_Device::Wait_For_Moving()
 {
-    osDelay(200);
+    osDelay(50);
     uint32_t time = HAL_GetTick();
     while(!this->Check_All_Get_To_Final())
     {
@@ -702,17 +702,12 @@ void Arm_Device::Wait_For_Moving()
 
     if(this->enable_arm_chassis_cooperate_flag && g_chassis.need_flag)
     {
-        while(!this->Check_All_Get_To_Final() || ABS(this->chassis_move_data.x) > 1 || ABS(this->chassis_move_data.y) > 1)
+        while(!this->Check_All_Get_To_Final() || ABS(this->chassis_move_data.x) > 1.0f || ABS(this->chassis_move_data.y) > 1.0f)
         {
-
-#if VISUAL_CONTROL_TEST
-
-#else
             if (HAL_GetTick() > time + 8000)
             {
                 break;
             }
-#endif
 
             osDelay(1);
         }

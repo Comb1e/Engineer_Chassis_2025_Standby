@@ -167,6 +167,7 @@ void Robot_Device::Arm_Take_Ore_From_Right_Sucker()
 void Robot_Device::End_Exchange()
 {
     this->absorb->Set_Sucker_Close(ARM_SUCKER);
+    this->usb->getting_in_flag = false;
     this->Set_KB_Control_Mode_Steer();
     this->info->Set_Pose_Mode(single);
     this->gimbal->Set_Yaw_Deg(0.0f);

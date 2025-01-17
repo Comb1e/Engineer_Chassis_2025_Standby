@@ -20,7 +20,7 @@ yaw_servo(&SERVO_UART, GIMBAL_YAW_SERVO_ID)
     this->slide_ctrl_data.rounds = GIMBAL_SLIDE_MOTOR_MIN_ROUNDS;
 
     this->attitude_data.yaw_deg = 0.0f;
-    this->attitude_data.pitch_deg = 0.0f;
+    this->attitude_data.pitch_deg = 20.0f;
     this->attitude_data.servo_set_yaw_1000 = GIMBAL_SERVO_YAW_FORWARD_1000;
     this->attitude_data.servo_set_pitch_1000 = GIMBAL_SERVO_PITCH_HORIZONTAL_1000;
 }

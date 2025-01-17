@@ -33,9 +33,6 @@ void Arm_Task(void *argument)
         }
         else
         {
-#if VISUAL_CONTROL_TEST
-            g_arm.Update_Final();
-#endif
             g_arm.Clean_Control();
         }
         tick += ARM_CONTROL_CYCLE;

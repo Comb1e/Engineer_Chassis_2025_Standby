@@ -28,11 +28,11 @@ extern "C"
 #define GRAVITY_COMPENSATION (0.0f)
 #define GRAVITY_ORE_PITCH_COMPENSATION (0.0f / 180.0f * PI)
 
-#define ORE_LENGTH (200.0f)
+#define OFFSET_LENGTH (320.0f)
 #define PRE_EXCHANGE_LENGTH (2 * ORE_LENGTH + 80.0f)
 
 #define CAMERA_OFFSET_X (10.0f)
-#define CAMERA_OFFSET_Y (70.0f)
+#define CAMERA_OFFSET_Y (80.0f)
 #define CAMERA_OFFSET_Z (700.0f)
 
 #pragma pack(1)
@@ -104,9 +104,15 @@ public:
     bool exchanging_started_flag_sent_flag;
     bool controllable_flag;
     bool truly_started_exchanging_flag;
+    bool getting_in_flag;
 
     bool rx_exchanging_flag;
     bool rx_controllable_flag;
+    bool xy_move;
+    bool xyz_ready;
+    bool x_ready;
+    bool y_ready;
+    bool z_ready;
 
     usb_rx_data_t rx_raw_data;
     usb_tx_data_u tx_data;
@@ -132,10 +138,13 @@ public:
     pose_t chassis_to_target_pose;
     pose_t ore_to_target_pose;
 
+    pose_t filter_pose;
+    uint8_t filter_cnt;
+
     pose_t last_visual_control_pose;
 
-    Eigen::Vector3f ore_offset_basic_pose;
-    Eigen::Vector3f ore_offset_pose;
+    Eigen::Vector3f sucker_to_ore_offset_basic_pose;
+    Eigen::Vector3f sucker_to_ore_offset_pose;
 
     void Receive_Data();
     void Update_RX_Data();
