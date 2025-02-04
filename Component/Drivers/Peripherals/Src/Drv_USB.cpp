@@ -167,7 +167,8 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
             this->chassis_to_sucker_eigen_pose.rotation_matrix = Eigen::AngleAxisf(this->chassis_to_sucker_eigen_pose.euler_radian[0], Eigen::Vector3f::UnitZ()) *
                                                                  Eigen::AngleAxisf(this->chassis_to_sucker_eigen_pose.euler_radian[1], Eigen::Vector3f::UnitY()) *
                                                                  Eigen::AngleAxisf(this->chassis_to_sucker_eigen_pose.euler_radian[2], Eigen::Vector3f::UnitX());
-            this->sucker_to_ore_offset_pose = this->chassis_to_sucker_eigen_pose.rotation_matrix * this->sucker_to_ore_offset_basic_pose;
+            //this->sucker_to_ore_offset_pose = this->chassis_to_sucker_eigen_pose.rotation_matrix * this->sucker_to_ore_offset_basic_pose;
+            this->sucker_to_ore_offset_pose << 0.0f , 0.0f , 0.0f;
             this->chassis_to_ore_eigen_pose.xyz_mm << g_arm.fb_current_data.x + this->sucker_to_ore_offset_pose[0] , g_arm.fb_current_data.y + this->sucker_to_ore_offset_pose[1] , g_arm.fb_current_data.z + this->sucker_to_ore_offset_pose[2];
 
             /*if(this->ore_down_flag)
@@ -241,12 +242,17 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
             //}
 
             this->ore_to_target_eigen_pose.euler_angle << this->ore_to_target_eigen_pose.euler_angle[0] - g_arm.fb_current_data.sucker_yaw_deg ,
-                                              this->ore_to_target_eigen_pose.euler_angle[1] - g_arm.fb_current_data.sucker_pitch_deg ,
-                                              this->ore_to_target_eigen_pose.euler_angle[2] - g_arm.fb_current_data.sucker_roll_deg;
+                                                          this->ore_to_target_eigen_pose.euler_angle[1] - g_arm.fb_current_data.sucker_pitch_deg ,
+                                                          this->ore_to_target_eigen_pose.euler_angle[2] - g_arm.fb_current_data.sucker_roll_deg;
 
-            this->ore_to_target_eigen_pose.xyz_mm[0] -= (this->ore_getting_in_offset[0] - 20.0f);
+            this->ore_to_target_eigen_pose.xyz_mm[0] -= this->ore_getting_in_offset[0];
             this->ore_to_target_eigen_pose.xyz_mm[1] -= this->ore_getting_in_offset[1];
-            this->ore_to_target_eigen_pose.xyz_mm[2] -= (this->ore_getting_in_offset[2] - 20.0f);
+            this->ore_to_target_eigen_pose.xyz_mm[2] -= this->ore_getting_in_offset[2];
+
+            /*this->ore_to_target_eigen_pose.xyz_mm[0] += 30.0f;
+            this->ore_to_target_eigen_pose.xyz_mm[1] += 0.0f;
+            this->ore_to_target_eigen_pose.xyz_mm[2] += 30.0f;*/
+
 
             eigen_pose_t_To_pose_t(this->ore_to_target_eigen_pose,&this->ore_to_target_pose);
 

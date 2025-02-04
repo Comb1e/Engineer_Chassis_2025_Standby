@@ -99,7 +99,6 @@ void Robot_Device::Arm_Take_Ore_From_Side_Sucker_To_Center()
 
     this->arm->Set_Point_Target_Pos_Vel(X,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_X,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
     this->arm->Set_Point_Target_Pos_Vel(Y,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_Y,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(Z,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_Z,TAKING_SIDE_SUCKER_TO_CENTER_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
 }
 
@@ -130,7 +129,7 @@ void Robot_Device::Arm_Take_Ore_From_Left_Sucker()
     this->Wait_For_Sucker_Holding(ARM_SUCKER);
     this->absorb->Set_Sucker_Close(LEFT_SUCKER);
     this->absorb->Get_Ore_State()->Set_Ore_Source(WAREHOUSE);
-    this->arm->Set_FeedBack_As_Target();
+    this->arm->Set_Point_Posture(Y,this->arm->fb_current_data.y);
 }
 
 void Robot_Device::Arm_Take_Ore_From_Right_Sucker()
@@ -161,7 +160,7 @@ void Robot_Device::Arm_Take_Ore_From_Right_Sucker()
     this->Wait_For_Sucker_Holding(ARM_SUCKER);
     this->absorb->Set_Sucker_Close(RIGHT_SUCKER);
     this->absorb->Get_Ore_State()->Set_Ore_Source(WAREHOUSE);
-    this->arm->Set_FeedBack_As_Target();
+    this->arm->Set_Point_Posture(Y,this->arm->fb_current_data.y);
 }
 
 void Robot_Device::End_Exchange()

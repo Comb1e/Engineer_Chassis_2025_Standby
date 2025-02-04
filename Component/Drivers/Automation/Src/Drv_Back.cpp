@@ -7,11 +7,6 @@
 
 void Robot_Device::Arm_Back_Home()
 {
-    if (this->absorb->Check_Sucker_Holding(ARM_SUCKER))
-    {
-        return;
-    }
-
     this->arm->Disable_Arm_Chassis_Cooperate();
     this->arm->Set_Point_Target_Pos_Vel(ROLL, BACK_HOME_POSITION_ROLL, BACK_HOME_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
@@ -175,6 +170,9 @@ void Robot_Device::Back_With_Ore()
     osDelay(3);
 
     this->Back_To_Sucker();
-    this->Arm_Back_Home();
+    if(!this->absorb->sucker[ARM_SUCKER].holding_flag)
+    {
+        this->Arm_Back_Home();
+    }
     this->arm->Enable_Arm_Chassis_Cooperate();
 }

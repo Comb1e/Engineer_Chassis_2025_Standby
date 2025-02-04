@@ -3,8 +3,9 @@
 //
 
 #include "Drv_KB_State.h"
-
 #include "Drv_Absorb.h"
+
+bool fetch_ore_flag = false;
 
 void KB_Device::Check_Mouse_State()
 {
@@ -273,6 +274,18 @@ void KB_Device::Check_RC_State()
                     g_chassis.control_type = SPEED;
                 }
                 g_robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.3f);
+            }
+#endif
+
+#if AUTO_FETCH_TEST
+            if(rc.data.right_rocker.y > 0.9f && !fetch_ore_flag)
+            {
+                g_robot.Arm_Take_Ore_From_Sucker();
+                fetch_ore_flag = true;
+            }
+            else if(rc.data.right_rocker.y == 0.0f)
+            {
+                fetch_ore_flag = false;
             }
 #endif
         }
