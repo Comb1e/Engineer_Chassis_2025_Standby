@@ -105,14 +105,10 @@ public:
     bool controllable_flag;
     bool truly_started_exchanging_flag;
     bool getting_in_flag;
+    bool xyz_filt_flag;
 
     bool rx_exchanging_flag;
     bool rx_controllable_flag;
-    bool xy_move;
-    bool xy_ready;
-    bool x_ready;
-    bool y_ready;
-    bool z_ready;
 
     bool ore_down_flag;
     bool judge_ore_down_flag;
