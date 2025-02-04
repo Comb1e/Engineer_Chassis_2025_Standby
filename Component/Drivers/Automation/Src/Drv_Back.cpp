@@ -60,6 +60,11 @@ void Robot_Device::Back_To_Left_Sucker(float x_offset)
 {
     this->arm->Disable_Arm_Chassis_Cooperate();
 
+    this->arm->Set_Point_Target_Pos_Vel(X,LEFT_SUCKER_POSITION_PRE_X,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,LEFT_SUCKER_POSITION_PRE_Y,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Z,LEFT_SUCKER_POSITION_PRE_Z,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
+
     this->arm->Set_Point_Target_Pos_Vel(ROLL,LEFT_SUCKER_POSITION_ROLL,SIDE_SUCKER_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
 
@@ -71,21 +76,14 @@ void Robot_Device::Back_To_Left_Sucker(float x_offset)
     this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,LEFT_SUCKER_POSITION_ARM_PITCH,SIDE_SUCKER_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
 
-    this->arm->Set_Point_Target_Pos_Vel(X,LEFT_SUCKER_POSITION_PRE_X,SIDE_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(Y,LEFT_SUCKER_POSITION_PRE_Y,SIDE_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(Z,LEFT_SUCKER_POSITION_PRE_Z,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(X,this->arm->min_limit[X] + x_offset,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,this->arm->min_limit[Y],SIDE_SUCKER_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
 
-    this->arm->Set_Point_Target_Pos_Vel(X,LEFT_SUCKER_POSITION_X + x_offset,SIDE_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(Y,LEFT_SUCKER_POSITION_Y,SIDE_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Wait_For_Moving();
-
+    this->absorb->Set_Sucker_Open(LEFT_SUCKER);
+    osDelay(100);
     this->arm->Set_Point_Target_Pos_Vel(Z,LEFT_SUCKER_POSITION_Z,SIDE_SUCKER_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
-    if(ABS(this->arm->trajectory[Z].track_point - LEFT_SUCKER_POSITION_Z) < 5.0f)
-    {
-        this->absorb->Set_Sucker_Open(LEFT_SUCKER);
-    }
     this->Wait_For_Sucker_Holding(LEFT_SUCKER);
     this->arm->Set_FeedBack_As_Target();
     this->absorb->Set_Sucker_Close(ARM_SUCKER);
@@ -96,6 +94,11 @@ void Robot_Device::Back_To_Left_Sucker(float x_offset)
 void Robot_Device::Back_To_Right_Sucker(float x_offset)
 {
     this->arm->Disable_Arm_Chassis_Cooperate();
+
+    this->arm->Set_Point_Target_Pos_Vel(X,RIGHT_SUCKER_POSITION_PRE_X,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,RIGHT_SUCKER_POSITION_PRE_Y,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Z,RIGHT_SUCKER_POSITION_PRE_Z,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
 
     this->arm->Set_Point_Target_Pos_Vel(ROLL,RIGHT_SUCKER_POSITION_ROLL,SIDE_SUCKER_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
@@ -108,21 +111,14 @@ void Robot_Device::Back_To_Right_Sucker(float x_offset)
     this->arm->Set_Point_Target_Pos_Vel(PITCH,RIGHT_SUCKER_POSITION_PITCH,SIDE_SUCKER_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
 
-    this->arm->Set_Point_Target_Pos_Vel(X,RIGHT_SUCKER_POSITION_PRE_X,SIDE_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(Y,RIGHT_SUCKER_POSITION_PRE_Y,SIDE_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(Z,RIGHT_SUCKER_POSITION_PRE_Z,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(X,this->arm->min_limit[X] + x_offset,SIDE_SUCKER_POSITION_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,this->arm->max_limit[Y],SIDE_SUCKER_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
 
-    this->arm->Set_Point_Target_Pos_Vel(X,RIGHT_SUCKER_POSITION_X + x_offset,SIDE_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(Y,RIGHT_SUCKER_POSITION_Y,SIDE_SUCKER_POSITION_XYZ_VEL);
-    this->arm->Wait_For_Moving();
-
+    this->absorb->Set_Sucker_Open(RIGHT_SUCKER);
+    osDelay(100);
     this->arm->Set_Point_Target_Pos_Vel(Z,RIGHT_SUCKER_POSITION_Z,SIDE_SUCKER_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
-    if(ABS(this->arm->trajectory[Z].track_point - RIGHT_SUCKER_POSITION_Z) < 5.0f)
-    {
-        this->absorb->Set_Sucker_Open(RIGHT_SUCKER);
-    }
     this->Wait_For_Sucker_Holding(RIGHT_SUCKER);
     this->arm->Set_FeedBack_As_Target();
     this->absorb->Set_Sucker_Close(ARM_SUCKER);

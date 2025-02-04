@@ -15,7 +15,7 @@ extern "C"
 #include "Global_CFG.h"
 
 /*----------Pre----------*/
-#define GROUND_MINE_PRE_POSITION_X      (400.0f)
+#define GROUND_MINE_PRE_POSITION_X      (500.0f)
 #define GROUND_MINE_PRE_POSITION_Y      (70.0f)
 #define GROUND_MINE_PRE_POSITION_Z      (20.0f)
 #define GROUND_MINE_PRE_POSITION_ARM_YAW      (0.0f)
@@ -28,10 +28,10 @@ extern "C"
 #define GROUND_MINE_PRE_POSITION_RYP_VEL    (0.1f)
 
 /*----------1----------*/
-#define GROUND_MINE_1_POSITION_X      (520.0f)
+#define GROUND_MINE_1_POSITION_X      (720.0f)
 #define GROUND_MINE_1_POSITION_Z      (-90.0f)
 
-#define GROUND_MINE_1_POSITION_PITCH      (90.0f)
+#define GROUND_MINE_1_POSITION_PITCH      (91.0f)
 #define GROUND_MINE_1_POSITION_ARM_PITCH  (90.0f)
 
 #define GROUND_MINE_1_POSITION_XYZ_VEL    (0.8f)
@@ -44,7 +44,7 @@ extern "C"
 #define GROUND_MINE_TOUCHING_POSITION_Z_VEL    (0.1f)
 
 /*----------Pre_Back----------*/
-#define GROUND_MINE_PRE_BACK_POSITION_Z      (100.0f)
+#define GROUND_MINE_PRE_BACK_POSITION_Z      (200.0f)
 #define GROUND_MINE_PRE_BACK_POSITION_X      (520.0f)
 #define GROUND_MINE_PRE_BACK_POSITION_ARM_PITCH (0.0f)
 #define GROUND_MINE_PRE_BACK_POSITION_PITCH (0.0f)

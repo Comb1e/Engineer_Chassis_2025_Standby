@@ -171,6 +171,6 @@ void Robot_Device::End_Exchange()
     this->Set_KB_Control_Mode_Steer();
     this->info->Set_Pose_Mode(single);
     this->gimbal->Set_Yaw_Deg(0.0f);
-    g_robot.Close_Visual_Control();
+    this->Close_Visual_Control();
     osDelay(3);
 }

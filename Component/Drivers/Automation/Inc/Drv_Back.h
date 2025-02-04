@@ -24,28 +24,28 @@ extern "C"
 /**
  * @brief 放矿到左右吸盘的位置和速度,先xyz,再ryp
  */
-#define LEFT_SUCKER_POSITION_PRE_X     (307.0f)
-#define LEFT_SUCKER_POSITION_X         (307.0f)
+#define LEFT_SUCKER_POSITION_PRE_X     (342.0f)
+#define LEFT_SUCKER_POSITION_X         (342.0f)
 #define LEFT_SUCKER_POSITION_PRE_Y     (220.0f)
-#define LEFT_SUCKER_POSITION_Y         (230.0f)
+#define LEFT_SUCKER_POSITION_Y         (222.0f)
 #define LEFT_SUCKER_POSITION_PRE_Z     (300.0f)
 #define LEFT_SUCKER_POSITION_Z         (50.f)
-#define LEFT_SUCKER_POSITION_PITCH     (0.0f)
-#define LEFT_SUCKER_POSITION_YAW       (95.0f)
+#define LEFT_SUCKER_POSITION_PITCH     (-3.0f)
+#define LEFT_SUCKER_POSITION_YAW       (97.0f)
 #define LEFT_SUCKER_POSITION_ROLL      (0.0f)
-#define LEFT_SUCKER_POSITION_ARM_YAW   (40.0f)
+#define LEFT_SUCKER_POSITION_ARM_YAW   (22.0f)
 #define LEFT_SUCKER_POSITION_ARM_PITCH (0.0f)
 
-#define RIGHT_SUCKER_POSITION_PRE_X  (307.0f)
-#define RIGHT_SUCKER_POSITION_X      (307.0f)
+#define RIGHT_SUCKER_POSITION_PRE_X  (342.0f)
+#define RIGHT_SUCKER_POSITION_X      (342.0f)
 #define RIGHT_SUCKER_POSITION_PRE_Y      (-80.0f)
 #define RIGHT_SUCKER_POSITION_Y      (-40.0f)
 #define RIGHT_SUCKER_POSITION_PRE_Z      (200.0f)
 #define RIGHT_SUCKER_POSITION_Z          (50.f)
-#define RIGHT_SUCKER_POSITION_PITCH         (0.0f)
-#define RIGHT_SUCKER_POSITION_YAW      (-95.0f)
+#define RIGHT_SUCKER_POSITION_PITCH         (-3.0f)
+#define RIGHT_SUCKER_POSITION_YAW      (-97.0f)
 #define RIGHT_SUCKER_POSITION_ROLL      (0.0f)
-#define RIGHT_SUCKER_POSITION_ARM_YAW      (-40.0f)
+#define RIGHT_SUCKER_POSITION_ARM_YAW      (-22.0f)
 #define RIGHT_SUCKER_POSITION_ARM_PITCH (0.0f)
 
 #define ARM_SUCKER_POSITION_X         (550.0f)
@@ -58,11 +58,11 @@ extern "C"
 #define ARM_SUCKER_POSITION_YAW       (0.0f)
 #define ARM_SUCKER_POSITION_ROLL      (0.0f)
 
-#define SIDE_SUCKER_POSITION_XYZ_VEL  (0.8f)
-#define SIDE_SUCKER_POSITION_RYP_VEL  (0.1f)
+#define SIDE_SUCKER_POSITION_XYZ_VEL  (1.0f)
+#define SIDE_SUCKER_POSITION_RYP_VEL  (0.15f)
 
-#define ARM_SUCKER_POSITION_XYZ_VEL   (0.8f)
-#define ARM_SUCKER_POSITION_RYP_VEL   (0.1f)
+#define ARM_SUCKER_POSITION_XYZ_VEL   (1.0f)
+#define ARM_SUCKER_POSITION_RYP_VEL   (0.15f)
 
 #define BACK_HOME_POSITION_ARM_PITCH (0.0f)
 
@@ -74,11 +74,11 @@ extern "C"
 #define BACK_HOME_POSITION_Y        (70.f)
 #define BACK_HOME_POSITION_Z        (20.f)
 
-#define BACK_HOME_POSITION_X_VEL    (0.8f)
-#define BACK_HOME_POSITION_Z_VEL    (0.8f)
-#define BACK_HOME_POSITION_Y_VEL    (0.8f)
-#define BACK_HOME_POSITION_RYP_VEL  (0.1f)
-#define BACK_HOME_POSITION_ARM_YAW_VEL  (0.25f)
+#define BACK_HOME_POSITION_X_VEL    (1.0f)
+#define BACK_HOME_POSITION_Z_VEL    (1.0f)
+#define BACK_HOME_POSITION_Y_VEL    (1.0f)
+#define BACK_HOME_POSITION_RYP_VEL  (0.15f)
+#define BACK_HOME_POSITION_ARM_YAW_VEL  (0.2f)
 
 #ifdef __cplusplus
 }

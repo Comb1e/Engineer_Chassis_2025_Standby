@@ -172,8 +172,8 @@ void Arm_Device::Posture_Init()
 
 void Arm_Device::Update_Limit_Basic_Data()
 {
-    this->limit_basic_data.arm_xoy_length = ARM_LENGTH - ARM_LENGTH_2_ACT + ARM_LENGTH_2_ACT * arm_cos_f32(this->trajectory[ARM_PITCH].track_point * PI / 180.0f);
-    this->limit_basic_data.arm_yaw_radian = this->trajectory[ARM_YAW].track_point * PI / 180.0f;
+    this->limit_basic_data.arm_xoy_length = ARM_LENGTH - ARM_LENGTH_2_ACT + ARM_LENGTH_2_ACT * arm_cos_f32(this->fb_current_data.arm_pitch * PI / 180.0f);
+    this->limit_basic_data.arm_yaw_radian = this->fb_current_data.arm_yaw * PI / 180.0f;
     this->limit_basic_data.arm_x_length = this->limit_basic_data.arm_xoy_length * arm_cos_f32(this->limit_basic_data.arm_yaw_radian);
     this->limit_basic_data.arm_y_length = this->limit_basic_data.arm_xoy_length * arm_sin_f32(this->limit_basic_data.arm_yaw_radian);
 }
@@ -693,7 +693,7 @@ bool Arm_Device::Check_Safe_Position()
 
 void Arm_Device::Wait_For_Moving()
 {
-    osDelay(50);
+    osDelay(10);
     uint32_t time = HAL_GetTick();
     while(!this->Check_All_Get_To_Final())
     {
@@ -712,31 +712,37 @@ void Arm_Device::Wait_For_Moving()
             osDelay(1);
         }
     }
+    this->chassis_move_data.x = 0;
+    this->chassis_move_data.y = 0;
+    g_chassis.arm_need_cnt = 0;
+    g_chassis.Clean_Poition_Control();
+    g_chassis.Clean_Speed_Control();
+    g_chassis.Change_To_Speed_Type();
 }
 
 void Arm_Device::Update_Chassis_To_Sucker_RotMatrix()
 {
-    this->rotation_matrix = Eigen::AngleAxisf(this->trajectory[YAW].track_point / 180.0f * PI, Eigen::Vector3f::UnitZ()) *
-                            Eigen::AngleAxisf(this->trajectory[PITCH].track_point / 180.0f * PI, Eigen::Vector3f::UnitY()) *
-                            Eigen::AngleAxisf(this->trajectory[ROLL].track_point / 180.0f * PI, Eigen::Vector3f::UnitX());
+    this->rotation_matrix = Eigen::AngleAxisf(this->fb_current_data.sucker_yaw_deg / 180.0f * PI, Eigen::Vector3f::UnitZ()) *
+                            Eigen::AngleAxisf(this->fb_current_data.sucker_pitch_deg / 180.0f * PI, Eigen::Vector3f::UnitY()) *
+                            Eigen::AngleAxisf(this->fb_current_data.sucker_roll_deg / 180.0f * PI, Eigen::Vector3f::UnitX());
 }
 
+float dx;
+float dy;
+float dz;
 
 void Arm_Device::Sucker_Dir_Move(float dist,float vel)
 {
-    float dx = 0;
-    float dy = 0;
-    float dz = 0;
-    for(int i=0;i<3;i++)
-    {
-        dx += this->rotation_matrix(0,i);
-        dy += this->rotation_matrix(1,i);
-        dz += this->rotation_matrix(2,i);
-    }
+    Eigen::Vector3f dir;
+    dir << 1.0f , 0.0f , 0.0f;
+    dir = this->rotation_matrix * dir;
+    dx = dir[0];
+    dy = dir[1];
+    dz = dir[2];
 
-    this->Set_Point_Target_Pos_Vel(X,dx * dist,dx * vel);
-    this->Set_Point_Target_Pos_Vel(Y,dy * dist,dy * vel);
-    this->Set_Point_Target_Pos_Vel(Z,dz * dist,dz * vel);
+    this->Add_Point_Target_Pos_Vel(X,dx * dist,MAX(ABS(dx) * vel,0.01f));
+    this->Add_Point_Target_Pos_Vel(Y,dy * dist,MAX(ABS(dy) * vel,0.01f));
+    this->Add_Point_Target_Pos_Vel(Z,dz * dist,MAX(ABS(dz) * vel,0.01f));
 }
 
 void Arm_Device::Disable_Arm_Chassis_Cooperate()

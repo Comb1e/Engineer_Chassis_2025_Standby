@@ -260,17 +260,20 @@ void KB_Device::Check_RC_State()
     {
         if(!rc.data.using_kb_flag)
         {
-            g_arm.arm_chassis_cooperate_flag = false;
 #if CHASSIS_POSITION_CONTROL_TEST
             g_robot.chassis->position.x += rc.data.left_rocker.y;
             g_robot.chassis->position.y -= rc.data.left_rocker.x;
             g_robot.chassis->pos_yaw_angle += -rc.data.right_rocker.x * 0.3f;
 #else
-            if(g_chassis.control_type == POSITION)
+            if(g_robot.control_mode == RC_KB_CONTROL)
             {
-                g_chassis.control_type = SPEED;
+                g_arm.arm_chassis_cooperate_flag = false;
+                if(g_chassis.control_type == POSITION)
+                {
+                    g_chassis.control_type = SPEED;
+                }
+                g_robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.3f);
             }
-            g_robot.RC_Set_Chassis_Vel(rc.data.left_rocker.y,-rc.data.left_rocker.x,-rc.data.right_rocker.x * 0.3f);
 #endif
         }
     }

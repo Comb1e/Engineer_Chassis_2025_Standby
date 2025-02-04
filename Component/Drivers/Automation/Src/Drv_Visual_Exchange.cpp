@@ -4,45 +4,12 @@
 
 #include "Drv_Visual_Exchange.h"
 
-void Robot_Device::Update_Visual_Exchange()
-{
-    /*if(this->usb->rx_exchanging_flag)
-    {
-        this->control_mode = VISUAL_CONTROL;
-    }
-    else
-    {
-        this->control_mode == RC_KB_CONTROL;
-        return;
-    }*/
-    if(this->control_mode == VISUAL_CONTROL)
-    {
-        if(this->usb->controllable_flag && this->usb->exchanging_flag)
-        {
-            while(!this->usb->effector_useful_flag)
-            {
-                /*if(!this->usb->rx_exchanging_flag)
-                {
-                    this->control_mode == RC_KB_CONTROL;
-                    return;
-                }*/
-                osDelay(1);
-            }
-            if(!this->Check_Visual_Control())
-            {
-                return;
-            }
-            this->Visual_To_Arm_Control();
-        }
-    }
-}
-
 bool Robot_Device::Check_Visual_Control()
 {
     return (this->control_mode == VISUAL_CONTROL);
 }
 
-void Robot_Device::Visual_To_Arm_Control()
+void Robot_Device::Exchange_Before_Getting_In()
 {
     /*if(this->usb->ore_to_target_pose.z < Z_TOTAL_MAX - 20.0f)
     {
@@ -55,27 +22,26 @@ void Robot_Device::Visual_To_Arm_Control()
         this->g_arm->Wait_For_Moving();
     }*/
     
-    debug++;
+    debug = 1000;
 
     this->arm->Add_Point_Target_Pos_Vel(X,150.0f,0.2f);
-    if(this->usb->getting_in_flag)
-    {
-        this->arm->Add_Point_Target_Pos_Vel(X,MAX((OFFSET_LENGTH - 15.0f) * this->usb->ore_to_target_eigen_pose.rotation_matrix(0,0),0.0f),0.1f);
-        this->arm->Add_Point_Target_Pos_Vel(Y,OFFSET_LENGTH * this->usb->ore_to_target_eigen_pose.rotation_matrix(1,0),0.1f);
-        this->arm->Add_Point_Target_Pos_Vel(Z,OFFSET_LENGTH * this->usb->ore_to_target_eigen_pose.rotation_matrix(2,0),0.1f);
-        this->arm->Wait_For_Moving();
 
-        this->End_Exchange();
-    }
-
-    this->Filt_RYP();
+    //this->Filt_RYP();
+    this->arm->Add_Point_Target_Pos_Vel(ROLL,this->usb->ore_to_target_pose.roll,0.1f);
+    this->arm->Add_Point_Target_Pos_Vel(YAW,this->usb->ore_to_target_pose.yaw,0.1f);
+    this->arm->Add_Point_Target_Pos_Vel(PITCH,this->usb->ore_to_target_pose.pitch,0.1f);
+    this->arm->Wait_For_Moving();
 
     while(this->usb->xy_move)
     {
+        if(!this->usb->exchanging_flag)
+        {
+            return;
+        }
         this->usb->xy_move = false;
         if(this->usb->ore_to_target_pose.x > 200.0f)
         {
-            this->RC_Set_Chassis_Vel_X(0.1f);
+            this->RC_Set_Chassis_Vel_X(0.08f);
             this->usb->xy_move = true;
         }
         else
@@ -83,53 +49,70 @@ void Robot_Device::Visual_To_Arm_Control()
             this->RC_Set_Chassis_Vel_X(0.0f);
         }
 
-        if(this->arm->fb_current_data.sucker_yaw_deg >= 0.0f)
+        if(this->usb->ore_to_target_pose.y > 60.0f)
         {
-            if(this->usb->ore_to_target_pose.y < 0.0f)
-            {
-                this->RC_Set_Chassis_Vel_Y(0.1f);
-                this->usb->xy_move = true;
-            }
-            else
-            {
-                this->RC_Set_Chassis_Vel_Y(0.0f);
-            }
+            this->RC_Set_Chassis_Vel_Y(0.17f);
+            this->usb->xy_move = true;
         }
-        else if(this->arm->fb_current_data.sucker_yaw_deg < 0.0f)
+        else if(this->usb->ore_to_target_pose.y < -60.0f)
         {
-            if(this->usb->ore_to_target_pose.y > 0.0f)
-            {
-                this->RC_Set_Chassis_Vel_Y(-0.1f);
-                this->usb->xy_move = true;
-            }
-            else
-            {
-                this->RC_Set_Chassis_Vel_Y(0.0f);
-            }
+            this->RC_Set_Chassis_Vel_Y(-0.17f);
+            this->usb->xy_move = true;
+        }
+        else
+        {
+            this->RC_Set_Chassis_Vel_Y(0.0f);
         }
 
         this->RC_Set_Chassis_Vel_Spin(0.0f);
+        osDelay(1);
+    }
+    this->usb->xy_move = true;
+    if(this->usb->camera_to_target_pose.yaw > 0.0f)
+    {
+        this->RC_Set_Chassis_Vel_Y(-0.17f);
+        osDelay(100);
+        this->RC_Set_Chassis_Vel_Y(0.0f);
+    }
+    else if(this->usb->camera_to_target_pose.yaw < 0.0f)
+    {
+        this->RC_Set_Chassis_Vel_Y(0.17f);
+        osDelay(100);
+        this->RC_Set_Chassis_Vel_Y(0.0f);
+    }
+
+    this->arm->Set_Point_Target_Pos_Vel(Z,this->arm->max_limit[Z],0.15f);
+    while(!this->usb->z_ready)
+    {
         if(!this->usb->exchanging_flag)
         {
             return;
         }
+        if(ABS(this->usb->ore_to_target_pose.z) < 5.0f)
+        {
+            this->arm->Set_Point_Posture(Z,this->arm->fb_current_data.z);
+            this->usb->z_ready = true;
+        }
         osDelay(1);
     }
-    this->usb->xy_move = true;
+    this->usb->z_ready = false;
 
-    this->arm->Set_Point_Target_Pos_Vel(X,this->arm->max_limit[X],0.3f);
+    this->arm->Set_Point_Target_Pos_Vel(X,this->arm->max_limit[X],0.15f);
     if(this->usb->ore_to_target_pose.y > 0.0f)
     {
-        this->arm->Set_Point_Target_Pos_Vel(Y,this->arm->max_limit[Y],0.3f);
+        this->arm->Set_Point_Target_Pos_Vel(Y,this->arm->max_limit[Y],0.15f);
     }
     else
     {
-        this->arm->Set_Point_Target_Pos_Vel(Y,this->arm->min_limit[Y],0.3f);
+        this->arm->Set_Point_Target_Pos_Vel(Y,this->arm->min_limit[Y],0.15f);
     }
-    this->arm->Set_Point_Target_Pos_Vel(Z,this->arm->max_limit[Z],0.3f);
-    while(!this->usb->xyz_ready)
+    while(!this->usb->xy_ready)
     {
-        this->usb->xyz_ready = true;
+        if(!this->usb->exchanging_flag)
+        {
+            return;
+        }
+        this->usb->xy_ready = true;
         if(ABS(this->usb->ore_to_target_pose.x) < 5.0f && !this->usb->x_ready)
         {
             this->arm->Set_Point_Posture(X,this->arm->fb_current_data.x);
@@ -139,10 +122,10 @@ void Robot_Device::Visual_To_Arm_Control()
         {
             if(!this->usb->x_ready)
             {
-                this->usb->xyz_ready = false;
+                this->usb->xy_ready = false;
             }
         }
-        if(ABS(this->usb->ore_to_target_pose.y) < 5.0f && !this->usb->y_ready)
+        if(ABS(this->usb->ore_to_target_pose.y) < 30.0f && !this->usb->y_ready)
         {
             this->arm->Set_Point_Posture(Y,this->arm->fb_current_data.y);
             this->usb->y_ready = true;
@@ -151,67 +134,41 @@ void Robot_Device::Visual_To_Arm_Control()
         {
             if(!this->usb->y_ready)
             {
-                this->usb->xyz_ready = false;
+                this->usb->xy_ready = false;
             }
         }
-        if(ABS(this->usb->ore_to_target_pose.z) < 5.0f && !this->usb->z_ready)
-        {
-            this->arm->Set_Point_Posture(Z,this->arm->fb_current_data.z);
-            this->usb->z_ready = true;
-        }
-        else
-        {
-            if(!this->usb->z_ready)
-            {
-                this->usb->xyz_ready = false;
-            }
-        }
-        if(!this->usb->exchanging_flag)
-        {
-            return;
-        }
-        debug++;
-        osDelay(1);
     }
-    this->usb->xyz_ready = false;
+    this->usb->xy_ready = false;
     this->usb->x_ready = false;
     this->usb->y_ready = false;
-    this->usb->z_ready = false;
 
-    this->usb->filter_cnt = 0;
-    while(this->usb->filter_cnt <= 5)
+    this->arm->Add_Point_Target_Pos_Vel(ROLL,this->usb->ore_to_target_pose.roll,0.1f);
+    this->arm->Add_Point_Target_Pos_Vel(YAW,this->usb->ore_to_target_pose.yaw,0.1f);
+    this->arm->Add_Point_Target_Pos_Vel(PITCH,this->usb->ore_to_target_pose.pitch,0.1f);
+    this->arm->Wait_For_Moving();
+    //this->Filt_RYP();
+
+    this->Filt_XYZ();
+}
+
+void Robot_Device::Exchange_Getting_In()
+{
+    for(int i=0;i<6;i++)
     {
-        this->usb->filter_pose.x += this->usb->ore_to_target_pose.x;
-        this->usb->filter_pose.y += this->usb->ore_to_target_pose.y;
-        this->usb->filter_pose.z += this->usb->ore_to_target_pose.z;
         if(!this->usb->exchanging_flag)
         {
             return;
         }
-        osDelay(10);
+        this->arm->Sucker_Dir_Move(OFFSET_LENGTH / 6.0f,0.2f);
+        this->arm->Wait_For_Moving();
     }
-    this->usb->filter_cnt = 0;
-    this->usb->filter_pose.x /= 5.0f;
-    this->usb->filter_pose.y /= 5.0f;
-    this->usb->filter_pose.z /= 5.0f;
-
-    this->arm->Add_Point_Target_Pos_Vel(X,this->usb->filter_pose.x + 25.0f,0.2f);
-    this->arm->Add_Point_Target_Pos_Vel(Y,this->usb->filter_pose.y,0.2f);
-    this->arm->Add_Point_Target_Pos_Vel(Z,this->usb->filter_pose.z + 20.0f,0.2f);
-    this->arm->Wait_For_Moving();
-    this->usb->filter_pose.x = 0.0f;
-    this->usb->filter_pose.y = 0.0f;
-    this->usb->filter_pose.z = 0.0f;
-
-    this->Filt_RYP();
-
-    this->usb->getting_in_flag = true;
 }
+
 
 void Robot_Device::Filt_RYP()
 {
     this->usb->filter_cnt = 0;
-    while(this->usb->filter_cnt <= 5)
+    while(this->usb->filter_cnt <= 10)
     {
         this->usb->filter_pose.yaw += this->usb->ore_to_target_pose.yaw;
         this->usb->filter_pose.pitch += this->usb->ore_to_target_pose.pitch;
@@ -220,11 +177,11 @@ void Robot_Device::Filt_RYP()
         {
             return;
         }
-        osDelay(10);
+        osDelay(40);
     }
-    this->usb->filter_pose.yaw /= 5.0f;
-    this->usb->filter_pose.pitch /= 5.0f;
-    this->usb->filter_pose.roll /= 5.0f;
+    this->usb->filter_pose.yaw /= 10.0f;
+    this->usb->filter_pose.pitch /= 10.0f;
+    this->usb->filter_pose.roll /= 10.0f;
     this->arm->Add_Point_Target_Pos_Vel(ROLL,this->usb->filter_pose.roll,0.1f);
     this->arm->Add_Point_Target_Pos_Vel(YAW,this->usb->filter_pose.yaw,0.1f);
     this->arm->Add_Point_Target_Pos_Vel(PITCH,this->usb->filter_pose.pitch,0.1f);
@@ -233,6 +190,34 @@ void Robot_Device::Filt_RYP()
     this->usb->filter_pose.yaw = 0;
     this->usb->filter_pose.pitch = 0;
     this->usb->filter_pose.roll = 0;
+}
+
+void Robot_Device::Filt_XYZ()
+{
+    this->usb->filter_cnt = 0;
+    while(this->usb->filter_cnt <= 50)
+    {
+        this->usb->filter_pose.x += this->usb->ore_to_target_pose.x;
+        this->usb->filter_pose.y += this->usb->ore_to_target_pose.y;
+        this->usb->filter_pose.z += this->usb->ore_to_target_pose.z;
+        if(!this->usb->exchanging_flag)
+        {
+            return;
+        }
+        osDelay(40);
+    }
+    this->usb->filter_cnt = 0;
+    this->usb->filter_pose.x /= 50.0f;
+    this->usb->filter_pose.y /= 50.0f;
+    this->usb->filter_pose.z /= 50.0f;
+    this->arm->Add_Point_Target_Pos_Vel(X,this->usb->filter_pose.x,0.2f);
+    this->arm->Add_Point_Target_Pos_Vel(Y,this->usb->filter_pose.y,0.2f);
+    this->arm->Add_Point_Target_Pos_Vel(Z,this->usb->filter_pose.z,0.2f);
+    this->arm->Wait_For_Moving();
+
+    this->usb->filter_pose.x = 0.0f;
+    this->usb->filter_pose.y = 0.0f;
+    this->usb->filter_pose.z = 0.0f;
 }
 
 

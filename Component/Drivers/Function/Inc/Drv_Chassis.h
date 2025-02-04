@@ -56,10 +56,10 @@ extern "C"
 
 #define CHASSIS_POWER_LIMIT     (24 * 10)
 
-#define WHEEL0_CONTROL_PID_LOC 0.075f,0.001f,0.0f,0.1f,0.0f,false
-#define WHEEL1_CONTROL_PID_LOC 0.075f,0.001f,0.0f,0.1f,0.0f,false
-#define WHEEL2_CONTROL_PID_LOC 0.075f,0.001f,0.0f,0.1f,0.0f,false
-#define WHEEL3_CONTROL_PID_LOC 0.075f,0.001f,0.0f,0.1f,0.0f,false
+#define WHEEL0_CONTROL_PID_LOC 0.07f,0.01f,0.0f,0.2f,0.0f,false
+#define WHEEL1_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.2f,0.0f,false
+#define WHEEL2_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.2f,0.0f,false
+#define WHEEL3_CONTROL_PID_LOC 0.09f,0.01f,0.0f,0.2f,0.0f,false
 
 typedef enum
 {
@@ -174,7 +174,6 @@ public:
     uint32_t arm_need_cnt;
 
     can_device_t tof_can;
-    tof_rx_data_t tof_rx_data;
 
     float wheel_loc_error_min;
 

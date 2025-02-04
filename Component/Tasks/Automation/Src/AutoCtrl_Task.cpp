@@ -6,7 +6,9 @@
 #include "Drv_Robot.h"
 
 bool reset_flag = false;
+bool sucker_dir_move_flag = false;
 bool auto_exchange_flag = false;
+bool arm_move_flag = false;
 void AutoCtrl_Task(void *argument)
 {
     osDelay(2000);
@@ -18,7 +20,6 @@ void AutoCtrl_Task(void *argument)
         g_robot.Check_Rot();
         g_robot.Check_Death();
         g_robot.Check_Error();
-        g_robot.Update_Visual_Exchange();
 
         if(reset_flag)
         {
@@ -29,7 +30,25 @@ void AutoCtrl_Task(void *argument)
         if(auto_exchange_flag)
         {
             auto_exchange_flag = false;
-            g_robot.CreatTask_Auto_Exchange();
+            g_robot.Exchange_Before_Getting_In();
+            g_robot.Exchange_Getting_In();
+
+            g_robot.End_Exchange();
+        }
+
+        if(sucker_dir_move_flag)
+        {
+            g_robot.arm->Sucker_Dir_Move(200.0f,0.2f);
+            sucker_dir_move_flag = false;
+        }
+
+        if(arm_move_flag)
+        {
+            g_robot.arm->Add_Point_Target_Pos_Vel(X,g_robot.usb->ore_to_target_pose.x,0.5f);
+            g_robot.arm->Add_Point_Target_Pos_Vel(Y,g_robot.usb->ore_to_target_pose.y,0.5f);
+            //g_robot.arm->Add_Point_Target_Pos_Vel(Z,g_robot.usb->ore_to_target_pose.z,0.5f);
+
+            arm_move_flag = false;
         }
 
         osDelay(2);

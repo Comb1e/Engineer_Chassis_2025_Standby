@@ -23,7 +23,7 @@ AutoGroundMine_Attributes({.name = "autoGroundMine", .stack_size = 128 *4, .prio
     this->kb_control_mode = STEER_MODE;
     this->autoSituation = Auto_None;
     this->autoStatus = AutoOK;
-    this->big_island_dir = CENTER;
+    this->big_island_dir = RIGHT;
     this->cancel_flag = false;
     this->select_center_flag = false;
     this->select_left_flag = false;

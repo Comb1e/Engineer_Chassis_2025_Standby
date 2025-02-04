@@ -51,13 +51,15 @@ void Robot_Device::SmallIsland_Or_GroundMine_Touching()
     {
         osDelay(1);
     }
-    this->arm->Set_FeedBack_As_Target();
+    this->arm->Set_Point_Posture(Z,this->arm->fb_current_data.z);
 }
 
 void Robot_Device::SmallIsland_Or_GroundMine_Pre_Back()
 {
-    this->arm->Set_Point_Target_Pos_Vel(X,GROUND_MINE_PRE_BACK_POSITION_X,GROUND_MINE_PRE_BACK_POSITION_XYZ_VEL);
     this->arm->Set_Point_Target_Pos_Vel(Z,GROUND_MINE_PRE_BACK_POSITION_Z,GROUND_MINE_PRE_BACK_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
+
+    this->arm->Set_Point_Target_Pos_Vel(X,GROUND_MINE_PRE_BACK_POSITION_X,GROUND_MINE_PRE_BACK_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
 
     this->arm->Set_Point_Target_Pos_Vel(YAW,GROUND_MINE_PRE_BACK_POSITION_YAW,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);

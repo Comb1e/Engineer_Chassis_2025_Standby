@@ -18,10 +18,10 @@ __NO_RETURN void Auto_BigIsland_Task(void *argument)
     g_robot.BigIsland_Touching();
     g_robot.BigIsland_Adjust_1();
     g_robot.BigIsland_2();
-    g_robot.BigIsland_Adjust_2();
-    g_robot.BigIsland_3();
+    //g_robot.BigIsland_Adjust_2();
+    //g_robot.BigIsland_3();
     g_robot.BigIsland_Pre_Back();
-    g_robot.Back_With_Ore();
+    //g_robot.Back_With_Ore();
     g_robot.BigIsland_Exit();
 
     osThreadExit();

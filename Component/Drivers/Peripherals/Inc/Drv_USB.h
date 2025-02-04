@@ -13,7 +13,7 @@ extern "C"
 #include "Global_CFG.h"
 #include "usb_device.h"
 
-#define USB_CONTROL_CYCLE    (10U)//单位是ms
+#define USB_CONTROL_CYCLE    (40U)//单位是ms
 
 #define USB_INFO_RX_BUF_NUM         (4*6 +4)
 #define USB_INFO_TX_BUF_NUM         (7)
@@ -28,12 +28,12 @@ extern "C"
 #define GRAVITY_COMPENSATION (0.0f)
 #define GRAVITY_ORE_PITCH_COMPENSATION (0.0f / 180.0f * PI)
 
-#define OFFSET_LENGTH (320.0f)
+#define OFFSET_LENGTH (230.0f)
 #define PRE_EXCHANGE_LENGTH (2 * ORE_LENGTH + 80.0f)
 
-#define CAMERA_OFFSET_X (10.0f)
-#define CAMERA_OFFSET_Y (80.0f)
-#define CAMERA_OFFSET_Z (700.0f)
+#define CAMERA_OFFSET_X (-90.0f)
+#define CAMERA_OFFSET_Y (70.0f)
+#define CAMERA_OFFSET_Z (720.0f)
 
 #pragma pack(1)
 typedef struct
@@ -109,30 +109,31 @@ public:
     bool rx_exchanging_flag;
     bool rx_controllable_flag;
     bool xy_move;
-    bool xyz_ready;
+    bool xy_ready;
     bool x_ready;
     bool y_ready;
     bool z_ready;
+
+    bool ore_down_flag;
+    bool judge_ore_down_flag;
 
     usb_rx_data_t rx_raw_data;
     usb_tx_data_u tx_data;
 
     float camera_yaw;
-
-    float xyz_p;
-    float ryp_p;
-    float xyz_delta_dist;
-    float ryp_delta_angle;
+    uint8_t ore_down_cnt;
 
     Eigen::Matrix3f gravity_compensation_rotation_matrix;
     Eigen::Vector3f IMTR_to_camera_basic_vector;//IMTR指图传
     Eigen::Vector3f IMTR_to_camera_vector;//IMTR指图传
+    Eigen::Vector3f ore_getting_in_offset;
 
     eigen_pose_t chassis_to_camera_eigen_pose;
     eigen_pose_t camera_to_target_eigen_pose;
     eigen_pose_t chassis_to_target_eigen_pose;
-    eigen_pose_t ore_to_chassis_eigen_pose;
+    eigen_pose_t chassis_to_sucker_eigen_pose;
     eigen_pose_t ore_to_target_eigen_pose;
+    eigen_pose_t chassis_to_ore_eigen_pose;
 
     pose_t camera_to_target_pose;
     pose_t chassis_to_target_pose;

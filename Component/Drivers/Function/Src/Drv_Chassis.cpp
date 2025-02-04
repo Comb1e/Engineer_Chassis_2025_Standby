@@ -31,7 +31,7 @@ Chassis_Device::Chassis_Device()
     this->rot_flag = false;
     this->need_flag = true;
 #if VISUAL_CONTROL_TEST
-    this->wheel_loc_error_min = 1.0f;
+    this->wheel_loc_error_min = 1.2f;
 #else
     this->wheel_loc_error_min = 0.2f;
 #endif
@@ -56,15 +56,15 @@ void Chassis_Device::Init()
     this->wheel[CHASSIS_MOTOR_RB_NUM].pid_loc.Init(WHEEL2_CONTROL_PID_LOC);
     this->wheel[CHASSIS_MOTOR_RF_NUM].pid_loc.Init(WHEEL3_CONTROL_PID_LOC);
 
-    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.0f, 0.005f, 0.0f,0.95f,0.0f,true);
-    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.0f, 0.005f, 0.0f,0.95f,0.0f,true);
-    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.0f, 0.005f, 0.0f,0.95f,0.0f,true);
-    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.0f, 0.005f, 0.0f,0.95f,0.0f,true);
+    this->wheel[CHASSIS_MOTOR_LF_NUM].pid_vel.Init(5.0f, 0.01f, 0.0f,0.95f,0.0f,true);
+    this->wheel[CHASSIS_MOTOR_LB_NUM].pid_vel.Init(5.0f, 0.01f, 0.0f,0.95f,0.0f,true);
+    this->wheel[CHASSIS_MOTOR_RB_NUM].pid_vel.Init(5.0f, 0.01f, 0.0f,0.95f,0.0f,true);
+    this->wheel[CHASSIS_MOTOR_RF_NUM].pid_vel.Init(5.0f, 0.01f, 0.0f,0.95f,0.0f,true);
 
     Slope_Speed_Init(&this->kb_vel_x,0, 0.005f, 0.005f, 0.5f, 0);
     Slope_Speed_Init(&this->kb_vel_y,0, 0.005f, 0.005f, 0.5f, 0);
 
-    this->pid_rot.Init(0.7,10,8,5,4,0,0,0);
+    this->pid_rot.Init(0.7,10,7.2,5,4,0,0,0);
 
     this->Power_Control_Data_Init();
 }
@@ -179,7 +179,7 @@ __RAM_FUNC void Chassis_Device::Update_Speed_Control()
         this->Set_Vel_Spin(this->set_vel.spin);
     }
 
-    this->Set_Vel_Y(this->set_vel.y + this->align_data.set_vel.y);
+    this->Set_Vel_Y(this->set_vel.y);
 
     Chassis_Motor_Solver_Set(this->wheel,this->set_vel.x,this->set_vel.y,this->set_vel.spin,vel_max);
     this->Power_Control_Update();

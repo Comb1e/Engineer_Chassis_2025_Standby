@@ -214,8 +214,6 @@ public:
 
 /*----------Visual_Control----------*/
     bool Check_Visual_Control();
-    void Update_Visual_Exchange();
-    void Visual_To_Arm_Control();
     void Open_Visual_Control();
     void Close_Visual_Control();
     void Set_Arm_To_Exchange_Initial(pose_t pose);
@@ -256,6 +254,9 @@ public:
     void Arm_Take_Ore_From_Left_Sucker();
     void Arm_Take_Ore_From_Right_Sucker();
     void Filt_RYP();
+    void Filt_XYZ();
+    void Exchange_Before_Getting_In();
+    void Exchange_Getting_In();
     void End_Exchange();
 //Drv_AutoBigIsland
     direction_need_e big_island_dir;
