@@ -22,7 +22,7 @@ extern "C"
 #define BIG_ISLAND_PRE_POSITION_Y_CENTER                   (70.0f)
 #define BIG_ISLAND_PRE_POSITION_Y_LEFT                   (60.0f)
 #define BIG_ISLAND_PRE_POSITION_Y_RIGHT                   (60.0f)
-#define BIG_ISLAND_PRE_POSITION_Z                   (40.0f)
+#define BIG_ISLAND_PRE_POSITION_Z                   (20.0f)
 #define BIG_ISLAND_PRE_POSITION_ROLL                (0.0f)
 #define BIG_ISLAND_PRE_POSITION_PITCH               (0.0f)
 #define BIG_ISLAND_PRE_POSITION_ARM_PITCH               (0.0f)
@@ -44,11 +44,11 @@ extern "C"
 
 /*----------Touching----------*/
 #define BIG_ISLAND_TOUCHING_DELTA_DISTANCE                       (1.0f)
-#define BIG_ISLAND_TOUCHING_VEL                            (0.2f)
+#define BIG_ISLAND_TOUCHING_VEL                            (0.3f)
 
 /*----------ADJUST_1----------*/
 #define BIG_ISLAND_ADJUST_1_PITCH                       (-12.0f)
-#define BIG_ISLAND_ADJUST_1_Z                           (104.0f)
+#define BIG_ISLAND_ADJUST_1_Z                           (84.0f)
 #define BIG_ISLAND_ADJUST_1_PITCH_VEl                   (0.15f)
 #define BIG_ISLAND_ADJUST_1_Z_VEl                           (1.0f)
 
@@ -59,7 +59,7 @@ extern "C"
 #define BIG_ISLAND_2_VEL                                 (1.0f)
 
 #define BIG_ISLAND_2_DELTA_DISTANCE                       (-1.0f)
-#define BIG_ISLAND_2_VEL                            (0.2f)
+#define BIG_ISLAND_2_DELTA_VEL                            (0.5f)
 
 /*----------ADJUST_2----------*/
 #define BIG_ISLAND_ADJUST_2_CENTER_YAW                       (0.0f)

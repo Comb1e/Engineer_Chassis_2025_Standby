@@ -27,10 +27,10 @@ void Chassis_Motor_Solver_Set(DJI_Motor_Device wheels[],float vel_x,float vel_y,
     }
     //逆时针
 
-    speeds[0] = (vel_x - vel_y - vel_spin * w);//define CHASSIS_MOTOR_LF    (0x201)
-    speeds[1] = (vel_x + vel_y - vel_spin * w);//define CHASSIS_MOTOR_LB    (0x202)
-    speeds[2] = (vel_x - vel_y + vel_spin * w);//define CHASSIS_MOTOR_RB    (0x203)
-    speeds[3] = (vel_x + vel_y + vel_spin * w);//define CHASSIS_MOTOR_RF    (0x204)
+    speeds[0] = (vel_x - vel_y - vel_spin * w);//CHASSIS_MOTOR_LF    (0x201)
+    speeds[1] = (vel_x + vel_y - vel_spin * w);//CHASSIS_MOTOR_LB    (0x202)
+    speeds[2] = (vel_x - vel_y + vel_spin * w);//CHASSIS_MOTOR_RB    (0x203)
+    speeds[3] = (vel_x + vel_y + vel_spin * w);//CHASSIS_MOTOR_RF    (0x204)
 
     for (float speed : speeds)
     {//取最大值

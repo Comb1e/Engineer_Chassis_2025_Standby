@@ -30,10 +30,7 @@ void AutoCtrl_Task(void *argument)
         if(auto_exchange_flag)
         {
             auto_exchange_flag = false;
-            g_robot.Exchange_Before_Getting_In();
-            g_robot.Exchange_Getting_In();
-
-            g_robot.End_Exchange();
+            g_robot.CreatTask_Auto_Exchange();
         }
 
         if(sucker_dir_move_flag)

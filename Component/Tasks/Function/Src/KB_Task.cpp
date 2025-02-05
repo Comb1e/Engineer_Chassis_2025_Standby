@@ -30,7 +30,6 @@ void KB_State_Task(void *argument)
                 g_absorb.Set_Sucker_Close(ARM_SUCKER);
             }
 #endif
-            continue;
         }
         osDelay(KB_CONTROL_CYCLE);
     }
@@ -45,10 +44,6 @@ void KB_Event_Task(void *argument)
             kb.Check_Mouse_Event();
             kb.Check_RC_Event();
             kb.Check_KB_Event();
-        }
-        else
-        {
-            continue;
         }
         osDelay(1);
     }

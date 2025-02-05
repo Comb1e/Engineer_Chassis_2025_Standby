@@ -15,8 +15,8 @@ extern "C"
 
 #define USB_CONTROL_CYCLE    (40U)//单位是ms
 
-#define USB_INFO_RX_BUF_NUM         (4*6 +4)
-#define USB_INFO_TX_BUF_NUM         (7)
+#define USB_INFO_RX_BUF_NUM         (4*12 +2)
+#define USB_INFO_TX_BUF_NUM         (2)
 
 #define FRAME_HEADER_0        (0X5A)
 #define FRAME_TAIL_0          (0X66)
@@ -39,14 +39,19 @@ extern "C"
 typedef struct
 {
     uint8_t head; //0x5A，固定头部
-    float x;
-    float y;
-    float z;
-    float yaw;
-    float pitch;
-    float roll;
-    uint8_t exchanging;
-    uint8_t controllable;
+    float target_x;
+    float target_y;
+    float target_z;
+    float target_yaw;
+    float target_pitch;
+    float target_roll;
+
+    float ore_x;
+    float ore_y;
+    float ore_z;
+    float ore_yaw;
+    float ore_pitch;
+    float ore_roll;
     uint8_t tail; //0x66 固定尾部
 }usb_rx_data_t;
 
@@ -56,9 +61,7 @@ typedef union
     struct
     {
         uint8_t head;//0x5a，固定头部
-        uint8_t exchanging;
-        uint8_t exchange_started;
-        uint8_t controllable;
+
         uint8_t tail;//0x66 固定尾部
     };
 }usb_tx_data_u;
@@ -127,11 +130,12 @@ public:
     eigen_pose_t chassis_to_camera_eigen_pose;
     eigen_pose_t camera_to_target_eigen_pose;
     eigen_pose_t chassis_to_target_eigen_pose;
-    eigen_pose_t chassis_to_sucker_eigen_pose;
     eigen_pose_t ore_to_target_eigen_pose;
     eigen_pose_t chassis_to_ore_eigen_pose;
 
+    pose_t visual_only_ore_to_target_pose;
     pose_t camera_to_target_pose;
+    pose_t camera_to_ore_pose;
     pose_t chassis_to_target_pose;
     pose_t ore_to_target_pose;
 

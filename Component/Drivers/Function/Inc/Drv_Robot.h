@@ -216,7 +216,6 @@ public:
     bool Check_Visual_Control();
     void Open_Visual_Control();
     void Close_Visual_Control();
-    void Set_Arm_To_Exchange_Initial(pose_t pose);
 
 /*----------Death----------*/
     bool death_flag;
@@ -253,9 +252,8 @@ public:
     void Arm_Take_Ore_From_Side_Sucker_To_Center();
     void Arm_Take_Ore_From_Left_Sucker();
     void Arm_Take_Ore_From_Right_Sucker();
-    void Filt_RYP();
-    void Filt_XYZ();
     void Exchange_Before_Getting_In();
+    void Exchange_Before_Getting_In_Adjust();
     void Exchange_Getting_In();
     void End_Exchange();
 //Drv_AutoBigIsland
@@ -270,8 +268,6 @@ public:
     void BigIsland_Touching();
     void BigIsland_Adjust_1();
     void BigIsland_2();
-    void BigIsland_Adjust_2();
-    void BigIsland_3();
     void BigIsland_Pre_Back();
     void BigIsland_Exit();
 //Drv_AutoSmallIsland_Or_GroundMine
@@ -284,6 +280,7 @@ public:
     void SmallIsland_Or_GroundMine_1();
     void SmallIsland_Or_GroundMine_Touching();
     void SmallIsland_Or_GroundMine_Pre_Back();
+    void SmallIsland_Or_GroundMine_Exit();
 
 //Drv_Back
     void Back_With_Ore();

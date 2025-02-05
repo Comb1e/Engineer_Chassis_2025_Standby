@@ -11,10 +11,10 @@ bool Robot_Device::Check_Visual_Control()
 
 void Robot_Device::Exchange_Before_Getting_In()
 {
-    this->arm->Add_Point_Target_Pos_Vel(X,150.0f,0.2f);
-    this->arm->Set_Point_Target_Pos_Vel(ROLL,this->usb->ore_to_target_pose.roll,0.1f);
-    this->arm->Set_Point_Target_Pos_Vel(YAW,this->usb->ore_to_target_pose.yaw,0.1f);
-    this->arm->Set_Point_Target_Pos_Vel(PITCH,this->usb->ore_to_target_pose.pitch,0.1f);
+    this->arm->Add_Point_Target_Pos_Vel(X,150.0f,VISUAL_EXCHANGE_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ROLL,this->usb->ore_to_target_pose.roll,VISUAL_EXCHANGE_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(YAW,this->usb->ore_to_target_pose.yaw,VISUAL_EXCHANGE_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,this->usb->ore_to_target_pose.pitch,VISUAL_EXCHANGE_RYP_VEL);
     this->arm->Wait_For_Moving();//将矿伸出来，rpy转到正确方向
 
     this->chassis->Arm_Need_Chassis_Move(this->usb->ore_to_target_pose.x - 200.0f,this->usb->ore_to_target_pose.y);
@@ -25,17 +25,25 @@ void Robot_Device::Exchange_Before_Getting_In()
     this->usb->xyz_filt_flag = true;
     osDelay(2000);//xz先动，等滤波
 
-    this->arm->Set_Point_Target_Pos_Vel(X,this->usb->ore_to_target_pose.x,0.2f);
-    this->arm->Set_Point_Target_Pos_Vel(Y,this->usb->ore_to_target_pose.y,0.2f);
-    this->arm->Set_Point_Target_Pos_Vel(Z,this->usb->ore_to_target_pose.z,0.2f);
+    this->arm->Set_Point_Target_Pos_Vel(X,this->usb->ore_to_target_pose.x,VISUAL_EXCHANGE_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Y,this->usb->ore_to_target_pose.y,VISUAL_EXCHANGE_XYZ_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(Z,this->usb->ore_to_target_pose.z,VISUAL_EXCHANGE_XYZ_VEL);
     this->arm->Wait_For_Moving();//xyz最后一次调整
     this->usb->xyz_filt_flag = false;
 
-    this->arm->Set_Point_Target_Pos_Vel(ROLL,this->usb->ore_to_target_pose.roll,0.1f);
-    this->arm->Set_Point_Target_Pos_Vel(YAW,this->usb->ore_to_target_pose.yaw,0.1f);
-    this->arm->Set_Point_Target_Pos_Vel(PITCH,this->usb->ore_to_target_pose.pitch,0.1f);
+    this->arm->Set_Point_Target_Pos_Vel(ROLL,this->usb->ore_to_target_pose.roll,VISUAL_EXCHANGE_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(YAW,this->usb->ore_to_target_pose.yaw,VISUAL_EXCHANGE_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,this->usb->ore_to_target_pose.pitch,VISUAL_EXCHANGE_RYP_VEL);
     this->arm->Wait_For_Moving();//ryp最后一次调整
 }
+
+void Robot_Device::Exchange_Before_Getting_In_Adjust()
+{
+    this->arm->Add_Point_Target_Pos_Vel(X,this->usb->visual_only_ore_to_target_pose.x,VISUAL_EXCHANGE_XYZ_VEL);
+    this->arm->Add_Point_Target_Pos_Vel(Y,this->usb->visual_only_ore_to_target_pose.y,VISUAL_EXCHANGE_XYZ_VEL);
+    this->arm->Add_Point_Target_Pos_Vel(Z,this->usb->visual_only_ore_to_target_pose.z,VISUAL_EXCHANGE_XYZ_VEL);
+}
+
 
 void Robot_Device::Exchange_Getting_In()
 {

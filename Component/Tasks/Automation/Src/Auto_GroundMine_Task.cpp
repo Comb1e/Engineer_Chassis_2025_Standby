@@ -21,9 +21,8 @@ void Auto_GroundMine_Task(void *argument)
 
     g_robot.SmallIsland_Or_GroundMine_Pre_Back();
     g_robot.Back_With_Ore();
+    g_robot.SmallIsland_Or_GroundMine_Exit();
 
-    g_robot.chassis->need_flag = true;
-    g_robot.Set_Auto_Situation(Auto_None);
     osThreadExit();
 }
 

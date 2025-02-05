@@ -14,6 +14,11 @@ void Robot_Device::Pre_For_Auto_SmallIsland_Or_GroundMine()
 
 void Robot_Device::SmallIsland_Or_GroundMine_Pre()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Set_Point_Target_Pos_Vel(PITCH,GROUND_MINE_PRE_POSITION_PITCH,GROUND_MINE_PRE_POSITION_RYP_VEL);
     this->arm->Set_Point_Target_Pos_Vel(ROLL,GROUND_MINE_PRE_POSITION_ROLL,GROUND_MINE_PRE_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
@@ -30,6 +35,11 @@ void Robot_Device::SmallIsland_Or_GroundMine_Pre()
 
 void Robot_Device::SmallIsland_Or_GroundMine_1()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Set_Point_Target_Pos_Vel(PITCH,GROUND_MINE_1_POSITION_PITCH,GROUND_MINE_1_POSITION_RYP_VEL);
     this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,GROUND_MINE_1_POSITION_ARM_PITCH,GROUND_MINE_1_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
@@ -41,6 +51,11 @@ void Robot_Device::SmallIsland_Or_GroundMine_1()
 
 void Robot_Device::SmallIsland_Or_GroundMine_Touching()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Set_Point_Target_Pos_Vel(YAW,GROUND_MINE_TOUCHING_POSITION_YAW,GROUND_MINE_PRE_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
 
@@ -56,6 +71,11 @@ void Robot_Device::SmallIsland_Or_GroundMine_Touching()
 
 void Robot_Device::SmallIsland_Or_GroundMine_Pre_Back()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Set_Point_Target_Pos_Vel(Z,GROUND_MINE_PRE_BACK_POSITION_Z,GROUND_MINE_PRE_BACK_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
 
@@ -76,3 +96,10 @@ void Robot_Device::SmallIsland_Or_GroundMine_Pre_Back()
         this->store_sucker = ARM_SUCKER;
     }
 }
+
+void Robot_Device::SmallIsland_Or_GroundMine_Exit()
+{
+    this->chassis->need_flag = true;
+    this->Set_Auto_Situation(Auto_None);
+}
+

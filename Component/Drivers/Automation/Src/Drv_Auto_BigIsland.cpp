@@ -22,6 +22,7 @@ void Robot_Device::Pre_For_Auto_BigIsland()
     }
 
     this->info->Set_Pose_Mode(concentric_double);
+    this->Set_Control_Mode(AUTO_CONTROL);
     //this->Keep_Apart(DISTANCE_FOR_CLAW);
 
     osDelay(3);
@@ -53,6 +54,11 @@ void Robot_Device::Select_Mine_Channel()
 
 void Robot_Device::BigIsland_Pre()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     if(this->big_island_dir == RIGHT)
     {
         this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,BIG_ISLAND_PRE_RIGHT_POSITION_ARM_YAW,BIG_ISLAND_PRE_POSITION_RYP_VEL);
@@ -85,6 +91,11 @@ void Robot_Device::BigIsland_Pre()
 
 void Robot_Device::BigIsland_1()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->absorb->Set_Sucker_Open(ARM_SUCKER);
 
     this->arm->Set_Point_Target_Pos_Vel(PITCH,BIG_ISLAND_1_PITCH,BIG_ISLAND_1_PITCH_VEl);
@@ -102,6 +113,11 @@ void Robot_Device::BigIsland_1()
 
     while(!this->arm->Check_All_Get_To_Final() && !this->absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
+        if(this->control_mode != AUTO_CONTROL)
+        {
+            return;
+        }
+
         osDelay(1);
     }
     this->arm->Set_FeedBack_As_Target();
@@ -109,17 +125,27 @@ void Robot_Device::BigIsland_1()
 
 void Robot_Device::BigIsland_Touching()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     if(this->absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
         return;
     }
 
-    this->arm->Arm_Yaw_Dir_Move(150.0f,BIG_ISLAND_TOUCHING_VEL);
+    this->arm->Arm_Yaw_Dir_Move(200.0f,BIG_ISLAND_TOUCHING_VEL);
     this->arm->Wait_For_Moving();
     while(!this->absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
+        if(this->control_mode != AUTO_CONTROL)
+        {
+            return;
+        }
+
         this->arm->Arm_Yaw_Dir_Move(BIG_ISLAND_TOUCHING_DELTA_DISTANCE,BIG_ISLAND_TOUCHING_VEL);
-        osDelay(20);
+        osDelay(25);
     }
     this->arm->Set_FeedBack_As_Target();
     this->absorb->Get_Ore_State()->Set_Ore_Source(BIG_ISLAND);
@@ -128,6 +154,11 @@ void Robot_Device::BigIsland_Touching()
 
 void Robot_Device::BigIsland_Adjust_1()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Set_Point_Target_Pos_Vel(PITCH,BIG_ISLAND_ADJUST_1_PITCH,BIG_ISLAND_ADJUST_1_PITCH_VEl);
     this->arm->Wait_For_Moving();
     this->arm->Set_Point_Target_Pos_Vel(Z,BIG_ISLAND_ADJUST_1_Z,BIG_ISLAND_ADJUST_1_Z_VEl);
@@ -136,6 +167,11 @@ void Robot_Device::BigIsland_Adjust_1()
 
 void Robot_Device::BigIsland_2()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     if(this->big_island_dir == CENTER)
     {
         this->arm->Arm_Yaw_Dir_Move(BIG_ISLAND_2_DISTANCE_CENTER,BIG_ISLAND_2_VEL);
@@ -148,55 +184,36 @@ void Robot_Device::BigIsland_2()
     uint32_t cnt = 0;
     while(cnt < 400)
     {
+        if(this->control_mode != AUTO_CONTROL)
+        {
+            return;
+        }
+
         cnt++;
         this->arm->Arm_Yaw_Dir_Move(BIG_ISLAND_2_DELTA_DISTANCE,BIG_ISLAND_2_VEL);
-        osDelay(15);
+        osDelay(5);
     }
     this->arm->Set_FeedBack_As_Target();
 }
 
-void Robot_Device::BigIsland_Adjust_2()
-{
-    if(this->big_island_dir == CENTER)
-    {
-        this->arm->Set_Point_Target_Pos_Vel(YAW,BIG_ISLAND_ADJUST_2_CENTER_YAW,BIG_ISLAND_ADJUST_2_YAW_VEl);
-    }
-    else if(this->big_island_dir == LEFT || this->big_island_dir == RIGHT)
-    {
-        this->arm->Set_Point_Target_Pos_Vel(YAW,BIG_ISLAND_ADJUST_2_LEFT_OR_RIGHT_YAW,BIG_ISLAND_ADJUST_2_YAW_VEl);
-    }
-    this->arm->Wait_For_Moving();
-}
-
-void Robot_Device::BigIsland_3()
-{
-    if(this->big_island_dir == CENTER)
-    {
-        this->arm->Arm_Yaw_Dir_Move(BIG_ISLAND_3_DISTANCE_CENTER_1,BIG_ISLAND_3_VEL_1);
-        this->arm->Wait_For_Moving();
-        this->arm->Arm_Yaw_Dir_Move(BIG_ISLAND_3_DISTANCE_CENTER_2,BIG_ISLAND_3_VEL_2);
-    }
-    else if(this->big_island_dir == LEFT || this->big_island_dir == RIGHT)
-    {
-        this->arm->Arm_Yaw_Dir_Move(BIG_ISLAND_3_DISTANCE_LEFT_OR_RIGHT_1,BIG_ISLAND_3_VEL_1);
-        this->arm->Wait_For_Moving();
-        this->arm->Arm_Yaw_Dir_Move(BIG_ISLAND_3_DISTANCE_LEFT_OR_RIGHT_2,BIG_ISLAND_3_VEL_2);
-    }
-    this->arm->Wait_For_Moving();
-}
-
 void Robot_Device::BigIsland_Pre_Back()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->info->Set_Pose_Mode(single);
 
     this->arm->Set_Point_Target_Pos_Vel(PITCH,BIG_ISLAND_PRE_BACK_PITCH,BIG_ISLAND_PRE_BACK_RYP_VEL);
     this->arm->Set_Point_Target_Pos_Vel(YAW,BIG_ISLAND_PRE_BACK_YAW,BIG_ISLAND_PRE_BACK_RYP_VEL);
     this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,BIG_ISLAND_PRE_BACK_ARM_YAW,BIG_ISLAND_PRE_BACK_RYP_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(Z,20.0f,1.0f);
-    this->arm->Set_Point_Target_Pos_Vel(Y,70.0f,1.0f);
+    this->arm->Set_Point_Target_Pos_Vel(Z,20.0f,0.8f);
     this->arm->Wait_For_Moving();
 
     this->arm->Clean_Control();
+    this->arm->Set_Point_Target_Pos_Vel(Y,70.0f,0.8f);
+    this->arm->Wait_For_Moving();
     //this->store_sucker = this->absorb->Find_To_Store();
     //if(this->store_sucker == ORE_STORE_FULL)
     //{
@@ -206,5 +223,6 @@ void Robot_Device::BigIsland_Pre_Back()
 
 void Robot_Device::BigIsland_Exit()
 {
-    g_robot.Set_Auto_Situation(Auto_None);
+    this->Set_Auto_Situation(Auto_None);
+    this->Set_Control_Mode(RC_KB_CONTROL);
 }

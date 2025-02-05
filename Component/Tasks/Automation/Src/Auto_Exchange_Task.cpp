@@ -18,14 +18,11 @@ __NO_RETURN void AutoExchange_Task(void *argument)
     g_robot.Arm_Take_Ore_From_Sucker();
     g_robot.Pre_For_Auto_Exchange();
 
-    osDelay(2000);
-    while(g_robot.usb->rx_exchanging_flag)
-    {
-        osDelay(1);
-    }
+    osDelay(1000);
 #endif
 
     g_robot.Exchange_Before_Getting_In();
+    g_robot.Exchange_Before_Getting_In_Adjust();
     g_robot.Exchange_Getting_In();
 
     g_robot.End_Exchange();
@@ -35,7 +32,7 @@ __NO_RETURN void AutoExchange_Task(void *argument)
 void Robot_Device::CreatTask_Auto_Exchange()
 {
     osThreadState_t state = osThreadGetState(this->AutoExchangeHandle);
-    if (this->enable_flag && this->autoSituation == Auto_None && (this->absorb->Get_Ore_Num() != 0))
+    if(this->enable_flag && this->autoSituation == Auto_None && (this->absorb->Get_Ore_Num() != 0))
     {
         taskENTER_CRITICAL();
         this->autoSituation = Exchange_Mine;

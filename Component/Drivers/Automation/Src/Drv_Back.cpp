@@ -7,6 +7,11 @@
 
 void Robot_Device::Arm_Back_Home()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Disable_Arm_Chassis_Cooperate();
     this->arm->Set_Point_Target_Pos_Vel(ROLL, BACK_HOME_POSITION_ROLL, BACK_HOME_POSITION_RYP_VEL);
     this->arm->Wait_For_Moving();
@@ -30,6 +35,11 @@ void Robot_Device::Arm_Back_Home()
 
 void Robot_Device::Back_To_Arm_Sucker()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Disable_Arm_Chassis_Cooperate();
 
     this->arm->Set_Point_Target_Pos_Vel(ROLL,ARM_SUCKER_POSITION_ROLL,ARM_SUCKER_POSITION_RYP_VEL);
@@ -53,6 +63,11 @@ void Robot_Device::Back_To_Arm_Sucker()
 
 void Robot_Device::Back_To_Left_Sucker(float x_offset)
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Disable_Arm_Chassis_Cooperate();
 
     this->arm->Set_Point_Target_Pos_Vel(X,LEFT_SUCKER_POSITION_PRE_X,SIDE_SUCKER_POSITION_XYZ_VEL);
@@ -88,6 +103,11 @@ void Robot_Device::Back_To_Left_Sucker(float x_offset)
 
 void Robot_Device::Back_To_Right_Sucker(float x_offset)
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->arm->Disable_Arm_Chassis_Cooperate();
 
     this->arm->Set_Point_Target_Pos_Vel(X,RIGHT_SUCKER_POSITION_PRE_X,SIDE_SUCKER_POSITION_XYZ_VEL);
@@ -124,6 +144,11 @@ void Robot_Device::Back_To_Right_Sucker(float x_offset)
 
 void Robot_Device::Back_To_Sucker()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     float x_offset = 0;
     switch (this->absorb->Get_Ore_State()->Get_Ore_Source())
     {
@@ -165,6 +190,11 @@ void Robot_Device::Back_To_Sucker()
 
 void Robot_Device::Back_With_Ore()
 {
+    if(this->control_mode != AUTO_CONTROL)
+    {
+        return;
+    }
+
     this->info->Set_Pose_Mode(single);
     this->arm->Disable_Arm_Chassis_Cooperate();
     osDelay(3);

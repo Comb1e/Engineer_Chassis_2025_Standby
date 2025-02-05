@@ -704,7 +704,7 @@ void Arm_Device::Wait_For_Moving()
     {
         while(!this->Check_All_Get_To_Final() || ABS(this->chassis_move_data.x) > 1.0f || ABS(this->chassis_move_data.y) > 1.0f)
         {
-            if (HAL_GetTick() > time + 8000)
+            if (HAL_GetTick() > time + 4000)
             {
                 break;
             }
