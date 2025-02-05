@@ -48,7 +48,6 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Function/Src/Absorb_Tas
  E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
  E:\RM\2025\Engineer_Chassis_Test\User\Inc/compilable.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Pump.h \
- E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Peripherals\Inc/Drv_Ore.h \
  E:\RM\2025\Engineer_Chassis_Test\Component/Global_CFG.h \
  E:\RM\2025\Engineer_Chassis_Test\Core\Inc/can.h \
  E:\RM\2025\Engineer_Chassis_Test\Core\Inc/main.h \

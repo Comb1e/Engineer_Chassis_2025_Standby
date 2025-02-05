@@ -7,7 +7,6 @@
 
 #include "BSP_CAN.h"
 #include "Drv_Pump.h"
-#include "Drv_Ore.h"
 
 #ifdef __cplusplus
 extern "C"
@@ -81,8 +80,6 @@ public:
 
     Pump_Device sucker[ORE_NUM_MAX];
 
-    Ore_Device holding_ore;
-
     bool lost_flag;
     bool ready_flag;
     bool enable_flag;
@@ -104,7 +101,6 @@ public:
     void Update_MSG();
     void Set_Sucker_Open(sucker_e sucker);
     void Set_Sucker_Close(sucker_e sucker);
-    Ore_Device* Get_Ore_State();
     uint8_t Get_Ore_Num() const;
     sucker_e Find_Ore();
     pump_state_e Get_Sucker_State(sucker_e sucker);

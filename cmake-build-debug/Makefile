@@ -357,30 +357,6 @@ Component/Algorithm/Src/PID.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/PID.cpp.s
 .PHONY : Component/Algorithm/Src/PID.cpp.s
 
-Component/Algorithm/Src/SPD_Plan.obj: Component/Algorithm/Src/SPD_Plan.c.obj
-.PHONY : Component/Algorithm/Src/SPD_Plan.obj
-
-# target to build an object file
-Component/Algorithm/Src/SPD_Plan.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.obj
-.PHONY : Component/Algorithm/Src/SPD_Plan.c.obj
-
-Component/Algorithm/Src/SPD_Plan.i: Component/Algorithm/Src/SPD_Plan.c.i
-.PHONY : Component/Algorithm/Src/SPD_Plan.i
-
-# target to preprocess a source file
-Component/Algorithm/Src/SPD_Plan.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.i
-.PHONY : Component/Algorithm/Src/SPD_Plan.c.i
-
-Component/Algorithm/Src/SPD_Plan.s: Component/Algorithm/Src/SPD_Plan.c.s
-.PHONY : Component/Algorithm/Src/SPD_Plan.s
-
-# target to generate assembly for a file
-Component/Algorithm/Src/SPD_Plan.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Algorithm/Src/SPD_Plan.c.s
-.PHONY : Component/Algorithm/Src/SPD_Plan.c.s
-
 Component/Drivers/Function/Src/Drv_Absorb.obj: Component/Drivers/Function/Src/Drv_Absorb.cpp.obj
 .PHONY : Component/Drivers/Function/Src/Drv_Absorb.obj
 
@@ -620,54 +596,6 @@ Component/Drivers/Peripherals/Src/Drv_HI229UM.s: Component/Drivers/Peripherals/S
 Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s
 .PHONY : Component/Drivers/Peripherals/Src/Drv_HI229UM.cpp.s
-
-Component/Drivers/Peripherals/Src/Drv_INA226.obj: Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.obj
-
-# target to build an object file
-Component/Drivers/Peripherals/Src/Drv_INA226.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.c.obj
-
-Component/Drivers/Peripherals/Src/Drv_INA226.i: Component/Drivers/Peripherals/Src/Drv_INA226.c.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.i
-
-# target to preprocess a source file
-Component/Drivers/Peripherals/Src/Drv_INA226.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.c.i
-
-Component/Drivers/Peripherals/Src/Drv_INA226.s: Component/Drivers/Peripherals/Src/Drv_INA226.c.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.s
-
-# target to generate assembly for a file
-Component/Drivers/Peripherals/Src/Drv_INA226.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_INA226.c.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_INA226.c.s
-
-Component/Drivers/Peripherals/Src/Drv_Ore.obj: Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.obj
-
-# target to build an object file
-Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.cpp.obj
-
-Component/Drivers/Peripherals/Src/Drv_Ore.i: Component/Drivers/Peripherals/Src/Drv_Ore.cpp.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.i
-
-# target to preprocess a source file
-Component/Drivers/Peripherals/Src/Drv_Ore.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.i
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.cpp.i
-
-Component/Drivers/Peripherals/Src/Drv_Ore.s: Component/Drivers/Peripherals/Src/Drv_Ore.cpp.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.s
-
-# target to generate assembly for a file
-Component/Drivers/Peripherals/Src/Drv_Ore.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Engineer_Chassis_2025.elf.dir\build.make CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_Ore.cpp.s
-.PHONY : Component/Drivers/Peripherals/Src/Drv_Ore.cpp.s
 
 Component/Drivers/Peripherals/Src/Drv_ServoCtrl.obj: Component/Drivers/Peripherals/Src/Drv_ServoCtrl.cpp.obj
 .PHONY : Component/Drivers/Peripherals/Src/Drv_ServoCtrl.obj
@@ -2250,9 +2178,6 @@ help:
 	@echo ... Component/Algorithm/Src/PID.obj
 	@echo ... Component/Algorithm/Src/PID.i
 	@echo ... Component/Algorithm/Src/PID.s
-	@echo ... Component/Algorithm/Src/SPD_Plan.obj
-	@echo ... Component/Algorithm/Src/SPD_Plan.i
-	@echo ... Component/Algorithm/Src/SPD_Plan.s
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.obj
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.i
 	@echo ... Component/Drivers/Function/Src/Drv_Absorb.s
@@ -2283,12 +2208,6 @@ help:
 	@echo ... Component/Drivers/Peripherals/Src/Drv_HI229UM.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_HI229UM.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_HI229UM.s
-	@echo ... Component/Drivers/Peripherals/Src/Drv_INA226.obj
-	@echo ... Component/Drivers/Peripherals/Src/Drv_INA226.i
-	@echo ... Component/Drivers/Peripherals/Src/Drv_INA226.s
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Ore.obj
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Ore.i
-	@echo ... Component/Drivers/Peripherals/Src/Drv_Ore.s
 	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.obj
 	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.i
 	@echo ... Component/Drivers/Peripherals/Src/Drv_ServoCtrl.s

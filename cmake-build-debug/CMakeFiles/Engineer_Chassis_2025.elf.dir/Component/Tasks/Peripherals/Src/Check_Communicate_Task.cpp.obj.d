@@ -90,12 +90,10 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Tasks/Peripherals/Src/Check_C
  E:\RM\2025\Engineer_Chassis_Test\Middlewares\Third_Party\FreeRTOS\Source\CMSIS_RTOS_V2/cmsis_os2.h \
  E:\RM\2025\Engineer_Chassis_Test\User\Inc/compilable.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Pump.h \
- E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Peripherals\Inc/Drv_Ore.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Communication.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Chassis.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Peripherals\Inc/Drv_DJI_Motor.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Algorithm\Inc/PID.h \
- E:\RM\2025\Engineer_Chassis_Test\Component\Algorithm\Inc/SPD_Plan.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Absorb.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Gimbal.h \
  E:\RM\2025\Engineer_Chassis_Test\Component\Drivers\Function\Inc/Drv_Reset.h \

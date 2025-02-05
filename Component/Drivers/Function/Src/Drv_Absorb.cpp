@@ -14,8 +14,7 @@ Absorb_Device::Absorb_Device():
         Pump_Device(LEFT_SUCKER_BLOCK_CURRENT_MIN,LEFT_SUCKER_BLOCK_CURRENT_MAX),
         Pump_Device(RIGHT_SUCKER_BLOCK_CURRENT_MIN,RIGHT_SUCKER_BLOCK_CURRENT_MAX),
         Pump_Device(ARM_SUCKER_BLOCK_CURRENT_MIN,ARM_SUCKER_BLOCK_CURRENT_MAX),
-    },
-    holding_ore(NONE)
+    }
 {
     this->ore_num = 0;
     this->lost_flag = true;
@@ -109,15 +108,6 @@ void Absorb_Device::Set_Sucker_Close(sucker_e sucker)
 {
     this->sucker[sucker].Set_Close();
     this->sucker[sucker].enable_flag = true;
-    if(sucker == ARM_SUCKER)
-    {
-        this->holding_ore.Set_Ore_Source(NONE);
-    }
-}
-
-Ore_Device* Absorb_Device::Get_Ore_State()
-{
-    return &this->holding_ore;
 }
 
 uint8_t Absorb_Device::Get_Ore_Num() const
