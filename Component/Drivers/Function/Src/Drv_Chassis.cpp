@@ -20,6 +20,7 @@ Chassis_Device::Chassis_Device()
     this->zero_offset_flag = false;
     this->tof_lost_flag = true;
     this->is_vel_control_flag = true;
+    this->gyro_reset_flag = false;
 #if ALIGN_TEST
     this->tof_enable_flag = true;
     this->align_data.target_dist = 500;
@@ -409,6 +410,11 @@ void Chassis_Device::Reset_Total_Rounds()
     this->wheel[1].Reset_Total_Rounds_Offset(0);
     this->wheel[2].Reset_Total_Rounds_Offset(0);
     this->wheel[3].Reset_Total_Rounds_Offset(0);
+    this->wheel[0].Set_Loc(0);
+    this->wheel[1].Set_Loc(0);
+    this->wheel[2].Set_Loc(0);
+    this->wheel[3].Set_Loc(0);
+    this->position.spin = 0.0f;
 }
 
 bool Chassis_Device::Check_Yaw_At_Set() const
@@ -461,18 +467,28 @@ void Tof_Rx_CallBack(can_device_t *can_device, uint8_t *rx_buff)
 
 void Chassis_Device::Update_Control_Type()
 {
+    this->last_control_type = this->control_type;
     if(this->is_vel_control_flag)
     {
+        if(this->last_control_type == POSITION)
+        {
+            this->Close_Yaw_Spin();
+        }
         this->control_type = SPEED;
     }
     else
     {
+        if(this->last_control_type == SPEED)
+        {
+            this->Close_Yaw_Spin();
+        }
         this->control_type = POSITION;
     }
 }
 
 void Chassis_Device::Update_Data()
 {
+    this->gyro_reset_flag = this->rx_raw_data.gyro_reset_flag;
     switch (this->control_type)
     {
         case SPEED:
@@ -498,3 +514,11 @@ void Chassis_Device::Update_Data()
     }
 }
 
+void Chassis_Device::Update_Gyro_Reset()
+{
+    if(this->gyro_reset_flag)
+    {
+        HI229UM_Set_Current_As_Offset();
+        this->pos_yaw_angle = 0.0f;
+    }
+}

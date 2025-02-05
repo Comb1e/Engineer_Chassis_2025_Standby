@@ -33,7 +33,8 @@ typedef struct
     uint8_t is_arm_pump_open : 1;
     uint8_t is_left_pump_open : 1;
     uint8_t is_right_pump_open : 1;
-    uint8_t reserve_1 : 4;
+    uint8_t is_usb_lost : 1;
+    uint8_t reserve_1 : 3;
     uint8_t reserve_2 : 8;
     uint8_t reserve_3 : 8;
 }gimbal_to_chassis_rx_raw_data_t;
@@ -78,6 +79,7 @@ public:
     void Reset_Data();
     void All_Set_Free();
     void All_Set_Enable();
+    void Send_CAN_MSG();
 
     bool connect_flag;
 

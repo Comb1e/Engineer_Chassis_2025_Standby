@@ -35,6 +35,7 @@ void Gimbal_To_Chassis_Rx_Callback(can_device_t *can_device,uint8_t *rx_data)
     communication->rx_raw_data.is_arm_pump_open = rx_raw_data->is_arm_pump_open;
     communication->rx_raw_data.is_left_pump_open = rx_raw_data->is_left_pump_open;
     communication->rx_raw_data.is_right_pump_open = rx_raw_data->is_right_pump_open;
+    communication->rx_raw_data.is_usb_lost = rx_raw_data->is_usb_lost;
 }
 
 void GC_Communication_Device::Check_Connect()
@@ -60,6 +61,7 @@ void GC_Communication_Device::Update_Data()
     this->chassis->rx_raw_data.spin = this->rx_raw_data.chassis_spin;
     this->chassis->rx_raw_data.x = this->rx_raw_data.chassis_x;
     this->chassis->rx_raw_data.y = this->rx_raw_data.chassis_y;
+    this->chassis->rx_raw_data.gyro_reset_flag = this->rx_raw_data.is_usb_lost;
 
     this->tx_data.chassis_gyro_totoal_rounds = HI229UM_Get_Yaw_Total_Rounds();
     this->tx_data.is_arm_pump_holding_on = this->absorb->sucker[ARM_SUCKER].holding_flag;
@@ -100,4 +102,9 @@ void GC_Communication_Device::All_Set_Enable()
     this->chassis->enable_flag = true;
     this->small_gimbal->enable_flag = true;
     this->absorb->enable_flag = true;
+}
+
+void GC_Communication_Device::Send_CAN_MSG()
+{
+    this->can_device.Send_MSG();
 }

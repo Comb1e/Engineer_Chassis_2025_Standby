@@ -42,6 +42,7 @@ void Chassis_Task(void *argument)
         chassis.Update_Control_Type();
         chassis.Update_Data();
         chassis.Update_Ready();
+        chassis.Update_Gyro_Reset();
         if(chassis.Check_Ready_Flag() && chassis.Check_Enable_Flag())
         {
             //debug++;

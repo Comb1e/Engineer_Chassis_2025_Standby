@@ -4,6 +4,8 @@
 
 #include "Drv_Absorb.h"
 
+#include <arm_common_tables.h>
+
 Absorb_Device absorb;
 
 Absorb_Device::Absorb_Device():
@@ -195,12 +197,24 @@ void Absorb_Device::Update_Pump_Open()
     {
         this->Set_Sucker_Open(ARM_SUCKER);
     }
+    else
+    {
+        this->Set_Sucker_Close(ARM_SUCKER);
+    }
     if(this->open_left_pump_flag)
     {
         this->Set_Sucker_Open(LEFT_SUCKER);
     }
+    else
+    {
+        this->Set_Sucker_Close(LEFT_SUCKER);
+    }
     if(this->open_right_pump_flag)
     {
         this->Set_Sucker_Open(RIGHT_SUCKER);
+    }
+    else
+    {
+        this->Set_Sucker_Close(RIGHT_SUCKER);
     }
 }

@@ -121,9 +121,10 @@ typedef struct align_data_t
 
 typedef struct
 {
-    uint8_t spin;//-128到+127
+    int8_t spin;//-128到+127
     int16_t x;//-32768到+32767
     int16_t y;//-32768到+32767
+    bool gyro_reset_flag;
 }chassis_rx_raw_data_t;
 
 typedef struct
@@ -160,7 +161,9 @@ public:
     bool tof_lost_flag;
     bool tof_enable_flag;
     bool is_vel_control_flag;
+    bool gyro_reset_flag;
 
+    control_type_e last_control_type;
     control_type_e control_type;
 
     set_vel_t set_vel;
@@ -218,6 +221,7 @@ public:
     void Init_Tof(CAN_HandleTypeDef *hcan,uint32_t rx_id,osSemaphoreId_t rx_sem);
     void Update_Control_Type();
     void Update_Data();
+    void Update_Gyro_Reset();
 
     friend void Tof_Rx_CallBack(can_device_t *can_device,uint8_t *rx_buff);
 };
