@@ -220,6 +220,10 @@ void KB_Device::Check_RC_Event()
         g_robot.CreatTask_Auto_GroundMine();
 #endif
 
+#if VISUAL_CONTROL_TEST
+        g_robot.CreatTask_Auto_Exchange();
+#endif
+
 #if AUTOCONTROL_TEST
 
 #else
@@ -254,6 +258,10 @@ void KB_Device::Check_RC_Event()
 
 #if AUTO_GROUNDMINE_TEST
         g_robot.ExitTask_Auto_GroundMine();
+#endif
+
+#if VISUAL_CONTROL_TEST
+        g_robot.ExitTask_Auto_Exchange();
 #endif
 
 #if AUTOCONTROL_TEST

@@ -70,11 +70,6 @@ float Robot_Device::Get_Tof_Dist()
     return this->chassis->align_data.center_dist;
 }
 
-bool Robot_Device::Get_Camera_Catching()
-{
-    return this->usb->rx_exchanging_flag;
-}
-
 autoSituation_e Robot_Device::Get_Auto_Situation()
 {
     return this->autoSituation;

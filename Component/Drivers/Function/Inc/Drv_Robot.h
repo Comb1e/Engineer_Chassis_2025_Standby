@@ -300,7 +300,6 @@ public:
     float Get_Arm_Final_Point(traj_item_e traj_item);
     pose_mode_e Get_Pose_Mode();
     float Get_Tof_Dist();
-    bool Get_Camera_Catching();
     autoSituation_e Get_Auto_Situation();
     direction_need_e Get_BigIsland_Dir();
     robot_error_u Get_Error_Code();

@@ -7,7 +7,6 @@
 __NO_RETURN void AutoExchange_Task(void *argument)
 {
 #if VISUAL_CONTROL_TEST
-    g_robot.usb->exchanging_flag = true;
 #else
     if(g_robot.absorb->Get_Ore_Num() == 0)
     {
@@ -21,10 +20,15 @@ __NO_RETURN void AutoExchange_Task(void *argument)
     osDelay(1000);
 #endif
 
+    g_robot.control_mode = VISUAL_CONTROL;
     g_robot.Exchange_Before_Getting_In();
-    g_robot.Exchange_Before_Getting_In_Adjust();
-    g_robot.Exchange_Getting_In();
+    //g_robot.Exchange_Before_Getting_In_Adjust();
+    //g_robot.Exchange_Getting_In();
 
+    if(g_robot.control_mode != VISUAL_CONTROL)
+    {
+        g_robot.Arm_Homing();
+    }
     g_robot.End_Exchange();
     osThreadExit();
 }

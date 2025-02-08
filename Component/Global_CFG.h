@@ -35,15 +35,15 @@
 #define CHASSIS_POSITION_CONTROL_TEST 0
 
 #define ALIGN_TEST 0
-#define VISUAL_CONTROL_TEST 1
 
-#define AUTOCONTROL_TEST 0
+#define VISUAL_CONTROL_TEST 0
+
+#define AUTOCONTROL_TEST 0 //打开任何自动化任务之前都要打开这个
+
 #define AUTO_BIGISLAND_TEST 0
 #define AUTO_SMALLISLAND_TEST 0
 #define AUTO_GROUNDMINE_TEST 0
 #define AUTO_FETCH_TEST 0
-
-#define EXCHANGE_TEST 0
 
 /*----------SITUATION----------*/
 #define CAMERA_ON_ARM 1
@@ -61,6 +61,10 @@
 #define RC_UART (huart1)
 
 #define CHASSIS_CAN (&hcan1)
+#define CHASSIS_MOTOR_LF_ID 1
+#define CHASSIS_MOTOR_LB_ID 2
+#define CHASSIS_MOTOR_RB_ID 3
+#define CHASSIS_MOTOR_RF_ID 4
 #define TOF_RX_ID (0x222)
 
 #define ARM_CAN             (&hcan2)
@@ -72,6 +76,7 @@
 #define ABSORB_CAN_RX_STDID  (0x501)
 
 #define GIMBAL_CAN      (&hcan1)
+#define GIMBAL_SLIDE_MOTOR_ID       (7)
 
 #define INFO_CAN          (&hcan2)
 #define INFO_TX_CAN2_STDID        (0x302)

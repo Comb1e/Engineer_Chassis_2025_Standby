@@ -35,10 +35,6 @@ extern "C"
 #define GIMBAL_YAW_MAX                    (60.0f)
 #define GIMBAL_YAW_MIN                    (-40.0f)
 
-#define INT16_11_LIMIT                      500
-
-#define GIMBAL_SLIDE_MOTOR_ID       (7)
-
 #define GIMBAL_SLIDE_MOTOR_MIN_ROUNDS  (0.0F)
 #define GIMBAL_SLIDE_MOTOR_MAX_ROUNDS  (277.0F)
 

@@ -6,6 +6,7 @@
 #include "Drv_Absorb.h"
 
 bool fetch_ore_flag = false;
+bool visual_exchange_flag = false;
 
 void KB_Device::Check_Mouse_State()
 {
@@ -113,12 +114,7 @@ void KB_Device::Check_Mouse_State()
                     g_gimbal.Add_Pitch_Deg(0.36f * rc.data.mouse.y);
                     if(rc.data.using_kb_flag)
                     {
-#if EXCHANGE_TEST
-                        debug++;
-                        g_gimbal.Add_Yaw_Deg(-0.36f * rc.data.mouse.x);
-#else
                         g_robot.RC_Set_Chassis_Vel_Spin(-1 * rc.data.mouse.x);
-#endif
                     }
                     else
                     {
@@ -277,17 +273,34 @@ void KB_Device::Check_RC_State()
             }
 #endif
 
-#if AUTO_FETCH_TEST
-            if(rc.data.right_rocker.y > 0.9f && !fetch_ore_flag)
+
+            if(rc.data.right_rocker.y > 0.9f)
             {
-                g_robot.Arm_Take_Ore_From_Sucker();
-                fetch_ore_flag = true;
+#if AUTO_FETCH_TEST
+                if(!fetch_ore_flag)
+                {
+                    g_robot.Arm_Take_Ore_From_Sucker();
+                    fetch_ore_flag = true;
+                }
+#endif
+                if(!visual_exchange_flag)
+                {
+                    g_robot.CreatTask_Auto_Exchange();
+                    visual_exchange_flag = true;
+                }
             }
             else if(rc.data.right_rocker.y == 0.0f)
             {
+#if AUTO_FETCH_TEST
                 fetch_ore_flag = false;
-            }
 #endif
+                visual_exchange_flag = false;
+            }
+            else if(rc.data.right_rocker.y < 0.9f)
+            {
+                g_robot.control_mode = RC_KB_CONTROL;
+            }
+
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_MID))

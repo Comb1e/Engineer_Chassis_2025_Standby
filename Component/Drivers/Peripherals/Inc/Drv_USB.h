@@ -15,15 +15,11 @@ extern "C"
 
 #define USB_CONTROL_CYCLE    (40U)//单位是ms
 
-#define USB_INFO_RX_BUF_NUM         (4*12 +2)
+#define USB_INFO_RX_BUF_NUM         (4*9 +2)
 #define USB_INFO_TX_BUF_NUM         (2)
 
 #define FRAME_HEADER_0        (0X5A)
 #define FRAME_TAIL_0          (0X66)
-
-#define FRONT_CAMERA_BASE_ON_ARM_LENGTH      (200.0f)
-#define FRONT_CAMERA_BASE_ON_ARM_HEIGHT      (105.f)
-#define FRONT_CAMERA_FOCUS_ANGLE     (15.f/ 180.0f * PI)
 
 #define GRAVITY_COMPENSATION (0.0f)
 #define GRAVITY_ORE_PITCH_COMPENSATION (0.0f / 180.0f * PI)
@@ -49,9 +45,6 @@ typedef struct
     float ore_x;
     float ore_y;
     float ore_z;
-    float ore_yaw;
-    float ore_pitch;
-    float ore_roll;
     uint8_t tail; //0x66 固定尾部
 }usb_rx_data_t;
 
@@ -61,7 +54,6 @@ typedef union
     struct
     {
         uint8_t head;//0x5a，固定头部
-
         uint8_t tail;//0x66 固定尾部
     };
 }usb_tx_data_u;
@@ -100,23 +92,15 @@ public:
 
     bool lost_flag;
     bool data_valid_flag;//目前的数据包CRC校验后有效
-    bool effector_useful_flag;
 
-    bool exchanging_flag;
-    bool exchanging_started_flag;
-    bool exchanging_started_flag_sent_flag;
-    bool controllable_flag;
-    bool truly_started_exchanging_flag;
     bool getting_in_flag;
     bool xyz_filt_flag;
 
-    bool rx_exchanging_flag;
-    bool rx_controllable_flag;
-
     bool ore_down_flag;
     bool judge_ore_down_flag;
+    bool ore_filt_flag;
 
-    usb_rx_data_t rx_raw_data;
+    usb_rx_data_t *rx_raw_data;
     usb_tx_data_u tx_data;
 
     float camera_yaw;
@@ -132,25 +116,19 @@ public:
     eigen_pose_t chassis_to_target_eigen_pose;
     eigen_pose_t ore_to_target_eigen_pose;
     eigen_pose_t chassis_to_ore_eigen_pose;
+    eigen_pose_t camera_to_ore_base_eigen_pose;
+    eigen_pose_t camera_to_ore_eigen_pose;
 
+    pose_t camera_to_ore_pose;
     pose_t visual_only_ore_to_target_pose;
     pose_t camera_to_target_pose;
-    pose_t camera_to_ore_pose;
     pose_t chassis_to_target_pose;
     pose_t ore_to_target_pose;
-
-    pose_t filter_pose;
-    uint8_t filter_cnt;
-
-    pose_t last_visual_control_pose;
 
     Eigen::Vector3f sucker_to_ore_offset_basic_pose;
     Eigen::Vector3f sucker_to_ore_offset_pose;
 
-    void Receive_Data();
     void Update_RX_Data();
-    void Update_TX_Data();
-    void Transmit_Data();
     void Calculate_Camera_Get_Pose_To_Effector_Pose();
     bool Check_Lost_Flag();
 };

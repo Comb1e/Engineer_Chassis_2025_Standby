@@ -42,7 +42,7 @@ void ui_device::update_data() {
 
     this->data.tof_dist = this->robot->Get_Tof_Dist();
 
-    this->data.camera_catch = this->robot->Get_Camera_Catching();
+    this->data.camera_catch = this->robot->usb->data_valid_flag;
 
     this->data.auto_case = this->robot->Get_Auto_Situation();
 

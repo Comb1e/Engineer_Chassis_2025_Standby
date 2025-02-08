@@ -30,7 +30,12 @@ void AutoCtrl_Task(void *argument)
         if(auto_exchange_flag)
         {
             auto_exchange_flag = false;
-            g_robot.CreatTask_Auto_Exchange();
+            g_robot.control_mode = VISUAL_CONTROL;
+            g_robot.Exchange_Before_Getting_In();
+            g_robot.Exchange_Before_Getting_In_Adjust();
+            g_robot.Exchange_Getting_In();
+            g_robot.absorb->Set_Sucker_Close(ARM_SUCKER);
+            g_robot.control_mode = RC_KB_CONTROL;
         }
 
         if(sucker_dir_move_flag)

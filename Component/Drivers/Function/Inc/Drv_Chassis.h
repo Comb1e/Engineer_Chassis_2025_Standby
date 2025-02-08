@@ -21,11 +21,6 @@ extern "C"
 #define CHASSIS_MOTOR_RB_NUM 2
 #define CHASSIS_MOTOR_RF_NUM 3
 
-#define CHASSIS_MOTOR_LF_ID 1
-#define CHASSIS_MOTOR_LB_ID 2
-#define CHASSIS_MOTOR_RB_ID 3
-#define CHASSIS_MOTOR_RF_ID 4
-
 #define TOF_DEVICE_DISTANCE         178.0f //mm
 #define ALIGN_DELTA_DISTANCE        300.0f //mm //转动留出空间
 #define ALIGN_CRITICAL_DISTANCE     700.0f //mm 小于这个距离就开始转动
@@ -56,10 +51,10 @@ extern "C"
 
 #define CHASSIS_POWER_LIMIT     (24 * 10)
 
-#define WHEEL0_CONTROL_PID_LOC 0.07f,0.01f,0.0f,0.1f,0.0f,false
-#define WHEEL1_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.1f,0.0f,false
-#define WHEEL2_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.1f,0.0f,false
-#define WHEEL3_CONTROL_PID_LOC 0.09f,0.01f,0.0f,0.1f,0.0f,false
+#define WHEEL0_CONTROL_PID_LOC 0.07f,0.01f,0.0f,0.15f,0.0f,false
+#define WHEEL1_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.15f,0.0f,false
+#define WHEEL2_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.15f,0.0f,false
+#define WHEEL3_CONTROL_PID_LOC 0.09f,0.01f,0.0f,0.15f,0.0f,false
 
 typedef enum
 {
