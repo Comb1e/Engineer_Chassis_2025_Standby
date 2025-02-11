@@ -181,6 +181,13 @@ const osThreadAttr_t autoctrl_Task_attributes = {
   .stack_size = 256 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
+/* Definitions for gyro_info_Task */
+osThreadId_t gyro_info_TaskHandle;
+const osThreadAttr_t gyro_info_Task_attributes = {
+  .name = "gyro_info_Task",
+  .stack_size = 128 * 4,
+  .priority = (osPriority_t) osPriorityNormal,
+};
 /* Definitions for CAN1SendQueue */
 osMessageQueueId_t CAN1SendQueueHandle;
 const osMessageQueueAttr_t CAN1SendQueue_attributes = {
@@ -276,6 +283,11 @@ osSemaphoreId_t JudgementInitBinarySemHandle;
 const osSemaphoreAttr_t JudgementInitBinarySem_attributes = {
   .name = "JudgementInitBinarySem"
 };
+/* Definitions for GyroInfoUpdateBinarySem */
+osSemaphoreId_t GyroInfoUpdateBinarySemHandle;
+const osSemaphoreAttr_t GyroInfoUpdateBinarySem_attributes = {
+  .name = "GyroInfoUpdateBinarySem"
+};
 /* Definitions for CAN1CountingSem */
 osSemaphoreId_t CAN1CountingSemHandle;
 const osSemaphoreAttr_t CAN1CountingSem_attributes = {
@@ -321,6 +333,7 @@ void Absorb_Task(void *argument);
 void Arm_Task(void *argument);
 void Check_Communicate_Task(void *argument);
 void AutoCtrl_Task(void *argument);
+void Gyro_Info_Task(void *argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -387,6 +400,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of JudgementInitBinarySem */
   JudgementInitBinarySemHandle = osSemaphoreNew(1, 1, &JudgementInitBinarySem_attributes);
+
+  /* creation of GyroInfoUpdateBinarySem */
+  GyroInfoUpdateBinarySemHandle = osSemaphoreNew(1, 1, &GyroInfoUpdateBinarySem_attributes);
 
   /* creation of CAN1CountingSem */
   CAN1CountingSemHandle = osSemaphoreNew(3, 3, &CAN1CountingSem_attributes);
@@ -473,6 +489,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of autoctrl_Task */
   autoctrl_TaskHandle = osThreadNew(AutoCtrl_Task, NULL, &autoctrl_Task_attributes);
+
+  /* creation of gyro_info_Task */
+  gyro_info_TaskHandle = osThreadNew(Gyro_Info_Task, NULL, &gyro_info_Task_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -835,6 +854,24 @@ __weak void AutoCtrl_Task(void *argument)
     osDelay(1);
   }
   /* USER CODE END AutoCtrl_Task */
+}
+
+/* USER CODE BEGIN Header_Gyro_Info_Task */
+/**
+* @brief Function implementing the gyro_info_Task thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_Gyro_Info_Task */
+__weak void Gyro_Info_Task(void *argument)
+{
+  /* USER CODE BEGIN Gyro_Info_Task */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END Gyro_Info_Task */
 }
 
 /* Private application code --------------------------------------------------*/

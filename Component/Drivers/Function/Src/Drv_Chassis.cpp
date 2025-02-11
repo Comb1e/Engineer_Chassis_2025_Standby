@@ -31,9 +31,9 @@ Chassis_Device::Chassis_Device()
     this->rot_flag = false;
     this->need_flag = true;
 #if VISUAL_CONTROL_TEST
-    this->wheel_loc_error_min = 0.9f;
+    this->wheel_loc_error_min = 1.2f;
 #else
-    this->wheel_loc_error_min = 0.2f;
+    this->wheel_loc_error_min = 1.2f;
 #endif
     this->chassis_first_flag = false;
 #if ALIGN_TEST

@@ -14,6 +14,6 @@
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
 -- Minimal optimization, debug info included
--- Configuring done (4.0s)
--- Generating done (0.2s)
+-- Configuring done (1.3s)
+-- Generating done (0.1s)
 -- Build files have been written to: E:/RM/CubeMx/Engineer_Chassis_2025/cmake-build-debug

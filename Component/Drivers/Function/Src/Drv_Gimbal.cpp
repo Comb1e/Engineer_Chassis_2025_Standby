@@ -174,21 +174,21 @@ void Gimbal_Device::Add_Slide_Distance(float delta)
 
 void Gimbal_Device::Set_Left()
 {
-    this->Set_Pitch_Deg(20.f);
-    this->Set_Yaw_Deg(-20.f);
+    this->Set_Pitch_Deg(10.f);
+    this->Set_Yaw_Deg(0.0f);
     this->Set_Slide_Distance(200.f);
 }
 
 void Gimbal_Device::Set_Right()
 {
-    this->Set_Pitch_Deg(20.f);
-    this->Set_Yaw_Deg(20.f);
-    this->Set_Slide_Distance(-200.f);
+    this->Set_Pitch_Deg(10.f);
+    this->Set_Yaw_Deg(0.0f);
+    this->Set_Slide_Distance(-80.f);
 }
 
 void Gimbal_Device::Set_Homing()
 {
-    this->Set_Pitch_Deg(40.0f);
+    this->Set_Pitch_Deg(10.0f);
     this->Set_Yaw_Deg(0.0f);
     this->Set_Slide_Distance(0.0f);
 }

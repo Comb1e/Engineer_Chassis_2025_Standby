@@ -4,6 +4,7 @@
 
 #include "Drv_KB_Event.h"
 
+#include "AutoCtrl_Task.h"
 #include "Drv_Absorb.h"
 
 void KB_Device::Check_Mouse_Event()
@@ -227,7 +228,8 @@ void KB_Device::Check_RC_Event()
 #if AUTOCONTROL_TEST
 
 #else
-        g_absorb.Set_Sucker_Open(RIGHT_SUCKER);
+        //g_absorb.Set_Sucker_Open(RIGHT_SUCKER);
+        auto_exchange_flag = true;
 #endif
     }
     else if(RC_Check_SW_Event(RC_SW_R_UP2MID))
@@ -235,7 +237,7 @@ void KB_Device::Check_RC_Event()
 #if AUTOCONTROL_TEST
 
 #else
-        g_absorb.Set_Sucker_Close(RIGHT_SUCKER);
+        //g_absorb.Set_Sucker_Close(RIGHT_SUCKER);
 #endif
     }
     else if(RC_Check_SW_Event(RC_SW_R_DOWN2MID))
@@ -269,7 +271,11 @@ void KB_Device::Check_RC_Event()
         g_robot.absorb->Set_Sucker_Close(LEFT_SUCKER);
         g_robot.absorb->Set_Sucker_Close(RIGHT_SUCKER);
 #else
+    #if ARM_RESET_KEY
+        reset_flag = true;
+    #else
         g_absorb.Set_Sucker_Open(LEFT_SUCKER);
+    #endif
 #endif
     }
 }

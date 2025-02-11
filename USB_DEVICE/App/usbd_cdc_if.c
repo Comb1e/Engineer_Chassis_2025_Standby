@@ -21,8 +21,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "usbd_cdc_if.h"
 
-
-
 /* USER CODE BEGIN INCLUDE */
 #include "cmsis_os2.h"
 /* USER CODE END INCLUDE */

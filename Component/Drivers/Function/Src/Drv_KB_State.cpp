@@ -283,11 +283,11 @@ void KB_Device::Check_RC_State()
                     fetch_ore_flag = true;
                 }
 #endif
-                if(!visual_exchange_flag)
+                /*if(!visual_exchange_flag)
                 {
                     g_robot.CreatTask_Auto_Exchange();
                     visual_exchange_flag = true;
-                }
+                }*/
             }
             else if(rc.data.right_rocker.y == 0.0f)
             {

@@ -7,6 +7,7 @@
 #include <dsp/fast_math_functions.h>
 #include "Drv_Chassis.h"
 #include "Drv_Info.h"
+#include "Drv_USB.h"
 #include "rotation_matrix.h"
 
 Arm_Device g_arm;
@@ -697,9 +698,14 @@ void Arm_Device::Wait_For_Moving()
     uint32_t time = HAL_GetTick();
     while(!this->Check_All_Get_To_Final())
     {
+        if (HAL_GetTick() > time + 4000)
+        {
+            break;
+        }
         osDelay(1);
     }
 
+    time = HAL_GetTick();
     if(this->enable_arm_chassis_cooperate_flag && g_chassis.need_flag)
     {
         while(!this->Check_All_Get_To_Final() || ABS(this->chassis_move_data.x) > 1.0f || ABS(this->chassis_move_data.y) > 1.0f)
@@ -708,7 +714,6 @@ void Arm_Device::Wait_For_Moving()
             {
                 break;
             }
-
             osDelay(1);
         }
     }
@@ -736,6 +741,20 @@ void Arm_Device::Sucker_Dir_Move(float dist,float vel)
     Eigen::Vector3f dir;
     dir << 1.0f , 0.0f , 0.0f;
     dir = this->rotation_matrix * dir;
+    dx = dir[0];
+    dy = dir[1];
+    dz = dir[2];
+
+    this->Add_Point_Target_Pos_Vel(X,dx * dist,MAX(ABS(dx) * vel,0.01f));
+    this->Add_Point_Target_Pos_Vel(Y,dy * dist,MAX(ABS(dy) * vel,0.01f));
+    this->Add_Point_Target_Pos_Vel(Z,dz * dist,MAX(ABS(dz) * vel,0.01f));
+}
+
+void Arm_Device::Visual_Dir_Move(float dist,float vel)
+{
+    Eigen::Vector3f dir;
+    dir << 1.0f , 0.0f , 0.0f;
+    dir = usb.chassis_to_target_eigen_pose.rotation_matrix * dir;
     dx = dir[0];
     dy = dir[1];
     dz = dir[2];

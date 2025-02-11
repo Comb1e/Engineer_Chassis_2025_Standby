@@ -21,7 +21,8 @@ __NO_RETURN void Auto_SmallIsland_Task(void *argument)
     g_robot.absorb->Get_Ore_State()->Set_Ore_Source(SMALL_ISLAND);
 
     g_robot.SmallIsland_Or_GroundMine_Pre_Back();
-    g_robot.Back_With_Ore();
+    g_robot.Arm_Homing();
+    //g_robot.Back_With_Ore();
 
     g_robot.chassis->need_flag = true;
     g_robot.Set_Auto_Situation(Auto_None);

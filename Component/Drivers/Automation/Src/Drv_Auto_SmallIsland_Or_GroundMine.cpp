@@ -6,7 +6,7 @@
 
 void Robot_Device::Pre_For_Auto_SmallIsland_Or_GroundMine()
 {
-    this->gimbal->Set_Pitch_Deg(40.0f);
+    this->gimbal->Set_Pitch_Deg(10.0f);
     this->info->Set_Pose_Mode(single);
     this->chassis->need_flag = false;
     osDelay(3);

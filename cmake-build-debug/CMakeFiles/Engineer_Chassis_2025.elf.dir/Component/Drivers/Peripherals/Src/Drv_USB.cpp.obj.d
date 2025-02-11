@@ -474,6 +474,7 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Peripherals/Src/Drv_U
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Peripherals\Inc/Drv_Ore.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Keyboard.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Info.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Gyro_Info.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\USB_DEVICE\App/usbd_cdc_if.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Class\CDC\Inc/usbd_cdc.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Middlewares\ST\STM32_USB_Device_Library\Core\Inc/usbd_ioreq.h \

@@ -33,6 +33,7 @@ extern osSemaphoreId_t AbsorbUpdateBinarySemHandle;
 extern osSemaphoreId_t ArmResetInitBinarySemHandle;
 extern osSemaphoreId_t ArmUpdateBinarySemHandle;
 extern osSemaphoreId_t JudgementInitBinarySemHandle;
+extern osSemaphoreId_t GyroInfoUpdateBinarySemHandle;
 /*裁判系统*/
 extern osEventFlagsId_t RefereeEventHandle;
 extern osEventFlagsId_t refereeEventHandle;

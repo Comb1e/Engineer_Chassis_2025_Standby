@@ -14,7 +14,7 @@ extern "C"
 
 #include "Global_CFG.h"
 
-#define VISUAL_EXCHANGE_XYZ_VEL 0.5f
+#define VISUAL_EXCHANGE_XYZ_VEL 0.6f
 #define VISUAL_EXCHANGE_RYP_VEL 0.2f
 
 #ifdef __cplusplus

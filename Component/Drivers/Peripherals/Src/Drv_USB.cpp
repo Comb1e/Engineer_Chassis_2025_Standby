@@ -7,6 +7,7 @@
 #include "Drv_Arm.h"
 #include "Drv_Info.h"
 #include "Drv_Robot.h"
+#include "Gyro_Info.h"
 #include "usbd_cdc_if.h"
 
 USB_Device usb;
@@ -26,6 +27,7 @@ USB_Device::USB_Device()
     this->ore_down_cnt = 0;
     this->ore_down_flag = false;
     this->xyz_filt_flag = false;
+    this->camera_pitch = -4.2f;
 }
 
 float ryp_cnt = 0;
@@ -48,14 +50,14 @@ void USB_Device::Update_RX_Data()
         {
             this->camera_to_target_pose.x = (this->camera_to_target_pose.x * xyz_cnt + (this->rx_raw_data->target_x * 1000.0f)) / (xyz_cnt + 1);
             this->camera_to_target_pose.y = (this->camera_to_target_pose.y * xyz_cnt + (this->rx_raw_data->target_y * 1000.0f)) / (xyz_cnt + 1);
-            this->camera_to_target_pose.z = (this->camera_to_target_pose.z * xyz_cnt + (this->rx_raw_data->target_z * 1000.0f)) / (xyz_cnt + 1);
+            this->camera_to_target_pose.z = (this->camera_to_target_pose.z * xyz_cnt + (this->rx_raw_data->target_z * 1000.0f) + 0.0f) / (xyz_cnt + 1);
             xyz_cnt++;
         }
         else
         {
             this->camera_to_target_pose.x = this->rx_raw_data->target_x * 1000.0f;
             this->camera_to_target_pose.y = this->rx_raw_data->target_y * 1000.0f;
-            this->camera_to_target_pose.z = this->rx_raw_data->target_z * 1000.0f;
+            this->camera_to_target_pose.z = this->rx_raw_data->target_z * 1000.0f + 0.0f;
         }
         this->camera_to_target_pose.roll = (this->camera_to_target_pose.roll * ryp_cnt + (this->rx_raw_data->target_roll / PI * 180.0f)) / (ryp_cnt + 1);
         this->camera_to_target_pose.pitch = (this->camera_to_target_pose.pitch * ryp_cnt + (this->rx_raw_data->target_pitch / PI * 180.0f - 8.0f)) / (ryp_cnt + 1);
@@ -86,30 +88,36 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
 {
     if(this->data_valid_flag)
     {
-        this->chassis_to_camera_eigen_pose.euler_angle << 0.0f , 11.0f , 0;
+        this->chassis_to_camera_eigen_pose.euler_angle << 0.0f , 15.0f , 0.0f;
         this->chassis_to_camera_eigen_pose.euler_radian = this->chassis_to_camera_eigen_pose.euler_angle / 180.0f * PI;
         this->chassis_to_camera_eigen_pose.rotation_matrix = Eigen::AngleAxisf(this->chassis_to_camera_eigen_pose.euler_radian[0], Eigen::Vector3f::UnitZ()) *
                                                              Eigen::AngleAxisf(this->chassis_to_camera_eigen_pose.euler_radian[1], Eigen::Vector3f::UnitY()) *
                                                              Eigen::AngleAxisf(this->chassis_to_camera_eigen_pose.euler_radian[2], Eigen::Vector3f::UnitX());
+
         this->IMTR_to_camera_vector = this->chassis_to_camera_eigen_pose.rotation_matrix * this->IMTR_to_camera_basic_vector;
         this->chassis_to_camera_eigen_pose.xyz_mm << CAMERA_OFFSET_X + this->IMTR_to_camera_vector[0],
-                                                     CAMERA_OFFSET_Y + this->IMTR_to_camera_vector[1],
+                                                     CAMERA_OFFSET_Y  + g_robot.gimbal->slide_ctrl_data.dist + this->IMTR_to_camera_vector[1],
                                                      CAMERA_OFFSET_Z + this->IMTR_to_camera_vector[2];
 
-        if(this->camera_to_ore_base_eigen_pose.xyz_mm[0] != 0 && this->camera_to_ore_base_eigen_pose.xyz_mm[1] != 0 && this->camera_to_ore_base_eigen_pose.xyz_mm[2] != 0)
+        /*
+        if(this->ore_filt_flag)
         {
-            if(this->ore_filt_flag)
-            {
-                this->camera_to_ore_eigen_pose.xyz_mm = this->chassis_to_camera_eigen_pose.rotation_matrix * this->camera_to_ore_base_eigen_pose.xyz_mm;
-                this->camera_to_ore_pose.x = (ore_filt_cnt * this->camera_to_ore_pose.x + this->camera_to_ore_base_eigen_pose.xyz_mm[0]) / (ore_filt_cnt + 1);
-                this->camera_to_ore_pose.y = (ore_filt_cnt * this->camera_to_ore_pose.y + this->camera_to_ore_base_eigen_pose.xyz_mm[1]) / (ore_filt_cnt + 1);
-                this->camera_to_ore_pose.z = (ore_filt_cnt * this->camera_to_ore_pose.z + this->camera_to_ore_base_eigen_pose.xyz_mm[2]) / (ore_filt_cnt + 1);
-                ore_filt_cnt++;
-            }
-            else
-            {
-                ore_filt_cnt = 0;
-            }
+            this->camera_to_ore_eigen_pose.xyz_mm = this->chassis_to_camera_eigen_pose.rotation_matrix * this->camera_to_ore_base_eigen_pose.xyz_mm;
+            this->camera_to_ore_pose.x = (ore_filt_cnt * this->camera_to_ore_pose.x + this->camera_to_ore_base_eigen_pose.xyz_mm[0]) / (ore_filt_cnt + 1);
+            this->camera_to_ore_pose.y = (ore_filt_cnt * this->camera_to_ore_pose.y + this->camera_to_ore_base_eigen_pose.xyz_mm[1]) / (ore_filt_cnt + 1);
+            this->camera_to_ore_pose.z = (ore_filt_cnt * this->camera_to_ore_pose.z + this->camera_to_ore_base_eigen_pose.xyz_mm[2]) / (ore_filt_cnt + 1);
+            ore_filt_cnt++;
+        }
+        else
+        {
+            ore_filt_cnt = 0;
+        }*/
+
+
+        if(this->camera_to_ore_base_eigen_pose.xyz_mm[0] != 0 && this->camera_to_ore_base_eigen_pose.xyz_mm[1] != 0 && this->camera_to_ore_base_eigen_pose.xyz_mm[2] != 0) {
+            this->camera_to_ore_pose.x = this->camera_to_ore_base_eigen_pose.xyz_mm[0] * 0.7f + this->camera_to_ore_pose.x * 0.3f;
+            this->camera_to_ore_pose.y = this->camera_to_ore_base_eigen_pose.xyz_mm[1] * 0.8f + this->camera_to_ore_pose.y * 0.2f;
+            this->camera_to_ore_pose.z = this->camera_to_ore_base_eigen_pose.xyz_mm[2] * 0.8f + this->camera_to_ore_pose.z * 0.2f;
         }
 
         this->camera_to_target_eigen_pose.xyz_mm << this->camera_to_target_pose.x , this->camera_to_target_pose.y , this->camera_to_target_pose.z;
@@ -119,7 +127,11 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
                                                             Eigen::AngleAxisf(this->camera_to_target_eigen_pose.euler_radian[1], Eigen::Vector3f::UnitY()) *
                                                             Eigen::AngleAxisf(this->camera_to_target_eigen_pose.euler_radian[2], Eigen::Vector3f::UnitX());
 
-        this->chassis_to_target_eigen_pose.xyz_mm = this->chassis_to_camera_eigen_pose.rotation_matrix * this->camera_to_target_eigen_pose.xyz_mm + this->chassis_to_camera_eigen_pose.xyz_mm;
+        this->chassis_to_target_eigen_pose.xyz_mm[0] = this->camera_to_target_eigen_pose.xyz_mm[0] * arm_cos_f32((-15.0f) / 180.0f * PI) + this->chassis_to_camera_eigen_pose.xyz_mm[0] -
+                                                       this->camera_to_target_eigen_pose.xyz_mm[2] * arm_sin_f32((-15.0f) / 180.0f * PI);
+        this->chassis_to_target_eigen_pose.xyz_mm[1] = this->camera_to_target_eigen_pose.xyz_mm[1] * arm_cos_f32((-15.0f) / 180.0f * PI) + this->chassis_to_camera_eigen_pose.xyz_mm[1];
+        this->chassis_to_target_eigen_pose.xyz_mm[2] = this->camera_to_target_eigen_pose.xyz_mm[2] * arm_cos_f32((-15.0f) / 180.0f * PI) + this->chassis_to_camera_eigen_pose.xyz_mm[2] +
+                                                       this->camera_to_target_eigen_pose.xyz_mm[0] * arm_sin_f32((-15.0f) / 180.0f * PI) ;
         this->chassis_to_target_eigen_pose.rotation_matrix = this->chassis_to_camera_eigen_pose.rotation_matrix * this->camera_to_target_eigen_pose.rotation_matrix ;
         this->chassis_to_target_eigen_pose.euler_radian = RotMatrix_To_Euler_ZYX(this->chassis_to_target_eigen_pose.rotation_matrix);
         this->chassis_to_target_eigen_pose.euler_angle = this->chassis_to_target_eigen_pose.euler_radian / PI * 180.0f;

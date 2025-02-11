@@ -13,7 +13,7 @@ extern "C"
 #include "Global_CFG.h"
 #include "usb_device.h"
 
-#define USB_CONTROL_CYCLE    (40U)//单位是ms
+#define USB_CONTROL_CYCLE    (50U)//单位是ms
 
 #define USB_INFO_RX_BUF_NUM         (4*9 +2)
 #define USB_INFO_TX_BUF_NUM         (2)
@@ -27,9 +27,9 @@ extern "C"
 #define OFFSET_LENGTH (230.0f)
 #define PRE_EXCHANGE_LENGTH (2 * ORE_LENGTH + 80.0f)
 
-#define CAMERA_OFFSET_X (-90.0f)
+#define CAMERA_OFFSET_X (-80.0f)
 #define CAMERA_OFFSET_Y (70.0f)
-#define CAMERA_OFFSET_Z (720.0f)
+#define CAMERA_OFFSET_Z (730.0f)
 
 #pragma pack(1)
 typedef struct
@@ -104,6 +104,7 @@ public:
     usb_tx_data_u tx_data;
 
     float camera_yaw;
+    float camera_pitch;
     uint8_t ore_down_cnt;
 
     Eigen::Matrix3f gravity_compensation_rotation_matrix;

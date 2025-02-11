@@ -473,4 +473,5 @@ CMakeFiles/Engineer_Chassis_2025.elf.dir/Component/Drivers/Function/Src/Drv_KB_E
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/quaternion_math_functions.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/window_functions.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\CMSIS-DSP\Include/dsp/fast_math_functions.h \
+ E:\RM\CubeMx\Engineer_Chassis_2025\Component\Tasks\Automation\Inc/AutoCtrl_Task.h \
  E:\RM\CubeMx\Engineer_Chassis_2025\Component\Drivers\Function\Inc/Drv_Absorb.h
