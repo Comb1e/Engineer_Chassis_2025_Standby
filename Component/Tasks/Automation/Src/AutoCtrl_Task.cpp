@@ -39,6 +39,7 @@ void AutoCtrl_Task(void *argument)
             g_robot.Exchange_Getting_In();
             g_robot.absorb->Set_Sucker_Close(ARM_SUCKER);
             g_robot.gimbal->Set_Homing();
+            g_robot.usb->target_rx_flag = true;;
             g_robot.control_mode = RC_KB_CONTROL;
         }
 

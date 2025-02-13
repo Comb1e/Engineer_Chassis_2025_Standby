@@ -22,7 +22,7 @@ void Robot_Device::Exchange_Before_Getting_In()
     }
     else
     {
-        this->chassis->Arm_Need_Chassis_Move(this->usb->ore_to_target_pose.x - 440.0f,this->usb->ore_to_target_pose.y + 90.0f);
+        this->chassis->Arm_Need_Chassis_Move(this->usb->ore_to_target_pose.x - 440.0f,this->usb->ore_to_target_pose.y + 80.0f);
         this->gimbal->Set_Right();
     }
     this->arm->Add_Point_Target_Pos_Vel(X,240.0f,VISUAL_EXCHANGE_XYZ_VEL);
@@ -49,6 +49,7 @@ void Robot_Device::Exchange_Before_Getting_In()
     this->arm->Set_Point_Posture(X,this->arm->fb_current_data.x);
     this->arm->Set_Point_Posture(Z,this->arm->fb_current_data.z);
     osDelay(100);
+    this->usb->target_rx_flag = false;
     this->arm->Add_Point_Target_Pos_Vel(X,this->usb->ore_to_target_pose.x,VISUAL_EXCHANGE_XYZ_VEL);
     if(this->arm->fb_current_data.arm_yaw < 0.0f)
     {

@@ -1,8 +1,8 @@
-# Install script for directory: E:/RM/CubeMx/Engineer_Chassis_2025/CMSIS-DSP/Source
+# Install script for directory: E:/RM/2025/Engineer_Chassis_2025_Standby/CMSIS-DSP/Source
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Engineer_Chassis_2025")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Engineer_Chassis_2025_Standby")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

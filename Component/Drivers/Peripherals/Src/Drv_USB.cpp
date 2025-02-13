@@ -27,6 +27,7 @@ USB_Device::USB_Device()
     this->ore_down_cnt = 0;
     this->ore_down_flag = false;
     this->xyz_filt_flag = false;
+    this->target_rx_flag = true;
     this->camera_pitch = -4.2f;
 }
 
@@ -46,23 +47,26 @@ void USB_Device::Update_RX_Data()
             xyz_cnt = 0;
             this->xyz_filt_flag = false;
         }
-        if(this->xyz_filt_flag)
+        if(target_rx_flag)
         {
-            this->camera_to_target_pose.x = (this->camera_to_target_pose.x * xyz_cnt + (this->rx_raw_data->target_x * 1000.0f)) / (xyz_cnt + 1);
-            this->camera_to_target_pose.y = (this->camera_to_target_pose.y * xyz_cnt + (this->rx_raw_data->target_y * 1000.0f)) / (xyz_cnt + 1);
-            this->camera_to_target_pose.z = (this->camera_to_target_pose.z * xyz_cnt + (this->rx_raw_data->target_z * 1000.0f) + 0.0f) / (xyz_cnt + 1);
-            xyz_cnt++;
+            if(this->xyz_filt_flag)
+            {
+                this->camera_to_target_pose.x = (this->camera_to_target_pose.x * xyz_cnt + (this->rx_raw_data->target_x * 1000.0f)) / (xyz_cnt + 1);
+                this->camera_to_target_pose.y = (this->camera_to_target_pose.y * xyz_cnt + (this->rx_raw_data->target_y * 1000.0f)) / (xyz_cnt + 1);
+                this->camera_to_target_pose.z = (this->camera_to_target_pose.z * xyz_cnt + (this->rx_raw_data->target_z * 1000.0f) + 0.0f) / (xyz_cnt + 1);
+                xyz_cnt++;
+            }
+            else
+            {
+                this->camera_to_target_pose.x = this->rx_raw_data->target_x * 1000.0f;
+                this->camera_to_target_pose.y = this->rx_raw_data->target_y * 1000.0f;
+                this->camera_to_target_pose.z = this->rx_raw_data->target_z * 1000.0f + 0.0f;
+            }
+            this->camera_to_target_pose.roll = (this->camera_to_target_pose.roll * ryp_cnt + (this->rx_raw_data->target_roll / PI * 180.0f)) / (ryp_cnt + 1);
+            this->camera_to_target_pose.pitch = (this->camera_to_target_pose.pitch * ryp_cnt + (this->rx_raw_data->target_pitch / PI * 180.0f - 8.0f)) / (ryp_cnt + 1);
+            this->camera_to_target_pose.yaw = (this->camera_to_target_pose.yaw * ryp_cnt + (this->rx_raw_data->target_yaw / PI * 180.0f)) / (ryp_cnt + 1);
+            ryp_cnt++;
         }
-        else
-        {
-            this->camera_to_target_pose.x = this->rx_raw_data->target_x * 1000.0f;
-            this->camera_to_target_pose.y = this->rx_raw_data->target_y * 1000.0f;
-            this->camera_to_target_pose.z = this->rx_raw_data->target_z * 1000.0f + 0.0f;
-        }
-        this->camera_to_target_pose.roll = (this->camera_to_target_pose.roll * ryp_cnt + (this->rx_raw_data->target_roll / PI * 180.0f)) / (ryp_cnt + 1);
-        this->camera_to_target_pose.pitch = (this->camera_to_target_pose.pitch * ryp_cnt + (this->rx_raw_data->target_pitch / PI * 180.0f - 8.0f)) / (ryp_cnt + 1);
-        this->camera_to_target_pose.yaw = (this->camera_to_target_pose.yaw * ryp_cnt + (this->rx_raw_data->target_yaw / PI * 180.0f)) / (ryp_cnt + 1);
-        ryp_cnt++;
 
         this->camera_to_ore_base_eigen_pose.xyz_mm[0] = this->rx_raw_data->ore_x * 1000.0f;
         this->camera_to_ore_base_eigen_pose.xyz_mm[1] = this->rx_raw_data->ore_y * 1000.0f;
@@ -96,7 +100,7 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
 
         this->IMTR_to_camera_vector = this->chassis_to_camera_eigen_pose.rotation_matrix * this->IMTR_to_camera_basic_vector;
         this->chassis_to_camera_eigen_pose.xyz_mm << CAMERA_OFFSET_X + this->IMTR_to_camera_vector[0],
-                                                     CAMERA_OFFSET_Y  + g_robot.gimbal->slide_ctrl_data.dist + this->IMTR_to_camera_vector[1],
+                                                     CAMERA_OFFSET_Y + g_robot.gimbal->slide_ctrl_data.dist + this->IMTR_to_camera_vector[1],
                                                      CAMERA_OFFSET_Z + this->IMTR_to_camera_vector[2];
 
         /*

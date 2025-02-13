@@ -99,6 +99,7 @@ public:
     bool ore_down_flag;
     bool judge_ore_down_flag;
     bool ore_filt_flag;
+    bool target_rx_flag;
 
     usb_rx_data_t *rx_raw_data;
     usb_tx_data_u tx_data;
