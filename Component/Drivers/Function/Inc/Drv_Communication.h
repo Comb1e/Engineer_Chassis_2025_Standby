@@ -75,7 +75,8 @@ public:
     void Init(uint32_t tx_id,uint32_t rx_id,osSemaphoreId_t rx_sem,CAN_HandleTypeDef *hcan);
     void PTR_Init(Chassis_Device *chassis,Small_Gimbal_Device *small_gimbal,Absorb_Device *absorb);
     void Check_Connect();
-    void Update_Data();
+    void Update_RX_Data();
+    void Update_TX_Data();
     void Reset_Data();
     void All_Set_Free();
     void All_Set_Enable();

@@ -16,12 +16,13 @@ void Communication_Task(void *argument)
         if(gc_communication.connect_flag)
         {
             gc_communication.All_Set_Enable();
-            gc_communication.Update_Data();
+            gc_communication.Update_RX_Data();
         }
         else
         {
             gc_communication.All_Set_Free();
         }
+        gc_communication.Update_TX_Data();
         gc_communication.Send_CAN_MSG();
         osDelay(3);
     }

@@ -1,8 +1,8 @@
-# Install script for directory: E:/RM/2025/Engineer_Chassis_Test
+# Install script for directory: E:/RM/2025/Engineer_Chassis_Standby_Test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Engineer_Chassis_2025")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Engineer_Chassis_2025_Standby_Test")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("E:/RM/2025/Engineer_Chassis_Test/cmake-build-debug/bin_dsp/cmake_install.cmake")
+  include("E:/RM/2025/Engineer_Chassis_Standby_Test/cmake-build-debug/bin_dsp/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "E:/RM/2025/Engineer_Chassis_Test/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "E:/RM/2025/Engineer_Chassis_Standby_Test/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

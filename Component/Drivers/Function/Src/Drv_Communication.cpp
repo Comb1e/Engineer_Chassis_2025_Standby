@@ -51,7 +51,7 @@ void GC_Communication_Device::Check_Connect()
     }
 }
 
-void GC_Communication_Device::Update_Data()
+void GC_Communication_Device::Update_RX_Data()
 {
     this->absorb->open_arm_pump_flag = this->rx_raw_data.is_arm_pump_open;
     this->absorb->open_left_pump_flag = this->rx_raw_data.is_left_pump_open;
@@ -62,7 +62,10 @@ void GC_Communication_Device::Update_Data()
     this->chassis->rx_raw_data.x = this->rx_raw_data.chassis_x;
     this->chassis->rx_raw_data.y = this->rx_raw_data.chassis_y;
     this->chassis->rx_raw_data.gyro_reset_flag = this->rx_raw_data.is_usb_lost;
+}
 
+void GC_Communication_Device::Update_TX_Data()
+{
     this->tx_data.chassis_gyro_totoal_rounds = HI229UM_Get_Yaw_Total_Rounds();
     this->tx_data.is_arm_pump_holding_on = this->absorb->sucker[ARM_SUCKER].holding_flag;
     this->tx_data.is_left_pump_holding_on = this->absorb->sucker[LEFT_SUCKER].holding_flag;
@@ -73,6 +76,7 @@ void GC_Communication_Device::Update_Data()
     this->tx_data.is_wheel_rb_lost = this->chassis->wheel[CHASSIS_MOTOR_RB_NUM].lost_flag;
     this->tx_data.is_wheel_rf_lost = this->chassis->wheel[CHASSIS_MOTOR_RF_NUM].lost_flag;
 }
+
 
 void GC_Communication_Device::Reset_Data()
 {
@@ -89,6 +93,7 @@ void GC_Communication_Device::Reset_Data()
 void GC_Communication_Device::All_Set_Free()
 {
     memset(&this->rx_raw_data,0,sizeof(this->rx_raw_data));
+    this->rx_raw_data.is_chassis_vel_control = true;
 
     this->Reset_Data();
 
