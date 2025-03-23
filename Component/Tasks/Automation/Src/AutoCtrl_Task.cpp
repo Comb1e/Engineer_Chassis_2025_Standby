@@ -6,11 +6,8 @@
 #include "Drv_Robot.h"
 
 bool reset_flag = false;
-bool sucker_dir_move_flag = false;
 bool auto_exchange_flag = false;
-bool arm_move_flag = false;
-bool adjust_flag = false;
-bool small_island_flag = false;
+bool auto_small_island_flag = false;
 void AutoCtrl_Task(void *argument)
 {
     osDelay(2000);
@@ -25,7 +22,8 @@ void AutoCtrl_Task(void *argument)
 
         if(reset_flag)
         {
-            kb.Set_Gimbal_Reset();
+            //g_robot.Gimbal_Reset();
+            g_robot.Arm_Homing();
             reset_flag = false;
         }
 
@@ -38,31 +36,22 @@ void AutoCtrl_Task(void *argument)
 
             g_robot.Exchange_Getting_In();
             g_robot.absorb->Set_Sucker_Close(ARM_SUCKER);
+            osDelay(1000);
+            g_robot.Exchange_Back();
             g_robot.gimbal->Set_Homing();
             g_robot.usb->target_rx_flag = true;;
             g_robot.control_mode = RC_KB_CONTROL;
         }
 
-        if(adjust_flag)
+        if(auto_small_island_flag)
         {
-            adjust_flag = false;
-            g_robot.Exchange_Before_Getting_In_Adjust();
-        }
-
-        if(sucker_dir_move_flag)
-        {
-            g_robot.arm->Sucker_Dir_Move(200.0f,0.2f);
-            sucker_dir_move_flag = false;
-        }
-
-        if(small_island_flag)
-        {
-            small_island_flag = false;
+            auto_small_island_flag = false;
             g_robot.control_mode = AUTO_CONTROL;
             g_robot.Pre_For_Auto_SmallIsland_Or_GroundMine();
             g_robot.SmallIsland_Or_GroundMine_Pre();
             g_robot.SmallIsland_Or_GroundMine_1();
             g_robot.SmallIsland_Or_GroundMine_Touching();
+            g_robot.SmallIsland_Lay();
 
             g_robot.absorb->Get_Ore_State()->Set_Ore_Source(SMALL_ISLAND);
 
@@ -72,18 +61,6 @@ void AutoCtrl_Task(void *argument)
             g_robot.chassis->need_flag = true;
             g_robot.Set_Auto_Situation(Auto_None);
             g_robot.control_mode = RC_KB_CONTROL;
-        }
-
-        if(arm_move_flag)
-        {
-            g_robot.arm->Add_Point_Target_Pos_Vel(X,g_robot.usb->visual_only_ore_to_target_pose.x,0.5f);
-            g_robot.arm->Add_Point_Target_Pos_Vel(Y,g_robot.usb->visual_only_ore_to_target_pose.y,0.5f);
-            g_robot.arm->Add_Point_Target_Pos_Vel(Z,g_robot.usb->visual_only_ore_to_target_pose.z,0.5f);
-            g_robot.arm->Set_Point_Target_Pos_Vel(ROLL,g_robot.usb->ore_to_target_pose.roll,0.2f);
-            g_robot.arm->Set_Point_Target_Pos_Vel(YAW,g_robot.usb->ore_to_target_pose.yaw,0.2f);
-            g_robot.arm->Set_Point_Target_Pos_Vel(PITCH,g_robot.usb->ore_to_target_pose.pitch,0.2f);
-
-            arm_move_flag = false;
         }
 
         osDelay(2);

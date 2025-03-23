@@ -43,6 +43,9 @@ extern "C"
 
 #define GROUND_MINE_TOUCHING_POSITION_Z_VEL    (0.1f)
 
+    /*----------Lay----------*/
+#define SMALLISLAND_LAY_POSITION_XYZ_VEL    (0.8f)
+#define SMALLISLAND_LAY_POSITION_RYP_VEL    (0.2f)
 /*----------Pre_Back----------*/
 #define GROUND_MINE_PRE_BACK_POSITION_Z      (200.0f)
 #define GROUND_MINE_PRE_BACK_POSITION_X      (520.0f)

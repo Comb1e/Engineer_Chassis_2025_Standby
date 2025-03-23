@@ -13,7 +13,6 @@ __NO_RETURN void Auto_SmallIsland_Task(void *argument)
     }
 
     g_robot.Pre_For_Auto_SmallIsland_Or_GroundMine();
-    //g_robot.Keep_Apart(100.0f);
     g_robot.SmallIsland_Or_GroundMine_Pre();
     g_robot.SmallIsland_Or_GroundMine_1();
     g_robot.SmallIsland_Or_GroundMine_Touching();
@@ -24,8 +23,7 @@ __NO_RETURN void Auto_SmallIsland_Task(void *argument)
     g_robot.Arm_Homing();
     //g_robot.Back_With_Ore();
 
-    g_robot.chassis->need_flag = true;
-    g_robot.Set_Auto_Situation(Auto_None);
+    g_robot.SmallIsland_Or_GroundMine_Exit();
     osThreadExit();
 }
 

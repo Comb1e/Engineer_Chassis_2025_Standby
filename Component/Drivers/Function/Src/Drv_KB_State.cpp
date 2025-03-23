@@ -3,10 +3,12 @@
 //
 
 #include "Drv_KB_State.h"
+
+#include "AutoCtrl_Task.h"
 #include "Drv_Absorb.h"
 
 bool fetch_ore_flag = false;
-bool visual_exchange_flag = false;
+bool small_island_flag = false;
 
 void KB_Device::Check_Mouse_State()
 {
@@ -283,24 +285,26 @@ void KB_Device::Check_RC_State()
                     fetch_ore_flag = true;
                 }
 #endif
-                /*if(!visual_exchange_flag)
+                if(!small_island_flag)
                 {
-                    g_robot.CreatTask_Auto_Exchange();
-                    visual_exchange_flag = true;
-                }*/
+                    auto_small_island_flag = true;
+                }
             }
             else if(rc.data.right_rocker.y == 0.0f)
             {
 #if AUTO_FETCH_TEST
                 fetch_ore_flag = false;
 #endif
-                visual_exchange_flag = false;
+                small_island_flag = false;
             }
             else if(rc.data.right_rocker.y < 0.9f)
             {
                 g_robot.control_mode = RC_KB_CONTROL;
             }
+            else if(rc.data.right_rocker.y < -0.9f)
+            {
 
+            }
         }
     }
     else if(RC_Check_SW_State(RC_SW_L_MID))

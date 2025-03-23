@@ -255,6 +255,7 @@ public:
     void Exchange_Before_Getting_In();
     void Exchange_Before_Getting_In_Adjust();
     void Exchange_Getting_In();
+    void Exchange_Back();
     void End_Exchange();
 //Drv_AutoBigIsland
     direction_need_e big_island_dir;
@@ -281,6 +282,7 @@ public:
     void SmallIsland_Or_GroundMine_Touching();
     void SmallIsland_Or_GroundMine_Pre_Back();
     void SmallIsland_Or_GroundMine_Exit();
+    void SmallIsland_Lay();
 
 //Drv_Back
     void Back_With_Ore();

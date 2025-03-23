@@ -343,10 +343,6 @@ void Robot_Device::Sucker_Reset()
 void Robot_Device::Arm_Homing()
 {
     this->arm->Disable_Arm_Chassis_Cooperate();
-
-    this->arm->Change_XYZ_Basic_Step(HOME_ARM_TRAJECTORY_VEL_XYZ);
-    this->arm->Change_RYP_Basic_Step(HOME_ARM_TRAJECTORY_VEL_RPY);
-    this->arm->Set_Step_Protected();
     /*if (this->absorb->Check_Sucker_Holding(ARM_SUCKER))
     {
         this->arm->Set_Point_Final_Posture(YAW, HOMING_SUCKER_YAW_WITH_ORE);
@@ -373,19 +369,15 @@ void Robot_Device::Arm_Homing()
         this->arm->Set_Point_Target_Pos_Vel(YAW,HOMING_SUCKER_YAW,HOME_ARM_TRAJECTORY_VEL_RPY);
         this->arm->Wait_For_Moving();
 
-        this->arm->Set_Point_Final_Posture(ARM_YAW, HOMING_ARM_YAW_DEG);
-        this->arm->Set_Point_Final_Posture(ARM_PITCH,HOMING_ARM_PITCH_DEG);
+        this->arm->Set_Point_Target_Pos_Vel(ARM_YAW, HOMING_ARM_YAW_DEG,HOME_ARM_TRAJECTORY_VEL_RPY);
+        this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,HOMING_ARM_PITCH_DEG,HOME_ARM_TRAJECTORY_VEL_RPY);
+        this->arm->Wait_For_Moving();
+
         this->arm->Set_Point_Target_Pos_Vel(Y,HOMING_ARM_Y,HOME_ARM_TRAJECTORY_VEL_XYZ);
-        this->arm->Wait_For_Moving();
-
-        this->arm->Set_Point_Target_Pos_Vel(ARM_YAW,HOMING_ARM_YAW_DEG,HOME_ARM_TRAJECTORY_VEL_RPY);
-        this->arm->Wait_For_Moving();
-
         this->arm->Set_Point_Target_Pos_Vel(X,HOMING_ARM_X,HOME_ARM_TRAJECTORY_VEL_XYZ);
         this->arm->Set_Point_Target_Pos_Vel(Z,HOMING_ARM_Z,HOME_ARM_TRAJECTORY_VEL_XYZ);
         this->arm->Wait_For_Moving();
     //}
-    this->arm->Close_Step_protected();
 
     this->arm->Enable_Arm_Chassis_Cooperate();
 }

@@ -15,7 +15,7 @@ extern "C"
 void AutoCtrl_Task(void *argument);
 
 extern bool reset_flag;
-extern bool small_island_flag;
+extern bool auto_small_island_flag;
 extern bool auto_exchange_flag;
 
 #ifdef __cplusplus

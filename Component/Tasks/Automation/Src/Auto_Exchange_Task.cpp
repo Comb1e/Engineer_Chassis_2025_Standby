@@ -25,11 +25,11 @@ __NO_RETURN void AutoExchange_Task(void *argument)
     g_robot.Exchange_Before_Getting_In_Adjust();
     g_robot.Exchange_Getting_In();
 
-    /*if(g_robot.control_mode != VISUAL_CONTROL)
-    {
-        g_robot.Arm_Homing();
-    }*/
     g_robot.gimbal->Set_Homing();
+    g_robot.absorb->Set_Sucker_Close(ARM_SUCKER);
+    osDelay(1000);
+
+    g_robot.Exchange_Back();
     g_robot.End_Exchange();
     osThreadExit();
 }

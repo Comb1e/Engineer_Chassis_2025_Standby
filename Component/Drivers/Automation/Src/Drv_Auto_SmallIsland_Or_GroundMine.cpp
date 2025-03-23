@@ -69,6 +69,42 @@ void Robot_Device::SmallIsland_Or_GroundMine_Touching()
     this->arm->Set_Point_Posture(Z,this->arm->fb_current_data.z);
 }
 
+void Robot_Device::SmallIsland_Lay()
+{
+    this->arm->Add_Point_Target_Pos_Vel(Z,210.0f,SMALLISLAND_LAY_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
+
+    this->arm->Add_Point_Target_Pos_Vel(X,220.0f,SMALLISLAND_LAY_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
+
+    this->absorb->Set_Sucker_Close(ARM_SUCKER);
+    osDelay(2000);
+    this->arm->Add_Point_Target_Pos_Vel(Z,100.0f,SMALLISLAND_LAY_POSITION_XYZ_VEL);
+    this->arm->Wait_For_Moving();
+
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,0.0f,SMALLISLAND_LAY_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,0.0f,SMALLISLAND_LAY_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
+
+    this->arm->Set_Point_Target_Pos_Vel(YAW,GROUND_MINE_PRE_BACK_POSITION_YAW,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ROLL,GROUND_MINE_PRE_BACK_POSITION_ROLL,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
+
+    this->arm->Add_Point_Target_Pos_Vel(X,-200.0f,SMALLISLAND_LAY_POSITION_XYZ_VEL);
+    this->arm->Add_Point_Target_Pos_Vel(Z,-200.0f,SMALLISLAND_LAY_POSITION_XYZ_VEL);
+    this->absorb->Set_Sucker_Open(ARM_SUCKER);
+    while(!this->absorb->Check_Sucker_Holding(ARM_SUCKER))
+    {
+        if(this->control_mode != AUTO_CONTROL)
+        {
+            return;
+        }
+        this->arm->Arm_Yaw_Dir_Move(1.0f,0.3f);
+        osDelay(25);
+    }
+}
+
+
 void Robot_Device::SmallIsland_Or_GroundMine_Pre_Back()
 {
     if(this->control_mode != AUTO_CONTROL)
@@ -82,14 +118,6 @@ void Robot_Device::SmallIsland_Or_GroundMine_Pre_Back()
     this->arm->Set_Point_Target_Pos_Vel(X,GROUND_MINE_PRE_BACK_POSITION_X,GROUND_MINE_PRE_BACK_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
 
-    this->arm->Set_Point_Target_Pos_Vel(YAW,GROUND_MINE_PRE_BACK_POSITION_YAW,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(ROLL,GROUND_MINE_PRE_BACK_POSITION_ROLL,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
-    this->arm->Wait_For_Moving();
-
-    this->arm->Set_Point_Target_Pos_Vel(PITCH,GROUND_MINE_PRE_BACK_POSITION_PITCH,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
-    this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,GROUND_MINE_PRE_BACK_POSITION_ARM_PITCH,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
-    this->arm->Wait_For_Moving();
-
     this->store_sucker = this->absorb->Find_To_Store();
     if(this->store_sucker == ORE_STORE_FULL)
     {
@@ -100,6 +128,7 @@ void Robot_Device::SmallIsland_Or_GroundMine_Pre_Back()
 void Robot_Device::SmallIsland_Or_GroundMine_Exit()
 {
     this->chassis->need_flag = true;
+    this->Set_Control_Mode(RC_KB_CONTROL);
     this->Set_Auto_Situation(Auto_None);
 }
 

@@ -37,6 +37,8 @@ void USB_Device::Update_RX_Data()
 {
     this->rx_raw_data = (usb_rx_data_t *)usb_buf;
     static uint32_t lost_num = 0;
+
+    taskENTER_CRITICAL();
     this->data_valid_flag = (this->rx_raw_data->head == FRAME_HEADER_0 && this->rx_raw_data->tail == FRAME_TAIL_0);
     if(this->data_valid_flag)
     {
@@ -62,9 +64,10 @@ void USB_Device::Update_RX_Data()
                 this->camera_to_target_pose.y = this->rx_raw_data->target_y * 1000.0f;
                 this->camera_to_target_pose.z = this->rx_raw_data->target_z * 1000.0f + 0.0f;
             }
-            this->camera_to_target_pose.roll = (this->camera_to_target_pose.roll * ryp_cnt + (this->rx_raw_data->target_roll / PI * 180.0f)) / (ryp_cnt + 1);
-            this->camera_to_target_pose.pitch = (this->camera_to_target_pose.pitch * ryp_cnt + (this->rx_raw_data->target_pitch / PI * 180.0f - 8.0f)) / (ryp_cnt + 1);
+            this->camera_to_target_pose.roll = this->rx_raw_data->target_roll / PI * 180.0f;
+            this->camera_to_target_pose.pitch = this->rx_raw_data->target_pitch / PI * 180.0f - 8.0f;
             this->camera_to_target_pose.yaw = (this->camera_to_target_pose.yaw * ryp_cnt + (this->rx_raw_data->target_yaw / PI * 180.0f)) / (ryp_cnt + 1);
+            debug = this->rx_raw_data->target_roll;
             ryp_cnt++;
         }
 
@@ -76,6 +79,7 @@ void USB_Device::Update_RX_Data()
     {
         lost_num++;
     }
+    taskEXIT_CRITICAL();
 
     if (lost_num > 50)
     {
@@ -117,12 +121,14 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
             ore_filt_cnt = 0;
         }*/
 
-
-        if(this->camera_to_ore_base_eigen_pose.xyz_mm[0] != 0 && this->camera_to_ore_base_eigen_pose.xyz_mm[1] != 0 && this->camera_to_ore_base_eigen_pose.xyz_mm[2] != 0) {
+        taskENTER_CRITICAL();
+        if(this->camera_to_ore_base_eigen_pose.xyz_mm[0] != 0 && this->camera_to_ore_base_eigen_pose.xyz_mm[1] != 0 && this->camera_to_ore_base_eigen_pose.xyz_mm[2] != 0)
+        {
             this->camera_to_ore_pose.x = this->camera_to_ore_base_eigen_pose.xyz_mm[0] * 0.7f + this->camera_to_ore_pose.x * 0.3f;
             this->camera_to_ore_pose.y = this->camera_to_ore_base_eigen_pose.xyz_mm[1] * 0.8f + this->camera_to_ore_pose.y * 0.2f;
             this->camera_to_ore_pose.z = this->camera_to_ore_base_eigen_pose.xyz_mm[2] * 0.8f + this->camera_to_ore_pose.z * 0.2f;
         }
+        taskEXIT_CRITICAL();
 
         this->camera_to_target_eigen_pose.xyz_mm << this->camera_to_target_pose.x , this->camera_to_target_pose.y , this->camera_to_target_pose.z;
         this->camera_to_target_eigen_pose.euler_angle << this->camera_to_target_pose.yaw , this->camera_to_target_pose.pitch , this->camera_to_target_pose.roll;
@@ -237,7 +243,7 @@ void USB_Device::Calculate_Camera_Get_Pose_To_Effector_Pose()
 
         this->visual_only_ore_to_target_pose.x = this->camera_to_target_pose.x - this->camera_to_ore_pose.x - this->ore_getting_in_offset[0] / 2.0f;
         this->visual_only_ore_to_target_pose.y = this->camera_to_target_pose.y - this->camera_to_ore_pose.y - this->ore_getting_in_offset[1] / 2.0f;
-        this->visual_only_ore_to_target_pose.z = this->camera_to_target_pose.z - this->camera_to_ore_pose.z - this->ore_getting_in_offset[2] / 2.0f;//给的矿的体心所以只需要减一半就可以在仓口停下
+        this->visual_only_ore_to_target_pose.z = this->camera_to_target_pose.z - this->camera_to_ore_pose.z - this->ore_getting_in_offset[2] / 2.0f + 30.0f;//给的矿的体心所以只需要减一半就可以在仓口停下
 
         /*this->ore_to_target_eigen_pose.xyz_mm[0] += 30.0f;
         this->ore_to_target_eigen_pose.xyz_mm[1] += 0.0f;

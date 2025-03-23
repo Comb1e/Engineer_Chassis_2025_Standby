@@ -183,7 +183,7 @@ void Gimbal_Device::Set_Right()
 {
     this->Set_Pitch_Deg(10.f);
     this->Set_Yaw_Deg(0.0f);
-    this->Set_Slide_Distance(-200.f);
+    this->Set_Slide_Distance(-100.f);
 }
 
 void Gimbal_Device::Set_Homing()
