@@ -34,10 +34,36 @@ void KB_Device::Check_KB_State()
     }
 }
 
+void KB_Device::Check_KB_FG_Event()
+{
+    if(RC_Check_Key_Down_Event(KeyF))
+    {
+        Key_Event[KeyF](DIR_DOWN);
+    }
+    else
+    {
+        Key_Event[KeyF](DIR_UP);
+    }
+
+    if(RC_Check_Key_Down_Event(KeyG))
+    {
+        Key_Event[KeyG](DIR_DOWN);
+    }
+    else
+    {
+        Key_Event[KeyG](DIR_UP);
+    }
+}
+
+
 void KB_Device::Check_KB_Event()
 {
     for(keyMap key = KeyW; key < KeyNum; key = (keyMap)(key + 1))
     {
+        if(key == KeyF || key == KeyG)
+        {
+            continue;
+        }
         if(RC_Check_Key_Down_Event(key))
         {
             Key_Event[key](DIR_DOWN);

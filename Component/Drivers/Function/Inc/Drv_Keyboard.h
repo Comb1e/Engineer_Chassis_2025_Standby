@@ -83,6 +83,7 @@ public:
 
     void Check_RC_Event();
     void Check_KB_Event();
+    void Check_KB_FG_Event();
     void Check_Mouse_Event();
 
     static void KeyW_State_Callback(enum KEY_DIR dir);

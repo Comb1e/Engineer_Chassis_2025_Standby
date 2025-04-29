@@ -10,6 +10,10 @@
 
 void Gimbal_Attitude_Task(void *argument)
 {
+    while(!rc.ctrl_protection.connect_flag)
+    {
+        osDelay(1);
+    }
     for(;;)
     {
         if(g_gimbal.Check_Enable())

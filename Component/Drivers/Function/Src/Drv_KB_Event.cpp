@@ -209,74 +209,23 @@ void KB_Device::Check_RC_Event()
 
     if(RC_Check_SW_Event(RC_SW_R_MID2UP))
     {
-#if AUTO_BIGISLAND_TEST
-        g_robot.CreatTask_Auto_BigIsland();
-#endif
-
-#if AUTO_SMALLISLAND_TEST
-        g_robot.CreatTask_Auto_SmallIsland();
-#endif
-
-#if AUTO_GROUNDMINE_TEST
-        g_robot.CreatTask_Auto_GroundMine();
-#endif
-
-#if VISUAL_CONTROL_TEST
-        g_robot.CreatTask_Auto_Exchange();
-#endif
-
-#if AUTOCONTROL_TEST
-
-#else
         //g_absorb.Set_Sucker_Open(RIGHT_SUCKER);
-        auto_exchange_flag = true;
-#endif
+        g_robot.CreatTask_Auto_Exchange();
     }
     else if(RC_Check_SW_Event(RC_SW_R_UP2MID))
     {
-#if AUTOCONTROL_TEST
-
-#else
-        //g_absorb.Set_Sucker_Close(RIGHT_SUCKER);
-#endif
+        g_absorb.Set_Sucker_Close(RIGHT_SUCKER);//这个是原本的
+        g_absorb.Set_Sucker_Close(LEFT_SUCKER);
+        g_robot.control_mode = RC_KB_CONTROL;
     }
     else if(RC_Check_SW_Event(RC_SW_R_DOWN2MID))
     {
-#if AUTOCONTROL_TEST
-
-#else
-        g_absorb.Set_Sucker_Close(LEFT_SUCKER);
-#endif
+        //g_absorb.Set_Sucker_Close(LEFT_SUCKER);
     }
     else if(RC_Check_SW_Event(RC_SW_R_MID2DOWN))
     {
-#if AUTO_BIGISLAND_TEST
-        g_robot.ExitTask_Auto_BigIsland();
-#endif
-
-#if AUTO_SMALLISLAND_TEST
-        g_robot.ExitTask_Auto_SmallIsland();
-#endif
-
-#if AUTO_GROUNDMINE_TEST
-        g_robot.ExitTask_Auto_GroundMine();
-#endif
-
-#if VISUAL_CONTROL_TEST
-        g_robot.ExitTask_Auto_Exchange();
-#endif
-
-#if AUTOCONTROL_TEST
-        g_robot.absorb->Set_Sucker_Close(ARM_SUCKER);
-        g_robot.absorb->Set_Sucker_Close(LEFT_SUCKER);
-        g_robot.absorb->Set_Sucker_Close(RIGHT_SUCKER);
-#else
-    #if ARM_RESET_KEY
         reset_flag = true;
-    #else
-        g_absorb.Set_Sucker_Open(LEFT_SUCKER);
-    #endif
-#endif
+        //g_absorb.Set_Sucker_Open(LEFT_SUCKER);
     }
 }
 

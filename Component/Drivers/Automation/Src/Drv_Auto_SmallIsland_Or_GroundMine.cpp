@@ -118,6 +118,12 @@ void Robot_Device::SmallIsland_Or_GroundMine_Pre_Back()
     this->arm->Set_Point_Target_Pos_Vel(X,GROUND_MINE_PRE_BACK_POSITION_X,GROUND_MINE_PRE_BACK_POSITION_XYZ_VEL);
     this->arm->Wait_For_Moving();
 
+    this->arm->Set_Point_Target_Pos_Vel(PITCH,GROUND_MINE_PRE_BACK_POSITION_PITCH,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ARM_PITCH,GROUND_MINE_PRE_BACK_POSITION_ARM_PITCH,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(YAW,GROUND_MINE_PRE_BACK_POSITION_YAW,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
+    this->arm->Set_Point_Target_Pos_Vel(ROLL,GROUND_MINE_PRE_BACK_POSITION_ROLL,GROUND_MINE_PRE_BACK_POSITION_RYP_VEL);
+    this->arm->Wait_For_Moving();
+
     this->store_sucker = this->absorb->Find_To_Store();
     if(this->store_sucker == ORE_STORE_FULL)
     {

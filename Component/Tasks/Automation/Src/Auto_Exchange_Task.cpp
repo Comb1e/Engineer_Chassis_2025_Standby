@@ -14,13 +14,12 @@ __NO_RETURN void AutoExchange_Task(void *argument)
         osThreadExit();
     }
 
-    /*g_robot.Arm_Take_Ore_From_Sucker();
+    g_robot.Arm_Take_Ore_From_Sucker();
     g_robot.Pre_For_Auto_Exchange();
 
-    osDelay(1000);*/
+    osDelay(1000);
 #endif
 
-    g_robot.control_mode = VISUAL_CONTROL;
     g_robot.Exchange_Before_Getting_In();
     g_robot.Exchange_Before_Getting_In_Adjust();
     g_robot.Exchange_Getting_In();

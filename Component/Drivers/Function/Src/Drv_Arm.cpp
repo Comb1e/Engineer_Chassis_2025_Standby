@@ -208,8 +208,8 @@ void Arm_Device::Update_Z_Limit()
 
 void Arm_Device::Update_Yaw_Limit()
 {
-    min_limit[YAW] = this->trajectory[ARM_YAW].track_point - YAW_INITIAL_LIMIT;
-    max_limit[YAW] = this->trajectory[ARM_YAW].track_point + YAW_INITIAL_LIMIT;
+    min_limit[YAW] = this->trajectory[ARM_YAW].final - YAW_INITIAL_LIMIT;
+    max_limit[YAW] = this->trajectory[ARM_YAW].final + YAW_INITIAL_LIMIT;
 }
 
 void Arm_Device::Update_Pitch_Limit()
@@ -329,25 +329,16 @@ void Arm_Device::Update_Normal_Final(traj_item_e point)
 
 void Arm_Device::Update_Yaw_Final()
 {
+    ABS_LIMIT(this->trajectory_final[YAW],YAW_LIMIT);
+    this->trajectory[YAW].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[YAW]);
+    this->trajectory[YAW].final = this->trajectory_final[YAW];
     if(this->trajectory_final[YAW] > max_limit[YAW])
     {
         this->trajectory_final[ARM_YAW] += this->trajectory_final[YAW] - max_limit[YAW];
-        this->trajectory[YAW].Change_Target_Cnt_Based_On_New_Final(max_limit[YAW]);
-        this->trajectory_final[YAW] = max_limit[YAW];
-        this->trajectory[YAW].final = max_limit[YAW];
     }
     else if(this->trajectory_final[YAW] < min_limit[YAW])
     {
         this->trajectory_final[ARM_YAW] += this->trajectory_final[YAW] - min_limit[YAW];
-        this->trajectory_final[YAW] = min_limit[YAW];
-        this->trajectory[YAW].Change_Target_Cnt_Based_On_New_Final(min_limit[YAW]);
-        this->trajectory_final[YAW] = min_limit[YAW];
-        this->trajectory[YAW].final = min_limit[YAW];
-    }
-    else
-    {
-        this->trajectory[YAW].Change_Target_Cnt_Based_On_New_Final(this->trajectory_final[YAW]);
-        this->trajectory[YAW].final = this->trajectory_final[YAW];
     }
 }
 

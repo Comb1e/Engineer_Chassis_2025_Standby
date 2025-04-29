@@ -38,13 +38,6 @@
 
 #define VISUAL_CONTROL_TEST 0
 
-#define AUTOCONTROL_TEST 0 //打开任何自动化任务之前都要打开这个
-
-#define AUTO_BIGISLAND_TEST 0
-#define AUTO_SMALLISLAND_TEST 0
-#define AUTO_GROUNDMINE_TEST 0
-#define AUTO_FETCH_TEST 0
-
 #define ARM_RESET_KEY 1
 
 /*----------SITUATION----------*/

@@ -7,20 +7,7 @@
 
 void Robot_Device::Pre_For_Auto_BigIsland()
 {
-    //this->Select_Mine_Channel();
-    if(this->big_island_dir == LEFT)
-    {
-        this->big_island_dir = CENTER;
-    }
-    else if(this->big_island_dir == CENTER)
-    {
-        this->big_island_dir = RIGHT;
-    }
-    else if(this->big_island_dir == RIGHT)
-    {
-        this->big_island_dir = LEFT;
-    }
-
+    this->Select_Mine_Channel();
     this->info->Set_Pose_Mode(concentric_double);
     this->Set_Control_Mode(AUTO_CONTROL);
     //this->Keep_Apart(DISTANCE_FOR_CLAW);
@@ -48,6 +35,7 @@ void Robot_Device::Select_Mine_Channel()
             this->big_island_dir = RIGHT;
             break;
         }
+        osDelay(1);
     }
     ui.set_not_remind_big_island();
 }
@@ -214,11 +202,11 @@ void Robot_Device::BigIsland_Pre_Back()
     this->arm->Clean_Control();
     this->arm->Set_Point_Target_Pos_Vel(Y,70.0f,0.8f);
     this->arm->Wait_For_Moving();
-    //this->store_sucker = this->absorb->Find_To_Store();
-    //if(this->store_sucker == ORE_STORE_FULL)
-    //{
-    //    this->store_sucker = ARM_SUCKER;
-    //}
+    this->store_sucker = this->absorb->Find_To_Store();
+    if(this->store_sucker == ORE_STORE_FULL)
+    {
+        this->store_sucker = ARM_SUCKER;
+    }
 }
 
 void Robot_Device::BigIsland_Exit()

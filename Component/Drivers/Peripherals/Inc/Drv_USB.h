@@ -15,7 +15,7 @@ extern "C"
 
 #define USB_CONTROL_CYCLE    (50U)//单位是ms
 
-#define USB_INFO_RX_BUF_NUM         (4*9 +2)
+#define USB_INFO_RX_BUF_NUM         (4*9 + 2 + 2)
 #define USB_INFO_TX_BUF_NUM         (2)
 
 #define FRAME_HEADER_0        (0X5A)
@@ -45,6 +45,9 @@ typedef struct
     float ore_x;
     float ore_y;
     float ore_z;
+
+    uint8_t target_valid_flag;
+    uint8_t ore_valid_flag;
     uint8_t tail; //0x66 固定尾部
 }usb_rx_data_t;
 
@@ -96,39 +99,37 @@ public:
     bool getting_in_flag;
     bool xyz_filt_flag;
 
-    bool ore_down_flag;
-    bool judge_ore_down_flag;
     bool ore_filt_flag;
     bool target_rx_flag;
 
-    usb_rx_data_t *rx_raw_data;
-    usb_tx_data_u tx_data;
+    usb_rx_data_t *rx_raw_data{};
+    usb_tx_data_u tx_data{};
 
     float camera_yaw;
     float camera_pitch;
     uint8_t ore_down_cnt;
 
-    Eigen::Matrix3f gravity_compensation_rotation_matrix;
-    Eigen::Vector3f IMTR_to_camera_basic_vector;//IMTR指图传
-    Eigen::Vector3f IMTR_to_camera_vector;//IMTR指图传
-    Eigen::Vector3f ore_getting_in_offset;
+    Eigen::Matrix3f gravity_compensation_rotation_matrix{};
+    Eigen::Vector3f IMTR_to_camera_basic_vector{};//IMTR指图传
+    Eigen::Vector3f IMTR_to_camera_vector{};//IMTR指图传
+    Eigen::Vector3f ore_getting_in_offset{};
 
-    eigen_pose_t chassis_to_camera_eigen_pose;
-    eigen_pose_t camera_to_target_eigen_pose;
-    eigen_pose_t chassis_to_target_eigen_pose;
-    eigen_pose_t ore_to_target_eigen_pose;
-    eigen_pose_t chassis_to_ore_eigen_pose;
-    eigen_pose_t camera_to_ore_base_eigen_pose;
-    eigen_pose_t camera_to_ore_eigen_pose;
+    eigen_pose_t chassis_to_camera_eigen_pose{};
+    eigen_pose_t camera_to_target_eigen_pose{};
+    eigen_pose_t chassis_to_target_eigen_pose{};
+    eigen_pose_t ore_to_target_eigen_pose{};
+    eigen_pose_t chassis_to_ore_eigen_pose{};
+    eigen_pose_t camera_to_ore_base_eigen_pose{};
+    eigen_pose_t camera_to_ore_eigen_pose{};
 
-    pose_t camera_to_ore_pose;
-    pose_t visual_only_ore_to_target_pose;
-    pose_t camera_to_target_pose;
-    pose_t chassis_to_target_pose;
-    pose_t ore_to_target_pose;
+    pose_t camera_to_ore_pose{};
+    pose_t visual_only_ore_to_target_pose{};
+    pose_t camera_to_target_pose{};
+    pose_t chassis_to_target_pose{};
+    pose_t ore_to_target_pose{};
 
-    Eigen::Vector3f sucker_to_ore_offset_basic_pose;
-    Eigen::Vector3f sucker_to_ore_offset_pose;
+    Eigen::Vector3f sucker_to_ore_offset_basic_pose{};
+    Eigen::Vector3f sucker_to_ore_offset_pose{};
 
     void Update_RX_Data();
     void Calculate_Camera_Get_Pose_To_Effector_Pose();

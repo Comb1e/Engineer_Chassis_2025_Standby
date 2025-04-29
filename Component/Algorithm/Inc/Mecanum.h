@@ -53,7 +53,7 @@ extern "C"
 }
 #endif
 
-void Chassis_Motor_Solver_Set(DJI_Motor_Device wheel[],float vel_x,float vel_y,float vel_spin,float vel_max);
+__RAM_FUNC void Chassis_Motor_Solver_Set(DJI_Motor_Device wheel[],float vel_x,float vel_y,float vel_spin,float vel_max);
 __RAM_FUNC void Chassis_Motor_Loc_SolverSet(DJI_Motor_Device wheels[], float x, float y,float w);
 
 #endif //MECANUM_H

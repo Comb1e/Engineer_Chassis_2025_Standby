@@ -39,11 +39,15 @@ void KB_Event_Task(void *argument)
 {
     for(;;)
     {
-        if(g_robot.enable_flag && g_robot.Check_Control_Mode_RC_KB_CONTROL())
+        if(g_robot.enable_flag)
         {
             kb.Check_Mouse_Event();
-            kb.Check_RC_Event();
-            kb.Check_KB_Event();
+            kb.Check_KB_FG_Event();
+            if(g_robot.Check_Control_Mode_RC_KB_CONTROL())
+            {
+                kb.Check_RC_Event();
+                kb.Check_KB_Event();
+            }
         }
         osDelay(1);
     }

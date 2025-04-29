@@ -8,6 +8,7 @@
 void Robot_Device::Pre_For_Auto_Exchange()
 {
     this->kb_control_mode = MINE_MODE;
+    g_robot.control_mode = VISUAL_CONTROL;
 }
 
 void Robot_Device::Adjust_Ore()
@@ -169,5 +170,6 @@ void Robot_Device::End_Exchange()
     this->Set_KB_Control_Mode_Steer();
     this->info->Set_Pose_Mode(single);
     this->Close_Visual_Control();
+    this->Set_Auto_Situation(Auto_None);
     osDelay(3);
 }

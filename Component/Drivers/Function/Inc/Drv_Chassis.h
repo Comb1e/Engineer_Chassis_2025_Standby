@@ -51,10 +51,10 @@ extern "C"
 
 #define CHASSIS_POWER_LIMIT     (24 * 10)
 
-#define WHEEL0_CONTROL_PID_LOC 0.07f,0.01f,0.0f,0.11f,0.0f,false
-#define WHEEL1_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.11f,0.0f,false
-#define WHEEL2_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.11f,0.0f,false
-#define WHEEL3_CONTROL_PID_LOC 0.09f,0.01f,0.0f,0.11f,0.0f,false
+#define WHEEL0_CONTROL_PID_LOC 0.07f,0.01f,0.0f,0.10f,0.0f,false
+#define WHEEL1_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.10f,0.0f,false
+#define WHEEL2_CONTROL_PID_LOC 0.1f,0.002f,0.0f,0.10f,0.0f,false
+#define WHEEL3_CONTROL_PID_LOC 0.09f,0.01f,0.0f,0.10f,0.0f,false
 
 typedef enum
 {

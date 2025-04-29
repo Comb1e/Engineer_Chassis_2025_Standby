@@ -17,7 +17,7 @@ extern "C"
 #define ARM_TRAJECTORY_VEL_XYZ              0.3f
 #define ARM_TRAJECTORY_VEL_RPY              0.1f
 
-#define HOME_ARM_TRAJECTORY_VEL_XYZ              0.8f
+#define HOME_ARM_TRAJECTORY_VEL_XYZ              0.4f
 #define HOME_ARM_TRAJECTORY_VEL_RPY              0.2f
 
 enum traj_item_e : uint8_t

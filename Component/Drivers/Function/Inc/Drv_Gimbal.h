@@ -28,9 +28,9 @@ extern "C"
 #define GIMBAL_SERVO_PITCH_HORIZONTAL_1000  (940)
 #define SERVO_CONTROL_K                     (1000.f/270.f)
 
-#define GIMBAL_SERVO_YAW_FORWARD_1000      (370)
-#define GIMBAL_SERVO_YAW_LEFT_1000          (125.f)
-#define GIMBAL_SERVO_YAW_RIGHT_1000         (530.f)
+#define GIMBAL_SERVO_YAW_FORWARD_1000      (295)
+#define GIMBAL_SERVO_YAW_LEFT_1000          (50.f)
+#define GIMBAL_SERVO_YAW_RIGHT_1000         (455.f)
 #define GIMBAL_YAW_SERVO_ID                     (2)
 #define GIMBAL_YAW_MAX                    (60.0f)
 #define GIMBAL_YAW_MIN                    (-40.0f)
